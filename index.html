@@ -104,7 +104,7 @@ footer{text-align:center;color:var(--mut);padding:40px 16px;font-size:.85rem}
 
 <nav>
  <a href="#regras">Regras</a><a href="#ficha">Personagem</a><a href="#magia">Magia</a><a href="#feiticos">Feitiços</a>
- <a href="#pocoes">Poções</a><a href="#combate">Combate</a><a href="#gerador">Geradores</a><a href="#dados">Dados</a>
+ <a href="#pocoes">Poções</a><a href="#combate">Combate</a><a href="#forja">Forja</a><a href="#aliados">Aliados</a><a href="#gerador">Geradores</a><a href="#dados">Dados</a>
 </nav>
 
 <main>
@@ -224,7 +224,55 @@ footer{text-align:center;color:var(--mut);padding:40px 16px;font-size:.85rem}
 <tr><td>Sangrando</td><td>Perde 1d6 PV por turno até Vulnera Sanentur/Medicina DT 15.</td></tr>
 <tr><td>Enfeitiçado (Imperio)</td><td>Controlado; Vontade DT do conjurador a cada rodada para resistir.</td></tr></table>
 
-<h2 id="gerador">7. Geradores</h2>
+<h2 id="forja">7. Forja de Criaturas</h2>
+<p>Toda criatura sai deste motor. <b>A aparência é livre, o perfil mecânico não é:</b> um Niffler gigante e um Kelpie podem ter a mesma linha da Tábua. Monte uma em dez minutos, sem conta na hora da mesa.</p>
+<h3>O passo a passo</h3>
+<div class="box">
+<b>1 · Uma frase.</b> “Um Grindylow que caça pelo cheiro do medo.” Sem frase, não há criatura.<br>
+<b>2 · Classe de Perigo (1–11).</b> Chefe da sessão = nível do grupo. Capanga em bando = 3 ou 4 abaixo.<br>
+<b>3 · Linha da Tábua.</b> Copie PV, Defesa, ataque, dano, DT e resistências. Não invente números fora dela.<br>
+<b>4 · Tamanho, movimento e sentidos.</b> Um sentido especial grátis; o segundo custa 1 Traço.<br>
+<b>5 · Arquétipo.</b> Troca números entre si sem mudar o Perigo.<br>
+<b>6 · Repartir o dano.</b> O dano da Tábua é o total por rodada; divida entre os ataques.<br>
+<b>7 · Orçamento.</b> Gaste em Traços (passivos) e Poderes (ações com recarga).<br>
+<b>8 · Peças de chefe.</b> Fases (Perigo 2+), Reações Lendárias (6+), Aura do Lugar (8+).<br>
+<b>9 · Fraqueza Mágica.</b> Obrigatória: como vencê-la sem força bruta.<br>
+<b>10 · Ficha.</b> Se você não narra o primeiro turno dela sem consultar nada, simplifique.
+</div>
+<h3>A Tábua de Perigo</h3>
+<div class="wrap"><table id="tabua"></table></div>
+<p class="muted">Classificação do Ministério: Perigo 1–2 = X · 3–4 = XX · 5–6 = XXX · 7–8 = XXXX · 9–11 = XXXXX. Cada criatura tem <b>duas resistências fortes e uma fraca</b>. Aponte os Poderes dela para a resistência <i>fraca do grupo</i>, não para a dela.</p>
+<h3>Fases do chefe</h3>
+<p>O PV do chefe se divide em blocos iguais. <b>O golpe que quebra uma Fase para no piso dela: o excesso se perde.</b> Ao quebrar uma Fase, a criatura se livra de toda condição e muda (um Poder novo, o terreno que desaba, a forma que assume). Cura nunca devolve Fase. Perigo 1: nenhuma · 2: 2 · 3–7: 3 · 8+: 4. Lacaios não têm Fases.</p>
+<h3>Arquétipos</h3>
+<div class="wrap"><table id="arqt"></table></div>
+<h3>Traços (passivos)</h3>
+<div class="wrap"><table id="tracot"></table></div>
+<h3>Poderes (ações)</h3>
+<div class="wrap"><table id="podert"></table></div>
+<h3>Fraqueza Mágica (obrigatória)</h3>
+<div class="wrap"><table id="fraqt"></table></div>
+
+<div class="gen"><h3 style="margin-top:0">⚒ Forja Interativa</h3>
+Nome <input id="fnome" style="width:180px" placeholder="(aleatório)"> Perigo <input id="fper" type="number" value="3" min="1" max="11">
+<select id="ftam"><option>Miúdo</option><option>Pequeno</option><option selected>Médio</option><option>Grande</option><option>Enorme</option><option>Colossal</option></select>
+<select id="farq"></select>
+<label><input type="checkbox" id="fchefe" style="width:auto"> Chefe</label>
+<button onclick="forjar()">Forjar</button><button onclick="forjar(true)">Forjar Aleatória</button>
+<div class="out" id="fout"></div></div>
+
+<h2 id="aliados">8. Forja de Aliados e NPCs</h2>
+<p>NPCs usam a <b>mesma Tábua</b>, com o Nível no lugar do Perigo, e escolhem um <b>Papel</b> em vez de Arquétipo. Aliados que acompanham o grupo são controlados pelo jogador que tem o vínculo e agem na iniciativa dele.</p>
+<div class="wrap"><table id="papelt"></table></div>
+<div class="box"><b>Vínculo do aliado (0–5).</b> Sobe ao ajudar o NPC na história; desce ao abandoná-lo. Com 3+ ele arrisca a vida pelo grupo; com 5 entrega o segredo dele. Aliado com Vínculo 0 vai embora na primeira cena ruim.</div>
+<div class="gen"><h3 style="margin-top:0">⚒ Forja de NPC</h3>
+Nível <input id="nlvl" type="number" value="3" min="1" max="11">
+<select id="npapel"></select>
+<select id="nlado"><option value="aliado">Aliado</option><option value="rival">Rival</option><option value="vilao">Bruxo das Trevas</option></select>
+<button onclick="forjarNPC()">Forjar NPC</button><button onclick="forjarNPC(true)">Aleatório</button>
+<div class="out" id="nfout"></div></div>
+
+<h2 id="gerador">9. Geradores Rápidos</h2>
 
 <div class="gen"><h3 style="margin-top:0">Gerador de Criaturas</h3>
 <select id="cperigo"><option value="">Qualquer perigo</option><option value="1">X — Inofensiva</option><option value="2">XX</option><option value="3">XXX</option><option value="4">XXXX</option><option value="5">XXXXX — Mortal</option></select>
@@ -459,7 +507,75 @@ function rollDmg(){
  const r=Array.from({length:+m[1]},()=>d(+m[2]));const t=r.reduce((a,b)=>a+b,0)+(+m[3]||0);
  document.getElementById('rout').innerHTML=`[${r.join(", ")}]${m[3]||''} = <b>${t}</b> de dano`;
 }
-renderSpells();renderPotions();
+// ---- FORJA ----
+// [PV, DEF, Ataque, Dano/rodada, DT, forte, fraca, orçamento traços, poderes]
+const TABUA=[null,[11,12,3,5,13,15,12,1,0],[22,13,4,9,14,16,13,1,1],[36,14,5,14,15,17,13,2,1],[55,15,6,20,16,18,14,2,1],[80,16,7,27,17,19,14,2,2],[115,17,8,35,18,20,15,3,2],[155,17,9,45,19,21,15,3,2],[210,18,10,56,20,22,16,3,3],[280,19,11,70,21,23,16,4,3],[370,20,13,88,23,25,17,4,3],[500,21,15,110,25,27,18,5,4]];
+const MIN=p=>["X","X","XX","XX","XXX","XXX","XXXX","XXXX","XXXXX","XXXXX","XXXXX"][p-1];
+const FASES=p=>p<2?0:p==2?2:p<8?3:4;
+const ARQ={"Padrão":[1,0,0,0,"Sem trocas."],"Bruto":[1.3,-2,-1,0,"Mais couro, menos precisão. Trasgos, Erumpentes."],"Ágil":[.8,2,1,0,"Difícil de acertar. Diabretes, Hipogrifos."],"Predador":[.9,0,1,1.2,"Bate forte, morre rápido. Acromântulas, Lobisomens."],"Conjurador":[.8,-1,0,.8,"Gasta o turno em Poderes: +1 Poder grátis. Bruxos, Esfinges."],"Enxame":[1,-1,0,1,"Bando: dano de área, metade do dano de feitiços de alvo único. Doxys, Billywigs."],"Espectral":[.7,0,0,.9,"Imune a dano físico; só magia. Dementadores, Fantasmas, Lethifolds."],"Guardião":[1.2,1,-1,.8,"Protege algo: Reação para interceptar ataques. Fofo, estátuas."]};
+const TRACOS=[["Voo","Voa no deslocamento normal."],["Couro Mágico","Feitiços de Círculo 1–2 contra ela têm –5."],["Regeneração","Recupera Perigo×2 PV no início do turno (fogo/prata anula)."],["Invisível","Fica invisível como ação de movimento (Demiguise)."],["Veneno","Ataques causam +1d6/turno por 2 turnos (Fortitude encerra)."],["Imune a Feitiços Mentais","Ignora Confundo, Imperio, Legilimens."],["Anfíbio","Respira na água; nada no deslocamento normal."],["Faro / Visão no Escuro","Sentido especial extra."],["Aterrorizante","Ao ver pela 1ª vez: Vontade ou perde 1d6 DET."],["Furtivo","+10 Furtividade; ataque surpresa causa dano dobrado."],["Inteligente","Fala, negocia, faz planos (Centauros, Acromântulas)."],["Resistência Elemental","Metade do dano de fogo, frio ou impacto."],["Agarrar","Ao acertar, o alvo fica Preso (Atletismo para soltar)."],["Absorve Magia","Ao resistir a um feitiço, ganha PV igual ao custo×5."]];
+const PODERES=[["Sopro / Jato","Cone 9 m, dano = dano da rodada; Reflexos ½. Recarga 5–6."],["Olhar Paralisante","Um alvo, Fortitude ou Petrificado 1 rodada. Recarga 6."],["Grito","Raio 6 m, Vontade ou Atordoado + 1d6 DET. 1/cena."],["Drenar Felicidade","Um alvo, Vontade ou perde 2d6 DET e cura metade. Recarga 5–6."],["Teia / Tentáculos","Área 3 m, Reflexos ou Preso. Recarga 5–6."],["Investida","Move o dobro e ataca; Fortitude ou Caído."],["Mudar de Forma","Assume outra aparência (Bicho-Papão, Kelpie). 1/cena."],["Ilusão","Cria imagem convincente; Intuição para notar. Recarga 4–6."],["Teleporte","Aparata 18 m como ação de movimento. Recarga 5–6."],["Chamar o Bando","1d4 lacaios de Perigo –4 chegam no fim da rodada. 1/cena."],["Feitiço","Lança um feitiço do Grimório de Círculo ≤ Perigo/3."],["Explosão","Raio 3 m, dano da rodada; Reflexos ½. 1/cena."]];
+const FRAQ=[["Luz / Sol","Lumos Maxima ou luz solar: Atordoado 1 rodada (Visgo-do-Diabo, Inferi)."],["Fogo","Dano de fogo é dobrado (Inferi, Acromântulas)."],["Patrono","Expecto Patronum a afasta e causa dano de verdade (Dementador, Lethifold)."],["Riso","Riddikulus/feitiço de riso a desfaz (Bicho-Papão)."],["Reverência","Quem faz a mesura e espera não é atacado (Hipogrifo)."],["Música","Música a adormece (Fofo)."],["Canto do Galo","O canto de um galo a mata ou expulsa (Basilisco)."],["Objeto Brilhante","Distrai-se com ouro/joias: Enganação vira a cena (Niffler, Leprechaun)."],["Água derramada","Se a água da cabeça cair, fica Fraca (Kappa)."],["Nome Verdadeiro","Dizer seu nome antigo a obriga a parar."],["Enigma","Resposta certa a um enigma a vence (Esfinge)."],["Vínculo","Quem a criou pode mandá-la parar."]];
+const PAPEIS={"Duelista":[1,1,1,1,"+5 em Feitiços de ataque; Protego como reação grátis 1/rodada."],"Curandeiro":[.9,0,0,.6,"Cura Nível×3 PV como ação; Episkey/Vulnera Sanentur sem custo."],"Erudito":[.8,0,0,.7,"+10 em perícias de conhecimento; identifica magia e criaturas na hora."],"Batedor":[.9,2,0,.9,"+10 Furtividade/Percepção; age primeiro na 1ª rodada."],"Protetor":[1.3,1,-1,.7,"Reação: recebe o ataque no lugar de um aliado adjacente."],"Trapaceiro":[.8,1,0,.9,"Azarações humilhantes; Prestidigitação e Enganação +10."],"Domador":[1,0,0,.6,"Tem uma criatura companheira de Perigo = Nível–3."],"Comandante":[1,0,0,.8,"Ação: um aliado faz um ataque extra ou rerrola um teste."]};
+function tabuaCell(){let h='<tr><th>Perigo</th><th>Ministério</th><th>PV</th><th>Defesa</th><th>Ataque</th><th>Dano/rodada</th><th>DT</th><th>Resist. fortes</th><th>Fraca</th><th>Traços</th><th>Poderes</th></tr>';
+ for(let p=1;p<=11;p++){const t=TABUA[p];h+=`<tr><td><b>${p}</b></td><td>${MIN(p)}</td><td>${t[0]}</td><td>${t[1]}</td><td>+${t[2]}</td><td>${t[3]}</td><td>${t[4]}</td><td>+${t[5]-10}</td><td>+${t[6]-10}</td><td>${t[7]}</td><td>${t[8]}</td></tr>`}
+ document.getElementById('tabua').innerHTML=h;
+ const tb=(id,head,rows)=>document.getElementById(id).innerHTML='<tr>'+head.map(x=>'<th>'+x+'</th>').join('')+'</tr>'+rows.map(r=>'<tr>'+r.map((c,i)=>i?'<td>'+c+'</td>':'<td><b>'+c+'</b></td>').join('')+'</tr>').join('');
+ tb('arqt',['Arquétipo','PV','Defesa','Ataque','Dano','Notas'],Object.entries(ARQ).map(([k,a])=>[k,'×'+a[0],(a[1]>=0?'+':'')+a[1],(a[2]>=0?'+':'')+a[2],'×'+(a[3]||1),a[4]]));
+ tb('tracot',['Traço','Efeito'],TRACOS);tb('podert',['Poder','Efeito'],PODERES);tb('fraqt',['Fraqueza','Como funciona'],FRAQ);
+ tb('papelt',['Papel','PV','Defesa','Ataque','Dano','Habilidade'],Object.entries(PAPEIS).map(([k,a])=>[k,'×'+a[0],(a[1]>=0?'+':'')+a[1],(a[2]>=0?'+':'')+a[2],'×'+a[3],a[4]]));
+ document.getElementById('farq').innerHTML=Object.keys(ARQ).map(k=>'<option>'+k+'</option>').join('');
+ document.getElementById('npapel').innerHTML=Object.keys(PAPEIS).map(k=>'<option>'+k+'</option>').join('');
+}
+const pick=(arr,n)=>[...arr].sort(()=>Math.random()-.5).slice(0,n);
+function repartir(total,n){const each=Math.max(1,Math.round(total/n));const dd=each>=20?10:each>=9?8:6;const nd=Math.max(1,Math.floor(each/(dd/2+.5)));const b=Math.max(0,each-Math.round(nd*(dd/2+.5)));return nd+'d'+dd+(b?'+'+b:'')+' (~'+each+')'}
+function forjar(rnd){
+ let p=Math.min(11,Math.max(1,+document.getElementById('fper').value||1));
+ let arq=document.getElementById('farq').value, tam=document.getElementById('ftam').value, chefe=document.getElementById('fchefe').checked;
+ if(rnd){p=d(11);arq=R(Object.keys(ARQ));tam=R(["Miúdo","Pequeno","Médio","Grande","Enorme"]);chefe=Math.random()<.4;}
+ const t=TABUA[p],a=ARQ[arq];
+ const pv=Math.round(t[0]*a[0]),def=t[1]+a[1],atk=t[2]+a[2],dano=Math.round(t[3]*(a[3]||1));
+ const nAt=p>=6?3:p>=3?2:1;
+ const res=pick(["Fortitude","Reflexos","Vontade"],3);
+ const tr=pick(TRACOS,t[7]),po=pick(PODERES,t[8]+(arq=="Conjurador"?1:0)),fq=R(FRAQ);
+ const fases=chefe?FASES(p):0;
+ const pisos=fases?Array.from({length:fases-1},(_,i)=>Math.round(pv*(fases-1-i)/fases)).join(' / '):'';
+ const nome=document.getElementById('fnome').value||(rnd?`${R(["Gris","Mor","Pel","Vas","Tul","Kre","Om","Fral","Nib","Zor"])}${R(["umbro","quilha","fago","trel","ânsio","mora","bico","dril","vorme","cão"])}`:"Criatura sem nome");
+ const frase=`${R(["Um felino","Uma serpente","Uma ave","Um sapo","Um cervo","Um inseto gigante","Um morcego","Um lagarto","Uma sombra","Um cão"])} ${R(["de penas de fumaça","com chifre que brilha ao luar","de casco de pedra","translúcido","de olhos dourados","com cauda em chamas"])} que ${R(["caça pelo cheiro do medo","guarda uma passagem esquecida","se alimenta de magia","imita vozes","protege seus ovos","foi solta por um contrabandista"])}.`;
+ document.getElementById('fout').innerHTML=`<div class="stat"><b style="font-size:1.25rem">${nome}</b> <span class="tag">Perigo ${p}</span><span class="tag">Ministério ${MIN(p)}</span><span class="tag">${tam}</span><span class="tag">${arq}</span>${chefe?'<span class="tag">CHEFE</span>':''}<br>
+ <i class="muted">${frase}</i><br>
+ <b>PV</b> ${pv}${fases?` · <b>Fases</b> ${fases} (pisos ${pisos})`:''} · <b>Defesa</b> ${def} · <b>Iniciativa</b> ${Math.min(5,1+Math.floor(p/2))}d20+${p}<br>
+ <b>Resistências:</b> ${res[0]} +${t[5]-10}, ${res[1]} +${t[5]-10}, ${res[2]} +${t[6]-10} <span class="muted">(fraca)</span> · <b>DT dos Poderes</b> ${t[4]}<br>
+ <b>Ataques (${nAt}/rodada):</b> +${atk}, ${repartir(dano,nAt)} cada<br>
+ <b>Traços:</b> ${tr.map(x=>'<b>'+x[0]+'</b> — '+x[1]).join(' · ')||'—'}<br>
+ <b>Poderes:</b> ${po.map(x=>'<b>'+x[0]+'</b> — '+x[1]).join(' · ')||'—'}<br>
+ ${p>=6&&chefe?'<b>Reações Lendárias:</b> 2 por rodada, no fim do turno de um jogador: ataque extra ou mover sem provocar.<br>':''}
+ ${p>=8&&chefe?'<b>Aura do Lugar:</b> na iniciativa 20, o ambiente age (teto desaba, lago puxa, velas apagam).<br>':''}
+ <b style="color:var(--gold)">Fraqueza Mágica:</b> <b>${fq[0]}</b> — ${fq[1]}</div>`;
+}
+function forjarNPC(rnd){
+ let lv=Math.min(11,Math.max(1,+document.getElementById('nlvl').value||1)),pap=document.getElementById('npapel').value,lado=document.getElementById('nlado').value;
+ if(rnd){lv=d(11);pap=R(Object.keys(PAPEIS));lado=R(['aliado','rival','vilao'])}
+ const t=TABUA[lv],a=PAPEIS[pap];
+ const pv=Math.round(t[0]*a[0]),def=t[1]+a[1],atk=t[2]+a[2],dano=Math.round(t[3]*a[3]),pm=3+lv*4;
+ const circ=Math.min(4,Math.ceil(lv/3));
+ const fs=SPELLS.filter(s=>s[1]!="P"&&s[1]<=circ&&(lado=='vilao'||s[2]!="Trevas"));
+ let kn=[...new Set(pick(fs,4+Math.floor(lv/3)).map(s=>s[0]))];
+ if(lado=='vilao'&&lv>=5)kn.push(R(SPELLS.filter(s=>s[2]=="Trevas"))[0]);
+ const pers=R(["leal até o fim","desconfiado","engraçado e caótico","estudioso e frio","corajoso demais","covarde mas honesto","manipulador","melancólico","otimista incurável"]);
+ const seg=R(["é animago ilegal","tem um parente em Azkaban","deve dinheiro a goblins","esconde uma licantropia","viu algo na Floresta Proibida","guarda um diário que fala","é metamorfomago","já usou um Vira-Tempo","não consegue conjurar um Patrono","está sob Imperius"]);
+ const quer=R(["provar seu valor à família","proteger um irmão mais novo","encontrar quem matou seus pais","ganhar a Taça das Casas","libertar uma criatura","recuperar uma varinha roubada","entrar para os Aurores","descobrir o que há no Departamento de Mistérios"]);
+ const ocup={aliado:["estudante","monitor(a)","curandeira de St. Mungus","auror novato","lojista do Beco Diagonal","elfo doméstico liberto","guarda-caça","fantasma do castelo","magizoologista"],rival:["artilheiro(a) da casa rival","herdeiro(a) sangue-puro","aluno(a) prodígio","funcionário(a) do Ministério"],vilao:["Comensal da Morte foragido","contrabandista de criaturas","colecionador de artefatos amaldiçoados","professor(a) com segredo","líder de seita puro-sangue"]}[lado];
+ document.getElementById('nfout').innerHTML=`<div class="stat"><b style="font-size:1.25rem">${R(NOMES)} ${R(SOBRENOMES)}</b> <span class="tag">${lado=='vilao'?'BRUXO DAS TREVAS':lado.toUpperCase()}</span><span class="tag">Nível ${lv}</span><span class="tag">${pap}</span><br>
+ ${R(ocup)} · ${R(["Grifinória","Sonserina","Corvinal","Lufa-Lufa"])} · ${R(["Sangue-Puro","Mestiço","Nascido-Trouxa"])}<br>
+ <b>PV</b> ${pv} · <b>PM</b> ${pm} · <b>Defesa</b> ${def} · <b>Feitiços</b> +${atk} · <b>DT</b> ${t[4]} · <b>Dano/rodada</b> ~${dano}<br>
+ <b>Resistências:</b> forte +${t[5]-10}, fraca +${t[6]-10}<br>
+ <b>Habilidade de Papel:</b> ${a[4]}<br>
+ <b>Varinha:</b> ${wandText()}<br><b>Feitiços:</b> ${kn.join(", ")}<br>
+ <b>Personalidade:</b> ${pers} · <b>Quer:</b> ${quer} · <b>Segredo:</b> ${seg}<br>
+ ${lado=='aliado'?'<b>Vínculo inicial:</b> '+d(3)+' / 5':''}</div>`;
+}
+tabuaCell();renderSpells();renderPotions();
 </script>
 </body>
 </html>

@@ -1328,17 +1328,16 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   vale 6, <span class="dado">d8</span> vale 8.</p>
   <div class="recursos">
     <div class="recurso"><b>PV</b><span>Pontos de Vida = 8 + valor do Corpo</span></div>
-    <div class="recurso"><b>PM</b><span>Pontos de Magia = 2 + metade do valor da Mente</span></div>
     <div class="recurso"><b>DET</b><span>Determinação = 4 + valor do Coração</span></div>
     <div class="recurso"><b>Defesa</b><span>5 + metade do valor de Reflexos</span></div>
   </div>
   <p>Uma grifinória com Corpo <span class="dado">d8</span>, Mente <span class="dado">d6</span>,
   Coração <span class="dado">d6</span> e Reflexos <span class="dado">d6</span> tem 16 PV,
-  5 PM, 10 DET e Defesa 8.</p>
+  10 DET e Defesa 8.</p>
   <p><strong>Determinação</strong> é o que segura você em pé diante do medo, dos dementadores
   e das maldições. Com 0 DET, você fica <em>Desesperado</em> até o fim da cena (veja o
   <a href="#cap7">Capítulo VII</a>).</p>
-  <p><strong>Descanso.</strong> Uma noite de sono recupera todo o PM, metade do PV e
+  <p><strong>Descanso.</strong> Uma noite de sono recupera metade do PV e
   <span class="dado">1d4</span> DET. Chocolate recupera <span class="dado">1d4</span> DET na hora.</p>
 </section>
 
@@ -1350,8 +1349,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
     <p>Lançar, resistir e o preço de errar</p>
   </div>
 
-  <p class="abre">Magia é um teste como outro qualquer, com um custo. Você escolhe um
-  feitiço que conhece, gasta os Pontos de Magia e rola Mente mais a perícia do feitiço.</p>
+  <p class="abre">Não existe mana. O limite da magia é o que você aprendeu: você só lança feitiços que conhece, só tenta um Círculo se tiver o dado mínimo na perícia, e cada feitiço tem um grau de domínio.</p>
 
   <div class="destaque">
     <span class="rotulo">Lançar um feitiço</span>
@@ -1359,18 +1357,31 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   </div>
 
   <div class="rolagem"><table>
-  <thead><tr><th>Círculo</th><th class="num">DT</th><th class="num">Custo</th><th>Quando se aprende</th></tr></thead>
+  <thead><tr><th>Círculo</th><th class="num">DT</th><th>Perícia mínima</th><th>Quando se aprende</th></tr></thead>
   <tbody>
-  <tr><td>1 · Primeiranista</td><td class="num">5</td><td class="num">1 PM</td><td>1º ano</td></tr>
-  <tr><td>2 · Intermediário</td><td class="num">7</td><td class="num">2 PM</td><td>3º ano</td></tr>
-  <tr><td>3 · N.O.M.</td><td class="num">9</td><td class="num">3 PM</td><td>5º ano</td></tr>
-  <tr><td>4 · N.I.E.M.</td><td class="num">11</td><td class="num">5 PM</td><td>7º ano</td></tr>
-  <tr><td>Proibido</td><td class="num">13</td><td class="num">8 PM + <span class="dado">1d4</span> DET</td><td>Nunca, oficialmente</td></tr>
+  <tr><td>1 · Primeiranista</td><td class="num">5</td><td><span class="dado">d4</span></td><td>1º ano</td></tr>
+  <tr><td>2 · Intermediário</td><td class="num">7</td><td><span class="dado">d6</span></td><td>3º ano</td></tr>
+  <tr><td>3 · N.O.M.</td><td class="num">9</td><td><span class="dado">d8</span></td><td>5º ano</td></tr>
+  <tr><td>4 · N.I.E.M.</td><td class="num">11</td><td><span class="dado">d10</span></td><td>7º ano</td></tr>
+  <tr><td>Proibido</td><td class="num">13</td><td><span class="dado">d10</span> em Artes das Trevas · custa <span class="dado">1d4</span> DET</td><td>Nunca, oficialmente</td></tr>
   </tbody></table></div>
 
   <p>A perícia depende do feitiço: <strong>Feitiços</strong> para encantamentos, azarações e
   escudos; <strong>Transfiguração</strong> para mudar, conjurar e sumir; <strong>Artes das
   Trevas</strong> para maldições. O Patrono usa <strong>Coração</strong> no lugar de Mente.</p>
+
+  <p>Sem o dado mínimo, você não consegue nem tentar. Não há limite de vezes por dia: o que segura a magia forte é a dificuldade, o Desastre e a Determinação.</p>
+
+  <h3>Aprender e dominar</h3>
+  <p>Você começa com seis feitiços do Círculo 1. Feitiço novo se aprende estudando — aula, livro, professor, alguém que ensine — entre aventuras. Ninguém tira feitiço do nada no meio da luta. Cada feitiço que você conhece tem um grau:</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Grau</th><th>Efeito</th><th>Como sobe</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Aprendendo</strong></td><td>–1 passo na perícia.</td><td>Uma semana de treino, ou usar o feitiço com sucesso em três cenas.</td></tr>
+  <tr><td><strong>Sabe</strong></td><td>Normal.</td><td>Um mês de treino, ou tirar crítico com ele numa cena importante.</td></tr>
+  <tr><td><strong>Domina</strong></td><td>+1 passo; lança não verbal sem penalidade.</td><td>—</td></tr>
+  </tbody></table></div>
+  <p>Marque o grau ao lado de cada feitiço na ficha. O feitiço que você domina é o seu feitiço — o Expelliarmus do Harry.</p>
 
   <h3>Feitiços contra alguém</h3>
   <p>Feitiço de ataque é um teste contra a <strong>Defesa</strong> do alvo, não contra a DT do
@@ -1389,15 +1400,15 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <div class="rolagem"><table>
   <thead><tr><th>Forma</th><th>Efeito</th></tr></thead>
   <tbody>
-  <tr><td><strong>Não verbal</strong></td><td>+1 PM e –1 passo na perícia. O alvo não sabe o que vem e não pode escolher o contra-feitiço.</td></tr>
+  <tr><td><strong>Não verbal</strong></td><td>–1 passo na perícia (sem penalidade se você Domina o feitiço). O alvo não sabe o que vem e não pode escolher o contra-feitiço.</td></tr>
   <tr><td><strong>Varinha emprestada</strong></td><td>–1 passo. Uma varinha conquistada em duelo não sofre a penalidade.</td></tr>
-  <tr><td><strong>Sem varinha</strong></td><td>Só Círculo 1, –2 passos e custo dobrado.</td></tr>
+  <tr><td><strong>Sem varinha</strong></td><td>Só Círculo 1, só feitiços que você Domina, –2 passos.</td></tr>
   <tr><td><strong>Com calma</strong></td><td>Fora de combate, com um minuto e sem pressão: +1 passo.</td></tr>
-  <tr><td><strong>Sustentado</strong></td><td>Levitar, iluminar, manter um escudo: 1 PM por rodada depois da primeira.</td></tr>
+  <tr><td><strong>Sustentado</strong></td><td>Levitar, iluminar, manter um escudo: gasta a sua ação a cada rodada.</td></tr>
   </tbody></table></div>
 
   <h3>Quando dá errado</h3>
-  <p>Falhar só gasta o PM. O <strong>Desastre</strong> (todos os dados em 1) aciona a tabela do
+  <p>Falhar só faz o feitiço não sair. O <strong>Desastre</strong> (todos os dados em 1) aciona a tabela do
   Capítulo II, e quem tirar 8 nela rola a <a href="#descontrolada">Magia Descontrolada</a>.</p>
 
   <h3>Contra-feitiço</h3>
@@ -1415,7 +1426,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
 
   <p class="abre">Cada entrada traz a perícia, o alcance, a resistência e o efeito. Dano é
   sempre <strong>RA + modificador</strong>; no crítico, os dois maiores resultados mais o
-  modificador. Você aprende dois feitiços novos a cada ano.</p>
+  modificador. Você aprende dois feitiços novos a cada ano, no grau Aprendendo.</p>
 
   <h3>Círculo 1 · Primeiranista</h3>
   <div class="rolagem"><table class="compacta">
@@ -1578,7 +1589,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>Aguçar o Intelecto</strong></td><td class="num">9</td><td class="num">14</td><td class="num">4</td><td>Besouros, gengibre, bile de tatu</td><td>Mente +1 passo por uma cena.</td></tr>
   <tr><td><strong>Poção da Paz</strong></td><td class="num">9</td><td class="num">16</td><td class="num">5</td><td>Pedra-da-lua, xarope de heléboro</td><td>Remove Amedrontado e Desesperado; recupera RA de DET.</td></tr>
   <tr><td><strong>Reposição de Sangue</strong></td><td class="num">9</td><td class="num">16</td><td class="num">5</td><td>—</td><td>Recupera RA + 4 PV fora de combate.</td></tr>
-  <tr><td><strong>Poção do Foco</strong> <span class="dado">J</span></td><td class="num">11</td><td class="num">16</td><td class="num">5</td><td>Lacewing, fluxweed, língua de dugbog</td><td>Feitiços custam 1 PM a menos (mínimo 1) por uma cena.</td></tr>
+  <tr><td><strong>Poção do Foco</strong> <span class="dado">J</span></td><td class="num">11</td><td class="num">16</td><td class="num">5</td><td>Lacewing, fluxweed, língua de dugbog</td><td>+1 passo em Feitiços por uma cena.</td></tr>
   <tr><td><strong>Esquelesce</strong></td><td class="num">11</td><td class="num">18</td><td class="num">5</td><td>Escamas, ervas amargas</td><td>Faz ossos crescerem; uma noite de dor.</td></tr>
   <tr><td><strong>Invisibilidade</strong> <span class="dado">J</span></td><td class="num">11</td><td class="num">20</td><td class="num">6</td><td>Cogumelo saltador, sanguinária, meleca de trasgo</td><td>Invisível por <span class="dado">1d4</span> rodadas ou até atacar.</td></tr>
   <tr><td><strong>Restauradora de Mandrágoras</strong></td><td class="num">11</td><td class="num">20</td><td class="num">6</td><td>Mandrágoras maduras</td><td>Desfaz petrificação.</td></tr>
@@ -1653,7 +1664,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   ataque não pedem a DT do Círculo: o teste contra a Defesa já é o teste do feitiço.</p>
 
   <h3>Protego</h3>
-  <p>Como reação, gaste 1 PM e role Mente + Feitiços. Se o seu total for <strong>maior ou igual
+  <p>Como reação, role Mente + Feitiços. Se o seu total for <strong>maior ou igual
   ao total do ataque</strong>, o feitiço bate no escudo. Se você tirar <strong>crítico</strong>,
   o feitiço volta para quem lançou. Protego não para maldições Proibidas nem ataques físicos
   de criaturas grandes.</p>
@@ -1763,7 +1774,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td class="d">11</td><td><strong>Inteligente</strong></td><td>Fala, negocia, planeja, guarda rancor.</td></tr>
   <tr><td class="d">12</td><td><strong>Resistência</strong></td><td>Metade do dano de fogo, frio ou impacto.</td></tr>
   <tr><td class="d">13</td><td><strong>Agarrar</strong></td><td>Ao acertar, o alvo fica Preso.</td></tr>
-  <tr><td class="d">14</td><td><strong>Come Magia</strong></td><td>Quando resiste a um feitiço, recupera PV igual ao custo × 3.</td></tr>
+  <tr><td class="d">14</td><td><strong>Come Magia</strong></td><td>Quando resiste a um feitiço, recupera PV igual a 3 × o Círculo.</td></tr>
   <tr><td class="d">15</td><td><strong>Escaladora</strong></td><td>Anda em paredes e tetos.</td></tr>
   <tr><td class="d">16</td><td><strong>Muda de Tamanho</strong></td><td>Cresce ou encolhe para caber no espaço.</td></tr>
   <tr><td class="d">17</td><td><strong>Ataque Duplo</strong></td><td>Dois ataques por rodada, cada um com dano –2.</td></tr>
@@ -1966,7 +1977,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td class="d">1</td><td>Espelho de bolso</td><td>mostra quem está em perigo</td><td>drena 1 DET por dia</td></tr>
   <tr><td class="d">2</td><td>Pena de escrever</td><td>escreve sozinha o que é ditado</td><td>faz o dono mentir</td></tr>
   <tr><td class="d">3</td><td>Relógio</td><td>atrasa o tempo para o dono 1 vez (ação extra)</td><td>atrai dementadores</td></tr>
-  <tr><td class="d">4</td><td>Medalhão</td><td>guarda 3 PM; recarrega ao amanhecer</td><td>sussurra à noite</td></tr>
+  <tr><td class="d">4</td><td>Medalhão</td><td>uma vez por dia, +1 passo num feitiço</td><td>sussurra à noite</td></tr>
   <tr><td class="d">5</td><td>Livro</td><td>responde perguntas — às vezes errado</td><td>prende o leitor nas páginas</td></tr>
   <tr><td class="d">6</td><td>Cachecol</td><td>+1 passo contra frio e Fortitude</td><td>aperta quando o dono mente</td></tr>
   <tr><td class="d">7</td><td>Chave antiga</td><td>abre uma porta que não existia</td><td>a porta também abre do outro lado</td></tr>
@@ -2075,13 +2086,13 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <thead><tr><th class="num">Nível</th><th>Quando</th><th>Ganha</th></tr></thead>
   <tbody>
   <tr><td class="num">1</td><td>1º ano</td><td>Ficha inicial.</td></tr>
-  <tr><td class="num">2</td><td>2º ano</td><td>+1 passo em duas perícias · +3 PV · +1 PM · 2 feitiços</td></tr>
+  <tr><td class="num">2</td><td>2º ano</td><td>+1 passo em duas perícias · +3 PV · 2 feitiços</td></tr>
   <tr><td class="num">3</td><td>3º ano</td><td>Círculo 2 · +1 passo numa perícia · matérias eletivas: +1 perícia em <span class="dado">d6</span></td></tr>
-  <tr><td class="num">4</td><td>4º ano</td><td>+1 passo num atributo · +3 PV · +1 PM</td></tr>
+  <tr><td class="num">4</td><td>4º ano</td><td>+1 passo num atributo · +3 PV · um feitiço sobe de grau</td></tr>
   <tr><td class="num">5</td><td>5º ano (N.O.M.s)</td><td>Círculo 3 · +1 passo em duas perícias · +2 DET</td></tr>
-  <tr><td class="num">6</td><td>6º ano</td><td>Magia não verbal sem penalidade de passo · +3 PV · +1 PM</td></tr>
+  <tr><td class="num">6</td><td>6º ano</td><td>Magia não verbal sem penalidade de passo · +3 PV · um feitiço sobe de grau</td></tr>
   <tr><td class="num">7</td><td>7º ano (N.I.E.M.s)</td><td>Círculo 4 · Aparatação · +1 passo num atributo</td></tr>
-  <tr><td class="num">8–11</td><td>Carreira</td><td>A cada nível: +1 passo numa perícia, +3 PV, +1 PM, 2 feitiços. No 9: +1 passo num atributo.</td></tr>
+  <tr><td class="num">8–11</td><td>Carreira</td><td>A cada nível: +1 passo numa perícia, +3 PV, 2 feitiços. No 9: +1 passo num atributo.</td></tr>
   </tbody></table></div>
   <p>Teto: <span class="dado">d12</span> em perícias, <span class="dado">d10</span> em atributos até o nível 7 e <span class="dado">d12</span> depois.</p>
   <h3>N.O.M.s e N.I.E.M.s</h3>

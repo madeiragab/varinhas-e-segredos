@@ -104,39 +104,35 @@
   <span class="dado">d4 → d6 → d8 → d10 → d12</span>.</p>
   <div class="grade">
     <div class="cartao"><h5>+1 passo</h5><p class="etiqueta">A situação ajuda</p>
-    <p>O dado sobe um tamanho. Alvo surpreso, varinha favorável, um aliado ajudando, a poção
-    certa. Vários aumentos se acumulam, mas o teto é <span class="dado">d12</span>.</p></div>
+    <p>O dado sobe um tamanho. Alvo surpreso, afinidade da varinha, um aliado ajudando, a poção certa. O teto é <span class="dado">d12</span>.</p></div>
     <div class="cartao"><h5>–1 passo</h5><p class="etiqueta">A situação atrapalha</p>
-    <p>O dado desce um tamanho. Escuro, ferido, varinha emprestada, feitiço não verbal. O piso
-    é <span class="dado">d4</span>. Um aumento e uma redução se cancelam.</p></div>
+    <p>O dado desce um tamanho. Escuro, ferido, varinha emprestada. O piso é <span class="dado">d4</span>. Um aumento e uma redução se cancelam.</p></div>
   </div>
-  <p>O Mestre diz em <em>qual</em> dado o passo cai: no atributo (o corpo está cansado) ou na
-  perícia (a técnica está prejudicada). Se não importar, cai na perícia.</p>
+  <p>O Mestre diz em <em>qual</em> dado o passo cai: no atributo (o corpo está cansado) ou na perícia (a técnica está prejudicada). Se não importar, cai na perícia.</p>
+  <div class="destaque"><span class="rotulo">Limite de bônus</span>
+  <p>Num mesmo teste, somando todas as fontes (ajuda, varinha, Casa, poção, Ímpeto), você ganha no máximo <strong>+2 passos</strong>. Penalidades não têm limite. Cada fonte conta uma vez: duas poções iguais não acumulam.</p></div>
 
   <h3>Dados extras</h3>
-  <p>Algumas habilidades, poções e itens dão um dado a mais, do mesmo tamanho do maior dado
-  da rolagem. Duas regras seguram isso:</p>
+  <p>Algumas habilidades, poções e itens dão um dado a mais, do mesmo tamanho do <strong>maior</strong> dado da rolagem. Duas regras seguram isso:</p>
   <ul>
     <li>No máximo <strong>quatro dados</strong> rolados num teste.</li>
-    <li>No máximo <strong>três dados</strong> somados. Rolou quatro, o menor sai.</li>
+    <li>No máximo <strong>três dados</strong> somados. Rolou quatro, o menor sai da soma.</li>
   </ul>
+  <p>O dado que sai da soma <strong>ainda conta</strong> para o crítico e para o Desastre: tudo o que você rolou está na mesa. Só não entra no total.</p>
 
   <h3>Rolagem Alta e Rolagem Baixa</h3>
-  <p>O <strong>RA</strong> é o maior resultado individual da rolagem; o <strong>RB</strong>, o
-  menor. Não importa de qual dado veio. Num <span class="dado">d6</span> que deu 6 e num
-  <span class="dado">d8</span> que deu 3, o RA é 6 e o RB é 3. O RA é o dano dos ataques; RA e
-  RB medem progresso em testes longos (poções, pesquisas, perseguições): no sucesso avança o
-  RA, na falha avança o RB.</p>
+  <p>O <strong>RA</strong> é o maior resultado individual; o <strong>RB</strong>, o menor <em>entre os dados somados</em>. Não importa de qual dado veio. Num <span class="dado">d6</span> que deu 6 e num <span class="dado">d8</span> que deu 3, o RA é 6 e o RB é 3. O RA é o dano dos ataques; RA e RB medem progresso em testes longos: no sucesso avança o RA, na falha avança o RB.</p>
 
   <h3>Crítico</h3>
-  <p>Se dois dados mostrarem o <strong>mesmo número, 6 ou mais</strong>, é crítico: sucesso
-  automático, seja qual for a DT. Em ataques e testes longos, o crítico usa os <strong>dois
-  maiores resultados</strong> no lugar do RA. Seis e seis num Stupefy causa 6+6, mais o
-  modificador do feitiço.</p>
+  <p>Você tira crítico de um destes dois jeitos:</p>
+  <ul>
+    <li><strong>Dois dados iguais, de 4 ou mais.</strong> Vale para qualquer combinação, inclusive <span class="dado">d4</span> com <span class="dado">d4</span>.</li>
+    <li><strong>Total que passa a DT por 6 ou mais.</strong> DT 7 e total 13: crítico.</li>
+  </ul>
+  <p>Crítico é sucesso automático. Em ataques e testes longos, ele usa os <strong>dois maiores resultados</strong> no lugar do RA: seis e cinco num Stupefy causam 6 + 5 + 2. Contra um feitiço de efeito, o alvo resiste com –1 passo. E crítico dá 1 Ímpeto.</p>
 
   <h3>Desastre</h3>
-  <p>Se <strong>todos os dados</strong> mostrarem 1, é um Desastre: falha automática e uma
-  consequência. Role um <span class="dado">d8</span>:</p>
+  <p>Se <strong>todos os dados rolados</strong> mostrarem 1 — inclusive um dado que sairia da soma —, é um Desastre: falha automática e uma consequência. Um único dado acima de 1 já evita o Desastre. Role um <span class="dado">d8</span>:</p>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>d8</th><th>Desastre</th><th>Efeito</th></tr></thead>
   <tbody>
@@ -147,9 +143,8 @@
   <tr><td class="d">5</td><td>Acidente</td><td>Perde <span class="dado">1d4</span> PV.</td></tr>
   <tr><td class="d">6</td><td>Desânimo</td><td>Perde <span class="dado">1d4</span> de Determinação.</td></tr>
   <tr><td class="d">7</td><td>Perda</td><td>Larga a varinha, quebra um frasco, perde um item carregado.</td></tr>
-  <tr><td class="d">8</td><td>Magia Descontrolada</td><td>Role na tabela do <a href="#descontrolada">Capítulo XII</a>.</td></tr>
+  <tr><td class="d">8</td><td>Magia Descontrolada</td><td>Num feitiço, role na tabela do <a href="#descontrolada">Capítulo XII</a>. Fora de magia, o Mestre escolhe outra linha.</td></tr>
   </tbody></table></div>
-  <p>Se a consequência não fizer sentido, o Mestre escolhe outra.</p>
 
   <h3>Testes opostos</h3>
   <p>Quando duas pessoas disputam a mesma coisa — correr até a vassoura, segurar a varinha,
@@ -240,22 +235,19 @@
   </tbody></table></div>
 
   <h3>As Casas</h3>
+  <p>Cada Casa dá +1 passo numa perícia e uma habilidade que se usa <strong>uma vez por cena</strong>, em qualquer tipo de cena.</p>
   <div class="grade">
     <div class="cartao"><h5>Grifinória</h5><p class="etiqueta">Coragem · +1 passo em Vontade</p>
-    <p><span class="poder"><b>Coragem Imprudente.</b></span> Uma vez por cena, ao enfrentar
-    algo maior que você, role um dado extra no teste.</p></div>
+    <p><b>Coragem.</b> Quando você está em desvantagem clara — ferido, em menor número, ou diante de algo de Perigo maior que o seu nível —, role um dado extra num teste.</p></div>
     <div class="cartao"><h5>Sonserina</h5><p class="etiqueta">Ambição · +1 passo em Enganação ou Persuasão</p>
-    <p><b>Ambição.</b> Uma vez por cena, depois de ver o resultado de um teste social, troque
-    o RB pelo RA.</p></div>
+    <p><b>Ambição.</b> Depois de ver o resultado de qualquer teste seu, troque o RB pelo RA.</p></div>
     <div class="cartao"><h5>Corvinal</h5><p class="etiqueta">Sabedoria · +1 passo em Conhecimento Mágico</p>
-    <p><b>Mente Afiada.</b> Identificar um feitiço, poção ou criatura é ação livre, e você
-    rola um dado extra nisso.</p></div>
+    <p><b>Mente Afiada.</b> Role um dado extra num teste de Mente. Identificar feitiço, poção ou criatura é sempre ação livre para você.</p></div>
     <div class="cartao"><h5>Lufa-Lufa</h5><p class="etiqueta">Lealdade · +1 passo em Herbologia ou Fortitude</p>
-    <p><b>Lealdade.</b> Ao ajudar um aliado, conceda sempre +2 passos, qualquer que seja
-    sua perícia (mínimo <span class="dado">d6</span>). Ganha +3 PV.</p></div>
+    <p><b>Lealdade.</b> Ajude um aliado como reação, fora do seu turno, sem gastar a sua ação. Você pode ajudar mesmo com <span class="dado">d4</span> na perícia (+1 passo).</p></div>
   </div>
   <p>Fora de Hogwarts, troque a Casa pela escola: Ilvermorny, Beauxbatons, Durmstrang,
-  Castelobruxo, Mahoutokoro ou Uagadou. O Mestre adapta a habilidade.</p>
+  Castelobruxo, Mahoutokoro ou Uagadou. Escolha a Casa cuja habilidade combina com a escola.</p>
 
   <h3>Sangue e origem</h3>
   <div class="rolagem"><table>

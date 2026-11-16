@@ -116,7 +116,7 @@ function rolarOrdem() {
   const vals = r.map(x => x.v).sort((x, y) => y - x);
   const usados = vals.slice(0, 3);
   const total = usados.reduce((s, v) => s + v, 0);
-  const crit = vals.some((v, i) => v >= 6 && vals.indexOf(v) !== i);
+  const crit = vals.some((v, i) => v >= 4 && vals.indexOf(v) !== i) || total >= dt + 6;
   const desastre = vals.every(v => v === 1);
   const ok = !desastre && (crit || total >= dt);
   const visor = document.getElementById('r-visor');
@@ -125,7 +125,7 @@ function rolarOrdem() {
   document.getElementById('r-detalhe').innerHTML =
     r.map(x => 'd' + x.f + ' → <b>' + x.v + '</b>').join(' · ') +
     (r.length > 3 ? ' (o menor sai)' : '') +
-    '<br>RA <b>' + vals[0] + '</b> · RB <b>' + vals[vals.length - 1] + '</b> · ' +
+    '<br>RA <b>' + vals[0] + '</b> · RB <b>' + usados[usados.length - 1] + '</b> · ' +
     (desastre ? '<b>Desastre!</b> Role na tabela de Desastres.' : crit ? '<b>Crítico!</b> Sucesso automático.' : ok ? 'Sucesso contra DT ' + dt + '.' : 'Falha contra DT ' + dt + '.');
 }
 </script>

@@ -1160,39 +1160,35 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <span class="dado">d4 → d6 → d8 → d10 → d12</span>.</p>
   <div class="grade">
     <div class="cartao"><h5>+1 passo</h5><p class="etiqueta">A situação ajuda</p>
-    <p>O dado sobe um tamanho. Alvo surpreso, varinha favorável, um aliado ajudando, a poção
-    certa. Vários aumentos se acumulam, mas o teto é <span class="dado">d12</span>.</p></div>
+    <p>O dado sobe um tamanho. Alvo surpreso, afinidade da varinha, um aliado ajudando, a poção certa. O teto é <span class="dado">d12</span>.</p></div>
     <div class="cartao"><h5>–1 passo</h5><p class="etiqueta">A situação atrapalha</p>
-    <p>O dado desce um tamanho. Escuro, ferido, varinha emprestada, feitiço não verbal. O piso
-    é <span class="dado">d4</span>. Um aumento e uma redução se cancelam.</p></div>
+    <p>O dado desce um tamanho. Escuro, ferido, varinha emprestada. O piso é <span class="dado">d4</span>. Um aumento e uma redução se cancelam.</p></div>
   </div>
-  <p>O Mestre diz em <em>qual</em> dado o passo cai: no atributo (o corpo está cansado) ou na
-  perícia (a técnica está prejudicada). Se não importar, cai na perícia.</p>
+  <p>O Mestre diz em <em>qual</em> dado o passo cai: no atributo (o corpo está cansado) ou na perícia (a técnica está prejudicada). Se não importar, cai na perícia.</p>
+  <div class="destaque"><span class="rotulo">Limite de bônus</span>
+  <p>Num mesmo teste, somando todas as fontes (ajuda, varinha, Casa, poção, Ímpeto), você ganha no máximo <strong>+2 passos</strong>. Penalidades não têm limite. Cada fonte conta uma vez: duas poções iguais não acumulam.</p></div>
 
   <h3>Dados extras</h3>
-  <p>Algumas habilidades, poções e itens dão um dado a mais, do mesmo tamanho do maior dado
-  da rolagem. Duas regras seguram isso:</p>
+  <p>Algumas habilidades, poções e itens dão um dado a mais, do mesmo tamanho do <strong>maior</strong> dado da rolagem. Duas regras seguram isso:</p>
   <ul>
     <li>No máximo <strong>quatro dados</strong> rolados num teste.</li>
-    <li>No máximo <strong>três dados</strong> somados. Rolou quatro, o menor sai.</li>
+    <li>No máximo <strong>três dados</strong> somados. Rolou quatro, o menor sai da soma.</li>
   </ul>
+  <p>O dado que sai da soma <strong>ainda conta</strong> para o crítico e para o Desastre: tudo o que você rolou está na mesa. Só não entra no total.</p>
 
   <h3>Rolagem Alta e Rolagem Baixa</h3>
-  <p>O <strong>RA</strong> é o maior resultado individual da rolagem; o <strong>RB</strong>, o
-  menor. Não importa de qual dado veio. Num <span class="dado">d6</span> que deu 6 e num
-  <span class="dado">d8</span> que deu 3, o RA é 6 e o RB é 3. O RA é o dano dos ataques; RA e
-  RB medem progresso em testes longos (poções, pesquisas, perseguições): no sucesso avança o
-  RA, na falha avança o RB.</p>
+  <p>O <strong>RA</strong> é o maior resultado individual; o <strong>RB</strong>, o menor <em>entre os dados somados</em>. Não importa de qual dado veio. Num <span class="dado">d6</span> que deu 6 e num <span class="dado">d8</span> que deu 3, o RA é 6 e o RB é 3. O RA é o dano dos ataques; RA e RB medem progresso em testes longos: no sucesso avança o RA, na falha avança o RB.</p>
 
   <h3>Crítico</h3>
-  <p>Se dois dados mostrarem o <strong>mesmo número, 6 ou mais</strong>, é crítico: sucesso
-  automático, seja qual for a DT. Em ataques e testes longos, o crítico usa os <strong>dois
-  maiores resultados</strong> no lugar do RA. Seis e seis num Stupefy causa 6+6, mais o
-  modificador do feitiço.</p>
+  <p>Você tira crítico de um destes dois jeitos:</p>
+  <ul>
+    <li><strong>Dois dados iguais, de 4 ou mais.</strong> Vale para qualquer combinação, inclusive <span class="dado">d4</span> com <span class="dado">d4</span>.</li>
+    <li><strong>Total que passa a DT por 6 ou mais.</strong> DT 7 e total 13: crítico.</li>
+  </ul>
+  <p>Crítico é sucesso automático. Em ataques e testes longos, ele usa os <strong>dois maiores resultados</strong> no lugar do RA: seis e cinco num Stupefy causam 6 + 5 + 2. Contra um feitiço de efeito, o alvo resiste com –1 passo. E crítico dá 1 Ímpeto.</p>
 
   <h3>Desastre</h3>
-  <p>Se <strong>todos os dados</strong> mostrarem 1, é um Desastre: falha automática e uma
-  consequência. Role um <span class="dado">d8</span>:</p>
+  <p>Se <strong>todos os dados rolados</strong> mostrarem 1 — inclusive um dado que sairia da soma —, é um Desastre: falha automática e uma consequência. Um único dado acima de 1 já evita o Desastre. Role um <span class="dado">d8</span>:</p>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>d8</th><th>Desastre</th><th>Efeito</th></tr></thead>
   <tbody>
@@ -1203,9 +1199,8 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td class="d">5</td><td>Acidente</td><td>Perde <span class="dado">1d4</span> PV.</td></tr>
   <tr><td class="d">6</td><td>Desânimo</td><td>Perde <span class="dado">1d4</span> de Determinação.</td></tr>
   <tr><td class="d">7</td><td>Perda</td><td>Larga a varinha, quebra um frasco, perde um item carregado.</td></tr>
-  <tr><td class="d">8</td><td>Magia Descontrolada</td><td>Role na tabela do <a href="#descontrolada">Capítulo XII</a>.</td></tr>
+  <tr><td class="d">8</td><td>Magia Descontrolada</td><td>Num feitiço, role na tabela do <a href="#descontrolada">Capítulo XII</a>. Fora de magia, o Mestre escolhe outra linha.</td></tr>
   </tbody></table></div>
-  <p>Se a consequência não fizer sentido, o Mestre escolhe outra.</p>
 
   <h3>Testes opostos</h3>
   <p>Quando duas pessoas disputam a mesma coisa — correr até a vassoura, segurar a varinha,
@@ -1296,22 +1291,19 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   </tbody></table></div>
 
   <h3>As Casas</h3>
+  <p>Cada Casa dá +1 passo numa perícia e uma habilidade que se usa <strong>uma vez por cena</strong>, em qualquer tipo de cena.</p>
   <div class="grade">
     <div class="cartao"><h5>Grifinória</h5><p class="etiqueta">Coragem · +1 passo em Vontade</p>
-    <p><span class="poder"><b>Coragem Imprudente.</b></span> Uma vez por cena, ao enfrentar
-    algo maior que você, role um dado extra no teste.</p></div>
+    <p><b>Coragem.</b> Quando você está em desvantagem clara — ferido, em menor número, ou diante de algo de Perigo maior que o seu nível —, role um dado extra num teste.</p></div>
     <div class="cartao"><h5>Sonserina</h5><p class="etiqueta">Ambição · +1 passo em Enganação ou Persuasão</p>
-    <p><b>Ambição.</b> Uma vez por cena, depois de ver o resultado de um teste social, troque
-    o RB pelo RA.</p></div>
+    <p><b>Ambição.</b> Depois de ver o resultado de qualquer teste seu, troque o RB pelo RA.</p></div>
     <div class="cartao"><h5>Corvinal</h5><p class="etiqueta">Sabedoria · +1 passo em Conhecimento Mágico</p>
-    <p><b>Mente Afiada.</b> Identificar um feitiço, poção ou criatura é ação livre, e você
-    rola um dado extra nisso.</p></div>
+    <p><b>Mente Afiada.</b> Role um dado extra num teste de Mente. Identificar feitiço, poção ou criatura é sempre ação livre para você.</p></div>
     <div class="cartao"><h5>Lufa-Lufa</h5><p class="etiqueta">Lealdade · +1 passo em Herbologia ou Fortitude</p>
-    <p><b>Lealdade.</b> Ao ajudar um aliado, conceda sempre +2 passos, qualquer que seja
-    sua perícia (mínimo <span class="dado">d6</span>). Ganha +3 PV.</p></div>
+    <p><b>Lealdade.</b> Ajude um aliado como reação, fora do seu turno, sem gastar a sua ação. Você pode ajudar mesmo com <span class="dado">d4</span> na perícia (+1 passo).</p></div>
   </div>
   <p>Fora de Hogwarts, troque a Casa pela escola: Ilvermorny, Beauxbatons, Durmstrang,
-  Castelobruxo, Mahoutokoro ou Uagadou. O Mestre adapta a habilidade.</p>
+  Castelobruxo, Mahoutokoro ou Uagadou. Escolha a Casa cuja habilidade combina com a escola.</p>
 
   <h3>Sangue e origem</h3>
   <div class="rolagem"><table>
@@ -1401,10 +1393,13 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   </div>
   <p><strong>Aprender.</strong> No fim da sessão, cada Ímpeto que sobrou pode ser marcado num feitiço que você usou. Três marcas sobem o feitiço de grau (Aprendendo → Sabe → Domina), e as marcas zeram.</p>
 
-  <h3>Feitiços contra alguém</h3>
-  <p>Feitiço de ataque é um teste contra a <strong>Defesa</strong> do alvo, não contra a DT do
-  Círculo (veja o <a href="#cap7">Capítulo VII</a>). Feitiços que impõem um efeito — paralisar,
-  confundir, prender — pedem que o alvo resista:</p>
+  <h3>O procedimento</h3>
+  <p>Todo feitiço é de um destes três tipos, e cada tipo se resolve de um jeito só.</p>
+  <ol class="passos">
+    <li><b>Utilidade</b> (Lumos, Alohomora, Reparo). Um teste contra a <strong>DT do Círculo</strong>. Passou, funcionou.</li>
+    <li><b>Ataque</b> (tem “Ataque” no efeito). Um teste contra a <strong>Defesa</strong> do alvo, no lugar da DT do Círculo. Acertou, causa o dano. Se o feitiço também tem resistência, o alvo resiste só ao efeito extra, nunca ao dano.</li>
+    <li><b>Efeito</b> (paralisar, prender, confundir, controlar). Primeiro o teste contra a <strong>DT do Círculo</strong>. Falhou: nada acontece e o alvo não rola. Passou: o alvo rola a resistência contra a <strong>DT do feitiço</strong>. Crítico no lançamento: o alvo resiste com –1 passo.</li>
+  </ol>
   <div class="destaque">
     <span class="rotulo">DT do feitiço</span>
     <p class="formula">5 + Círculo + passo da sua perícia</p>
@@ -1413,6 +1408,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <span class="dado">d8</span>, 3 para <span class="dado">d10</span> e 4 para
   <span class="dado">d12</span>. O alvo rola Corpo + Fortitude, Corpo + Reflexos ou
   Coração + Vontade, conforme o feitiço.</p>
+  <p><strong>Condições que tiram alguém da luta</strong> — Petrificado, Preso, Indefeso, Confuso, Controlado — duram até o fim da cena, mas o alvo <strong>repete a resistência no fim de cada turno dele</strong>; passou, a condição acaba. Só escapa disso o que o feitiço disser.</p>
 
   <h3>Formas de lançar</h3>
   <div class="rolagem"><table>
@@ -1432,6 +1428,20 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <h3>Contra-feitiço</h3>
   <p><em>Finite Incantatem</em> encerra um efeito mágico em andamento: teste de Feitiços contra
   a DT do feitiço original. Para maldições de Artes das Trevas, –1 passo.</p>
+
+  <h3>Magia avançada</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Arte</th><th>Regra</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Patrono</strong></td><td>A primeira vez sai só névoa prateada: afasta, não expulsa. Corpóreo exige Feitiços <span class="dado">d8</span> e uma lembrança verdadeira; a forma é do jogador e só muda depois de uma perda ou de um amor profundo.</td></tr>
+  <tr><td><strong>Legilimência</strong></td><td><em>Superficial:</em> o pensamento do momento, contra Oclumência. <em>Profunda:</em> memórias antigas, exige olhar nos olhos, o alvo resiste com +1 passo e percebe a invasão.</td></tr>
+  <tr><td><strong>Oclumência</strong></td><td><span class="dado">d6</span>: percebe a invasão. <span class="dado">d8</span>: resiste normalmente. <span class="dado">d10</span>: mostra memórias falsas. <span class="dado">d12</span>: devolve a invasão.</td></tr>
+  <tr><td><strong>Aparatação</strong></td><td>Exige licença (7º ano). Lugar visto uma só vez: –1 passo. Falha: não sai do lugar. Desastre: estrunchado — perde <span class="dado">3d6</span> PV e deixa uma parte para trás até alguém consertar (Medibruxaria DT 9).</td></tr>
+  <tr><td><strong>Animagia</strong></td><td>Um ano de preparo (folha de mandrágora na boca por um mês, poção no primeiro raio de uma tempestade). Teste longo de Transfiguração DT 11, Preparo 30. Desastre: preso entre as formas. O Mestre decide o animal. Registro no Ministério, ou prisão.</td></tr>
+  <tr><td><strong>Vira-Tempo</strong></td><td>Volta até 5 horas. Ninguém pode te ver, nem você mesmo: se acontecer, Desastre automático e o Mestre decide o paradoxo. Só com autorização do Ministério.</td></tr>
+  <tr><td><strong>Imperdoáveis</strong></td><td>Prior Incantato revela. Pena: prisão perpétua em Azkaban. Quem lança perde <span class="dado">1d4</span> DET por uso; na terceira vez sem arrependimento em cena, o personagem passa ao Mestre.</td></tr>
+  <tr><td><strong>Horcrux</strong></td><td>Exige um assassinato e um ritual que este livro não descreve. Quem faz vira NPC. Destruir uma: veneno de Basilisco, Fogomaldito ou a Espada de Gryffindor.</td></tr>
+  </tbody></table></div>
 </section>
 
 <!-- ==================== V ==================== -->
@@ -1444,7 +1454,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
 
   <p class="abre">Cada entrada traz a perícia, o alcance, a resistência e o efeito. Dano é
   sempre <strong>RA + modificador</strong>; no crítico, os dois maiores resultados mais o
-  modificador. Você aprende dois feitiços novos a cada ano, no grau Aprendendo.</p>
+  modificador. Nas aulas você aprende dois feitiços por ano, no grau Aprendendo. Fora delas, aprende qualquer feitiço que encontrar e estudar — num livro, com um professor, com um amigo —, desde que tenha o dado mínimo: uma semana por Círculo. Não há limite de feitiços conhecidos; o limite é o tempo e o dado.</p>
 
   <h3>Círculo 1 · Primeiranista</h3>
   <div class="rolagem"><table class="compacta">
@@ -1478,10 +1488,10 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <thead><tr><th>Feitiço</th><th>Perícia</th><th>Alcance</th><th>Resiste</th><th>Efeito</th></tr></thead>
   <tbody>
   <tr><td><strong>Stupefy</strong></td><td>Feitiços</td><td>18 m</td><td>Fortitude</td><td>Ataque. RA + 2 e Atordoado 1 rodada (resistiu: só o dano).</td></tr>
-  <tr><td><strong>Petrificus Totalus</strong></td><td>Feitiços</td><td>9 m</td><td>Fortitude</td><td>Petrificado até o fim da cena ou um Finite.</td></tr>
+  <tr><td><strong>Petrificus Totalus</strong></td><td>Feitiços</td><td>9 m</td><td>Fortitude</td><td>Petrificado. Repete a resistência no fim de cada turno.</td></tr>
   <tr><td><strong>Incarcerous</strong></td><td>Transfig.</td><td>9 m</td><td>Reflexos</td><td>Cordas: Preso. Soltar: Corpo + Atletismo contra a DT.</td></tr>
   <tr><td><strong>Locomotor Mortis</strong></td><td>Feitiços</td><td>9 m</td><td>Reflexos</td><td>Pernas presas: não se desloca até um Finite.</td></tr>
-  <tr><td><strong>Levicorpus / Liberacorpus</strong></td><td>Feitiços</td><td>9 m</td><td>Reflexos</td><td>Pendura pelo tornozelo: Indefeso.</td></tr>
+  <tr><td><strong>Levicorpus / Liberacorpus</strong></td><td>Feitiços</td><td>9 m</td><td>Reflexos</td><td>Pendura pelo tornozelo: Indefeso. Repete a resistência no fim de cada turno; Liberacorpus solta.</td></tr>
   <tr><td><strong>Diffindo</strong></td><td>Feitiços</td><td>9 m</td><td>—</td><td>Ataque. RA + 2 de corte, ou corta corda, tecido, madeira.</td></tr>
   <tr><td><strong>Confundo</strong></td><td>Feitiços</td><td>9 m</td><td>Vontade</td><td>Confuso por <span class="dado">1d4</span> rodadas.</td></tr>
   <tr><td><strong>Obscuro</strong></td><td>Transfig.</td><td>9 m</td><td>Reflexos</td><td>Venda nos olhos: Cego por <span class="dado">1d4</span> rodadas.</td></tr>
@@ -1510,8 +1520,8 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>Expecto Patronum</strong></td><td>Feitiços (Coração)</td><td>Pessoal</td><td>—</td><td>DT 9, corpóreo DT 11. Afasta dementadores e Lethifolds; aliados perto recuperam RA de DET. Leva mensagens.</td></tr>
   <tr><td><strong>Protego Totalum / Cave Inimicum</strong></td><td>Feitiços</td><td>Área</td><td>—</td><td>Protege um acampamento: quem é de fora não vê nem ouve.</td></tr>
   <tr><td><strong>Salvio Hexia</strong></td><td>Feitiços</td><td>Área</td><td>—</td><td>Feitiços contra quem está na área sofrem –1 passo, uma cena.</td></tr>
-  <tr><td><strong>Feitiço da Desilusão</strong></td><td>Transfig.</td><td>Toque</td><td>—</td><td>Camuflagem: +2 passos em Furtividade.</td></tr>
-  <tr><td><strong>Obliviate</strong></td><td>Feitiços</td><td>Toque</td><td>Vontade</td><td>Apaga a memória de uma cena. Desastre: apaga demais.</td></tr>
+  <tr><td><strong>Feitiço da Desilusão</strong></td><td>Transfig.</td><td>Toque</td><td>—</td><td>Camuflagem: +1 passo em Furtividade e quem te procura sofre –1 passo. Acaba se você atacar.</td></tr>
+  <tr><td><strong>Obliviate</strong></td><td>Feitiços</td><td>Toque</td><td>Vontade</td><td>Só fora de combate, em alvo desatento ou Indefeso. Apaga até uma hora de memória. Desastre: apaga demais.</td></tr>
   <tr><td><strong>Legilimens</strong></td><td>Feitiços</td><td>9 m</td><td>Oclumência</td><td>Vê pensamentos e lembranças recentes.</td></tr>
   <tr><td><strong>Piertotum Locomotor</strong></td><td>Transfig.</td><td>Área</td><td>—</td><td>Anima estátuas e armaduras: <span class="dado">1d4</span> lacaios de Perigo 2.</td></tr>
   <tr><td><strong>Vulnera Sanentur</strong></td><td>Medibrux.</td><td>Toque</td><td>—</td><td>Cura RA + 5 e encerra Sangrando.</td></tr>
@@ -1528,8 +1538,8 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>Portus</strong></td><td>Feitiços</td><td>Toque</td><td>—</td><td>Cria uma Chave de Portal (ilegal sem licença).</td></tr>
   <tr><td><strong>Feitiço Fidelius</strong></td><td>Feitiços</td><td>Ritual</td><td>—</td><td>Esconde um segredo dentro de um Fiel do Segredo. Leva uma noite.</td></tr>
   <tr><td><strong>Expulso</strong></td><td>Feitiços</td><td>18 m</td><td>Reflexos (metade)</td><td>Explosão violenta em raio 3 m: RA + 6.</td></tr>
-  <tr><td><strong>Protego Maxima</strong> <span class="dado">F</span></td><td>Feitiços</td><td>Área</td><td>—</td><td>Cúpula: absorve 20 de dano por rodada; sustentado.</td></tr>
-  <tr><td><strong>Sectumsempra</strong></td><td>Artes das Trevas</td><td>9 m</td><td>—</td><td>Ataque. RA + 5 de corte e Sangrando grave.</td></tr>
+  <tr><td><strong>Protego Maxima</strong> <span class="dado">F</span></td><td>Feitiços</td><td>Área</td><td>—</td><td>Cúpula de 3 m: absorve 10 de dano por rodada enquanto você usar a sua ação para mantê-la.</td></tr>
+  <tr><td><strong>Sectumsempra</strong></td><td>Artes das Trevas</td><td>9 m</td><td>—</td><td>Ataque. RA + 4 de corte e Sangrando grave; só Vulnera Sanentur estanca.</td></tr>
   <tr><td><strong>Imperio</strong></td><td>Artes das Trevas</td><td>9 m</td><td>Vontade, a cada rodada</td><td>Controle total. Maldição Imperdoável: prisão em Azkaban.</td></tr>
   <tr><td><strong>Crucio</strong></td><td>Artes das Trevas</td><td>9 m</td><td>Vontade</td><td>Perde RA + 4 de DET e fica Atordoado. Imperdoável.</td></tr>
   </tbody></table></div>
@@ -1606,7 +1616,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>Maxima</strong> <span class="dado">J</span></td><td class="num">9</td><td class="num">12</td><td class="num">4</td><td>Sanguessuga, presa de aranha</td><td>Feitiços de ataque +2 de dano por uma cena.</td></tr>
   <tr><td><strong>Aguçar o Intelecto</strong></td><td class="num">9</td><td class="num">14</td><td class="num">4</td><td>Besouros, gengibre, bile de tatu</td><td>Mente +1 passo por uma cena.</td></tr>
   <tr><td><strong>Poção da Paz</strong></td><td class="num">9</td><td class="num">16</td><td class="num">5</td><td>Pedra-da-lua, xarope de heléboro</td><td>Remove Amedrontado e Desesperado; recupera RA de DET.</td></tr>
-  <tr><td><strong>Reposição de Sangue</strong></td><td class="num">9</td><td class="num">16</td><td class="num">5</td><td>—</td><td>Recupera RA + 4 PV fora de combate.</td></tr>
+  <tr><td><strong>Reposição de Sangue</strong></td><td class="num">9</td><td class="num">16</td><td class="num">5</td><td>Sangue de salamandra, raiz de ditamno</td><td>Recupera RA + 4 PV fora de combate.</td></tr>
   <tr><td><strong>Poção do Foco</strong> <span class="dado">J</span></td><td class="num">11</td><td class="num">16</td><td class="num">5</td><td>Lacewing, fluxweed, língua de dugbog</td><td>+1 passo em Feitiços por uma cena.</td></tr>
   <tr><td><strong>Esquelesce</strong></td><td class="num">11</td><td class="num">18</td><td class="num">5</td><td>Escamas, ervas amargas</td><td>Faz ossos crescerem; uma noite de dor.</td></tr>
   <tr><td><strong>Invisibilidade</strong> <span class="dado">J</span></td><td class="num">11</td><td class="num">20</td><td class="num">6</td><td>Cogumelo saltador, sanguinária, meleca de trasgo</td><td>Invisível por <span class="dado">1d4</span> rodadas ou até atacar.</td></tr>
@@ -1616,8 +1626,18 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>Amortentia</strong></td><td class="num">13</td><td class="num">24</td><td class="num">6</td><td>Segredo do professor</td><td>Obsessão por quem a deu. Vontade DT 13 por dia. Não é amor.</td></tr>
   <tr><td><strong>Morto-Vivo</strong></td><td class="num">13</td><td class="num">24</td><td class="num">6</td><td>Asfódelo, losna, feijão soporífero</td><td>Sono profundo, parecido com a morte.</td></tr>
   <tr><td><strong>Mata-Cão</strong></td><td class="num">15</td><td class="num">28</td><td class="num">7</td><td>Acônito e raros</td><td>O lobisomem mantém a mente humana na lua cheia.</td></tr>
-  <tr><td><strong>Felix Felicis</strong></td><td class="num">15</td><td class="num">32</td><td class="num">8</td><td>Fórmula complexa; seis meses</td><td>Por <span class="dado">1d4</span> horas, todo teste rola um dado extra. Excesso: imprudência.</td></tr>
+  <tr><td><strong>Felix Felicis</strong></td><td class="num">15</td><td class="num">32</td><td class="num">8</td><td>Fórmula complexa; seis meses</td><td>Por <span class="dado">1d4</span> horas, uma vez por cena, transforme uma falha sua em sucesso. Mais de uma dose por mês: Vontade DT 11 ou age sem pensar até o efeito acabar.</td></tr>
   </tbody></table></div>
+
+  <h3>Tempo, preço e limites</h3>
+  <ul>
+    <li><strong>Etapa:</strong> uma hora de trabalho. Poções de DT 13 ou mais: um dia por etapa.</li>
+    <li><strong>Lugar:</strong> precisa de caldeirão e fogo. Sem bancada (no campo, num quarto), –1 passo.</li>
+    <li><strong>Ingredientes</strong> custam, por poção, a DT em sicles (DT 9: 9 sicles). DT 13+: a DT em galeões, e o Ministério pode perguntar por quê.</li>
+    <li><strong>Poção pronta</strong> custa o dobro dos ingredientes, se alguém vender.</li>
+    <li><strong>Carregar:</strong> no máximo três frascos no cinto; o resto vai na mochila e leva uma ação para pegar.</li>
+    <li><strong>Acúmulo:</strong> duas doses da mesma poção não somam; a segunda só renova a duração. Poções diferentes acumulam, dentro do limite de +2 passos.</li>
+  </ul>
 
   <h3>Criar uma poção</h3>
   <div class="rolagem"><table class="compacta">
@@ -1669,40 +1689,54 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   uma <strong>ação</strong> e um <strong>movimento</strong>. Fora da sua vez, você tem uma
   <strong>reação</strong> por rodada.</p>
 
-  <h3>Iniciativa</h3>
-  <p>Todos rolam Corpo + Reflexos. A ordem vai do maior para o menor. Criaturas rolam os
-  dados de ataque da ficha.</p>
+  <h3>Surpresa e iniciativa</h3>
+  <p>Se um lado não percebe o outro (Percepção contra a Furtividade de quem embosca), quem foi surpreendido não age na primeira rodada. Depois todos rolam <strong>Corpo + Reflexos</strong>; criaturas e NPCs rolam os dados de ataque da ficha. Ordem do maior para o menor; empate, quem tem o maior RA.</p>
+
+  <h3>Movimento e distância</h3>
+  <ul>
+    <li><strong>Movimento:</strong> 9 m por rodada. Terreno difícil (lama, escombros, escada mudando) conta o dobro.</li>
+    <li><strong>Corpo a corpo:</strong> alcance de 1,5 m. Sair do alcance de um inimigo sem usar a ação para isso permite a ele um ataque como reação.</li>
+    <li><strong>Alcance dos feitiços:</strong> o do Grimório. Até o dobro: –1 passo. Mais longe: impossível.</li>
+    <li><strong>Cobertura:</strong> parcial (mesa, pilar, outro aluno) dá –1 passo ao atacante; total impede o ataque.</li>
+  </ul>
 
   <h3>Atacar</h3>
   <div class="destaque">
     <span class="rotulo">Ataque</span>
     <p class="formula">Mente + perícia do feitiço ≥ Defesa do alvo → dano = RA + modificador</p>
   </div>
-  <p>Ataque sem varinha usa Corpo + Luta e causa RA + 0 (soco) a RA + 3 (espada). Feitiços de
-  ataque não pedem a DT do Círculo: o teste contra a Defesa já é o teste do feitiço.</p>
+  <p>Ataque sem varinha usa Corpo + Luta e causa RA + 0 (soco) a RA + 3 (espada). Feitiços de ataque não pedem a DT do Círculo: o teste contra a Defesa já é o teste do feitiço.</p>
+  <p><strong>Áreas</strong> atingem todos dentro, aliados também. O conjurador pode poupar quem quiser aceitando –1 passo no teste. Contra área, cada alvo rola a resistência indicada; se o feitiço não tem resistência, pode Desviar.</p>
 
-  <h3>Protego</h3>
-  <p>Como reação, role Mente + Feitiços. Se o seu total for <strong>maior ou igual
-  ao total do ataque</strong>, o feitiço bate no escudo. Se você tirar <strong>crítico</strong>,
-  o feitiço volta para quem lançou. Protego não para maldições Proibidas nem ataques físicos
-  de criaturas grandes.</p>
+  <h3>Protego e Desviar</h3>
+  <p>As duas são <strong>reações</strong>: uma por rodada, então você escolhe uma delas contra um ataque. Declare depois de ver o total do ataque e antes do dano. Você não precisa saber qual feitiço vem.</p>
+  <div class="grade">
+    <div class="cartao"><h5>Protego</h5><p class="etiqueta">Mente + Feitiços</p>
+    <p>Igualou ou passou o total do ataque: o feitiço bate no escudo. Crítico: volta para quem lançou. Protege você, ou um aliado a até 1,5 m com –1 passo. Contra área, protege você por inteiro. Não para maldições Proibidas nem golpes físicos de criaturas Grandes ou maiores.</p></div>
+    <div class="cartao"><h5>Desviar</h5><p class="etiqueta">Corpo + Reflexos</p>
+    <p>Igualou ou passou o total do ataque: você sai da frente e não sofre nada. Contra área, escapa, mas fica Caído. Funciona contra qualquer ataque que você veja chegando — inclusive o Avada Kedavra.</p></div>
+  </div>
 
   <h3>Outras ações</h3>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Ação</th><th>Como</th></tr></thead>
   <tbody>
-  <tr><td><strong>Desviar</strong> (reação)</td><td>Corpo + Reflexos; se igualar o ataque, você se joga e fica Caído.</td></tr>
   <tr><td><strong>Pegar a varinha caída</strong></td><td>Movimento.</td></tr>
   <tr><td><strong>Esconder-se</strong></td><td>Corpo + Furtividade contra a Percepção de quem procura.</td></tr>
-  <tr><td><strong>Estabilizar</strong></td><td>Mente + Medibruxaria DT 7, ou qualquer feitiço de cura.</td></tr>
-  <tr><td><strong>Beber poção</strong></td><td>Ação. Dar a outra pessoa: ação, e ela precisa estar consciente.</td></tr>
-  <tr><td><strong>Fugir</strong></td><td>Dois movimentos. Inimigos ao lado podem atacar como reação.</td></tr>
+  <tr><td><strong>Estabilizar</strong></td><td>Ação: Mente + Medibruxaria DT 7, ou qualquer feitiço de cura.</td></tr>
+  <tr><td><strong>Beber poção</strong></td><td>Ação. Dar a outra pessoa: ação, e ela precisa estar consciente (exceto Wiggenweld e Ditamno, que funcionam em quem está Morrendo).</td></tr>
+  <tr><td><strong>Fugir</strong></td><td>Ação + movimento: você se afasta 18 m sem provocar reação.</td></tr>
   </tbody></table></div>
 
-  <h3>Cair</h3>
-  <p>Com 0 PV você cai inconsciente e <em>Morrendo</em>. No início de cada turno seu, role
-  Corpo + Fortitude DT 7. Três falhas: morte. Três sucessos, ou alguém te estabiliza: você
-  acorda com 1 PV depois da cena.</p>
+  <h3>Cair e morrer</h3>
+  <ol class="passos">
+    <li><b>0 PV:</b> você cai inconsciente e <em>Morrendo</em>. Dano que passa de 0 é ignorado — exceto se o que sobrar for maior ou igual ao seu PV máximo: aí é morte na hora.</li>
+    <li><b>No início de cada turno seu,</b> role Corpo + Fortitude DT 7 e marque sucesso ou falha. As marcas se acumulam até o fim da cena. Crítico conta dois sucessos; Desastre, duas falhas.</li>
+    <li><b>Sofrer dano enquanto Morrendo</b> marca uma falha; um crítico do atacante, duas.</li>
+    <li><b>Três falhas:</b> morte. <b>Três sucessos</b> ou alguém Estabilizar: você fica <em>Estável</em> — inconsciente, a 0 PV, sem rolar mais. Acorda com 1 PV depois de uma hora.</li>
+    <li><b>Qualquer cura</b> te acorda na hora, com aquele PV, e apaga as marcas. Estável que sofre dano volta a Morrendo, com as marcas zeradas.</li>
+  </ol>
+  <p>Cair deixa marca: depois de uma cena em que você ficou Morrendo, perca <span class="dado">1d4</span> de Determinação.</p>
 
   <h3>Determinação</h3>
   <p>Dementadores, maldições, horrores e perdas tiram Determinação. Com 0 DET você fica
@@ -1762,6 +1796,27 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td class="num">11</td><td>XXXXX</td><td class="num">165</td><td class="num">14</td><td>d12+d12+d12</td><td>RA+13</td><td class="num">14</td><td class="num">5</td><td class="num">4</td><td class="num">4</td></tr>
   </tbody></table></div>
   <p><strong>DT</strong> é a dificuldade para resistir aos Poderes dela. <strong>Fases</strong> só valem para o chefe: o PV se divide em blocos iguais, e o golpe que quebra uma Fase para no piso dela. Ao quebrar uma Fase, a criatura se livra das condições e muda — um Poder novo, o teto que desaba, uma forma nova. Cura nunca devolve Fase.</p>
+  <h3>Montar o encontro</h3>
+  <p>A regra do chefe (ano do grupo + 1) é para <strong>quatro personagens</strong>. Ajuste:</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Grupo</th><th>Chefe</th><th>Lacaios (Perigo ano – 3)</th></tr></thead>
+  <tbody>
+  <tr><td>2 personagens</td><td>ano – 1</td><td>até 2</td></tr>
+  <tr><td>3 personagens</td><td>ano</td><td>até 3</td></tr>
+  <tr><td>4 personagens</td><td>ano + 1</td><td>até 4</td></tr>
+  <tr><td>5 ou mais</td><td>ano + 2</td><td>até 5</td></tr>
+  </tbody></table></div>
+  <p>Cada aliado NPC conta como meio personagem. Dois chefes juntos contam como um chefe de Perigo + 2.</p>
+
+  <h3>Regras da Forja</h3>
+  <ul>
+    <li><strong>O Mestre escolhe ou rola.</strong> Rolou algo que não combina com a frase da criatura, role de novo.</li>
+    <li><strong>Sem repetição:</strong> nenhum Traço ou Poder duas vezes.</li>
+    <li><strong>Traços pesados</strong> — Regeneração, Invisível, Come Magia, Couro Mágico — no máximo <strong>um</strong> abaixo de Perigo 6, e dois a partir dele. Cada pesado além disso conta como +1 Perigo na hora de montar o encontro.</li>
+    <li><strong>A Fraqueza enfraquece, não mata</strong>: tira a criatura da luta por uma rodada, anula um Traço, ou abre um caminho sem combate. Só as fraquezas do mundo (o galo e o Basilisco) matam.</li>
+    <li><strong>Dano em DET:</strong> criaturas que ferem a alma (Dementador, Lethifold) causam o dano da Tábua na Determinação, não no PV.</li>
+  </ul>
+
   <h3>Arquétipos</h3>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>d8</th><th>Arquétipo</th><th>Ajuste</th><th>Exemplos</th></tr></thead>
@@ -1875,6 +1930,12 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>Rabo-Córneo Húngaro</strong></td><td class="num">9</td><td>Bruto</td><td class="num">143</td><td class="num">11</td><td>d12+d12, RA+9</td><td>Voo · Couro Mágico · Resistência (fogo) · Sopro · Investida · Ataque Duplo</td><td>Os olhos: Conjunctivitis o cega</td></tr>
   <tr><td><strong>Basilisco</strong></td><td class="num">11</td><td>Predador</td><td class="num">149</td><td class="num">14</td><td>d12+d12+d12, RA+15</td><td>Veneno · Aterrorizante · Escava · Mente Fechada · Olhar (morte; refletido, petrifica)</td><td>Canto do galo</td></tr>
   </tbody></table></div>
+  <h3>Notas das fichas</h3>
+  <ul>
+    <li><strong>Hipogrifo:</strong> Ataque Duplo é passivo — dois golpes de garra por rodada, cada um RA + 1. Investida é o Poder: no lugar dos dois golpes, move o dobro e dá um golpe só.</li>
+    <li><strong>Dementador:</strong> o ataque tira Determinação. Quem chega a 0 DET perto dele fica Desesperado; no turno seguinte, se ainda estiver a 0, o Dementador pode dar o Beijo como ação. Patrono o expulsa.</li>
+    <li><strong>Basilisco:</strong> olhar <em>direto</em> nos olhos: morte, sem resistência. Olhar <em>indireto</em> (reflexo, água, fantasma, câmera): Petrificado até a Restauradora de Mandrágoras. Quem fecha os olhos fica Cego, mas imune. O Olhar é o Poder dele, uma vez por rodada, em quem estiver de frente a até 18 m.</li>
+  </ul>
 </section>
 
 <!-- ==================== X ==================== -->
@@ -1966,15 +2027,17 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td class="d">9</td><td>Freixo</td><td>Vontade</td></tr>
   <tr><td class="d">10</td><td>Cedro</td><td>Intuição</td></tr>
   <tr><td class="d">11</td><td>Nogueira</td><td>Criar feitiços e poções</td></tr>
-  <tr><td class="d">12</td><td>Espinheiro</td><td>Maldições — e um Desastre a mais por sessão</td></tr>
+  <tr><td class="d">12</td><td>Espinheiro</td><td>Artes das Trevas — mas nelas o Desastre acontece com todos os dados em 1 ou 2</td></tr>
   </tbody></table></div>
-  <p>A afinidade vale uma vez por cena.</p>
+  <p>A afinidade vale uma vez por cena e entra no limite de +2 passos. Madeira e núcleo valem só na sua própria varinha.</p>
+  <h3>Lealdade da varinha</h3>
+  <p>A varinha obedece a quem a conquistou. Quem desarma, derrota ou rouba a varinha de alguém num confronto <strong>passa a ser o dono dela</strong>: usa sem a penalidade de varinha emprestada, e o antigo dono, se a recuperar, sofre –1 passo até reconquistá-la. Varinha comprada ou herdada sem confronto continua com o dono anterior até ele morrer ou perder um duelo.</p>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>d6</th><th>Núcleo</th><th>Efeito</th></tr></thead>
   <tbody>
-  <tr><td class="d">1–2</td><td><strong>Corda de coração de dragão</strong></td><td>+1 de dano em feitiços de ataque. Aprende rápido: +1 feitiço por ano.</td></tr>
+  <tr><td class="d">1–2</td><td><strong>Corda de coração de dragão</strong></td><td>+1 de dano em feitiços de ataque.</td></tr>
   <tr><td class="d">3–4</td><td><strong>Pelo de unicórnio</strong></td><td>Cura RA + 1. Artes das Trevas –1 passo.</td></tr>
-  <tr><td class="d">5</td><td><strong>Pena de fênix</strong></td><td>Uma vez por sessão, rerrole um teste de magia. Difícil de domar: emprestada, –2 passos.</td></tr>
+  <tr><td class="d">5</td><td><strong>Pena de fênix</strong></td><td>Uma vez por sessão, rerrole um dado de um teste de magia. Difícil de domar: emprestada, –2 passos.</td></tr>
   <tr><td class="d">6</td><td><strong>Raro</strong> (pelo de testrálio, cabelo de veela, pena de trovão)</td><td>O Mestre define; sempre com um preço.</td></tr>
   </tbody></table></div>
   <div class="rolagem"><table class="compacta">
@@ -2092,6 +2155,9 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td class="d">11</td><td>Todos num raio de 6 m começam a soluçar.</td></tr>
   <tr><td class="d">12</td><td>Nada acontece… por enquanto. O Mestre guarda o efeito.</td></tr>
   </tbody></table></div>
+  <h3>Quadribol</h3>
+  <p>Uma partida se joga em <strong>lances</strong>. Em cada lance, artilheiros, goleiros e batedores rolam Corpo + Voo contra o adversário da mesma posição: artilheiro que vence o goleiro marca 10 pontos; batedor que vence o batedor rival tira um jogador do próximo lance. No fim de cada lance, os apanhadores rolam Coração + Voo DT 13; quem passar pega o pomo (150 pontos) e a partida acaba. A cada cinco lances sem pomo, a DT cai 2.</p>
+
   <h3>Pontos das Casas</h3>
   <p>O Mestre dá de 5 a 50 pontos por cena boa e tira de 5 a 50 por regra quebrada. No fim do ano, a Casa vencedora ganha <strong>+1 passo</strong> em uma perícia à escolha de cada personagem dela, até o próximo ano.</p>
 </section>
@@ -2113,6 +2179,25 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td class="num">8–11</td><td>Carreira</td><td>A cada nível: +1 passo numa perícia, +3 PV, 2 feitiços. No 9: +1 passo num atributo.</td></tr>
   </tbody></table></div>
   <p>Teto: <span class="dado">d12</span> em perícias, <span class="dado">d10</span> em atributos até o nível 7 e <span class="dado">d12</span> depois.</p>
+  <h3>Começar adulto</h3>
+  <p>Para uma campanha fora de Hogwarts, crie a ficha de nível 1 e aplique a tabela até o nível escolhido de uma vez. O padrão para adultos é o nível 8. Escolha uma carreira; ela substitui as matérias.</p>
+
+  <h3>Carreiras</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Carreira</th><th>Perícias (+1 passo em duas)</th><th>Habilidade</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Auror</strong></td><td>Feitiços, Investigação, Percepção</td><td>Uma vez por cena, um dado extra num ataque ou num Protego.</td></tr>
+  <tr><td><strong>Curandeiro</strong></td><td>Medibruxaria, Poções, Herbologia</td><td>Suas curas somam +2. Estabilizar é movimento.</td></tr>
+  <tr><td><strong>Quebrador de Maldições</strong></td><td>Artes das Trevas, Conhecimento Mágico, Reflexos</td><td>+1 passo para desfazer maldições, armadilhas mágicas e proteções.</td></tr>
+  <tr><td><strong>Magizoologista</strong></td><td>Trato de Criaturas, Herbologia, Atletismo</td><td>Criaturas de Perigo até o seu nível – 2 não te atacam se não forem provocadas.</td></tr>
+  <tr><td><strong>Professor</strong></td><td>Conhecimento Mágico, Persuasão, uma matéria</td><td>Ensina um feitiço em um dia, não uma semana; ajudar dá +2 passos.</td></tr>
+  <tr><td><strong>Fabricante de Varinhas</strong></td><td>Conhecimento Mágico, Herbologia, Intuição</td><td>Lê madeira e núcleo de qualquer varinha; conserta varinhas quebradas.</td></tr>
+  <tr><td><strong>Funcionário do Ministério</strong></td><td>Persuasão, Conhecimento Mágico, Intuição</td><td>Uma vez por sessão, consegue um documento, um acesso ou um favor oficial.</td></tr>
+  <tr><td><strong>Jogador de Quadribol</strong></td><td>Voo, Atletismo, Reflexos</td><td>+1 passo em Voo; a fama abre portas.</td></tr>
+  <tr><td><strong>Pesquisador</strong></td><td>Investigação, Conhecimento Mágico, uma matéria</td><td>Testes longos de pesquisa, feitiço ou poção somam +2 por etapa.</td></tr>
+  <tr><td><strong>Especialista em Artes das Trevas</strong></td><td>Artes das Trevas, Vontade, Oclumência</td><td>+1 passo para resistir a maldições; reconhece magia negra só de olhar.</td></tr>
+  </tbody></table></div>
+
   <h3>N.O.M.s e N.I.E.M.s</h3>
   <p>Ao fim do 5º e do 7º ano, cada personagem rola Mente + perícia nas matérias que quiser, DT 9 (N.O.M.) ou DT 11 (N.I.E.M.). Cada aprovação abre carreiras: Auror pede Feitiços, Poções, Transfiguração e Defesa; Curandeiro pede Poções, Herbologia e Medibruxaria.</p>
 </section>
@@ -2134,14 +2219,40 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td>d10+d12</td><td class="num">12</td><td class="num">95%</td><td class="num">88%</td><td class="num">77%</td><td class="num">63%</td></tr>
   <tr><td>d12+d12</td><td class="num">13</td><td class="num">96%</td><td class="num">90%</td><td class="num">81%</td><td class="num">69%</td></tr>
   </tbody></table></div>
-  <p>A chance de crítico também cresce com o dado: um <span class="dado">d6</span> só tem um resultado que pode repetir (o 6); um <span class="dado">d12</span> tem sete. Dados extras aumentam ao mesmo tempo o total e a chance de crítico.</p>
+  <p>A chance de crítico também cresce com o dado: dois dados iguais de 4 ou mais acontecem mais com dados pequenos, e passar a DT por 6 acontece mais com dados grandes — as duas portas se compensam, e todo personagem tem acesso ao crítico. Dados extras aumentam ao mesmo tempo o total e a chance de crítico.</p>
+
+  <h3>Exemplo de ficha</h3>
+  <p><strong>Ana Ferraz</strong>, 2º ano, Grifinória, nascida-trouxa. Corpo <span class="dado">d8</span>, Mente <span class="dado">d6</span>, Coração <span class="dado">d6</span>. Feitiços <span class="dado">d8</span>; Reflexos, Voo, Vontade e Intuição <span class="dado">d6</span>; o resto <span class="dado">d4</span>. PV 16, DET 10, Defesa 8, Ímpeto 1. Varinha de cerejeira, corda de dragão, 11 polegadas, flexível. Feitiços: Expelliarmus (Domina); Lumos, Alohomora, Flipendo, Protego, Incendio (Sabe).</p>
+
+  <h3>Exemplo de combate</h3>
+  <p>Ana enfrenta um Grindylow (Perigo 2, Defesa 7, PV 12) na margem do lago. Iniciativa: Ana rola <span class="dado">d8</span>+<span class="dado">d6</span> = 9; o Grindylow, <span class="dado">d6</span>+<span class="dado">d6</span> = 6. Ana lança Flipendo: Mente <span class="dado">d6</span> + Feitiços <span class="dado">d8</span> = 4 + 5 = 9 contra Defesa 7, acerta. Dano RA + 0 = 5; o Grindylow fica com 7 PV e é empurrado 3 m. Ele avança e ataca: 3 + 5 = 8 contra Defesa 8, acerta. Ana reage com Protego: 2 + 6 = 8, igualou — bloqueado. Na segunda rodada, Ana tira 6 e 6: crítico. Dano 6 + 6 = 12, o Grindylow some na água. Ana ganha 1 Ímpeto.</p>
+
+  <h3>Glossário</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Termo</th><th>O que é</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Ação / movimento / reação</strong></td><td>O que você faz no turno; a reação é uma por rodada, fora do turno.</td></tr>
+  <tr><td><strong>Círculo</strong></td><td>Dificuldade de um feitiço, de 1 a 4, mais os Proibidos.</td></tr>
+  <tr><td><strong>Crítico</strong></td><td>Dois dados iguais de 4+, ou passar a DT por 6+.</td></tr>
+  <tr><td><strong>Defesa</strong></td><td>O número que um ataque precisa alcançar.</td></tr>
+  <tr><td><strong>Desastre</strong></td><td>Todos os dados rolados em 1.</td></tr>
+  <tr><td><strong>DET</strong></td><td>Determinação: a resistência da alma ao medo e às trevas.</td></tr>
+  <tr><td><strong>Domínio</strong></td><td>Grau de um feitiço: Aprendendo, Sabe, Domina.</td></tr>
+  <tr><td><strong>DT</strong></td><td>Dificuldade de um teste. Padrão 7.</td></tr>
+  <tr><td><strong>DT do feitiço</strong></td><td>5 + Círculo + passo da perícia: o que o alvo precisa alcançar para resistir.</td></tr>
+  <tr><td><strong>Ímpeto</strong></td><td>De 0 a 3; força, arrisca e ensina feitiços.</td></tr>
+  <tr><td><strong>Passo</strong></td><td>Um tamanho de dado acima ou abaixo. Bônus máximo: +2 passos.</td></tr>
+  <tr><td><strong>Perigo</strong></td><td>O nível de uma criatura, de 1 a 11.</td></tr>
+  <tr><td><strong>RA / RB</strong></td><td>Maior e menor resultado entre os dados somados.</td></tr>
+  <tr><td><strong>Teste longo</strong></td><td>Várias etapas somando RA ou RB até o Preparo.</td></tr>
+  </tbody></table></div>
 </section>
 
 
 <!-- ==================== COLOFÃO ==================== -->
 <footer class="colofao">
   <h3>Sobre esta edição</h3>
-  <p>Esta é a versão <strong>0.2</strong>, de 16/11/2026. Os números ainda não
+  <p>Esta é a versão <strong>0.3</strong>, de 16/11/2026. Os números ainda não
   passaram por mesa nem por simulador: são a primeira medida, e a primeira sessão é quem
   vai corrigi-los.</p>
   <p>Varinhas e Segredos é um projeto de fã, sem fins lucrativos. Harry Potter e o Mundo
@@ -2162,7 +2273,7 @@ function rolarOrdem() {
   const vals = r.map(x => x.v).sort((x, y) => y - x);
   const usados = vals.slice(0, 3);
   const total = usados.reduce((s, v) => s + v, 0);
-  const crit = vals.some((v, i) => v >= 6 && vals.indexOf(v) !== i);
+  const crit = vals.some((v, i) => v >= 4 && vals.indexOf(v) !== i) || total >= dt + 6;
   const desastre = vals.every(v => v === 1);
   const ok = !desastre && (crit || total >= dt);
   const visor = document.getElementById('r-visor');
@@ -2171,7 +2282,7 @@ function rolarOrdem() {
   document.getElementById('r-detalhe').innerHTML =
     r.map(x => 'd' + x.f + ' → <b>' + x.v + '</b>').join(' · ') +
     (r.length > 3 ? ' (o menor sai)' : '') +
-    '<br>RA <b>' + vals[0] + '</b> · RB <b>' + vals[vals.length - 1] + '</b> · ' +
+    '<br>RA <b>' + vals[0] + '</b> · RB <b>' + usados[usados.length - 1] + '</b> · ' +
     (desastre ? '<b>Desastre!</b> Role na tabela de Desastres.' : crit ? '<b>Crítico!</b> Sucesso automático.' : ok ? 'Sucesso contra DT ' + dt + '.' : 'Falha contra DT ' + dt + '.');
 }
 </script>

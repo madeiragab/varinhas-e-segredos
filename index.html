@@ -3,75 +3,991 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Varinhas e Segredos</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#070b14;--ink:#e8e1cf;--mut:#9aa3b5;--gold:#d8b46a;--card:#0e1524cc;--line:#2a3550;--red:#b4433a;--green:#5f9a6b}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 "EB Garamond",serif}
-h1,h2,h3{font-family:Cinzel,serif;color:var(--gold);line-height:1.2}
-h2{font-size:1.7rem;border-bottom:1px solid var(--line);padding-bottom:.3em;margin-top:2.2em}
-h3{font-size:1.15rem;margin-top:1.6em}
-a{color:var(--gold)}
-/* ---------- CAPA ---------- */
-.cover{position:relative;height:100vh;min-height:560px;overflow:hidden;background:radial-gradient(ellipse at 62% 22%,#3a5a7a 0%,#1a2c44 18%,#0b1626 45%,#05080f 100%)}
-.cover svg{position:absolute;inset:0;width:100%;height:100%}
-.moon{filter:drop-shadow(0 0 40px #cfe3ff) drop-shadow(0 0 90px #8fb3e0)}
-.fog{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,transparent 40%,#000a 100%)}
-.title{position:absolute;left:0;right:0;bottom:12%;text-align:center;padding:0 16px}
-.title h1{font-family:"Cinzel Decorative",serif;font-size:clamp(2.2rem,7vw,5rem);margin:0;color:#f1dca6;text-shadow:0 0 18px #000,0 0 40px #d8b46a55}
-.title p{font-family:Cinzel,serif;letter-spacing:.3em;color:#cbd6e8;margin:.4em 0 0;font-size:clamp(.75rem,2vw,1rem);text-shadow:0 0 8px #000}
-.twinkle{animation:tw 3s infinite alternate}
-@keyframes tw{from{opacity:.3}to{opacity:1}}
-/* ---------- LAYOUT ---------- */
-nav{position:sticky;top:0;z-index:5;background:#05080fee;border-bottom:1px solid var(--line);display:flex;gap:4px;flex-wrap:wrap;justify-content:center;padding:6px 16px}
-nav a{font-family:Cinzel,serif;font-size:.8rem;text-decoration:none;padding:6px 10px;border-radius:4px}
-nav a:hover{background:#1b2640}
-main{max-width:960px;margin:0 auto;padding:16px}
-table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.95rem}
-th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
-th{background:#131c30;font-family:Cinzel,serif;font-size:.8rem;color:var(--gold)}
-.wrap{overflow-x:auto}
-.box{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);padding:12px 16px;border-radius:6px;margin:1em 0}
-.gen{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;margin:1em 0}
-button,select{font-family:Cinzel,serif;background:#1b2640;color:var(--ink);border:1px solid var(--gold);border-radius:4px;padding:8px 14px;cursor:pointer;font-size:.85rem;margin:4px 4px 4px 0}
-button:hover{background:#2a3a60}
-.out{margin-top:12px;white-space:normal}
-.stat{background:#0a101d;border:1px solid var(--line);border-radius:6px;padding:12px 14px}
-.stat b{color:var(--gold)}
-.tag{display:inline-block;font-size:.75rem;font-family:Cinzel,serif;border:1px solid var(--line);border-radius:3px;padding:0 6px;margin-right:4px;color:var(--mut)}
-.muted{color:var(--mut)}
-.dice{font-size:1.4rem;font-family:Cinzel,serif}
-input{background:#0a101d;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:6px;width:70px;font-size:1rem}
-footer{text-align:center;color:var(--mut);padding:40px 16px;font-size:.85rem}
-</style>
-</head>
-<body>
+<title>Varinhas e Segredos — RPG de mesa</title>
 
-<section class="cover">
-<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<style>
+/* ============================================================
+   VARINHAS E SEGREDOS — o livro
+   Este arquivo é um TEMPLATE. Rode `python build.py` para gerar
+   o livro final, com a folha de estilo e a capa embutidas.
+   A estrutura veio da Ascensão dos Semideuses; a paleta é outra:
+   azul-noite, ouro de armadura e uma única cor quente, o sangue.
+   ============================================================ */
+
+:root {
+  --sangue:      #5A3A8C;
+  --sangue-vivo: #A585E6;
+  --ouro:        #8A6A1E;
+  --ouro-luz:    #D9B45A;
+
+  --fundo:      #ECE9E2;
+  --papel:      #FAF8F3;
+  --superficie-2:#E8E3D9;
+  --texto:      #1A1922;
+  --texto-suave:#645F6E;
+  --borda:      #D5CFC4;
+  --borda-forte:#B3AA9A;
+  --acento:     var(--sangue);
+  --acento-fraco:#ECE5F7;
+  --sombra:     rgba(18, 20, 40, .16);
+
+  --serifa-titulo: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
+  --serifa-texto:  Charter, "Bitstream Charter", "Sitka Text", Georgia, "Times New Roman", serif;
+  --sans:          "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono:          "Cascadia Mono", "Consolas", "SF Mono", "Roboto Mono", ui-monospace, monospace;
+
+  /* A MANCHA. Uma só medida para o livro inteiro.
+     A largura da página é a mancha mais as margens laterais; nenhum elemento
+     define largura própria, então tudo compartilha a mesma borda esquerda e
+     a mesma borda direita — é isso que faz a página parecer impressa. */
+  --mancha:  34rem;   /* ~68 caracteres */
+  --margem:  clamp(1.4rem, 5vw, 3.2rem);
+  --pagina:  calc(var(--mancha) + var(--margem) * 2);
+}
+
+/* O tema escuro é da tela. No papel, o livro é sempre claro — ver IMPRESSÃO. */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --fundo:       #080B14;
+    --papel:       #10141F;
+    --superficie-2:#181E2E;
+    --texto:       #E7E3D9;
+    --texto-suave: #9C99A8;
+    --borda:       #262C40;
+    --borda-forte: #3A4260;
+    --acento:      var(--sangue-vivo);
+    --acento-fraco:#241A3A;
+    --ouro:        var(--ouro-luz);
+    --sombra:      rgba(0, 0, 0, .6);
+  }
+}
+@media screen {
+  :root[data-theme="dark"] {
+    --fundo:       #080B14;
+    --papel:       #10141F;
+    --superficie-2:#181E2E;
+    --texto:       #E7E3D9;
+    --texto-suave: #9C99A8;
+    --borda:       #262C40;
+    --borda-forte: #3A4260;
+    --acento:      var(--sangue-vivo);
+    --acento-fraco:#241A3A;
+    --ouro:        var(--ouro-luz);
+    --sombra:      rgba(0, 0, 0, .6);
+  }
+}
+:root[data-theme="light"] {
+  --fundo:       #ECE9E2;
+  --papel:       #FAF8F3;
+  --superficie-2:#E8E3D9;
+  --texto:       #1A1922;
+  --texto-suave: #645F6E;
+  --borda:       #D5CFC4;
+  --borda-forte: #B3AA9A;
+  --acento:      var(--sangue);
+  --acento-fraco:#ECE5F7;
+  --ouro:        #8A6A1E;
+  --sombra:      rgba(18, 20, 40, .16);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 1.25rem; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--serifa-texto);
+  font-size: 17.5px;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mancha p a, .mancha li a, .mancha td a, .colofao a {
+  color: var(--acento);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--acento) 45%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
+}
+.mancha a:focus-visible, .biblioteca-flutuante a:focus-visible {
+  outline: 2px solid var(--ouro);
+  outline-offset: 3px;
+}
+
+/* ============ MINIESTANTE FLUTUANTE ============ */
+.biblioteca-flutuante {
+  position: fixed; right: clamp(.65rem, 2vw, 1.25rem); bottom: 1rem;
+  z-index: 120; font-family: var(--sans); color: var(--texto);
+}
+.biblioteca-flutuante > summary {
+  list-style: none; width: 2.35rem; height: 2.35rem;
+  display: grid; place-items: center; margin-left: auto;
+  border: 1px solid var(--ouro); border-radius: 50%;
+  color: var(--ouro); background: var(--papel);
+  box-shadow: 0 .35rem 1rem var(--sombra); cursor: pointer;
+  transition: transform .16s ease, background .16s ease, color .16s ease;
+}
+.biblioteca-flutuante > summary::-webkit-details-marker { display: none; }
+.biblioteca-flutuante > summary span { font-size: 1.38rem; line-height: 1; }
+.biblioteca-flutuante > summary:hover,
+.biblioteca-flutuante > summary:focus-visible,
+.biblioteca-flutuante[open] > summary {
+  color: var(--papel); background: var(--acento); transform: translateY(-2px);
+  outline: none;
+}
+.biblioteca-flutuante nav {
+  position: absolute; right: 0; bottom: calc(100% + .55rem);
+  width: min(15rem, calc(100vw - 1.2rem)); padding: .55rem;
+  border: 1px solid var(--borda-forte); border-radius: 4px;
+  background: var(--papel); box-shadow: 0 .7rem 2rem var(--sombra);
+}
+.biblioteca-flutuante nav > strong {
+  display: block; padding: .15rem .3rem .45rem;
+  color: var(--texto-suave); font-size: .62rem;
+  text-transform: uppercase; letter-spacing: .14em;
+}
+.biblioteca-flutuante nav a {
+  display: grid; grid-template-columns: 1.65rem 1fr; gap: .55rem;
+  align-items: center; padding: .38rem .35rem;
+  color: var(--texto); text-decoration: none; border-radius: 3px;
+}
+.biblioteca-flutuante nav a:hover { background: var(--superficie-2); }
+.biblioteca-flutuante nav a b,
+.biblioteca-flutuante nav a small { display: block; line-height: 1.2; }
+.biblioteca-flutuante nav a b { font-family: var(--serifa-titulo); font-size: .82rem; }
+.biblioteca-flutuante nav a small { margin-top: .12rem; color: var(--texto-suave); font-size: .58rem; }
+.biblioteca-flutuante nav a.estante-completa {
+  display: block; margin-top: .3rem; padding-top: .5rem;
+  border-top: 1px solid var(--borda); color: var(--acento);
+  text-align: center; font-size: .64rem; text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* ============ AVISO EDITORIAL ============ */
+.aviso-independencia {
+  max-width: var(--pagina); margin: 1rem auto 0; padding: 1rem var(--margem) 1.2rem;
+  color: var(--texto-suave); background: var(--papel); border: 1px solid var(--borda);
+  font-family: var(--sans); font-size: .68rem; line-height: 1.55; text-align: center;
+}
+.aviso-independencia strong { color: var(--ouro); }
+
+/* ============ O LIVRO COMO OBJETO ============ */
+/* Uma coluna única, da capa à contracapa. */
+.livro {
+  max-width: var(--pagina);
+  margin: 0 auto;
+  background: var(--papel);
+  border-left: 1px solid var(--borda);
+  border-right: 1px solid var(--borda);
+}
+@media (max-width: 52rem) {
+  .livro { border-left: none; border-right: none; }
+}
+
+/* A mancha de texto: a única coisa que define as margens laterais. */
+.mancha { padding: 0 var(--margem); }
+
+/* ============ AS CAPAS ============ */
+/* Capa e contracapa sangram até a borda da página, como numa capa impressa,
+   e têm exatamente a largura do livro. */
+.capa-pagina { display: block; background: #05070D; }
+.capa-pagina img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.capa-pagina.frente { border-bottom: 1px solid var(--borda); }
+.capa-pagina.fundo  { border-top: 1px solid var(--borda); }
+
+/* ============ FOLHA DE ROSTO ============ */
+.rosto {
+  padding: clamp(3.5rem, 12vh, 8rem) 0 clamp(3rem, 9vh, 5.5rem);
+  text-align: center;
+  border-bottom: 1px solid var(--borda);
+}
+.rosto h1 {
+  font-family: var(--serifa-titulo);
+  font-size: clamp(2rem, 6.5vw, 3.4rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: 0 0 1.4rem;
+  text-wrap: balance;
+}
+.rosto h1 span { display: block; color: var(--acento); }
+.rosto .tomo {
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .38em;
+  font-size: .78rem;
+  color: var(--texto-suave);
+  padding-left: .38em;
+  margin: 0 0 2.5rem;
+}
+.rosto .epigrafe {
+  font-size: 1.06rem;
+  font-style: italic;
+  color: var(--texto-suave);
+  max-width: 26rem;
+  margin: 0 auto;
+  text-wrap: pretty;
+}
+.rosto .selo { margin: 0 auto 2.5rem; display: block; }
+
+/* ============ SUMÁRIO ============ */
+.sumario { padding: clamp(3rem, 8vh, 5rem) 0; }
+.sumario h2 {
+  font-family: var(--serifa-titulo);
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--texto-suave);
+  margin: 0 0 2.5rem;
+  padding-left: .22em;
+}
+.sumario ol { list-style: none; padding: 0; margin: 0; }
+.sumario li { margin: 0; }
+.sumario a {
+  display: grid;
+  grid-template-columns: 2.6rem 1fr;
+  gap: .9rem;
+  align-items: baseline;
+  padding: .7rem 0;
+  border-bottom: 1px solid var(--borda);
+  text-decoration: none;
+  color: var(--texto);
+}
+.sumario a:hover, .sumario a:focus-visible { background: var(--superficie-2); }
+/* O sumário mora dentro da mancha, e a regra de links do texto corrido
+   (".mancha li a") pesa mais que ".sumario a". Sem isto o índice inteiro saía
+   sublinhado e na cor de destaque. */
+.mancha .sumario a { text-decoration: none; color: var(--texto); }
+.sumario .alg {
+  font-family: var(--serifa-titulo);
+  font-size: 1.1rem;
+  color: var(--acento);
+  text-align: right;
+}
+.sumario .tit { font-family: var(--serifa-titulo); font-size: 1.16rem; }
+.sumario .sub {
+  display: block;
+  font-family: var(--sans);
+  font-size: .76rem;
+  color: var(--texto-suave);
+  margin-top: .15rem;
+}
+
+/* ============ CAPÍTULOS ============ */
+.capitulo { padding: clamp(3rem, 9vh, 6rem) 0 1rem; }
+
+.abertura {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--borda);
+}
+.abertura .alg {
+  font-family: var(--serifa-titulo);
+  font-size: 1rem;
+  letter-spacing: .3em;
+  color: var(--ouro);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+  padding-left: .3em;
+}
+.abertura h2 {
+  font-family: var(--serifa-titulo);
+  font-size: clamp(1.9rem, 5.5vw, 2.7rem);
+  line-height: 1.04;
+  margin: 0 0 .5rem;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  text-wrap: balance;
+}
+.abertura p {
+  font-style: italic;
+  color: var(--texto-suave);
+  max-width: 26rem;
+  margin: 0 auto;
+}
+
+h3 {
+  font-family: var(--serifa-titulo);
+  font-size: 1.42rem;
+  margin: 2.8rem 0 .7rem;
+  text-wrap: balance;
+}
+h4 {
+  font-family: var(--sans);
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  color: var(--acento);
+  margin: 2rem 0 .6rem;
+}
+/* Nenhuma largura própria: a mancha manda. */
+p, li { text-wrap: pretty; }
+p { margin: 0 0 1.1rem; }
+ul, ol { padding-left: 1.2rem; margin: 0 0 1.3rem; }
+li { margin-bottom: .35rem; }
+
+/* Linha de dados centralizada, como a distribuição de atributos. */
+p.linha-dados {
+  font-family: var(--mono);
+  font-size: 1.3rem;
+  color: var(--acento);
+  text-align: center;
+  letter-spacing: .1em;
+}
+em.termo { font-style: normal; color: var(--ouro); font-weight: 700; }
+a { color: var(--acento); }
+
+/* capitular */
+p.abre::first-letter {
+  float: left;
+  font-family: var(--serifa-titulo);
+  font-size: 3.9em;
+  line-height: .82;
+  padding: .06em .1em 0 0;
+  color: var(--acento);
+}
+
+.dado {
+  font-family: var(--mono);
+  font-size: .86em;
+  background: var(--acento-fraco);
+  color: var(--acento);
+  padding: .1em .42em;
+  border-radius: 3px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+/* ornamento entre seções */
+.ornamento {
+  text-align: center;
+  margin: 3rem 0;
+  color: var(--ouro);
+  font-size: 1rem;
+  letter-spacing: 1.1em;
+  padding-left: 1.1em;
+  opacity: .7;
+}
+
+/* Linha de identificação logo abaixo do nome de um exército. */
+p.etiqueta-livro {
+  font-family: var(--sans);
+  font-size: .8rem;
+  color: var(--texto-suave);
+  margin: -.2rem 0 1rem;
+}
+p.etiqueta-livro strong { color: var(--ouro); font-weight: 600; }
+
+code {
+  font-family: var(--mono);
+  font-size: .9em;
+  background: var(--superficie-2);
+  padding: .05em .35em;
+  border-radius: 3px;
+}
+
+/* ============ BLOCOS ============ */
+.destaque {
+  border-top: 2px solid var(--acento);
+  border-bottom: 1px solid var(--borda);
+  background: var(--superficie-2);
+  padding: 1.15rem 1.35rem;
+  margin: 1.8rem 0;
+}
+.destaque p:last-child { margin-bottom: 0; }
+.destaque .rotulo {
+  font-family: var(--sans);
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: var(--acento);
+  display: block;
+  margin-bottom: .45rem;
+}
+.destaque .formula {
+  font-family: var(--mono);
+  font-size: 1.12rem;
+  color: var(--acento);
+  margin: 0;
+  text-align: center;
+}
+
+.nota {
+  border-left: 2px solid var(--borda-forte);
+  padding: .3rem 0 .3rem 1.1rem;
+  margin: 1.8rem 0;
+  font-size: .96rem;
+  color: var(--texto-suave);
+}
+.nota strong { color: var(--ouro); }
+.nota p:last-child { margin-bottom: 0; }
+
+/* ============ FALA DE MESA ============ */
+/* Diálogo entre Mestre e jogadores: o exemplo de jogo do Livro I e as cenas
+   de exemplo do Guia usam o mesmo bloco. */
+.mesa {
+  border-left: 3px solid var(--ouro);
+  padding: .2rem 0 .2rem 1.1rem;
+  margin: 1.4rem 0;
+  font-size: .96rem;
+}
+.mesa p { margin: 0 0 .5rem; }
+.mesa p:last-child { margin-bottom: 0; }
+.mesa b { color: var(--acento); font-weight: 700; }
+.mesa em { color: var(--texto-suave); }
+
+/* ============ CARTÕES ============ */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1px;
+  background: var(--borda);
+  border: 1px solid var(--borda);
+  margin: 1.8rem 0;
+}
+.cartao { background: var(--papel); padding: 1.05rem 1.15rem; }
+/* A mancha comporta no máximo duas colunas de cartão. Com um número ímpar de
+   cartões, o último ficava ao lado de uma célula vazia pintada com a cor da
+   grade; ele passa a ocupar a linha inteira. */
+.grade > .cartao:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.cartao h5 {
+  font-family: var(--serifa-titulo);
+  font-size: 1.08rem;
+  margin: 0 0 .1rem;
+}
+.cartao .etiqueta {
+  font-family: var(--sans);
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ouro);
+  margin: 0 0 .55rem;
+}
+.cartao p { font-size: .93rem; margin-bottom: .55rem; }
+.cartao p:last-child { margin-bottom: 0; }
+.cartao .poder {
+  border-top: 1px solid var(--borda);
+  padding-top: .55rem;
+  margin-top: .55rem;
+  font-size: .9rem;
+}
+.cartao .poder b { display: block; color: var(--acento); font-size: .94rem; }
+
+/* ============ CLASSES ============ */
+.classe {
+  border-top: 3px double var(--ouro);
+  border-bottom: 1px solid var(--borda);
+  padding: 1.5rem 0 1.8rem;
+  margin: 2.2rem 0;
+}
+.classe-topo { display: flex; align-items: center; gap: .9rem; }
+.classe-topo h3 { margin: 0; font-size: 1.62rem; }
+.classe .papel {
+  font-family: var(--sans);
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--texto-suave);
+  margin: .3rem 0 1rem;
+}
+.recursos { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1.1rem 0; }
+.recurso {
+  flex: 1 1 5.2rem;
+  border: 1px solid var(--borda);
+  padding: .55rem .6rem;
+  text-align: center;
+  background: var(--superficie-2);
+}
+.recurso b {
+  display: block;
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  color: var(--acento);
+  font-variant-numeric: tabular-nums;
+}
+.recurso span {
+  display: block;
+  line-height: 1.35;
+  font-family: var(--sans);
+  font-size: .62rem;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  color: var(--texto-suave);
+}
+
+/* ============ TABELAS ============ */
+.rolagem { overflow-x: auto; margin: 1.6rem 0; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: var(--sans);
+  font-size: .87rem;
+  font-variant-numeric: tabular-nums;
+}
+th, td {
+  text-align: left;
+  padding: .5rem .7rem;
+  border-bottom: 1px solid var(--borda);
+  vertical-align: top;
+}
+th {
+  font-size: .67rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--texto-suave);
+  border-bottom: 1px solid var(--borda-forte);
+  font-weight: 600;
+}
+td.num, th.num { text-align: right; }
+/* Tabelas densas de números (a tabela rápida de inimigos): nada quebra linha. */
+table.compacta { font-size: .8rem; }
+table.compacta td, table.compacta th { white-space: nowrap; padding: .45rem .5rem; }
+
+
+/* ============ CAIXA DE DADOS ============ */
+.rolador {
+  background: #0C1020;
+  border: 1px solid #2A3150;
+  padding: 1.4rem;
+  margin: 2rem 0;
+  color: #E7E3D9;
+}
+.rolador-topo {
+  font-family: var(--sans);
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--ouro-luz);
+  margin-bottom: 1rem;
+}
+.rolador-linha { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+.rolador-visor {
+  font-family: var(--mono);
+  font-size: 2.9rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 3.4ch;
+  text-align: center;
+  color: #F2CF7A;
+  font-variant-numeric: tabular-nums;
+}
+.rolador-visor.critico { color: #86D693; }
+.rolador-visor.falha   { color: #E8632C; }
+.rolador-detalhe {
+  flex: 1 1 14rem; font-size: .92rem; color: #B9B6C4;
+  min-height: 3.4em;
+}
+.rolador-detalhe b { color: #F4F1EA; }
+.botoes { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1.1rem; }
+button {
+  font-family: var(--sans);
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: .55rem 1rem;
+  border: 1px solid #3A4260;
+  background: #161B2C;
+  color: #E2DECF;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+button:hover { background: #20273D; border-color: var(--ouro-luz); }
+button:focus-visible { outline: 2px solid var(--sangue-vivo); outline-offset: 2px; }
+button.principal { background: var(--sangue); border-color: var(--sangue); color: #F6F1FF; }
+button.principal:hover { background: var(--sangue-vivo); border-color: var(--sangue-vivo); }
+
+/* ============ ETAPAS ============ */
+.passos { counter-reset: passo; list-style: none; padding: 0; margin: 1.8rem 0; }
+.passos > li {
+  counter-increment: passo;
+  position: relative;
+  padding-left: 3.1rem;
+  margin-bottom: 1.4rem;
+}
+.passos > li::before {
+  content: counter(passo);
+  position: absolute; left: 0; top: -.05rem;
+  width: 2.15rem; height: 2.15rem;
+  display: grid; place-items: center;
+  border: 1px solid var(--ouro);
+  border-radius: 50%;
+  font-family: var(--serifa-titulo);
+  font-size: 1rem;
+  color: var(--ouro);
+}
+.passos > li b { display: block; font-family: var(--serifa-titulo); font-size: 1.14rem; }
+
+/* ============ FICHA ============ */
+.ficha { border: 1px solid var(--borda-forte); margin: 1.8rem 0; background: var(--papel); }
+.ficha-cabeca {
+  background: var(--superficie-2);
+  padding: 1rem 1.3rem;
+  border-bottom: 1px solid var(--borda-forte);
+}
+.ficha-cabeca h4 { margin: 0; color: var(--texto-suave); }
+.ficha-cabeca .nome { font-family: var(--serifa-titulo); font-size: 1.6rem; margin: .1rem 0 0; }
+.ficha-corpo { padding: 1.2rem 1.3rem; }
+.atributos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4.6rem, 1fr));
+  gap: .45rem;
+  margin: 0 0 1.2rem;
+}
+.atributo { text-align: center; border: 1px solid var(--borda); padding: .5rem .3rem; }
+.atributo .sigla {
+  font-family: var(--sans); font-size: .6rem;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--texto-suave); display: block;
+}
+.atributo .valor { font-family: var(--mono); font-size: 1.22rem; font-weight: 700; }
+.atributo .mod { font-family: var(--mono); font-size: .78rem; color: var(--acento); display: block; }
+
+/* ============ COLOFÃO ============ */
+.colofao {
+  border-top: 1px solid var(--borda);
+  margin-top: 4rem;
+  padding: 3rem 0 4rem;
+  font-size: .95rem;
+  color: var(--texto-suave);
+}
+.colofao h3 { margin-top: 0; color: var(--texto); }
+
+/* O carimbo de versão, escrito pelo build a partir do CHANGELOG. Quem tem um
+   PDF na mão precisa saber de quando ele é. */
+.versao-do-livro {
+  margin-top: 1.6rem;
+  padding-top: .9rem;
+  border-top: 1px solid var(--borda);
+  font-family: var(--sans);
+  font-size: .72rem;
+  color: var(--texto-suave);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ============ IMPRESSÃO ============ */
+/* A folha é A4. Os miolos ficam na mancha do @page; as capas são as únicas
+   páginas sem margem, para sangrarem até a borda como numa capa de verdade.
+   As cores são as mesmas da tela: cada livro imprime na sua própria paleta. */
+@media print {
+  /* A cor do papel vive aqui, e não em html/body: o navegador ignora o fundo
+     da raiz na impressão, mas pinta o fundo declarado no @page — e pinta a
+     folha inteira, margem inclusive. Sem var(): dentro do @page não existe
+     elemento de onde herdar. Cada livro repete este bloco com o seu tom. */
+  @page      { size: A4 portrait; margin: 16mm 18mm 18mm; background: #10141F; }
+  @page capa { margin: 0; background: #05070D; }
+
+  /* O livro impresso é o de couro escuro, o mesmo que aparece na tela, e é
+     escuro sempre — não importa se o sistema de quem imprime está no claro.
+     A raiz triplicada é de propósito: a paleta própria de cada livro vem
+     depois desta folha no arquivo montado, e um :root sozinho perderia para
+     ela. Cada livro repete este bloco com os seus tons. */
+  :root:root:root {
+    --fundo:       #080B14;
+    --papel:       #10141F;
+    --superficie-2:#181E2E;
+    --texto:       #E7E3D9;
+    --texto-suave: #9C99A8;
+    --borda:       #262C40;
+    --borda-forte: #3A4260;
+    --acento:      var(--sangue-vivo);
+    --acento-fraco:#241A3A;
+    --ouro:        var(--ouro-luz);
+  }
+
+  /* Sem isto o navegador joga fora todo fundo e imprime só o texto em preto. */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* O corpo do texto vinha de body, mas título, cartão e rótulo são medidos em
+     rem — ou seja, no tamanho da raiz, que continuava sendo o da tela (16px).
+     Encolher a raiz encolhe o livro inteiro junto, na mesma proporção. */
+  /* Cuidado: rem na própria raiz é circular — vale o tamanho inicial, 16px.
+     Por isso o tamanho da raiz sai daqui, sozinho, em pt. */
+  html { font-size: 9.5pt; background: none; }
+
+  body {
+    background: none;
+    color: var(--texto);
+    font-size: 1em;
+    line-height: 1.45;
+  }
+
+  .rolador, .botoes, .biblioteca-flutuante, .aviso-independencia { display: none !important; }
+  .livro { border: none; max-width: none; background: var(--papel); }
+  .mancha { padding: 0; }
+
+  /* ---- capas: uma folha inteira cada, a arte inteira, sem corte ---- */
+  .capa-pagina {
+    page: capa;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #05070D;
+    border: none;
+    overflow: hidden;
+    break-inside: avoid;      page-break-inside: avoid;
+    break-after: page;        page-break-after: always;
+  }
+  .capa-pagina img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .capa-pagina.fundo { break-before: page; page-break-before: always; }
+
+  /* ---- estrutura ---- */
+  .rosto, .sumario { break-after: page; page-break-after: always; }
+  .rosto  { padding: 22mm 0 16mm; border-bottom: none; }
+  .sumario { padding: 0; }
+  .capitulo { break-before: page; page-break-before: always; padding-top: 0; }
+  .abertura { break-after: avoid; page-break-after: avoid; }
+  h2, h3, h4, .abertura h2, .cartao h5 { break-after: avoid; page-break-after: avoid; }
+  h3, h4 { break-inside: avoid; page-break-inside: avoid; }
+  p, li { orphans: 3; widows: 3; }
+
+  /* ---- nada de rolagem no papel: o que rola na tela some na impressão ---- */
+  .rolagem, pre.bloco-codigo, .dado {
+    overflow: visible !important;
+    max-width: 100%;
+  }
+  pre.bloco-codigo { white-space: pre-wrap; overflow-wrap: anywhere; }
+  th, td { overflow-wrap: anywhere; }
+  table { font-size: .88rem; }
+  thead { display: table-header-group; }
+  tr, img { break-inside: avoid; page-break-inside: avoid; }
+
+  /* Blocos que só fazem sentido inteiros. A .grade fica de fora de propósito:
+     ela cresce mais que uma folha e, presa, deixava páginas quase vazias. */
+  .classe, .cartao, .ficha, .destaque, .nota, .aviso, .recursos, .atributos {
+    break-inside: avoid; page-break-inside: avoid;
+  }
+
+  /* A grade desenha as linhas com o próprio fundo aparecendo pelos vãos. Num
+     grid partido entre duas folhas isso vira uma tarja no pé da página, com os
+     cartões inteiros já na seguinte. No papel cada cartão leva a sua borda e a
+     grade não pinta nada. */
+  .grade { background: none; border: none; gap: 0; }
+  .grade > .cartao {
+    border: 1px solid var(--borda);
+    margin: -1px 0 0 -1px;
+  }
+
+  /* Miolo do livro impresso não precisa de sublinhado de link. */
+  .mancha p a, .mancha li a, .mancha td a, .colofao a {
+    text-decoration: none;
+    color: var(--texto);
+  }
+  .colofao { break-before: auto; }
+}
+
+/* ============================================================
+   BESTIÁRIO — blocos de criatura
+   ============================================================ */
+
+/* Divisor de degrau: "KLEOS 1 — RUMOR" */
+.degrau {
+  margin: 3.5rem 0 2rem;
+  padding: 1.4rem 0 1.2rem;
+  border-top: 3px double var(--ouro);
+  border-bottom: 1px solid var(--borda);
+  text-align: center;
+}
+.degrau h2 {
+  font-family: var(--serifa-titulo);
+  font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin: 0;
+  color: var(--acento);
+  text-wrap: balance;
+}
+.degrau p { font-style: italic; color: var(--texto-suave); margin: .5rem 0 0; }
+
+/* Ficha de criatura */
+.criatura {
+  border: 1px solid var(--borda-forte);
+  border-top: 3px solid var(--acento);
+  background: var(--papel);
+  margin: 2rem 0;
+  padding: 1.3rem 1.4rem 1.5rem;
+}
+.criatura > h3 {
+  font-family: var(--serifa-titulo);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  margin: 0;
+  text-wrap: balance;
+}
+.criatura .kleos {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: .64rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--papel);
+  background: var(--acento);
+  padding: .18em .55em;
+  margin-left: .5rem;
+  vertical-align: .18em;
+  white-space: nowrap;
+}
+.criatura .tipo {
+  font-family: var(--sans);
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ouro);
+  margin: .35rem 0 .9rem;
+}
+/* Linhas de PV / DEF / Ataque / resistências */
+.criatura .status {
+  background: var(--superficie-2);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+  padding: .7rem .9rem;
+  margin: 0 0 1.1rem;
+  font-family: var(--sans);
+  font-size: .87rem;
+  line-height: 1.75;
+  font-variant-numeric: tabular-nums;
+}
+.criatura .status b { color: var(--texto-suave); font-weight: 600; }
+.criatura .status .sep { color: var(--borda-forte); padding: 0 .1rem; }
+
+/* Rótulos internos: TRAÇOS, AÇÕES, FRAQUEZA MÍTICA... */
+.criatura .rotulo-bloco {
+  font-family: var(--sans);
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: var(--acento);
+  margin: 1.3rem 0 .5rem;
+  padding-bottom: .3rem;
+  border-bottom: 1px solid var(--borda);
+}
+.criatura .rotulo-bloco:first-of-type { margin-top: 0; }
+.criatura ul { margin: 0 0 .8rem; padding-left: 1.15rem; }
+.criatura p { margin: 0 0 .8rem; }
+.criatura > *:last-child { margin-bottom: 0; }
+
+/* Fraqueza e morte recebem tratamento próprio */
+.criatura .fraqueza { border-left: 2px solid var(--ouro); padding-left: .95rem; }
+.criatura .morte {
+  font-size: .93rem;
+  color: var(--texto-suave);
+  border-top: 1px dashed var(--borda-forte);
+  padding-top: .8rem;
+}
+.criatura .morte .rotulo-bloco { display: block; border: none; padding: 0; margin-bottom: .2rem; }
+
+/* Aviso de efeito perigoso (Medusa) */
+.aviso {
+  border: 1px solid var(--acento);
+  background: var(--acento-fraco);
+  padding: .9rem 1.1rem;
+  margin: 1.2rem 0;
+  font-size: .95rem;
+}
+.aviso p:last-child { margin-bottom: 0; }
+
+@media print {
+  .criatura, .degrau { break-inside: avoid; page-break-inside: avoid; }
+  .degrau {
+    break-before: page;  page-break-before: always;
+    break-after: avoid;  page-break-after: avoid;
+    margin-top: 0;
+  }
+}
+
+/* ============================================================
+   BLOCO DE CÓDIGO CERCADO — modelos de registro, fórmulas
+   Preserva as quebras de linha e rola sozinho se for largo
+   demais, para nunca empurrar a página de lado.
+   ============================================================ */
+pre.bloco-codigo {
+  font-family: var(--mono);
+  font-size: .86rem;
+  line-height: 1.8;
+  color: var(--texto);
+  background: var(--superficie-2);
+  border-left: 3px solid var(--acento);
+  padding: 1rem 1.2rem;
+  margin: 1.6rem 0;
+  overflow-x: auto;
+  white-space: pre;
+  tab-size: 2;
+}
+
+/* Rede de segurança: nenhum trecho de código inline pode ser largo o
+   bastante para estourar a mancha, por mais nowrap que ele seja. */
+.dado { max-width: 100%; overflow-wrap: anywhere; }
+
+/* Dentro de um cartão a coluna é estreita — uns 270 px — e um nowrap longo
+   vaza para fora da grade. Ali o dado quebra linha; o nowrap continua valendo
+   no corpo do texto, onde ele serve para 2d8 não virar "2d" numa linha e "8"
+   na outra. */
+.cartao .dado, .criatura .status .dado { white-space: normal; }
+
+@media print {
+  pre.bloco-codigo {
+    white-space: pre-wrap;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* ---- Varinhas e Segredos: capa em SVG e geradores de tabela ---- */
+.capa-pagina { position: relative; }
+.capa-pagina svg { display: block; width: 100%; height: auto; max-height: 100vh; }
+.capa-titulo { position: absolute; left: 0; right: 0; bottom: 9%; text-align: center; padding: 0 16px; }
+.capa-titulo h1 { font-family: var(--serifa-titulo); font-size: clamp(2rem, 7vw, 4.6rem); margin: 0; color: #F1DCA6; text-shadow: 0 0 18px #000, 0 0 40px #D8B46A55; letter-spacing: .02em; }
+.capa-titulo p { font-family: var(--sans); letter-spacing: .32em; color: #CBD6E8; margin: .5em 0 0; font-size: clamp(.7rem, 1.8vw, .95rem); text-shadow: 0 0 8px #000; text-transform: uppercase; }
+.pisca { animation: pisca 3s infinite alternate; }
+@keyframes pisca { from { opacity: .3 } to { opacity: 1 } }
+@media (prefers-reduced-motion: reduce) { .pisca { animation: none; } }
+td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: var(--texto-suave); width: 3.5rem; }
+
+</style>
+
+<div class="livro">
+
+<!-- ==================== CAPA ==================== -->
+<div class="capa-pagina frente" role="img" aria-label="Capa: um castelo de torres pontiagudas sobre um rochedo, janelas acesas, lua cheia entre nuvens e o reflexo dela num lago escuro">
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
  <defs>
-  <radialGradient id="mg"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#e6f0ff"/><stop offset="1" stop-color="#b9cfee"/></radialGradient>
-  <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16263a"/><stop offset="1" stop-color="#04070d"/></linearGradient>
-  <radialGradient id="glow"><stop offset="0" stop-color="#ffcf7a"/><stop offset="1" stop-color="#ffcf7a00"/></radialGradient>
+  <radialGradient id="ceu" cx="62%" cy="22%" r="80%"><stop offset="0" stop-color="#3a5a7a"/><stop offset=".2" stop-color="#1a2c44"/><stop offset=".5" stop-color="#0b1626"/><stop offset="1" stop-color="#05080f"/></radialGradient>
+  <radialGradient id="lua"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#e6f0ff"/><stop offset="1" stop-color="#b9cfee"/></radialGradient>
+  <radialGradient id="halo"><stop offset="0" stop-color="#cfe3ff" stop-opacity=".55"/><stop offset="1" stop-color="#cfe3ff" stop-opacity="0"/></radialGradient>
+  <linearGradient id="agua" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16263a"/><stop offset="1" stop-color="#04070d"/></linearGradient>
+  <radialGradient id="vinheta" cx="50%" cy="42%" r="75%"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".7"/></radialGradient>
  </defs>
- <!-- nuvens -->
- <g fill="#2c4664" opacity=".55">
-  <ellipse cx="300" cy="150" rx="380" ry="60"/><ellipse cx="1300" cy="110" rx="420" ry="70"/>
-  <ellipse cx="800" cy="300" rx="500" ry="40" opacity=".5"/>
- </g>
- <!-- estrelas -->
- <g fill="#dfe9ff">
-  <circle cx="120" cy="80" r="1.5" class="twinkle"/><circle cx="420" cy="60" r="1.2"/><circle cx="1500" cy="260" r="1.4" class="twinkle"/>
-  <circle cx="700" cy="40" r="1"/><circle cx="1180" cy="40" r="1.3" class="twinkle"/><circle cx="260" cy="260" r="1"/>
- </g>
- <circle class="moon" cx="1000" cy="200" r="58" fill="url(#mg)"/>
- <!-- montanhas -->
+ <rect width="1600" height="900" fill="url(#ceu)"/>
+ <g fill="#2c4664" opacity=".55"><ellipse cx="300" cy="150" rx="380" ry="60"/><ellipse cx="1300" cy="110" rx="420" ry="70"/><ellipse cx="800" cy="300" rx="500" ry="40" opacity=".5"/></g>
+ <g fill="#dfe9ff"><circle cx="120" cy="80" r="1.6" class="pisca"/><circle cx="420" cy="60" r="1.2"/><circle cx="1500" cy="260" r="1.4" class="pisca"/><circle cx="700" cy="40" r="1"/><circle cx="1180" cy="40" r="1.3" class="pisca"/><circle cx="260" cy="260" r="1"/><circle cx="1450" cy="60" r="1.1"/></g>
+ <circle cx="1000" cy="200" r="190" fill="url(#halo)"/>
+ <circle cx="1000" cy="200" r="58" fill="url(#lua)"/>
  <path d="M0 520 L180 400 L340 470 L520 380 L700 470 L900 360 L1120 450 L1300 380 L1600 480 L1600 640 L0 640Z" fill="#0d1828"/>
  <path d="M900 640 L1100 460 L1250 520 L1400 430 L1600 520 L1600 640Z" fill="#101d30"/>
- <!-- rochedo -->
  <path d="M150 640 L230 540 L380 520 L520 470 L700 500 L800 560 L860 640Z" fill="#070d18"/>
- <!-- castelo -->
  <g fill="#060b14">
   <rect x="250" y="400" width="60" height="140"/><polygon points="245,400 280,300 315,400"/>
   <rect x="320" y="360" width="50" height="170"/><polygon points="315,360 345,250 375,360"/>
@@ -83,7 +999,6 @@ footer{text-align:center;color:var(--mut);padding:40px 16px;font-size:.85rem}
   <rect x="660" y="420" width="90" height="90"/><polygon points="655,422 705,380 755,422"/>
   <rect x="200" y="460" width="50" height="80"/><polygon points="196,462 225,410 254,462"/>
  </g>
- <!-- janelas -->
  <g fill="#ffcf7a">
   <rect x="270" y="440" width="5" height="9"/><rect x="335" y="400" width="5" height="9"/><rect x="350" y="450" width="5" height="9"/>
   <rect x="438" y="320" width="5" height="9"/><rect x="438" y="360" width="5" height="9"/><rect x="400" y="460" width="5" height="8"/>
@@ -91,491 +1006,1145 @@ footer{text-align:center;color:var(--mut);padding:40px 16px;font-size:.85rem}
   <rect x="560" y="410" width="5" height="9"/><rect x="590" y="430" width="5" height="9"/><rect x="624" y="340" width="4" height="8"/>
   <rect x="690" y="450" width="5" height="8"/><rect x="720" y="460" width="5" height="8"/><rect x="215" y="480" width="4" height="8"/>
  </g>
- <ellipse cx="460" cy="430" rx="260" ry="90" fill="url(#glow)" opacity=".08"/>
- <!-- lago -->
- <rect x="0" y="640" width="1600" height="260" fill="url(#water)"/>
+ <rect x="0" y="640" width="1600" height="260" fill="url(#agua)"/>
  <rect x="992" y="660" width="16" height="200" fill="#cfe3ff" opacity=".25"/>
  <g fill="#ffcf7a" opacity=".35"><rect x="436" y="660" width="8" height="60"/><rect x="560" y="670" width="6" height="40"/><rect x="335" y="665" width="6" height="50"/></g>
  <g stroke="#cfe3ff" opacity=".18"><line x1="900" y1="700" x2="1100" y2="700"/><line x1="950" y1="760" x2="1050" y2="760"/></g>
+ <rect width="1600" height="900" fill="url(#vinheta)"/>
 </svg>
-<div class="fog"></div>
-<div class="title"><h1>Varinhas e Segredos</h1><p>RPG DE MESA NO MUNDO BRUXO · V1</p></div>
-</section>
+<div class="capa-titulo"><h1>Varinhas e Segredos</h1><p>RPG de mesa no mundo bruxo</p></div>
+</div>
 
-<nav>
- <a href="#regras">Regras</a><a href="#ficha">Personagem</a><a href="#magia">Magia</a><a href="#feiticos">Feitiços</a>
- <a href="#pocoes">Poções</a><a href="#combate">Combate</a><a href="#forja">Forja</a><a href="#aliados">Aliados</a><a href="#gerador">Geradores</a><a href="#dados">Dados</a>
+<div class="mancha">
+
+<!-- ==================== FOLHA DE ROSTO ==================== -->
+<div class="rosto">
+  <svg class="selo" width="76" height="76" viewBox="0 0 100 100" aria-hidden="true">
+    <circle cx="50" cy="50" r="44" fill="none" stroke="var(--ouro)" stroke-width="1.6"/>
+    <circle cx="50" cy="50" r="36" fill="none" stroke="var(--ouro)" stroke-width=".8" stroke-dasharray="2 4"/>
+    <path d="M30 72 L66 30" stroke="var(--ouro)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M66 30 L70 22 M66 30 L74 28 M66 30 L72 34 M66 30 L62 24" stroke="var(--acento)" stroke-width="1.6" stroke-linecap="round"/>
+  </svg>
+  <h1>Varinhas e <span>Segredos</span></h1>
+  <p class="tomo">RPG de mesa · Livro de Regras</p>
+  <p class="epigrafe">
+    A carta chegou por coruja. A varinha escolheu você. O castelo
+    tem mais corredores do que mapas — e cada um guarda um segredo.
+  </p>
+</div>
+
+<!-- ==================== SUMÁRIO ==================== -->
+<nav class="sumario" id="sumario" aria-label="Sumário">
+  <h2>Sumário</h2>
+  <ol>
+    <li><a href="#cap1"><span class="alg">I</span><span><span class="tit">Antes de tudo</span><span class="sub">O que é este jogo e o que você precisa</span></span></a></li>
+    <li><a href="#cap2"><span class="alg">II</span><span><span class="tit">Como se joga</span><span class="sub">Dois dados, passos e a DT</span></span></a></li>
+    <li><a href="#cap3"><span class="alg">III</span><span><span class="tit">Criação de personagem</span><span class="sub">Casa, sangue, varinha e os dados da ficha</span></span></a></li>
+    <li><a href="#cap4"><span class="alg">IV</span><span><span class="tit">Magia</span><span class="sub">Lançar, resistir e o preço de errar</span></span></a></li>
+    <li><a href="#cap5"><span class="alg">V</span><span><span class="tit">Grimório</span><span class="sub">Os feitiços, círculo por círculo, e como criar os seus</span></span></a></li>
+    <li><a href="#cap6"><span class="alg">VI</span><span><span class="tit">Poções e Herbologia</span><span class="sub">O caldeirão, as plantas e as receitas</span></span></a></li>
+    <li><a href="#cap7"><span class="alg">VII</span><span><span class="tit">Combate e duelos</span><span class="sub">Varinha erguida, turno a turno</span></span></a></li>
+    <li><a href="#cap8"><span class="alg">VIII</span><span><span class="tit">Forja de Criaturas</span><span class="sub">Para o Mestre: as tabelas para montar qualquer fera</span></span></a></li>
+    <li><a href="#cap9"><span class="alg">IX</span><span><span class="tit">Bestiário</span><span class="sub">Fichas prontas, do Gnomo ao Basilisco</span></span></a></li>
+    <li><a href="#cap10"><span class="alg">X</span><span><span class="tit">Aliados e NPCs</span><span class="sub">Para o Mestre: tabelas de gente, papéis e vínculos</span></span></a></li>
+    <li><a href="#cap11"><span class="alg">XI</span><span><span class="tit">Varinhas, itens e artefatos</span><span class="sub">Tabelas de madeira, núcleo e objetos encantados</span></span></a></li>
+    <li><a href="#cap12"><span class="alg">XII</span><span><span class="tit">O mundo e as aventuras</span><span class="sub">Para o Mestre: ganchos, lugares e complicações</span></span></a></li>
+    <li><a href="#cap13"><span class="alg">XIII</span><span><span class="tit">Anos e progressão</span><span class="sub">Do primeiro ano à carreira</span></span></a></li>
+    <li><a href="#apendice"><span class="alg">Ap.</span><span><span class="tit">As probabilidades</span><span class="sub">O que cada par de dados realmente faz</span></span></a></li>
+  </ol>
 </nav>
 
-<main>
+<!-- ==================== I ==================== -->
+<section class="capitulo" id="cap1">
+  <div class="abertura">
+    <span class="alg">Capítulo Um</span>
+    <h2>Antes de tudo</h2>
+    <p>O que é este jogo e o que você precisa</p>
+  </div>
 
-<h2 id="regras">1. Regras Básicas</h2>
-<p>Um mestre (o <b>Narrador</b>) e jogadores que interpretam bruxos e bruxas. O sistema usa o motor de <b>d20 de Ordem Paranormal</b>: você rola um número de d20 igual ao atributo e fica com o <b>maior</b>.</p>
-<div class="box">
-<b>Teste:</b> role <b>Xd20</b> (X = atributo), pegue o maior, some o bônus da perícia. Iguale ou supere a <b>DT</b>.<br>
-<b>Atributo 0:</b> role 2d20 e pegue o <b>menor</b>.<br>
-<b>Perícia:</b> Destreinado +0 · Treinado +5 · Veterano +10 · Expert +15.<br>
-<b>Crítico:</b> 20 natural (ou margem da arma/feitiço) dobra os dados de dano.
-</div>
-<table><tr><th>DT</th><th>Dificuldade</th><th>Exemplo</th></tr>
-<tr><td>5</td><td>Fácil</td><td>Lumos num corredor calmo</td></tr>
-<tr><td>10</td><td>Média</td><td>Alohomora numa porta comum</td></tr>
-<tr><td>15</td><td>Difícil</td><td>Accio no meio de um duelo</td></tr>
-<tr><td>20</td><td>Muito difícil</td><td>Patrono diante de dementadores</td></tr>
-<tr><td>25+</td><td>Lendária</td><td>Quebrar um Fidelius</td></tr></table>
-<p class="muted">Dados de Ordem ajustáveis — quando você trouxer a pesquisa do suplemento, é só trocar os números das tabelas.</p>
+  <p class="abre">Varinhas e Segredos é um RPG de mesa no mundo bruxo. Um grupo de jogadores
+  interpreta estudantes, aurores, curandeiros ou contrabandistas; uma pessoa, o
+  <em class="termo">Mestre</em>, interpreta todo o resto — o castelo, os professores, as
+  criaturas da Floresta Proibida e quem está por trás do mistério da vez.</p>
 
-<h2 id="ficha">2. Criação de Personagem</h2>
-<h3>Atributos</h3>
-<p>Todos começam em 1. Distribua <b>4 pontos</b>; pode reduzir um atributo a 0 para ganhar +1 ponto. Máximo inicial 3.</p>
-<table><tr><th>Atributo</th><th>Mede</th></tr>
-<tr><td><b>AGI</b> Agilidade</td><td>Reflexos, voo, esquiva, furtividade</td></tr>
-<tr><td><b>FOR</b> Força</td><td>Atletismo, luta corporal</td></tr>
-<tr><td><b>INT</b> Intelecto</td><td>Feitiços, poções, transfiguração, conhecimento</td></tr>
-<tr><td><b>PRE</b> Presença</td><td>Vontade, carisma, patrono, oclumência</td></tr>
-<tr><td><b>VIG</b> Vigor</td><td>Resistência física, vida</td></tr></table>
+  <p>O livro tem duas metades. Os capítulos II a VII são para todo mundo: como rolar, como
+  montar a ficha, como lançar feitiços, preparar poções e duelar. Os capítulos VIII a XIII
+  são do Mestre: <strong>tabelas para criar</strong> criaturas, aliados, varinhas, itens e
+  aventuras, sem depender de nada pronto.</p>
 
-<h3>Casas</h3>
-<table><tr><th>Casa</th><th>Bônus</th><th>Habilidade</th></tr>
-<tr><td>Grifinória</td><td>+1 PRE ou FOR</td><td><b>Coragem Imprudente:</b> 1x/cena, rerrole um teste de Vontade ou de ataque.</td></tr>
-<tr><td>Sonserina</td><td>+1 PRE ou INT</td><td><b>Ambição:</b> +5 em Enganação; 1x/cena, ganha +2 PM ao vencer um confronto social.</td></tr>
-<tr><td>Corvinal</td><td>+1 INT</td><td><b>Mente Afiada:</b> treinado em uma perícia de conhecimento extra; +2 em testes para identificar magia.</td></tr>
-<tr><td>Lufa-Lufa</td><td>+1 VIG ou PRE</td><td><b>Lealdade:</b> ao ajudar um aliado, ele recebe +5 (em vez de +2). +1 PV/nível.</td></tr></table>
+  <h3>O que você precisa</h3>
+  <ul>
+    <li>Um conjunto de dados de cada tipo: <span class="dado">d4</span>, <span class="dado">d6</span>,
+      <span class="dado">d8</span>, <span class="dado">d10</span>, <span class="dado">d12</span> e
+      <span class="dado">d20</span>. Dois de cada é o ideal.</li>
+    <li>Uma ficha por jogador, lápis e borracha.</li>
+    <li>De três a cinco jogadores, e uma tarde.</li>
+  </ul>
 
-<h3>Sangue e Origem</h3>
-<table><tr><th>Origem</th><th>Benefício</th></tr>
-<tr><td>Sangue-Puro</td><td>Treinado em História da Magia e Etiqueta; começa com 50 galeões extras.</td></tr>
-<tr><td>Mestiço</td><td>Treinado em duas perícias à escolha.</td></tr>
-<tr><td>Nascido-Trouxa</td><td>Treinado em Estudos Trouxas e Intuição; +2 em Vontade contra preconceito/medo.</td></tr>
-<tr><td>Criado por Criaturas / Exótico</td><td>Treinado em Trato de Criaturas; 1 criatura pequena como companheiro.</td></tr></table>
+  <h3>As fontes do mundo</h3>
+  <p>O mundo bruxo foi contado em livros, filmes e jogos, e nem tudo combina. Este livro marca
+  o que vem de fora dos romances: <span class="dado">F</span> filmes, <span class="dado">AF</span>
+  Animais Fantásticos, <span class="dado">J</span> jogos. O que não tem marca vem dos livros.
+  O Mestre decide o que entra na mesa dele.</p>
 
-<h3>Estatísticas derivadas</h3>
-<div class="box">
-<b>PV</b> (vida) = 12 + VIG, +3 + VIG por ano/nível<br>
-<b>PM</b> (pontos de magia) = 3 + INT, +3 + INT por nível<br>
-<b>DET</b> (determinação, a “sanidade”) = 10 + PRE×2, +3 por nível<br>
-<b>Defesa</b> = 10 + AGI (+ escudos/itens)<br>
-<b>Nível</b> = Ano em Hogwarts (1º–7º) e depois Níveis de Carreira (8–15)
-</div>
+  <div class="nota"><p><strong>Regra de ouro.</strong> Quando uma regra deste livro atrapalhar
+  a cena, o Mestre decide e a mesa segue. Anote e discuta depois da sessão.</p></div>
+</section>
 
-<h3>Perícias</h3>
-<p>Escolha <b>2 + INT</b> perícias treinadas. Veterano no nível 5, Expert no nível 10.</p>
-<table><tr><th>INT</th><td>Feitiços, Transfiguração, Poções, Herbologia, Runas Antigas, Aritmancia, História da Magia, Investigação</td></tr>
-<tr><th>PRE</th><td>Vontade, Oclumência, Diplomacia, Enganação, Intimidação, Adivinhação, Intuição</td></tr>
-<tr><th>AGI</th><td>Esquiva/Reflexos, Furtividade, Voo, Pontaria, Prestidigitação</td></tr>
-<tr><th>FOR</th><td>Atletismo, Luta</td></tr>
-<tr><th>VIG</th><td>Fortitude, Sobrevivência</td></tr>
-<tr><th>Mista</th><td>Trato de Criaturas (PRE), Artes das Trevas (INT), Medicina/Cura (INT), Percepção (PRE)</td></tr></table>
+<!-- ==================== II ==================== -->
+<section class="capitulo" id="cap2">
+  <div class="abertura">
+    <span class="alg">Capítulo Dois</span>
+    <h2>Como se joga</h2>
+    <p>Dois dados, passos e a DT</p>
+  </div>
 
-<h3>Varinha</h3>
-<p>Role ou escolha madeira e núcleo. O núcleo dá um bônus permanente.</p>
-<table><tr><th>Núcleo</th><th>Bônus</th></tr>
-<tr><td>Pena de Fênix</td><td>+2 em feitiços de Defesa; difícil de domar (–2 com varinha emprestada pelo dono).</td></tr>
-<tr><td>Corda de Coração de Dragão</td><td>+1 dado de dano em azarações ofensivas, 1x/cena.</td></tr>
-<tr><td>Pelo de Unicórnio</td><td>+2 em Encantamentos e Cura; –2 para lançar Maldições.</td></tr>
-<tr><td>Pelo de Testrálio</td><td>+2 em Vontade; vê Testrálios só se já viu a morte (regra do mundo).</td></tr>
-<tr><td>Pelo de Veela</td><td>+5 no primeiro feitiço de cada cena; temperamental (falha natural 1–2).</td></tr></table>
+  <p class="abre">Quase tudo se resolve do mesmo jeito. Você quer fazer algo que pode dar
+  errado. Você rola <strong>dois dados</strong> — um do seu atributo, um da sua perícia —,
+  soma, e compara com a dificuldade.</p>
 
-<h2 id="magia">3. Como Lançar Magia</h2>
-<div class="box">
-1. Escolha o feitiço que você conhece e gaste o custo em <b>PM</b>.<br>
-2. Faça um teste de <b>Feitiços</b> (ou Transfiguração/Artes das Trevas, conforme o feitiço) contra a DT.<br>
-3. Se o alvo resistir, ele rola a resistência indicada (Reflexos, Fortitude ou Vontade) contra <b>DT do conjurador = 10 + INT + nível</b>.<br>
-<b>Não verbal:</b> +1 PM, –5 no teste, e o alvo não sabe qual feitiço vem (não pode escolher contra-feitiço).<br>
-<b>Sem varinha:</b> só feitiços Círculo 1, –10, custo dobrado.<br>
-<b>Falha por 10+:</b> efeito colateral (role na tabela de <a href="#gerador">Magia Descontrolada</a>).
-</div>
-<table><tr><th>Círculo</th><th>Custo</th><th>Ano mínimo</th></tr>
-<tr><td>1 — Primeiranista</td><td>1 PM</td><td>1º</td></tr>
-<tr><td>2 — Intermediário</td><td>2 PM</td><td>3º</td></tr>
-<tr><td>3 — Avançado (N.O.M.)</td><td>4 PM</td><td>5º</td></tr>
-<tr><td>4 — Mestre (N.I.E.M.)</td><td>6 PM</td><td>7º</td></tr>
-<tr><td>Proibido</td><td>8 PM + 1d4 DET</td><td>—</td></tr></table>
-<p>Começa conhecendo <b>4 + INT</b> feitiços de Círculo 1. Aprende 2 novos por nível.</p>
+  <div class="destaque">
+    <span class="rotulo">A rolagem básica</span>
+    <p class="formula">dado do Atributo + dado da Perícia ≥ DT</p>
+  </div>
 
-<h2 id="feiticos">4. Grimório</h2>
-<p><select id="fcirc" onchange="renderSpells()"><option value="">Todos</option><option>1</option><option>2</option><option>3</option><option>4</option><option>P</option></select>
-<select id="ftipo" onchange="renderSpells()"><option value="">Todos os tipos</option><option>Ataque</option><option>Defesa</option><option>Controle</option><option>Utilidade</option><option>Cura</option><option>Trevas</option></select></p>
-<div class="wrap"><table id="spells"></table></div>
-<p class="muted">Feitiços derivados de filmes/jogos estão marcados <span class="tag">F</span>/<span class="tag">J</span>; o Narrador decide se entram na mesa.</p>
+  <p>Aqui competência não é um bônus somado: é o <strong>tamanho do dado</strong>. Uma bruxa
+  com Mente <span class="dado">d8</span> e Feitiços <span class="dado">d10</span> rola
+  <span class="dado">1d8+1d10</span>. Um primeiranista nervoso com Mente
+  <span class="dado">d6</span> e Feitiços <span class="dado">d4</span> rola
+  <span class="dado">1d6+1d4</span>.</p>
 
-<h2 id="pocoes">5. Poções</h2>
-<p>Preparar: teste de <b>Poções</b> contra a DT, gastando o tempo e os ingredientes. Falha: poção inútil. Falha por 10+: efeito invertido ou explosão (2d6 dano). Sucesso por 10+: dobra a duração ou rende 2 doses.</p>
-<div class="wrap"><table id="potions"></table></div>
+  <h3>A escala de dados</h3>
+  <div class="rolagem"><table>
+  <thead><tr><th>Dado</th><th>Atributo</th><th>Perícia</th><th>No mundo bruxo</th></tr></thead>
+  <tbody>
+  <tr><td><span class="dado">d4</span></td><td>Abaixo da média</td><td>Destreinado</td><td>Nunca estudou; aborto tentando</td></tr>
+  <tr><td><span class="dado">d6</span></td><td>Média</td><td>Treinado</td><td>Passou na matéria</td></tr>
+  <tr><td><span class="dado">d8</span></td><td>Acima da média</td><td>Especialista</td><td>Excelente nos N.O.M.s</td></tr>
+  <tr><td><span class="dado">d10</span></td><td>Muito acima</td><td>Mestre</td><td>Auror, professor, curandeiro-chefe</td></tr>
+  <tr><td><span class="dado">d12</span></td><td>Ápice</td><td>Grão-mestre</td><td>Dumbledore, Snape nas Poções</td></tr>
+  <tr><td><span class="dado">d20</span></td><td colspan="3">Além do humano. Só com artefatos, magia antiga ou efeitos extraordinários.</td></tr>
+  </tbody></table></div>
 
-<h2 id="combate">6. Combate e Duelos</h2>
-<div class="box">
-<b>Iniciativa:</b> teste de AGI (Reflexos).<br>
-<b>Turno:</b> 1 ação padrão + 1 ação de movimento (ou 2 movimentos). 1 reação por rodada.<br>
-<b>Ataque mágico:</b> teste de Feitiços contra a <b>Defesa</b> do alvo.<br>
-<b>Protego (reação, 1 PM):</b> role Feitiços; se superar o ataque, bloqueia. Superar por 10+ <i>reflete</i> o feitiço.<br>
-<b>Desarmado:</b> sem varinha, só magia sem varinha. Pegar varinha caída = ação de movimento.<br>
-<b>Morrendo:</b> 0 PV = inconsciente e morrendo; 3 rodadas para ser estabilizado (Medicina DT 15 ou Episkey).<br>
-<b>Determinação:</b> horrores, dementadores e maldições drenam DET. Com 0 DET o personagem entra em pânico/desespero até o fim da cena.
-</div>
-<h3>Condições</h3>
-<table><tr><th>Condição</th><th>Efeito</th></tr>
-<tr><td>Atordoado</td><td>Perde o turno; Defesa –5.</td></tr>
-<tr><td>Petrificado</td><td>Paralisado até fim da cena ou Finite.</td></tr>
-<tr><td>Preso</td><td>Não se move; –5 em ataques.</td></tr>
-<tr><td>Desarmado</td><td>Sem varinha.</td></tr>
-<tr><td>Cego</td><td>–10 em ataques; Defesa –5.</td></tr>
-<tr><td>Amedrontado</td><td>–5 em testes; não se aproxima da fonte.</td></tr>
-<tr><td>Sangrando</td><td>Perde 1d6 PV por turno até Vulnera Sanentur/Medicina DT 15.</td></tr>
-<tr><td>Enfeitiçado (Imperio)</td><td>Controlado; Vontade DT do conjurador a cada rodada para resistir.</td></tr></table>
+  <h3>A dificuldade (DT)</h3>
+  <div class="rolagem"><table>
+  <thead><tr><th class="num">DT</th><th>Tarefa</th><th>Exemplo</th></tr></thead>
+  <tbody>
+  <tr><td class="num">5</td><td>Fácil</td><td>Lumos num corredor calmo</td></tr>
+  <tr><td class="num">7</td><td><strong>Padrão</strong></td><td>Alohomora numa porta comum; subir no muro</td></tr>
+  <tr><td class="num">9</td><td>Difícil</td><td>Accio no meio de um duelo</td></tr>
+  <tr><td class="num">11</td><td>Muito difícil</td><td>Enganar um professor de Poções</td></tr>
+  <tr><td class="num">13</td><td>Heroica</td><td>Patrono corpóreo diante de cem dementadores</td></tr>
+  <tr><td class="num">15+</td><td>Lendária</td><td>Quebrar um Feitiço Fidelius</td></tr>
+  </tbody></table></div>
+  <p>Quando o texto não disser outra coisa, a DT é <strong>7</strong>.</p>
 
-<h2 id="forja">7. Forja de Criaturas</h2>
-<p>Toda criatura sai deste motor. <b>A aparência é livre, o perfil mecânico não é:</b> um Niffler gigante e um Kelpie podem ter a mesma linha da Tábua. Monte uma em dez minutos, sem conta na hora da mesa.</p>
-<h3>O passo a passo</h3>
-<div class="box">
-<b>1 · Uma frase.</b> “Um Grindylow que caça pelo cheiro do medo.” Sem frase, não há criatura.<br>
-<b>2 · Classe de Perigo (1–11).</b> Chefe da sessão = nível do grupo. Capanga em bando = 3 ou 4 abaixo.<br>
-<b>3 · Linha da Tábua.</b> Copie PV, Defesa, ataque, dano, DT e resistências. Não invente números fora dela.<br>
-<b>4 · Tamanho, movimento e sentidos.</b> Um sentido especial grátis; o segundo custa 1 Traço.<br>
-<b>5 · Arquétipo.</b> Troca números entre si sem mudar o Perigo.<br>
-<b>6 · Repartir o dano.</b> O dano da Tábua é o total por rodada; divida entre os ataques.<br>
-<b>7 · Orçamento.</b> Gaste em Traços (passivos) e Poderes (ações com recarga).<br>
-<b>8 · Peças de chefe.</b> Fases (Perigo 2+), Reações Lendárias (6+), Aura do Lugar (8+).<br>
-<b>9 · Fraqueza Mágica.</b> Obrigatória: como vencê-la sem força bruta.<br>
-<b>10 · Ficha.</b> Se você não narra o primeiro turno dela sem consultar nada, simplifique.
-</div>
-<h3>A Tábua de Perigo</h3>
-<div class="wrap"><table id="tabua"></table></div>
-<p class="muted">Classificação do Ministério: Perigo 1–2 = X · 3–4 = XX · 5–6 = XXX · 7–8 = XXXX · 9–11 = XXXXX. Cada criatura tem <b>duas resistências fortes e uma fraca</b>. Aponte os Poderes dela para a resistência <i>fraca do grupo</i>, não para a dela.</p>
-<h3>Fases do chefe</h3>
-<p>O PV do chefe se divide em blocos iguais. <b>O golpe que quebra uma Fase para no piso dela: o excesso se perde.</b> Ao quebrar uma Fase, a criatura se livra de toda condição e muda (um Poder novo, o terreno que desaba, a forma que assume). Cura nunca devolve Fase. Perigo 1: nenhuma · 2: 2 · 3–7: 3 · 8+: 4. Lacaios não têm Fases.</p>
-<h3>Arquétipos</h3>
-<div class="wrap"><table id="arqt"></table></div>
-<h3>Traços (passivos)</h3>
-<div class="wrap"><table id="tracot"></table></div>
-<h3>Poderes (ações)</h3>
-<div class="wrap"><table id="podert"></table></div>
-<h3>Fraqueza Mágica (obrigatória)</h3>
-<div class="wrap"><table id="fraqt"></table></div>
+  <h3>Experimente</h3>
+  <div class="rolador">
+    <div class="rolador-topo">Rolador · atributo + perícia contra a DT</div>
+    <div class="rolador-linha">
+      <div class="rolador-visor" id="r-visor">—</div>
+      <p class="rolador-detalhe" id="r-detalhe">Escolha os dados e role.</p>
+    </div>
+    <div class="botoes">
+      <label>Atributo <select id="r-atr"><option value="4">d4</option><option value="6" selected>d6</option><option value="8">d8</option><option value="10">d10</option><option value="12">d12</option><option value="20">d20</option></select></label>
+      <label>Perícia <select id="r-per"><option value="4">d4</option><option value="6">d6</option><option value="8" selected>d8</option><option value="10">d10</option><option value="12">d12</option><option value="20">d20</option></select></label>
+      <label>Dados extras <select id="r-extra"><option>0</option><option>1</option><option>2</option></select></label>
+      <label>DT <select id="r-dt"><option>5</option><option selected>7</option><option>9</option><option>11</option><option>13</option><option>15</option></select></label>
+      <button class="principal" onclick="rolarOrdem()">Rolar</button>
+    </div>
+  </div>
 
-<div class="gen"><h3 style="margin-top:0">⚒ Forja Interativa</h3>
-Nome <input id="fnome" style="width:180px" placeholder="(aleatório)"> Perigo <input id="fper" type="number" value="3" min="1" max="11">
-<select id="ftam"><option>Miúdo</option><option>Pequeno</option><option selected>Médio</option><option>Grande</option><option>Enorme</option><option>Colossal</option></select>
-<select id="farq"></select>
-<label><input type="checkbox" id="fchefe" style="width:auto"> Chefe</label>
-<button onclick="forjar()">Forjar</button><button onclick="forjar(true)">Forjar Aleatória</button>
-<div class="out" id="fout"></div></div>
+  <h3>Passos: aumentar e reduzir o dado</h3>
+  <p>Bônus e penalidades não somam números: eles mudam o tamanho do dado. A escala é
+  <span class="dado">d4 → d6 → d8 → d10 → d12</span>.</p>
+  <div class="grade">
+    <div class="cartao"><h5>+1 passo</h5><p class="etiqueta">A situação ajuda</p>
+    <p>O dado sobe um tamanho. Alvo surpreso, varinha favorável, um aliado ajudando, a poção
+    certa. Vários aumentos se acumulam, mas o teto é <span class="dado">d12</span>.</p></div>
+    <div class="cartao"><h5>–1 passo</h5><p class="etiqueta">A situação atrapalha</p>
+    <p>O dado desce um tamanho. Escuro, ferido, varinha emprestada, feitiço não verbal. O piso
+    é <span class="dado">d4</span>. Um aumento e uma redução se cancelam.</p></div>
+  </div>
+  <p>O Mestre diz em <em>qual</em> dado o passo cai: no atributo (o corpo está cansado) ou na
+  perícia (a técnica está prejudicada). Se não importar, cai na perícia.</p>
 
-<h2 id="aliados">8. Forja de Aliados e NPCs</h2>
-<p>NPCs usam a <b>mesma Tábua</b>, com o Nível no lugar do Perigo, e escolhem um <b>Papel</b> em vez de Arquétipo. Aliados que acompanham o grupo são controlados pelo jogador que tem o vínculo e agem na iniciativa dele.</p>
-<div class="wrap"><table id="papelt"></table></div>
-<div class="box"><b>Vínculo do aliado (0–5).</b> Sobe ao ajudar o NPC na história; desce ao abandoná-lo. Com 3+ ele arrisca a vida pelo grupo; com 5 entrega o segredo dele. Aliado com Vínculo 0 vai embora na primeira cena ruim.</div>
-<div class="gen"><h3 style="margin-top:0">⚒ Forja de NPC</h3>
-Nível <input id="nlvl" type="number" value="3" min="1" max="11">
-<select id="npapel"></select>
-<select id="nlado"><option value="aliado">Aliado</option><option value="rival">Rival</option><option value="vilao">Bruxo das Trevas</option></select>
-<button onclick="forjarNPC()">Forjar NPC</button><button onclick="forjarNPC(true)">Aleatório</button>
-<div class="out" id="nfout"></div></div>
+  <h3>Dados extras</h3>
+  <p>Algumas habilidades, poções e itens dão um dado a mais, do mesmo tamanho do maior dado
+  da rolagem. Duas regras seguram isso:</p>
+  <ul>
+    <li>No máximo <strong>quatro dados</strong> rolados num teste.</li>
+    <li>No máximo <strong>três dados</strong> somados. Rolou quatro, o menor sai.</li>
+  </ul>
 
-<h2 id="gerador">9. Geradores Rápidos</h2>
+  <h3>Rolagem Alta e Rolagem Baixa</h3>
+  <p>O <strong>RA</strong> é o maior resultado individual da rolagem; o <strong>RB</strong>, o
+  menor. Não importa de qual dado veio. Num <span class="dado">d6</span> que deu 6 e num
+  <span class="dado">d8</span> que deu 3, o RA é 6 e o RB é 3. O RA é o dano dos ataques; RA e
+  RB medem progresso em testes longos (poções, pesquisas, perseguições): no sucesso avança o
+  RA, na falha avança o RB.</p>
 
-<div class="gen"><h3 style="margin-top:0">Gerador de Criaturas</h3>
-<select id="cperigo"><option value="">Qualquer perigo</option><option value="1">X — Inofensiva</option><option value="2">XX</option><option value="3">XXX</option><option value="4">XXXX</option><option value="5">XXXXX — Mortal</option></select>
-<button onclick="genCreature()">Invocar Criatura</button><button onclick="genCreature(true)">Criatura Inédita</button>
-<div class="out" id="cout"></div></div>
+  <h3>Crítico</h3>
+  <p>Se dois dados mostrarem o <strong>mesmo número, 6 ou mais</strong>, é crítico: sucesso
+  automático, seja qual for a DT. Em ataques e testes longos, o crítico usa os <strong>dois
+  maiores resultados</strong> no lugar do RA. Seis e seis num Stupefy causa 6+6, mais o
+  modificador do feitiço.</p>
 
-<div class="gen"><h3 style="margin-top:0">Gerador de Aliados e NPCs</h3>
-<button onclick="genNPC('aliado')">Aliado</button><button onclick="genNPC('rival')">Rival</button><button onclick="genNPC('vilao')">Bruxo das Trevas</button>
-<div class="out" id="nout"></div></div>
+  <h3>Desastre</h3>
+  <p>Se <strong>todos os dados</strong> mostrarem 1, é um Desastre: falha automática e uma
+  consequência. Role um <span class="dado">d8</span>:</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d8</th><th>Desastre</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>Vexame</td><td>Algo humilhante e público. Sem efeito mecânico — mas a Sonserina inteira viu.</td></tr>
+  <tr><td class="d">2</td><td>Machucado</td><td>Corpo –1 passo até o fim da cena.</td></tr>
+  <tr><td class="d">3</td><td>Distração</td><td>Mente –1 passo até o fim da cena.</td></tr>
+  <tr><td class="d">4</td><td>Abalo</td><td>Coração –1 passo até o fim da cena.</td></tr>
+  <tr><td class="d">5</td><td>Acidente</td><td>Perde <span class="dado">1d4</span> PV.</td></tr>
+  <tr><td class="d">6</td><td>Desânimo</td><td>Perde <span class="dado">1d4</span> de Determinação.</td></tr>
+  <tr><td class="d">7</td><td>Perda</td><td>Larga a varinha, quebra um frasco, perde um item carregado.</td></tr>
+  <tr><td class="d">8</td><td>Magia Descontrolada</td><td>Role na tabela do <a href="#descontrolada">Capítulo XII</a>.</td></tr>
+  </tbody></table></div>
+  <p>Se a consequência não fizer sentido, o Mestre escolhe outra.</p>
 
-<div class="gen"><h3 style="margin-top:0">Gerador de Varinha</h3>
-<button onclick="genWand()">Ollivander, escolha por mim</button><div class="out" id="wout"></div></div>
+  <h3>Testes opostos</h3>
+  <p>Quando duas pessoas disputam a mesma coisa — correr até a vassoura, segurar a varinha,
+  mentir e perceber a mentira —, as duas rolam e o maior total vence. Empate: vence quem tem o
+  maior RA; empatou de novo, a situação continua para a próxima rodada.</p>
 
-<div class="gen"><h3 style="margin-top:0">Gerador de Itens Mágicos</h3>
-<button onclick="genItem()">Item Encantado</button><div class="out" id="iout"></div></div>
+  <h3>Ajudar</h3>
+  <p>Gaste sua ação para ajudar um aliado, descrevendo como. Você precisa ter pelo menos
+  <span class="dado">d6</span> na perícia usada.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Perícia de quem ajuda</th><th>Benefício para quem rola</th></tr></thead>
+  <tbody>
+  <tr><td><span class="dado">d4</span></td><td>Não pode ajudar</td></tr>
+  <tr><td><span class="dado">d6</span> ou <span class="dado">d8</span></td><td>+1 passo</td></tr>
+  <tr><td><span class="dado">d10</span> ou <span class="dado">d12</span></td><td>+2 passos</td></tr>
+  </tbody></table></div>
+</section>
 
-<div class="gen"><h3 style="margin-top:0">Gancho de Aventura</h3>
-<button onclick="genHook()">Gerar Mistério</button><div class="out" id="hout"></div></div>
+<!-- ==================== III ==================== -->
+<section class="capitulo" id="cap3">
+  <div class="abertura">
+    <span class="alg">Capítulo Três</span>
+    <h2>Criação de personagem</h2>
+    <p>Casa, sangue, varinha e os dados da ficha</p>
+  </div>
 
-<div class="gen"><h3 style="margin-top:0">Magia Descontrolada</h3>
-<button onclick="genWild()">Rolar d12</button><div class="out" id="xout"></div></div>
+  <p class="abre">Sua ficha é feita de dados. Três atributos dizem quem você é; as perícias
+  dizem o que você aprendeu. Siga as etapas na ordem.</p>
 
-<h2 id="dados">8. Rolador</h2>
-<div class="gen">
-Atributo <input id="ra" type="number" value="2" min="0" max="6"> Bônus <input id="rb" type="number" value="5"> DT <input id="rd" type="number" value="15">
-<button onclick="rollTest()">Rolar Teste</button>
-<span>Dano: <input id="rdn" value="2d6+2" style="width:110px"></span><button onclick="rollDmg()">Rolar Dano</button>
-<div class="out dice" id="rout"></div></div>
+  <ol class="passos">
+    <li><b>Conceito.</b> Uma frase: “a corvinal que lê livros proibidos”, “o batedor
+      grifinório que não sabe perder”.</li>
+    <li><b>Atributos.</b> Distribua <span class="dado">d8</span>, <span class="dado">d6</span> e
+      <span class="dado">d6</span> entre Corpo, Mente e Coração — ou
+      <span class="dado">d10</span>, <span class="dado">d6</span> e <span class="dado">d4</span>.</li>
+    <li><b>Casa.</b> Ganhe o passo e a habilidade da casa.</li>
+    <li><b>Sangue.</b> Escolha a origem familiar.</li>
+    <li><b>Perícias.</b> Todas começam em <span class="dado">d4</span>. Escolha uma para
+      <span class="dado">d8</span> e quatro para <span class="dado">d6</span>.</li>
+    <li><b>Varinha.</b> Role ou escolha no <a href="#cap11">Capítulo XI</a>.</li>
+    <li><b>Feitiços.</b> Escolha <strong>seis</strong> feitiços do Círculo 1.</li>
+    <li><b>Recursos.</b> Calcule PV, PM, Determinação e Defesa.</li>
+    <li><b>Material.</b> Caldeirão, uniforme, livros, 3 ingredientes comuns e
+      <span class="dado">2d6</span> galeões. Um animal: coruja, gato, sapo ou rato.</li>
+  </ol>
 
-</main>
-<footer>Varinhas e Segredos · v1 · Jogo de fã sem fins lucrativos. Harry Potter e o Mundo Bruxo pertencem aos seus detentores. Motor de dados inspirado em Ordem Paranormal.</footer>
+  <h3>Atributos</h3>
+  <div class="grade">
+    <div class="cartao"><h5>Corpo</h5><p class="etiqueta">Força, reflexo, fôlego</p><p>Voar,
+    correr, aguentar uma azaração, desviar de um feitiço, segurar um Hipogrifo pela rédea.</p></div>
+    <div class="cartao"><h5>Mente</h5><p class="etiqueta">Raciocínio, memória, precisão</p>
+    <p>Lançar feitiços, preparar poções, transfigurar, investigar, lembrar a ordem certa dos
+    ingredientes.</p></div>
+    <div class="cartao"><h5>Coração</h5><p class="etiqueta">Vontade, presença, emoção</p>
+    <p>Resistir ao Imperius, conjurar um Patrono, convencer, mentir, acalmar uma criatura,
+    enfrentar o medo.</p></div>
+  </div>
+
+  <h3>Perícias</h3>
+  <p>Cada perícia tem um atributo comum, mas o Mestre pode combinar outro quando a cena pedir:
+  convencer um centauro usa Coração + Trato de Criaturas; lembrar um feitiço antigo usa
+  Mente + Conhecimento Mágico.</p>
+  <div class="rolagem"><table>
+  <thead><tr><th>Perícia</th><th>Atributo comum</th><th>Para quê</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Atletismo</strong></td><td>Corpo</td><td>Correr, escalar, nadar, empurrar.</td></tr>
+  <tr><td><strong>Fortitude</strong></td><td>Corpo</td><td>Resistir a venenos, dor, frio, azarações físicas.</td></tr>
+  <tr><td><strong>Reflexos</strong></td><td>Corpo</td><td>Desviar, iniciativa, agarrar algo no ar. Define a Defesa.</td></tr>
+  <tr><td><strong>Furtividade</strong></td><td>Corpo</td><td>Andar escondido, sumir num corredor.</td></tr>
+  <tr><td><strong>Voo</strong></td><td>Corpo</td><td>Vassouras, Hipogrifos, Testrálios, Quadribol.</td></tr>
+  <tr><td><strong>Luta</strong></td><td>Corpo</td><td>Soco, espada, briga sem varinha.</td></tr>
+  <tr><td><strong>Feitiços</strong></td><td>Mente</td><td>Encantamentos, azarações, contra-feitiços, escudos.</td></tr>
+  <tr><td><strong>Transfiguração</strong></td><td>Mente</td><td>Mudar forma, conjurar, sumir com coisas, animagia.</td></tr>
+  <tr><td><strong>Poções</strong></td><td>Mente</td><td>Preparar e identificar poções, antídotos.</td></tr>
+  <tr><td><strong>Herbologia</strong></td><td>Mente</td><td>Plantas mágicas, colheita, ingredientes.</td></tr>
+  <tr><td><strong>Conhecimento Mágico</strong></td><td>Mente</td><td>História da Magia, Runas, Aritmancia, leis do Ministério.</td></tr>
+  <tr><td><strong>Investigação</strong></td><td>Mente</td><td>Achar pistas, pesquisar na biblioteca, ligar fatos.</td></tr>
+  <tr><td><strong>Medibruxaria</strong></td><td>Mente</td><td>Primeiros socorros, estabilizar, curar.</td></tr>
+  <tr><td><strong>Artes das Trevas</strong></td><td>Mente</td><td>Maldições, magia proibida, reconhecer magia negra.</td></tr>
+  <tr><td><strong>Percepção</strong></td><td>Coração</td><td>Notar, ouvir, sentir que algo está errado.</td></tr>
+  <tr><td><strong>Vontade</strong></td><td>Coração</td><td>Resistir a medo, Imperius, dementadores, Confundo.</td></tr>
+  <tr><td><strong>Oclumência</strong></td><td>Coração</td><td>Fechar a mente; resistir a Legilimência e Veritaserum.</td></tr>
+  <tr><td><strong>Persuasão</strong></td><td>Coração</td><td>Convencer, negociar, liderar.</td></tr>
+  <tr><td><strong>Enganação</strong></td><td>Coração</td><td>Mentir, disfarçar, blefar.</td></tr>
+  <tr><td><strong>Intuição</strong></td><td>Coração</td><td>Perceber mentiras e intenções.</td></tr>
+  <tr><td><strong>Trato de Criaturas</strong></td><td>Coração</td><td>Acalmar, domar, montar, cuidar.</td></tr>
+  <tr><td><strong>Adivinhação</strong></td><td>Coração</td><td>Folhas de chá, bola de cristal, estrelas, profecias.</td></tr>
+  </tbody></table></div>
+
+  <h3>As Casas</h3>
+  <div class="grade">
+    <div class="cartao"><h5>Grifinória</h5><p class="etiqueta">Coragem · +1 passo em Vontade</p>
+    <p><span class="poder"><b>Coragem Imprudente.</b></span> Uma vez por cena, ao enfrentar
+    algo maior que você, role um dado extra no teste.</p></div>
+    <div class="cartao"><h5>Sonserina</h5><p class="etiqueta">Ambição · +1 passo em Enganação ou Persuasão</p>
+    <p><b>Ambição.</b> Uma vez por cena, depois de ver o resultado de um teste social, troque
+    o RB pelo RA.</p></div>
+    <div class="cartao"><h5>Corvinal</h5><p class="etiqueta">Sabedoria · +1 passo em Conhecimento Mágico</p>
+    <p><b>Mente Afiada.</b> Identificar um feitiço, poção ou criatura é ação livre, e você
+    rola um dado extra nisso.</p></div>
+    <div class="cartao"><h5>Lufa-Lufa</h5><p class="etiqueta">Lealdade · +1 passo em Herbologia ou Fortitude</p>
+    <p><b>Lealdade.</b> Ao ajudar um aliado, conceda sempre +2 passos, qualquer que seja
+    sua perícia (mínimo <span class="dado">d6</span>). Ganha +3 PV.</p></div>
+  </div>
+  <p>Fora de Hogwarts, troque a Casa pela escola: Ilvermorny, Beauxbatons, Durmstrang,
+  Castelobruxo, Mahoutokoro ou Uagadou. O Mestre adapta a habilidade.</p>
+
+  <h3>Sangue e origem</h3>
+  <div class="rolagem"><table>
+  <thead><tr><th>Origem</th><th>Benefício</th><th>Peso</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Sangue-Puro</strong></td><td>+1 passo em Conhecimento Mágico; começa com <span class="dado">4d6</span> galeões.</td><td>Família com expectativas — e inimigos antigos.</td></tr>
+  <tr><td><strong>Mestiço</strong></td><td>+1 passo em uma perícia à escolha.</td><td>Nenhum dos dois mundos é inteiramente seu.</td></tr>
+  <tr><td><strong>Nascido-Trouxa</strong></td><td>+1 passo em Intuição; sabe usar telefone, carro e dinheiro trouxa.</td><td>Alvo de preconceito em certos círculos.</td></tr>
+  <tr><td><strong>Criado entre criaturas</strong></td><td>+1 passo em Trato de Criaturas; um companheiro de Perigo 1.</td><td>Costumes estranhos para os outros.</td></tr>
+  </tbody></table></div>
+
+  <h3>Recursos</h3>
+  <p>O <em class="termo">valor</em> de um dado é o número de faces: <span class="dado">d6</span>
+  vale 6, <span class="dado">d8</span> vale 8.</p>
+  <div class="recursos">
+    <div class="recurso"><b>PV</b><span>Pontos de Vida = 8 + valor do Corpo</span></div>
+    <div class="recurso"><b>PM</b><span>Pontos de Magia = 2 + metade do valor da Mente</span></div>
+    <div class="recurso"><b>DET</b><span>Determinação = 4 + valor do Coração</span></div>
+    <div class="recurso"><b>Defesa</b><span>5 + metade do valor de Reflexos</span></div>
+  </div>
+  <p>Uma grifinória com Corpo <span class="dado">d8</span>, Mente <span class="dado">d6</span>,
+  Coração <span class="dado">d6</span> e Reflexos <span class="dado">d6</span> tem 16 PV,
+  5 PM, 10 DET e Defesa 8.</p>
+  <p><strong>Determinação</strong> é o que segura você em pé diante do medo, dos dementadores
+  e das maldições. Com 0 DET, você fica <em>Desesperado</em> até o fim da cena (veja o
+  <a href="#cap7">Capítulo VII</a>).</p>
+  <p><strong>Descanso.</strong> Uma noite de sono recupera todo o PM, metade do PV e
+  <span class="dado">1d4</span> DET. Chocolate recupera <span class="dado">1d4</span> DET na hora.</p>
+</section>
+
+<!-- ==================== IV ==================== -->
+<section class="capitulo" id="cap4">
+  <div class="abertura">
+    <span class="alg">Capítulo Quatro</span>
+    <h2>Magia</h2>
+    <p>Lançar, resistir e o preço de errar</p>
+  </div>
+
+  <p class="abre">Magia é um teste como outro qualquer, com um custo. Você escolhe um
+  feitiço que conhece, gasta os Pontos de Magia e rola Mente mais a perícia do feitiço.</p>
+
+  <div class="destaque">
+    <span class="rotulo">Lançar um feitiço</span>
+    <p class="formula">Mente + perícia do feitiço ≥ DT do Círculo</p>
+  </div>
+
+  <div class="rolagem"><table>
+  <thead><tr><th>Círculo</th><th class="num">DT</th><th class="num">Custo</th><th>Quando se aprende</th></tr></thead>
+  <tbody>
+  <tr><td>1 · Primeiranista</td><td class="num">5</td><td class="num">1 PM</td><td>1º ano</td></tr>
+  <tr><td>2 · Intermediário</td><td class="num">7</td><td class="num">2 PM</td><td>3º ano</td></tr>
+  <tr><td>3 · N.O.M.</td><td class="num">9</td><td class="num">3 PM</td><td>5º ano</td></tr>
+  <tr><td>4 · N.I.E.M.</td><td class="num">11</td><td class="num">5 PM</td><td>7º ano</td></tr>
+  <tr><td>Proibido</td><td class="num">13</td><td class="num">8 PM + <span class="dado">1d4</span> DET</td><td>Nunca, oficialmente</td></tr>
+  </tbody></table></div>
+
+  <p>A perícia depende do feitiço: <strong>Feitiços</strong> para encantamentos, azarações e
+  escudos; <strong>Transfiguração</strong> para mudar, conjurar e sumir; <strong>Artes das
+  Trevas</strong> para maldições. O Patrono usa <strong>Coração</strong> no lugar de Mente.</p>
+
+  <h3>Feitiços contra alguém</h3>
+  <p>Feitiço de ataque é um teste contra a <strong>Defesa</strong> do alvo, não contra a DT do
+  Círculo (veja o <a href="#cap7">Capítulo VII</a>). Feitiços que impõem um efeito — paralisar,
+  confundir, prender — pedem que o alvo resista:</p>
+  <div class="destaque">
+    <span class="rotulo">DT do feitiço</span>
+    <p class="formula">5 + Círculo + passo da sua perícia</p>
+  </div>
+  <p>O passo vale 0 para <span class="dado">d4</span>, 1 para <span class="dado">d6</span>, 2 para
+  <span class="dado">d8</span>, 3 para <span class="dado">d10</span> e 4 para
+  <span class="dado">d12</span>. O alvo rola Corpo + Fortitude, Corpo + Reflexos ou
+  Coração + Vontade, conforme o feitiço.</p>
+
+  <h3>Formas de lançar</h3>
+  <div class="rolagem"><table>
+  <thead><tr><th>Forma</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Não verbal</strong></td><td>+1 PM e –1 passo na perícia. O alvo não sabe o que vem e não pode escolher o contra-feitiço.</td></tr>
+  <tr><td><strong>Varinha emprestada</strong></td><td>–1 passo. Uma varinha conquistada em duelo não sofre a penalidade.</td></tr>
+  <tr><td><strong>Sem varinha</strong></td><td>Só Círculo 1, –2 passos e custo dobrado.</td></tr>
+  <tr><td><strong>Com calma</strong></td><td>Fora de combate, com um minuto e sem pressão: +1 passo.</td></tr>
+  <tr><td><strong>Sustentado</strong></td><td>Levitar, iluminar, manter um escudo: 1 PM por rodada depois da primeira.</td></tr>
+  </tbody></table></div>
+
+  <h3>Quando dá errado</h3>
+  <p>Falhar só gasta o PM. O <strong>Desastre</strong> (todos os dados em 1) aciona a tabela do
+  Capítulo II, e quem tirar 8 nela rola a <a href="#descontrolada">Magia Descontrolada</a>.</p>
+
+  <h3>Contra-feitiço</h3>
+  <p><em>Finite Incantatem</em> encerra um efeito mágico em andamento: teste de Feitiços contra
+  a DT do feitiço original. Para maldições de Artes das Trevas, –1 passo.</p>
+</section>
+
+<!-- ==================== V ==================== -->
+<section class="capitulo" id="cap5">
+  <div class="abertura">
+    <span class="alg">Capítulo Cinco</span>
+    <h2>Grimório</h2>
+    <p>Os feitiços, círculo por círculo, e como criar os seus</p>
+  </div>
+
+  <p class="abre">Cada entrada traz a perícia, o alcance, a resistência e o efeito. Dano é
+  sempre <strong>RA + modificador</strong>; no crítico, os dois maiores resultados mais o
+  modificador. Você aprende dois feitiços novos a cada ano.</p>
+
+  <h3>Círculo 1 · Primeiranista</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Feitiço</th><th>Perícia</th><th>Alcance</th><th>Resiste</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Lumos / Nox</strong></td><td>Feitiços</td><td>Pessoal</td><td>—</td><td>Luz na ponta da varinha, 9 m. Nox apaga.</td></tr>
+  <tr><td><strong>Wingardium Leviosa</strong></td><td>Feitiços</td><td>9 m</td><td>—</td><td>Levita até 50 kg; sustentado.</td></tr>
+  <tr><td><strong>Alohomora</strong></td><td>Feitiços</td><td>Toque</td><td>—</td><td>Abre fechadura comum. Tranca mágica: DT do feitiço que a fechou.</td></tr>
+  <tr><td><strong>Colloportus</strong></td><td>Feitiços</td><td>Toque</td><td>—</td><td>Tranca uma porta. Abrir pede Alohomora contra a sua DT.</td></tr>
+  <tr><td><strong>Reparo</strong></td><td>Transfig.</td><td>Toque</td><td>—</td><td>Conserta objeto não mágico.</td></tr>
+  <tr><td><strong>Accio</strong></td><td>Feitiços</td><td>Visão</td><td>Reflexos, se seguro</td><td>Puxa um objeto até você.</td></tr>
+  <tr><td><strong>Aguamenti</strong></td><td>Feitiços</td><td>3 m</td><td>—</td><td>Jato de água; apaga fogo pequeno.</td></tr>
+  <tr><td><strong>Incendio</strong></td><td>Feitiços</td><td>9 m</td><td>—</td><td>Ataque. RA + 1 de fogo; acende o que for inflamável.</td></tr>
+  <tr><td><strong>Flipendo</strong> <span class="dado">J</span></td><td>Feitiços</td><td>9 m</td><td>Fortitude</td><td>Ataque. RA + 0 e empurra 3 m.</td></tr>
+  <tr><td><strong>Expelliarmus</strong></td><td>Feitiços</td><td>9 m</td><td>Reflexos</td><td>Desarma. Crítico: a varinha vem para a sua mão.</td></tr>
+  <tr><td><strong>Rictusempra</strong></td><td>Feitiços</td><td>9 m</td><td>Vontade</td><td>Cócegas: –1 passo em tudo por 1 rodada.</td></tr>
+  <tr><td><strong>Tarantallegra</strong></td><td>Feitiços</td><td>9 m</td><td>Vontade</td><td>Pernas dançam: não se desloca por 2 rodadas.</td></tr>
+  <tr><td><strong>Protego</strong></td><td>Feitiços</td><td>Pessoal</td><td>—</td><td>Reação de escudo (Capítulo VII).</td></tr>
+  <tr><td><strong>Finite Incantatem</strong></td><td>Feitiços</td><td>9 m</td><td>—</td><td>Encerra um efeito mágico (Capítulo IV).</td></tr>
+  <tr><td><strong>Episkey</strong></td><td>Medibrux.</td><td>Toque</td><td>—</td><td>Cura RA PV de ferimentos leves. Uma vez por ferido por cena.</td></tr>
+  <tr><td><strong>Scourgify / Tergeo</strong></td><td>Feitiços</td><td>Toque</td><td>—</td><td>Limpa sujeira, líquidos, sangue.</td></tr>
+  <tr><td><strong>Silencio</strong></td><td>Feitiços</td><td>9 m</td><td>Vontade</td><td>Mudo por 2 rodadas: só lança não verbal.</td></tr>
+  <tr><td><strong>Sonorus / Quietus</strong></td><td>Feitiços</td><td>Pessoal</td><td>—</td><td>Amplifica a voz / desfaz.</td></tr>
+  <tr><td><strong>Orchideous / Avis</strong></td><td>Transfig.</td><td>3 m</td><td>—</td><td>Conjura flores ou pássaros. Distração: +1 passo em Enganação.</td></tr>
+  <tr><td><strong>Point Me</strong></td><td>Feitiços</td><td>Pessoal</td><td>—</td><td>A varinha aponta o norte.</td></tr>
+  <tr><td><strong>Periculum</strong> <span class="dado">F</span></td><td>Feitiços</td><td>90 m</td><td>—</td><td>Faíscas vermelhas no céu: pedido de socorro.</td></tr>
+  </tbody></table></div>
+
+  <h3>Círculo 2 · Intermediário</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Feitiço</th><th>Perícia</th><th>Alcance</th><th>Resiste</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Stupefy</strong></td><td>Feitiços</td><td>18 m</td><td>Fortitude</td><td>Ataque. RA + 2 e Atordoado 1 rodada (resistiu: só o dano).</td></tr>
+  <tr><td><strong>Petrificus Totalus</strong></td><td>Feitiços</td><td>9 m</td><td>Fortitude</td><td>Petrificado até o fim da cena ou um Finite.</td></tr>
+  <tr><td><strong>Incarcerous</strong></td><td>Transfig.</td><td>9 m</td><td>Reflexos</td><td>Cordas: Preso. Soltar: Corpo + Atletismo contra a DT.</td></tr>
+  <tr><td><strong>Locomotor Mortis</strong></td><td>Feitiços</td><td>9 m</td><td>Reflexos</td><td>Pernas presas: não se desloca até um Finite.</td></tr>
+  <tr><td><strong>Levicorpus / Liberacorpus</strong></td><td>Feitiços</td><td>9 m</td><td>Reflexos</td><td>Pendura pelo tornozelo: Indefeso.</td></tr>
+  <tr><td><strong>Diffindo</strong></td><td>Feitiços</td><td>9 m</td><td>—</td><td>Ataque. RA + 2 de corte, ou corta corda, tecido, madeira.</td></tr>
+  <tr><td><strong>Confundo</strong></td><td>Feitiços</td><td>9 m</td><td>Vontade</td><td>Confuso por <span class="dado">1d4</span> rodadas.</td></tr>
+  <tr><td><strong>Obscuro</strong></td><td>Transfig.</td><td>9 m</td><td>Reflexos</td><td>Venda nos olhos: Cego por <span class="dado">1d4</span> rodadas.</td></tr>
+  <tr><td><strong>Glacius</strong> <span class="dado">J</span></td><td>Feitiços</td><td>9 m</td><td>Fortitude</td><td>Ataque. RA + 1 de frio e deslocamento pela metade.</td></tr>
+  <tr><td><strong>Depulso</strong> <span class="dado">J</span></td><td>Feitiços</td><td>9 m</td><td>Fortitude</td><td>Ataque. RA + 1 e arremessa 6 m.</td></tr>
+  <tr><td><strong>Descendo</strong></td><td>Feitiços</td><td>9 m</td><td>Reflexos</td><td>Derruba quem voa ou está no alto; RA de queda.</td></tr>
+  <tr><td><strong>Reducio / Engorgio</strong></td><td>Transfig.</td><td>9 m</td><td>Fortitude</td><td>Encolhe ou aumenta um tamanho até o fim da cena.</td></tr>
+  <tr><td><strong>Ferula</strong></td><td>Medibrux.</td><td>Toque</td><td>—</td><td>Tala e bandagem: estabiliza e cura RA + 2.</td></tr>
+  <tr><td><strong>Rennervate</strong></td><td>Medibrux.</td><td>9 m</td><td>—</td><td>Acorda inconsciente ou atordoado.</td></tr>
+  <tr><td><strong>Homenum Revelio</strong></td><td>Feitiços</td><td>18 m</td><td>—</td><td>Revela pessoas escondidas na área.</td></tr>
+  <tr><td><strong>Muffliato</strong></td><td>Feitiços</td><td>6 m</td><td>—</td><td>Quem está de fora não entende a conversa.</td></tr>
+  <tr><td><strong>Aparecium / Specialis Revelio</strong></td><td>Feitiços</td><td>Toque</td><td>—</td><td>Revela escrita oculta / os encantamentos de um objeto.</td></tr>
+  <tr><td><strong>Riddikulus</strong></td><td>Feitiços</td><td>9 m</td><td>—</td><td>Coração + Feitiços contra a DT do Bicho-Papão: ele vira piada.</td></tr>
+  <tr><td><strong>Furnunculus / Densaugeo</strong></td><td>Feitiços</td><td>9 m</td><td>Fortitude</td><td>Azaração humilhante: –1 passo em testes sociais e de lançar.</td></tr>
+  <tr><td><strong>Oppugno</strong></td><td>Transfig.</td><td>9 m</td><td>—</td><td>Ataque. Objetos ou pássaros investem: RA + 2.</td></tr>
+  <tr><td><strong>Impervius</strong></td><td>Feitiços</td><td>Toque</td><td>—</td><td>Impermeável a água e lama até o fim do dia.</td></tr>
+  </tbody></table></div>
+
+  <h3>Círculo 3 · N.O.M.</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Feitiço</th><th>Perícia</th><th>Alcance</th><th>Resiste</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Reducto</strong></td><td>Feitiços</td><td>18 m</td><td>—</td><td>Ataque. RA + 4; destrói barreiras e objetos.</td></tr>
+  <tr><td><strong>Confringo</strong></td><td>Feitiços</td><td>18 m</td><td>Reflexos (metade)</td><td>Explosão de fogo em raio 3 m: RA + 3.</td></tr>
+  <tr><td><strong>Bombarda</strong> <span class="dado">J</span></td><td>Feitiços</td><td>18 m</td><td>Reflexos (metade)</td><td>Explosão em raio 3 m: RA + 2; derruba paredes.</td></tr>
+  <tr><td><strong>Expecto Patronum</strong></td><td>Feitiços (Coração)</td><td>Pessoal</td><td>—</td><td>DT 9, corpóreo DT 11. Afasta dementadores e Lethifolds; aliados perto recuperam RA de DET. Leva mensagens.</td></tr>
+  <tr><td><strong>Protego Totalum / Cave Inimicum</strong></td><td>Feitiços</td><td>Área</td><td>—</td><td>Protege um acampamento: quem é de fora não vê nem ouve.</td></tr>
+  <tr><td><strong>Salvio Hexia</strong></td><td>Feitiços</td><td>Área</td><td>—</td><td>Feitiços contra quem está na área sofrem –1 passo, uma cena.</td></tr>
+  <tr><td><strong>Feitiço da Desilusão</strong></td><td>Transfig.</td><td>Toque</td><td>—</td><td>Camuflagem: +2 passos em Furtividade.</td></tr>
+  <tr><td><strong>Obliviate</strong></td><td>Feitiços</td><td>Toque</td><td>Vontade</td><td>Apaga a memória de uma cena. Desastre: apaga demais.</td></tr>
+  <tr><td><strong>Legilimens</strong></td><td>Feitiços</td><td>9 m</td><td>Oclumência</td><td>Vê pensamentos e lembranças recentes.</td></tr>
+  <tr><td><strong>Piertotum Locomotor</strong></td><td>Transfig.</td><td>Área</td><td>—</td><td>Anima estátuas e armaduras: <span class="dado">1d4</span> lacaios de Perigo 2.</td></tr>
+  <tr><td><strong>Vulnera Sanentur</strong></td><td>Medibrux.</td><td>Toque</td><td>—</td><td>Cura RA + 5 e encerra Sangrando.</td></tr>
+  <tr><td><strong>Arresto Momentum</strong> <span class="dado">F</span></td><td>Feitiços</td><td>18 m</td><td>—</td><td>Reação: anula uma queda ou freia um projétil.</td></tr>
+  <tr><td><strong>Geminio</strong></td><td>Transfig.</td><td>Toque</td><td>—</td><td>Cópia de um objeto não mágico, até o fim da cena.</td></tr>
+  <tr><td><strong>Evanesco</strong></td><td>Transfig.</td><td>9 m</td><td>—</td><td>Faz sumir um objeto inanimado do tamanho de uma cadeira.</td></tr>
+  </tbody></table></div>
+
+  <h3>Círculo 4 · N.I.E.M.</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Feitiço</th><th>Perícia</th><th>Alcance</th><th>Resiste</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Aparatação</strong></td><td>Transfig.</td><td>Pessoal</td><td>—</td><td>Some e reaparece num lugar que você conhece. Levar alguém: –1 passo. Desastre: estrunchado, perde <span class="dado">3d6</span> PV.</td></tr>
+  <tr><td><strong>Portus</strong></td><td>Feitiços</td><td>Toque</td><td>—</td><td>Cria uma Chave de Portal (ilegal sem licença).</td></tr>
+  <tr><td><strong>Feitiço Fidelius</strong></td><td>Feitiços</td><td>Ritual</td><td>—</td><td>Esconde um segredo dentro de um Fiel do Segredo. Leva uma noite.</td></tr>
+  <tr><td><strong>Expulso</strong></td><td>Feitiços</td><td>18 m</td><td>Reflexos (metade)</td><td>Explosão violenta em raio 3 m: RA + 6.</td></tr>
+  <tr><td><strong>Protego Maxima</strong> <span class="dado">F</span></td><td>Feitiços</td><td>Área</td><td>—</td><td>Cúpula: absorve 20 de dano por rodada; sustentado.</td></tr>
+  <tr><td><strong>Sectumsempra</strong></td><td>Artes das Trevas</td><td>9 m</td><td>—</td><td>Ataque. RA + 5 de corte e Sangrando grave.</td></tr>
+  <tr><td><strong>Imperio</strong></td><td>Artes das Trevas</td><td>9 m</td><td>Vontade, a cada rodada</td><td>Controle total. Maldição Imperdoável: prisão em Azkaban.</td></tr>
+  <tr><td><strong>Crucio</strong></td><td>Artes das Trevas</td><td>9 m</td><td>Vontade</td><td>Perde RA + 4 de DET e fica Atordoado. Imperdoável.</td></tr>
+  </tbody></table></div>
+
+  <h3>Proibidos</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Feitiço</th><th>Perícia</th><th>Alcance</th><th>Resiste</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Avada Kedavra</strong></td><td>Artes das Trevas</td><td>18 m</td><td>Nenhuma: só sair da frente</td><td>Morte. Exige querer de verdade: sem ódio, a DT sobe para 15. Não pode ser bloqueado por Protego.</td></tr>
+  <tr><td><strong>Fogomaldito</strong></td><td>Artes das Trevas</td><td>Área</td><td>Reflexos</td><td>Fogo vivo: RA + 8 por rodada em quem estiver perto, e cresce. A cada rodada, teste DT 13 para controlar.</td></tr>
+  <tr><td><strong>Protego Diabolica</strong> <span class="dado">AF</span></td><td>Artes das Trevas</td><td>Raio 6 m</td><td>—</td><td>Círculo de fogo negro. Quem é leal ao conjurador atravessa; os outros sofrem RA + 10.</td></tr>
+  </tbody></table></div>
+
+  <h3>Criar um feitiço</h3>
+  <p>Snape inventou feitiços nas margens de um livro. Seu personagem também pode. Escolha
+  um efeito base, some os modificadores e veja o Círculo. Inventar leva uma semana por
+  Círculo e um teste longo de Mente + perícia (Capítulo VI).</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Efeito base</th><th class="num">Círculo</th></tr></thead>
+  <tbody>
+  <tr><td>Utilidade simples (luz, limpar, abrir, mover objeto leve)</td><td class="num">1</td></tr>
+  <tr><td>Ataque RA + 0 a +1, ou condição leve por 1 rodada</td><td class="num">1</td></tr>
+  <tr><td>Ataque RA + 2, ou condição por 2 rodadas, ou cura RA</td><td class="num">2</td></tr>
+  <tr><td>Ataque RA + 4, área pequena, condição até o fim da cena, mente</td><td class="num">3</td></tr>
+  <tr><td>Ataque RA + 6, transporte, proteção de lugar, ritual</td><td class="num">4</td></tr>
+  <tr><td>Morte, controle total, alma</td><td class="num">Proibido</td></tr>
+  </tbody></table></div>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Modificador</th><th class="num">Círculo</th></tr></thead>
+  <tbody>
+  <tr><td>Área (raio 3 m) ou alcance 18 m+</td><td class="num">+1</td></tr>
+  <tr><td>Sem resistência</td><td class="num">+1</td></tr>
+  <tr><td>Efeito permanente</td><td class="num">+1</td></tr>
+  <tr><td>Só funciona numa situação (uma porta, uma espécie)</td><td class="num">–1</td></tr>
+  <tr><td>Exige ingrediente, ritual ou um minuto</td><td class="num">–1</td></tr>
+  </tbody></table></div>
+</section>
+
+<!-- ==================== VI ==================== -->
+<section class="capitulo" id="cap6">
+  <div class="abertura">
+    <span class="alg">Capítulo Seis</span>
+    <h2>Poções e Herbologia</h2>
+    <p>O caldeirão, as plantas e as receitas</p>
+  </div>
+
+  <p class="abre">Uma poção não se faz num teste só. Ela se faz em etapas, cada uma uma
+  rolagem, até juntar os pontos de Preparo da receita — ou até o tempo acabar.</p>
+
+  <h3>O teste longo</h3>
+  <ol class="passos">
+    <li><b>Ingredientes.</b> Sem eles, nada feito. Faltou um: –1 passo em todas as etapas.</li>
+    <li><b>Cada etapa</b> é um teste de Mente + Poções contra a DT da receita.</li>
+    <li><b>Sucesso</b>: some o RA ao Preparo. <b>Falha</b>: some o RB. <b>Crítico</b>: some os dois maiores.</li>
+    <li><b>Desastre</b>: o caldeirão derrete ou explode. Todos perto perdem <span class="dado">1d6</span> PV, e a poção vira outra coisa (o Mestre escolhe).</li>
+    <li>Juntou o Preparo dentro do limite de etapas: a poção está pronta. Passou do limite: estragou.</li>
+  </ol>
+  <p>Pesquisas na biblioteca, invenção de feitiços e consertos complicados usam o mesmo teste
+  longo, com a perícia certa.</p>
+
+  <h3>Receitas</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Poção</th><th class="num">DT</th><th class="num">Preparo</th><th class="num">Etapas</th><th>Ingredientes</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Cura para Furúnculos</strong></td><td class="num">5</td><td class="num">8</td><td class="num">3</td><td>Presas de cobra, urtiga seca</td><td>Remove azarações de pele.</td></tr>
+  <tr><td><strong>Poção Apimentada</strong></td><td class="num">5</td><td class="num">8</td><td class="num">3</td><td>Mandrágora, chifre de bicórnio</td><td>Cura resfriado; +1 passo contra frio por um dia.</td></tr>
+  <tr><td><strong>Solução Redutora</strong></td><td class="num">7</td><td class="num">10</td><td class="num">3</td><td>Raiz de margarida, figo seco, lagarta</td><td>Encolhe um tamanho por uma cena.</td></tr>
+  <tr><td><strong>Solução de Inchaço</strong></td><td class="num">7</td><td class="num">10</td><td class="num">3</td><td>Baço de morcego, olho de baiacu</td><td>Incha: Corpo –1 passo, +1 tamanho.</td></tr>
+  <tr><td><strong>Poção do Sono</strong></td><td class="num">7</td><td class="num">10</td><td class="num">3</td><td>Lavanda, valeriana, flobberworm</td><td>Fortitude DT 9 ou dorme <span class="dado">1d6</span> horas.</td></tr>
+  <tr><td><strong>Wiggenweld</strong> <span class="dado">J</span></td><td class="num">7</td><td class="num">12</td><td class="num">4</td><td>Suco de horklump, ditamno</td><td>Cura RA + 6 PV; acorda do Morto-Vivo.</td></tr>
+  <tr><td><strong>Essência de Ditamno</strong></td><td class="num">7</td><td class="num">12</td><td class="num">4</td><td>Ditamno</td><td>Cura RA + 4 e encerra Sangrando.</td></tr>
+  <tr><td><strong>Antídoto Comum</strong></td><td class="num">9</td><td class="num">12</td><td class="num">4</td><td>Bezoar moído, visgo, pelo de unicórnio</td><td>Encerra venenos comuns. Um bezoar inteiro salva de quase todos.</td></tr>
+  <tr><td><strong>Edurus</strong> <span class="dado">J</span></td><td class="num">9</td><td class="num">12</td><td class="num">4</td><td>Ovos de ashwinder, pelo de mongrel</td><td>+2 Defesa por uma cena.</td></tr>
+  <tr><td><strong>Maxima</strong> <span class="dado">J</span></td><td class="num">9</td><td class="num">12</td><td class="num">4</td><td>Sanguessuga, presa de aranha</td><td>Feitiços de ataque +2 de dano por uma cena.</td></tr>
+  <tr><td><strong>Aguçar o Intelecto</strong></td><td class="num">9</td><td class="num">14</td><td class="num">4</td><td>Besouros, gengibre, bile de tatu</td><td>Mente +1 passo por uma cena.</td></tr>
+  <tr><td><strong>Poção da Paz</strong></td><td class="num">9</td><td class="num">16</td><td class="num">5</td><td>Pedra-da-lua, xarope de heléboro</td><td>Remove Amedrontado e Desesperado; recupera RA de DET.</td></tr>
+  <tr><td><strong>Reposição de Sangue</strong></td><td class="num">9</td><td class="num">16</td><td class="num">5</td><td>—</td><td>Recupera RA + 4 PV fora de combate.</td></tr>
+  <tr><td><strong>Poção do Foco</strong> <span class="dado">J</span></td><td class="num">11</td><td class="num">16</td><td class="num">5</td><td>Lacewing, fluxweed, língua de dugbog</td><td>Feitiços custam 1 PM a menos (mínimo 1) por uma cena.</td></tr>
+  <tr><td><strong>Esquelesce</strong></td><td class="num">11</td><td class="num">18</td><td class="num">5</td><td>Escamas, ervas amargas</td><td>Faz ossos crescerem; uma noite de dor.</td></tr>
+  <tr><td><strong>Invisibilidade</strong> <span class="dado">J</span></td><td class="num">11</td><td class="num">20</td><td class="num">6</td><td>Cogumelo saltador, sanguinária, meleca de trasgo</td><td>Invisível por <span class="dado">1d4</span> rodadas ou até atacar.</td></tr>
+  <tr><td><strong>Restauradora de Mandrágoras</strong></td><td class="num">11</td><td class="num">20</td><td class="num">6</td><td>Mandrágoras maduras</td><td>Desfaz petrificação.</td></tr>
+  <tr><td><strong>Veritaserum</strong></td><td class="num">13</td><td class="num">24</td><td class="num">6</td><td>Controlados pelo Ministério</td><td>Coração + Oclumência DT 13, ou responde com a verdade.</td></tr>
+  <tr><td><strong>Polissuco</strong></td><td class="num">13</td><td class="num">26</td><td class="num">7</td><td>Lacewing, sanguessugas, fluxweed, sanguinária, bicórnio, pele de ararambóia, parte de quem você vai virar</td><td>Aparência de outra pessoa por 1 hora.</td></tr>
+  <tr><td><strong>Amortentia</strong></td><td class="num">13</td><td class="num">24</td><td class="num">6</td><td>Segredo do professor</td><td>Obsessão por quem a deu. Vontade DT 13 por dia. Não é amor.</td></tr>
+  <tr><td><strong>Morto-Vivo</strong></td><td class="num">13</td><td class="num">24</td><td class="num">6</td><td>Asfódelo, losna, feijão soporífero</td><td>Sono profundo, parecido com a morte.</td></tr>
+  <tr><td><strong>Mata-Cão</strong></td><td class="num">15</td><td class="num">28</td><td class="num">7</td><td>Acônito e raros</td><td>O lobisomem mantém a mente humana na lua cheia.</td></tr>
+  <tr><td><strong>Felix Felicis</strong></td><td class="num">15</td><td class="num">32</td><td class="num">8</td><td>Fórmula complexa; seis meses</td><td>Por <span class="dado">1d4</span> horas, todo teste rola um dado extra. Excesso: imprudência.</td></tr>
+  </tbody></table></div>
+
+  <h3>Criar uma poção</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>A poção…</th><th class="num">DT</th><th class="num">Preparo</th><th class="num">Etapas</th></tr></thead>
+  <tbody>
+  <tr><td>Cura algo leve, muda uma aparência, efeito cômico</td><td class="num">5–7</td><td class="num">8–10</td><td class="num">3</td></tr>
+  <tr><td>+1 passo, cura RA + 4, condição leve</td><td class="num">7–9</td><td class="num">12–14</td><td class="num">4</td></tr>
+  <tr><td>Efeito forte por uma cena, mexe com a mente</td><td class="num">11</td><td class="num">16–20</td><td class="num">5–6</td></tr>
+  <tr><td>Muda o corpo, a verdade ou a sorte</td><td class="num">13–15</td><td class="num">24–32</td><td class="num">6–8</td></tr>
+  </tbody></table></div>
+
+  <h3>Plantas mágicas</h3>
+  <p>Colher uma planta mágica é um teste de Mente + Herbologia. Falhou: a planta reage.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d20</th><th>Planta</th><th class="num">DT</th><th>Se falhar</th><th>Serve para</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td><strong>Visgo-do-Diabo</strong></td><td class="num">9</td><td>Preso; sufoca RA por rodada. Luz ou fogo solta.</td><td>Armadilhas</td></tr>
+  <tr><td class="d">2</td><td><strong>Mandrágora</strong></td><td class="num">9</td><td>Grito: Fortitude DT 9 ou desmaia (adulta: mata).</td><td>Restauradora, Apimentada</td></tr>
+  <tr><td class="d">3</td><td><strong>Ditamno</strong></td><td class="num">5</td><td>Nada.</td><td>Cura</td></tr>
+  <tr><td class="d">4</td><td><strong>Guelricho</strong></td><td class="num">7</td><td>Nada.</td><td>Respirar debaixo d'água por 1 hora</td></tr>
+  <tr><td class="d">5</td><td><strong>Tentácula Venenosa</strong></td><td class="num">11</td><td>RA + 2 e veneno.</td><td>Sementes valiosas</td></tr>
+  <tr><td class="d">6</td><td><strong>Bubotúbera</strong></td><td class="num">7</td><td>Pus na pele: furúnculos.</td><td>Remédio para acne</td></tr>
+  <tr><td class="d">7</td><td><strong>Gerânio Dentado</strong></td><td class="num">7</td><td>Mordida: RA.</td><td>Ornamento perigoso</td></tr>
+  <tr><td class="d">8</td><td><strong>Mimbulus mimbletonia</strong></td><td class="num">5</td><td>Jato de seiva fedorenta.</td><td>Presente estranho</td></tr>
+  <tr><td class="d">9</td><td><strong>Snargaluff</strong></td><td class="num">9</td><td>Cipós chicoteiam: RA + 1.</td><td>Vagens</td></tr>
+  <tr><td class="d">10</td><td><strong>Fluxweed</strong></td><td class="num">7</td><td>Murcha se colhida fora da lua cheia.</td><td>Polissuco</td></tr>
+  <tr><td class="d">11</td><td><strong>Sanguinária</strong></td><td class="num">5</td><td>Nada.</td><td>Polissuco</td></tr>
+  <tr><td class="d">12</td><td><strong>Acônito</strong></td><td class="num">7</td><td>Veneno leve: RA.</td><td>Mata-Cão</td></tr>
+  <tr><td class="d">13</td><td><strong>Asfódelo</strong></td><td class="num">7</td><td>Nada.</td><td>Morto-Vivo</td></tr>
+  <tr><td class="d">14</td><td><strong>Feijão Soporífero</strong></td><td class="num">9</td><td>Escorrega e some; esmagar, não cortar.</td><td>Morto-Vivo</td></tr>
+  <tr><td class="d">15</td><td><strong>Figo Seco</strong></td><td class="num">5</td><td>Nada.</td><td>Solução Redutora</td></tr>
+  <tr><td class="d">16</td><td><strong>Heléboro</strong></td><td class="num">9</td><td>Veneno leve.</td><td>Poção da Paz</td></tr>
+  <tr><td class="d">17</td><td><strong>Bulbo Saltitante</strong></td><td class="num">7</td><td>Pula no seu rosto.</td><td>Diversão</td></tr>
+  <tr><td class="d">18</td><td><strong>Narciso Buzinante</strong></td><td class="num">5</td><td>Buzina alto: todos ouvem.</td><td>Alarme</td></tr>
+  <tr><td class="d">19</td><td><strong>Salgueiro Lutador</strong></td><td class="num">13</td><td>RA + 4 por rodada perto dele.</td><td>Guardar passagens</td></tr>
+  <tr><td class="d">20</td><td><strong>Arbusto Borboleta</strong></td><td class="num">5</td><td>Nada.</td><td>Decoração</td></tr>
+  </tbody></table></div>
+</section>
+
+<!-- ==================== VII ==================== -->
+<section class="capitulo" id="cap7">
+  <div class="abertura">
+    <span class="alg">Capítulo Sete</span>
+    <h2>Combate e duelos</h2>
+    <p>Varinha erguida, turno a turno</p>
+  </div>
+
+  <p class="abre">O combate é contado em rodadas de poucos segundos. Na sua vez, você tem
+  uma <strong>ação</strong> e um <strong>movimento</strong>. Fora da sua vez, você tem uma
+  <strong>reação</strong> por rodada.</p>
+
+  <h3>Iniciativa</h3>
+  <p>Todos rolam Corpo + Reflexos. A ordem vai do maior para o menor. Criaturas rolam os
+  dados de ataque da ficha.</p>
+
+  <h3>Atacar</h3>
+  <div class="destaque">
+    <span class="rotulo">Ataque</span>
+    <p class="formula">Mente + perícia do feitiço ≥ Defesa do alvo → dano = RA + modificador</p>
+  </div>
+  <p>Ataque sem varinha usa Corpo + Luta e causa RA + 0 (soco) a RA + 3 (espada). Feitiços de
+  ataque não pedem a DT do Círculo: o teste contra a Defesa já é o teste do feitiço.</p>
+
+  <h3>Protego</h3>
+  <p>Como reação, gaste 1 PM e role Mente + Feitiços. Se o seu total for <strong>maior ou igual
+  ao total do ataque</strong>, o feitiço bate no escudo. Se você tirar <strong>crítico</strong>,
+  o feitiço volta para quem lançou. Protego não para maldições Proibidas nem ataques físicos
+  de criaturas grandes.</p>
+
+  <h3>Outras ações</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Ação</th><th>Como</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Desviar</strong> (reação)</td><td>Corpo + Reflexos; se igualar o ataque, você se joga e fica Caído.</td></tr>
+  <tr><td><strong>Pegar a varinha caída</strong></td><td>Movimento.</td></tr>
+  <tr><td><strong>Esconder-se</strong></td><td>Corpo + Furtividade contra a Percepção de quem procura.</td></tr>
+  <tr><td><strong>Estabilizar</strong></td><td>Mente + Medibruxaria DT 7, ou qualquer feitiço de cura.</td></tr>
+  <tr><td><strong>Beber poção</strong></td><td>Ação. Dar a outra pessoa: ação, e ela precisa estar consciente.</td></tr>
+  <tr><td><strong>Fugir</strong></td><td>Dois movimentos. Inimigos ao lado podem atacar como reação.</td></tr>
+  </tbody></table></div>
+
+  <h3>Cair</h3>
+  <p>Com 0 PV você cai inconsciente e <em>Morrendo</em>. No início de cada turno seu, role
+  Corpo + Fortitude DT 7. Três falhas: morte. Três sucessos, ou alguém te estabiliza: você
+  acorda com 1 PV depois da cena.</p>
+
+  <h3>Determinação</h3>
+  <p>Dementadores, maldições, horrores e perdas tiram Determinação. Com 0 DET você fica
+  <strong>Desesperado</strong>: –1 passo em tudo, e não pode lançar feitiços de Círculo 3 ou
+  mais até recuperar ao menos 1 DET.</p>
+
+  <h3>Condições</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Condição</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Atordoado</strong></td><td>Perde a próxima ação; Defesa –2.</td></tr>
+  <tr><td><strong>Caído</strong></td><td>–1 passo em Corpo; levantar gasta o movimento.</td></tr>
+  <tr><td><strong>Cego</strong></td><td>–2 passos em ataques e Percepção; Defesa –2.</td></tr>
+  <tr><td><strong>Confuso</strong></td><td>No início do turno, <span class="dado">d6</span>: 1–2 age normal, 3–4 fica parado, 5–6 ataca o mais próximo.</td></tr>
+  <tr><td><strong>Desarmado</strong></td><td>Sem varinha: só magia sem varinha.</td></tr>
+  <tr><td><strong>Indefeso</strong></td><td>Defesa 3; ataques contra você ganham +1 passo.</td></tr>
+  <tr><td><strong>Amedrontado</strong></td><td>–1 passo; não se aproxima do que te assusta.</td></tr>
+  <tr><td><strong>Desesperado</strong></td><td>Veja Determinação, acima.</td></tr>
+  <tr><td><strong>Petrificado</strong></td><td>Não age, não se move, Indefeso.</td></tr>
+  <tr><td><strong>Preso</strong></td><td>Não se desloca; –1 passo em ataques.</td></tr>
+  <tr><td><strong>Sangrando</strong></td><td>Perde <span class="dado">1d4</span> PV no início do turno; grave: <span class="dado">1d8</span>. Estancar: Medibruxaria DT 7.</td></tr>
+  <tr><td><strong>Controlado</strong></td><td>Age como o conjurador quer. Resiste a cada rodada.</td></tr>
+  </tbody></table></div>
+
+  <h3>Duelo formal</h3>
+  <p>No Clube de Duelos as regras são outras: os duelistas se cumprimentam, contam até três e
+  só valem feitiços de Círculo 1 e 2. Quem for Desarmado, Atordoado ou Caído perde. Valem
+  pontos para a Casa: o Mestre dá de 5 a 20.</p>
+</section>
+
+<!-- ==================== VIII ==================== -->
+<section class="capitulo" id="cap8">
+  <div class="abertura"><span class="alg">Capítulo Oito</span><h2>Forja de Criaturas</h2><p>Para o Mestre: as tabelas para montar qualquer fera</p></div>
+  <p class="abre">Toda criatura sai deste motor. A aparência é livre; o perfil mecânico não é. Siga os passos, role ou escolha em cada tabela, e a ficha fica pronta em dez minutos.</p>
+  <ol class="passos">
+    <li><b>Uma frase.</b> Role nas tabelas de aparência ou escreva: “um Grindylow que caça pelo cheiro do medo”.</li>
+    <li><b>Perigo (1 a 11).</b> Chefe da sessão: o ano do grupo + 1. Capanga em bando: 3 abaixo.</li>
+    <li><b>Linha da Tábua.</b> Copie PV, Defesa, dados de ataque, dano e DT. Não invente números fora dela.</li>
+    <li><b>Arquétipo.</b> Ajusta os números sem mudar o Perigo.</li>
+    <li><b>Traços e Poderes.</b> Na quantidade da Tábua.</li>
+    <li><b>Fraqueza.</b> Obrigatória: como vencê-la sem força bruta.</li>
+  </ol>
+  <h3>A Tábua de Perigo</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">Perigo</th><th>Ministério</th><th class="num">PV</th><th class="num">Defesa</th><th>Ataque</th><th>Dano</th><th class="num">DT</th><th class="num">Traços</th><th class="num">Poderes</th><th class="num">Fases</th></tr></thead>
+  <tbody>
+  <tr><td class="num">1</td><td>X</td><td class="num">6</td><td class="num">6</td><td>d6+d4</td><td>RA+1</td><td class="num">6</td><td class="num">1</td><td class="num">0</td><td class="num">—</td></tr>
+  <tr><td class="num">2</td><td>X</td><td class="num">12</td><td class="num">7</td><td>d6+d6</td><td>RA+2</td><td class="num">7</td><td class="num">1</td><td class="num">1</td><td class="num">2</td></tr>
+  <tr><td class="num">3</td><td>XX</td><td class="num">20</td><td class="num">7</td><td>d8+d6</td><td>RA+3</td><td class="num">8</td><td class="num">2</td><td class="num">1</td><td class="num">3</td></tr>
+  <tr><td class="num">4</td><td>XX</td><td class="num">30</td><td class="num">8</td><td>d8+d8</td><td>RA+4</td><td class="num">8</td><td class="num">2</td><td class="num">1</td><td class="num">3</td></tr>
+  <tr><td class="num">5</td><td>XXX</td><td class="num">42</td><td class="num">9</td><td>d10+d8</td><td>RA+5</td><td class="num">9</td><td class="num">2</td><td class="num">2</td><td class="num">3</td></tr>
+  <tr><td class="num">6</td><td>XXX</td><td class="num">56</td><td class="num">9</td><td>d10+d10</td><td>RA+6</td><td class="num">10</td><td class="num">3</td><td class="num">2</td><td class="num">3</td></tr>
+  <tr><td class="num">7</td><td>XXXX</td><td class="num">72</td><td class="num">10</td><td>d12+d10</td><td>RA+7</td><td class="num">10</td><td class="num">3</td><td class="num">2</td><td class="num">3</td></tr>
+  <tr><td class="num">8</td><td>XXXX</td><td class="num">90</td><td class="num">11</td><td>d12+d12</td><td>RA+8</td><td class="num">11</td><td class="num">3</td><td class="num">3</td><td class="num">4</td></tr>
+  <tr><td class="num">9</td><td>XXXXX</td><td class="num">110</td><td class="num">12</td><td>d12+d12+d8</td><td>RA+9</td><td class="num">12</td><td class="num">4</td><td class="num">3</td><td class="num">4</td></tr>
+  <tr><td class="num">10</td><td>XXXXX</td><td class="num">135</td><td class="num">13</td><td>d12+d12+d10</td><td>RA+11</td><td class="num">13</td><td class="num">4</td><td class="num">3</td><td class="num">4</td></tr>
+  <tr><td class="num">11</td><td>XXXXX</td><td class="num">165</td><td class="num">14</td><td>d12+d12+d12</td><td>RA+13</td><td class="num">14</td><td class="num">5</td><td class="num">4</td><td class="num">4</td></tr>
+  </tbody></table></div>
+  <p><strong>DT</strong> é a dificuldade para resistir aos Poderes dela. <strong>Fases</strong> só valem para o chefe: o PV se divide em blocos iguais, e o golpe que quebra uma Fase para no piso dela. Ao quebrar uma Fase, a criatura se livra das condições e muda — um Poder novo, o teto que desaba, uma forma nova. Cura nunca devolve Fase.</p>
+  <h3>Arquétipos</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d8</th><th>Arquétipo</th><th>Ajuste</th><th>Exemplos</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td><strong>Padrão</strong></td><td>Nenhum.</td><td>Hipogrifo, Kappa</td></tr>
+  <tr><td class="d">2</td><td><strong>Bruto</strong></td><td>PV +30%, Defesa –1, ataque –1 passo.</td><td>Trasgo, Erumpente</td></tr>
+  <tr><td class="d">3</td><td><strong>Ágil</strong></td><td>PV –20%, Defesa +2.</td><td>Diabrete, Fada mordente</td></tr>
+  <tr><td class="d">4</td><td><strong>Predador</strong></td><td>PV –10%, ataque +1 passo, dano +2.</td><td>Acromântula, Lobisomem</td></tr>
+  <tr><td class="d">5</td><td><strong>Conjurador</strong></td><td>PV –20%, +1 Poder.</td><td>Esfinge, bruxo das trevas</td></tr>
+  <tr><td class="d">6</td><td><strong>Enxame</strong></td><td>Ataca todos num raio de 3 m; feitiços de alvo único causam metade.</td><td>Doxys, Billywigs</td></tr>
+  <tr><td class="d">7</td><td><strong>Espectral</strong></td><td>PV –30%; imune a dano físico.</td><td>Dementador, Lethifold</td></tr>
+  <tr><td class="d">8</td><td><strong>Guardião</strong></td><td>PV +20%, Defesa +1; reação: recebe o ataque no lugar do que protege.</td><td>Fofo, armaduras</td></tr>
+  </tbody></table></div>
+  <h3>Traços (passivos)</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d20</th><th>Traço</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td><strong>Voo</strong></td><td>Voa no deslocamento normal.</td></tr>
+  <tr><td class="d">2</td><td><strong>Couro Mágico</strong></td><td>Feitiços de Círculo 1 e 2 contra ela sofrem –1 passo.</td></tr>
+  <tr><td class="d">3</td><td><strong>Regeneração</strong></td><td>Recupera o Perigo em PV por rodada. Fogo anula por uma rodada.</td></tr>
+  <tr><td class="d">4</td><td><strong>Invisível</strong></td><td>Some como movimento. Atacar revela.</td></tr>
+  <tr><td class="d">5</td><td><strong>Veneno</strong></td><td>Quem ela acerta perde <span class="dado">1d6</span> PV por 2 rodadas; Fortitude encerra.</td></tr>
+  <tr><td class="d">6</td><td><strong>Mente Fechada</strong></td><td>Imune a Confundo, Imperio, Legilimens.</td></tr>
+  <tr><td class="d">7</td><td><strong>Anfíbia</strong></td><td>Respira e nada debaixo d'água.</td></tr>
+  <tr><td class="d">8</td><td><strong>Sentidos Agudos</strong></td><td>Faro ou visão no escuro: não pode ser surpreendida.</td></tr>
+  <tr><td class="d">9</td><td><strong>Aterrorizante</strong></td><td>Quem a vê pela primeira vez: Vontade ou perde <span class="dado">1d6</span> DET.</td></tr>
+  <tr><td class="d">10</td><td><strong>Furtiva</strong></td><td>Ataque de surpresa usa os dois maiores dados.</td></tr>
+  <tr><td class="d">11</td><td><strong>Inteligente</strong></td><td>Fala, negocia, planeja, guarda rancor.</td></tr>
+  <tr><td class="d">12</td><td><strong>Resistência</strong></td><td>Metade do dano de fogo, frio ou impacto.</td></tr>
+  <tr><td class="d">13</td><td><strong>Agarrar</strong></td><td>Ao acertar, o alvo fica Preso.</td></tr>
+  <tr><td class="d">14</td><td><strong>Come Magia</strong></td><td>Quando resiste a um feitiço, recupera PV igual ao custo × 3.</td></tr>
+  <tr><td class="d">15</td><td><strong>Escaladora</strong></td><td>Anda em paredes e tetos.</td></tr>
+  <tr><td class="d">16</td><td><strong>Muda de Tamanho</strong></td><td>Cresce ou encolhe para caber no espaço.</td></tr>
+  <tr><td class="d">17</td><td><strong>Ataque Duplo</strong></td><td>Dois ataques por rodada, cada um com dano –2.</td></tr>
+  <tr><td class="d">18</td><td><strong>Só Vista por Poucos</strong></td><td>Invisível a quem não cumpre uma condição (ex.: ter visto a morte).</td></tr>
+  <tr><td class="d">19</td><td><strong>Escava</strong></td><td>Move-se por baixo da terra.</td></tr>
+  <tr><td class="d">20</td><td><strong>Partes Valiosas</strong></td><td>Pelo, veneno ou chifre valem <span class="dado">2d6</span> × Perigo galeões.</td></tr>
+  </tbody></table></div>
+  <h3>Poderes (ações)</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d12</th><th>Poder</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td><strong>Sopro</strong></td><td>Cone de 9 m: dano da Tábua; Reflexos para metade. Recarga: 5–6 no <span class="dado">d6</span>.</td></tr>
+  <tr><td class="d">2</td><td><strong>Olhar</strong></td><td>Um alvo: Fortitude ou Petrificado. Recarga 6.</td></tr>
+  <tr><td class="d">3</td><td><strong>Grito</strong></td><td>Raio 6 m: Vontade ou Atordoado e perde <span class="dado">1d6</span> DET. Uma vez por cena.</td></tr>
+  <tr><td class="d">4</td><td><strong>Drenar</strong></td><td>Um alvo: Vontade ou perde <span class="dado">2d6</span> DET. Recarga 5–6.</td></tr>
+  <tr><td class="d">5</td><td><strong>Teia ou Tentáculos</strong></td><td>Área de 3 m: Reflexos ou Preso. Recarga 5–6.</td></tr>
+  <tr><td class="d">6</td><td><strong>Investida</strong></td><td>Move o dobro e ataca; Fortitude ou Caído.</td></tr>
+  <tr><td class="d">7</td><td><strong>Mudar de Forma</strong></td><td>Assume outra aparência. Uma vez por cena.</td></tr>
+  <tr><td class="d">8</td><td><strong>Ilusão</strong></td><td>Imagem convincente; Intuição contra a DT para perceber.</td></tr>
+  <tr><td class="d">9</td><td><strong>Sumir</strong></td><td>Aparata ou some 18 m. Recarga 5–6.</td></tr>
+  <tr><td class="d">10</td><td><strong>Chamar o Bando</strong></td><td><span class="dado">1d4</span> lacaios de Perigo –3 chegam no fim da rodada. Uma vez por cena.</td></tr>
+  <tr><td class="d">11</td><td><strong>Feitiço</strong></td><td>Lança um feitiço de Círculo até Perigo ÷ 3.</td></tr>
+  <tr><td class="d">12</td><td><strong>Explosão</strong></td><td>Raio 3 m: dano da Tábua; Reflexos para metade. Uma vez por cena.</td></tr>
+  </tbody></table></div>
+  <h3>Fraqueza (obrigatória)</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d12</th><th>Fraqueza</th><th>Como funciona</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td><strong>Luz</strong></td><td>Lumos Maxima ou sol: Atordoada uma rodada.</td></tr>
+  <tr><td class="d">2</td><td><strong>Fogo</strong></td><td>Dano de fogo dobrado.</td></tr>
+  <tr><td class="d">3</td><td><strong>Patrono</strong></td><td>O Patrono a expulsa.</td></tr>
+  <tr><td class="d">4</td><td><strong>Riso</strong></td><td>Riddikulus ou uma piada de verdade a desfaz.</td></tr>
+  <tr><td class="d">5</td><td><strong>Respeito</strong></td><td>Quem se curva e espera não é atacado.</td></tr>
+  <tr><td class="d">6</td><td><strong>Música</strong></td><td>Música contínua a faz dormir.</td></tr>
+  <tr><td class="d">7</td><td><strong>Canto do galo</strong></td><td>O canto a mata ou a expulsa.</td></tr>
+  <tr><td class="d">8</td><td><strong>Brilho</strong></td><td>Ouro ou joias a distraem a cena inteira.</td></tr>
+  <tr><td class="d">9</td><td><strong>Água derramada</strong></td><td>Se a água da cabeça cair, fica fraca.</td></tr>
+  <tr><td class="d">10</td><td><strong>Nome antigo</strong></td><td>Dizer o nome verdadeiro dela a obriga a parar.</td></tr>
+  <tr><td class="d">11</td><td><strong>Enigma</strong></td><td>Quem responde ao enigma passa.</td></tr>
+  <tr><td class="d">12</td><td><strong>Dono</strong></td><td>Quem a criou ou domou pode mandá-la parar.</td></tr>
+  </tbody></table></div>
+  <h3>Aparência</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d12</th><th>Corpo</th><th>Detalhe</th><th>Comportamento</th><th>Onde vive</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>Felino</td><td>penas de fumaça</td><td>territorial</td><td>Floresta Proibida</td></tr>
+  <tr><td class="d">2</td><td>Serpente</td><td>chifre que brilha ao luar</td><td>faminto</td><td>lago negro</td></tr>
+  <tr><td class="d">3</td><td>Ave</td><td>olhos dourados demais</td><td>assustado</td><td>masmorras</td></tr>
+  <tr><td class="d">4</td><td>Sapo</td><td>pele que muda de cor</td><td>curioso</td><td>Travessa do Tranco</td></tr>
+  <tr><td class="d">5</td><td>Cervo</td><td>seis patas</td><td>protegendo filhotes</td><td>pântano</td></tr>
+  <tr><td class="d">6</td><td>Inseto gigante</td><td>voz humana</td><td>controlado por alguém</td><td>torre abandonada</td></tr>
+  <tr><td class="d">7</td><td>Morcego</td><td>cauda em chamas</td><td>ferido</td><td>montanhas</td></tr>
+  <tr><td class="d">8</td><td>Lagarto</td><td>corpo translúcido</td><td>em bando</td><td>esgotos de Londres</td></tr>
+  <tr><td class="d">9</td><td>Cão</td><td>casco de pedra</td><td>brincalhão e perigoso</td><td>cemitério bruxo</td></tr>
+  <tr><td class="d">10</td><td>Peixe com patas</td><td>asas de cristal</td><td>fugido de um contrabandista</td><td>porão de uma loja</td></tr>
+  <tr><td class="d">11</td><td>Macaco</td><td>rosto quase humano</td><td>caçando uma pessoa específica</td><td>trem de Hogwarts</td></tr>
+  <tr><td class="d">12</td><td>Sombra sem forma</td><td>cheiro de chuva</td><td>dormindo — por enquanto</td><td>Sala Precisa</td></tr>
+  </tbody></table></div>
+</section>
+
+<!-- ==================== IX ==================== -->
+<section class="capitulo" id="cap9">
+  <div class="abertura"><span class="alg">Capítulo Nove</span><h2>Bestiário</h2><p>Fichas prontas, montadas com a Forja</p></div>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Criatura</th><th class="num">Perigo</th><th>Arquétipo</th><th class="num">PV</th><th class="num">Def</th><th>Ataque</th><th>Traços e Poderes</th><th>Fraqueza</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Gnomo de jardim</strong></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td>d6+d4, RA+1</td><td>Escava</td><td>Girado e jogado longe, demora a voltar</td></tr>
+  <tr><td><strong>Diabrete da Cornualha</strong></td><td class="num">2</td><td>Enxame</td><td class="num">12</td><td class="num">7</td><td>d6+d6, RA+2</td><td>Voo · Ilusão (bagunça)</td><td>Immobulus</td></tr>
+  <tr><td><strong>Bicho-Papão</strong></td><td class="num">2</td><td>Conjurador</td><td class="num">10</td><td class="num">7</td><td>d6+d6, RA+2</td><td>Aterrorizante · Mudar de Forma</td><td>Riso</td></tr>
+  <tr><td><strong>Grindylow</strong></td><td class="num">2</td><td>Padrão</td><td class="num">12</td><td class="num">7</td><td>d6+d6, RA+2</td><td>Anfíbio · Agarrar</td><td>Dedos frágeis: crítico os quebra</td></tr>
+  <tr><td><strong>Hipogrifo</strong></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td>d8+d6, RA+3</td><td>Voo · Ataque Duplo · Investida</td><td>Respeito</td></tr>
+  <tr><td><strong>Inferius</strong></td><td class="num">3</td><td>Bruto</td><td class="num">26</td><td class="num">6</td><td>d6+d6, RA+3</td><td>Mente Fechada · Agarrar</td><td>Fogo</td></tr>
+  <tr><td><strong>Testrálio</strong></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td>d8+d6, RA+3</td><td>Voo · Só Vista por Poucos</td><td>Cheiro de sangue o distrai</td></tr>
+  <tr><td><strong>Acromântula</strong></td><td class="num">4</td><td>Predador</td><td class="num">27</td><td class="num">8</td><td>d10+d8, RA+6</td><td>Veneno · Escaladora · Teia</td><td>Fogo</td></tr>
+  <tr><td><strong>Trasgo da Montanha</strong></td><td class="num">5</td><td>Bruto</td><td class="num">55</td><td class="num">8</td><td>d8+d8, RA+5</td><td>Couro Mágico · Resistência · Investida</td><td>A própria clava (Wingardium Leviosa)</td></tr>
+  <tr><td><strong>Lobisomem</strong></td><td class="num">5</td><td>Predador</td><td class="num">38</td><td class="num">9</td><td>d12+d8, RA+7</td><td>Regeneração · Sentidos Agudos · Investida</td><td>Prata; só na lua cheia</td></tr>
+  <tr><td><strong>Dementador</strong></td><td class="num">6</td><td>Espectral</td><td class="num">39</td><td class="num">9</td><td>d10+d10, RA+6 de DET</td><td>Voo · Aterrorizante · Drenar · Beijo (0 DET: perde a alma)</td><td>Patrono</td></tr>
+  <tr><td><strong>Centauro</strong></td><td class="num">6</td><td>Padrão</td><td class="num">56</td><td class="num">9</td><td>d10+d10, RA+6 (arco)</td><td>Inteligente · Sentidos Agudos · Investida · Chamar o Bando</td><td>Respeito à floresta</td></tr>
+  <tr><td><strong>Esfinge</strong></td><td class="num">7</td><td>Conjurador</td><td class="num">58</td><td class="num">10</td><td>d12+d10, RA+7</td><td>Inteligente · Mente Fechada · Feitiço · Grito</td><td>Enigma</td></tr>
+  <tr><td><strong>Rabo-Córneo Húngaro</strong></td><td class="num">9</td><td>Bruto</td><td class="num">143</td><td class="num">11</td><td>d12+d12, RA+9</td><td>Voo · Couro Mágico · Resistência (fogo) · Sopro · Investida · Ataque Duplo</td><td>Os olhos: Conjunctivitis o cega</td></tr>
+  <tr><td><strong>Basilisco</strong></td><td class="num">11</td><td>Predador</td><td class="num">149</td><td class="num">14</td><td>d12+d12+d12, RA+15</td><td>Veneno · Aterrorizante · Escava · Mente Fechada · Olhar (morte; refletido, petrifica)</td><td>Canto do galo</td></tr>
+  </tbody></table></div>
+</section>
+
+<!-- ==================== X ==================== -->
+<section class="capitulo" id="cap10">
+  <div class="abertura"><span class="alg">Capítulo Dez</span><h2>Aliados e NPCs</h2><p>Para o Mestre: tabelas de gente, papéis e vínculos</p></div>
+  <p class="abre">NPCs usam a mesma Tábua de Perigo, com o Nível no lugar do Perigo, e escolhem um Papel em vez de Arquétipo. Role uma vez em cada tabela abaixo e a pessoa está pronta.</p>
+  <h3>Papéis</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d8</th><th>Papel</th><th>Ajuste</th><th>Habilidade</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td><strong>Duelista</strong></td><td>Ataque +1 passo</td><td>Protego grátis uma vez por rodada.</td></tr>
+  <tr><td class="d">2</td><td><strong>Curandeiro</strong></td><td>Dano –3</td><td>Ação: cura RA + Nível de um aliado.</td></tr>
+  <tr><td class="d">3</td><td><strong>Erudito</strong></td><td>PV –20%</td><td>Sabe o que é a criatura, a poção ou a maldição na hora.</td></tr>
+  <tr><td class="d">4</td><td><strong>Batedor</strong></td><td>Defesa +2</td><td>Age primeiro na primeira rodada; Furtividade d10.</td></tr>
+  <tr><td class="d">5</td><td><strong>Protetor</strong></td><td>PV +30%, ataque –1 passo</td><td>Reação: recebe o ataque no lugar de um aliado ao lado.</td></tr>
+  <tr><td class="d">6</td><td><strong>Trapaceiro</strong></td><td>Defesa +1</td><td>Azarações humilhantes; Enganação d10.</td></tr>
+  <tr><td class="d">7</td><td><strong>Domador</strong></td><td>Dano –2</td><td>Tem uma criatura de Perigo = Nível – 2.</td></tr>
+  <tr><td class="d">8</td><td><strong>Comandante</strong></td><td>—</td><td>Ação: um aliado ataca de novo ou rola um dado extra.</td></tr>
+  </tbody></table></div>
+  <h3>Vínculo</h3>
+  <p>Aliados que seguem o grupo têm Vínculo de 0 a 5. Sobe quando os personagens o ajudam na história; desce quando o abandonam ou mentem para ele. Com 0 ele vai embora na primeira cena ruim. Com 3, arrisca a vida pelo grupo. Com 5, conta o segredo dele. O aliado age na iniciativa do jogador que tem o maior Vínculo com ele.</p>
+  <h3>Quem é</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d20</th><th>Nome</th><th>Sobrenome</th><th>Ocupação</th><th>Personalidade</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>Aldous</td><td>Ashgrove</td><td>monitor(a) da Casa</td><td>leal até o fim</td></tr>
+  <tr><td class="d">2</td><td>Beatrix</td><td>Blackwood</td><td>curandeira de St. Mungus</td><td>desconfiada</td></tr>
+  <tr><td class="d">3</td><td>Cassius</td><td>Crowley</td><td>auror novato</td><td>engraçado e caótico</td></tr>
+  <tr><td class="d">4</td><td>Delphine</td><td>Duskmere</td><td>lojista do Beco Diagonal</td><td>estudiosa e fria</td></tr>
+  <tr><td class="d">5</td><td>Edmund</td><td>Fairweather</td><td>elfo doméstico liberto</td><td>corajoso demais</td></tr>
+  <tr><td class="d">6</td><td>Fiona</td><td>Grimsby</td><td>guarda-caça</td><td>covarde, mas honesta</td></tr>
+  <tr><td class="d">7</td><td>Gideon</td><td>Hollow</td><td>fantasma do castelo</td><td>manipulador</td></tr>
+  <tr><td class="d">8</td><td>Hester</td><td>Lockridge</td><td>magizoologista</td><td>melancólica</td></tr>
+  <tr><td class="d">9</td><td>Ignatius</td><td>Mallory</td><td>jornalista do Profeta Diário</td><td>otimista incurável</td></tr>
+  <tr><td class="d">10</td><td>Juniper</td><td>Nightshade</td><td>artilheira de Quadribol</td><td>arrogante</td></tr>
+  <tr><td class="d">11</td><td>Lysander</td><td>Pennyfeather</td><td>funcionário do Ministério</td><td>bajulador</td></tr>
+  <tr><td class="d">12</td><td>Morwenna</td><td>Quill</td><td>dona de taverna em Hogsmeade</td><td>fofoqueira</td></tr>
+  <tr><td class="d">13</td><td>Octavia</td><td>Rookwood</td><td>quebradora de maldições</td><td>paranoica</td></tr>
+  <tr><td class="d">14</td><td>Percival</td><td>Thistle</td><td>fabricante de varinhas</td><td>distraído</td></tr>
+  <tr><td class="d">15</td><td>Rosalind</td><td>Vane</td><td>professora substituta</td><td>severa e justa</td></tr>
+  <tr><td class="d">16</td><td>Silas</td><td>Whitlock</td><td>contrabandista de ingredientes</td><td>simpático demais</td></tr>
+  <tr><td class="d">17</td><td>Tabitha</td><td>Madeira</td><td>goblin de Gringotes</td><td>calculista</td></tr>
+  <tr><td class="d">18</td><td>Ulric</td><td>Ferraz</td><td>centauro exilado</td><td>orgulhoso</td></tr>
+  <tr><td class="d">19</td><td>Verity</td><td>Albuquerque</td><td>obliviadora</td><td>cansada de tudo</td></tr>
+  <tr><td class="d">20</td><td>Caetano</td><td>Lacerda</td><td>ex-Comensal arrependido</td><td>atormentado</td></tr>
+  </tbody></table></div>
+  <h3>O que quer e o que esconde</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d12</th><th>Quer</th><th>Segredo</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>provar seu valor à família</td><td>é animago ilegal</td></tr>
+  <tr><td class="d">2</td><td>proteger um irmão mais novo</td><td>tem um parente em Azkaban</td></tr>
+  <tr><td class="d">3</td><td>descobrir quem matou seus pais</td><td>deve dinheiro aos goblins</td></tr>
+  <tr><td class="d">4</td><td>ganhar a Taça das Casas</td><td>esconde uma licantropia</td></tr>
+  <tr><td class="d">5</td><td>libertar uma criatura presa</td><td>viu algo na Floresta Proibida</td></tr>
+  <tr><td class="d">6</td><td>recuperar uma varinha roubada</td><td>guarda um diário que responde</td></tr>
+  <tr><td class="d">7</td><td>virar auror</td><td>é metamorfomago</td></tr>
+  <tr><td class="d">8</td><td>entrar no Departamento de Mistérios</td><td>já usou um Vira-Tempo</td></tr>
+  <tr><td class="d">9</td><td>ser esquecido pelo Ministério</td><td>não consegue conjurar um Patrono</td></tr>
+  <tr><td class="d">10</td><td>vingança contra um professor</td><td>está sob Imperius</td></tr>
+  <tr><td class="d">11</td><td>encontrar uma Relíquia</td><td>é aborto e finge ser bruxo</td></tr>
+  <tr><td class="d">12</td><td>apenas sobreviver ao ano</td><td>trabalha para o vilão da campanha</td></tr>
+  </tbody></table></div>
+  <h3>Lado</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d6</th><th>Lado</th><th>Nível sugerido</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1–3</td><td>Aliado</td><td>Ano do grupo – 1 a + 1</td></tr>
+  <tr><td class="d">4–5</td><td>Rival</td><td>Ano do grupo + 1</td></tr>
+  <tr><td class="d">6</td><td>Bruxo das trevas</td><td>Ano do grupo + 3; conhece um feitiço Proibido</td></tr>
+  </tbody></table></div>
+</section>
+
+<!-- ==================== XI ==================== -->
+<section class="capitulo" id="cap11">
+  <div class="abertura"><span class="alg">Capítulo Onze</span><h2>Varinhas, itens e artefatos</h2><p>Tabelas de madeira, núcleo e objetos encantados</p></div>
+  <h3>A varinha</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d12</th><th>Madeira</th><th>Afinidade (+1 passo em…)</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>Azevinho</td><td>Proteção (Protego, escudos)</td></tr>
+  <tr><td class="d">2</td><td>Teixo</td><td>Artes das Trevas e resistir a elas</td></tr>
+  <tr><td class="d">3</td><td>Carvalho</td><td>Herbologia</td></tr>
+  <tr><td class="d">4</td><td>Salgueiro</td><td>Feitiços de cura</td></tr>
+  <tr><td class="d">5</td><td>Videira</td><td>Adivinhação</td></tr>
+  <tr><td class="d">6</td><td>Cerejeira</td><td>Feitiços de ataque</td></tr>
+  <tr><td class="d">7</td><td>Ébano</td><td>Transfiguração</td></tr>
+  <tr><td class="d">8</td><td>Bétula</td><td>Trato de Criaturas</td></tr>
+  <tr><td class="d">9</td><td>Freixo</td><td>Vontade</td></tr>
+  <tr><td class="d">10</td><td>Cedro</td><td>Intuição</td></tr>
+  <tr><td class="d">11</td><td>Nogueira</td><td>Criar feitiços e poções</td></tr>
+  <tr><td class="d">12</td><td>Espinheiro</td><td>Maldições — e um Desastre a mais por sessão</td></tr>
+  </tbody></table></div>
+  <p>A afinidade vale uma vez por cena.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d6</th><th>Núcleo</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1–2</td><td><strong>Corda de coração de dragão</strong></td><td>+1 de dano em feitiços de ataque. Aprende rápido: +1 feitiço por ano.</td></tr>
+  <tr><td class="d">3–4</td><td><strong>Pelo de unicórnio</strong></td><td>Cura RA + 1. Artes das Trevas –1 passo.</td></tr>
+  <tr><td class="d">5</td><td><strong>Pena de fênix</strong></td><td>Uma vez por sessão, rerrole um teste de magia. Difícil de domar: emprestada, –2 passos.</td></tr>
+  <tr><td class="d">6</td><td><strong>Raro</strong> (pelo de testrálio, cabelo de veela, pena de trovão)</td><td>O Mestre define; sempre com um preço.</td></tr>
+  </tbody></table></div>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d6</th><th>Tamanho</th><th>Flexibilidade</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>9 polegadas</td><td>rígida</td></tr>
+  <tr><td class="d">2</td><td>10¼</td><td>inflexível</td></tr>
+  <tr><td class="d">3</td><td>11</td><td>firme</td></tr>
+  <tr><td class="d">4</td><td>11¾</td><td>flexível</td></tr>
+  <tr><td class="d">5</td><td>12½</td><td>maleável</td></tr>
+  <tr><td class="d">6</td><td>14</td><td>surpreendentemente elástica</td></tr>
+  </tbody></table></div>
+  <h3>Item encantado</h3>
+  <p>Role a base, o efeito e o <span class="dado">d6</span> de maldição: com 1, role a maldição.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d12</th><th>Base</th><th>Efeito</th><th>Maldição</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>Espelho de bolso</td><td>mostra quem está em perigo</td><td>drena 1 DET por dia</td></tr>
+  <tr><td class="d">2</td><td>Pena de escrever</td><td>escreve sozinha o que é ditado</td><td>faz o dono mentir</td></tr>
+  <tr><td class="d">3</td><td>Relógio</td><td>atrasa o tempo para o dono 1 vez (ação extra)</td><td>atrai dementadores</td></tr>
+  <tr><td class="d">4</td><td>Medalhão</td><td>guarda 3 PM; recarrega ao amanhecer</td><td>sussurra à noite</td></tr>
+  <tr><td class="d">5</td><td>Livro</td><td>responde perguntas — às vezes errado</td><td>prende o leitor nas páginas</td></tr>
+  <tr><td class="d">6</td><td>Cachecol</td><td>+1 passo contra frio e Fortitude</td><td>aperta quando o dono mente</td></tr>
+  <tr><td class="d">7</td><td>Chave antiga</td><td>abre uma porta que não existia</td><td>a porta também abre do outro lado</td></tr>
+  <tr><td class="d">8</td><td>Moeda</td><td>avisa os donos das moedas-irmãs</td><td>queima quem a toca sem permissão</td></tr>
+  <tr><td class="d">9</td><td>Vidro de tinta</td><td>a escrita só aparece para quem o dono quer</td><td>a tinta é sangue de quem escreve</td></tr>
+  <tr><td class="d">10</td><td>Bússola</td><td>aponta para o que o dono mais quer</td><td>nunca para de apontar</td></tr>
+  <tr><td class="d">11</td><td>Anel</td><td>fica quente perto de magia das trevas</td><td>não sai do dedo</td></tr>
+  <tr><td class="d">12</td><td>Capa</td><td>+1 passo em Furtividade</td><td>alguém mais a está procurando</td></tr>
+  </tbody></table></div>
+  <h3>Artefatos conhecidos</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Artefato</th><th>Na mesa</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Mapa do Maroto</strong></td><td>Mostra todas as pessoas no castelo. Não é enganado por Polissuco, capa ou animagia.</td></tr>
+  <tr><td><strong>Capa da Invisibilidade</strong></td><td>Invisível de verdade; nem Homenum Revelio garante achar.</td></tr>
+  <tr><td><strong>Vira-Tempo</strong></td><td>Volta até 5 horas. Ser visto por si mesmo: Desastre garantido.</td></tr>
+  <tr><td><strong>Penseira</strong></td><td>Revive uma memória como cena jogável.</td></tr>
+  <tr><td><strong>Espelho de Ojesed</strong></td><td>Mostra o maior desejo. Vontade DT 11 para se afastar.</td></tr>
+  <tr><td><strong>Desiluminador</strong></td><td>Apaga e devolve luzes; com o tempo, guia o dono até quem ele ama.</td></tr>
+  <tr><td><strong>Chave de Portal</strong></td><td>Leva quem toca a um lugar fixo, numa hora marcada.</td></tr>
+  <tr><td><strong>Pó de Escuridão Instantânea</strong></td><td>Escuridão total num raio de 9 m por 1 minuto.</td></tr>
+  <tr><td><strong>Orelhas Extensíveis</strong></td><td>Ouvem através de portas; Imperturbável bloqueia.</td></tr>
+  <tr><td><strong>Vassoura</strong></td><td>Comum: Voo normal. Nimbus: +1 passo em Voo. Firebolt: +2 passos.</td></tr>
+  </tbody></table></div>
+</section>
+
+<!-- ==================== XII ==================== -->
+<section class="capitulo" id="cap12">
+  <div class="abertura"><span class="alg">Capítulo Doze</span><h2>O mundo e as aventuras</h2><p>Para o Mestre: ganchos, lugares e complicações</p></div>
+  <h3>Gancho de aventura</h3>
+  <p>Role nas três colunas e junte as frases.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d12</th><th>O que aconteceu</th><th>A pista</th><th>A pressão</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>Um aluno foi encontrado petrificado</td><td>leva à Sala Precisa</td><td>ninguém pode saber</td></tr>
+  <tr><td class="d">2</td><td>Uma página de livro fala em ofidioglossia</td><td>uma pegada enorme perto do lago</td><td>o Ministério quer abafar</td></tr>
+  <tr><td class="d">3</td><td>Pirraça roubou algo da sala do diretor</td><td>um professor está mentindo</td><td>até a lua cheia</td></tr>
+  <tr><td class="d">4</td><td>Um Pelúcio sumiu com um distintivo</td><td>o Mapa mostra um nome impossível</td><td>os Comensais chegaram antes</td></tr>
+  <tr><td class="d">5</td><td>Uma carta chega pela coruja errada</td><td>a Floresta está em silêncio</td><td>a Taça das Casas está em jogo</td></tr>
+  <tr><td class="d">6</td><td>O Salgueiro Lutador parou de se mexer</td><td>um fantasma viu tudo</td><td>Hogsmeade está cheia de aurores</td></tr>
+  <tr><td class="d">7</td><td>Um quadro está vazio há três dias</td><td>um frasco de Polissuco vazio</td><td>um amigo é o suspeito</td></tr>
+  <tr><td class="d">8</td><td>Alguém comprou acônito demais</td><td>uma varinha que não é de ninguém</td><td>expulsão se forem pegos</td></tr>
+  <tr><td class="d">9</td><td>Uma criatura escapou do Ministério</td><td>uma música vem do lago</td><td>a criatura está prenhe</td></tr>
+  <tr><td class="d">10</td><td>Um professor sumiu</td><td>um diário que responde</td><td>o substituto é pior</td></tr>
+  <tr><td class="d">11</td><td>Uma profecia foi roubada</td><td>marcas de Aparatação no castelo</td><td>a profecia fala de um personagem</td></tr>
+  <tr><td class="d">12</td><td>Uma Marca Negra no céu de Hogsmeade</td><td>um aluno com a manga sempre abaixada</td><td>alguém vai morrer se ninguém agir</td></tr>
+  </tbody></table></div>
+  <h3>Lugares</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d12</th><th>Lugar</th><th>Perigo típico</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>Floresta Proibida</td><td>Acromântulas, centauros, lobisomens</td></tr>
+  <tr><td class="d">2</td><td>Masmorras de Poções</td><td>caldeirões, Sonserinos</td></tr>
+  <tr><td class="d">3</td><td>Lago Negro</td><td>Grindylows, sereianos, Inferi</td></tr>
+  <tr><td class="d">4</td><td>Seção Reservada</td><td>livros que gritam, Madame Pince</td></tr>
+  <tr><td class="d">5</td><td>Corredor do terceiro andar</td><td>armadilhas, guardiões</td></tr>
+  <tr><td class="d">6</td><td>Hogsmeade</td><td>multidão, espiões, Dementadores na fronteira</td></tr>
+  <tr><td class="d">7</td><td>Beco Diagonal</td><td>batedores de carteira, Gringotes</td></tr>
+  <tr><td class="d">8</td><td>Travessa do Tranco</td><td>objetos amaldiçoados, bruxos das trevas</td></tr>
+  <tr><td class="d">9</td><td>Ministério da Magia</td><td>burocracia, Departamento de Mistérios</td></tr>
+  <tr><td class="d">10</td><td>St. Mungus</td><td>pacientes amaldiçoados, curandeiros ocupados</td></tr>
+  <tr><td class="d">11</td><td>Casa de família sangue-pura</td><td>elfos, retratos, segredos</td></tr>
+  <tr><td class="d">12</td><td>Azkaban</td><td>Dementadores, desespero</td></tr>
+  </tbody></table></div>
+  <h3>Complicações</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d10</th><th>No meio da cena…</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>Filch e Madame Nor-r-ra aparecem.</td></tr>
+  <tr><td class="d">2</td><td>A escada muda de lugar.</td></tr>
+  <tr><td class="d">3</td><td>Um professor pede ajuda para outra coisa.</td></tr>
+  <tr><td class="d">4</td><td>Começa a chover forte; tudo escorrega.</td></tr>
+  <tr><td class="d">5</td><td>Um rival vê tudo e ameaça contar.</td></tr>
+  <tr><td class="d">6</td><td>Uma varinha falha (Desastre no próximo teste com 1 em qualquer dado).</td></tr>
+  <tr><td class="d">7</td><td>Pirraça joga balões de água.</td></tr>
+  <tr><td class="d">8</td><td>Toque de recolher: falta pouco tempo.</td></tr>
+  <tr><td class="d">9</td><td>Uma criatura da Forja aparece.</td></tr>
+  <tr><td class="d">10</td><td>Um aliado precisa ir embora agora.</td></tr>
+  </tbody></table></div>
+  <h3 id="descontrolada">Magia Descontrolada</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>d12</th><th>O feitiço sai assim</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>A varinha solta bolhas de sabão por uma cena.</td></tr>
+  <tr><td class="d">2</td><td>O feitiço acerta o aliado mais próximo.</td></tr>
+  <tr><td class="d">3</td><td>Você levita 1 m por uma rodada.</td></tr>
+  <tr><td class="d">4</td><td>Seu cabelo muda de cor até alguém lançar Finite.</td></tr>
+  <tr><td class="d">5</td><td>Explosão pequena: você perde <span class="dado">1d6</span> PV.</td></tr>
+  <tr><td class="d">6</td><td>Sapos saltam da ponta da varinha.</td></tr>
+  <tr><td class="d">7</td><td>Você fica mudo por uma rodada.</td></tr>
+  <tr><td class="d">8</td><td>Funciona com o dobro da força — e o dobro do custo.</td></tr>
+  <tr><td class="d">9</td><td>Sua voz fica fina como a de um diabrete.</td></tr>
+  <tr><td class="d">10</td><td>A varinha voa 3 m para longe.</td></tr>
+  <tr><td class="d">11</td><td>Todos num raio de 6 m começam a soluçar.</td></tr>
+  <tr><td class="d">12</td><td>Nada acontece… por enquanto. O Mestre guarda o efeito.</td></tr>
+  </tbody></table></div>
+  <h3>Pontos das Casas</h3>
+  <p>O Mestre dá de 5 a 50 pontos por cena boa e tira de 5 a 50 por regra quebrada. No fim do ano, a Casa vencedora ganha <strong>+1 passo</strong> em uma perícia à escolha de cada personagem dela, até o próximo ano.</p>
+</section>
+
+<!-- ==================== XIII ==================== -->
+<section class="capitulo" id="cap13">
+  <div class="abertura"><span class="alg">Capítulo Treze</span><h2>Anos e progressão</h2><p>Do primeiro ano à carreira</p></div>
+  <p class="abre">O nível é o ano em Hogwarts. Ao fim de cada ano, e depois a cada grande aventura da carreira, você sobe um nível.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">Nível</th><th>Quando</th><th>Ganha</th></tr></thead>
+  <tbody>
+  <tr><td class="num">1</td><td>1º ano</td><td>Ficha inicial.</td></tr>
+  <tr><td class="num">2</td><td>2º ano</td><td>+1 passo em duas perícias · +3 PV · +1 PM · 2 feitiços</td></tr>
+  <tr><td class="num">3</td><td>3º ano</td><td>Círculo 2 · +1 passo numa perícia · matérias eletivas: +1 perícia em <span class="dado">d6</span></td></tr>
+  <tr><td class="num">4</td><td>4º ano</td><td>+1 passo num atributo · +3 PV · +1 PM</td></tr>
+  <tr><td class="num">5</td><td>5º ano (N.O.M.s)</td><td>Círculo 3 · +1 passo em duas perícias · +2 DET</td></tr>
+  <tr><td class="num">6</td><td>6º ano</td><td>Magia não verbal sem penalidade de passo · +3 PV · +1 PM</td></tr>
+  <tr><td class="num">7</td><td>7º ano (N.I.E.M.s)</td><td>Círculo 4 · Aparatação · +1 passo num atributo</td></tr>
+  <tr><td class="num">8–11</td><td>Carreira</td><td>A cada nível: +1 passo numa perícia, +3 PV, +1 PM, 2 feitiços. No 9: +1 passo num atributo.</td></tr>
+  </tbody></table></div>
+  <p>Teto: <span class="dado">d12</span> em perícias, <span class="dado">d10</span> em atributos até o nível 7 e <span class="dado">d12</span> depois.</p>
+  <h3>N.O.M.s e N.I.E.M.s</h3>
+  <p>Ao fim do 5º e do 7º ano, cada personagem rola Mente + perícia nas matérias que quiser, DT 9 (N.O.M.) ou DT 11 (N.I.E.M.). Cada aprovação abre carreiras: Auror pede Feitiços, Poções, Transfiguração e Defesa; Curandeiro pede Poções, Herbologia e Medibruxaria.</p>
+</section>
+
+<!-- ==================== APÊNDICE ==================== -->
+<section class="capitulo" id="apendice">
+  <div class="abertura"><span class="alg">Apêndice</span><h2>As probabilidades</h2><p>O que cada par de dados realmente faz</p></div>
+  <p class="abre">Cada passo a mais sobe a média em 1. É pouco por passo e muito na soma: é isso que deixa o primeiranista com chance e o auror confiável.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Dados</th><th class="num">Média</th><th class="num">DT 5</th><th class="num">DT 7</th><th class="num">DT 9</th><th class="num">DT 11</th></tr></thead>
+  <tbody>
+  <tr><td>d4+d4</td><td class="num">5</td><td class="num">63%</td><td class="num">19%</td><td class="num">0%</td><td class="num">0%</td></tr>
+  <tr><td>d4+d6</td><td class="num">6</td><td class="num">75%</td><td class="num">42%</td><td class="num">13%</td><td class="num">0%</td></tr>
+  <tr><td>d6+d6</td><td class="num">7</td><td class="num">83%</td><td class="num">58%</td><td class="num">28%</td><td class="num">8%</td></tr>
+  <tr><td>d6+d8</td><td class="num">8</td><td class="num">85%</td><td class="num">69%</td><td class="num">42%</td><td class="num">19%</td></tr>
+  <tr><td>d8+d8</td><td class="num">9</td><td class="num">89%</td><td class="num">75%</td><td class="num">56%</td><td class="num">33%</td></tr>
+  <tr><td>d8+d10</td><td class="num">10</td><td class="num">91%</td><td class="num">80%</td><td class="num">64%</td><td class="num">45%</td></tr>
+  <tr><td>d10+d10</td><td class="num">11</td><td class="num">94%</td><td class="num">85%</td><td class="num">72%</td><td class="num">55%</td></tr>
+  <tr><td>d10+d12</td><td class="num">12</td><td class="num">95%</td><td class="num">88%</td><td class="num">77%</td><td class="num">63%</td></tr>
+  <tr><td>d12+d12</td><td class="num">13</td><td class="num">96%</td><td class="num">90%</td><td class="num">81%</td><td class="num">69%</td></tr>
+  </tbody></table></div>
+  <p>A chance de crítico também cresce com o dado: um <span class="dado">d6</span> só tem um resultado que pode repetir (o 6); um <span class="dado">d12</span> tem sete. Dados extras aumentam ao mesmo tempo o total e a chance de crítico.</p>
+</section>
+
+
+<!-- ==================== COLOFÃO ==================== -->
+<footer class="colofao">
+  <h3>Sobre esta edição</h3>
+  <p>Esta é a versão <strong>0.2</strong>, de 16/11/2026. Os números ainda não
+  passaram por mesa nem por simulador: são a primeira medida, e a primeira sessão é quem
+  vai corrigi-los.</p>
+  <p>Varinhas e Segredos é um projeto de fã, sem fins lucrativos. Harry Potter e o Mundo
+  Bruxo pertencem a seus detentores. Não existe versão à venda, e nunca vai existir.</p>
+</footer>
+
+</div><!-- /mancha -->
+</div><!-- /livro -->
 
 <script>
-const R=a=>a[Math.floor(Math.random()*a.length)];
-const d=n=>1+Math.floor(Math.random()*n);
-// [nome, círculo, tipo, alcance, resistência, efeito, fonte]
-const SPELLS=[
-["Lumos / Nox",1,"Utilidade","Pessoal","—","Luz na ponta da varinha (9 m). Nox apaga.","L"],
-["Wingardium Leviosa",1,"Utilidade","9 m","—","Levita objeto de até 50 kg enquanto concentrar.","L"],
-["Alohomora",1,"Utilidade","Toque","—","Abre fechadura comum (DT 10) ou mágica simples (DT 15+).","L"],
-["Colloportus",1,"Utilidade","Toque","—","Tranca porta; abrir exige Alohomora contra seu teste.","L"],
-["Reparo",1,"Utilidade","Toque","—","Conserta objeto não mágico quebrado.","L"],
-["Accio",1,"Utilidade","Visão","Reflexos (se segurado)","Convoca objeto. Arrancar de mão: teste oposto.","L"],
-["Aguamenti",1,"Utilidade","3 m","—","Jato de água; apaga fogo pequeno.","L"],
-["Incendio",1,"Ataque","9 m","Reflexos ½","1d8 fogo; pode incendiar.","L"],
-["Flipendo",1,"Ataque","9 m","Fortitude","1d6 impacto e empurra 3 m.","J"],
-["Rictusempra",1,"Controle","9 m","Vontade","Cócegas: alvo –5 em ataques por 1 rodada.","L"],
-["Tarantallegra",1,"Controle","9 m","Vontade","Pernas dançam: não se move com controle (2 rodadas).","L"],
-["Expelliarmus",1,"Controle","9 m","Reflexos","Desarma. Sucesso por 10+: varinha vem para você.","L"],
-["Protego",1,"Defesa","Pessoal","—","Reação: bloqueia ataque (ver Combate).","L"],
-["Finite Incantatem",1,"Defesa","9 m","—","Encerra feitiço de Círculo igual ou menor ao seu teste/5.","L"],
-["Episkey",1,"Cura","Toque","—","Cura 1d8+INT PV de ferimentos leves.","L"],
-["Scourgify / Tergeo",1,"Utilidade","Toque","—","Limpa sujeira, líquidos, sangue.","L"],
-["Silencio",1,"Controle","9 m","Vontade","Alvo não fala: não lança feitiços verbais (1d4 rodadas).","L"],
-["Sonorus / Quietus",1,"Utilidade","Pessoal","—","Amplifica a voz / desfaz.","L"],
-["Orchideous / Avis",1,"Utilidade","3 m","—","Conjura flores ou pássaros (distração: +2 em Enganação).","L"],
-["Point Me",1,"Utilidade","Pessoal","—","Varinha aponta o norte.","L"],
-["Stupefy",2,"Ataque","18 m","Fortitude","2d6 e Atordoado 1 rodada (passou: só dano ½).","L"],
-["Petrificus Totalus",2,"Controle","9 m","Fortitude","Petrificado até fim da cena ou Finite.","L"],
-["Incarcerous",2,"Controle","9 m","Reflexos","Cordas: Preso. Escapar: Atletismo DT do conjurador.","L"],
-["Locomotor Mortis",2,"Controle","9 m","Reflexos","Pernas presas: não se move.","L"],
-["Levicorpus / Liberacorpus",2,"Controle","9 m","Reflexos","Pendura alvo pelo tornozelo; Indefeso.","L"],
-["Diffindo",2,"Ataque","9 m","Reflexos","2d8 corte, ou corta objeto/corda.","L"],
-["Confundo",2,"Controle","9 m","Vontade","Confuso: age aleatoriamente 1d4 rodadas.","L"],
-["Obscuro",2,"Controle","9 m","Reflexos","Venda mágica: Cego 1d4 rodadas.","L"],
-["Glacius",2,"Ataque","9 m","Fortitude","2d6 frio e –3 m de deslocamento.","J"],
-["Depulso",2,"Ataque","9 m","Fortitude","2d6 impacto, arremessa 6 m.","J"],
-["Descendo",2,"Ataque","9 m","Reflexos","Derruba alvo voador/em altura; 2d6.","L"],
-["Reducio / Engorgio",2,"Utilidade","9 m","Fortitude","Encolhe ou aumenta alvo em um tamanho.","L"],
-["Ferula",2,"Cura","Toque","—","Tala: estabiliza e cura 2d6 PV.","L"],
-["Rennervate",2,"Cura","9 m","—","Desperta inconsciente/atordoado.","L"],
-["Homenum Revelio",2,"Utilidade","Área 18 m","—","Revela humanos presentes.","L"],
-["Muffliato",2,"Utilidade","Área 6 m","—","Ninguém de fora ouve a conversa.","L"],
-["Aparecium / Specialis Revelio",2,"Utilidade","Toque","—","Revela escrita oculta / propriedades mágicas.","L"],
-["Riddikulus",2,"Defesa","9 m","—","Contra bicho-papão: teste de Vontade; o expulsa.","L"],
-["Furnunculus / Densaugeo",2,"Controle","9 m","Fortitude","Azaração humilhante: –5 em testes sociais e de lançar.","L"],
-["Oppugno",2,"Ataque","9 m","Reflexos","Objetos/pássaros conjurados atacam: 2d6.","L"],
-["Reducto",3,"Ataque","18 m","Reflexos ½","4d6 contra objetos/criaturas; destrói barreiras.","L"],
-["Confringo",3,"Ataque","18 m","Reflexos ½","4d6 fogo em raio 3 m.","L"],
-["Bombarda",3,"Ataque","18 m","Reflexos ½","3d8 explosão; destrói paredes.","J"],
-["Expecto Patronum",3,"Defesa","Pessoal","—","DT 20 (corpóreo 25). Afasta dementadores e Lethifolds; restaura 2d6 DET aos aliados.","L"],
-["Cave Inimicum / Repello Inimicum",3,"Defesa","Área","—","Protege acampamento: invisível e silencioso a inimigos.","L"],
-["Salvio Hexia",3,"Defesa","Área","—","+5 Defesa contra feitiços na área por 1 cena.","L"],
-["Feitiço da Desilusão",3,"Utilidade","Toque","—","Camuflagem: +10 em Furtividade.","L"],
-["Obliviate",3,"Controle","Toque","Vontade","Apaga memórias recentes (cena). Falha: confusão.","L"],
-["Legilimens",3,"Controle","9 m","Oclumência","Lê pensamentos e lembranças superficiais.","L"],
-["Piertotum Locomotor",3,"Utilidade","Área","—","Anima estátuas/armaduras como aliados (lacaios).","L"],
-["Vulnera Sanentur",3,"Cura","Toque","—","Cura 4d6 PV e encerra Sangramento.","L"],
-["Arresto Momentum",3,"Defesa","18 m","—","Reação: evita queda ou reduz velocidade de projétil.","F"],
-["Geminio",3,"Utilidade","Toque","—","Duplica objeto não mágico (dura uma cena).","L"],
-["Portus",4,"Utilidade","Toque","—","Cria Chave de Portal (ilegal sem licença).","L"],
-["Feitiço Fidelius",4,"Defesa","Ritual","—","Segredo oculto num Fiel do Segredo.","L"],
-["Aparatação",4,"Utilidade","Pessoal","—","DT 15 (acompanhado +5). Falha por 10+: estrunchar (3d6).","L"],
-["Expulso",4,"Ataque","18 m","Reflexos ½","6d6 explosão violenta.","L"],
-["Protego Maxima / Totalum",4,"Defesa","Área","—","Barreira de área: bloqueia 30 de dano por rodada.","F"],
-["Sectumsempra",4,"Trevas","9 m","Fortitude ½","4d8 corte + Sangrando grave (2d6/turno).","L"],
-["Imperio",4,"Trevas","9 m","Vontade (a cada rodada)","Controle total. Imperdoável: Azkaban.","L"],
-["Crucio",4,"Trevas","9 m","Vontade","4d6 dano em DET + Atordoado. Imperdoável.","L"],
-["Avada Kedavra","P","Trevas","18 m","Nenhuma (só desviar)","Morte instantânea. Exige ódio real: DT 25. Custa 2d6 DET.","L"],
-["Fogomaldito","P","Trevas","Área","Reflexos","8d6 fogo/rodada que se espalha; DT 25 a cada turno para controlar.","L"],
-["Protego Diabolica","P","Trevas","Área 6 m","—","Círculo de fogo negro: queima 8d6 quem não é leal ao conjurador.","F"]
-];
-function renderSpells(){
- const c=document.getElementById('fcirc').value,t=document.getElementById('ftipo').value;
- let h='<tr><th>Feitiço</th><th>Círc.</th><th>Tipo</th><th>Alcance</th><th>Resist.</th><th>Efeito</th></tr>';
- SPELLS.filter(s=>(!c||String(s[1])==c)&&(!t||s[2]==t)).forEach(s=>{
-  h+=`<tr><td><b>${s[0]}</b> ${s[6]!='L'?'<span class="tag">'+s[6]+'</span>':''}</td><td>${s[1]}</td><td>${s[2]}</td><td>${s[3]}</td><td>${s[4]}</td><td>${s[5]}</td></tr>`});
- document.getElementById('spells').innerHTML=h;
+const PASSOS = [4, 6, 8, 10, 12];
+const d = n => 1 + Math.floor(Math.random() * n);
+function rolarOrdem() {
+  const a = +document.getElementById('r-atr').value, p = +document.getElementById('r-per').value;
+  const dt = +document.getElementById('r-dt').value, extra = +document.getElementById('r-extra').value;
+  const dados = [a, p]; for (let i = 0; i < extra; i++) dados.push(Math.max(a, p));
+  const r = dados.slice(0, 4).map(f => ({ f, v: d(f) }));
+  const vals = r.map(x => x.v).sort((x, y) => y - x);
+  const usados = vals.slice(0, 3);
+  const total = usados.reduce((s, v) => s + v, 0);
+  const crit = vals.some((v, i) => v >= 6 && vals.indexOf(v) !== i);
+  const desastre = vals.every(v => v === 1);
+  const ok = !desastre && (crit || total >= dt);
+  const visor = document.getElementById('r-visor');
+  visor.textContent = total;
+  visor.className = 'rolador-visor' + (crit ? ' critico' : desastre ? ' falha' : '');
+  document.getElementById('r-detalhe').innerHTML =
+    r.map(x => 'd' + x.f + ' → <b>' + x.v + '</b>').join(' · ') +
+    (r.length > 3 ? ' (o menor sai)' : '') +
+    '<br>RA <b>' + vals[0] + '</b> · RB <b>' + vals[vals.length - 1] + '</b> · ' +
+    (desastre ? '<b>Desastre!</b> Role na tabela de Desastres.' : crit ? '<b>Crítico!</b> Sucesso automático.' : ok ? 'Sucesso contra DT ' + dt + '.' : 'Falha contra DT ' + dt + '.');
 }
-// [nome, DT, tempo, ingredientes, efeito]
-const POTIONS=[
-["Cura para Furúnculos",10,"1 h","Dentes de cobra, urtiga seca, espinhos de porco-espinho","Remove furúnculos/azarações de pele."],
-["Poção Apimentada",10,"1 h","Raiz de mandrágora, chifre de bicórnio","Cura resfriado, +2 Fortitude contra frio/doença por 1 dia."],
-["Wiggenweld",15,"2 h","Suco de horklump, folhas de ditamno","Cura 3d8 PV; desperta da Poção do Morto-Vivo."],
-["Essência de Ditamno",15,"4 h","Ditamno","Cura 2d8 PV e encerra Sangramento; fecha cortes."],
-["Antídoto para Venenos Comuns",15,"3 h","Bezoar moído, visgo, unicórnio (pelo)","Encerra venenos comuns. Bezoar cru salva de quase todos."],
-["Solução Redutora",12,"1 h","Raiz de margarida, figo seco, lagarta","Encolhe alvo em um tamanho por 1 cena."],
-["Solução de Inchaço",12,"1 h","Baço de morcego, olho de baiacu","Alvo incha: –5 AGI-testes, +1 tamanho."],
-["Poção do Sono",12,"1 h","Lavanda, valeriana, flobberworm","Fortitude DT 15 ou dorme 1d6 horas."],
-["Poção para Aguçar o Intelecto",15,"2 h","Besouros, gengibre, bile de tatu","+5 em testes de INT por 1 cena."],
-["Poção da Paz",18,"3 h","Pó de pedra-da-lua, xarope de heléboro","Remove Amedrontado; +2d6 DET."],
-["Reposição de Sangue",18,"6 h","—","Recupera 2d6 PV e anula –PV máx. de sangramento."],
-["Edurus",15,"2 h","Ovos de ashwinder, pelo de mongrel","+3 Defesa por 1 cena."],
-["Maxima",15,"2 h","Suco de sanguessuga, presa de aranha","+1 dado de dano nos feitiços por 1 cena."],
-["Poção do Foco",18,"3 h","Lacewing, fluxweed, língua de dugbog","Feitiços custam –1 PM (mín. 1) por 1 cena."],
-["Poção da Invisibilidade",20,"6 h","Cogumelo saltador, knotgrass, meleca de trasgo","Invisível por 1d4 rodadas ou até atacar."],
-["Esquelesce",20,"1 dia","Escamas, ervas amargas","Faz ossos crescerem de novo (8h dolorosas)."],
-["Restauradora de Mandrágoras",20,"1 mês","Mandrágoras maduras","Desfaz petrificação."],
-["Veritaserum",25,"1 lua","Ingredientes raros (Ministério controla)","Vontade DT 25 ou responde com a verdade. Oclumência ajuda."],
-["Polissuco",25,"1 mês","Moscas lacewing, sanguessugas, fluxweed, knotgrass, chifre de bicórnio, pele de ararambóia, parte do alvo","Assume a aparência de alguém por 1 hora."],
-["Amortentia",25,"1 sem.","Segredo do professor","Obsessão pelo doador. Vontade DT 25 por dia. Não é amor."],
-["Poção do Morto-Vivo",25,"2 dias","Asfódelo, losna, feijão soporífero","Sono profundo semelhante à morte."],
-["Mata-Cão",28,"1 sem.","Acônito e ingredientes raros","Lobisomem mantém a mente humana na lua cheia."],
-["Felix Felicis",30,"6 meses","Fórmula complexa","Por 1d4 horas, rola 2× e escolhe em todo teste. Excesso: imprudência."]
-];
-function renderPotions(){
- let h='<tr><th>Poção</th><th>DT</th><th>Preparo</th><th>Ingredientes</th><th>Efeito</th></tr>';
- POTIONS.forEach(p=>h+=`<tr><td><b>${p[0]}</b></td><td>${p[1]}</td><td>${p[2]}</td><td>${p[3]}</td><td>${p[4]}</td></tr>`);
- document.getElementById('potions').innerHTML=h;
-}
-// [nome, perigo 1-5, ataque, especial, habitat, partes]
-const CREATURES=[
-["Gnomo de Jardim",1,"Mordida +3 (1d4)","Foge em bando","Jardins","—"],
-["Puffskein",1,"—","Dócil; companheiro","Lares","—"],
-["Flobberworm",1,"—","Lento","Valas","Muco (espessante de poções)"],
-["Bowtruckle",2,"Dedos +6 (1d6) nos olhos","Guardião de árvores de varinha","Florestas","—"],
-["Diabrete da Cornualha",2,"Puxão +5 (1d4)","Voa; bandos de 1d6+2","Sótãos, florestas","—"],
-["Doxy",2,"Mordida +5 (1d6 + veneno: Fortitude DT 12 ou Fraco)","Voa","Casas velhas","Ovos de doxy"],
-["Niffler",2,"—","Rouba objetos brilhantes (Prestidigitação +15)","Tocas","—"],
-["Kneazle",2,"Garras +6 (1d6)","Detecta pessoas suspeitas","Lares","—"],
-["Grindylow",2,"Tentáculo +6 (1d6, agarra)","Aquático","Lagos","—"],
-["Bicho-Papão",2,"Medo: Vontade DT 15 ou 2d6 DET","Assume o maior medo; Riddikulus","Armários","—"],
-["Hipogrifo",3,"Garras +10 (2d8)","Exige reverência; montaria voadora","Montanhas","Penas"],
-["Acromântula jovem",3,"Mordida +10 (2d6 + veneno 2d6)","Fala; teias","Florestas densas","Veneno (valioso)"],
-["Kappa",3,"Golpe +10 (2d6, afoga)","Água na cabeça: se derramar, fica fraco","Rios","—"],
-["Red Cap",3,"Clava +9 (2d6)","Ataca em locais de sangue derramado","Campos de batalha","—"],
-["Erumpent",4,"Chifre +12 (4d6 explosão)","Chifre explode ao perfurar","Savanas","Fluido explosivo"],
-["Trasgo da Montanha",4,"Clava +12 (3d8)","Resistência a feitiços (–5 ao alvo)","Cavernas","Meleca de trasgo"],
-["Lobisomem",4,"Mordida +12 (2d10 + licantropia)","Só na lua cheia; Regenera 5","Florestas","—"],
-["Dementador",4,"Beijo: drena 3d6 DET/turno","Imune a dano comum; só Patrono","Azkaban, nevoeiro","—"],
-["Inferius",3,"Agarrar +10 (2d6, afoga)","Fraco contra fogo (dano dobrado)","Lagos sombrios","—"],
-["Testrálio",3,"Mordida +8 (2d6)","Invisível a quem não viu a morte; montaria","Florestas","Pelo (núcleo de varinha)"],
-["Centauro",4,"Arco +12 (2d8)","Inteligente; orgulhoso; adivinhação","Florestas","—"],
-["Acromântula adulta",5,"Mordida +15 (3d8 + veneno 3d6)","Colônias inteiras","Floresta Proibida","Veneno"],
-["Manticora",5,"Ferrão +15 (3d8 + paralisia)","Imune a feitiços de Círculo 1–2","Desertos","—"],
-["Rabo-Córneo Húngaro",5,"Bafo de fogo 18 m (8d6) / Cauda +16 (4d8)","Couro: resiste a feitiços (–10)","Reservas de dragão","Sangue, escamas, corda de coração"],
-["Basilisco",5,"Olhar: morte (refletido: petrifica) / Presa +18 (4d10 + veneno letal)","Galos o espantam","Câmaras subterrâneas","Presa (destrói Horcrux)"],
-["Nundu",5,"Hálito pestilento (Fortitude DT 25 ou 6d6)","Exige 100 bruxos para dominar","África","—"],
-["Lethifold",5,"Envolver: sufoca 4d6/turno","Só Patrono","Tropicais","—"]
-];
-const PERIGO=["","X","XX","XXX","XXXX","XXXXX"];
-function statFor(p){return{pv:[0,4,15,35,70,140][p],def:[0,11,13,16,19,23][p],res:[0,"+0","+3","+6","+10","+15"][p]}}
-function genCreature(novo){
- const f=document.getElementById('cperigo').value;
- let c;
- if(novo){
-  const corpo=R(["felino","serpente","ave","sapo","cervo","inseto gigante","peixe com patas","macaco","morcego","lagarto"]);
-  const traco=R(["chifre que brilha ao luar","penas de fumaça","olhos que veem através de paredes","pele que muda de cor","seis patas","voz humana","cauda em chamas","corpo translúcido","asas de cristal","casco de pedra"]);
-  const hab=R(["fica invisível ao ser observado","rouba memórias com a mordida","se alimenta de magia (anula feitiços em 3 m)","copia a voz de quem ouviu","teleporta curtas distâncias","emite névoa sonífera","petrifica com o grito","atrai crianças com música"]);
-  const p=+f||d(5);const s=statFor(p);
-  c=[`${R(["Gris","Mor","Pel","Vas","Tul","Kre","Om","Fral","Nib","Zor"])}${R(["umbro","quilha","fago","trel","ânsio","mora","bico","dril","vorme","cão"])}`,p,`Ataque +${p*3} (${p}d${p>3?8:6})`,`Um ${corpo} com ${traco} que ${hab}.`,R(["Floresta Proibida","pântanos","masmorras","lago negro","Travessa do Tranco","montanhas"]),R(["pena/pelo para núcleo","veneno raro","glândula de poção","—"])];
- } else {
-  const pool=f?CREATURES.filter(x=>x[1]==f):CREATURES; c=R(pool);
- }
- const s=statFor(c[1]);
- document.getElementById('cout').innerHTML=`<div class="stat"><b style="font-size:1.2rem">${c[0]}</b> <span class="tag">Ministério: ${PERIGO[c[1]]}</span><br>
- <b>PV</b> ${s.pv+d(c[1]*6)} · <b>Defesa</b> ${s.def} · <b>Resistências</b> ${s.res} · <b>Iniciativa</b> ${c[1]}d20+${c[1]*2}<br>
- <b>Ataque:</b> ${c[2]}<br><b>Especial:</b> ${c[3]}<br><b>Habitat:</b> ${c[4]} · <b>Partes úteis:</b> ${c[5]}<br>
- <span class="muted">Comportamento: ${R(["territorial","faminto","assustado","curioso","protegendo filhotes","controlado por alguém","ferido","em bando"])}.</span></div>`;
-}
-const NOMES=["Aldous","Beatrix","Cassius","Delphine","Edmund","Fiona","Gideon","Hester","Ignatius","Juniper","Lysander","Morwenna","Octavia","Percival","Rosalind","Silas","Tabitha","Ulric","Verity","Wilhelmina","Benedita","Tiago","Isadora","Caetano"];
-const SOBRENOMES=["Ashgrove","Blackwood","Crowley","Duskmere","Fairweather","Grimsby","Hollow","Lockridge","Mallory","Nightshade","Pennyfeather","Quill","Rookwood","Thistle","Vane","Whitlock"];
-function genNPC(t){
- const casa=R(["Grifinória","Sonserina","Corvinal","Lufa-Lufa"]);
- const prof={aliado:["estudante do 5º ano","monitor(a)","curandeira de St. Mungus","auror novato","dono(a) de loja no Beco Diagonal","elfo doméstico liberto","guarda-caça","fantasma do castelo","magizoologista","jornalista do Pasquim"],
-  rival:["artilheiro(a) da casa rival","herdeiro(a) sangue-puro","monitor(a)-chefe arrogante","aluno(a) prodígio","funcionário(a) bajulador(a) do Ministério"],
-  vilao:["Comensal da Morte foragido","contrabandista de criaturas","colecionador de artefatos amaldiçoados","professor(a) com segredo","líder de seita puro-sangue","lobisomem do bando de Greyback"]}[t];
- const lvl={aliado:d(5),rival:d(5)+1,vilao:d(6)+6}[t];
- const fs=SPELLS.filter(s=>s[1]!="P"&&(t=='vilao'||s[2]!="Trevas")&&(s[1]<=Math.ceil(lvl/2)));
- const kn=[...new Set([R(fs)[0],R(fs)[0],R(fs)[0],(t=='vilao'?R(SPELLS.filter(s=>s[2]=="Trevas"))[0]:R(fs)[0])])];
- const pers=R(["leal até o fim","desconfiado","engraçado e caótico","estudioso e frio","corajoso demais","covarde mas honesto","manipulador","melancólico","otimista incurável"]);
- const seg=R(["é animago ilegal","tem um parente em Azkaban","deve dinheiro a goblins","esconde uma licantropia","viu algo na Floresta Proibida","guarda um diário que fala","é metamorfomago","já usou um Vira-Tempo","não consegue conjurar um Patrono","está sob Imperius"]);
- const inte=R([3,4,5]),pv=12+lvl*5,pm=3+inte+lvl*3;
- document.getElementById('nout').innerHTML=`<div class="stat"><b style="font-size:1.2rem">${R(NOMES)} ${R(SOBRENOMES)}</b> <span class="tag">${t.toUpperCase()}</span> <span class="tag">Nível ${lvl}</span><br>
- ${prof[R(prof.length?[...prof.keys()]:[0])]||R(prof)} · ${casa}<br>
- <b>PV</b> ${pv} · <b>PM</b> ${pm} · <b>Defesa</b> ${10+d(3)+Math.floor(lvl/2)} · <b>Feitiços</b> ${inte}d20+${lvl>=10?15:lvl>=5?10:5}<br>
- <b>Varinha:</b> ${wandText()}<br><b>Feitiços:</b> ${kn.join(", ")}<br>
- <b>Personalidade:</b> ${pers} · <b>Segredo:</b> ${seg}</div>`;
-}
-const MADEIRAS=["Azevinho","Teixo","Carvalho","Salgueiro","Videira","Cerejeira","Ébano","Sabugueiro","Bétula","Freixo","Cedro","Nogueira","Espinheiro","Faia","Acácia","Amieiro"];
-const NUCLEOS=["Pena de Fênix","Corda de Coração de Dragão","Pelo de Unicórnio","Pelo de Testrálio","Pelo de Veela"];
-function wandText(){return `${R(MADEIRAS)}, ${R(NUCLEOS)}, ${d(6)+8}¾ polegadas, ${R(["flexível","rígida","maleável","inflexível","levemente elástica"])}`}
-function genWand(){const w=wandText();document.getElementById('wout').innerHTML=`<div class="stat">✦ ${w}<br><span class="muted">${R(["Ela escolheu você na primeira tentativa.","Três vitrines explodiram antes desta.","Ollivander hesita: “Curioso... muito curioso.”","Faíscas douradas saem da ponta.","Ela pertencia a alguém da sua família."])}</span></div>`}
-function genItem(){
- const base=R(["Espelho de bolso","Pena de escrever","Relógio","Medalhão","Livro","Cachecol","Chave antiga","Moeda","Vidro de tinta","Bússola","Anel","Luneta"]);
- const efeito=R(["mostra onde o dono está em perigo (+5 Percepção contra emboscadas)","sussurra respostas erradas em provas","guarda uma memória que pode ser vista na Penseira","fica quente perto de magia das trevas","aparata de volta para o dono se perdido","permite falar com quem tiver o par","armazena 3 PM extras (recarrega ao amanhecer)","grita quando alguém mente","esconde um mapa de passagens secretas","conjura Lumos sem varinha"]);
- const maldicao=Math.random()<.3?`<br><b style="color:var(--red)">Amaldiçoado:</b> ${R(["drena 1 DET por dia","faz o portador mentir","atrai dementadores","sussurra à noite","é uma Horcrux falsa... ou não"])}`:"";
- document.getElementById('iout').innerHTML=`<div class="stat"><b>${base} encantado</b>: ${efeito}.${maldicao}<br><span class="muted">Valor: ${d(20)*5} galeões</span></div>`;
-}
-function genHook(){
- document.getElementById('hout').innerHTML=`<div class="stat">${R(["Um aluno do 2º ano foi encontrado petrificado","Uma página do Livro Monstruoso fala em ofidioglossia","Pirraça roubou algo da sala de Dumbledore","Um Niffler sumiu com o distintivo de monitor","Uma carta sem remetente chega pela coruja errada","O Salgueiro Lutador parou de se mexer","Um quadro do 7º andar está vazio há três dias","Alguém comprou acônito demais no Beco Diagonal"])}, e ${R(["a pista leva à Sala Precisa","há uma pegada de criatura grande perto do lago","um professor está mentindo","o Mapa do Maroto mostra um nome que não deveria estar lá","a Floresta Proibida está estranhamente silenciosa","um fantasma diz ter visto tudo","Hogsmeade está cheia de aurores"])}. ${R(["Mas ninguém pode saber.","O Ministério quer abafar o caso.","Você tem até a lua cheia.","Os Comensais chegaram primeiro.","A Taça das Casas está em jogo."])}</div>`;
-}
-const WILD=["Sua varinha solta bolhas de sabão por 1 cena.","O feitiço acerta o aliado mais próximo.","Você levita 1 m por 1 rodada.","Seu cabelo muda de cor permanentemente (até Finite).","Uma pequena explosão: 1d6 em você.","Sapos saltam da varinha.","Você fica mudo por 1 rodada.","O feitiço funciona, mas o dobro mais forte (e custa o dobro de PM).","Sua voz vira de taquara rachada.","A varinha voa 3 m para longe.","Todos num raio de 6 m começam a soluçar.","Nada acontece... por enquanto. O Narrador guarda o efeito."];
-function genWild(){const n=d(12);document.getElementById('xout').innerHTML=`<div class="stat"><b>${n}</b> — ${WILD[n-1]}</div>`}
-function rollTest(){
- const a=+document.getElementById('ra').value,b=+document.getElementById('rb').value,dt=+document.getElementById('rd').value;
- const rolls=Array.from({length:a>0?a:2},()=>d(20));const v=a>0?Math.max(...rolls):Math.min(...rolls);const t=v+b;
- const ok=t>=dt;document.getElementById('rout').innerHTML=`[${rolls.join(", ")}] → ${v} + ${b} = <b>${t}</b> <span style="color:${ok?'var(--green)':'var(--red)'}">${v==20?'CRÍTICO!':ok?'Sucesso':'Falha'}</span>`;
-}
-function rollDmg(){
- const m=document.getElementById('rdn').value.match(/(\d+)d(\d+)([+-]\d+)?/);if(!m)return;
- const r=Array.from({length:+m[1]},()=>d(+m[2]));const t=r.reduce((a,b)=>a+b,0)+(+m[3]||0);
- document.getElementById('rout').innerHTML=`[${r.join(", ")}]${m[3]||''} = <b>${t}</b> de dano`;
-}
-// ---- FORJA ----
-// [PV, DEF, Ataque, Dano/rodada, DT, forte, fraca, orçamento traços, poderes]
-const TABUA=[null,[11,12,3,5,13,15,12,1,0],[22,13,4,9,14,16,13,1,1],[36,14,5,14,15,17,13,2,1],[55,15,6,20,16,18,14,2,1],[80,16,7,27,17,19,14,2,2],[115,17,8,35,18,20,15,3,2],[155,17,9,45,19,21,15,3,2],[210,18,10,56,20,22,16,3,3],[280,19,11,70,21,23,16,4,3],[370,20,13,88,23,25,17,4,3],[500,21,15,110,25,27,18,5,4]];
-const MIN=p=>["X","X","XX","XX","XXX","XXX","XXXX","XXXX","XXXXX","XXXXX","XXXXX"][p-1];
-const FASES=p=>p<2?0:p==2?2:p<8?3:4;
-const ARQ={"Padrão":[1,0,0,0,"Sem trocas."],"Bruto":[1.3,-2,-1,0,"Mais couro, menos precisão. Trasgos, Erumpentes."],"Ágil":[.8,2,1,0,"Difícil de acertar. Diabretes, Hipogrifos."],"Predador":[.9,0,1,1.2,"Bate forte, morre rápido. Acromântulas, Lobisomens."],"Conjurador":[.8,-1,0,.8,"Gasta o turno em Poderes: +1 Poder grátis. Bruxos, Esfinges."],"Enxame":[1,-1,0,1,"Bando: dano de área, metade do dano de feitiços de alvo único. Doxys, Billywigs."],"Espectral":[.7,0,0,.9,"Imune a dano físico; só magia. Dementadores, Fantasmas, Lethifolds."],"Guardião":[1.2,1,-1,.8,"Protege algo: Reação para interceptar ataques. Fofo, estátuas."]};
-const TRACOS=[["Voo","Voa no deslocamento normal."],["Couro Mágico","Feitiços de Círculo 1–2 contra ela têm –5."],["Regeneração","Recupera Perigo×2 PV no início do turno (fogo/prata anula)."],["Invisível","Fica invisível como ação de movimento (Demiguise)."],["Veneno","Ataques causam +1d6/turno por 2 turnos (Fortitude encerra)."],["Imune a Feitiços Mentais","Ignora Confundo, Imperio, Legilimens."],["Anfíbio","Respira na água; nada no deslocamento normal."],["Faro / Visão no Escuro","Sentido especial extra."],["Aterrorizante","Ao ver pela 1ª vez: Vontade ou perde 1d6 DET."],["Furtivo","+10 Furtividade; ataque surpresa causa dano dobrado."],["Inteligente","Fala, negocia, faz planos (Centauros, Acromântulas)."],["Resistência Elemental","Metade do dano de fogo, frio ou impacto."],["Agarrar","Ao acertar, o alvo fica Preso (Atletismo para soltar)."],["Absorve Magia","Ao resistir a um feitiço, ganha PV igual ao custo×5."]];
-const PODERES=[["Sopro / Jato","Cone 9 m, dano = dano da rodada; Reflexos ½. Recarga 5–6."],["Olhar Paralisante","Um alvo, Fortitude ou Petrificado 1 rodada. Recarga 6."],["Grito","Raio 6 m, Vontade ou Atordoado + 1d6 DET. 1/cena."],["Drenar Felicidade","Um alvo, Vontade ou perde 2d6 DET e cura metade. Recarga 5–6."],["Teia / Tentáculos","Área 3 m, Reflexos ou Preso. Recarga 5–6."],["Investida","Move o dobro e ataca; Fortitude ou Caído."],["Mudar de Forma","Assume outra aparência (Bicho-Papão, Kelpie). 1/cena."],["Ilusão","Cria imagem convincente; Intuição para notar. Recarga 4–6."],["Teleporte","Aparata 18 m como ação de movimento. Recarga 5–6."],["Chamar o Bando","1d4 lacaios de Perigo –4 chegam no fim da rodada. 1/cena."],["Feitiço","Lança um feitiço do Grimório de Círculo ≤ Perigo/3."],["Explosão","Raio 3 m, dano da rodada; Reflexos ½. 1/cena."]];
-const FRAQ=[["Luz / Sol","Lumos Maxima ou luz solar: Atordoado 1 rodada (Visgo-do-Diabo, Inferi)."],["Fogo","Dano de fogo é dobrado (Inferi, Acromântulas)."],["Patrono","Expecto Patronum a afasta e causa dano de verdade (Dementador, Lethifold)."],["Riso","Riddikulus/feitiço de riso a desfaz (Bicho-Papão)."],["Reverência","Quem faz a mesura e espera não é atacado (Hipogrifo)."],["Música","Música a adormece (Fofo)."],["Canto do Galo","O canto de um galo a mata ou expulsa (Basilisco)."],["Objeto Brilhante","Distrai-se com ouro/joias: Enganação vira a cena (Niffler, Leprechaun)."],["Água derramada","Se a água da cabeça cair, fica Fraca (Kappa)."],["Nome Verdadeiro","Dizer seu nome antigo a obriga a parar."],["Enigma","Resposta certa a um enigma a vence (Esfinge)."],["Vínculo","Quem a criou pode mandá-la parar."]];
-const PAPEIS={"Duelista":[1,1,1,1,"+5 em Feitiços de ataque; Protego como reação grátis 1/rodada."],"Curandeiro":[.9,0,0,.6,"Cura Nível×3 PV como ação; Episkey/Vulnera Sanentur sem custo."],"Erudito":[.8,0,0,.7,"+10 em perícias de conhecimento; identifica magia e criaturas na hora."],"Batedor":[.9,2,0,.9,"+10 Furtividade/Percepção; age primeiro na 1ª rodada."],"Protetor":[1.3,1,-1,.7,"Reação: recebe o ataque no lugar de um aliado adjacente."],"Trapaceiro":[.8,1,0,.9,"Azarações humilhantes; Prestidigitação e Enganação +10."],"Domador":[1,0,0,.6,"Tem uma criatura companheira de Perigo = Nível–3."],"Comandante":[1,0,0,.8,"Ação: um aliado faz um ataque extra ou rerrola um teste."]};
-function tabuaCell(){let h='<tr><th>Perigo</th><th>Ministério</th><th>PV</th><th>Defesa</th><th>Ataque</th><th>Dano/rodada</th><th>DT</th><th>Resist. fortes</th><th>Fraca</th><th>Traços</th><th>Poderes</th></tr>';
- for(let p=1;p<=11;p++){const t=TABUA[p];h+=`<tr><td><b>${p}</b></td><td>${MIN(p)}</td><td>${t[0]}</td><td>${t[1]}</td><td>+${t[2]}</td><td>${t[3]}</td><td>${t[4]}</td><td>+${t[5]-10}</td><td>+${t[6]-10}</td><td>${t[7]}</td><td>${t[8]}</td></tr>`}
- document.getElementById('tabua').innerHTML=h;
- const tb=(id,head,rows)=>document.getElementById(id).innerHTML='<tr>'+head.map(x=>'<th>'+x+'</th>').join('')+'</tr>'+rows.map(r=>'<tr>'+r.map((c,i)=>i?'<td>'+c+'</td>':'<td><b>'+c+'</b></td>').join('')+'</tr>').join('');
- tb('arqt',['Arquétipo','PV','Defesa','Ataque','Dano','Notas'],Object.entries(ARQ).map(([k,a])=>[k,'×'+a[0],(a[1]>=0?'+':'')+a[1],(a[2]>=0?'+':'')+a[2],'×'+(a[3]||1),a[4]]));
- tb('tracot',['Traço','Efeito'],TRACOS);tb('podert',['Poder','Efeito'],PODERES);tb('fraqt',['Fraqueza','Como funciona'],FRAQ);
- tb('papelt',['Papel','PV','Defesa','Ataque','Dano','Habilidade'],Object.entries(PAPEIS).map(([k,a])=>[k,'×'+a[0],(a[1]>=0?'+':'')+a[1],(a[2]>=0?'+':'')+a[2],'×'+a[3],a[4]]));
- document.getElementById('farq').innerHTML=Object.keys(ARQ).map(k=>'<option>'+k+'</option>').join('');
- document.getElementById('npapel').innerHTML=Object.keys(PAPEIS).map(k=>'<option>'+k+'</option>').join('');
-}
-const pick=(arr,n)=>[...arr].sort(()=>Math.random()-.5).slice(0,n);
-function repartir(total,n){const each=Math.max(1,Math.round(total/n));const dd=each>=20?10:each>=9?8:6;const nd=Math.max(1,Math.floor(each/(dd/2+.5)));const b=Math.max(0,each-Math.round(nd*(dd/2+.5)));return nd+'d'+dd+(b?'+'+b:'')+' (~'+each+')'}
-function forjar(rnd){
- let p=Math.min(11,Math.max(1,+document.getElementById('fper').value||1));
- let arq=document.getElementById('farq').value, tam=document.getElementById('ftam').value, chefe=document.getElementById('fchefe').checked;
- if(rnd){p=d(11);arq=R(Object.keys(ARQ));tam=R(["Miúdo","Pequeno","Médio","Grande","Enorme"]);chefe=Math.random()<.4;}
- const t=TABUA[p],a=ARQ[arq];
- const pv=Math.round(t[0]*a[0]),def=t[1]+a[1],atk=t[2]+a[2],dano=Math.round(t[3]*(a[3]||1));
- const nAt=p>=6?3:p>=3?2:1;
- const res=pick(["Fortitude","Reflexos","Vontade"],3);
- const tr=pick(TRACOS,t[7]),po=pick(PODERES,t[8]+(arq=="Conjurador"?1:0)),fq=R(FRAQ);
- const fases=chefe?FASES(p):0;
- const pisos=fases?Array.from({length:fases-1},(_,i)=>Math.round(pv*(fases-1-i)/fases)).join(' / '):'';
- const nome=document.getElementById('fnome').value||(rnd?`${R(["Gris","Mor","Pel","Vas","Tul","Kre","Om","Fral","Nib","Zor"])}${R(["umbro","quilha","fago","trel","ânsio","mora","bico","dril","vorme","cão"])}`:"Criatura sem nome");
- const frase=`${R(["Um felino","Uma serpente","Uma ave","Um sapo","Um cervo","Um inseto gigante","Um morcego","Um lagarto","Uma sombra","Um cão"])} ${R(["de penas de fumaça","com chifre que brilha ao luar","de casco de pedra","translúcido","de olhos dourados","com cauda em chamas"])} que ${R(["caça pelo cheiro do medo","guarda uma passagem esquecida","se alimenta de magia","imita vozes","protege seus ovos","foi solta por um contrabandista"])}.`;
- document.getElementById('fout').innerHTML=`<div class="stat"><b style="font-size:1.25rem">${nome}</b> <span class="tag">Perigo ${p}</span><span class="tag">Ministério ${MIN(p)}</span><span class="tag">${tam}</span><span class="tag">${arq}</span>${chefe?'<span class="tag">CHEFE</span>':''}<br>
- <i class="muted">${frase}</i><br>
- <b>PV</b> ${pv}${fases?` · <b>Fases</b> ${fases} (pisos ${pisos})`:''} · <b>Defesa</b> ${def} · <b>Iniciativa</b> ${Math.min(5,1+Math.floor(p/2))}d20+${p}<br>
- <b>Resistências:</b> ${res[0]} +${t[5]-10}, ${res[1]} +${t[5]-10}, ${res[2]} +${t[6]-10} <span class="muted">(fraca)</span> · <b>DT dos Poderes</b> ${t[4]}<br>
- <b>Ataques (${nAt}/rodada):</b> +${atk}, ${repartir(dano,nAt)} cada<br>
- <b>Traços:</b> ${tr.map(x=>'<b>'+x[0]+'</b> — '+x[1]).join(' · ')||'—'}<br>
- <b>Poderes:</b> ${po.map(x=>'<b>'+x[0]+'</b> — '+x[1]).join(' · ')||'—'}<br>
- ${p>=6&&chefe?'<b>Reações Lendárias:</b> 2 por rodada, no fim do turno de um jogador: ataque extra ou mover sem provocar.<br>':''}
- ${p>=8&&chefe?'<b>Aura do Lugar:</b> na iniciativa 20, o ambiente age (teto desaba, lago puxa, velas apagam).<br>':''}
- <b style="color:var(--gold)">Fraqueza Mágica:</b> <b>${fq[0]}</b> — ${fq[1]}</div>`;
-}
-function forjarNPC(rnd){
- let lv=Math.min(11,Math.max(1,+document.getElementById('nlvl').value||1)),pap=document.getElementById('npapel').value,lado=document.getElementById('nlado').value;
- if(rnd){lv=d(11);pap=R(Object.keys(PAPEIS));lado=R(['aliado','rival','vilao'])}
- const t=TABUA[lv],a=PAPEIS[pap];
- const pv=Math.round(t[0]*a[0]),def=t[1]+a[1],atk=t[2]+a[2],dano=Math.round(t[3]*a[3]),pm=3+lv*4;
- const circ=Math.min(4,Math.ceil(lv/3));
- const fs=SPELLS.filter(s=>s[1]!="P"&&s[1]<=circ&&(lado=='vilao'||s[2]!="Trevas"));
- let kn=[...new Set(pick(fs,4+Math.floor(lv/3)).map(s=>s[0]))];
- if(lado=='vilao'&&lv>=5)kn.push(R(SPELLS.filter(s=>s[2]=="Trevas"))[0]);
- const pers=R(["leal até o fim","desconfiado","engraçado e caótico","estudioso e frio","corajoso demais","covarde mas honesto","manipulador","melancólico","otimista incurável"]);
- const seg=R(["é animago ilegal","tem um parente em Azkaban","deve dinheiro a goblins","esconde uma licantropia","viu algo na Floresta Proibida","guarda um diário que fala","é metamorfomago","já usou um Vira-Tempo","não consegue conjurar um Patrono","está sob Imperius"]);
- const quer=R(["provar seu valor à família","proteger um irmão mais novo","encontrar quem matou seus pais","ganhar a Taça das Casas","libertar uma criatura","recuperar uma varinha roubada","entrar para os Aurores","descobrir o que há no Departamento de Mistérios"]);
- const ocup={aliado:["estudante","monitor(a)","curandeira de St. Mungus","auror novato","lojista do Beco Diagonal","elfo doméstico liberto","guarda-caça","fantasma do castelo","magizoologista"],rival:["artilheiro(a) da casa rival","herdeiro(a) sangue-puro","aluno(a) prodígio","funcionário(a) do Ministério"],vilao:["Comensal da Morte foragido","contrabandista de criaturas","colecionador de artefatos amaldiçoados","professor(a) com segredo","líder de seita puro-sangue"]}[lado];
- document.getElementById('nfout').innerHTML=`<div class="stat"><b style="font-size:1.25rem">${R(NOMES)} ${R(SOBRENOMES)}</b> <span class="tag">${lado=='vilao'?'BRUXO DAS TREVAS':lado.toUpperCase()}</span><span class="tag">Nível ${lv}</span><span class="tag">${pap}</span><br>
- ${R(ocup)} · ${R(["Grifinória","Sonserina","Corvinal","Lufa-Lufa"])} · ${R(["Sangue-Puro","Mestiço","Nascido-Trouxa"])}<br>
- <b>PV</b> ${pv} · <b>PM</b> ${pm} · <b>Defesa</b> ${def} · <b>Feitiços</b> +${atk} · <b>DT</b> ${t[4]} · <b>Dano/rodada</b> ~${dano}<br>
- <b>Resistências:</b> forte +${t[5]-10}, fraca +${t[6]-10}<br>
- <b>Habilidade de Papel:</b> ${a[4]}<br>
- <b>Varinha:</b> ${wandText()}<br><b>Feitiços:</b> ${kn.join(", ")}<br>
- <b>Personalidade:</b> ${pers} · <b>Quer:</b> ${quer} · <b>Segredo:</b> ${seg}<br>
- ${lado=='aliado'?'<b>Vínculo inicial:</b> '+d(3)+' / 5':''}</div>`;
-}
-tabuaCell();renderSpells();renderPotions();
 </script>
-</body>
+
 </html>

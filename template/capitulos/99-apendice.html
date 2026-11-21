@@ -35,6 +35,19 @@
   <p><strong>Rodada 1.</strong> Ana lança Flipendo. A DT é a maior entre a DT do Círculo (5) e a Defesa do Grindylow (7): 7. Mente <span class="dado">d6</span> + Feitiços <span class="dado">d8</span> = 4 + 5 = 9, acerta. Dano RA + 0 = 5; o Grindylow fica com 7 PV e é empurrado 3 m. Na fase corpo a corpo, ele volta e ataca: 4 + 5 = 9 contra Defesa 9, acerta. Ana ainda não sabe Protego, então reage com <strong>Desviar</strong> (tem espaço na margem): Corpo <span class="dado">d8</span> + Reflexos <span class="dado">d6</span> = 7 + 3 = 10, maior que o ataque — escapa sem dano.</p>
   <p><strong>Rodada 2.</strong> Ana lança Flipendo de novo e tira 6 e 6. Os dois dados somados são iguais e maiores que 4, e a soma máxima (14) alcança a DT: crítico. Dano: os dois maiores resultados, 6 + 6 = 12. O Grindylow some na água. Ana ganha 1 Ímpeto e, na próxima semana, uma marca de prática em Flipendo.</p>
 
+  <h3>Exemplo de poção</h3>
+  <p>Lia, 2º ano, Mente <span class="dado">d8</span> e Poções <span class="dado">d6</span>, prepara Essência de Ditamno: DT 7, Preparo 12, 4 etapas, todos os ingredientes.</p>
+  <ol class="passos">
+    <li><b>Etapa 1, Normal.</b> Rola 5 e 4 = 9, sucesso: soma o RA, 5. Preparo 5.</li>
+    <li><b>Etapa 2, Arriscada</b> (Poções sobe para <span class="dado">d8</span>). Rola 3 e 2 = 5, falha: soma o RB, 2, e 2 de Instabilidade. Preparo 7, Instabilidade 2.</li>
+    <li><b>Etapa 3, Cuidadosa</b> (Poções desce para <span class="dado">d4</span>), porque a Instabilidade já preocupa. Rola 6 e 3 = 9, sucesso: soma 6. Preparo 13: pronta.</li>
+    <li><b>Qualidade:</b> Instabilidade 2, poção Boa. Um ingrediente Excelente teria apagado 1 e dado Boa do mesmo jeito; dois, Excelente.</li>
+  </ol>
+  <p>A simulação do livro (tests/simulacoes.py) não acha abordagem que vença sempre. Com um dado bom para a receita, Cuidadosa e Normal empatam e quase nunca explodem. Em receita difícil e volátil, a Normal explode muito e a Cuidadosa costuma render mais. A Arriscada só compensa com dado fraco e etapas acabando. O melhor, quase sempre, é trocar conforme a Instabilidade: arriscar cedo, ser cuidadoso quando ela chega a 2 ou 3.</p>
+
+  <h3>Exemplo de semana</h3>
+  <p>Tomás, 1º ano, Grifinória, tem 3 períodos livres. Segunda, faz o dever de Poções (+1 de aproveitamento). Quarta, estuda o Wingardium Leviosa (Mente + Feitiços DT 7: 6 e 4, sucesso, 1 marca de treino; agora tem 2 de 3). Sexta, deveria estudar para a prova de História, mas a amiga dele, Ana, foi pega fora da cama e ele vai com ela à detenção: perde o período, mas ganha um laço de Afeto com ela. Na prova da semana seguinte, sem ter estudado, rola sem o +1 passo.</p>
+
   <h3>Glossário</h3>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Termo</th><th>O que é</th></tr></thead>

@@ -2839,45 +2839,119 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
     <li><strong>Crítico:</strong> os dois, e role mais um dado igual a um deles para ter um terceiro.</li>
     <li><strong>Desastre:</strong> nenhum. Você foi visto antes de se esconder.</li>
   </ul>
-  <p>O valor importa mais que a quantidade: quem procura rola <span class="dado">d6</span>, então um esconderijo de valor 7 ou mais não pode ser achado por olhos comuns. Quem tem dados grandes se esconde em lugares onde ninguém pensa em olhar.</p>
+  <p>O valor importa tanto quanto a quantidade: quem procura com olhos comuns rola <span class="dado">d6</span>, então um esconderijo de valor 7 ou mais está num lugar onde ninguém pensa em olhar — até o procurador chegar perto. Uma ideia boa na descrição (subir na estante, entrar no armário de vassouras, se enfiar debaixo da armadura) pode dar +1 passo no teste; uma ruim, –1.</p>
+  <p><strong>Perder e gastar.</strong> Os dados de esconderijo saem de dois jeitos. <em>Perder</em> é quando algo dá errado: você descarta o <strong>maior</strong>. <em>Gastar</em> é quando você escolhe usar o esconderijo para fazer algo: você escolhe <strong>qual</strong> descartar e ganha o efeito.</p>
+
   <h4>A rodada</h4>
   <p>Cada rodada tem duas fases. Primeiro os personagens, depois quem procura.</p>
-  <p><strong>Fase dos personagens.</strong> Cada um escolhe uma ação:</p>
+  <p><strong>Fase dos personagens.</strong> Cada um tem <strong>uma ação</strong> e pode fazer <strong>gastos</strong> de dados no seu turno.</p>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Ação</th><th>Como</th><th>Efeito</th></tr></thead>
   <tbody>
-  <tr><td><strong>Avançar</strong></td><td>Corpo + Furtividade, DT 7 (ou Atletismo, para escalar e correr)</td><td>Sucesso: +1 avanço na área (crítico +2). Falha: +1 avanço, mas faz barulho — descarta um dado de esconderijo.</td></tr>
+  <tr><td><strong>Avançar</strong></td><td>Corpo + Furtividade, DT 7 (ou Atletismo, para escalar e correr)</td><td>Sucesso: +1 avanço na área (crítico +2). Falha: +1 avanço, mas faz barulho — perde um dado.</td></tr>
   <tr><td><strong>Esconder-se melhor</strong></td><td>Corpo + Furtividade, DT 7, +2 a cada vez que você já fez isso na cena</td><td>Sucesso: escolha um dado do teste e ponha como esconderijo novo.</td></tr>
   <tr><td><strong>Distrair</strong></td><td>Coração + Enganação ou um feitiço (uma pedra que rola, um Flipendo num vaso, um eco), DT 7, +2 a cada vez que <em>qualquer um</em> já distraiu na cena</td><td>Sucesso: um dado do teste vira esconderijo seu ou de um aliado.</td></tr>
-  <tr><td><strong>Cobrir um amigo</strong></td><td>Sem teste</td><td>Passe um dado de esconderijo seu para um aliado e descarte outro seu (você se expõe para escondê-lo).</td></tr>
-  <tr><td><strong>Ação chamativa</strong></td><td>Correr, lançar um feitiço com luz ou voz, brigar</td><td>Faz o que tem que fazer, e descarta um dado de esconderijo.</td></tr>
+  <tr><td><strong>Reposicionar</strong></td><td>Sem teste</td><td>Role de novo um dado de esconderijo seu e fique com o novo valor, mesmo que pior. Bom para sair de um número que a busca acabou de tirar.</td></tr>
+  <tr><td><strong>Prender a respiração</strong></td><td>Sem teste</td><td>Nesta rodada, o primeiro dado de busca que acertar você é ignorado. Não dá para fazer duas rodadas seguidas.</td></tr>
+  <tr><td><strong>Feitiço discreto</strong></td><td>O feitiço, contra a DT dele</td><td><em>Nox</em> numa luz da sala: a próxima busca rola um dado a menos. <em>Feitiço da Desilusão</em> (se Aprendido): ganhe um dado de esconderijo <span class="dado">d10</span>. <em>Muffliato</em>: a próxima ação chamativa de alguém do grupo não perde dado. Feitiço com luz ou voz alta é ação chamativa.</td></tr>
+  <tr><td><strong>Cobrir um amigo</strong></td><td>Sem teste</td><td>Passe um dado de esconderijo seu para um aliado e perca outro seu (você se expõe para escondê-lo).</td></tr>
+  <tr><td><strong>Ação chamativa</strong></td><td>Correr às claras, lançar um feitiço com luz ou voz, brigar, abrir uma porta que range</td><td>Faz o que tem que fazer, e perde um dado.</td></tr>
   <tr><td><strong>Esperar</strong></td><td>Sem teste</td><td>Quem já completou a área pode esperar os outros sem perder dados.</td></tr>
   </tbody></table></div>
-  <p><strong>Fase de quem procura.</strong> Um jogador rola <span class="dado">1d6</span> para ver o que o procurador faz:</p>
+  <p><strong>Gastos.</strong> No seu turno, você pode gastar dados de esconderijo — quantos tiver — além da ação. Alguns gastos também usam a ação.</p>
   <div class="rolagem"><table class="compacta">
-  <thead><tr><th class="num">d6</th><th>Quem procura…</th></tr></thead>
+  <thead><tr><th>Gasto</th><th>Custa</th><th>Efeito</th></tr></thead>
   <tbody>
-  <tr><td class="num">1</td><td>passa ao largo. Nada acontece.</td></tr>
-  <tr><td class="num">2–4</td><td><strong>procura</strong>: o Mestre rola os dados de busca à vista de todos.</td></tr>
-  <tr><td class="num">5</td><td><strong>procura com atenção</strong>: rola os dados de busca com um dado a mais.</td></tr>
-  <tr><td class="num">6</td><td>um <strong>evento</strong>: a luz acende, chega um ajudante, a gata mia para um canto. Sorteie um personagem: ele descarta um dado de esconderijo.</td></tr>
+  <tr><td><strong>Bote</strong></td><td>1 dado e a ação</td><td>Ataque ou feitiço contra alguém que não viu você: <strong>some o valor do dado gasto</strong> ao total, e o alvo não pode reagir (nem Protego, nem Desviar). Depois, todos sabem de onde veio: você perde mais um dado.</td></tr>
+  <tr><td><strong>Disparada</strong></td><td>1 dado</td><td>+2 avanços na área, sem teste. Pode somar com a ação de Avançar.</td></tr>
+  <tr><td><strong>Espiar</strong></td><td>1 dado</td><td>O Mestre rola agora, à vista, o d6 e os dados de busca da próxima fase de quem procura. Todo o grupo age já sabendo os números — e eles valem quando a fase chegar.</td></tr>
+  <tr><td><strong>Desviar a busca</strong></td><td>1 dado, na fase de quem procura</td><td>Quando um dado de busca acertar um esconderijo seu ou de um aliado ao seu lado, gaste um dado seu <em>de valor maior</em> para salvar o que foi acertado.</td></tr>
+  <tr><td><strong>Pegar algo</strong></td><td>1 dado</td><td>Pegue um objeto, abra uma gaveta, apanhe uma varinha caída perto de quem procura, sem que isso seja chamativo.</td></tr>
+  <tr><td><strong>Sumir</strong></td><td>2 dados e a ação</td><td>Se você completou a área e há uma saída (passagem, janela, tapeçaria), você sai da cena e está a salvo.</td></tr>
   </tbody></table></div>
-  <p>Cada dado de busca que tirar <strong>o mesmo valor</strong> de um dado de esconderijo de alguém faz esse dado ser descartado. O Mestre não escolhe: os dados escolhem.</p>
+
+  <p><strong>Fase de quem procura.</strong> Um jogador rola <span class="dado">1d10</span> — avise que resultado alto é melhor para eles. Sempre que o procurador <em>procura</em>, o Mestre rola os dados indicados à vista de todos, sem somar: cada valor que sair descarta todos os dados de esconderijo de mesmo valor. Se ele rolar 2<span class="dado">d6</span> e tirar 3 e 5, todo esconderijo de valor 3 ou 5 cai. Quem fica sem nenhum dado foi encontrado.</p>
   <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Quem procura</th><th>Dados de busca</th><th class="num">Persistência</th></tr></thead>
+  <thead><tr><th class="num">d10</th><th>Quem procura…</th></tr></thead>
   <tbody>
-  <tr><td>Gata do zelador</td><td>1 <span class="dado">d6</span></td><td class="num">2 rodadas</td></tr>
-  <tr><td>Monitor, aluno</td><td>2 <span class="dado">d6</span></td><td class="num">3</td></tr>
-  <tr><td>Zelador</td><td>3 <span class="dado">d6</span></td><td class="num">5</td></tr>
-  <tr><td>Professor</td><td>2 <span class="dado">d6</span>; com Homenum Revelio, 2 <span class="dado">d10</span></td><td class="num">4</td></tr>
-  <tr><td>Criatura que fareja (lobisomem, cão de três cabeças)</td><td>3 <span class="dado">d8</span></td><td class="num">6</td></tr>
-  <tr><td>Dementador</td><td>2 <span class="dado">d12</span> (ele sente, não vê)</td><td class="num">até ir embora</td></tr>
+  <tr><td class="num">1</td><td><strong>dá um palpite.</strong> O Mestre fala dois números, à escolha dele. Todo dado de esconderijo com um desses valores é descartado. É a hora do Mestre adivinhar.</td></tr>
+  <tr><td class="num">2</td><td><strong>passa rente.</strong> Sorteie um personagem: o procurador para a um palmo dele. Ele escolhe: ficar parado (perde <span class="dado">1d6</span> DET de tensão) ou sair de perto (perde um dado).</td></tr>
+  <tr><td class="num">3</td><td>procura todos com <strong>1 dado um passo acima</strong> do seu dado de busca.</td></tr>
+  <tr><td class="num">4</td><td>procura todos com <strong>2 dados de busca</strong>.</td></tr>
+  <tr><td class="num">5</td><td>procura todos com <strong>3 dados um passo abaixo</strong>.</td></tr>
+  <tr><td class="num">6</td><td>procura todos com <strong>1 dado de busca</strong>.</td></tr>
+  <tr><td class="num">7</td><td>procura todos com <strong>2 dados um passo abaixo</strong>.</td></tr>
+  <tr><td class="num">8</td><td><strong>vai direto em alguém</strong> (sorteie): procura só ele, com dados do tamanho do maior esconderijo dele — <span class="dado">d12</span>: 1<span class="dado">d12</span>; <span class="dado">d10</span>: 2<span class="dado">d10</span>; <span class="dado">d8</span> ou menos: 3<span class="dado">d8</span>.</td></tr>
+  <tr><td class="num">9</td><td><strong>desconfia de alguém</strong> (sorteie): procura só ele, um passo abaixo — <span class="dado">d12</span>: 1<span class="dado">d10</span>; <span class="dado">d10</span>: 2<span class="dado">d8</span>; <span class="dado">d8</span> ou menos: 3<span class="dado">d6</span>.</td></tr>
+  <tr><td class="num">10</td><td><strong>para por um momento</strong> — distraído, cansado, ouvindo outra coisa. Não procura nesta rodada.</td></tr>
   </tbody></table></div>
-  <p>Passada a Persistência sem achar todos, o procurador desiste e vai embora.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Quem procura</th><th>Dado de busca</th><th class="num">Persistência</th></tr></thead>
+  <tbody>
+  <tr><td>Gata do zelador, Pirraça</td><td><span class="dado">d6</span></td><td class="num">2 rodadas</td></tr>
+  <tr><td>Monitor, aluno</td><td><span class="dado">d6</span></td><td class="num">3</td></tr>
+  <tr><td>Zelador</td><td><span class="dado">d8</span></td><td class="num">5</td></tr>
+  <tr><td>Professor (com Homenum Revelio, <span class="dado">d10</span>)</td><td><span class="dado">d8</span></td><td class="num">4</td></tr>
+  <tr><td>Criatura que fareja (lobisomem, cão de três cabeças)</td><td><span class="dado">d8</span></td><td class="num">6</td></tr>
+  <tr><td>Bando (pixies, acromântulas pequenas, diabretes)</td><td><span class="dado">d8</span>; não tem Persistência: a cena acaba quando vocês saem da área</td><td class="num">—</td></tr>
+  <tr><td>Dementador (sente, não vê)</td><td><span class="dado">d10</span></td><td class="num">até ir embora</td></tr>
+  </tbody></table></div>
+  <p>Um passo acima do <span class="dado">d6</span> é o <span class="dado">d8</span>; um passo abaixo do <span class="dado">d6</span> é o <span class="dado">d4</span>. Passada a Persistência sem achar todos, o procurador desiste e vai embora. Quem já completou a área e está esperando não é procurado, a não ser que continue agindo.</p>
   <h4>Encontrado</h4>
-  <p>Quem fica sem nenhum dado de esconderijo foi encontrado. No castelo, ele está pego: detenção e pontos tirados, a não ser que consiga se explicar ou fugir (uma perseguição, ou Coração + Enganação contra a Vontade de quem achou). Diante de uma criatura, sofre <span class="dado">1d6</span> de dano no fim de cada rodada e ainda pode Avançar para escapar. Um amigo pode Distrair ou Cobrir para devolver um dado a ele.</p>
+  <p>Quem fica sem nenhum dado de esconderijo foi encontrado. No castelo, ele está pego: detenção e pontos tirados, a não ser que consiga se explicar (Coração + Enganação contra a Vontade de quem achou) ou fugir — e aí começa uma <strong>Perseguição</strong> (abaixo). Diante de uma criatura, sofre <span class="dado">1d6</span> de dano no fim de cada rodada e ainda pode Avançar para escapar. Um amigo pode Distrair ou Cobrir para devolver um dado a ele.</p>
   <h4>As áreas</h4>
-  <p>A cena de esconder quase sempre é atravessar algum lugar: a sala de troféus até a porta, o bosque até o castelo, o corredor até a passagem. Cada área pede um número de <strong>avanços</strong> (3 a 5), e pode ter ações próprias (escalar uma estante, atravessar o lago raso, abrir uma porta trancada com Alohomora, que é chamativa). A próxima área só abre quando todos completaram a atual.</p>
+  <p>A cena de esconder quase sempre é atravessar algum lugar: a sala de troféus até a porta, o bosque até o castelo, o corredor até a passagem. Cada área pede um número de <strong>avanços</strong> (3 a 5) e oferece caminhos próprios, que trocam risco por velocidade. A próxima área só abre quando todos completaram a atual.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Exemplo: a Sala de Troféus (4 avanços)</th><th>Teste</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Entre as vitrines</strong></td><td>Corpo + Furtividade, DT 7</td><td>+1 avanço. Falha: o vidro reflete você — perde um dado.</td></tr>
+  <tr><td><strong>Por cima dos armários</strong></td><td>Corpo + Atletismo, DT 9</td><td>+2 avanços. Falha: escorrega, <span class="dado">1d4</span> de dano e é chamativo.</td></tr>
+  <tr><td><strong>Rastejando atrás das armaduras</strong></td><td>Corpo + Furtividade, DT 9</td><td>+1 avanço e você não pode ser escolhido pelos resultados 8 e 9 nesta rodada. Falha: uma armadura cai — todos perdem um dado.</td></tr>
+  <tr><td><strong>Pela tapeçaria do fundo</strong></td><td>Mente + Percepção, DT 11, para achar a passagem</td><td>Achou: a área fica completa para você na hora. Não achou: nada.</td></tr>
+  </tbody></table></div>
+
+  <h3>Perseguição</h3>
+  <p>Fugir do zelador pelos corredores, de uma acromântula pela Floresta, de um dragão numa vassoura. A perseguição dura um número fixo de <strong>rodadas</strong>; cada personagem acumula <strong>distância</strong>; e em certas rodadas há um <strong>corte</strong>: quem não tiver distância suficiente é alcançado.</p>
+  <h4>Fôlego</h4>
+  <p>No começo, cada personagem pega dados de fôlego: <span class="dado">d6</span> em número igual à metade do valor do Corpo (Corpo <span class="dado">d4</span> 2, <span class="dado">d6</span> 3, <span class="dado">d8</span> 4, <span class="dado">d10</span> 5, <span class="dado">d12</span> 6). Em cada teste de Avançar, você pode gastar um dado de fôlego: ele entra no teste como dado extra (Capítulo II) — conta para o total e pode virar o seu RA.</p>
+  <h4>A rodada</h4>
+  <p>Cada personagem tem uma ação. Só <strong>Avançar</strong> soma distância; as outras ações trocam o avanço da rodada por outra coisa.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Ação</th><th>Como</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Avançar</strong></td><td>Corpo + Atletismo (Voo, numa vassoura), DT 7</td><td>Sucesso: some o RA à distância. Falha: some o RB. Crítico: some os dois.</td></tr>
+  <tr><td><strong>Avançar de outro jeito</strong></td><td>Outra perícia que faça sentido: Percepção para ver um atalho, Conhecimento Mágico para lembrar a escada que muda, Furtividade para cortar por dentro de uma sala</td><td>Como Avançar. Cada perícia diferente de Atletismo só uma vez por perseguição.</td></tr>
+  <tr><td><strong>Esforço extra</strong></td><td>Junto com Avançar</td><td>+1 passo no teste, mas você perde <span class="dado">1d4</span> PV. A perda cresce a cada uso: <span class="dado">2d4</span>, <span class="dado">3d4</span>…</td></tr>
+  <tr><td><strong>Feitiço para atrasar</strong></td><td>O feitiço, contra a DT dele ou a Defesa de quem persegue</td><td>Colloportus numa porta, Glacius no chão, Incarcerous, um Stupefy para trás. Acertou: o próximo corte, só para você e quem está atrás de você, cai 3 (Círculo 2: 5). Você não avança nesta rodada.</td></tr>
+  <tr><td><strong>Carregar alguém</strong></td><td>Avançar com –1 passo</td><td>Se o carregado estava atrás, primeiro a sua distância cai até a dele (você voltou para buscá-lo); depois do teste, ele fica com a sua distância. Quem é carregado não Avança naquela rodada, mas pode fazer outra ação. Com Esforço extra, o +1 passo anula o –1.</td></tr>
+  <tr><td><strong>Recuperar o fôlego</strong></td><td>Sem teste</td><td>Ganhe 2 dados de fôlego. Não avança.</td></tr>
+  <tr><td><strong>Ficar para trás</strong></td><td>Sem teste</td><td>Você não avança, mas segura quem persegue: cada aliado soma <span class="dado">1d6</span> à distância nesta rodada.</td></tr>
+  <tr><td><strong>Se esconder</strong></td><td>Só se houver onde</td><td>Saia da perseguição e role os seus dados de esconderijo: começa uma cena de Esconder-se, com quem persegue procurando.</td></tr>
+  </tbody></table></div>
+  <h4>Os cortes</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Quem persegue</th><th class="num">Rodadas</th><th>Cortes (fim da rodada → distância mínima)</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Lento</strong> (a gata, Pirraça, um aluno do 1º ano)</td><td class="num">4</td><td>2 → 4, 3 → 9, 4 → 14</td></tr>
+  <tr><td><strong>Rápido</strong> (monitor, zelador, professor)</td><td class="num">4</td><td>2 → 5, 3 → 12, 4 → 19</td></tr>
+  <tr><td><strong>Implacável</strong> (lobisomem, acromântula, hipogrifo furioso)</td><td class="num">5</td><td>2 → 5, 3 → 12, 4 → 18, 5 → 25</td></tr>
+  <tr><td><strong>Mortal</strong> (dragão, dementadores, um bruxo das trevas numa vassoura)</td><td class="num">5</td><td>3 → 12, 4 → 18, 5 → 25 — e em cada corte, só o de <em>menor</em> distância abaixo do mínimo é alcançado (empate: teste oposto de Corpo + Atletismo, ou de Enganação, ou de Luta, conforme o que cada um descrever). Se o Mestre quiser ser mais brando, no máximo três personagens são alcançados na perseguição inteira.</td></tr>
+  </tbody></table></div>
+  <p>Com Corpo <span class="dado">d8</span> e Atletismo <span class="dado">d6</span>, um aluno escapa de um perseguidor Rápido mais ou menos oito vezes em dez; com <span class="dado">d6</span> e <span class="dado">d4</span>, quatro em dez — e aí os amigos que Carregam e Ficam para trás fazem a diferença.</p>
+  <p><strong>Ataques no caminho.</strong> Contra perseguidores que atacam enquanto correm (uma criatura de várias cabeças, um bando de pixies, dementadores), no começo de cada rodada sorteie um ou dois personagens: um sofre <span class="dado">1d6</span> de dano, o outro perde <span class="dado">1d6</span> DET. Para uma mesa mais branda, <span class="dado">1d4</span>.</p>
+  <p><strong>Alcançado:</strong> no castelo, pego (detenção, pontos, e quem pegou sabe quem é você). Diante de uma criatura, ela ataca: o alcançado fica Caído, sofre <span class="dado">1d6</span> de dano por rodada e não age mais na perseguição, até alguém voltar para Carregá-lo — ou a cena vira combate. Quem passa do último corte escapou.</p>
+  <h4>Eventos do caminho</h4>
+  <p>No começo de cada rodada a partir da 2ª, role <span class="dado">1d6</span>:</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d6</th><th>No caminho</th></tr></thead>
+  <tbody>
+  <tr><td class="num">1</td><td>A escada muda: todos rolam Mente + Percepção, DT 9; quem falha tem –1 passo para avançar nesta rodada. Quem passou pode avisar um aliado (+1 passo para ele).</td></tr>
+  <tr><td class="num">2</td><td>Uma porta trancada: o primeiro a passar de 10 de distância precisa de Alohomora ou de força (Corpo + Atletismo, DT 9) — ou perde a rodada.</td></tr>
+  <tr><td class="num">3</td><td>Alguém no caminho (um aluno, um fantasma, uma armadura que anda): sorteie um personagem; ele soma só o RB nesta rodada.</td></tr>
+  <tr><td class="num">4</td><td>Um atalho: o primeiro que gastar a ação procurando (Mente + Percepção, DT 9) ganha +5 de distância.</td></tr>
+  <tr><td class="num">5</td><td>Um tropeço: sorteie um personagem; ele perde <span class="dado">1d4</span> PV ou 1 dado de fôlego.</td></tr>
+  <tr><td class="num">6</td><td>Nada: só o barulho dos passos atrás de vocês.</td></tr>
+  </tbody></table></div>
 
   <h3>Vigília</h3>
   <p>Ficar de guarda, esperar alguém aparecer, vigiar a porta da sala proibida. A vigília tem três trilhas: <strong>Atenção</strong> (0 a 4, começa em 3), <strong>Fadiga</strong> (0 a 5, começa em 0) e <strong>Exposição</strong> (0 a 3, começa em 0).</p>
@@ -3175,6 +3249,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>Corrupção</strong></td><td>De 0 a 10: o preço da magia das trevas na alma.</td></tr>
   <tr><td><strong>Crítico</strong></td><td>Dois dados somados iguais de 4+, ou passar a DT por 6+. Só se a DT for alcançável.</td></tr>
   <tr><td><strong>Dados de esconderijo</strong></td><td>Os dados do teste de esconder, sem somar, cada um com o seu valor. Quem procura descarta os que tirar igual.</td></tr>
+  <tr><td><strong>Distância e cortes</strong></td><td>Na perseguição: a distância que você acumula, e o mínimo que precisa ter no fim de certas rodadas para não ser alcançado.</td></tr>
   <tr><td><strong>Defesa</strong></td><td>O número que um ataque precisa alcançar. 5 + metade de Reflexos.</td></tr>
   <tr><td><strong>Desastre</strong></td><td>Todos os dados rolados em 1.</td></tr>
   <tr><td><strong>DET</strong></td><td>Determinação: a resistência da alma ao medo e às trevas.</td></tr>
@@ -3182,6 +3257,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>DT do feitiço</strong></td><td>5 + Círculo + passo da perícia: o que o alvo precisa alcançar para resistir.</td></tr>
   <tr><td><strong>Estados de um feitiço</strong></td><td>Desconhecido, Observado, Em aprendizado, Aprendido, Dominado.</td></tr>
   <tr><td><strong>Familiaridade</strong></td><td>Uma marca guardada de um feitiço só Observado; vira marca de treino quando ele fica Em aprendizado.</td></tr>
+  <tr><td><strong>Fôlego</strong></td><td>Dados d6 (metade do valor do Corpo) que você gasta para somar distância numa perseguição.</td></tr>
   <tr><td><strong>Ímpeto</strong></td><td>De 0 a 3; força, arrisca e improvisa feitiços.</td></tr>
   <tr><td><strong>Interpor</strong></td><td>Reação de pôr algo sólido entre um ataque e o alvo. Única defesa, com Desviar, contra a Avada Kedavra.</td></tr>
   <tr><td><strong>Instabilidade</strong></td><td>Na poção, quanto ela está perto de dar errado (0–4).</td></tr>

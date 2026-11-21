@@ -85,7 +85,7 @@
   <ol class="passos">
     <li><b>Gaste 1 Ímpeto.</b> Sem Ímpeto, não dá.</li>
     <li><b>Role com –1 passo e DT do Círculo + 4.</b> O feitiço não pode estar mais de um Círculo acima do que o seu dado permite. Imperdoáveis e Proibidos nunca podem ser improvisados.</li>
-    <li><b>Falha:</b> nada, ou só um pedaço do efeito (faíscas, um empurrão fraco). <b>Sucesso:</b> funciona instável, só desta vez — dano –2, ou o alvo resiste com +1 passo. <b>Crítico:</b> funciona por inteiro e você ganha uma marca de treino nele. <b>Desastre:</b> um acidente com aquele mesmo feitiço.</li>
+    <li><b>Falha:</b> nada, ou só um pedaço do efeito (faíscas, um empurrão fraco). <b>Sucesso:</b> funciona instável, só desta vez — dano –2, ou o alvo resiste com +1 passo. <b>Crítico:</b> funciona por inteiro. Se o feitiço estava Em aprendizado, ganha uma marca de treino; se estava só Observado, ganha <strong>Familiaridade</strong> (no máximo 1): ela fica anotada e vira uma marca de treino quando você conseguir uma fonte completa e o feitiço passar a Em aprendizado. <b>Desastre:</b> um acidente com aquele mesmo feitiço.</li>
   </ol>
   <p>Acertar por sorte não ensina: o feitiço continua precisando de treino e de PE.</p>
 
@@ -158,7 +158,7 @@
   <tr><td><strong>Aparatação</strong></td><td>Exige licença (7º ano). Lugar visto uma só vez: –1 passo. Falha: não sai do lugar. Desastre: estrunchado — perde <span class="dado">3d6</span> PV e deixa uma parte para trás até alguém consertar (Medibruxaria DT 9).</td></tr>
   <tr><td><strong>Animagia</strong></td><td>Um ano de preparo (folha de mandrágora na boca por um mês, poção no primeiro raio de uma tempestade). Teste longo de Transfiguração DT 11, Preparo 30. Desastre: preso entre as formas. O Mestre decide o animal. Registro no Ministério, ou prisão.</td></tr>
   <tr><td><strong>Vira-Tempo</strong></td><td>Volta até 5 horas. Ninguém pode te ver, nem você mesmo: se acontecer, Desastre automático e o Mestre decide o paradoxo. Só com autorização do Ministério.</td></tr>
-  <tr><td><strong>Magia em conjunto</strong></td><td>Dois ou mais bruxos que sabem o mesmo feitiço lançam juntos, todos gastando a ação no mesmo turno do mais lento. Um rola; cada outro dá um dado extra (no máximo 3, Capítulo II) e +1 na DT de resistência. Se qualquer um tirar só 1, todos sofrem o desastre. Proteções grandes (Fidelius, Protego Maxima sobre um prédio) exigem conjunto.</td></tr>
+  <tr><td><strong>Magia em conjunto</strong></td><td>Até quatro bruxos que sabem o mesmo feitiço lançam juntos, todos gastando a ação no turno do mais lento. Só o <em>principal</em> rola: os seus dois dados mais <strong>um</strong> dado extra de auxílio, sem passar do limite de três (Capítulo II). Cada outro participante escolhe uma contribuição, sem rolar: +1 na DT de resistência, alcance ou área dobrados, duração dobrada, ou <em>estabilidade</em> (um Desastre vira falha simples, uma vez). Desastre do principal atinge todos. <strong>Rituais coletivos</strong> (Fidelius, Protego Maxima sobre um prédio, desfazer uma maldição antiga) são testes longos: cada participante faz uma etapa, e o Preparo e a DT ficam com o Mestre.</td></tr>
   <tr><td><strong>Imperdoáveis</strong></td><td>Imperio, Crucio e Avada Kedavra têm regras próprias, no <a href="#imperdoaveis">Capítulo V</a>.</td></tr>
   <tr><td><strong>Horcrux</strong></td><td>Exige um assassinato e um ritual que este livro não descreve. Quem faz vira NPC. Destruir uma: veneno de Basilisco, Fogomaldito ou a Espada de Gryffindor.</td></tr>
   </tbody></table></div>
@@ -306,7 +306,8 @@
   <tr><td><strong>Avada Kedavra</strong></td><td>matar. Ódio, frieza ou certeza: precisa ser de verdade.</td><td>Um clarão verde que não faz nada, ou nem sai.</td></tr>
   </tbody></table></div>
   <h4>Avada Kedavra</h4>
-  <p>É um ataque: Mente + Artes das Trevas contra a maior entre DT 13 e a Defesa do alvo. <strong>Se acertar um ser vivo, ele morre.</strong> Não há dano, nem PV, nem resistência; ter 32 PV não importa. Não existe versão fraca nem forte: há a maldição que acerta, a que falha e a que é evitada ou interceptada.</p>
+  <p><strong>Regra das Imperdoáveis:</strong> as regras deste capítulo valem acima das gerais. Elas não podem ser lançadas como dano não letal, não se improvisam, não se potencializam e não têm versão mais fraca.</p>
+  <p>A Avada é um ataque: Mente + Artes das Trevas contra a maior entre DT 13 e a Defesa do alvo. <strong>Se acertar um ser vivo, ele morre.</strong> Não há dano, nem PV, nem resistência; ter 32 PV não importa. Não existe versão fraca nem forte: há a maldição que acerta, a que falha e a que é evitada ou interceptada.</p>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Defesa</th><th>Funciona?</th></tr></thead>
   <tbody>
@@ -318,13 +319,17 @@
   <tr><td>Proteções extraordinárias (um sacrifício por amor, varinhas-irmãs se encontrando)</td><td>Só quando a história do Mestre as estabelece. Nunca se compram.</td></tr>
   </tbody></table></div>
   <h4>Crucio</h4>
-  <p>Ataque contra a maior entre DT 11 e a Defesa. Acertou: o alvo entra em <strong>agonia</strong> — não age, fica Indefeso e perde <span class="dado">1d6</span> DET por rodada enquanto o conjurador sustentar a maldição (a ação dele, a cada rodada). A dor não se resiste: o alvo só pode rolar Coração + Vontade contra a DT do feitiço para conseguir uma coisa pequena na rodada (falar, rastejar, erguer a varinha com –2 passos). Acaba quando o conjurador para, perde a concentração (Capítulo IV, Sustentado) ou perde a linha de visão.</p>
+  <p>Ataque contra a maior entre DT 11 e a Defesa. Acertou: o alvo entra em <strong>agonia</strong> — não age, fica Indefeso e perde <span class="dado">1d6</span> DET por rodada enquanto o conjurador sustentar a maldição (a ação dele, a cada rodada). A dor não se resiste: o alvo só pode rolar Coração + Vontade contra a DT do feitiço para conseguir uma coisa pequena na rodada (falar, rastejar, erguer a varinha com –2 passos). Acaba quando o conjurador para, perde a concentração (Capítulo IV, Sustentado) ou perde a linha de visão. Talentos e técnicas que ajudam a resistir (como Alma Firme) dão passos nesse teste de agir; nunca encerram a dor.</p>
   <ul>
     <li><strong>3 rodadas ou mais:</strong> uma sequela — tremor nas mãos, –1 passo em Feitiços por semanas, até tratar em St. Mungus.</li>
     <li><strong>Chegar a 0 DET em agonia, ou 6 rodadas:</strong> dano permanente na mente. O Mestre decide com o jogador se o personagem sai de jogo ou fica com uma sequela que não se cura.</li>
   </ul>
   <h4>Imperio</h4>
   <p>Ataque contra a maior entre DT 11 e a Defesa; o alvo resiste uma vez com Coração + Vontade contra a DT do feitiço. Falhou: <strong>Controlado</strong>, sem repetir o teste a cada rodada. O alvo só ganha um novo teste quando recebe uma ordem que vai contra quem ele é: contra os seus valores, +0; ferir quem ama ou a si mesmo, +1 passo; com Oclumência <span class="dado">d8</span>+, sempre +1 passo. Ordens comuns não dão teste. Passou: está livre e sabe quem foi. Dura até o conjurador encerrar, dormir ou cair.</p>
+  <ul>
+    <li><strong>Ordens impossíveis ou que o alvo não entende:</strong> ele tenta e falha. A maldição controla a vontade, não dá conhecimento nem capacidade: quem não sabe Aparatar continua sem saber.</li>
+    <li><strong>Ordens contraditórias</strong> (de dois conjuradores, ou uma que anula a outra): o alvo trava, Atordoado (Breve), e ganha um novo teste.</li>
+  </ul>
   <h4>O preço</h4>
   <ul>
     <li><strong>Lei:</strong> usar uma Imperdoável contra outra pessoa é prisão perpétua em Azkaban. Prior Incantato revela o último feitiço da varinha.</li>
@@ -350,6 +355,7 @@
   <tr><td class="num">7+</td><td>Imperdoáveis com +1 passo.</td><td>Uma marca no corpo (olhos, pele, voz); não consegue Dominar feitiços de Cura.</td></tr>
   <tr><td class="num">10</td><td colspan="2">O personagem passa ao Mestre.</td></tr>
   </tbody></table></div>
+  <p><strong>Como contar.</strong> Os valores não se somam: num mesmo ato vale o maior que se aplica (Crucio para ferir marca 2, não 3). Conta-se uma vez por vítima por cena: três rodadas de Crucio na mesma pessoa marcam 2; Crucio em duas pessoas, 4. Aprender um Proibido é um ato separado.</p>
   <p><strong>Remorso.</strong> Um remorso verdadeiro, numa cena que custa algo ao personagem, tira 1 de Corrupção — no máximo uma vez por trimestre. Quem matou com a Avada nunca volta abaixo de 1.</p>
 
   <h3>Criar um feitiço</h3>
@@ -553,7 +559,8 @@
   </div>
 
   <div class="destaque"><span class="rotulo">Interpor</span>
-  <p>Reação. Coloque algo sólido entre um ataque e um alvo a até 9 m: levitar uma mesa, puxar uma estátua com Accio, transfigurar o chão numa parede, ou se jogar na frente. Role o feitiço usado (ou Corpo + Atletismo, DT 9, para o próprio corpo) contra o total do ataque. Passou: o objeto recebe o ataque inteiro e quase sempre se quebra; o alvo nada sofre. O objeto precisa ser grande e maciço — uma veste, um livro ou uma cadeira leve não param uma Avada Kedavra. Quem se joga na frente recebe o ataque no lugar.</p></div>
+  <p>Reação. Coloque algo sólido entre um ataque e um alvo a até 9 m: levitar uma mesa, puxar uma estátua com Accio, transfigurar o chão numa parede, ou se jogar na frente. Role o feitiço usado (ou Corpo + Atletismo, DT 9, para o próprio corpo) contra o total do ataque. Passou: o objeto recebe o ataque inteiro e quase sempre se quebra; o alvo nada sofre. O objeto precisa ser grande e maciço — uma veste, um livro ou uma cadeira leve não param uma Avada Kedavra. Quem se joga na frente recebe o ataque no lugar.</p>
+  <p><strong>Tem que ser plausível.</strong> O objeto precisa existir ao alcance — ou haver matéria para transfigurar —, caber entre os dois e chegar a tempo. Transfigurar uma parede do nada exige a técnica Conjuração (Capítulo XIII). No campo aberto, sem nada por perto, só resta Desviar. O Mestre diz o que há na cena antes do combate, não depois do ataque.</p></div>
 
   <h3>Estilos de duelo</h3>
   <p>Estilos são técnicas aprendidas, não classes. Cada um custa 6 PE e exige o 3º ano e um mestre (o Clube de Duelos, um professor, um auror). Você pode ter mais de um.</p>

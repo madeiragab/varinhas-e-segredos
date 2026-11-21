@@ -2,7 +2,7 @@
 import datetime, pathlib
 R = pathlib.Path(__file__).parent
 T = R / "template"
-VERSAO = "0.5"
+VERSAO = "0.6"
 caps = "\n".join(p.read_text(encoding="utf-8") for p in sorted((T / "capitulos").glob("*.html")))
 html = (T / "livro.html").read_text(encoding="utf-8")
 html = (html.replace("{{CSS}}", (T / "livro.css").read_text(encoding="utf-8"))

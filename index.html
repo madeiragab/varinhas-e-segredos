@@ -2813,7 +2813,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <p>Profundidade 1: currículo, a resposta do dever. 2: uma criatura rara, uma história antiga da escola, um feitiço de Círculo 2. 3: um feitiço de Círculo 3, uma receita complexa, um nome esquecido. 4: algo que alguém quis esconder. Livros da Seção Restrita pedem uma autorização assinada ou uma ronda noturna.</p>
 
   <h3>O palpite do Mestre</h3>
-  <p>Vários minigames usam uma escolha <strong>secreta</strong> que o Mestre tenta adivinhar. O jogador marca a escolha sem mostrar: vira um <span class="dado">d6</span> na face escolhida e cobre com a mão, ou escreve num papel. O Mestre dá o palpite em voz alta, e só então o jogador revela. Assim o resultado não depende só dos dados, mas de ler o outro lado da mesa: o jogador tenta ser imprevisível, o Mestre tenta pensar como o personagem. O Mestre também pode esconder uma escolha para os jogadores adivinharem — a hora da vigília, o trecho onde o monitor espera, a mão onde está o objeto.</p>
+  <p>Vários minigames usam uma escolha <strong>secreta</strong> que o Mestre tenta adivinhar. O jogador marca a escolha sem mostrar: vira um <span class="dado">d6</span> na face escolhida e cobre com a mão, ou escreve num papel. O Mestre dá o palpite em voz alta, e só então o jogador revela. Assim o resultado não depende só dos dados, mas de ler o outro lado da mesa: o jogador tenta ser imprevisível, o Mestre tenta pensar como o personagem. O Mestre também pode esconder uma escolha para os jogadores adivinharem — a hora da vigília, o trecho onde o monitor espera, a mão onde está o objeto. No esconder-se, o palpite é dos próprios dados: quem procura precisa tirar o número exato do seu esconderijo.</p>
 
   <h3>Ronda noturna</h3>
   <p>Andar pelo castelo depois do toque de recolher. A ronda tem <strong>Alerta</strong> (0 a 4) e um número de <strong>trechos</strong>. Antes de sair, escolha a <strong>rota</strong>:</p>
@@ -2827,31 +2827,60 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   </tbody></table></div>
   <p><strong>A patrulha escondida:</strong> antes da ronda, o Mestre escolhe em segredo um trecho do caminho onde alguém está de guarda. Os jogadores dão um palpite; se acertarem, podem contornar aquele trecho (+1 trecho no caminho, mas sem o encontro). Se errarem, ao chegar ao trecho da patrulha a DT sobe 2.</p>
   <p>Em cada trecho, escolha uma abordagem: <em>andar com cuidado</em> (Corpo + Furtividade; sucesso passa, crítico desce o Alerta; falha passa e sobe 1 Alerta; desastre sobe 2), <em>correr</em> (passa 2 trechos com um teste, mas a falha sobe 2 Alerta) ou <em>criar uma distração</em> (um feitiço, um objeto atirado, Pirraça subornado; teste do feitiço DT 7; sucesso desce 2 Alerta; falha sobe 1 e alguém vem ver de onde veio).</p>
-  <p>Alerta 2: alguém procura; DT +2. Alerta 3: um encontro (<span class="dado">1d6</span>: 1–2 a gata do zelador, 3–4 monitor, 5 professor, 6 Pirraça) — você pode tentar <strong>Esconder-se</strong> (abaixo). Alerta 4: você foi pego — detenção e –20 pontos, a menos que consiga se explicar (Coração + Enganação contra a Vontade de quem pegou). Capa de invisibilidade: +2 passos em andar com cuidado, mas não contra barulho.</p>
+  <p>Alerta 2: alguém procura; DT +2. Alerta 3: um encontro (<span class="dado">1d6</span>: 1–2 a gata do zelador, 3–4 monitor, 5 professor, 6 Pirraça) — role os seus dados de esconderijo e jogue <strong>Esconder-se</strong> (abaixo). Alerta 4: você foi pego — detenção e –20 pontos, a menos que consiga se explicar (Coração + Enganação contra a Vontade de quem pegou). Capa de invisibilidade: +2 passos em andar com cuidado, mas não contra barulho.</p>
 
   <h3>Esconder-se</h3>
-  <p>Alguém está procurando você: o zelador numa sala de troféus, um professor no corredor, uma criatura que fareja. O minigame tem três trilhas: <strong>Cobertura</strong> (0 a 4: o quanto o lugar esconde), <strong>Tensão</strong> (0 a 5, começa em 0: os seus nervos) e <strong>Busca</strong> (0 a 4, começa em 0: o quanto o procurador está perto de achar). Quem procura tem uma <strong>Persistência</strong>: a gata 2 rodadas, monitor 3, professor 4, zelador 5, criatura que fareja 6. Se ele passar a Persistência sem achar, vai embora.</p>
-  <h4>Os esconderijos e o palpite</h4>
-  <p>O Mestre descreve o lugar e numera de 3 a 6 <strong>esconderijos</strong>, cada um com a sua Cobertura (1 atrás de uma pilastra, 2 entre móveis, 3 dentro de um armário ou atrás de uma tapeçaria, 4 numa passagem secreta). O jogador escolhe um <strong>em segredo</strong> e marca no <span class="dado">d6</span> virado. A cada rodada, o procurador vasculha um lugar: o Mestre dá o palpite em voz alta.</p>
+  <p>Alguém procura você: o zelador na sala de troféus, um professor no corredor, um lobisomem no bosque. Esconder-se não é um teste só — é uma cena em rodadas, e quem procura precisa <strong>acertar o número</strong> de onde você está.</p>
+  <h4>Os dados de esconderijo</h4>
+  <p>Role Corpo + Furtividade (ou outra perícia que faça sentido: Transfiguração para se camuflar, Feitiços para um Feitiço da Desilusão) contra DT 7, mas <strong>não some os dados</strong>. Eles ficam na mesa, separados, cada um com o valor que tirou: são os seus <strong>dados de esconderijo</strong>. Com pelo menos um, você está escondido.</p>
   <ul>
-    <li><strong>Errou:</strong> o procurador perdeu a rodada naquele canto. A Busca não sobe pelo palpite.</li>
-    <li><strong>Acertou:</strong> Busca +2, e o teste de ficar imóvel nesta rodada tem DT +2. Se a Busca chegar a 4, você foi achado.</li>
-    <li>O Mestre não pode dar o mesmo palpite duas rodadas seguidas, a não ser que um teste seu tenha falhado (o barulho veio dali).</li>
+    <li><strong>Sucesso:</strong> os dois dados viram esconderijo.</li>
+    <li><strong>Falha:</strong> só o maior vira esconderijo.</li>
+    <li><strong>Crítico:</strong> os dois, e role mais um dado igual a um deles para ter um terceiro.</li>
+    <li><strong>Desastre:</strong> nenhum. Você foi visto antes de se esconder.</li>
   </ul>
-  <p>Depois do palpite, escolha uma abordagem:</p>
+  <p>O valor importa mais que a quantidade: quem procura rola <span class="dado">d6</span>, então um esconderijo de valor 7 ou mais não pode ser achado por olhos comuns. Quem tem dados grandes se esconde em lugares onde ninguém pensa em olhar.</p>
+  <h4>A rodada</h4>
+  <p>Cada rodada tem duas fases. Primeiro os personagens, depois quem procura.</p>
+  <p><strong>Fase dos personagens.</strong> Cada um escolhe uma ação:</p>
   <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Abordagem</th><th>Teste</th><th>Efeito</th></tr></thead>
+  <thead><tr><th>Ação</th><th>Como</th><th>Efeito</th></tr></thead>
   <tbody>
-  <tr><td><strong>Ficar imóvel</strong></td><td>Corpo + Furtividade, DT 9 – Cobertura + Tensão (mínimo 5)</td><td>Sucesso: a Busca não sobe. Falha: Busca +1. Tensão +1.</td></tr>
-  <tr><td><strong>Mudar de esconderijo</strong></td><td>Corpo + Furtividade, DT 9</td><td>Sucesso: troque o <span class="dado">d6</span> em segredo para outro esconderijo; Busca –1. Falha: você troca, mas o Mestre sabe para onde foi (o próximo palpite acerta sozinho).</td></tr>
-  <tr><td><strong>Distrair</strong></td><td>Lançar um feitiço ou atirar algo, DT 7</td><td>Sucesso: aponte um esconderijo; o próximo palpite do Mestre tem que ser ele. Busca –1. Falha: Busca +1 e ele sabe de onde veio.</td></tr>
-  <tr><td><strong>Respirar fundo</strong></td><td>Coração + Vontade, DT 7</td><td>Sucesso: Tensão –2. Seja como for, Busca +1 (o tempo passa e ele vasculha).</td></tr>
-  <tr><td><strong>Escutar</strong></td><td>Mente + Percepção, DT 7</td><td>Sucesso: o Mestre diz qual esconderijo vai vasculhar na próxima rodada, ou quantas rodadas faltam para desistir. Tensão +1.</td></tr>
+  <tr><td><strong>Avançar</strong></td><td>Corpo + Furtividade, DT 7 (ou Atletismo, para escalar e correr)</td><td>Sucesso: +1 avanço na área (crítico +2). Falha: +1 avanço, mas faz barulho — descarta um dado de esconderijo.</td></tr>
+  <tr><td><strong>Esconder-se melhor</strong></td><td>Corpo + Furtividade, DT 7, +2 a cada vez que você já fez isso na cena</td><td>Sucesso: escolha um dado do teste e ponha como esconderijo novo.</td></tr>
+  <tr><td><strong>Distrair</strong></td><td>Coração + Enganação ou um feitiço (uma pedra que rola, um Flipendo num vaso, um eco), DT 7, +2 a cada vez que <em>qualquer um</em> já distraiu na cena</td><td>Sucesso: um dado do teste vira esconderijo seu ou de um aliado.</td></tr>
+  <tr><td><strong>Cobrir um amigo</strong></td><td>Sem teste</td><td>Passe um dado de esconderijo seu para um aliado e descarte outro seu (você se expõe para escondê-lo).</td></tr>
+  <tr><td><strong>Ação chamativa</strong></td><td>Correr, lançar um feitiço com luz ou voz, brigar</td><td>Faz o que tem que fazer, e descarta um dado de esconderijo.</td></tr>
+  <tr><td><strong>Esperar</strong></td><td>Sem teste</td><td>Quem já completou a área pode esperar os outros sem perder dados.</td></tr>
   </tbody></table></div>
-  <p>Tensão 5: você se entrega (espirra, derruba algo, grita) e a Busca vai a 4. Nenhuma trilha passa do limite nem fica abaixo de 0. Dois escondidos: cada um marca o seu esconderijo e escolhe a sua abordagem; um palpite certo acha só quem estava lá, mas a falha de um sobe a Tensão do outro. Uma criatura que fareja ignora Cobertura menor que 3.</p>
+  <p><strong>Fase de quem procura.</strong> Um jogador rola <span class="dado">1d6</span> para ver o que o procurador faz:</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d6</th><th>Quem procura…</th></tr></thead>
+  <tbody>
+  <tr><td class="num">1</td><td>passa ao largo. Nada acontece.</td></tr>
+  <tr><td class="num">2–4</td><td><strong>procura</strong>: o Mestre rola os dados de busca à vista de todos.</td></tr>
+  <tr><td class="num">5</td><td><strong>procura com atenção</strong>: rola os dados de busca com um dado a mais.</td></tr>
+  <tr><td class="num">6</td><td>um <strong>evento</strong>: a luz acende, chega um ajudante, a gata mia para um canto. Sorteie um personagem: ele descarta um dado de esconderijo.</td></tr>
+  </tbody></table></div>
+  <p>Cada dado de busca que tirar <strong>o mesmo valor</strong> de um dado de esconderijo de alguém faz esse dado ser descartado. O Mestre não escolhe: os dados escolhem.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Quem procura</th><th>Dados de busca</th><th class="num">Persistência</th></tr></thead>
+  <tbody>
+  <tr><td>Gata do zelador</td><td>1 <span class="dado">d6</span></td><td class="num">2 rodadas</td></tr>
+  <tr><td>Monitor, aluno</td><td>2 <span class="dado">d6</span></td><td class="num">3</td></tr>
+  <tr><td>Zelador</td><td>3 <span class="dado">d6</span></td><td class="num">5</td></tr>
+  <tr><td>Professor</td><td>2 <span class="dado">d6</span>; com Homenum Revelio, 2 <span class="dado">d10</span></td><td class="num">4</td></tr>
+  <tr><td>Criatura que fareja (lobisomem, cão de três cabeças)</td><td>3 <span class="dado">d8</span></td><td class="num">6</td></tr>
+  <tr><td>Dementador</td><td>2 <span class="dado">d12</span> (ele sente, não vê)</td><td class="num">até ir embora</td></tr>
+  </tbody></table></div>
+  <p>Passada a Persistência sem achar todos, o procurador desiste e vai embora.</p>
+  <h4>Encontrado</h4>
+  <p>Quem fica sem nenhum dado de esconderijo foi encontrado. No castelo, ele está pego: detenção e pontos tirados, a não ser que consiga se explicar ou fugir (uma perseguição, ou Coração + Enganação contra a Vontade de quem achou). Diante de uma criatura, sofre <span class="dado">1d6</span> de dano no fim de cada rodada e ainda pode Avançar para escapar. Um amigo pode Distrair ou Cobrir para devolver um dado a ele.</p>
+  <h4>As áreas</h4>
+  <p>A cena de esconder quase sempre é atravessar algum lugar: a sala de troféus até a porta, o bosque até o castelo, o corredor até a passagem. Cada área pede um número de <strong>avanços</strong> (3 a 5), e pode ter ações próprias (escalar uma estante, atravessar o lago raso, abrir uma porta trancada com Alohomora, que é chamativa). A próxima área só abre quando todos completaram a atual.</p>
 
   <h3>Vigília</h3>
-  <p>Ficar de guarda, esperar alguém aparecer, vigiar a porta da sala proibida. A vigília é o espelho do esconder-se: <strong>Atenção</strong> (0 a 4, começa em 3), <strong>Fadiga</strong> (0 a 5, começa em 0) e <strong>Exposição</strong> (0 a 3, começa em 0).</p>
+  <p>Ficar de guarda, esperar alguém aparecer, vigiar a porta da sala proibida. A vigília tem três trilhas: <strong>Atenção</strong> (0 a 4, começa em 3), <strong>Fadiga</strong> (0 a 5, começa em 0) e <strong>Exposição</strong> (0 a 3, começa em 0).</p>
   <p><strong>A hora secreta:</strong> o Mestre escolhe em segredo a hora (de 1 a 6) em que o que se espera acontece, e marca no <span class="dado">d6</span> virado. Antes de começar, cada vigia dá um palpite em segredo. Quem acertar entra naquela hora com Atenção 4, aconteça o que acontecer; quem errou por uma hora, com +1 Atenção.</p>
   <p>A cada hora, cada vigia escolhe uma abordagem:</p>
   <div class="rolagem"><table class="compacta">
@@ -3145,6 +3174,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>Conjuração Improvisada</strong></td><td>Tentar um feitiço só Observado: 1 Ímpeto, –1 passo, DT +4.</td></tr>
   <tr><td><strong>Corrupção</strong></td><td>De 0 a 10: o preço da magia das trevas na alma.</td></tr>
   <tr><td><strong>Crítico</strong></td><td>Dois dados somados iguais de 4+, ou passar a DT por 6+. Só se a DT for alcançável.</td></tr>
+  <tr><td><strong>Dados de esconderijo</strong></td><td>Os dados do teste de esconder, sem somar, cada um com o seu valor. Quem procura descarta os que tirar igual.</td></tr>
   <tr><td><strong>Defesa</strong></td><td>O número que um ataque precisa alcançar. 5 + metade de Reflexos.</td></tr>
   <tr><td><strong>Desastre</strong></td><td>Todos os dados rolados em 1.</td></tr>
   <tr><td><strong>DET</strong></td><td>Determinação: a resistência da alma ao medo e às trevas.</td></tr>
@@ -3158,7 +3188,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>Marca de treino / de prática</strong></td><td>Treino: 3 levam um feitiço de Em aprendizado a Aprendido (com PE). Prática: 5 levam de Aprendido a Dominado.</td></tr>
   <tr><td><strong>Nível / patente</strong></td><td>Nível sobe a cada 12 PE gastos (1–20); as patentes são Iniciante, Aprendiz, Adepto, Perito e Mestre.</td></tr>
   <tr><td><strong>Nota</strong></td><td>O desempenho numa matéria, de 0 a 6, que vira conceito O, E, A, P, D ou T.</td></tr>
-  <tr><td><strong>Palpite do Mestre</strong></td><td>Escolha secreta num d6 virado que o outro lado tenta adivinhar (esconderijo, hora da vigília, aro do gol).</td></tr>
+  <tr><td><strong>Palpite do Mestre</strong></td><td>Escolha secreta num d6 virado que o outro lado tenta adivinhar (hora da vigília, patrulha da ronda, aro do gol).</td></tr>
   <tr><td><strong>Passo</strong></td><td>Um tamanho de dado acima ou abaixo. Bônus máximo: +2 passos. Abaixo de <span class="dado">d4</span>: DT +2.</td></tr>
   <tr><td><strong>PE</strong></td><td>Pontos de Evolução: o que se gasta para crescer.</td></tr>
   <tr><td><strong>Perigo</strong></td><td>O nível de uma criatura, de 1 a 11.</td></tr>

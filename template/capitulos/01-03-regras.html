@@ -93,7 +93,7 @@
     <div class="botoes">
       <label>Atributo <select id="r-atr"><option value="4">d4</option><option value="6" selected>d6</option><option value="8">d8</option><option value="10">d10</option><option value="12">d12</option><option value="20">d20</option></select></label>
       <label>Perícia <select id="r-per"><option value="4">d4</option><option value="6">d6</option><option value="8" selected>d8</option><option value="10">d10</option><option value="12">d12</option><option value="20">d20</option></select></label>
-      <label>Dados extras <select id="r-extra"><option>0</option><option>1</option><option>2</option></select></label>
+      <label>Dados extras <select id="r-extra"><option>0</option><option>1</option><option value="2">2 (extraordinário)</option></select></label>
       <label>DT <select id="r-dt"><option>5</option><option selected>7</option><option>9</option><option>11</option><option>13</option><option>15</option></select></label>
       <button class="principal" onclick="rolarOrdem()">Rolar</button>
     </div>
@@ -106,33 +106,35 @@
     <div class="cartao"><h5>+1 passo</h5><p class="etiqueta">A situação ajuda</p>
     <p>O dado sobe um tamanho. Alvo surpreso, afinidade da varinha, um aliado ajudando, a poção certa. O teto é <span class="dado">d12</span>.</p></div>
     <div class="cartao"><h5>–1 passo</h5><p class="etiqueta">A situação atrapalha</p>
-    <p>O dado desce um tamanho. Escuro, ferido, varinha emprestada. O piso é <span class="dado">d4</span>. Um aumento e uma redução se cancelam.</p></div>
+    <p>O dado desce um tamanho. Escuro, ferido, varinha estranha. Um aumento e uma redução se cancelam.</p></div>
   </div>
   <p>O Mestre diz em <em>qual</em> dado o passo cai: no atributo (o corpo está cansado) ou na perícia (a técnica está prejudicada). Se não importar, cai na perícia.</p>
+  <p><strong>Abaixo do piso.</strong> Um dado nunca fica menor que <span class="dado">d4</span>. Cada passo de penalidade que cairia abaixo do piso <strong>soma +2 à DT</strong>. O novato ferido sofre tanto quanto o veterano ferido.</p>
   <div class="destaque"><span class="rotulo">Limite de bônus</span>
-  <p>Num mesmo teste, somando todas as fontes (ajuda, varinha, Casa, poção, Ímpeto), você ganha no máximo <strong>+2 passos</strong>. Penalidades não têm limite. Cada fonte conta uma vez: duas poções iguais não acumulam.</p></div>
+  <p>Num mesmo teste, somando todas as fontes (ajuda, varinha, Casa, poção, Ímpeto, domínio), você ganha no máximo <strong>+2 passos</strong>. Penalidades não têm limite. Cada fonte conta uma vez: duas poções iguais não acumulam.</p></div>
 
   <h3>Dados extras</h3>
-  <p>Algumas habilidades, poções e itens dão um dado a mais, do mesmo tamanho do <strong>maior</strong> dado da rolagem. Duas regras seguram isso:</p>
+  <p>Algumas habilidades dão um dado a mais, do mesmo tamanho do <strong>maior</strong> dado da rolagem. Dado extra é raro e sempre tem um preço ou um limite de uso.</p>
   <ul>
-    <li>No máximo <strong>quatro dados</strong> rolados num teste.</li>
-    <li>No máximo <strong>três dados</strong> somados. Rolou quatro, o menor sai da soma.</li>
+    <li>O normal é rolar no máximo <strong>três dados</strong>. Num teste só, nunca entra mais de um dado extra.</li>
+    <li>Um <strong>quarto dado</strong> só existe com magia extraordinária (Felix Felicis, artefatos, magia antiga). Rolou quatro, o menor sai da soma.</li>
+    <li>Até três dados, todos entram na soma.</li>
   </ul>
-  <p>O dado que sai da soma <strong>ainda conta</strong> para o crítico e para o Desastre: tudo o que você rolou está na mesa. Só não entra no total.</p>
 
   <h3>Rolagem Alta e Rolagem Baixa</h3>
-  <p>O <strong>RA</strong> é o maior resultado individual; o <strong>RB</strong>, o menor <em>entre os dados somados</em>. Não importa de qual dado veio. Num <span class="dado">d6</span> que deu 6 e num <span class="dado">d8</span> que deu 3, o RA é 6 e o RB é 3. O RA é o dano dos ataques; RA e RB medem progresso em testes longos: no sucesso avança o RA, na falha avança o RB.</p>
+  <p>O <strong>RA</strong> é o maior resultado entre os dados somados; o <strong>RB</strong>, o menor. Não importa de qual dado veio. O RA é o dano dos ataques; RA e RB medem progresso em testes longos.</p>
 
   <h3>Crítico</h3>
-  <p>Você tira crítico de um destes dois jeitos:</p>
+  <p>Você tira crítico de um destes dois jeitos, olhando <strong>só os dados que entraram na soma</strong>:</p>
   <ul>
-    <li><strong>Dois dados iguais, de 4 ou mais.</strong> Vale para qualquer combinação, inclusive <span class="dado">d4</span> com <span class="dado">d4</span>.</li>
-    <li><strong>Total que passa a DT por 6 ou mais.</strong> DT 7 e total 13: crítico.</li>
+    <li><strong>Dois dados iguais, de 4 ou mais.</strong></li>
+    <li><strong>Total que passa a DT por 6 ou mais.</strong></li>
   </ul>
-  <p>Crítico é sucesso automático. Em ataques e testes longos, ele usa os <strong>dois maiores resultados</strong> no lugar do RA: seis e cinco num Stupefy causam 6 + 5 + 2. Contra um feitiço de efeito, o alvo resiste com –1 passo. E crítico dá 1 Ímpeto.</p>
+  <p>O crítico é um sucesso extraordinário: em ataques e testes longos, usa os <strong>dois maiores resultados</strong> no lugar do RA; contra um feitiço de efeito, o alvo resiste com –1 passo; e dá 1 Ímpeto.</p>
+  <div class="nota"><p><strong>O crítico não faz o impossível.</strong> Se o maior total que os seus dados conseguem tirar não alcança a DT, a tarefa está fora do seu alcance: 4 e 4 num <span class="dado">d4</span>+<span class="dado">d4</span> contra DT 9 é só um 8. E um feitiço que você não conhece continua inacessível — a exceção é a Conjuração Improvisada do Capítulo IV.</p></div>
 
   <h3>Desastre</h3>
-  <p>Se <strong>todos os dados rolados</strong> mostrarem 1 — inclusive um dado que sairia da soma —, é um Desastre: falha automática e uma consequência. Um único dado acima de 1 já evita o Desastre. Role um <span class="dado">d8</span>:</p>
+  <p>Se <strong>todos os dados rolados</strong> mostrarem 1, é um Desastre: falha automática e uma consequência. Um único dado acima de 1 já evita o Desastre. Role um <span class="dado">d8</span>:</p>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>d8</th><th>Desastre</th><th>Efeito</th></tr></thead>
   <tbody>
@@ -175,21 +177,17 @@
   dizem o que você aprendeu. Siga as etapas na ordem.</p>
 
   <ol class="passos">
-    <li><b>Conceito.</b> Uma frase: “a corvinal que lê livros proibidos”, “o batedor
-      grifinório que não sabe perder”.</li>
-    <li><b>Atributos.</b> Distribua <span class="dado">d8</span>, <span class="dado">d6</span> e
-      <span class="dado">d6</span> entre Corpo, Mente e Coração — ou
-      <span class="dado">d10</span>, <span class="dado">d6</span> e <span class="dado">d4</span>.</li>
-    <li><b>Casa.</b> Ganhe o passo e a habilidade da casa.</li>
-    <li><b>Sangue.</b> Escolha a origem familiar.</li>
-    <li><b>Perícias.</b> Todas começam em <span class="dado">d4</span>. Escolha uma para
-      <span class="dado">d8</span> e quatro para <span class="dado">d6</span>.</li>
-    <li><b>Varinha.</b> Role ou escolha no <a href="#cap11">Capítulo XI</a>.</li>
-    <li><b>Feitiços.</b> Escolha <strong>seis</strong> feitiços do Círculo 1.</li>
-    <li><b>Recursos.</b> Calcule PV, Determinação e Defesa. Comece com 1 Ímpeto.</li>
-    <li><b>Material.</b> Caldeirão, uniforme, livros, 3 ingredientes comuns e
-      <span class="dado">2d6</span> galeões. Um animal: coruja, gato, sapo ou rato.</li>
+    <li><b>Conceito.</b> Uma frase: “a corvinal que lê livros proibidos”, “o batedor grifinório que não sabe perder”.</li>
+    <li><b>Atributos.</b> Distribua <span class="dado">d8</span>, <span class="dado">d6</span> e <span class="dado">d6</span> entre Corpo, Mente e Coração — ou <span class="dado">d10</span>, <span class="dado">d6</span> e <span class="dado">d4</span>.</li>
+    <li><b>Família.</b> Escolha de onde você vem.</li>
+    <li><b>Perícias.</b> Todas começam em <span class="dado">d4</span>. Escolha uma para <span class="dado">d8</span> e quatro para <span class="dado">d6</span>.</li>
+    <li><b>Varinha.</b> Role ou escolha no <a href="#cap11">Capítulo XI</a>. A varinha escolheu você: ela começa Leal.</li>
+    <li><b>Feitiços de casa.</b> Dois feitiços do Círculo 1, Aprendidos, que alguém da família ou um livro velho ensinou. O resto vem das aulas (<a href="#cap4">Capítulo IV</a>).</li>
+    <li><b>Seleção.</b> O Chapéu Seletor decide a sua Casa (abaixo).</li>
+    <li><b>Recursos.</b> Calcule PV, Determinação e Defesa. Comece com 1 Ímpeto e 0 Pontos de Evolução.</li>
+    <li><b>Material.</b> Caldeirão, uniforme, livros, 3 ingredientes comuns e os galeões da família. Um animal: coruja, gato, sapo ou rato.</li>
   </ol>
+  <p><strong>Começar depois do 1º ano.</strong> Crie a ficha normalmente e receba <strong>25 PE por ano já cursado</strong> para gastar no <a href="#cap13">Capítulo XIII</a>. Todos os feitiços do currículo dos anos anteriores ficam Em aprendizado, com as marcas de treino completas: só falta pagar os PE.</p>
 
   <h3>Atributos</h3>
   <div class="grade">
@@ -234,45 +232,53 @@
   <tr><td><strong>Adivinhação</strong></td><td>Coração</td><td>Folhas de chá, bola de cristal, estrelas, profecias.</td></tr>
   </tbody></table></div>
 
+  <h3>O Chapéu Seletor</h3>
+  <p>A Casa não é uma escolha de cardápio. Na noite da Seleção, o Mestre faz as três perguntas abaixo, em cena, e o jogador responde como o personagem. Cada resposta dá uma marca a uma Casa. Depois, o jogador diz o que o personagem <em>deseja</em>: isso vale <strong>duas marcas</strong>. O Chapéu anuncia a Casa com mais marcas; se houver empate, o personagem escolhe entre as empatadas — o Chapéu leva em conta a nossa escolha.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Pergunta</th><th>Grifinória</th><th>Sonserina</th><th>Corvinal</th><th>Lufa-Lufa</th></tr></thead>
+  <tbody>
+  <tr><td>Um colega está sendo humilhado no corredor.</td><td>Enfrento quem humilha.</td><td>Guardo isso; vai ser útil depois.</td><td>Descubro por que aquilo começou.</td><td>Fico do lado do colega, mesmo sem saber o que fazer.</td></tr>
+  <tr><td>Você acha uma porta trancada que ninguém deveria abrir.</td><td>Abro agora.</td><td>Abro quando ninguém estiver olhando, e não conto a ninguém.</td><td>Pesquiso o que tem atrás antes de tocar nela.</td><td>Chamo meus amigos; ninguém entra sozinho.</td></tr>
+  <tr><td>O que você quer que digam de você daqui a cinquenta anos?</td><td>Que foi corajoso.</td><td>Que foi grande.</td><td>Que foi sábio.</td><td>Que foi justo e leal.</td></tr>
+  </tbody></table></div>
+
   <h3>As Casas</h3>
-  <p>Cada Casa dá +1 passo numa perícia e uma habilidade que se usa <strong>uma vez por cena</strong>, em qualquer tipo de cena.</p>
+  <p>Cada Casa dá +1 passo numa perícia e uma habilidade de <strong>uma vez por cena</strong>, útil em qualquer tipo de cena.</p>
   <div class="grade">
     <div class="cartao"><h5>Grifinória</h5><p class="etiqueta">Coragem · +1 passo em Vontade</p>
-    <p><b>Coragem.</b> Quando você está em desvantagem clara — ferido, em menor número, ou diante de algo de Perigo maior que o seu nível —, role um dado extra num teste.</p></div>
+    <p><b>Coragem.</b> Quando você está em desvantagem clara — ferido, em menor número, ou diante de algo de Perigo maior que o seu ano —, role um dado extra num teste.</p></div>
     <div class="cartao"><h5>Sonserina</h5><p class="etiqueta">Ambição · +1 passo em Enganação ou Persuasão</p>
-    <p><b>Ambição.</b> Depois de ver o resultado de qualquer teste seu, troque o RB pelo RA.</p></div>
+    <p><b>Ambição.</b> Depois de ver o resultado de qualquer teste seu, rerrole o dado mais baixo e fique com o novo resultado. Um crítico só conta se aparecer na rolagem final.</p></div>
     <div class="cartao"><h5>Corvinal</h5><p class="etiqueta">Sabedoria · +1 passo em Conhecimento Mágico</p>
     <p><b>Mente Afiada.</b> Role um dado extra num teste de Mente. Identificar feitiço, poção ou criatura é sempre ação livre para você.</p></div>
     <div class="cartao"><h5>Lufa-Lufa</h5><p class="etiqueta">Lealdade · +1 passo em Herbologia ou Fortitude</p>
     <p><b>Lealdade.</b> Ajude um aliado como reação, fora do seu turno, sem gastar a sua ação. Você pode ajudar mesmo com <span class="dado">d4</span> na perícia (+1 passo).</p></div>
   </div>
-  <p>Fora de Hogwarts, troque a Casa pela escola: Ilvermorny, Beauxbatons, Durmstrang,
-  Castelobruxo, Mahoutokoro ou Uagadou. Escolha a Casa cuja habilidade combina com a escola.</p>
+  <p>Fora de Hogwarts, troque a Casa pela escola (Ilvermorny, Beauxbatons, Durmstrang, Castelobruxo, Mahoutokoro, Uagadou) e use a habilidade da Casa que mais combina com ela.</p>
 
-  <h3>Sangue e origem</h3>
-  <div class="rolagem"><table>
-  <thead><tr><th>Origem</th><th>Benefício</th><th>Peso</th></tr></thead>
+  <h3>Família</h3>
+  <p>O sangue não faz ninguém mais ou menos bruxo. Ser sangue-puro, mestiço ou nascido-trouxa é uma escolha de história — pesa no jeito como certas pessoas tratam você, não nos seus dados. O que dá vantagem mecânica é a <strong>família</strong> em que você cresceu:</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Família</th><th>Benefício</th><th>Galeões</th><th>O que pesa</th></tr></thead>
   <tbody>
-  <tr><td><strong>Sangue-Puro</strong></td><td>+1 passo em Conhecimento Mágico; começa com <span class="dado">4d6</span> galeões.</td><td>Família com expectativas — e inimigos antigos.</td></tr>
-  <tr><td><strong>Mestiço</strong></td><td>+1 passo em uma perícia à escolha.</td><td>Nenhum dos dois mundos é inteiramente seu.</td></tr>
-  <tr><td><strong>Nascido-Trouxa</strong></td><td>+1 passo em Intuição; sabe usar telefone, carro e dinheiro trouxa.</td><td>Alvo de preconceito em certos círculos.</td></tr>
-  <tr><td><strong>Criado entre criaturas</strong></td><td>+1 passo em Trato de Criaturas; um companheiro de Perigo 1.</td><td>Costumes estranhos para os outros.</td></tr>
+  <tr><td><strong>Tradicional bruxa</strong></td><td>+1 passo em Conhecimento Mágico; a biblioteca da família: um feitiço Bibliográfico começa Observado.</td><td><span class="dado">3d6</span></td><td>Expectativas e tradições que você deve honrar.</td></tr>
+  <tr><td><strong>Criado por trouxas</strong></td><td>+1 passo em Intuição; entende tecnologia, dinheiro e cidades trouxas.</td><td><span class="dado">2d6</span></td><td>Ninguém no mundo bruxo te conhece ainda.</td></tr>
+  <tr><td><strong>Influente</strong></td><td>+1 passo em Persuasão; uma vez por ano, a família faz um favor.</td><td><span class="dado">4d6</span></td><td>Uma reputação a zelar; escândalos custam caro.</td></tr>
+  <tr><td><strong>Trabalhadora</strong></td><td>+1 passo em Atletismo ou Herbologia; arruma trabalho de férias com facilidade.</td><td><span class="dado">1d6</span></td><td>Material de segunda mão; livros e vassouras velhos.</td></tr>
+  <tr><td><strong>Entre criaturas</strong></td><td>+1 passo em Trato de Criaturas; um companheiro de Perigo 1.</td><td><span class="dado">2d6</span></td><td>Costumes estranhos para os outros alunos.</td></tr>
+  <tr><td><strong>Curiosidade proibida</strong></td><td>+1 passo em Investigação; um feitiço Secreto começa Observado.</td><td><span class="dado">2d6</span></td><td>Alguém sabe do seu interesse — e está de olho.</td></tr>
   </tbody></table></div>
 
   <h3>Recursos</h3>
-  <p>O <em class="termo">valor</em> de um dado é o número de faces: <span class="dado">d6</span>
-  vale 6, <span class="dado">d8</span> vale 8.</p>
+  <p>O <em class="termo">valor</em> de um dado é o número de faces: <span class="dado">d6</span> vale 6, <span class="dado">d8</span> vale 8.</p>
   <div class="recursos">
-    <div class="recurso"><b>PV</b><span>Pontos de Vida = 8 + valor do Corpo</span></div>
-    <div class="recurso"><b>DET</b><span>Determinação = 4 + valor do Coração</span></div>
+    <div class="recurso"><b>PV</b><span>Pontos de Vida = 8 + valor do Corpo; +3 a cada ano</span></div>
+    <div class="recurso"><b>DET</b><span>Determinação = 4 + valor do Coração; +1 a cada ano</span></div>
     <div class="recurso"><b>Defesa</b><span>5 + metade do valor de Reflexos</span></div>
+    <div class="recurso"><b>Ímpeto</b><span>De 0 a 3; começa a sessão com 1</span></div>
+    <div class="recurso"><b>PE</b><span>Pontos de Evolução: gastos para crescer (Capítulo XIII)</span></div>
   </div>
-  <p>Uma grifinória com Corpo <span class="dado">d8</span>, Mente <span class="dado">d6</span>,
-  Coração <span class="dado">d6</span> e Reflexos <span class="dado">d6</span> tem 16 PV,
-  10 DET e Defesa 8.</p>
-  <p><strong>Determinação</strong> é o que segura você em pé diante do medo, dos dementadores
-  e das maldições. Com 0 DET, você fica <em>Desesperado</em> até o fim da cena (veja o
-  <a href="#cap7">Capítulo VII</a>).</p>
-  <p><strong>Descanso.</strong> Uma noite de sono recupera metade do PV e
-  <span class="dado">1d4</span> DET. Chocolate recupera <span class="dado">1d4</span> DET na hora.</p>
+  <p>Uma grifinória com Corpo <span class="dado">d8</span>, Coração <span class="dado">d6</span> e Reflexos <span class="dado">d6</span> tem 16 PV, 10 DET e Defesa 8.</p>
+  <p><strong>Determinação</strong> é o que segura você em pé diante do medo, dos dementadores e das maldições. Com 0 DET você fica <em>Desesperado</em> (<a href="#cap7">Capítulo VII</a>).</p>
+  <p><strong>Descanso.</strong> Uma noite de sono recupera metade do PV e <span class="dado">1d4</span> DET. A Ala Hospitalar recupera tudo numa noite, menos maldições. <strong>Chocolate</strong> recupera <span class="dado">1d4</span> DET, uma vez por cena e no máximo três vezes por dia — depois disso é só doce.</p>
 </section>

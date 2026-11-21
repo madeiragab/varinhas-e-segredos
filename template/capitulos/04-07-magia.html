@@ -245,7 +245,7 @@
   <tr><td><strong>Homenum Revelio</strong></td><td>Feitiços</td><td>18 m</td><td>—</td><td>Revela pessoas escondidas na área.</td></tr>
   <tr><td><strong>Muffliato</strong></td><td>Feitiços</td><td>6 m</td><td>—</td><td>Quem está de fora não entende a conversa.</td></tr>
   <tr><td><strong>Aparecium / Specialis Revelio</strong></td><td>Feitiços</td><td>Toque</td><td>—</td><td>Revela escrita oculta / os encantamentos de um objeto.</td></tr>
-  <tr><td><strong>Riddikulus</strong></td><td>Feitiços</td><td>9 m</td><td>—</td><td>Coração + Feitiços contra a DT do Bicho-Papão: ele vira piada.</td></tr>
+  <tr><td><strong>Riddikulus</strong></td><td>Feitiços</td><td>9 m</td><td>—</td><td>Coração + Feitiços contra a DT do Bicho-Papão: ele vira piada, e quem riu perde o pavor que ele deu.</td></tr>
   <tr><td><strong>Furnunculus / Densaugeo</strong></td><td>Feitiços</td><td>9 m</td><td>Fortitude</td><td>Azaração humilhante: –1 passo em testes sociais e de lançar.</td></tr>
   <tr><td><strong>Oppugno</strong></td><td>Transfig.</td><td>9 m</td><td>—</td><td>Ataque. Objetos ou pássaros investem: RA + 2.</td></tr>
   <tr><td><strong>Impervius</strong></td><td>Feitiços</td><td>Toque</td><td>—</td><td>Impermeável a água e lama até o fim do dia.</td></tr>
@@ -258,7 +258,7 @@
   <tr><td><strong>Reducto</strong></td><td>Feitiços</td><td>18 m</td><td>—</td><td>Ataque. RA + 4; destrói barreiras e objetos.</td></tr>
   <tr><td><strong>Confringo</strong></td><td>Feitiços</td><td>18 m</td><td>Reflexos (metade)</td><td>Explosão de fogo em raio 3 m: RA + 3.</td></tr>
   <tr><td><strong>Bombarda</strong> <span class="dado">J</span></td><td>Feitiços</td><td>18 m</td><td>Reflexos (metade)</td><td>Explosão em raio 3 m: RA + 2; derruba paredes.</td></tr>
-  <tr><td><strong>Expecto Patronum</strong></td><td>Feitiços (Coração)</td><td>Pessoal</td><td>—</td><td>DT 9, corpóreo DT 11. Afasta dementadores e Lethifolds; aliados perto recuperam RA de DET. Leva mensagens.</td></tr>
+  <tr><td><strong>Expecto Patronum</strong></td><td>Feitiços (Coração)</td><td>Pessoal</td><td>—</td><td>DT 9, corpóreo DT 11. Afasta dementadores e Lethifolds; aliados perto recuperam RA de DET e perdem o pavor dos dementadores. Leva mensagens.</td></tr>
   <tr><td><strong>Protego Totalum / Cave Inimicum</strong></td><td>Feitiços</td><td>Área</td><td>—</td><td>Protege um acampamento: quem é de fora não vê nem ouve.</td></tr>
   <tr><td><strong>Salvio Hexia</strong></td><td>Feitiços</td><td>Área</td><td>—</td><td>Feitiços contra quem está na área sofrem –1 passo, uma cena.</td></tr>
   <tr><td><strong>Feitiço da Desilusão</strong></td><td>Transfig.</td><td>Toque</td><td>—</td><td>Camuflagem: +1 passo em Furtividade e quem te procura sofre –1 passo. Acaba se você atacar.</td></tr>
@@ -517,12 +517,21 @@
     <p>Varinha erguida, turno a turno</p>
   </div>
 
-  <p class="abre">O combate é contado em rodadas de poucos segundos. Na sua vez, você tem
+  <p class="abre">O combate é contado em rodadas de poucos segundos. A cada rodada, você tem
   uma <strong>ação</strong> e um <strong>movimento</strong>. Fora da sua vez, você tem uma
   <strong>reação</strong> por rodada.</p>
 
-  <h3>Surpresa e iniciativa</h3>
-  <p>Se um lado não percebe o outro (Percepção contra a Furtividade de quem embosca), quem foi surpreendido não age na primeira rodada. Depois todos rolam <strong>Corpo + Reflexos</strong>; criaturas e NPCs rolam os dados de ataque da ficha. Ordem do maior para o menor; empate, quem tem o maior RA.</p>
+  <h3>Surpresa e fases</h3>
+  <p>Se um lado não percebe o outro (Percepção contra a Furtividade de quem embosca), quem foi surpreendido não age na primeira rodada.</p>
+  <p>Não há rolagem de iniciativa. Cada rodada passa por <strong>três fases</strong>, sempre na mesma ordem, e cada um escolhe em qual delas gasta a sua ação:</p>
+  <ol class="passos">
+    <li><b>Preparo.</b> Tudo que não é ataque: usar o cenário, beber poção, Estabilizar, Atrapalhar, Fintar, Mirar, Preparar, Defender-se, lançar feitiço de utilidade ou de cura, fugir.</li>
+    <li><b>Feitiços.</b> Ataques à distância: feitiços de ataque, feitiços de efeito contra alguém, coisas arremessadas.</li>
+    <li><b>Corpo a corpo.</b> Socos, mordidas, garras, espadas e manobras (abaixo).</li>
+  </ol>
+  <p>O Mestre pergunta, fase por fase, quem age. Quem gastou a ação numa fase não age nas seguintes; quem não agiu em nenhuma perdeu a ação. O <strong>movimento</strong> cabe em qualquer fase, antes ou depois da ação, e as <strong>reações</strong> (Protego, Desviar, Interpor) valem a qualquer momento.</p>
+  <p><strong>Dentro de uma fase, tudo acontece ao mesmo tempo.</strong> Os jogadores resolvem na ordem que combinarem e os NPCs por último, mas o resultado vale para todos: se você e o bruxo das trevas trocam Estupefaça na fase de feitiços, os dois feitiços saem, mesmo que o seu derrube ele. Entre fases, não: um Petrificus na fase de feitiços impede o trasgo de bater na fase corpo a corpo. Quem luta de perto precisa sobreviver aos feitiços primeiro; quem lança feitiço quer acabar com a briga antes que ela chegue perto.</p>
+  <p>Criaturas seguem a mesma regra. O Mestre diz em que fase cada uma age pelo tipo de ataque: a acromântula que cospe teia age nos feitiços, o lobisomem no corpo a corpo. Um NPC que faz as duas coisas escolhe uma por rodada, como você.</p>
 
   <h3>Movimento e distância</h3>
   <ul>
@@ -585,8 +594,25 @@
   <tr><td><strong>Esconder-se</strong></td><td>Corpo + Furtividade contra a Percepção de quem procura.</td></tr>
   <tr><td><strong>Estabilizar</strong></td><td>Ação: Mente + Medibruxaria DT 7, ou qualquer feitiço de cura.</td></tr>
   <tr><td><strong>Beber poção</strong></td><td>Ação. Dar a outra pessoa: ação, e ela precisa estar consciente (exceto Wiggenweld e Ditamno, que funcionam em quem está Morrendo).</td></tr>
+  <tr><td><strong>Atrapalhar</strong> <em>(preparo)</em></td><td>Descreva como — areia nos olhos, um grito, um Lumos na cara — e role a perícia que fizer sentido contra a Percepção de um alvo a até 9 m. Venceu: ele sofre –1 passo em tudo até o fim da rodada.</td></tr>
+  <tr><td><strong>Fintar</strong> <em>(preparo)</em></td><td>Coração + Enganação contra a Intuição de um alvo a até 9 m. Venceu: +1 passo no seu próximo ataque contra ele até o fim da próxima rodada. O estilo Imprevisível faz mais: o alvo nem reage.</td></tr>
+  <tr><td><strong>Mirar</strong> <em>(preparo)</em></td><td>Escolha um alvo que você vê. Na próxima rodada, o seu primeiro feitiço contra ele ganha +1 passo.</td></tr>
+  <tr><td><strong>Preparar</strong> <em>(preparo)</em></td><td>Diga a ação e o gatilho (“Estupefaça no primeiro que passar pela porta”). Se o gatilho acontecer nesta rodada, a sua ação vem antes dele e pode impedi-lo. Se não acontecer, a ação se perde.</td></tr>
+  <tr><td><strong>Defender-se</strong> <em>(preparo)</em></td><td>Você gasta a rodada só se protegendo: até o começo da próxima, tem duas reações, e cada uma ganha +1 passo.</td></tr>
   <tr><td><strong>Fugir</strong></td><td>Ação + movimento: você se afasta 18 m sem provocar reação.</td></tr>
   </tbody></table></div>
+
+  <h4>Manobras corpo a corpo</h4>
+  <p>Na fase corpo a corpo, troque o ataque por uma manobra: Corpo + Luta contra Corpo + Atletismo ou Corpo + Reflexos do alvo (ele escolhe). Se ele também ataca você de perto nesta fase, o teste dele é o próprio ataque. Vencer por 5 ou mais dá o efeito extra.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Manobra</th><th>Venceu</th><th>Venceu por 5+</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Agarrar</strong></td><td>O alvo fica Preso enquanto você segura (uma mão sua ocupada). Ele se solta gastando a ação e vencendo a manobra.</td><td>Você aperta: RA de dano.</td></tr>
+  <tr><td><strong>Derrubar</strong></td><td>O alvo fica Caído.</td><td>Ele cai feio: RB de dano.</td></tr>
+  <tr><td><strong>Desarmar</strong></td><td>O alvo larga o que segura — a varinha também.</td><td>Você fica com ela, ou a joga longe.</td></tr>
+  <tr><td><strong>Empurrar</strong></td><td>O alvo vai 3 m para trás (contra a parede, para fora da janela, para dentro do lago).</td><td>Ele perde o equilíbrio: –1 passo no próximo teste.</td></tr>
+  </tbody></table></div>
+  <p><strong>Feitiço na briga.</strong> Lançar um feitiço contra alguém agarrado ou embolado com um aliado custa –1 passo. Se falhar por 3 ou mais, o feitiço pega o aliado.</p>
 
   <h3>Cair e morrer</h3>
   <ol class="passos">
@@ -604,10 +630,93 @@
     <li><strong>Queda:</strong> RA de <span class="dado">d6</span>+<span class="dado">d6</span> a cada 3 m, até 6 dados. Acidente de aula (caldeirão, vassoura, feitiço errado) é quase sempre não letal: o Mestre decide.</li>
   </ul>
 
+  <h3>Lesões</h3>
+  <p>Cair a 0 PV quase nunca é só cair. Role <span class="dado">1d12</span> na tabela quando você chega a 0 PV por um <strong>crítico</strong>, por um golpe que tira <strong>metade do seu PV máximo</strong> de uma vez, ou por uma queda de 9 m ou mais. Some +1 por patente acima de Iniciante. Com dano não letal, não se rola. Se tirar uma lesão que já tem, role de novo.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d12</th><th>Lesão</th><th>Efeito</th><th>Como sai</th></tr></thead>
+  <tbody>
+  <tr><td class="num">1</td><td><strong>Golpe feio</strong></td><td>Você começa o Morrendo com uma falha já marcada.</td><td>—</td></tr>
+  <tr><td class="num">2</td><td><strong>Braço quebrado</strong></td><td>–2 passos em feitiços e em tudo que pede as duas mãos.</td><td>Esquelesce e uma noite na Ala Hospitalar. Ferula imobiliza: fica só –1 passo até lá.</td></tr>
+  <tr><td class="num">3</td><td><strong>Perna quebrada</strong></td><td>Movimento pela metade; –2 passos em Atletismo e em perseguição a pé.</td><td>Igual ao braço.</td></tr>
+  <tr><td class="num">4</td><td><strong>Concussão</strong></td><td>Mente –1 passo.</td><td>Uma noite de sono.</td></tr>
+  <tr><td class="num">5</td><td><strong>Corte fundo</strong></td><td>Sangrando grave.</td><td>Medibruxaria, Episkey ou Vulnera Sanentur.</td></tr>
+  <tr><td class="num">6</td><td><strong>Costelas</strong></td><td>Correr, voar ou lançar feitiço de Círculo 3+ custa 1 PV.</td><td>Ala Hospitalar.</td></tr>
+  <tr><td class="num">7</td><td><strong>Torção</strong></td><td>–1 passo em Reflexos e Defesa –1.</td><td>Episkey, ou uma semana.</td></tr>
+  <tr><td class="num">8</td><td><strong>Nariz quebrado</strong></td><td>Vexame e –1 passo em Persuasão.</td><td>Episkey.</td></tr>
+  <tr><td class="num">9</td><td><strong>Olho inchado</strong></td><td>–1 passo em Percepção e nos feitiços contra alvos a mais de 9 m.</td><td>Fim do dia.</td></tr>
+  <tr><td class="num">10</td><td><strong>Contusão</strong></td><td>Corpo –1 passo.</td><td>Fim da cena.</td></tr>
+  <tr><td class="num">11</td><td><strong>Só o susto</strong></td><td>Nada além da queda.</td><td>—</td></tr>
+  <tr><td class="num">12+</td><td><strong>Adrenalina</strong></td><td>Você recupera 1 PV e acorda: pode agir na próxima rodada.</td><td>—</td></tr>
+  </tbody></table></div>
+  <p>Não há morte na tabela: em Hogwarts, quem morre morre pelo Morrendo ou por magia feita para matar. O que deixa marca para sempre é a Cicatriz, acima.</p>
+
   <h3>Determinação</h3>
   <p>Dementadores, maldições, horrores e perdas tiram Determinação. Com 0 DET você fica
   <strong>Desesperado</strong>: –1 passo em tudo, e não pode lançar feitiços de Círculo 3 ou
   mais até recuperar ao menos 1 DET.</p>
+
+  <h3>Traumas</h3>
+  <p>Enquanto você tiver ao menos 1 DET, o medo assusta mas não quebra. Quando algo de fora leva você a 0 DET — ou tira DET de quem já está a 0 —, faça um <strong>teste de trauma</strong>: Coração + Vontade, DT 7, +3 a cada teste de trauma que você já fez na cena (o segundo é DT 10, o terceiro DT 13). Passou: só o Desesperado. Falhou: role <span class="dado">1d12</span>, +1 por patente acima de Iniciante. Se tirar um trauma que já tem, role de novo.</p>
+  <p>Ver morrer a pessoa de um laço seu, ou ser traído por ela, pede um teste de trauma mesmo com DET sobrando.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d12</th><th>Trauma</th><th>Efeito</th><th>Duração</th></tr></thead>
+  <tbody>
+  <tr><td class="num">1</td><td><strong>Ruptura</strong></td><td>Você desmorona: inconsciente até o fim da cena. Role de novo (ignorando 1 e 9 a 12): esse trauma só sai com tratamento longo.</td><td>St. Mungus, ou um mês com quem gosta de você.</td></tr>
+  <tr><td class="num">2</td><td><strong>Marca do medo</strong></td><td>Toda vez que vê o que causou o trauma, ganha pavor <span class="dado">d6</span>.</td><td>Até tratar.</td></tr>
+  <tr><td class="num">3</td><td><strong>Sobressalto</strong></td><td>Todo dano em DET que você sofre é +1.</td><td>Até tratar.</td></tr>
+  <tr><td class="num">4</td><td><strong>Névoa</strong></td><td>Mente –1 passo.</td><td>Até tratar.</td></tr>
+  <tr><td class="num">5</td><td><strong>Vazio</strong></td><td>Coração –1 passo.</td><td>Até tratar.</td></tr>
+  <tr><td class="num">6</td><td><strong>Alma rachada</strong></td><td>DET máxima –2.</td><td>Até tratar.</td></tr>
+  <tr><td class="num">7</td><td><strong>Fechado</strong></td><td>–1 passo em Persuasão e Intuição.</td><td>Até tratar.</td></tr>
+  <tr><td class="num">8</td><td><strong>Pesadelos</strong></td><td>O descanso recupera 1 DET a menos.</td><td>Até tratar.</td></tr>
+  <tr><td class="num">9</td><td><strong>Pânico</strong></td><td>Ganha pavor <span class="dado">d6</span>.</td><td>Pelas regras do pavor.</td></tr>
+  <tr><td class="num">10</td><td><strong>Paralisia</strong></td><td>Perde a próxima ação.</td><td>Breve.</td></tr>
+  <tr><td class="num">11</td><td><strong>Tremor</strong></td><td>–1 passo no próximo teste.</td><td>—</td></tr>
+  <tr><td class="num">12+</td><td><strong>Fúria</strong></td><td>O medo vira raiva: recupere 1 DET.</td><td>—</td></tr>
+  </tbody></table></div>
+  <p><strong>Tratar um trauma.</strong> Uma semana sem sustos novos e uma <em>cena que importa</em> com alguém de laço 2 ou mais: uma conversa de verdade, não um teste. Ou um curandeiro: Medibruxaria DT 11, depois de uma semana de cuidado. Um trauma por vez.</p>
+
+  <h3 id="pavor">Pavor</h3>
+  <p>Alguns medos não deixam você só nervoso: eles entram nos dados. Quem está com <strong>pavor</strong> rola um dado a mais em <em>todo</em> teste, de outra cor. Ele não soma: <strong>anula</strong> cada dado seu que tirar menos que ele. O que sobra é o resultado. Se ele anular todos, é um Desastre.</p>
+  <ul>
+    <li>Você tira 7 e 2, e o pavor <span class="dado">d6</span> tira 4: o 2 é anulado. Resultado 7.</li>
+    <li>Você tira 3 e 1, e o pavor tira 5: tudo anulado. Desastre.</li>
+    <li>Você tira 6 e 5, e o pavor tira 3: nada anulado. Resultado 11.</li>
+  </ul>
+  <p>Empatar com o pavor não anula. Dados anulados não contam para o crítico nem para o RA. Ganhar pavor de novo, já com pavor, sobe o dado um passo, até <span class="dado">d12</span>.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>De onde vem</th><th>Pavor</th></tr></thead>
+  <tbody>
+  <tr><td>Um dementador a até 9 m</td><td><span class="dado">d6</span>; vários, <span class="dado">d8</span>; uma nuvem deles, <span class="dado">d10</span></td></tr>
+  <tr><td>O seu medo (o bicho-papão, ou ele de verdade)</td><td><span class="dado">d6</span></td></tr>
+  <tr><td>Ver alguém sob a Cruciatus, ver alguém morrer</td><td><span class="dado">d6</span></td></tr>
+  <tr><td>Falhar num teste de trauma (Pânico, Marca do medo)</td><td><span class="dado">d6</span></td></tr>
+  <tr><td>A Floresta Proibida à noite, uma acromântula do tamanho de um carro, um Inferius saindo da água</td><td><span class="dado">d4</span> a <span class="dado">d8</span>, conforme o Mestre</td></tr>
+  </tbody></table></div>
+  <h4>Vencer o pavor</h4>
+  <ul>
+    <li><strong>Passar.</strong> Se o dado de pavor tirar 1, ele vai embora.</li>
+    <li><strong>Controlar.</strong> Antes de um teste, gaste 1 DET: o pavor desce um passo. Abaixo de <span class="dado">d4</span>, some.</li>
+    <li><strong>Abraçar.</strong> Antes de um teste, gaste 4 DET: nesse teste, o pavor vira um dado extra que soma e conta para o crítico. Depois, some. É correr na direção do que você mais teme.</li>
+    <li><strong>Magia e doce.</strong> Riddikulus encerra o pavor que o bicho-papão causou em quem riu. O Patrono encerra o pavor dos dementadores em quem ele protege. Chocolate desce o pavor um passo. Poção da Paz encerra.</li>
+    <li><strong>Laço.</strong> Invocar um laço de grau 2 ou mais pode encerrar o pavor (abaixo).</li>
+    <li><strong>Fim da cena.</strong> O pavor acaba — menos o da Marca do medo, que volta toda vez.</li>
+  </ul>
+  <p>Pavor e Amedrontado podem vir juntos: o Amedrontado não chega perto do que teme; o pavor faz a mão tremer em tudo.</p>
+
+  <h3 id="lacos">Laços</h3>
+  <p>Os NPCs têm Afinidade, Confiança e Respeito pelos personagens (<a href="#cap10">Capítulo X</a>). O laço é o contrário: o que <em>você</em> sente por alguém, e a força que isso dá. Cada laço tem uma pessoa (ou um animal, ou um fantasma), uma frase sobre o sentimento e um <strong>grau</strong> de 1 a 3.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">Grau</th><th>Laço</th><th>Ao invocar, escolha um</th></tr></thead>
+  <tbody>
+  <tr><td class="num">1</td><td><strong>Afeto</strong></td><td>+1 passo num teste; ou, ao Ajudar essa pessoa, ela ganha um passo a mais.</td></tr>
+  <tr><td class="num">2</td><td><strong>Vínculo</strong></td><td>Um <span class="dado">d8</span> extra num teste; ou recupere <span class="dado">1d4</span> DET; ou encerre o seu pavor.</td></tr>
+  <tr><td class="num">3</td><td><strong>Devoção</strong></td><td>Um <span class="dado">d12</span> extra num teste; ou uma segunda ação nesta rodada, numa fase depois da primeira; ou passe direto num teste de trauma.</td></tr>
+  </tbody></table></div>
+  <p><strong>Invocar.</strong> Diga, na pele do personagem, o que sente por aquela pessoa e por que isso faz você continuar. Sem a fala, não vale. Cada laço pode ser invocado <strong>uma vez por aventura</strong>: há um limite para a força que se tira de um sentimento. O dado extra conta no limite de dados do teste.</p>
+  <p><strong>Patrono.</strong> A memória feliz do Expecto Patronum é quase sempre um laço. Invocar um laço ao lançar o Patrono dá +1 passo no feitiço, além do benefício do grau.</p>
+  <p><strong>Ganhar e subir.</strong> Todo personagem começa com dois laços de grau 1: um com outro personagem do grupo, outro com quem quiser. Um laço novo nasce numa cena que importa — uma ajuda num momento difícil, um segredo dividido, um risco corrido junto. Subir um grau pede outra cena assim, e cada laço sobe no máximo um grau por trimestre. Você pode ter tantos laços quanto o valor do seu Coração.</p>
+  <p><strong>Laço ferido.</strong> Se a pessoa trai você, o laço desce um grau. Se ela morre, faça um teste de trauma; o laço fica como memória, no grau que tinha, e ainda pode ser invocado.</p>
 
   <h3>Condições</h3>
   <p>Toda condição tem uma de cinco durações. A tabela é a regra única: se um feitiço disser outra coisa, vale o feitiço só no número de rodadas.</p>
@@ -630,6 +739,7 @@
   <tr><td><strong>Confuso</strong></td><td>No início do turno, <span class="dado">d6</span>: 1–2 age normal, 3–4 fica parado, 5–6 ataca o mais próximo.</td><td>Resistível (Vontade).</td></tr>
   <tr><td><strong>Desarmado</strong></td><td>Sem varinha.</td><td>Pegar a varinha: movimento.</td></tr>
   <tr><td><strong>Indefeso</strong></td><td>Defesa 3; ataques contra você ganham +1 passo.</td><td>Segue a condição que o causou.</td></tr>
+  <tr><td><strong>Com pavor</strong></td><td>Rola o dado de pavor em todo teste; ele anula os dados menores.</td><td>Veja <a href="#pavor">Pavor</a>.</td></tr>
   <tr><td><strong>Amedrontado</strong></td><td>–1 passo; não se aproxima do que assusta.</td><td>Resistível (Vontade).</td></tr>
   <tr><td><strong>Desesperado</strong></td><td>–1 passo em tudo; sem feitiços de Círculo 3+.</td><td>Até ter 1 DET de novo.</td></tr>
   <tr><td><strong>Petrificado</strong></td><td>Não age, Indefeso.</td><td>Resistível (Fortitude). Por Basilisco: Até tratar (Restauradora de Mandrágoras).</td></tr>

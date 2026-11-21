@@ -1153,7 +1153,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
       <label>Perícia <select id="r-per"><option value="4">d4</option><option value="6">d6</option><option value="8" selected>d8</option><option value="10">d10</option><option value="12">d12</option><option value="20">d20</option></select></label>
       <label>Dados extras <select id="r-extra"><option>0</option><option>1</option><option value="2">2 (extraordinário)</option></select></label>
       <label>DT <select id="r-dt"><option>5</option><option selected>7</option><option>9</option><option>11</option><option>13</option><option>15</option></select></label>
-      <button class="principal" onclick="rolarOrdem()">Rolar</button>
+      <button class="principal" onclick="rolarTeste()">Rolar</button>
     </div>
   </div>
 
@@ -2768,7 +2768,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
 <script>
 const PASSOS = [4, 6, 8, 10, 12];
 const d = n => 1 + Math.floor(Math.random() * n);
-function rolarOrdem() {
+function rolarTeste() {
   const a = +document.getElementById('r-atr').value, p = +document.getElementById('r-per').value;
   const dt = +document.getElementById('r-dt').value, extra = +document.getElementById('r-extra').value;
   const dados = [a, p]; for (let i = 0; i < extra; i++) dados.push(Math.max(a, p));

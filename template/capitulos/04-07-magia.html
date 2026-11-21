@@ -40,7 +40,7 @@
   <tr><td><strong>Observado</strong></td><td>Viu alguém lançar, ou leu uma descrição incompleta.</td><td>Só a Conjuração Improvisada.</td><td>Presenciar o feitiço em cena, ou ler sobre ele.</td></tr>
   <tr><td><strong>Em aprendizado</strong></td><td>Teve aula, livro completo ou mentor.</td><td>Praticar sem risco em aula e no tempo livre. Fora disso, só a Conjuração Improvisada.</td><td>Ter acesso à fonte (abaixo).</td></tr>
   <tr><td><strong>Aprendido</strong></td><td>Faz parte do seu repertório para sempre.</td><td>Lançar normalmente, em qualquer lugar.</td><td><strong>3 marcas de treino</strong> e pagar os <strong>PE</strong> do Círculo.</td></tr>
-  <tr><td><strong>Dominado</strong></td><td>Virou reflexo.</td><td>+1 passo ao lançar; pode lançar sem varinha se for Círculo 1.</td><td><strong>5 marcas de prática.</strong> Não se compra com PE.</td></tr>
+  <tr><td><strong>Dominado</strong></td><td>Virou reflexo.</td><td>+1 passo ao lançar.</td><td><strong>5 marcas de prática.</strong> Não se compra com PE.</td></tr>
   </tbody></table></div>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Círculo</th><th class="num">PE para Aprender</th></tr></thead>
@@ -93,7 +93,7 @@
   <p>Todo feitiço pede as duas coisas, e os dois dados do teste são elas: o dado de <strong>Mente</strong> é a <strong>pronúncia</strong>; o dado da <strong>perícia</strong> é o <strong>gesto</strong>. Por isso até quem domina um feitiço pode errar.</p>
   <ul>
     <li><strong>Falhou?</strong> Veja qual dado foi o mais baixo. Pronúncia: o feitiço sai trocado ou fraco. Gesto: sai torto, para o lado, ou acerta outra coisa.</li>
-    <li><strong>Silenciado</strong>: só lança feitiços que tenham a técnica Silenciosa (abaixo), e o dado de Mente cai um passo.</li>
+    <li><strong>Silenciado</strong>: só lança feitiços Silenciosos (abaixo); quem não chegou a Refinado no feitiço ainda perde um passo no dado de Mente.</li>
     <li><strong>Mãos presas</strong> ou varinha mal segura: o dado da perícia cai um passo.</li>
   </ul>
 
@@ -119,12 +119,71 @@
   </div>
   <p>O passo vale 0 para <span class="dado">d4</span>, 1 para <span class="dado">d6</span>, 2 para <span class="dado">d8</span>, 3 para <span class="dado">d10</span> e 4 para <span class="dado">d12</span>. O alvo rola Corpo + Fortitude, Corpo + Reflexos ou Coração + Vontade, conforme o feitiço. Quanto dura cada condição está na tabela única do <a href="#cap7">Capítulo VII</a>.</p>
 
+  <h3 id="nao-verbal">Magia não verbal</h3>
+  <p>Lançar sem dizer o encantamento, ainda com a varinha. Hogwarts ensina a <strong>técnica</strong> no 6º ano; antes disso, só com um livro avançado ou um mentor. Conhecer a técnica não basta: cada feitiço Aprendido precisa do seu próprio treino silencioso. Nada disso custa PE — o feitiço já foi pago; aqui você só melhora a execução.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Estado no feitiço</th><th>Como chega</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Conhece a técnica</strong></td><td>A aula do 6º ano, um livro ou um mentor</td><td>Pode começar a treinar. Ainda não lança calado.</td></tr>
+  <tr><td><strong>Silencioso</strong></td><td>3 marcas silenciosas no feitiço</td><td>Lança sem falar, com –1 passo.</td></tr>
+  <tr><td><strong>Silencioso dominado</strong></td><td>6 marcas</td><td>Lança sem falar, sem penalidade.</td></tr>
+  <tr><td><strong>Refinado</strong></td><td>10 marcas e um treino especial (um mestre, o Clube de Duelos, um duelo de verdade)</td><td>Silenciado não tira o passo de Mente; o teste para manter um Sustentado ao levar dano tem +1 passo.</td></tr>
+  </tbody></table></div>
+  <p><strong>Marca silenciosa:</strong> a ação Treinar (Capítulo XIV) feita sem falar, com –1 passo; sucesso dá 1 marca, no máximo uma por feitiço por semana. Um uso marcante em cena (um duelo, um perigo de verdade) pode dar mais uma, se o Mestre quiser. <strong>Calado não é invisível:</strong> o alvo ainda vê a varinha e a luz e pode reagir com Protego ou Desviar normalmente; o que ele não sabe é <em>qual</em> feitiço vem. Por isso o estilo Técnico não ganha o +1 passo dele contra um feitiço Silencioso.</p>
+
+  <h3 id="sem-varinha">Magia sem varinha</h3>
+  <p>A varinha não só ajuda: ela canaliza a magia e a deixa precisa e forte. Para quem aprendeu dependendo dela, como todo aluno de Hogwarts, lançar sem varinha é uma especialização extraordinariamente difícil, de anos — e cada feitiço é aprendido de novo. PE nunca compram esse domínio; só a prática.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Forma</th><th>Dificuldade</th><th>Potência</th></tr></thead>
+  <tbody>
+  <tr><td>Com varinha, falando</td><td>Normal</td><td>Integral</td></tr>
+  <tr><td>Com varinha, calado</td><td>Difícil</td><td>Integral quando dominado</td></tr>
+  <tr><td>Sem varinha</td><td>Extremamente difícil</td><td>Reduzida, até um domínio excepcional</td></tr>
+  </tbody></table></div>
+  <h4>Fundamentos</h4>
+  <p>Para começar: Mente <span class="dado">d10</span> e Feitiços <span class="dado">d10</span> (ou um mentor de uma tradição sem varinha, abaixo) e uma <strong>fonte completa</strong> — um mestre ou um manuscrito raro. Depois, <strong>12 marcas de fundamento</strong>, no máximo uma por semana (Mente + Feitiços, DT 9, num período livre): pelo menos três meses. Durante os fundamentos, você só produz manifestações instáveis — faíscas, um objeto pequeno que desliza, o ar que esquenta. Nenhum feitiço de verdade.</p>
+  <h4>Cada feitiço</h4>
+  <p>Com os fundamentos, cada feitiço <strong>Aprendido</strong> é treinado à parte, com <strong>marcas sem varinha</strong>: a ação Treinar feita sem varinha, no estágio atual dela; sucesso dá 1 marca, no máximo uma por feitiço por semana. Uma experiência extraordinária em cena pode dar mais uma.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Estágio no feitiço</th><th class="num">Marcas</th><th>Teste</th><th>Potência</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Instável</strong></td><td class="num">8</td><td>–2 passos</td><td>Metade dos números (dano, alcance, duração, peso). Falha: uma manifestação incompleta, que o Mestre descreve.</td></tr>
+  <tr><td><strong>Funcional</strong></td><td class="num">16</td><td>–1 passo</td><td>Ainda metade dos números, mas sai sempre igual.</td></tr>
+  <tr><td><strong>Especializado</strong></td><td class="num">30</td><td>–1 passo</td><td>Integral. Pede concentração: não dá para lançar e se mover na mesma rodada.</td></tr>
+  <tr><td><strong>Domínio excepcional</strong></td><td class="num">50</td><td>Normal</td><td>Integral. Anos de prática ou talento raro.</td></tr>
+  </tbody></table></div>
+  <p>Dominar <em>um</em> feitiço sem varinha já é uma conquista; dominar Lumos não ensina Stupefy. Antes do estágio Instável, o feitiço não sai sem varinha.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Círculo</th><th>Para começar a treinar</th></tr></thead>
+  <tbody>
+  <tr><td>1</td><td>Os fundamentos.</td></tr>
+  <tr><td>2</td><td>Dois feitiços de Círculo 1 em Domínio excepcional sem varinha.</td></tr>
+  <tr><td>3</td><td>Dois de Círculo 2 em Domínio excepcional e uma formação avançada (mestre, escola ou anos de estudo).</td></tr>
+  <tr><td>4</td><td>Um treinamento extraordinário com um mestre ou uma fonte raríssima.</td></tr>
+  <tr><td>Imperdoáveis, Proibidos, efeitos permanentes, de transporte, sobre a mente ou sobre a vida</td><td>Nunca abaixo do Domínio excepcional, e só se o Mestre decidir que existe um jeito. Nada disso sai "pela metade".</td></tr>
+  </tbody></table></div>
+  <p>Condições especiais do feitiço continuam valendo sem varinha (a lembrança feliz do Patrono, o alvo à vista).</p>
+  <h4>Como a magia sai mais fraca</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Feitiço</th><th>Instável ou Funcional</th><th>Especializado em diante</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Wingardium Leviosa</strong></td><td>Até 5 kg, devagar, e a trajetória escapa: só em linha reta.</td><td>Como com varinha.</td></tr>
+  <tr><td><strong>Expelliarmus</strong></td><td>A varinha escorrega mas não cai: o alvo gasta o movimento para firmá-la.</td><td>Desarma.</td></tr>
+  <tr><td><strong>Protego</strong></td><td>Barreira de um instante: no máximo defesa parcial, mesmo se você passar o ataque.</td><td>Defesa completa.</td></tr>
+  <tr><td>Ataques</td><td>Metade do dano, alcance de 9 m no máximo.</td><td>Dano e alcance do Grimório.</td></tr>
+  </tbody></table></div>
+  <p><strong>Calado e sem varinha:</strong> as duas coisas juntas não dão bônus. Use o estágio de cada uma: um feitiço Silencioso (–1 passo) e Funcional sem varinha (–1 passo) sai com –2 passos.</p>
+  <h4>Magia acidental</h4>
+  <p>Crianças bruxas fazem magia sem varinha antes de Hogwarts — o vidro que some, o cabelo que cresce de novo numa noite. Isso não é conjuração: é involuntário, vem de emoção forte e não se controla. Na criação ou num flashback, o Mestre pode contar um episódio; em jogo, um surto só acontece quando o Mestre decide, sem teste e sem o jogador escolher o efeito. Nunca conta como marca.</p>
+  <h4>Tradições sem varinha</h4>
+  <p>Nem toda escola parte da varinha. Em Uagadou muitos alunos aprendem a lançar com os dedos e os gestos das mãos, e algumas tradições da América do Norte mais antigas que as varinhas europeias também. Um personagem formado assim usa o <strong>gesto</strong> como forma normal: os estados do feitiço (Em aprendizado, Aprendido, Dominado) valem para o gesto como valem para a varinha de um aluno de Hogwarts, sem os fundamentos nem os estágios acima. Em troca, as mãos precisam estar livres e à vista — mãos presas ou ocupadas, não lança —, e a varinha, se ele a usar, segue as mesmas regras de estados, aprendidas à parte. Nenhuma tradição é melhor: são caminhos diferentes, igualmente exigentes.</p>
+
   <h3>Formas de lançar</h3>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Forma</th><th>Efeito</th></tr></thead>
   <tbody>
-  <tr><td><strong>Silenciosa (não verbal)</strong></td><td>A técnica é ensinada no 6º ano. Depois disso, cada feitiço precisa da sua própria marca <em>Silencioso</em>: 3 sessões de treino e 2 PE. Com a marca, lança sem falar com –1 passo; o alvo não sabe o que vem. Sem a marca, não dá.</td></tr>
-  <tr><td><strong>Sem varinha</strong></td><td>Só feitiços Dominados de Círculo 1, com –2 passos.</td></tr>
+  <tr><td><strong>Silenciosa (não verbal)</strong></td><td>Com varinha, sem falar. Treino por feitiço, sem PE: veja <a href="#nao-verbal">Magia não verbal</a>.</td></tr>
+  <tr><td><strong>Sem varinha</strong></td><td>Especialização de anos, feitiço por feitiço: veja <a href="#sem-varinha">Magia sem varinha</a>.</td></tr>
   <tr><td><strong>Varinha que não é sua</strong></td><td>Depende da compatibilidade (<a href="#cap11">Capítulo XI</a>).</td></tr>
   <tr><td><strong>Com calma</strong></td><td>Fora de combate, com um minuto e sem pressão: +1 passo.</td></tr>
   <tr><td><strong>Contínuo</strong></td><td>Efeitos simples que ficam ligados sozinhos: Lumos, Impervius, Sonorus, um objeto levitando parado. Duram até você encerrar ou dormir, sem gastar ação. No máximo dois ao mesmo tempo.</td></tr>
@@ -618,7 +677,7 @@
   <tbody>
   <tr><td><strong>Defensivo</strong></td><td>Proteger um aliado com Protego não custa –1 passo, e a defesa parcial vale como completa quando você fica só 1 abaixo.</td></tr>
   <tr><td><strong>Ofensivo</strong></td><td>Depois de acertar um alvo, seu próximo ataque contra ele na mesma cena ganha +1 passo.</td></tr>
-  <tr><td><strong>Técnico</strong></td><td>Você sabe qual feitiço vem antes de reagir (+1 passo no Protego), e pode usar Finite Incantatem como reação.</td></tr>
+  <tr><td><strong>Técnico</strong></td><td>Você sabe qual feitiço vem antes de reagir (+1 passo no Protego, menos contra feitiço Silencioso), e pode usar Finite Incantatem como reação.</td></tr>
   <tr><td><strong>Imprevisível</strong></td><td>Uma vez por cena, finta: Coração + Enganação contra a Intuição do alvo. Passou, além do +1 passo da Fintar, a reação dele contra o seu próximo ataque tem –1 passo.</td></tr>
   <tr><td><strong>Controlador</strong></td><td>Quando um alvo resiste a uma condição sua, ele perde o movimento do próximo turno.</td></tr>
   </tbody></table></div>
@@ -787,7 +846,7 @@
   <tr><td><strong>Preso</strong></td><td>Não se desloca; –1 passo em ataques; não pode Desviar.</td><td>Resistível (Atletismo, ou Reflexos para pernas presas); ou um aliado corta/solta com uma ação.</td></tr>
   <tr><td><strong>Sangrando</strong></td><td>Perde <span class="dado">1d4</span> PV no início do turno; <em>grave</em>, <span class="dado">1d8</span>.</td><td>Até tratar: Medibruxaria DT 7 (grave DT 11), Episkey (só o comum), Ditamno ou Vulnera Sanentur (qualquer um).</td></tr>
   <tr><td><strong>Controlado</strong></td><td>Age como o conjurador quer.</td><td>Resistível (Vontade).</td></tr>
-  <tr><td><strong>Mudo</strong></td><td>Só lança com a técnica Silenciosa.</td><td>Fixa.</td></tr>
+  <tr><td><strong>Mudo</strong></td><td>Só lança feitiços Silenciosos.</td><td>Fixa.</td></tr>
   </tbody></table></div>
   <h4>Referência rápida</h4>
   <p>O que cada condição deixa fazer. "Sustenta" é manter um feitiço Sustentado já lançado; levar dano ainda pede o teste de Vontade do Sustentado.</p>

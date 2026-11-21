@@ -1861,8 +1861,8 @@ td strong { color: var(--texto); }
   <thead><tr><th>Feitiço</th><th>Perícia</th><th>Alcance</th><th>Resiste</th><th>Efeito</th></tr></thead>
   <tbody>
   <tr><td><strong>Avada Kedavra</strong></td><td>Artes das Trevas</td><td>18 m</td><td>Nenhuma: só Desviar ou Interpor</td><td>Morte. Imperdoável: veja abaixo.</td></tr>
-  <tr><td><strong>Fogomaldito</strong></td><td>Artes das Trevas</td><td>Área</td><td>Reflexos</td><td>Fogo vivo: RA + 8 por rodada em quem estiver perto, e cresce. A cada rodada, teste DT 13 para controlar.</td></tr>
-  <tr><td><strong>Protego Diabolica</strong> <span class="dado">AF</span></td><td>Artes das Trevas</td><td>Raio 6 m</td><td>—</td><td>Círculo de fogo negro. Quem é leal ao conjurador atravessa; os outros sofrem RA + 10.</td></tr>
+  <tr><td><strong>Fogomaldito</strong></td><td>Artes das Trevas</td><td>Área</td><td>Reflexos</td><td>Fogo vivo: RA + 8 por rodada em quem estiver perto, e cresce. Controle a cada rodada; descontrolado, vira ameaça própria. Veja <a href="#fogo-das-trevas">Fogo das trevas</a>.</td></tr>
+  <tr><td><strong>Protego Diabolica</strong> <span class="dado">AF</span></td><td>Artes das Trevas</td><td>Raio 6 m</td><td>—</td><td>Círculo de fogo negro. Quem é leal de verdade atravessa; os outros sofrem RA + 10. Instabilidade de 0 a 3. Veja <a href="#fogo-das-trevas">Fogo das trevas</a>.</td></tr>
   </tbody></table></div>
 
   <h3 id="imperdoaveis">As Maldições Imperdoáveis</h3>
@@ -1906,6 +1906,59 @@ td strong { color: var(--texto); }
     <li><strong>Lei:</strong> usar uma Imperdoável contra outra pessoa é prisão perpétua em Azkaban. Prior Incantato revela o último feitiço da varinha.</li>
     <li><strong>Corrupção:</strong> Imperio e Crucio marcam 2; Avada Kedavra que mata, 3 (abaixo).</li>
   </ul>
+
+  <h3 id="fogo-das-trevas">Fogo das trevas</h3>
+  <p>Protego Diabolica e Fogomaldito são perigosos até para quem os lança. A diferença: o Protego Diabolica protege os seus <em>enquanto</em> está sob controle; o Fogomaldito nunca protege ninguém. <strong>Antes de qualquer um dos dois ser lançado, o Mestre avisa a mesa que existe risco de catástrofe</strong> — sem dizer o que os dados vão trazer. Aliados, personagens de jogador e o próprio conjurador não têm imunidade: quem é atingido sofre o dano inteiro, e ficar no fogo mata.</p>
+
+  <h4>Protego Diabolica · o fogo da lealdade</h4>
+  <div class="rolagem"><table class="compacta">
+  <tbody>
+  <tr><td><strong>Lançar</strong></td><td>Mente + Artes das Trevas, DT 13. Desastre: já começa em Catástrofe.</td></tr>
+  <tr><td><strong>Área</strong></td><td>Círculo de raio 6 m em volta do conjurador.</td></tr>
+  <tr><td><strong>Dano</strong></td><td>RA + 10 em quem o fogo atinge ao atravessar, e de novo no começo de cada turno de quem estiver nas chamas. Sem resistência; Desviar só serve para pular para fora.</td></tr>
+  <tr><td><strong>Manter</strong></td><td>Sustentado, gastando a <em>ação</em> a cada rodada.</td></tr>
+  <tr><td><strong>Controle</strong></td><td>Mente + Artes das Trevas, DT 13, em toda rodada em que o conjurador levar dano, for distraído, mover o círculo ou tentar encerrá-lo — e em toda rodada a partir da quarta. Falha: Instabilidade +1. Desastre: vai direto a 3.</td></tr>
+  </tbody></table></div>
+  <p><strong>Quem é leal.</strong> A magia não aceita a vontade do conjurador como prova: protege quem é leal a ele <em>de verdade</em>. O Mestre decide pela história; com um personagem de jogador, o jogador diz com sinceridade o que o personagem sente, e na dúvida o fogo não perdoa. Querer proteger alguém não basta.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">Instabilidade</th><th>Estado</th><th>O que o fogo faz</th></tr></thead>
+  <tbody>
+  <tr><td class="num">0</td><td><strong>Controlado</strong></td><td>Distingue a lealdade e obedece ao conjurador.</td></tr>
+  <tr><td class="num">1</td><td><strong>Oscilação</strong></td><td>A proteção falha: quem atravessa, leal ou não, rola <span class="dado">d6</span>; com 1–3, sofre o dano.</td></tr>
+  <tr><td class="num">2</td><td><strong>Ruptura</strong></td><td>Todos dentro do fogo ou atravessando sofrem o dano, aliados leais também. O conjurador não move mais o círculo.</td></tr>
+  <tr><td class="num">3</td><td><strong>Catástrofe</strong></td><td>O círculo se rompe. As chamas tomam formas monstruosas e seguem a progressão do Fogomaldito descontrolado (abaixo), a partir da segunda rodada.</td></tr>
+  </tbody></table></div>
+  <p><strong>Encerrar.</strong> Com Instabilidade 0, o conjurador consciente encerra com uma ação, sem teste. Com 1 ou 2, encerrar pede o teste de controle; falhou, a Instabilidade sobe. Depois da Catástrofe, encerrar já não adianta: o fogo é uma ameaça própria. Se o conjurador cair inconsciente antes disso, a Instabilidade sobe 1 por rodada até apagar sozinha (3 rodadas) ou chegar à Catástrofe.</p>
+
+  <h4>Fogomaldito · o fogo que caça</h4>
+  <div class="rolagem"><table class="compacta">
+  <tbody>
+  <tr><td><strong>Lançar</strong></td><td>Mente + Artes das Trevas, DT 13. Desastre: nasce descontrolado.</td></tr>
+  <tr><td><strong>Área</strong></td><td>Começa em raio 3 m num ponto à vista; sob controle, o conjurador escolhe a cada rodada se ela cresce 3 m ou fica do tamanho que está, e para onde avança.</td></tr>
+  <tr><td><strong>Dano</strong></td><td>RA + 8 por rodada em quem estiver na área (Reflexos contra a DT do feitiço: metade). Não escolhe aliados.</td></tr>
+  <tr><td><strong>Manter</strong></td><td>Sustentado, gastando a <em>ação</em> a cada rodada.</td></tr>
+  <tr><td><strong>Controle</strong></td><td>Mente + Artes das Trevas, DT 13, <strong>toda rodada</strong>. Uma falha basta: o fogo se solta.</td></tr>
+  <tr><td><strong>Apagar</strong></td><td>Água comum ou encantada não apaga. Sob controle, o conjurador o encerra com uma ação e um teste de controle. Descontrolado, só com magia extraordinária (abaixo).</td></tr>
+  </tbody></table></div>
+  <p><strong>Descontrolado</strong> (adaptação para a mesa; os números são do jogo, não dos livros):</p>
+  <ol class="passos">
+    <li><b>Rodada da ruptura.</b> O conjurador perde a direção. O fogo avança para todo lado, contra ele também.</li>
+    <li><b>Rodada seguinte.</b> A área cresce 3 m em cada direção por onde dá para passar, e as chamas começam a tomar forma de criaturas.</li>
+    <li><b>Segunda rodada.</b> Serpentes, dragões e aves de fogo caçam: uma forma por rodada ataca a pessoa mais próxima, <span class="dado">d12</span> + <span class="dado">d12</span> contra a Defesa, dano RA + 8. O fogo continua crescendo.</li>
+    <li><b>Terceira rodada em diante.</b> Cresce 3 m a cada rodada, consome objetos e bloqueia saídas; mais uma forma passa a caçar a cada duas rodadas. Em lugar fechado, sair pede Corpo + Atletismo DT 9, +2 a cada rodada depois da ruptura.</li>
+  </ol>
+  <p><strong>Não se recupera o controle.</strong> Depois de solto, passar num teste DT 13 na rodada seguinte não devolve nada. A morte do conjurador não apaga o fogo. As saídas são três: <em>fugir</em>; deixar queimar até acabar o que queimar (o Mestre diz quanto); ou uma <strong>contenção coletiva</strong> — magia em conjunto de pelo menos três bruxos com Artes das Trevas ou Defesa Contra as Artes das Trevas <span class="dado">d10</span> ou mais, Mente + perícia DT 15 uma vez por rodada; cada sucesso encolhe a área 3 m e apaga uma forma, e área zero apaga o fogo. O Fogomaldito é uma das poucas coisas que destroem uma Horcrux.</p>
+
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Característica</th><th>Protego Diabolica</th><th>Fogomaldito</th></tr></thead>
+  <tbody>
+  <tr><td>Escolhe quem atravessa</td><td>Sim, enquanto estável</td><td>Não</td></tr>
+  <tr><td>Pode matar aliados</td><td>Sim, se a proteção falhar</td><td>Sim, sempre</td></tr>
+  <tr><td>Pode matar o conjurador</td><td>Sim</td><td>Sim</td></tr>
+  <tr><td>Formas de criatura</td><td>Só na Catástrofe</td><td>Quando se solta</td></tr>
+  <tr><td>Cresce sozinho</td><td>Depois da Catástrofe</td><td>Quando se solta</td></tr>
+  <tr><td>Controle perdido volta</td><td>Não</td><td>Não</td></tr>
+  </tbody></table></div>
 
   <h3>Corrupção</h3>
   <p>A magia das trevas não cobra em PV: cobra na alma. A <strong>Corrupção</strong> vai de 0 a 10 e nunca some por descanso.</p>

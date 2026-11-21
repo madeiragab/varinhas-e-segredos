@@ -1122,6 +1122,10 @@ strong { font-weight: 600; }
 .rolagem { border: 1px solid var(--borda); border-radius: 4px; background: var(--papel); }
 table { font-family: var(--serifa-texto); font-size: .98rem; font-variant-numeric: lining-nums tabular-nums; }
 table.compacta { font-size: .92rem; }
+/* Texto longo quebra linha; só números, dados e a primeira coluna curta ficam inteiros. */
+table.compacta td, table.compacta th { white-space: normal; }
+table.compacta td.num, table.compacta th.num, td.d, table.compacta .dado { white-space: nowrap; }
+table.compacta td:first-child { min-width: 6.5rem; }
 thead th {
   font-family: var(--serifa-titulo); font-weight: 700; font-size: .68rem; letter-spacing: .12em;
   color: var(--ouro); background: var(--superficie-2); border-bottom: 1px solid var(--borda-forte);

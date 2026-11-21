@@ -45,7 +45,7 @@
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Círculo</th><th class="num">PE para Aprender</th></tr></thead>
   <tbody>
-  <tr><td>1</td><td class="num">2</td></tr><tr><td>2</td><td class="num">4</td></tr><tr><td>3</td><td class="num">6</td></tr><tr><td>4</td><td class="num">8</td></tr><tr><td>Proibido</td><td class="num">10</td></tr>
+  <tr><td>1</td><td class="num">1</td></tr><tr><td>2</td><td class="num">2</td></tr><tr><td>3</td><td class="num">3</td></tr><tr><td>4</td><td class="num">4</td></tr><tr><td>Proibido</td><td class="num">6</td></tr>
   </tbody></table></div>
   <ul>
     <li><strong>Marca de treino</strong> (para Aprender): sai das aulas práticas, do estudo no tempo livre e de um mentor (<a href="#cap14">Capítulo XIV</a>). Só serve para feitiços Em aprendizado.</li>
@@ -66,11 +66,11 @@
   </tbody></table></div>
 
   <h3>O Currículo de Hogwarts</h3>
-  <p>A grade diz o que as aulas apresentam em cada ano. Ao começar o ano, os feitiços da grade ficam disponíveis para virar Em aprendizado conforme as aulas acontecem. É uma grade para a mesa, não uma lista oficial dos livros.</p>
+  <p>A grade diz o que as aulas apresentam em cada ano. Na primeira aula em que o professor apresenta um feitiço da grade, ele fica <strong>Em aprendizado</strong> para todos os alunos presentes, sem teste. Quem faltou fica só com Observado até recuperar a matéria (um período de estudo). É uma grade para a mesa, não uma lista oficial dos livros.</p>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Ano</th><th>Feitiços</th><th>Transfiguração</th><th>Defesa Contra as Artes das Trevas</th><th>Poções</th></tr></thead>
   <tbody>
-  <tr><td class="d">1º</td><td>Lumos/Nox, Wingardium Leviosa, Alohomora, Point Me</td><td>Reparo, fósforo em agulha</td><td>Flipendo, Periculum</td><td>Cura para Furúnculos, Poção do Sono</td></tr>
+  <tr><td class="d">1º</td><td>Lumos/Nox, Wingardium Leviosa, Alohomora, Point Me</td><td>Reparo, Transfiguração Simples (fósforo em agulha)</td><td>Flipendo, Periculum</td><td>Cura para Furúnculos, Poção do Sono</td></tr>
   <tr><td class="d">2º</td><td>Rictusempra, Finite Incantatem, Scourgify, Colloportus</td><td>Orchideous/Avis</td><td>Expelliarmus, Tarantallegra, Incendio</td><td>Apimentada, Solução Redutora, Solução de Inchaço</td></tr>
   <tr><td class="d">3º</td><td>Diffindo, Impervius, Aparecium</td><td>Reducio/Engorgio</td><td>Riddikulus, Silencio</td><td>Wiggenweld, Aguçar o Intelecto</td></tr>
   <tr><td class="d">4º</td><td>Accio, Sonorus/Quietus</td><td>Incarcerous</td><td>Stupefy, Petrificus Totalus, Locomotor Mortis</td><td>Antídoto Comum, Edurus</td></tr>
@@ -127,7 +127,8 @@
   <tr><td><strong>Sem varinha</strong></td><td>Só feitiços Dominados de Círculo 1, com –2 passos.</td></tr>
   <tr><td><strong>Varinha que não é sua</strong></td><td>Depende da compatibilidade (<a href="#cap11">Capítulo XI</a>).</td></tr>
   <tr><td><strong>Com calma</strong></td><td>Fora de combate, com um minuto e sem pressão: +1 passo.</td></tr>
-  <tr><td><strong>Sustentado</strong></td><td>Levitar, iluminar, manter um escudo: gasta a sua ação a cada rodada.</td></tr>
+  <tr><td><strong>Contínuo</strong></td><td>Efeitos simples que ficam ligados sozinhos: Lumos, Impervius, Sonorus, um objeto levitando parado. Duram até você encerrar ou dormir, sem gastar ação. No máximo dois ao mesmo tempo.</td></tr>
+  <tr><td><strong>Sustentado</strong></td><td>Efeitos que você precisa guiar: mover algo levitando, manter Protego Totalum contra um ataque, segurar Petrificus ou Incarcerous em quem luta para sair. Gasta o seu <em>movimento</em> a cada rodada (a ação, se o alvo for uma criatura ou pesar mais que você). Levou dano: Coração + Vontade, DT 5 + metade do dano, ou o feitiço cai. Só um por vez.</td></tr>
   </tbody></table></div>
 
   <h3>Quando dá errado</h3>
@@ -168,10 +169,11 @@
   <thead><tr><th>Feitiço</th><th>Perícia</th><th>Alcance</th><th>Resiste</th><th>Efeito</th></tr></thead>
   <tbody>
   <tr><td><strong>Lumos / Nox</strong></td><td>Feitiços</td><td>Pessoal</td><td>—</td><td>Luz na ponta da varinha, 9 m. Nox apaga.</td></tr>
-  <tr><td><strong>Wingardium Leviosa</strong></td><td>Feitiços</td><td>9 m</td><td>—</td><td>Levita até 50 kg; sustentado.</td></tr>
+  <tr><td><strong>Wingardium Leviosa</strong></td><td>Feitiços</td><td>9 m</td><td>—</td><td>Levita até 50 kg. Parado, contínuo; movendo, sustentado.</td></tr>
   <tr><td><strong>Alohomora</strong></td><td>Feitiços</td><td>Toque</td><td>—</td><td>Abre fechadura comum. Tranca mágica: DT do feitiço que a fechou.</td></tr>
   <tr><td><strong>Colloportus</strong></td><td>Feitiços</td><td>Toque</td><td>—</td><td>Tranca uma porta. Abrir pede Alohomora contra a sua DT.</td></tr>
   <tr><td><strong>Reparo</strong></td><td>Transfig.</td><td>Toque</td><td>—</td><td>Conserta objeto não mágico.</td></tr>
+  <tr><td><strong>Transfiguração Simples</strong></td><td>Transfig.</td><td>Toque</td><td>—</td><td>Muda um objeto pequeno e inanimado em outro de tamanho parecido: fósforo em agulha, botão em besouro, xícara em rato só no 2º ano. Dura uma cena; Dominado, permanente. Na aula, usa o minigame de Transfiguração.</td></tr>
   <tr><td><strong>Accio</strong></td><td>Feitiços</td><td>Visão</td><td>Reflexos, se seguro</td><td>Puxa um objeto até você.</td></tr>
   <tr><td><strong>Aguamenti</strong></td><td>Feitiços</td><td>3 m</td><td>—</td><td>Jato de água; apaga fogo pequeno.</td></tr>
   <tr><td><strong>Incendio</strong></td><td>Feitiços</td><td>9 m</td><td>—</td><td>Ataque. RA + 1 de fogo; acende o que for inflamável.</td></tr>
@@ -311,7 +313,7 @@
     <li><b>Ingredientes.</b> Sem eles, nada feito. Faltou um: –1 passo em todas as etapas.</li>
     <li><b>Abordagem.</b> Antes de cada etapa, escolha: <em>Cuidadosa</em> (–1 passo, mas a falha não soma Instabilidade), <em>Normal</em> ou <em>Arriscada</em> (+1 passo, mas a falha soma 2 de Instabilidade). É aqui que se decide o fogo, a ordem dos ingredientes e quando mexer.</li>
     <li><b>Cada etapa</b> é um teste de Mente + Poções contra a DT da receita. <b>Sucesso:</b> some o RA ao Preparo. <b>Falha:</b> some o RB ao Preparo e 1 de Instabilidade. <b>Crítico:</b> some os dois maiores e tire 1 de Instabilidade. <b>Desastre:</b> 3 de Instabilidade.</li>
-    <li><b>Limite.</b> Se a Instabilidade chegar ao número de etapas da receita, o caldeirão explode: <span class="dado">1d6</span> de dano em quem está perto, e a poção vira outra coisa.</li>
+    <li><b>Limite.</b> Se a Instabilidade chegar a <strong>5</strong> (receitas marcadas como <em>voláteis</em> pelo Mestre — Polissuco, Felix, Mata-Cão, Morto-Vivo —, a 4), o caldeirão explode: <span class="dado">1d6</span> de dano em quem está perto, e a poção vira outra coisa.</li>
     <li><b>Pronta</b> quando o Preparo chega ao valor da receita dentro das etapas. Passou das etapas: estragou.</li>
   </ol>
   <div class="rolagem"><table class="compacta">
@@ -319,7 +321,7 @@
   <tbody>
   <tr><td>0</td><td><strong>Excelente</strong></td><td>Duração dobrada, ou +2 no que a poção cura.</td></tr>
   <tr><td>1–2</td><td><strong>Boa</strong></td><td>Como na receita.</td></tr>
-  <tr><td>3 ou mais</td><td><strong>Instável</strong></td><td>Metade do efeito; quem bebe rola <span class="dado">d6</span>: com 1, um efeito colateral à escolha do Mestre.</td></tr>
+  <tr><td>3–4</td><td><strong>Instável</strong></td><td>Metade do efeito; quem bebe rola <span class="dado">d6</span>: com 1, um efeito colateral à escolha do Mestre.</td></tr>
   </tbody></table></div>
   <p>Cada ingrediente de qualidade Excelente (Herbologia, abaixo) apaga 1 de Instabilidade no fim. Pesquisas, invenção de feitiços e consertos complicados usam o mesmo teste longo, sem a Instabilidade.</p>
 
@@ -521,6 +523,7 @@
   <thead><tr><th>Condição</th><th>Efeito</th><th>Duração e saída</th></tr></thead>
   <tbody>
   <tr><td><strong>Atordoado</strong></td><td>Perde a próxima ação; Defesa –2.</td><td>Breve.</td></tr>
+  <tr><td><strong>Cansado</strong></td><td>–1 passo em Corpo e Mente; não recupera Ímpeto.</td><td>Até tratar: uma semana com dois períodos de Descansar, ou uma noite inteira de sono e Poção Revigorante.</td></tr>
   <tr><td><strong>Caído</strong></td><td>–1 passo em Corpo; não pode Desviar.</td><td>Levantar gasta o movimento.</td></tr>
   <tr><td><strong>Cego</strong></td><td>–2 passos em ataques e Percepção; Defesa –2.</td><td>Fixa ou Breve, conforme a fonte.</td></tr>
   <tr><td><strong>Confuso</strong></td><td>No início do turno, <span class="dado">d6</span>: 1–2 age normal, 3–4 fica parado, 5–6 ataca o mais próximo.</td><td>Resistível (Vontade).</td></tr>

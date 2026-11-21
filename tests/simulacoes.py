@@ -175,15 +175,17 @@ ALUNO = {1: (8, 6, 6, 6, (1, 0)), 2: (8, 6, 6, 6, (2, 2)), 3: (8, 8, 6, 8, (2, 2
          5: (10, 10, 8, 8, (2, 2)), 6: (10, 10, 8, 10, (3, 3)), 7: (10, 12, 10, 10, (3, 3))}
 
 
-def combate(ano, inimigos, n_alunos=4, chefe_pv=1.0, chefe_acoes=1):
+def combate(ano, inimigos, tipo="comum", n_alunos=4, chefe_pv=1.5, chefe_acoes=2):
+    """tipo: comum (sem chefe), chefe_sozinho (Fases, PV x1,5, duas ações), chefe_acompanhado (só Fases)."""
     m, f, c, r, (circ, mod) = ALUNO[ano]
     pv_max = 8 + c + 3 * (ano - 1)
     defesa = 5 + r // 2
     reacao = (m, f) if ano >= 5 else (c, r)  # Protego chega no 5º ano
     alunos = [pv_max] * n_alunos
-    # o primeiro inimigo é o chefe: Fases da Tábua; o golpe que quebra uma Fase para no piso dela
+    # com chefe, ele é o primeiro inimigo: Fases da Tábua; o golpe que quebra uma Fase para no piso dela
     fases = {1: 1, 2: 2, 3: 3, 4: 3, 5: 3, 6: 3, 7: 3, 8: 4, 9: 4, 10: 4, 11: 4}
-    inim = [[TABUA[p][0] * (chefe_pv if k == 0 else 1), p, k == 0] for k, p in enumerate(inimigos)]
+    sozinho = tipo == "chefe_sozinho" and len(inimigos) == 1 and n_alunos >= 3
+    inim = [[TABUA[p][0] * (chefe_pv if (k == 0 and sozinho) else 1), p, k == 0 and tipo != "comum"] for k, p in enumerate(inimigos)]
     for x in inim:
         x[0] = int(x[0])
         x.append(x[0])
@@ -195,7 +197,7 @@ def combate(ano, inimigos, n_alunos=4, chefe_pv=1.0, chefe_acoes=1):
             if alunos[i] <= 0 or not vivos:
                 continue
             alvo = min(vivos, key=lambda x: x[0])
-            dt = max(5 + 2 * circ, TABUA[alvo[1]][1])
+            dt = max(3 + 2 * circ, TABUA[alvo[1]][1])  # DT do Círculo: 5, 7, 9, 11
             total, ok, crit, _, top = rola((m, f), dt)
             if ok:
                 dano = (sum(top[:2]) if crit else top[0]) + mod
@@ -207,7 +209,7 @@ def combate(ano, inimigos, n_alunos=4, chefe_pv=1.0, chefe_acoes=1):
                     alvo[0] -= dano
         if all(x[0] <= 0 for x in inim):
             return rodada, sum(a <= 0 for a in alunos)
-        for x in [y for y in inim for _ in range(chefe_acoes if y[2] else 1)]:
+        for x in [y for y in inim for _ in range(chefe_acoes if (y[2] and sozinho) else 1)]:
             if x[0] <= 0:
                 continue
             de_pe = [i for i in range(n_alunos) if alunos[i] > 0]
@@ -230,25 +232,25 @@ def combate(ano, inimigos, n_alunos=4, chefe_pv=1.0, chefe_acoes=1):
     return rodada, sum(a <= 0 for a in alunos)
 
 
-def sim_combate(n=1500, chefe_pv=1.5, chefe_acoes=2):
+def sim_combate(n=1500):
     print("COMBATE — 4 alunos típicos, focando o inimigo mais fraco; sem poderes, poções nem Ímpeto")
     print("  (rodadas medianas | % de lutas com alguém caído | % de grupo inteiro caído)")
     res = {}
     for ano in range(1, 8):
         casos = {
-            "comum (Perigo = ano)": [ano],
-            "chefe (ano + 1)": [ano + 1],
-            "difícil (chefe + 2 capangas)": [ano + 1, max(1, ano - 2), max(1, ano - 2)],
+            "comum (Perigo = ano)": ([ano], "comum"),
+            "chefe sozinho (ano + 1)": ([ano + 1], "chefe_sozinho"),
+            "difícil (chefe + 2 capangas)": ([ano + 1, max(1, ano - 2), max(1, ano - 2)], "chefe_acompanhado"),
         }
         if ano >= 3:
-            casos["muito acima (ano + 4)"] = [min(11, ano + 4)]
-        for nome, ins in casos.items():
-            rs = [combate(ano, ins, 4, chefe_pv, chefe_acoes) for _ in range(n)]
+            casos["muito acima (ano + 4, sozinho)"] = ([min(11, ano + 4)], "chefe_sozinho")
+        for nome, (ins, tipo) in casos.items():
+            rs = [combate(ano, ins, tipo) for _ in range(n)]
             rods = sorted(x[0] for x in rs)
             caiu = sum(x[1] > 0 for x in rs) / n
             tpk = sum(x[1] == 4 for x in rs) / n
             res[(ano, nome)] = (rods[n // 2], caiu, tpk)
-            print(f"  {ano}º ano, {nome:30}: {rods[n//2]:2} rodadas | {caiu*100:3.0f}% | {tpk*100:3.0f}%")
+            print(f"  {ano}º ano, {nome:32}: {rods[n//2]:2} rodadas | {caiu*100:3.0f}% | {tpk*100:3.0f}%")
     return res
 
 

@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Varinhas e Segredos — RPG de mesa</title>
+<link rel="preload" href="assets/fontes/garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fontes/cinzel.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/capa-1024.webp" as="image" fetchpriority="high">
 
 <style>
 /* ============================================================
@@ -955,65 +958,221 @@ pre.bloco-codigo {
   }
 }
 
-/* ---- Varinhas e Segredos: capa em SVG e geradores de tabela ---- */
-.capa-pagina { position: relative; }
-.capa-pagina svg { display: block; width: 100%; height: auto; max-height: 100vh; }
-.capa-titulo { position: absolute; left: 0; right: 0; bottom: 9%; text-align: center; padding: 0 16px; }
-.capa-titulo h1 { font-family: var(--serifa-titulo); font-size: clamp(2rem, 7vw, 4.6rem); margin: 0; color: #F1DCA6; text-shadow: 0 0 18px #000, 0 0 40px #D8B46A55; letter-spacing: .02em; }
-.capa-titulo p { font-family: var(--sans); letter-spacing: .32em; color: #CBD6E8; margin: .5em 0 0; font-size: clamp(.7rem, 1.8vw, .95rem); text-shadow: 0 0 8px #000; text-transform: uppercase; }
-.pisca { animation: pisca 3s infinite alternate; }
-@keyframes pisca { from { opacity: .3 } to { opacity: 1 } }
-@media (prefers-reduced-motion: reduce) { .pisca { animation: none; } }
 td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: var(--texto-suave); width: 3.5rem; }
+
+
+/* =================================================================
+   GRIMÓRIO — o visual da 0.8
+   Cinzel para títulos, EB Garamond para o texto, as duas servidas
+   daqui mesmo (assets/fontes), só os arquivos latinos, com swap.
+   ================================================================= */
+@font-face { font-family: "Cinzel"; src: url("assets/fontes/cinzel.woff2") format("woff2"); font-weight: 400 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "EB Garamond"; src: url("assets/fontes/garamond.woff2") format("woff2"); font-weight: 400 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "EB Garamond"; src: url("assets/fontes/garamond-italico.woff2") format("woff2"); font-weight: 400 800; font-style: italic; font-display: swap; }
+
+:root {
+  --serifa-titulo: "Cinzel", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --serifa-texto:  "EB Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --ouro-claro: #E9C46A;
+  --ornamento: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 24'%3E%3Cg fill='none' stroke='%23C9A24A' stroke-width='1.2'%3E%3Cpath d='M4 12h86M150 12h86'/%3E%3Cpath d='M90 12c8-8 16-8 22 0c6 8 14 8 22 0' /%3E%3Cpath d='M96 12c6 6 12 6 16 0c4-6 10-6 16 0' opacity='.6'/%3E%3C/g%3E%3Cpath d='M120 3l3 9l-3 9l-3-9z' fill='%23C9A24A'/%3E%3Ccircle cx='4' cy='12' r='2' fill='%23C9A24A'/%3E%3Ccircle cx='236' cy='12' r='2' fill='%23C9A24A'/%3E%3C/svg%3E");
+  --mancha: 35rem;
+}
+/* Pergaminho no claro; o escuro continua a noite azul da capa. */
+:root, :root[data-theme="light"] {
+  --fundo: #E4D9C1;
+  --papel: #F8F1E1;
+  --superficie-2: #EFE5CF;
+  --texto: #231A2B;
+  --texto-suave: #6A5D6B;
+  --borda: #DDCDAE;
+  --borda-forte: #BFA97E;
+  --acento-fraco: #ECE2F3;
+}
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fundo: #05070E; --papel: #0E1220; --superficie-2: #161C2E; --texto: #E9E3D3; --texto-suave: #A29DAE;
+    --borda: #252B40; --borda-forte: #3A4260; --acento: var(--sangue-vivo); --acento-fraco: #241A3A;
+    --ouro: var(--ouro-luz); --sombra: rgba(0, 0, 0, .6);
+  }
+}
+@media screen { :root[data-theme="dark"] {
+    --fundo: #05070E; --papel: #0E1220; --superficie-2: #161C2E; --texto: #E9E3D3; --texto-suave: #A29DAE;
+    --borda: #252B40; --borda-forte: #3A4260; --acento: var(--sangue-vivo); --acento-fraco: #241A3A;
+    --ouro: var(--ouro-luz); --sombra: rgba(0, 0, 0, .6);
+} }
+
+body {
+  font-size: 19px;
+  line-height: 1.62;
+  font-variant-numeric: lining-nums;
+  background:
+    radial-gradient(ellipse at top, color-mix(in srgb, var(--acento) 10%, transparent), transparent 60%),
+    var(--fundo);
+  background-attachment: fixed;
+}
+.livro {
+  max-width: calc(var(--mancha) + var(--margem) * 2);
+  box-shadow: 0 0 0 1px var(--borda), 0 1.5rem 4rem var(--sombra);
+  border: none;
+}
+
+/* ---------- capa: uma página inteira, título sobre a arte ---------- */
+.capa-pagina { position: relative; display: block; overflow: hidden; container-type: inline-size; background: #05070D; }
+.capa-pagina.frente, .capa-pagina.fundo { aspect-ratio: 2 / 3; border: none; }
+.capa-pagina > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.capa-pagina.frente::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(4,6,16,.72) 0%, rgba(4,6,16,.25) 22%, rgba(4,6,16,0) 34%,
+                                         rgba(4,6,16,0) 80%, rgba(4,6,16,.8) 100%);
+}
+.capa-titulo { position: absolute; z-index: 2; top: 5.5%; left: 0; right: 0; bottom: auto; padding: 0 6%; text-align: center; }
+.capa-sobre {
+  font-family: var(--serifa-titulo); font-weight: 500; text-transform: uppercase;
+  letter-spacing: .38em; padding-left: .38em; font-size: 2.5cqi; color: #EADFC2;
+  margin: 0 0 3cqi; text-shadow: 0 1px 6px #000;
+}
+.capa-titulo h1 {
+  font-family: var(--serifa-titulo); font-weight: 700; text-transform: uppercase;
+  font-size: 12.5cqi; line-height: .92; letter-spacing: .03em; margin: 0;
+  color: #F0D490;
+  background: linear-gradient(180deg, #FFF4CF 0%, #F0CF7A 42%, #C08A2E 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 .25cqi .8cqi rgba(0,0,0,.85)) drop-shadow(0 0 3cqi rgba(233,196,106,.25));
+}
+.capa-titulo h1 span {
+  display: block; font-size: .36em; letter-spacing: .5em; padding-left: .5em; margin: .35em 0 .3em;
+  font-weight: 500;
+}
+.capa-pe {
+  position: absolute; z-index: 2; left: 0; right: 0; bottom: 4.5%; margin: 0; text-align: center;
+  font-family: var(--serifa-titulo); text-transform: uppercase; letter-spacing: .32em; padding-left: .32em;
+  font-size: 2.2cqi; color: #E9D7A6; text-shadow: 0 1px 6px #000;
+}
+.capa-pe span { color: var(--ouro-claro); margin: 0 .5em; }
+
+/* ---------- contracapa ---------- */
+.capa-pagina.fundo::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(100deg, rgba(4,6,16,.72) 0%, rgba(4,6,16,.5) 42%, rgba(4,6,16,0) 62%);
+}
+.contracapa-texto {
+  position: absolute; z-index: 2; top: 8%; left: 7%; right: 43%; text-align: left;
+  color: #E7DFCB; font-size: 3.4cqi; line-height: 1.5;
+}
+.contracapa-texto p { margin: 0 0 1.2em; text-shadow: 0 1px 4px #000; }
+.contracapa-chamada { font-family: var(--serifa-titulo); font-size: 5cqi; line-height: 1.25; color: #F0D490; }
+.contracapa-lista { font-family: var(--serifa-titulo); text-transform: uppercase; letter-spacing: .2em; font-size: 2.3cqi; color: var(--ouro-claro); }
+.contracapa-texto::before { content: ""; display: block; height: 3.2cqi; margin: 0 0 4cqi; width: 80%; background: var(--ornamento) left center / contain no-repeat; }
+
+/* ---------- aberturas das partes ---------- */
+.parte {
+  position: relative; margin: 3rem calc(var(--margem) * -1) 0; container-type: inline-size;
+  aspect-ratio: 3 / 2; overflow: hidden; background: #05070D;
+}
+.parte img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.parte::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(4,6,16,0) 45%, rgba(4,6,16,.88) 100%);
+}
+.parte figcaption {
+  position: absolute; z-index: 1; left: 0; right: 0; bottom: 7%; text-align: center; color: #EFE6CF;
+}
+.parte-num { display: block; font-family: var(--serifa-titulo); letter-spacing: .4em; padding-left: .4em; text-transform: uppercase; font-size: 2.4cqi; color: var(--ouro-claro); }
+.parte-tit { display: block; font-family: var(--serifa-titulo); font-weight: 700; text-transform: uppercase; font-size: 8cqi; line-height: 1.05; margin: .15em 0; text-shadow: 0 2px 10px #000; }
+.parte-sub { display: block; font-style: italic; font-size: 3.2cqi; color: #D9CFB8; }
+
+/* ---------- folha de rosto e sumário ---------- */
+.rosto h1 { font-weight: 700; letter-spacing: .06em; }
+.rosto h1 span { color: var(--ouro); }
+.rosto .tomo, .sumario h2 { font-family: var(--serifa-titulo); }
+.rosto .epigrafe { font-size: 1.15rem; }
+.rosto .epigrafe::after, .sumario h2::after {
+  content: ""; display: block; height: 18px; width: 12rem; margin: 1.6rem auto 0;
+  background: var(--ornamento) center / contain no-repeat;
+}
+.sumario .alg { color: var(--ouro); font-weight: 700; }
+.sumario .tit { font-size: 1.05rem; letter-spacing: .02em; }
+.sumario .sub { font-family: var(--serifa-texto); font-style: italic; font-size: .92rem; }
+
+/* ---------- capítulos ---------- */
+.abertura { border-bottom: none; padding-bottom: 0; margin-bottom: 2.6rem; }
+.abertura .alg { font-weight: 500; letter-spacing: .42em; padding-left: .42em; font-size: .82rem; }
+.abertura h2 { font-weight: 700; letter-spacing: .05em; font-size: clamp(1.9rem, 6vw, 2.6rem); }
+.abertura p { font-size: 1.08rem; }
+.abertura::after {
+  content: ""; display: block; height: 22px; width: 15rem; max-width: 70%; margin: 1.5rem auto 0;
+  background: var(--ornamento) center / contain no-repeat;
+}
+h3 {
+  font-weight: 700; font-size: 1.32rem; letter-spacing: .03em; color: var(--texto);
+  margin-top: 3rem; padding-bottom: .35rem;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, var(--ouro), transparent 75%) 1;
+}
+h4 { font-family: var(--serifa-titulo); font-weight: 700; font-size: .84rem; letter-spacing: .12em; }
+p.abre::first-letter {
+  font-family: var(--serifa-titulo); font-weight: 700; font-size: 4.3em; line-height: .78;
+  padding: .08em .12em 0 0; color: var(--ouro);
+}
+strong { font-weight: 600; }
+
+/* ---------- blocos ---------- */
+.destaque {
+  border: 1px solid var(--borda); border-top: 2px solid var(--ouro); border-radius: 4px;
+  background: linear-gradient(180deg, var(--superficie-2), var(--papel));
+  box-shadow: 0 .3rem 1rem color-mix(in srgb, var(--sombra) 40%, transparent);
+}
+.destaque .rotulo, .cartao .etiqueta { font-family: var(--serifa-titulo); font-weight: 700; letter-spacing: .14em; }
+.destaque .rotulo { color: var(--ouro); }
+.nota { border-left: 2px solid var(--ouro); font-size: 1rem; }
+.grade { border-radius: 4px; overflow: hidden; }
+.cartao h5 { font-weight: 700; letter-spacing: .03em; font-size: 1rem; }
+.cartao p { font-size: .98rem; }
+
+/* ---------- tabelas ---------- */
+.rolagem { border: 1px solid var(--borda); border-radius: 4px; background: var(--papel); }
+table { font-family: var(--serifa-texto); font-size: .98rem; font-variant-numeric: lining-nums tabular-nums; }
+table.compacta { font-size: .92rem; }
+thead th {
+  font-family: var(--serifa-titulo); font-weight: 700; font-size: .68rem; letter-spacing: .12em;
+  color: var(--ouro); background: var(--superficie-2); border-bottom: 1px solid var(--borda-forte);
+}
+tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--superficie-2) 55%, transparent); }
+tbody tr:last-child td { border-bottom: none; }
+td strong { color: var(--texto); }
+.dado { font-family: var(--mono); font-size: .8em; border: 1px solid color-mix(in srgb, var(--acento) 30%, transparent); }
+
+/* ---------- impressão ---------- */
+@media print {
+  @page parte { margin: 0; background: #05070D; }
+  html { font-size: 10pt; }
+  .livro { box-shadow: none; }
+  .capa-pagina.frente, .capa-pagina.fundo { aspect-ratio: auto; height: 100vh; }
+  .capa-pagina > img { object-fit: cover; max-width: none; max-height: none; }
+  .parte {
+    page: parte; margin: 0; aspect-ratio: auto; height: 100vh;
+    break-before: page; page-break-before: always; break-after: page; page-break-after: always;
+  }
+  .parte img { object-fit: cover; }
+  .parte figcaption { bottom: 12%; }
+  .parte + .capitulo { break-before: auto; page-break-before: auto; }
+  .rolagem { border: 1px solid var(--borda); }
+}
 
 </style>
 
 <div class="livro">
 
 <!-- ==================== CAPA ==================== -->
-<div class="capa-pagina frente" role="img" aria-label="Capa: um castelo de torres pontiagudas sobre um rochedo, janelas acesas, lua cheia entre nuvens e o reflexo dela num lago escuro">
-<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
- <defs>
-  <radialGradient id="ceu" cx="62%" cy="22%" r="80%"><stop offset="0" stop-color="#3a5a7a"/><stop offset=".2" stop-color="#1a2c44"/><stop offset=".5" stop-color="#0b1626"/><stop offset="1" stop-color="#05080f"/></radialGradient>
-  <radialGradient id="lua"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#e6f0ff"/><stop offset="1" stop-color="#b9cfee"/></radialGradient>
-  <radialGradient id="halo"><stop offset="0" stop-color="#cfe3ff" stop-opacity=".55"/><stop offset="1" stop-color="#cfe3ff" stop-opacity="0"/></radialGradient>
-  <linearGradient id="agua" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16263a"/><stop offset="1" stop-color="#04070d"/></linearGradient>
-  <radialGradient id="vinheta" cx="50%" cy="42%" r="75%"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".7"/></radialGradient>
- </defs>
- <rect width="1600" height="900" fill="url(#ceu)"/>
- <g fill="#2c4664" opacity=".55"><ellipse cx="300" cy="150" rx="380" ry="60"/><ellipse cx="1300" cy="110" rx="420" ry="70"/><ellipse cx="800" cy="300" rx="500" ry="40" opacity=".5"/></g>
- <g fill="#dfe9ff"><circle cx="120" cy="80" r="1.6" class="pisca"/><circle cx="420" cy="60" r="1.2"/><circle cx="1500" cy="260" r="1.4" class="pisca"/><circle cx="700" cy="40" r="1"/><circle cx="1180" cy="40" r="1.3" class="pisca"/><circle cx="260" cy="260" r="1"/><circle cx="1450" cy="60" r="1.1"/></g>
- <circle cx="1000" cy="200" r="190" fill="url(#halo)"/>
- <circle cx="1000" cy="200" r="58" fill="url(#lua)"/>
- <path d="M0 520 L180 400 L340 470 L520 380 L700 470 L900 360 L1120 450 L1300 380 L1600 480 L1600 640 L0 640Z" fill="#0d1828"/>
- <path d="M900 640 L1100 460 L1250 520 L1400 430 L1600 520 L1600 640Z" fill="#101d30"/>
- <path d="M150 640 L230 540 L380 520 L520 470 L700 500 L800 560 L860 640Z" fill="#070d18"/>
- <g fill="#060b14">
-  <rect x="250" y="400" width="60" height="140"/><polygon points="245,400 280,300 315,400"/>
-  <rect x="320" y="360" width="50" height="170"/><polygon points="315,360 345,250 375,360"/>
-  <rect x="380" y="420" width="140" height="100"/>
-  <rect x="420" y="280" width="46" height="160"/><polygon points="414,282 443,150 472,282"/>
-  <rect x="480" y="330" width="40" height="120"/><polygon points="475,332 500,250 525,332"/>
-  <rect x="530" y="380" width="90" height="120"/><polygon points="525,382 575,330 625,382"/>
-  <rect x="610" y="300" width="36" height="200"/><polygon points="604,302 628,200 652,302"/>
-  <rect x="660" y="420" width="90" height="90"/><polygon points="655,422 705,380 755,422"/>
-  <rect x="200" y="460" width="50" height="80"/><polygon points="196,462 225,410 254,462"/>
- </g>
- <g fill="#ffcf7a">
-  <rect x="270" y="440" width="5" height="9"/><rect x="335" y="400" width="5" height="9"/><rect x="350" y="450" width="5" height="9"/>
-  <rect x="438" y="320" width="5" height="9"/><rect x="438" y="360" width="5" height="9"/><rect x="400" y="460" width="5" height="8"/>
-  <rect x="430" y="470" width="5" height="8"/><rect x="460" y="460" width="5" height="8"/><rect x="495" y="370" width="4" height="8"/>
-  <rect x="560" y="410" width="5" height="9"/><rect x="590" y="430" width="5" height="9"/><rect x="624" y="340" width="4" height="8"/>
-  <rect x="690" y="450" width="5" height="8"/><rect x="720" y="460" width="5" height="8"/><rect x="215" y="480" width="4" height="8"/>
- </g>
- <rect x="0" y="640" width="1600" height="260" fill="url(#agua)"/>
- <rect x="992" y="660" width="16" height="200" fill="#cfe3ff" opacity=".25"/>
- <g fill="#ffcf7a" opacity=".35"><rect x="436" y="660" width="8" height="60"/><rect x="560" y="670" width="6" height="40"/><rect x="335" y="665" width="6" height="50"/></g>
- <g stroke="#cfe3ff" opacity=".18"><line x1="900" y1="700" x2="1100" y2="700"/><line x1="950" y1="760" x2="1050" y2="760"/></g>
- <rect width="1600" height="900" fill="url(#vinheta)"/>
-</svg>
-<div class="capa-titulo"><h1>Varinhas e Segredos</h1><p>RPG de mesa no mundo bruxo</p></div>
-</div>
+<header class="capa-pagina frente">
+  <img src="assets/capa-1024.webp" srcset="assets/capa-640.webp 640w, assets/capa-1024.webp 1024w" sizes="(max-width: 44rem) 100vw, 44rem" width="1024" height="1536" fetchpriority="high" decoding="async"
+       alt="Um estudante de capa ergue a varinha acesa sobre uma pedra à beira do lago; barcos com lanternas levam alunos a um castelo de muitas torres sob a lua cheia.">
+  <div class="capa-titulo">
+    <p class="capa-sobre">RPG de mesa no mundo bruxo</p>
+    <h1>Varinhas<span>e</span>Segredos</h1>
+  </div>
+  <p class="capa-pe">Livro de Regras <span>·</span> versão 0.9</p>
+</header>
 
 <div class="mancha">
 
@@ -1091,6 +1250,10 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
 </section>
 
 <!-- ==================== II ==================== -->
+<figure class="parte">
+  <img src="assets/parte-jogadores-1024.webp" srcset="assets/parte-jogadores-768.webp 768w, assets/parte-jogadores-1024.webp 1024w" sizes="(max-width: 44rem) 100vw, 44rem" width="1536" height="1024" loading="lazy" decoding="async" alt="Alunos de capa praticam feitiços numa sala de pedra à luz de velas: um ergue um escudo dourado, outro faz uma pena flutuar.">
+  <figcaption><span class="parte-num">Parte Um</span><span class="parte-tit">Para quem joga</span><span class="parte-sub">Como se joga, a ficha, a magia, as poções e os duelos.</span></figcaption>
+</figure>
 <section class="capitulo" id="cap2">
   <div class="abertura">
     <span class="alg">Capítulo Dois</span>
@@ -1172,6 +1335,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <p>Algumas habilidades dão um dado a mais, do mesmo tamanho do <strong>maior</strong> dado da rolagem. Dado extra é raro e sempre tem um preço ou um limite de uso.</p>
   <ul>
     <li>O normal é rolar no máximo <strong>três dados</strong>. Num teste só, nunca entra mais de um dado extra.</li>
+    <li><strong>Cada fonte, uma vez por cena.</strong> Coragem, Mente Afiada, um laço, um poder de trilha ou de carreira: cada fonte de dado extra vale uma vez por cena, e cada personagem usa no máximo <strong>dois dados extras por cena</strong>, somando todas as fontes. O dado extra pesa muito: num teste de d8 + d8 contra DT 11, o sucesso vai de 36% para 78%, e o crítico de 8% para 34%. Ele é para o momento que decide a cena, não para toda rolagem.</li>
     <li>Um <strong>quarto dado</strong> só existe com magia extraordinária (Felix Felicis, artefatos, magia antiga). Rolou quatro, o menor sai da soma.</li>
     <li>Até três dados, todos entram na soma.</li>
   </ul>
@@ -1233,14 +1397,14 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
 
   <ol class="passos">
     <li><b>Conceito.</b> Uma frase: “a corvinal que lê livros proibidos”, “o batedor grifinório que não sabe perder”.</li>
-    <li><b>Atributos.</b> Distribua <span class="dado">d8</span>, <span class="dado">d6</span> e <span class="dado">d6</span> entre Corpo, Mente e Coração — ou <span class="dado">d10</span>, <span class="dado">d6</span> e <span class="dado">d4</span>.</li>
+    <li><b>Atributos.</b> Distribua <span class="dado">d8</span>, <span class="dado">d6</span> e <span class="dado">d6</span> entre Corpo, Mente e Coração — ou <span class="dado">d10</span>, <span class="dado">d6</span> e <span class="dado">d4</span>. Esse d10 é a única exceção ao teto de atributo do Iniciante (d8): o talento que nasceu com você. Ele só sobe de novo quando a patente permitir d12.</li>
     <li><b>Família.</b> Escolha de onde você vem.</li>
     <li><b>Perícias.</b> Todas começam em <span class="dado">d4</span>. Escolha uma para <span class="dado">d8</span> e quatro para <span class="dado">d6</span>.</li>
     <li><b>Varinha.</b> Role ou escolha no <a href="#cap11">Capítulo XI</a>. A varinha escolheu você: ela começa Leal.</li>
-    <li><b>Primeiros feitiços.</b> Dois feitiços de Círculo 1 do currículo do 1º ano, Aprendidos sem custo. Quem vem de família bruxa já sabia antes de chegar; quem foi criado por trouxas os aprende nas aulas introdutórias das primeiras semanas. Ninguém começa atrás. O resto vem das aulas (<a href="#cap4">Capítulo IV</a>).</li>
+    <li><b>Primeiros feitiços.</b> Dois feitiços de Círculo 1, Aprendidos sem custo. <em>Família bruxa ou mestiça:</em> escolha dois do currículo do 1º ano — você já sabia antes de chegar. <em>Criado por trouxas:</em> Lumos e Wingardium Leviosa, as duas primeiras lições de Feitiços, aprendidas nas aulas das primeiras semanas. É o mesmo na ficha; muda só a história, e ninguém começa atrás. O resto vem das aulas (<a href="#cap4">Capítulo IV</a>).</li>
     <li><b>Seleção.</b> O Chapéu Seletor decide a sua Casa (abaixo).</li>
     <li><b>Trilha, peculiaridade e medo.</b> Escolha uma trilha e anote o poder I; escolha uma peculiaridade e o seu medo (<a href="#cap13">Capítulo XIII</a>). Talento natural, só com o Mestre.</li>
-    <li><b>Laços.</b> Dois laços de grau 1: um com outro personagem do grupo, outro com quem você quiser — família, amigo, professor, o seu animal (<a href="#lacos">Laços</a>, Capítulo VII).</li>
+    <li><b>Laços.</b> Até dois laços de grau 1 — família, amigo, professor, o seu animal, outro personagem do grupo (<a href="#lacos">Laços</a>, Capítulo VII). Pode deixar em branco: os laços que faltarem nascem em jogo, nas três primeiras sessões, quando uma cena mostrar com quem.</li>
     <li><b>Recursos.</b> Calcule PV, Determinação e Defesa. Comece com 1 Ímpeto e 0 Pontos de Evolução.</li>
     <li><b>Material.</b> Caldeirão, uniforme, livros, 3 ingredientes comuns e os galeões da família. Um animal: coruja, gato, sapo ou rato.</li>
   </ol>
@@ -1476,11 +1640,11 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   </tbody></table></div>
 
   <h3>Prontidão: o que você lembra sob pressão</h3>
-  <p>Saber um feitiço não é o mesmo que lembrar dele com um dementador na sua frente. Em combate, perseguição ou qualquer cena com pressão, você lança <strong>todos os seus feitiços Dominados</strong> e no máximo <strong>3 + patente</strong> feitiços Aprendidos (Iniciante 4, Aprendiz 5, Adepto 6, Perito 7, Mestre 8). Essa é a sua <strong>Prontidão</strong>.</p>
+  <p>Saber um feitiço não é o mesmo que lembrar dele com um dementador na sua frente. Em combate, perseguição ou qualquer cena com pressão, você lança sem custo <strong>todos os seus feitiços Dominados</strong> e até <strong>3 + patente</strong> feitiços Aprendidos que deixou à mão (Iniciante 4, Aprendiz 5, Adepto 6, Perito 7, Mestre 8). Essa é a sua <strong>Prontidão</strong>. Os outros Aprendidos continuam seus: só custam um instante para lembrar.</p>
   <ul>
     <li>Escolha a Prontidão no começo de cada semana, ou antes de uma aventura. Anote na ficha.</li>
     <li>Fora de pressão, com calma, você usa todo o repertório.</li>
-    <li>Trocar um feitiço da Prontidão no meio da cena custa 1 Ímpeto e o seu movimento.</li>
+    <li><strong>Aprendido fora da Prontidão:</strong> sob pressão, você ainda lança, de um destes jeitos — gasta o movimento da rodada para lembrar (e fica parado) e lança sem penalidade, ou lança na hora com –1 passo.</li>
     <li>Por isso Dominar importa: o feitiço Dominado nunca ocupa espaço.</li>
   </ul>
 
@@ -1645,7 +1809,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Maldição</th><th>Exige querer…</th><th>Sem a intenção</th></tr></thead>
   <tbody>
-  <tr><td><strong>Crucio</strong></td><td>causar sofrimento, e sentir prazer nisso. Raiva, justiça ou necessidade não bastam.</td><td>Uma pontada: o alvo fica Atordoado (Breve) e mais nada.</td></tr>
+  <tr><td><strong>Crucio</strong></td><td>causar sofrimento, e sentir prazer nisso. Raiva, justiça ou necessidade não bastam.</td><td>Falha. Nenhum efeito na ficha do alvo: no máximo um formigamento que passa na hora. Quem tentou sabe o que tentou.</td></tr>
   <tr><td><strong>Imperio</strong></td><td>dominar a vontade de outra pessoa.</td><td>Nada acontece.</td></tr>
   <tr><td><strong>Avada Kedavra</strong></td><td>matar. Ódio, frieza ou certeza: precisa ser de verdade.</td><td>Um clarão verde que não faz nada, ou nem sai.</td></tr>
   </tbody></table></div>
@@ -1658,8 +1822,8 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td>Protego, Protego Maxima, qualquer escudo comum</td><td>Não.</td></tr>
   <tr><td>Resistir com Corpo ou Vontade depois do impacto</td><td>Não.</td></tr>
   <tr><td>Muitos PV, armadura, vestes, um objeto segurado à toa</td><td>Não.</td></tr>
-  <tr><td><strong>Desviar</strong> (Capítulo VII), com espaço</td><td>Sim.</td></tr>
-  <tr><td><strong>Interpor</strong> uma parede, estátua, mesa maciça ou porta (Capítulo VII)</td><td>Sim: o objeto é destruído no lugar do alvo.</td></tr>
+  <tr><td><strong>Desviar</strong> (Capítulo VII), com espaço</td><td>Sim, mas só com defesa completa: igualar ou passar o ataque. Ficar 1 ou 2 abaixo não salva — não existe meia morte.</td></tr>
+  <tr><td><strong>Interpor</strong> uma parede, estátua, mesa maciça ou porta (Capítulo VII)</td><td>Sim, se igualar ou passar o ataque: o objeto é destruído no lugar do alvo. Abaixo disso, a maldição passa.</td></tr>
   <tr><td>Proteções extraordinárias (um sacrifício por amor, varinhas-irmãs se encontrando)</td><td>Só quando a história do Mestre as estabelece. Nunca se compram.</td></tr>
   </tbody></table></div>
   <h4>Crucio</h4>
@@ -1877,6 +2041,8 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <p><strong>Dentro de uma fase, tudo acontece ao mesmo tempo.</strong> Os jogadores resolvem na ordem que combinarem e os NPCs por último, mas o resultado vale para todos: se você e o bruxo das trevas trocam Estupefaça na fase de feitiços, os dois feitiços saem, mesmo que o seu derrube ele. Entre fases, não: um Petrificus na fase de feitiços impede o trasgo de bater na fase corpo a corpo. Quem luta de perto precisa sobreviver aos feitiços primeiro; quem lança feitiço quer acabar com a briga antes que ela chegue perto.</p>
   <p>Criaturas seguem a mesma regra. O Mestre diz em que fase cada uma age pelo tipo de ataque: a acromântula que cospe teia age nos feitiços, o lobisomem no corpo a corpo. Um NPC que faz as duas coisas escolhe uma por rodada, como você.</p>
 
+  <p><strong>Uma ação extra por rodada, no máximo.</strong> Laço de Devoção, Réplica e Encadear do Duelista, um poder de criatura: venha de onde vier, ninguém faz mais de uma ação a mais na mesma rodada. Réplica e Encadear, que lançam com o movimento, contam como essa ação extra.</p>
+
   <h3>Movimento e distância</h3>
   <ul>
     <li><strong>Movimento:</strong> 9 m por rodada. Terreno difícil (lama, escombros, escada mudando) conta o dobro.</li>
@@ -1900,7 +2066,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <thead><tr><th>Sua reação</th><th>Resultado</th></tr></thead>
   <tbody>
   <tr><td>Igualou ou passou o ataque</td><td><strong>Defesa completa:</strong> nada te atinge.</td></tr>
-  <tr><td>Ficou 1 ou 2 abaixo</td><td><strong>Defesa parcial:</strong> metade do dano, e nenhuma condição ou efeito extra.</td></tr>
+  <tr><td>Ficou 1 ou 2 abaixo</td><td><strong>Defesa parcial:</strong> metade do dano, e nenhuma condição ou efeito extra. Nunca contra a Avada Kedavra e a Cruciatus: contra elas, ou a defesa é completa, ou a maldição acerta inteira.</td></tr>
   <tr><td>Ficou 3 ou mais abaixo</td><td>O ataque funciona inteiro.</td></tr>
   <tr><td>Crítico na reação</td><td>Defesa completa e uma abertura (abaixo).</td></tr>
   </tbody></table></div>
@@ -1914,6 +2080,19 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <div class="destaque"><span class="rotulo">Interpor</span>
   <p>Reação. Coloque algo sólido entre um ataque e um alvo a até 9 m: levitar uma mesa, puxar uma estátua com Accio, transfigurar o chão numa parede, ou se jogar na frente. Role o feitiço usado (ou Corpo + Atletismo, DT 9, para o próprio corpo) contra o total do ataque. Passou: o objeto recebe o ataque inteiro e quase sempre se quebra; o alvo nada sofre. O objeto precisa ser grande e maciço — uma veste, um livro ou uma cadeira leve não param uma Avada Kedavra. Quem se joga na frente recebe o ataque no lugar.</p>
   <p><strong>Tem que ser plausível.</strong> O objeto precisa existir ao alcance — ou haver matéria para transfigurar —, caber entre os dois e chegar a tempo. Transfigurar uma parede do nada exige a técnica Conjuração (Capítulo XIII). No campo aberto, sem nada por perto, só resta Desviar. O Mestre diz o que há na cena antes do combate, não depois do ataque.</p></div>
+
+  <h4>Casos difíceis</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Situação</th><th>Como resolve</th></tr></thead>
+  <tbody>
+  <tr><td>Protego ou Desviar contra feitiço de <strong>efeito</strong> (Petrificus, Incarcerous, Levicorpus)</td><td>A reação compara com o total do lançamento. Completa: nada acontece. Parcial: o feitiço chega fraco, e o alvo resiste com +1 passo. Abaixo: o alvo resiste normalmente.</td></tr>
+  <tr><td>Efeito que não é um raio (Confundo no ar, Imperio, Legilimens)</td><td>Não dá para desviar. Protego só serve se o feitiço disser; senão, só a resistência.</td></tr>
+  <tr><td>Ataque com efeito extra (Flipendo empurra, Glacius congela)</td><td>Defesa parcial tira metade do dano e o efeito extra inteiro.</td></tr>
+  <tr><td>Feitiço de área contra quem tem Protego</td><td>Protego protege você por inteiro; os aliados resistem ou Desviam sozinhos, a não ser que você gaste a reação num deles.</td></tr>
+  <tr><td>Dois feitiços na mesma fase contra o mesmo alvo</td><td>Saem na ordem em que foram resolvidos. O alvo decide reagir ou não a cada um, vendo o total; gastou a reação, os seguintes acertam sem defesa (Defender-se dá duas).</td></tr>
+  <tr><td>Avada Kedavra e Cruciatus</td><td>Protego não para. Só Desviar ou Interpor, e só com defesa completa.</td></tr>
+  <tr><td>Preparar um Protego para um aliado</td><td>Não precisa: Protego já é reação. Preparar serve para atacar ou agir antes de um gatilho.</td></tr>
+  </tbody></table></div>
 
   <h3>Estilos de duelo</h3>
   <p>Estilos são técnicas aprendidas, não classes. Cada um custa 6 PE e exige o 3º ano e um mestre (o Clube de Duelos, um professor, um auror). Você pode ter mais de um.</p>
@@ -2056,11 +2235,11 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tbody>
   <tr><td class="num">1</td><td><strong>Afeto</strong></td><td>+1 passo num teste; ou, ao Ajudar essa pessoa, ela ganha um passo a mais.</td></tr>
   <tr><td class="num">2</td><td><strong>Vínculo</strong></td><td>Um <span class="dado">d8</span> extra num teste; ou recupere <span class="dado">1d4</span> DET; ou encerre o seu pavor.</td></tr>
-  <tr><td class="num">3</td><td><strong>Devoção</strong></td><td>Um <span class="dado">d12</span> extra num teste; ou uma segunda ação nesta rodada, numa fase depois da primeira; ou passe direto num teste de trauma.</td></tr>
+  <tr><td class="num">3</td><td><strong>Devoção</strong></td><td>Um <span class="dado">d12</span> extra num teste; ou uma segunda ação nesta rodada, numa fase depois da primeira (é a única ação extra da rodada); ou passe direto num teste de trauma.</td></tr>
   </tbody></table></div>
-  <p><strong>Invocar.</strong> Diga, na pele do personagem, o que sente por aquela pessoa e por que isso faz você continuar. Sem a fala, não vale. Cada laço pode ser invocado <strong>uma vez por aventura</strong>: há um limite para a força que se tira de um sentimento. O dado extra conta no limite de dados do teste.</p>
+  <p><strong>Invocar.</strong> Diga, na pele do personagem, o que sente por aquela pessoa e por que isso faz você continuar. Sem a fala, não vale. Cada laço pode ser invocado <strong>uma vez por aventura</strong>, e há um teto para todos juntos: <strong>um laço por cena</strong> e <strong>três invocações por aventura</strong>, por mais laços que você tenha. Há um limite para a força que se tira de um sentimento. O dado extra conta no limite de dados do teste e nos dois dados extras por cena.</p>
   <p><strong>Patrono.</strong> A memória feliz do Expecto Patronum é quase sempre um laço. Invocar um laço ao lançar o Patrono dá +1 passo no feitiço, além do benefício do grau.</p>
-  <p><strong>Ganhar e subir.</strong> Todo personagem começa com dois laços de grau 1: um com outro personagem do grupo, outro com quem quiser. Um laço novo nasce numa cena que importa — uma ajuda num momento difícil, um segredo dividido, um risco corrido junto. Subir um grau pede outra cena assim, e cada laço sobe no máximo um grau por trimestre. Você pode ter tantos laços quanto o valor do seu Coração.</p>
+  <p><strong>Ganhar e subir.</strong> Todo personagem começa com até dois laços de grau 1, ou os descobre em jogo nas primeiras sessões. Um laço novo nasce numa cena que importa — uma ajuda num momento difícil, um segredo dividido, um risco corrido junto. Subir um grau pede outra cena assim, e cada laço sobe no máximo um grau por trimestre. Você pode ter até cinco laços; ter mais não dá mais invocações.</p>
   <p><strong>Laço ferido.</strong> Se a pessoa trai você, o laço desce um grau. Se ela morre, faça um teste de trauma; o laço fica como memória, no grau que tinha, e ainda pode ser invocado.</p>
 
   <h3>Condições</h3>
@@ -2101,6 +2280,10 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
 </section>
 
 <!-- ==================== VIII ==================== -->
+<figure class="parte">
+  <img src="assets/parte-mestre-1024.webp" srcset="assets/parte-mestre-768.webp 768w, assets/parte-mestre-1024.webp 1024w" sizes="(max-width: 44rem) 100vw, 44rem" width="1536" height="1024" loading="lazy" decoding="async" alt="Um mapa antigo de um castelo sobre a mesa, à luz de vela, com miniaturas de um dragão, uma aranha gigante e um trasgo, uma varinha e uma ampulheta.">
+  <figcaption><span class="parte-num">Parte Dois</span><span class="parte-tit">Para o Mestre</span><span class="parte-sub">Criaturas, gente, varinhas, lugares e aventuras.</span></figcaption>
+</figure>
 <section class="capitulo" id="cap8">
   <div class="abertura"><span class="alg">Capítulo Oito</span><h2>Forja de Criaturas</h2><p>Para o Mestre: as tabelas para montar qualquer fera</p></div>
   <p class="abre">Toda criatura sai deste motor. A aparência é livre; o perfil mecânico não é. Siga os passos, role ou escolha em cada tabela, e a ficha fica pronta em dez minutos.</p>
@@ -2599,6 +2782,10 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
 
 
 <!-- ==================== XIII ==================== -->
+<figure class="parte">
+  <img src="assets/parte-campanha-1024.webp" srcset="assets/parte-campanha-768.webp 768w, assets/parte-campanha-1024.webp 1024w" sizes="(max-width: 44rem) 100vw, 44rem" width="1536" height="1024" loading="lazy" decoding="async" alt="O castelo visto de longe, com as estações passando da esquerda para a direita: outono, neve, flores e verão sobre o lago, e alunos voando de vassoura.">
+  <figcaption><span class="parte-num">Parte Três</span><span class="parte-tit">A campanha</span><span class="parte-sub">Sete anos de escola, um mundo que anda sozinho.</span></figcaption>
+</figure>
 <section class="capitulo" id="cap13">
   <div class="abertura"><span class="alg">Capítulo Treze</span><h2>Evolução e exames</h2><p>Níveis, trilhas, Pontos de Evolução e notas</p></div>
 
@@ -2649,7 +2836,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>Perito</strong></td><td>13–16</td><td>Círculo 4</td><td><span class="dado">d12</span> / <span class="dado">d10</span></td><td class="num">4</td><td>Poder IV; feitiço potencializado</td></tr>
   <tr><td><strong>Mestre</strong></td><td>17–20</td><td>Proibidos (se tiver a fonte)</td><td><span class="dado">d12</span> / <span class="dado">d12</span></td><td class="num">5</td><td>Poder V</td></tr>
   </tbody></table></div>
-  <p>O Círculo da patente se soma às outras exigências: você ainda precisa da fonte (Capítulo IV) e do dado mínimo do Círculo. A <strong>Prontidão</strong> (Capítulo IV) é 3 + o número da patente (Iniciante 1 … Mestre 5). Com cerca de 30 PE por ano, o aluno termina o 1º ano no nível 3, chega a Aprendiz no 2º, Adepto no 4º, Perito no fim do 5º e Mestre no 7º — o último ano ainda tem o que conquistar.</p>
+  <p>O d10 de atributo da criação (Capítulo III) é a única exceção ao teto do Iniciante. O Círculo da patente se soma às outras exigências: você ainda precisa da fonte (Capítulo IV) e do dado mínimo do Círculo. A <strong>Prontidão</strong> (Capítulo IV) é 3 + o número da patente (Iniciante 1 … Mestre 5). Com cerca de 30 PE por ano, o aluno termina o 1º ano no nível 3, chega a Aprendiz no 2º, Adepto no 4º, Perito no fim do 5º e Mestre no 7º — o último ano ainda tem o que conquistar.</p>
 
   <h4>Afinidade mágica (Adepto)</h4>
   <div class="rolagem"><table class="compacta">
@@ -2784,10 +2971,11 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <p>No fim do 5º ano (N.O.M.) e do 7º (N.I.E.M.), cada matéria tem três partes, cada uma valendo 0, 1 ou 2 pontos:</p>
   <ol class="passos">
     <li><b>Desempenho acumulado.</b> A Nota do ano: 0–2 vale 0; 3–4 vale 1; 5–6 vale 2.</li>
-    <li><b>Prova teórica.</b> Mente + Conhecimento Mágico (ou a perícia da matéria), DT 9 no N.O.M., 11 no N.I.E.M. Sucesso 1, crítico 2. Estudar para a prova (dois períodos livres na semana anterior) dá +1 passo.</li>
-    <li><b>Prova prática.</b> Lançar, preparar ou fazer algo do currículo diante dos examinadores, contra a mesma DT. Sucesso 1, crítico 2. O Mestre pode transformar a prática num minigame da matéria.</li>
+    <li><b>Prova teórica.</b> Mente + Conhecimento Mágico (ou a perícia da matéria), DT 9 no N.O.M., 11 no N.I.E.M. Sucesso 1; crítico, ou passar a DT por 4 ou mais, 2. Estudar para a prova (dois períodos livres na semana anterior) dá +1 passo.</li>
+    <li><b>Prova prática.</b> Lançar, preparar ou fazer algo do currículo diante dos examinadores, contra a mesma DT. Sucesso 1; crítico, ou passar a DT por 4 ou mais, 2. O Mestre pode transformar a prática num minigame da matéria.</li>
   </ol>
-  <p>Some os pontos: 0 T · 1 D · 2 P · 3 A · 4–5 E · 6 O. Acontecimentos do ano entram como circunstância: quem passou a noite anterior perseguindo um lobisomem faz a prova com –1 passo; quem tem um mentor na matéria, +1.</p>
+  <p><strong>Preparação excepcional: +1 ponto</strong> (o total não passa de 6) para quem, nessa matéria, completou um projeto de longo prazo no ano, tem a técnica avançada, ou fez uma prova prática que o Mestre transformou em minigame e venceu sem nenhuma falha. Um só ponto, venha de onde vier.</p>
+  <p>Some os pontos: 0 T · 1 D · 2 P · 3 A · 4–5 E · 6 O. Um bom aluno chega lá: com d10 + d10 no N.I.E.M., cada prova dá 2 pontos uma vez em quatro; com o desempenho no máximo e a preparação, basta uma das duas. Acontecimentos do ano entram como circunstância: quem passou a noite anterior perseguindo um lobisomem faz a prova com –1 passo; quem tem um mentor na matéria, +1.</p>
   <p><strong>Depois do N.O.M.</strong>, só cursa a matéria no 6º ano quem tirou o conceito exigido pelo professor (em geral E; Poções com alguns professores, O).</p>
 
   <h3>Carreiras</h3>
@@ -2817,6 +3005,8 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <div class="abertura"><span class="alg">Capítulo Catorze</span><h2>A vida em Hogwarts</h2><p>O horário, as aulas, os clubes e os minigames da escola</p></div>
 
   <p class="abre">Uma campanha em Hogwarts não é uma aventura atrás da outra. Entre um mistério e outro há aulas, deveres, clubes, detenções, treinos de Quadribol e noites fora da cama. Este capítulo transforma a rotina em jogo. A regra de cada minigame é a mesma: <strong>trilhas com limites claros e uma escolha a cada rodada</strong>. Ninguém só rola dados; todo mundo decide o que arriscar — e, às vezes, o Mestre tem que adivinhar o que você escolheu.</p>
+
+  <div class="nota"><p><strong>Minigame é para quando importa.</strong> A rotina se resolve com um teste: o armário comum, a aula sem nada em jogo, a ronda tranquila. A versão completa é para a cena que o grupo vai lembrar — uma ou duas por sessão. E a melhor cena junta vários: veja <em>Quando os sistemas se encontram</em>, no fim do capítulo.</p></div>
 
   <h3>O horário</h3>
   <p>Cada ano tem uma grade fixa. As aulas acontecem sozinhas — o Mestre só joga a aula quando ela importa —, mas presença conta.</p>
@@ -2902,11 +3092,11 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
     <div class="cartao"><h5>Runas Antigas</h5><p class="etiqueta">Hipóteses e erros</p>
     <p>Um texto tem 3 a 6 Trechos. Para cada Trecho, escolha: <em>traduzir literalmente</em> (Mente + Conhecimento Mágico, DT 9; certo, mas sem sentido completo até ter o Trecho seguinte) ou <em>arriscar uma hipótese</em> (diga em voz alta o que acha que significa; DT 7; se a hipótese estiver perto da verdade, o Mestre confirma; se estiver longe, marque um Erro sem saber). Com 2 Erros, a tradução tem uma frase errada que o Mestre escreve em segredo e só revela quando importar. Reler um Trecho já traduzido apaga um Erro, mas gasta um período.</p></div>
     <div class="cartao"><h5>Aritmancia</h5><p class="etiqueta">Números com intenção</p>
-    <p>A Aritmancia trabalha com dados que você tem. Diga o que quer prever e o que estudou (1 a 3 períodos); role Mente + Conhecimento Mágico, +1 passo por período depois do primeiro, DT 9 a 13. Sucesso: <em>provável</em>, <em>improvável</em> ou <em>incerto</em>, e um padrão nos dados. Crítico: e o que mudaria a resposta. Exemplos: "o Pirraça ataca mais às terças?" (registros de detenção, DT 9); "a próxima lua cheia cai num dia de jogo?" (calendário lunar, DT 9); "o ladrão do armário volta esta semana?" (datas dos sumiços, DT 11). Nunca revela o que não está nos dados.</p></div>
+    <p>A Aritmancia trabalha com dados que você tem. Diga o que quer prever e o que estudou (1 a 3 períodos); role Mente + Conhecimento Mágico, +1 passo por período depois do primeiro, DT 9 a 13. Antes de rolar, escolha o rigor: <em>rápido</em> (um período a menos, a resposta vem sem o padrão) ou <em>cruzado</em> (um período a mais; se falhar, você sabe que falhou e não recebe uma resposta errada). Sucesso: <em>provável</em>, <em>improvável</em> ou <em>incerto</em>, e um padrão nos dados. Crítico: e o que mudaria a resposta. Exemplos: "o Pirraça ataca mais às terças?" (registros de detenção, DT 9); "a próxima lua cheia cai num dia de jogo?" (calendário lunar, DT 9); "o ladrão do armário volta esta semana?" (datas dos sumiços, DT 11). Nunca revela o que não está nos dados.</p></div>
     <div class="cartao"><h5>Adivinhação</h5><p class="etiqueta">Visões comuns e raras</p>
     <p>Uma vez por mês, faça uma pergunta e escolha o método: folhas de chá, bola de cristal, cartas ou estrelas. Role Coração + Adivinhação, DT 9. Sucesso: uma <em>visão comum</em> — duas ou três imagens simbólicas sobre algo que pode acontecer; a interpretação é sua. Crítico: uma <em>visão rara</em> — uma cena nítida e curta de algo que vai acontecer se ninguém mudar o rumo. Falha: imagens confusas, que o Mestre pode tornar enganosas. Quando uma visão se cumprir, você ganha 1 Ímpeto. Visões raras sem teste só vêm com o talento Vidente nato ou a técnica Olho interior.</p></div>
     <div class="cartao"><h5>Astronomia</h5><p class="etiqueta">A torre à meia-noite</p>
-    <p>Mapear o céu: três testes de Mente + Percepção, DT 7, 9 e 11; dois ou três sucessos dão +1 de aproveitamento. Antes de cada noite, role <span class="dado">1d8</span> para o céu: 1 nublado (adie); 2 lua cheia (lobisomens; nada de aula na Floresta); 3 chuva de meteoros (crítico em qualquer teste dá uma pista); 4 Marte brilhante (o centauro diz "conflito"); 5 eclipse (poções com repouso nesta noite: –1 de Instabilidade); 6 conjunção (Adivinhação na semana: +1 passo); 7 aurora mágica (todos ganham 1 Ímpeto); 8 algo voa na frente da lua (vassoura, testrálio, alguém que não devia).</p></div>
+    <p>Mapear o céu: três testes de Mente + Percepção, DT 7, 9 e 11; dois ou três sucessos dão +1 de aproveitamento. Antes de cada teste, escolha o alvo: <em>um planeta</em> (DT –2, só conta como meio sucesso), <em>uma constelação</em> (normal) ou <em>um evento raro</em> (DT +2; sucesso vale dois e dá uma pergunta ao Mestre sobre o futuro próximo). Com nuvens chegando, você pode parar e guardar o que tem, ou arriscar mais um teste: falhou, perde o mapa da noite. Antes de cada noite, role <span class="dado">1d8</span> para o céu: 1 nublado (adie); 2 lua cheia (lobisomens; nada de aula na Floresta); 3 chuva de meteoros (crítico em qualquer teste dá uma pista); 4 Marte brilhante (o centauro diz "conflito"); 5 eclipse (poções com repouso nesta noite: –1 de Instabilidade); 6 conjunção (Adivinhação na semana: +1 passo); 7 aurora mágica (todos ganham 1 Ímpeto); 8 algo voa na frente da lua (vassoura, testrálio, alguém que não devia).</p></div>
     <div class="cartao"><h5>História da Magia</h5><p class="etiqueta">Reconstruir o que aconteceu</p>
     <p>A aula comum é ficar acordado (Corpo + Vontade, DT 7; sucesso: +1 de aproveitamento e um fato anotado). O <strong>trabalho de História</strong> é o minigame de verdade: o Mestre dá um acontecimento (uma revolta de duendes, a fundação de uma Casa) e três ou quatro <strong>relatos</strong> diferentes — um deles falso ou exagerado. Para cada relato, escolha: <em>comparar com outro</em> (Mente + Conhecimento Mágico, DT 9; mostra onde os dois discordam), <em>examinar a fonte</em> (Mente + Investigação, DT 9; diz se o documento é da época, quem o escreveu e o que ele queria) ou <em>procurar uma testemunha</em> (um fantasma, um quadro; Coração + Persuasão). No fim, diga o que aconteceu e qual relato é falso. Acertou: +2 de aproveitamento; pela metade: +1. O que você descobre pode ser pista de um mistério de agora.</p></div>
     <div class="cartao"><h5>Trato das Criaturas Mágicas</h5><p class="etiqueta">Confiança e Agitação</p>
@@ -3009,7 +3199,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td>Bando (pixies, acromântulas pequenas, diabretes)</td><td><span class="dado">d8</span>; não tem Persistência: a cena acaba quando vocês saem da área</td><td class="num">—</td></tr>
   <tr><td>Dementador (sente, não vê)</td><td><span class="dado">d10</span></td><td class="num">até ir embora</td></tr>
   </tbody></table></div>
-  <p>Um passo acima do <span class="dado">d6</span> é o <span class="dado">d8</span>; um passo abaixo do <span class="dado">d6</span> é o <span class="dado">d4</span>. Passada a Persistência sem achar todos, o procurador desiste e vai embora. Quem já completou a área e está esperando não é procurado, a não ser que continue agindo.</p>
+  <p>Um passo acima do <span class="dado">d6</span> é o <span class="dado">d8</span>; um passo abaixo do <span class="dado">d6</span> é o <span class="dado">d4</span>. <strong>Cerco.</strong> Quem procura vai chegando perto: a partir da terceira rodada na mesma área, os dados de busca sobem um passo (o d6 vira d8), e assim um esconderijo de 7 ou 8 deixa de ser seguro. Passar para a próxima área zera o cerco. Passada a Persistência sem achar todos, o procurador desiste e vai embora. Quem já completou a área e está esperando não é procurado, a não ser que continue agindo.</p>
   <h4>Encontrado</h4>
   <p>Quem fica sem nenhum dado de esconderijo foi encontrado. No castelo, ele está pego: detenção e pontos tirados, a não ser que consiga se explicar (Coração + Enganação contra a Vontade de quem achou) ou fugir — e aí começa uma <strong>Perseguição</strong> (abaixo). Diante de uma criatura, sofre <span class="dado">1d6</span> de dano no fim de cada rodada e ainda pode Avançar para escapar. Um amigo pode Distrair ou Cobrir para devolver um dado a ele.</p>
   <h4>As áreas</h4>
@@ -3136,7 +3326,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <ol class="passos">
     <li><b>A combinação.</b> O Mestre rola, escondido, os dados da tranca (tabela) e os deixa em fila, na ordem em que saíram.</li>
     <li><b>A tentativa.</b> Você pega o mesmo número e tipo de dados e, sem rolar, vira cada um no número que quiser, em fila.</li>
-    <li><b>A resposta.</b> O Mestre diz, dado a dado, na ordem: <em>baixo</em>, <em>alto</em> ou <em>certo</em>. Para dar clima, troque por sons — “tic”, “toc” e “clique” — sem dizer qual é qual.</li>
+    <li><b>A resposta.</b> O Mestre diz, dado a dado, na ordem: <em>baixo</em>, <em>alto</em> ou <em>certo</em>. Para dar clima, troque por sons — “tic” é baixo, “toc” é alto, “clique” é certo —, combinados antes da primeira tentativa.</li>
   </ol>
   <p>Por rodada, você faz uma tentativa por passo da perícia, mais uma: <span class="dado">d4</span> uma, <span class="dado">d6</span> duas, <span class="dado">d8</span> três, <span class="dado">d10</span> quatro, <span class="dado">d12</span> cinco. A perícia é Feitiços para tranca encantada (você testa variações do contrafeitiço), Furtividade para fechadura trouxa (com um grampo ou ferramenta) e Conhecimento Mágico para tranca de runas.</p>
   <div class="rolagem"><table class="compacta">
@@ -3147,7 +3337,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td>Excelente (cofre do diretor, porta do Ministério)</td><td>3 <span class="dado">d10</span></td><td class="num">5</td></tr>
   <tr><td>De duende (Gringotes)</td><td>4 <span class="dado">d12</span></td><td class="num">4</td></tr>
   </tbody></table></div>
-  <p>Com sons no lugar das palavras, some 1 tentativa. Passou do máximo, a tranca <strong>trava</strong> e não abre mais na técnica. Tranca encantada que trava costuma avisar alguém: grita, esquenta, chama o dono. Quem joga bem, cortando as possibilidades pela metade a cada tentativa, sempre abre a tranca de duende na quarta — mas só se não errar nenhuma vez.</p>
+  <p>Para a tranca sem importância, um teste só basta. Passou do máximo, a tranca <strong>trava</strong> e não abre mais na técnica. Tranca encantada que trava costuma avisar alguém: grita, esquenta, chama o dono. Quem joga bem, cortando as possibilidades pela metade a cada tentativa, sempre abre a tranca de duende na quarta — mas só se não errar nenhuma vez.</p>
   <h4>Arrombar</h4>
   <p>Força bruta: Bombarda, Reducto, um ombro na porta. Cada tentativa é uma ação e um teste (o feitiço contra a DT do Círculo, ou Corpo + Atletismo DT 7 gastando 1 PV). Passou, anote o RA; o crítico anota os dois maiores. Abre quando a soma chega à resistência: porta de madeira 10, porta reforçada 20, cofre 30. Tranca de duende não se arromba. Cada tentativa faz barulho — no esconder-se, é ação chamativa; na ronda, o relógio avança — e o que está dentro pode quebrar.</p>
 
@@ -3181,7 +3371,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <ul>
     <li><strong>Sucesso:</strong> 1 parte. <strong>Crítico:</strong> 2 partes. <strong>Falha:</strong> nenhuma, e role <span class="dado">1d6</span>: com 1, uma <em>complicação</em> (falta um ingrediente, alguém descobre, a criatura foge, o experimento sai do controle).</li>
     <li>Cada projeto precisa de um <strong>recurso</strong> que o Mestre escolhe: um livro, um ingrediente raro, um lugar escondido, a ajuda de um professor. Sem o recurso, o relógio para na metade.</li>
-    <li><strong>Completo:</strong> o projeto dá o que prometia — um feitiço novo (Capítulo V), um objeto encantado (Capítulo XI), uma criatura que confia em você, uma descoberta — e +2 PE.</li>
+    <li><strong>Completo:</strong> o projeto dá o que prometia — um feitiço novo (Capítulo V), um objeto encantado (Capítulo XI), uma criatura que confia em você, uma descoberta — e +2 PE, se o projeto mudou alguma coisa na campanha. Repetir o mesmo projeto pequeno (a mesma poção, o mesmo objeto) dá o resultado, não PE.</li>
     <li>Dois personagens no mesmo projeto: cada um rola no seu período; os dois relógios são um só.</li>
   </ul>
 
@@ -3217,8 +3407,33 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
     <li><strong>Interceptar:</strong> o outro Apanhador só percebe a manobra se tiver 2 Pistas ou mais. Aí ele pode disputar: teste oposto de Corpo + Voo, com –1 passo para quem tem menos Pistas. O maior pega. Empate: ninguém pega, os dois voltam a 2 Pistas. Com menos de 2 Pistas, ele não vê nada e continua procurando.</li>
   </ul>
   <p>Uma partida de verdade dura de 6 a 15 lances. Para não cansar a mesa, o Mestre resume com um lance a cada "momento" narrado, e reserva os lances completos para os jogadores.</p>
-</section>
 
+  <h3>Quando os sistemas se encontram</h3>
+  <p>O que deixa Hogwarts viva não é cada minigame sozinho, é um puxando o outro. Monte as semanas importantes como uma corrente: um problema que só se resolve passando por vários sistemas, e um resultado que muda algo concreto depois.</p>
+  <div class="destaque"><span class="rotulo">Exemplo: a vassoura sabotada</span>
+  <p>Uma semana antes do jogo contra a Sonserina, a vassoura da apanhadora começa a puxar para a esquerda.</p>
+  <ol class="passos">
+    <li><b>Investigação.</b> O vestiário vira uma cena de pontos de interesse: o armário arranhado, a vassoura, o elfo que limpa à noite.</li>
+    <li><b>Biblioteca e Runas.</b> Uma inscrição minúscula no cabo pede três períodos de pesquisa e uma hipótese de Runas Antigas.</li>
+    <li><b>Conversa que importa.</b> Os suspeitos têm Interesse e Memórias: quem tem uma Dívida com o capitão adversário?</li>
+    <li><b>Projeto.</b> Consertar a vassoura é um relógio de 6 partes, com Reparo e Feitiços, e o jogo é no sábado.</li>
+    <li><b>Quadribol.</b> Se o conserto não fechou, a apanhadora joga com –1 passo; se fechou, com a vassoura melhor que antes.</li>
+    <li><b>Consequência.</b> Os Pontos das Casas mudam; o culpado pega detenção ou fica sabendo que vocês sabem; a relação com o time muda; um relógio de plano avança.</li>
+  </ol></div>
+  <p>Toda corrente termina mexendo em pelo menos uma destas coisas: uma <strong>nota</strong> ou matéria, uma <strong>relação</strong> ou laço, um <strong>recurso</strong> (galeões, ingrediente, item, favor), o <strong>Prestígio</strong> de um clube, os <strong>Pontos das Casas</strong> ou um <strong>relógio</strong> do mundo.</p>
+
+  <h3>Mais coisas para fazer na escola</h3>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Atividade</th><th>Como funciona</th><th>O que muda</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Eleição</strong> (monitor, capitão, presidente de clube)</td><td>Um relógio de 6 partes para cada candidato, por duas semanas. Cada período de campanha é Coração + Persuasão (DT 9): sucesso, +1 parte; um escândalo descoberto, –2. Quem fechar primeiro, ou tiver mais partes no dia, vence.</td><td>O cargo e os seus poderes (Clubes); Respeito de quem votou; rivais.</td></tr>
+  <tr><td><strong>Competição acadêmica</strong> (torneio de Feitiços, concurso de Poções, olimpíada de Aritmancia)</td><td>Três rodadas contra os melhores de cada Casa: um teste da matéria por rodada, DT 9, 11, 13. Quem passa mais rodadas vence; empate, o maior total da última.</td><td>Pontos para a Casa (10 a 50), +1 de aproveitamento, um professor que passa a reparar em você.</td></tr>
+  <tr><td><strong>Pesquisa mágica</strong></td><td>Um projeto de 12 partes com um professor orientador. Cada trimestre sem avanço tira 1 de Respeito dele.</td><td>Um feitiço novo (Capítulo V), uma receita, uma descoberta publicada; +1 ponto de preparação no N.O.M./N.I.E.M. da matéria.</td></tr>
+  <tr><td><strong>Conflito entre clubes</strong></td><td>Dois clubes querem a mesma sala, o mesmo professor, a mesma data. Cada semana, cada lado gasta um período e rola o teste do seu projeto; quem tiver mais sucessos em três semanas ganha.</td><td>O Prestígio de um sobe 1 e o do outro desce 1; uma Dívida ou uma rivalidade entre os presidentes.</td></tr>
+  <tr><td><strong>Vida econômica</strong></td><td>Um período por semana de bico (corujal, estufas, aulas particulares, revenda de produtos de Hogsmeade): Mente ou Corpo + perícia, DT 7; sucesso, <span class="dado">1d4</span> sicles; crítico, um galeão. Vender algo proibido rende o triplo e é detenção se descobrirem.</td><td>Galeões para ingredientes, presentes, subornos e Dívidas.</td></tr>
+  <tr><td><strong>Disciplina</strong></td><td>Pego fazendo algo errado, o professor decide pela Afinidade e pelo Respeito que tem por você: os dois positivos, um aviso; um negativo, detenção; os dois negativos, pontos tirados e carta para casa. Uma boa explicação (Coração + Persuasão, DT 9) sobe um degrau.</td><td>Detenções, Pontos das Casas, a confiança dos professores e dos pais.</td></tr>
+  </tbody></table></div>
+</section>
 
 <!-- ==================== XV ==================== -->
 <section class="capitulo" id="cap15">
@@ -3346,6 +3561,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td class="num">8–9</td><td>esquenta: a amizade fica mais forte, a rivalidade mais funda, o namoro mais sério.</td></tr>
   <tr><td class="num">10</td><td>vira outra coisa: rivais viram amigos, amigos viram par, par vira rivalidade.</td></tr>
   </tbody></table></div>
+  <p><strong>As grandes viradas precisam de motivo.</strong> O 1 e o 10 só valem se algo no trimestre justificar — um acontecimento, um segredo descoberto, uma escolha dos jogadores. Sem motivo, leia o 1 como 2–3 e o 10 como 8–9. Amigos não viram par, nem rivais, por sorteio.</p>
   <p>Um laço novo aparece por trimestre: escolha dois NPCs que passaram tempo juntos. Os personagens dos jogadores ficam sabendo pelos rumores, e o que muda entre os NPCs muda o que eles pedem e oferecem aos jogadores.</p>
 
   <h3>Leis do mundo bruxo</h3>
@@ -3438,7 +3654,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>Ímpeto</strong></td><td>De 0 a 3; força, arrisca e improvisa feitiços.</td></tr>
   <tr><td><strong>Interpor</strong></td><td>Reação de pôr algo sólido entre um ataque e o alvo. Única defesa, com Desviar, contra a Avada Kedavra.</td></tr>
   <tr><td><strong>Instabilidade</strong></td><td>Na poção, quanto ela está perto de dar errado (0–4).</td></tr>
-  <tr><td><strong>Laço</strong></td><td>O que o personagem sente por alguém, de grau 1 a 3. Invocado uma vez por aventura, dá um bônus.</td></tr>
+  <tr><td><strong>Laço</strong></td><td>O que o personagem sente por alguém, de grau 1 a 3. Invocado uma vez por aventura (um por cena, três por aventura no total), dá um bônus.</td></tr>
   <tr><td><strong>Lesão</strong></td><td>Ferimento rolado em d12 quando você cai a 0 PV por um crítico ou um golpe enorme. Numa luta de verdade, o 1 e o 2 matam.</td></tr>
   <tr><td><strong>Marca de treino / de prática</strong></td><td>Treino: 3 levam um feitiço de Em aprendizado a Aprendido (com PE). Prática: 5 levam de Aprendido a Dominado.</td></tr>
   <tr><td><strong>Nível / patente</strong></td><td>Nível sobe a cada 12 PE gastos (1–20); as patentes são Iniciante, Aprendiz, Adepto, Perito e Mestre.</td></tr>
@@ -3449,7 +3665,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
   <tr><td><strong>PE</strong></td><td>Pontos de Evolução: o que se gasta para crescer.</td></tr>
   <tr><td><strong>Perigo</strong></td><td>O nível de uma criatura, de 1 a 11.</td></tr>
   <tr><td><strong>Ponto de interesse</strong></td><td>O que dá para vasculhar numa investigação, com um quadro de perícia, DT e informação.</td></tr>
-  <tr><td><strong>Prontidão</strong></td><td>Os feitiços Aprendidos que você consegue usar sob pressão: 3 + patente, além dos Dominados.</td></tr>
+  <tr><td><strong>Prontidão</strong></td><td>Os feitiços Aprendidos que você lança sob pressão sem custo: 3 + patente, além dos Dominados. Os outros pedem o movimento para lembrar, ou saem com –1 passo.</td></tr>
   <tr><td><strong>RA / RB</strong></td><td>Maior e menor resultado entre os dados somados.</td></tr>
   <tr><td><strong>Relógio</strong></td><td>Um círculo de 4, 6 ou 8 partes que marca algo que vai acontecer. O de plano anda por semana; o do ano, só por marcos do calendário.</td></tr>
   <tr><td><strong>Sustentado / Contínuo</strong></td><td>Feitiço que você guia (gasta o movimento) / que fica ligado sozinho (não gasta nada).</td></tr>
@@ -3464,7 +3680,7 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
 <!-- ==================== COLOFÃO ==================== -->
 <footer class="colofao">
   <h3>Sobre esta edição</h3>
-  <p>Esta é a versão <strong>0.8</strong>, de 21/11/2026. Os números ainda não
+  <p>Esta é a versão <strong>0.9</strong>, de 21/11/2026. Os números ainda não
   passaram por mesa nem por simulador: são a primeira medida, e a primeira sessão é quem
   vai corrigi-los.</p>
   <p>Varinhas e Segredos é um projeto de fã, sem fins lucrativos. Harry Potter e o Mundo
@@ -3472,6 +3688,17 @@ td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: v
 </footer>
 
 </div><!-- /mancha -->
+
+<!-- ==================== CONTRACAPA ==================== -->
+<footer class="capa-pagina fundo">
+  <img src="assets/contracapa-1024.webp" srcset="assets/contracapa-640.webp 640w, assets/contracapa-1024.webp 1024w" sizes="(max-width: 44rem) 100vw, 44rem" width="1024" height="1536" loading="lazy" decoding="async"
+       alt="Uma escrivaninha à luz de vela: um livro de feitiços aberto, uma varinha, uma carta com lacre, uma coruja dormindo e dados de quatro a doze lados.">
+  <div class="contracapa-texto">
+    <p class="contracapa-chamada">A carta chegou por coruja.<br>A varinha escolheu você.</p>
+    <p>Sete anos num castelo com mais corredores do que mapas. Aulas, detenções, Quadribol, rondas noturnas e mistérios que os professores preferem que você não resolva.</p>
+    <p class="contracapa-lista">Dois dados · Um grimório inteiro · Sete anos de campanha</p>
+  </div>
+</footer>
 </div><!-- /livro -->
 
 <script>

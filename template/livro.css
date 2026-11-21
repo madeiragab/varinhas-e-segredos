@@ -947,13 +947,203 @@ pre.bloco-codigo {
   }
 }
 
-/* ---- Varinhas e Segredos: capa em SVG e geradores de tabela ---- */
-.capa-pagina { position: relative; }
-.capa-pagina svg { display: block; width: 100%; height: auto; max-height: 100vh; }
-.capa-titulo { position: absolute; left: 0; right: 0; bottom: 9%; text-align: center; padding: 0 16px; }
-.capa-titulo h1 { font-family: var(--serifa-titulo); font-size: clamp(2rem, 7vw, 4.6rem); margin: 0; color: #F1DCA6; text-shadow: 0 0 18px #000, 0 0 40px #D8B46A55; letter-spacing: .02em; }
-.capa-titulo p { font-family: var(--sans); letter-spacing: .32em; color: #CBD6E8; margin: .5em 0 0; font-size: clamp(.7rem, 1.8vw, .95rem); text-shadow: 0 0 8px #000; text-transform: uppercase; }
-.pisca { animation: pisca 3s infinite alternate; }
-@keyframes pisca { from { opacity: .3 } to { opacity: 1 } }
-@media (prefers-reduced-motion: reduce) { .pisca { animation: none; } }
 td.d { white-space: nowrap; font-family: var(--mono); font-size: .85em; color: var(--texto-suave); width: 3.5rem; }
+
+
+/* =================================================================
+   GRIMÓRIO — o visual da 0.8
+   Cinzel para títulos, EB Garamond para o texto, as duas servidas
+   daqui mesmo (assets/fontes), só os arquivos latinos, com swap.
+   ================================================================= */
+@font-face { font-family: "Cinzel"; src: url("assets/fontes/cinzel.woff2") format("woff2"); font-weight: 400 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "EB Garamond"; src: url("assets/fontes/garamond.woff2") format("woff2"); font-weight: 400 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "EB Garamond"; src: url("assets/fontes/garamond-italico.woff2") format("woff2"); font-weight: 400 800; font-style: italic; font-display: swap; }
+
+:root {
+  --serifa-titulo: "Cinzel", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --serifa-texto:  "EB Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --ouro-claro: #E9C46A;
+  --ornamento: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 24'%3E%3Cg fill='none' stroke='%23C9A24A' stroke-width='1.2'%3E%3Cpath d='M4 12h86M150 12h86'/%3E%3Cpath d='M90 12c8-8 16-8 22 0c6 8 14 8 22 0' /%3E%3Cpath d='M96 12c6 6 12 6 16 0c4-6 10-6 16 0' opacity='.6'/%3E%3C/g%3E%3Cpath d='M120 3l3 9l-3 9l-3-9z' fill='%23C9A24A'/%3E%3Ccircle cx='4' cy='12' r='2' fill='%23C9A24A'/%3E%3Ccircle cx='236' cy='12' r='2' fill='%23C9A24A'/%3E%3C/svg%3E");
+  --mancha: 35rem;
+}
+/* Pergaminho no claro; o escuro continua a noite azul da capa. */
+:root, :root[data-theme="light"] {
+  --fundo: #E4D9C1;
+  --papel: #F8F1E1;
+  --superficie-2: #EFE5CF;
+  --texto: #231A2B;
+  --texto-suave: #6A5D6B;
+  --borda: #DDCDAE;
+  --borda-forte: #BFA97E;
+  --acento-fraco: #ECE2F3;
+}
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fundo: #05070E; --papel: #0E1220; --superficie-2: #161C2E; --texto: #E9E3D3; --texto-suave: #A29DAE;
+    --borda: #252B40; --borda-forte: #3A4260; --acento: var(--sangue-vivo); --acento-fraco: #241A3A;
+    --ouro: var(--ouro-luz); --sombra: rgba(0, 0, 0, .6);
+  }
+}
+@media screen { :root[data-theme="dark"] {
+    --fundo: #05070E; --papel: #0E1220; --superficie-2: #161C2E; --texto: #E9E3D3; --texto-suave: #A29DAE;
+    --borda: #252B40; --borda-forte: #3A4260; --acento: var(--sangue-vivo); --acento-fraco: #241A3A;
+    --ouro: var(--ouro-luz); --sombra: rgba(0, 0, 0, .6);
+} }
+
+body {
+  font-size: 19px;
+  line-height: 1.62;
+  font-variant-numeric: lining-nums;
+  background:
+    radial-gradient(ellipse at top, color-mix(in srgb, var(--acento) 10%, transparent), transparent 60%),
+    var(--fundo);
+  background-attachment: fixed;
+}
+.livro {
+  max-width: calc(var(--mancha) + var(--margem) * 2);
+  box-shadow: 0 0 0 1px var(--borda), 0 1.5rem 4rem var(--sombra);
+  border: none;
+}
+
+/* ---------- capa: uma página inteira, título sobre a arte ---------- */
+.capa-pagina { position: relative; display: block; overflow: hidden; container-type: inline-size; background: #05070D; }
+.capa-pagina.frente, .capa-pagina.fundo { aspect-ratio: 2 / 3; border: none; }
+.capa-pagina > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.capa-pagina.frente::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(4,6,16,.72) 0%, rgba(4,6,16,.25) 22%, rgba(4,6,16,0) 34%,
+                                         rgba(4,6,16,0) 80%, rgba(4,6,16,.8) 100%);
+}
+.capa-titulo { position: absolute; z-index: 2; top: 5.5%; left: 0; right: 0; bottom: auto; padding: 0 6%; text-align: center; }
+.capa-sobre {
+  font-family: var(--serifa-titulo); font-weight: 500; text-transform: uppercase;
+  letter-spacing: .38em; padding-left: .38em; font-size: 2.5cqi; color: #EADFC2;
+  margin: 0 0 3cqi; text-shadow: 0 1px 6px #000;
+}
+.capa-titulo h1 {
+  font-family: var(--serifa-titulo); font-weight: 700; text-transform: uppercase;
+  font-size: 12.5cqi; line-height: .92; letter-spacing: .03em; margin: 0;
+  color: #F0D490;
+  background: linear-gradient(180deg, #FFF4CF 0%, #F0CF7A 42%, #C08A2E 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 .25cqi .8cqi rgba(0,0,0,.85)) drop-shadow(0 0 3cqi rgba(233,196,106,.25));
+}
+.capa-titulo h1 span {
+  display: block; font-size: .36em; letter-spacing: .5em; padding-left: .5em; margin: .35em 0 .3em;
+  font-weight: 500;
+}
+.capa-pe {
+  position: absolute; z-index: 2; left: 0; right: 0; bottom: 4.5%; margin: 0; text-align: center;
+  font-family: var(--serifa-titulo); text-transform: uppercase; letter-spacing: .32em; padding-left: .32em;
+  font-size: 2.2cqi; color: #E9D7A6; text-shadow: 0 1px 6px #000;
+}
+.capa-pe span { color: var(--ouro-claro); margin: 0 .5em; }
+
+/* ---------- contracapa ---------- */
+.capa-pagina.fundo::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(100deg, rgba(4,6,16,.72) 0%, rgba(4,6,16,.5) 42%, rgba(4,6,16,0) 62%);
+}
+.contracapa-texto {
+  position: absolute; z-index: 2; top: 8%; left: 7%; right: 43%; text-align: left;
+  color: #E7DFCB; font-size: 3.4cqi; line-height: 1.5;
+}
+.contracapa-texto p { margin: 0 0 1.2em; text-shadow: 0 1px 4px #000; }
+.contracapa-chamada { font-family: var(--serifa-titulo); font-size: 5cqi; line-height: 1.25; color: #F0D490; }
+.contracapa-lista { font-family: var(--serifa-titulo); text-transform: uppercase; letter-spacing: .2em; font-size: 2.3cqi; color: var(--ouro-claro); }
+.contracapa-texto::before { content: ""; display: block; height: 3.2cqi; margin: 0 0 4cqi; width: 80%; background: var(--ornamento) left center / contain no-repeat; }
+
+/* ---------- aberturas das partes ---------- */
+.parte {
+  position: relative; margin: 3rem calc(var(--margem) * -1) 0; container-type: inline-size;
+  aspect-ratio: 3 / 2; overflow: hidden; background: #05070D;
+}
+.parte img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.parte::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(4,6,16,0) 45%, rgba(4,6,16,.88) 100%);
+}
+.parte figcaption {
+  position: absolute; z-index: 1; left: 0; right: 0; bottom: 7%; text-align: center; color: #EFE6CF;
+}
+.parte-num { display: block; font-family: var(--serifa-titulo); letter-spacing: .4em; padding-left: .4em; text-transform: uppercase; font-size: 2.4cqi; color: var(--ouro-claro); }
+.parte-tit { display: block; font-family: var(--serifa-titulo); font-weight: 700; text-transform: uppercase; font-size: 8cqi; line-height: 1.05; margin: .15em 0; text-shadow: 0 2px 10px #000; }
+.parte-sub { display: block; font-style: italic; font-size: 3.2cqi; color: #D9CFB8; }
+
+/* ---------- folha de rosto e sumário ---------- */
+.rosto h1 { font-weight: 700; letter-spacing: .06em; }
+.rosto h1 span { color: var(--ouro); }
+.rosto .tomo, .sumario h2 { font-family: var(--serifa-titulo); }
+.rosto .epigrafe { font-size: 1.15rem; }
+.rosto .epigrafe::after, .sumario h2::after {
+  content: ""; display: block; height: 18px; width: 12rem; margin: 1.6rem auto 0;
+  background: var(--ornamento) center / contain no-repeat;
+}
+.sumario .alg { color: var(--ouro); font-weight: 700; }
+.sumario .tit { font-size: 1.05rem; letter-spacing: .02em; }
+.sumario .sub { font-family: var(--serifa-texto); font-style: italic; font-size: .92rem; }
+
+/* ---------- capítulos ---------- */
+.abertura { border-bottom: none; padding-bottom: 0; margin-bottom: 2.6rem; }
+.abertura .alg { font-weight: 500; letter-spacing: .42em; padding-left: .42em; font-size: .82rem; }
+.abertura h2 { font-weight: 700; letter-spacing: .05em; font-size: clamp(1.9rem, 6vw, 2.6rem); }
+.abertura p { font-size: 1.08rem; }
+.abertura::after {
+  content: ""; display: block; height: 22px; width: 15rem; max-width: 70%; margin: 1.5rem auto 0;
+  background: var(--ornamento) center / contain no-repeat;
+}
+h3 {
+  font-weight: 700; font-size: 1.32rem; letter-spacing: .03em; color: var(--texto);
+  margin-top: 3rem; padding-bottom: .35rem;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, var(--ouro), transparent 75%) 1;
+}
+h4 { font-family: var(--serifa-titulo); font-weight: 700; font-size: .84rem; letter-spacing: .12em; }
+p.abre::first-letter {
+  font-family: var(--serifa-titulo); font-weight: 700; font-size: 4.3em; line-height: .78;
+  padding: .08em .12em 0 0; color: var(--ouro);
+}
+strong { font-weight: 600; }
+
+/* ---------- blocos ---------- */
+.destaque {
+  border: 1px solid var(--borda); border-top: 2px solid var(--ouro); border-radius: 4px;
+  background: linear-gradient(180deg, var(--superficie-2), var(--papel));
+  box-shadow: 0 .3rem 1rem color-mix(in srgb, var(--sombra) 40%, transparent);
+}
+.destaque .rotulo, .cartao .etiqueta { font-family: var(--serifa-titulo); font-weight: 700; letter-spacing: .14em; }
+.destaque .rotulo { color: var(--ouro); }
+.nota { border-left: 2px solid var(--ouro); font-size: 1rem; }
+.grade { border-radius: 4px; overflow: hidden; }
+.cartao h5 { font-weight: 700; letter-spacing: .03em; font-size: 1rem; }
+.cartao p { font-size: .98rem; }
+
+/* ---------- tabelas ---------- */
+.rolagem { border: 1px solid var(--borda); border-radius: 4px; background: var(--papel); }
+table { font-family: var(--serifa-texto); font-size: .98rem; font-variant-numeric: lining-nums tabular-nums; }
+table.compacta { font-size: .92rem; }
+thead th {
+  font-family: var(--serifa-titulo); font-weight: 700; font-size: .68rem; letter-spacing: .12em;
+  color: var(--ouro); background: var(--superficie-2); border-bottom: 1px solid var(--borda-forte);
+}
+tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--superficie-2) 55%, transparent); }
+tbody tr:last-child td { border-bottom: none; }
+td strong { color: var(--texto); }
+.dado { font-family: var(--mono); font-size: .8em; border: 1px solid color-mix(in srgb, var(--acento) 30%, transparent); }
+
+/* ---------- impressão ---------- */
+@media print {
+  @page parte { margin: 0; background: #05070D; }
+  html { font-size: 10pt; }
+  .livro { box-shadow: none; }
+  .capa-pagina.frente, .capa-pagina.fundo { aspect-ratio: auto; height: 100vh; }
+  .capa-pagina > img { object-fit: cover; max-width: none; max-height: none; }
+  .parte {
+    page: parte; margin: 0; aspect-ratio: auto; height: 100vh;
+    break-before: page; page-break-before: always; break-after: page; page-break-after: always;
+  }
+  .parte img { object-fit: cover; }
+  .parte figcaption { bottom: 12%; }
+  .parte + .capitulo { break-before: auto; page-break-before: auto; }
+  .rolagem { border: 1px solid var(--borda); }
+}

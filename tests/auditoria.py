@@ -289,5 +289,18 @@ for l in re.findall(r"<tr><td>(.*?)</tr>", s, re.S):
     if not ok: ruins.append(c[0])
 checa(f"Vassouras: {vas} modelos, ficha válida e traços definidos {ruins if ruins else ''}", vas >= 30 and not ruins)
 
+# 16. Animais de estimação: os três da carta são Permitidos; toda habilidade tem limite
+a = HTML.index('id="animais"'); b = HTML.index('id="cuidados"', a)
+S = HTML[a:b]; s = S[S.index("<th>Laço 2</th>"):]; s = s[:s.index("</table>")]
+ani, ruins, perm = 0, [], set()
+for l in re.findall(r"<tr><td>(.*?)</tr>", s, re.S):
+    c = [re.sub(r"<[^>]+>", "", x).strip() for x in re.findall(r"<td[^>]*>(.*?)</td>", "<td>" + l, re.S)]
+    ani += 1
+    if c[2] == "Permitido": perm.add(c[0])
+    lim = r"por cena|por sessão|por dia|por noite|por semana|por perseguição|por campanha|uma rodada|nunca|ninguém|volta para casa"
+    if len(c) != 6 or c[2] not in ("Permitido", "Tolerado", "Proibido") or not re.search(lim, c[3]) or not c[4] or not c[5]: ruins.append(c[0])
+cor = S.count("<tr><td><strong>") - ani - 3
+checa(f"Animais: {ani} e {cor} corujas, habilidade com limite e Laço 2 {ruins if ruins else ''}", ani >= 15 and cor >= 5 and {"Gato", "Sapo"} <= perm and not ruins)
+
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

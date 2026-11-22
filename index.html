@@ -1551,7 +1551,7 @@ td strong { color: var(--texto); }
   <tbody>
   <tr><td><strong>Desconhecido</strong></td><td>Nunca teve contato.</td><td>Nada.</td><td>—</td></tr>
   <tr><td><strong>Observado</strong></td><td>Viu alguém lançar, ou leu uma descrição incompleta.</td><td>Só a Conjuração Improvisada.</td><td>Presenciar o feitiço em cena, ou ler sobre ele.</td></tr>
-  <tr><td><strong>Em aprendizado</strong></td><td>Teve aula, livro completo ou mentor.</td><td>Praticar sem risco em aula e no tempo livre. Fora disso, só a Conjuração Improvisada.</td><td>Ter acesso à fonte (abaixo).</td></tr>
+  <tr><td><strong>Em aprendizado</strong></td><td>Teve aula, livro completo ou mentor.</td><td>Praticar em aula e no tempo livre (sozinho, com o risco de <a href="#sozinho">Aprender sozinho</a>). Fora disso, só a Conjuração Improvisada.</td><td>Ter acesso à fonte (abaixo).</td></tr>
   <tr><td><strong>Aprendido</strong></td><td>Faz parte do seu repertório para sempre.</td><td>Lançar normalmente, em qualquer lugar.</td><td><strong>3 marcas de treino</strong> e pagar os <strong>PE</strong> do Círculo.</td></tr>
   <tr><td><strong>Dominado</strong></td><td>Virou reflexo.</td><td>+1 passo ao lançar.</td><td><strong>5 marcas de prática.</strong> Não se compra com PE.</td></tr>
   </tbody></table></div>
@@ -1576,6 +1576,34 @@ td strong { color: var(--texto); }
   <tr><td><strong>Secreta</strong></td><td>Descoberta numa investigação: anotações, um diário, um quadro que fala.</td><td>Muffliato, Levicorpus, Sectumsempra, Vulnera Sanentur</td></tr>
   <tr><td><strong>Experimental</strong></td><td>Você mesmo inventa (Capítulo V).</td><td>—</td></tr>
   <tr><td><strong>Proibida</strong></td><td>Fontes clandestinas, bruxos das trevas. Ter o livro já é crime.</td><td>Imperio, Crucio, Avada Kedavra, Fogomaldito, Protego Diabolica</td></tr>
+  </tbody></table></div>
+
+  <h3 id="sozinho">Aprender sozinho, com um livro</h3>
+  <p>Com o livro certo, dá para aprender um feitiço sem professor: Harry aprendeu o Accio para a primeira tarefa assim, e metade do Livro do Príncipe foi aprendida escondida. O livro completo deixa o feitiço <strong>Em aprendizado</strong>; o resto é ler e ensaiar, cada coisa num período livre (<a href="#cap14">Capítulo XIV</a>).</p>
+  <ol class="passos">
+    <li><b>Ler.</b> Mente + Conhecimento Mágico, DT do Círculo. Sucesso: 1 marca de treino. Ler ensina a pronúncia e a teoria, não o gesto: sem aula nem mentor, a leitura dá <strong>no máximo 1 marca</strong> por feitiço (Estudioso: 2).</li>
+    <li><b>Ensaiar.</b> As outras marcas vêm de tentar o feitiço de verdade: Mente + a perícia do feitiço, DT do Círculo, sem gastar Ímpeto. Sucesso: 1 marca; crítico: 2. Falha: nada, só faíscas. <strong>Desastre:</strong> o acidente da tabela do Capítulo II acontece, e não há professor por perto para desfazer.</li>
+    <li><b>Aprender.</b> Com 3 marcas, pague os PE do Círculo, como sempre. O dado mínimo vale igual: sem ele, nem o ensaio sai.</li>
+  </ol>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Situação</th><th>No ensaio</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Círculo 1 ou 2</strong></td><td>Normal: são os feitiços que se aprendem sozinhos.</td></tr>
+  <tr><td><strong>Círculo 3</strong></td><td>–1 passo. Só com livro avançado (Seção Reservada, um livro anotado).</td></tr>
+  <tr><td><strong>Círculo 4 ou Proibido</strong></td><td>–1 passo, e todo Desastre vai direto à <a href="#descontrolada">Magia Descontrolada</a>.</td></tr>
+  <tr><td><strong>Um amigo que já Aprendeu ajuda</strong></td><td>+1 passo (Hermione com o Accio de Harry). Ele gasta o mesmo período.</td></tr>
+  <tr><td><strong>Ataque ou efeito sem alvo</strong></td><td>–1 passo: precisa de um boneco, uma almofada, um colega que aceite.</td></tr>
+  <tr><td><strong>Sala vazia à noite, fora do horário</strong></td><td>Normal, mas é uma <a href="#cap14">ronda noturna</a> se alguém procurar.</td></tr>
+  <tr><td><strong>Nas férias, menor de idade</strong></td><td>O <a href="#cap5">Rastreador</a> pega: carta de advertência do Ministério na primeira vez; na segunda, audiência.</td></tr>
+  </tbody></table></div>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Que livro é</th><th>Efeito</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Livro didático</strong> (o Livro Padrão de Feitiços)</td><td>Normal.</td></tr>
+  <tr><td><strong>Livro anotado</strong> por quem sabia (o do Príncipe)</td><td>+1 passo na leitura e no ensaio daquele feitiço.</td></tr>
+  <tr><td><strong>Livro incompleto</strong> (página arrancada, só a descrição)</td><td>O feitiço fica só Observado.</td></tr>
+  <tr><td><strong>Livro errado</strong> (de quem mentiu sobre o que fez)</td><td>Parece completo. O Mestre sabe: as marcas não valem até alguém de fora corrigir, e o primeiro ensaio bem-sucedido sai trocado.</td></tr>
+  <tr><td><strong>Livro proibido</strong></td><td>Ter já é crime, e ser pego com ele em Hogwarts é expulsão. Os feitiços dele seguem a linha de Círculo 4 ou Proibido acima.</td></tr>
   </tbody></table></div>
 
   <h3>O Currículo de Hogwarts</h3>
@@ -3736,7 +3764,8 @@ td strong { color: var(--texto); }
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Atividade</th><th>Teste</th><th>Resultado</th></tr></thead>
   <tbody>
-  <tr><td><strong>Estudar um feitiço</strong></td><td>Mente + Conhecimento Mágico, DT do Círculo</td><td>Sucesso: 1 marca de treino num feitiço Em aprendizado. Crítico: 2.</td></tr>
+  <tr><td><strong>Estudar um feitiço</strong></td><td>Mente + Conhecimento Mágico, DT do Círculo</td><td>Sucesso: 1 marca de treino num feitiço Em aprendizado. Crítico: 2. Sem aula nem mentor, no máximo 1 marca de leitura por feitiço (<a href="#sozinho">Aprender sozinho</a>).</td></tr>
+  <tr><td><strong>Ensaiar sozinho</strong></td><td>Mente + a perícia do feitiço, DT do Círculo</td><td>Sucesso: 1 marca de treino; crítico: 2. Desastre: o acidente acontece (<a href="#sozinho">Aprender sozinho</a>).</td></tr>
   <tr><td><strong>Praticar um feitiço</strong></td><td>Lançar o feitiço Aprendido, DT do Círculo</td><td>Sucesso: 1 marca de prática (5 marcas: Dominado). No máximo uma por feitiço por semana.</td></tr>
   <tr><td><strong>Fazer o dever</strong></td><td>Perícia da matéria, DT 7</td><td>Sucesso: +1 de aproveitamento na matéria (Capítulo XIII).</td></tr>
   <tr><td><strong>Biblioteca</strong></td><td>Minigame abaixo</td><td>Uma pista, um feitiço Observado ou uma receita.</td></tr>

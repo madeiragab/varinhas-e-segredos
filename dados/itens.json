@@ -1,0 +1,1634 @@
+[
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Bomba de Bosta",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 sicles",
+  "regra": "Arremessada, enche uma sala de fedor por uma cena. Quem fica faz Percepção com –1 passo e quer sair; aula ou conversa ali acabam."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Fogos Filibusteiro",
+  "extra": "",
+  "cat": "I",
+  "preco": "5 sicles",
+  "regra": "Acendem molhados, sem fogo. Uma distração garantida: todo mundo olha por uma rodada."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Fogos Estalo e Fogo",
+  "extra": "",
+  "cat": "I",
+  "preco": "5 a 20 galeões",
+  "regra": "Dragões de faísca, rodas e foguetes por uma cena inteira. Estuporar multiplica; Evanesco multiplica por dez. Ninguém dá aula nem faz silêncio ali."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Detonador-Chamariz",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Corre para longe e explode com estrondo a até 18 m. Quem está perto testa Percepção DT 9 ou se vira para ele."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Pó Escurecedor Instantâneo do Peru",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Escuridão total num raio de 9 m por 1 minuto. Lumos não atravessa; a Mão da Glória atravessa."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Orelhas Extensíveis",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Um fio cor de pele passa por baixo da porta e ouve do outro lado. Feitiço Imperturbável bloqueia; gato come."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Pântano Portátil",
+  "extra": "",
+  "cat": "II",
+  "preco": "5 galeões",
+  "regra": "Um corredor vira pântano fedido. Atravessar: Corpo + Atletismo DT 9 e a rodada inteira. Finite não seca: só quem o fez, ou um professor com tempo."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Pastilhas Vomitórias",
+  "extra": "",
+  "cat": "I",
+  "preco": "6 sicles",
+  "regra": "Kit Mata-Aula. A metade laranja faz vomitar até comer a roxa: sai da aula sem suspeita (Enganação +1 passo)."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Nugá Sangra-Nariz",
+  "extra": "",
+  "cat": "I",
+  "preco": "6 sicles",
+  "regra": "Kit Mata-Aula. O nariz sangra até comer a outra metade; sem a outra, sangra por horas."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Bombom Febril",
+  "extra": "",
+  "cat": "I",
+  "preco": "6 sicles",
+  "regra": "Kit Mata-Aula. Febre alta e furúnculos, sem perigo. O furúnculo ainda não tem cura no kit."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Delícia Desmaiante",
+  "extra": "",
+  "cat": "I",
+  "preco": "6 sicles",
+  "regra": "Kit Mata-Aula. Desmaia na hora (Inconsciente) e acorda com a outra metade, que alguém tem que pôr na boca."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Caramelo Incha-Língua",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 sicles",
+  "regra": "A língua cresce mais de um metro: Silenciado por uma cena, ou até um Finite."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Creme de Canário",
+  "extra": "",
+  "cat": "I",
+  "preco": "7 sicles",
+  "regra": "Quem come vira um canário enorme por um minuto, e as penas caem depois. Sem dano."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Varinha de Logro",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Vira galinha de borracha, peixe de lata ou calça de vovó quando agitada. Quem a usa por engano perde a ação."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Chapéu Sem-Cabeça",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Some com a cabeça e o chapéu. +1 passo para assustar ou pregar uma peça."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Chapéu, capa e luvas Escudo",
+  "extra": "",
+  "cat": "II",
+  "preco": "3 a 10 galeões",
+  "regra": "Uma vez por cena, param uma azaração de Círculo 1 ou 2 como um Protego. Ocupam um dos três objetos ativos."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Feitiço de Devaneio Patenteado",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Meia hora de sonho acordado: a pessoa fica alheia (Percepção –2 passos) e baba. Proibido em aula."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Poção do Amor Bruxa Maravilha",
+  "extra": "",
+  "cat": "II",
+  "preco": "2 galeões",
+  "regra": "Paixão boba por algumas horas: Vontade DT 9. É ilegal vender para menores, e vendem."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Eliminador de Espinhas em Dez Segundos",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 sicles",
+  "regra": "Da linha Bruxa Maravilha. Some com uma espinha; o resto da linha faz cílios, cabelo e unhas."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Pena de Resposta Esperta",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Responde sozinha, com ironia. +1 passo em Artes para a redação, –1 passo com o professor."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Pena Autocorretora",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Corrige a ortografia. Gasta: depois de um mês, corrige errado."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Mini-Pufoso",
+  "extra": "",
+  "cat": "I",
+  "preco": "7 galeões",
+  "regra": "Bola de pelo rosa ou roxa que cantarola. Só companhia; come aranhas e restos."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Telescópio Soco",
+  "extra": "",
+  "cat": "I",
+  "preco": "5 sicles",
+  "regra": "Quem olha leva um soco: 1d4 de dano e olho roxo, que só sai com Essência de Murtisco."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Xícara Morde-Nariz",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 sicles",
+  "regra": "Morde o nariz de quem bebe. Proibida por Filch."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Frisbee Dentado",
+  "extra": "",
+  "cat": "I",
+  "preco": "4 sicles",
+  "regra": "Voa mordendo. Pegar: Corpo + Reflexos DT 7 ou RB de dano. Proibido em Hogwarts."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Sabão de Ovas de Sapo, Pó do Arroto, Doce do Soluço",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 a 2 sicles",
+  "regra": "Peças pequenas: espuma de sapo, arroto alto, soluço por uma cena. Quem sofre perde 1 de DET de raiva, uma vez."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Pílula Prende-Tudo",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 sicles",
+  "regra": "<em>(é a U-No-Poo)</em> Prende o intestino por um dia. Vendida como piada contra quem manda, dá problema com o Ministério."
+ },
+ {
+  "grupo": "Logros e brincadeiras",
+  "nome": "Mágicas Trouxas",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 sicle",
+  "regra": "Truques sem magia, para quem tem pai fascinado por trouxas. Não fazem nada, e é essa a graça."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Feijõezinhos de Todos os Sabores Bertie Bott",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 sicle",
+  "regra": "Role <span class=\"dado\">d6</span> por feijão: com 1, é nojento (cera de ouvido, vômito, meleca) e Fortitude DT 5 ou perde a ação engasgando."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Sapo de Chocolate",
+  "extra": "",
+  "cat": "I",
+  "preco": "7 nuques",
+  "regra": "Pula uma vez, e quem não pega perde. Vem com a figurinha de um bruxo famoso, que pode virar pista."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Barra de chocolate",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 sicles",
+  "regra": "Depois de um dementador, recupera 1d4 de DET, uma vez por cena."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Delícia Gasosa",
+  "extra": "",
+  "cat": "I",
+  "preco": "5 nuques",
+  "regra": "Quem chupa flutua alguns centímetros por um minuto. Não serve para Voo."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Chiclete Baba e Bola do Drooble",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 nuques",
+  "regra": "Bolhas azuis que não estouram por dias. Grudam em fechadura: Alohomora com –1 passo."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Diabinho de Pimenta",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 nuques",
+  "regra": "Solta fumaça pela boca. Uma cena sem sentir frio."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Pena de Açúcar",
+  "extra": "",
+  "cat": "I",
+  "preco": "4 nuques",
+  "regra": "Chupa na aula como se pensasse. Ninguém nota."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Camundongo de Gelo",
+  "extra": "",
+  "cat": "I",
+  "preco": "4 nuques",
+  "regra": "Faz os dentes baterem e chiar."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Sapo de Menta",
+  "extra": "",
+  "cat": "I",
+  "preco": "4 nuques",
+  "regra": "Pula de verdade no estômago."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Ácido Saltitante",
+  "extra": "",
+  "cat": "I",
+  "preco": "5 nuques",
+  "regra": "Fura a língua: 1 PV e Silenciado por uma rodada."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Aglomerado de Baratas",
+  "extra": "",
+  "cat": "I",
+  "preco": "6 nuques",
+  "regra": "Baratas de verdade, crocantes."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Pirulito Sabor Sangue",
+  "extra": "",
+  "cat": "I",
+  "preco": "6 nuques",
+  "regra": "Para vampiros. Quem não é, cospe."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Varinha de alcaçuz, bolo de caldeirão, torta de abóbora",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 a 6 nuques",
+  "regra": "Comida de trem: comer junto com alguém dá +1 na relação, uma vez por viagem."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Cerveja amanteigada",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 sicles",
+  "regra": "Esquenta e quase não embriaga. Elfos domésticos ficam bêbados com ela."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Uísque de Fogo Ogden",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Proibido para menores. Uma dose: +1 passo em Vontade contra medo e –1 passo em tudo o que pede Mente, por uma cena."
+ },
+ {
+  "grupo": "Doces e bebidas",
+  "nome": "Hidromel envelhecido em carvalho",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 galeões",
+  "regra": "Bom presente, e bom lugar para esconder veneno: o gosto forte dá –1 passo para notar."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Caldeirão de estanho, latão ou prata",
+  "extra": "",
+  "cat": "I",
+  "preco": "2, 4 e 10 galeões",
+  "regra": "Estanho é o da lista. Latão e prata esquentam mais rápido: uma etapa por poção conta como Cuidadosa sem o –1 passo."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Caldeirão dobrável ou que mexe sozinho",
+  "extra": "",
+  "cat": "II",
+  "preco": "6 e 15 galeões",
+  "regra": "O dobrável cabe na mochila. O que mexe sozinho faz uma etapa de mexer sem você, com o seu teste e sem a sua abordagem."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Balança, frascos e kit de ingredientes",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "O mínimo para Poções. Sem frasco de cristal, poção de DT 11+ estraga em um dia."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Luvas de couro de dragão e protetores de orelha",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 e 1 galeão",
+  "regra": "As luvas dão +1 passo para colher planta que morde ou queima. Os protetores deixam surdo ao grito da mandrágora."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Pena, tinta e pergaminho",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 sicle",
+  "regra": "Tinta que muda de cor custa o dobro. Tinta invisível se lê com Aparecium."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Lembrol",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 galeões",
+  "regra": "Fica vermelho quando o dono esqueceu algo. Não diz o quê."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Pena de Repetição Rápida",
+  "extra": "",
+  "cat": "II",
+  "preco": "10 galeões",
+  "regra": "Escreve sozinha o que se diz, do jeito que quem a usa gostaria: +1 passo em Enganação por escrito, e é mentira."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Berrador",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 sicle a mais no correio",
+  "regra": "A carta grita na voz de quem mandou e se queima. Não abrir: explode do mesmo jeito. Quem recebe em público perde 1 de DET."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Espelhos de duas faces",
+  "extra": "",
+  "cat": "II",
+  "preco": "20 galeões o par",
+  "regra": "Diz o nome de quem tem o outro e conversa de longe. Um caco ainda mostra pedaços."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Livro Monstruoso dos Monstros",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Morde quem abre: Corpo + Reflexos DT 7 ou 1d4. Acalma com um carinho na lombada."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Fotos e quadros que se mexem",
+  "extra": "",
+  "cat": "I",
+  "preco": "5 sicles a foto",
+  "regra": "Fotos repetem o momento. Retratos pintados falam, saem do quadro e visitam outros: ótimos espiões."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Rádio bruxo",
+  "extra": "",
+  "cat": "I",
+  "preco": "5 galeões",
+  "regra": "Rede Radiofônica Bruxa. Rádio pirata só sintoniza com a senha, que muda a cada programa."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Oniócolos",
+  "extra": "",
+  "cat": "I",
+  "preco": "10 galeões",
+  "regra": "Binóculos de bronze: repetem a jogada, em câmera lenta, com o nome de cada lance. +1 passo em Percepção de longe."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Relógio de família",
+  "extra": "",
+  "cat": "III",
+  "preco": "feito em casa",
+  "regra": "Um ponteiro por pessoa: casa, trabalho, escola, viagem, prisão, perigo mortal. Não diz onde, só como."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Agulhas, vassouras e louça encantadas",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 a 5 galeões",
+  "regra": "Tricotam, varrem e lavam sozinhas enquanto alguém olha. Sozinhas a noite toda, fazem bagunça."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Barraca bruxa",
+  "extra": "",
+  "cat": "II",
+  "preco": "20 galeões",
+  "regra": "Por fora, uma barraca; por dentro, uma casa com cozinha. Descanso de verdade no acampamento."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Bolsinha de pele de moke",
+  "extra": "",
+  "cat": "II",
+  "preco": "10 galeões",
+  "regra": "Só o dono tira o que está dentro. Ladrão de bolso não consegue."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Bolsa com Feitiço Indetectável de Extensão",
+  "extra": "",
+  "cat": "III",
+  "preco": "ilegal sem registro",
+  "regra": "Cabe uma barraca, uma biblioteca, um quadro. O que é pesado tomba lá dentro, e procurar algo leva a rodada."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Óculos Espectrais",
+  "extra": "",
+  "cat": "I",
+  "preco": "de brinde no Pasquim",
+  "regra": "Mostram zonzóbulos, dizem. Na mesa, +1 passo para notar um feitiço de confusão, uma vez por sessão; ou nada, se o Mestre preferir."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Pomo de Ouro",
+  "extra": "",
+  "cat": "I",
+  "preco": "5 galeões",
+  "regra": "Tem memória de carne: lembra a mão que o tocou primeiro. Bom esconderijo: só abre para essa mão."
+ },
+ {
+  "grupo": "Escola, casa e dia a dia",
+  "nome": "Snap Explosivo, Xadrez de Bruxo, Bexigas",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 a 5 galeões",
+  "regra": "Jogos de sala comunal. Perder no Snap Explosivo tira as sobrancelhas; o xadrez discute com quem joga mal."
+ },
+ {
+  "grupo": "Detecção, segredo e defesa",
+  "nome": "Bisbilhoscópio",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Pião que gira e apita perto de quem engana ou trama. Erra: role <span class=\"dado\">d6</span>, com 1–2 apita à toa."
+ },
+ {
+  "grupo": "Detecção, segredo e defesa",
+  "nome": "Sensor de Segredos",
+  "extra": "",
+  "cat": "II",
+  "preco": "30 galeões",
+  "regra": "Antena que vibra com mentira e ocultação. Num castelo cheio de magia, vibra o tempo todo."
+ },
+ {
+  "grupo": "Detecção, segredo e defesa",
+  "nome": "Espelho-de-inimigos",
+  "extra": "",
+  "cat": "III",
+  "preco": "50 galeões",
+  "regra": "Mostra os inimigos do dono, borrados; quando ficam nítidos, chegaram. O Mestre usa como relógio da cena."
+ },
+ {
+  "grupo": "Detecção, segredo e defesa",
+  "nome": "Sonda de Probidade",
+  "extra": "",
+  "cat": "II",
+  "preco": "do Ministério e de Gringotes",
+  "regra": "Encostada, revela feitiço de ocultação e objeto escondido. Polissuco passa, a não ser pela Cascata do Ladrão."
+ },
+ {
+  "grupo": "Detecção, segredo e defesa",
+  "nome": "Olho mágico",
+  "extra": "",
+  "cat": "III",
+  "preco": "200 galeões, sob encomenda",
+  "regra": "Prótese para quem perdeu um olho. Vê através de paredes, de capas comuns e da própria cabeça; gira sozinho e assusta (–1 passo em Persuasão)."
+ },
+ {
+  "grupo": "Detecção, segredo e defesa",
+  "nome": "Baú de sete fechaduras",
+  "extra": "",
+  "cat": "III",
+  "preco": "100 galeões",
+  "regra": "Cada fechadura abre um compartimento: livros, roupas, um poço onde se prende uma pessoa. Alohomora abre uma por vez."
+ },
+ {
+  "grupo": "Detecção, segredo e defesa",
+  "nome": "Mão da Glória",
+  "extra": "",
+  "cat": "III",
+  "preco": "15 galeões, na Borgin & Burkes",
+  "regra": "Mão de morto com uma vela: só quem a segura vê a luz. Atravessa o Pó Escurecedor. Ladrões gostam."
+ },
+ {
+  "grupo": "Detecção, segredo e defesa",
+  "nome": "Moedas-irmãs",
+  "extra": "",
+  "cat": "III",
+  "preco": "fabricar",
+  "regra": "Feitiço Proteu num punhado de galeões falsos: a borda de todas mostra a data e a hora que o dono escrever na sua. Esquentam para avisar."
+ },
+ {
+  "grupo": "Detecção, segredo e defesa",
+  "nome": "Detector das Trevas",
+  "extra": " <span class=\"dado\">J</span>",
+  "cat": "II",
+  "preco": "20 galeões",
+  "regra": "Do Ministério na Calamidade. Fica quente perto de objeto amaldiçoado ou Confuso a até 30 m; não diz onde."
+ },
+ {
+  "grupo": "Viagem",
+  "nome": "Pó de Flu",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 sicles o punhado",
+  "regra": "Viaja pela lareira da Rede de Flu. Falar errado ou engasgar: role <span class=\"dado\">d6</span>, com 1 cai na lareira errada (a Borgin & Burkes, por exemplo)."
+ },
+ {
+  "grupo": "Viagem",
+  "nome": "Chave de Portal",
+  "extra": "",
+  "cat": "II",
+  "preco": "do Ministério",
+  "regra": "Leva quem toca a um lugar fixo, numa hora marcada. Fazer uma sem licença é crime."
+ },
+ {
+  "grupo": "Viagem",
+  "nome": "Nôitibus Andante",
+  "extra": "",
+  "cat": "I",
+  "preco": "11 sicles; 13 com chocolate",
+  "regra": "Ônibus de três andares para bruxo perdido: estenda a varinha na rua. Chega a qualquer lugar da Grã-Bretanha, aos solavancos."
+ },
+ {
+  "grupo": "Viagem",
+  "nome": "Armário Sumidouro",
+  "extra": "",
+  "cat": "III",
+  "preco": "300 galeões, o par",
+  "regra": "Um par: o que entra num sai no outro. Quebrado, some com quem entra; consertar é um projeto de Feitiços DT 13."
+ },
+ {
+  "grupo": "Viagem",
+  "nome": "Tapete voador",
+  "extra": "",
+  "cat": "II",
+  "preco": "100 galeões, fora da Grã-Bretanha",
+  "regra": "Leva até seis: Voo normal. Na Grã-Bretanha conta como artefato trouxa e é proibido."
+ },
+ {
+  "grupo": "Viagem",
+  "nome": "Carro enfeitiçado",
+  "extra": "",
+  "cat": "III",
+  "preco": "fabricar; é crime",
+  "regra": "Carro trouxa que voa e fica invisível, e cabe mais gente do que devia. O encanto de invisibilidade falha: role <span class=\"dado\">d6</span> a cada uso, com 1 desliga. Uso Indevido de Artefatos Trouxas."
+ },
+ {
+  "grupo": "Viagem",
+  "nome": "Moto enfeitiçada",
+  "extra": "",
+  "cat": "III",
+  "preco": "fabricar; é crime",
+  "regra": "Voa com dois. Cada truque é um efeito à parte (fabricar): rede, parede de tijolos ou fogo pelo escapamento, uma vez por cena."
+ },
+ {
+  "grupo": "Viagem",
+  "nome": "Mala de viveiro",
+  "extra": " <span class=\"dado\">F</span>",
+  "cat": "IV",
+  "preco": "fabricar",
+  "regra": "Por fora, uma mala; por dentro, um galpão com habitats. O fecho tem um modo trouxa, que às vezes abre sozinho. Guardar criatura pede licença."
+ },
+ {
+  "grupo": "Viagem",
+  "nome": "Saco de Captura",
+  "extra": " <span class=\"dado\">J</span>",
+  "cat": "II",
+  "preco": "10 galeões",
+  "regra": "Guarda uma fera Atordoada ou Presa de Perigo até 4, sem machucar. Para levar ao viveiro, não para vender."
+ },
+ {
+  "grupo": "Plantas de combate J",
+  "nome": "Repolho Chinês Mordedor",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 galeões",
+  "regra": "Morde o inimigo mais perto a cada rodada: RB de dano. Distrai: o alvo ataca o repolho em vez de você."
+ },
+ {
+  "grupo": "Plantas de combate J",
+  "nome": "Mandrágora em vaso",
+  "extra": "",
+  "cat": "II",
+  "preco": "5 galeões",
+  "regra": "Um grito, uma vez: quem está a 9 m sem protetor de orelha testa Fortitude DT 9 ou fica Atordoado. É a muda; a madura mata."
+ },
+ {
+  "grupo": "Plantas de combate J",
+  "nome": "Tentácula Venenosa",
+  "extra": "",
+  "cat": "II",
+  "preco": "6 galeões",
+  "regra": "Agarra e cospe ácido em quem chega a 3 m: RA de dano. Ilegal fora de estufa, e as sementes são classe C."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Cachecol Aquecedor",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Ignora o –1 passo do frio, sempre. Não esquenta contra fogo nem gelo mágico."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Botas de Passo Leve",
+  "extra": "",
+  "cat": "II",
+  "preco": "30 galeões",
+  "regra": "+1 passo em Furtividade andando, uma vez por cena."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Luvas de Pegada",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 galeões",
+  "regra": "+1 passo para não largar a varinha nem cair da vassoura, uma vez por cena."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Capa Reversível",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "25 galeões",
+  "regra": "Com o movimento, vira do avesso e muda cor e corte. Quem viu você antes precisa de Percepção DT 9 para reconhecer. Uma vez por cena."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Chapéu Ouvinte",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "20 galeões",
+  "regra": "Guarda a última frase dita a até 3 m dele e a repete quando tirado. Uma frase por vez; a nova apaga a velha."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Anel de Pulso Quente",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "40 galeões",
+  "regra": "Esquenta antes do perigo: uma vez por sessão, você não conta como alvo surpreso."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Broche de Casa Falsa",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "4 galeões",
+  "regra": "Muda as cores do uniforme para as de outra Casa por uma hora. Um monitor atento nota a costura: Percepção DT 9."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Óculos de Leitura Rápida",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "35 galeões",
+  "regra": "Uma vez por semana, um período de estudo de Conhecimento rende como dois. Não passa do limite de marcas de Aprender sozinho."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Brincos Tilintantes",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Tilintam quando alguém invisível passa a até 3 m. Você sabe que tem alguém, não onde."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Cinto de Frascos Acolchoado",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Cinco poções saem com o movimento, em vez de três. O Desastre Perda nunca quebra os frascos do cinto."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Manto Pesa-Nada",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "50 galeões",
+  "regra": "+2 espaços de Carga. O peso some; o volume, não: não cabe numa passagem estreita."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Gorro Abafador",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "+1 passo em Fortitude contra grito e som mágico, uma vez por cena."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Fita de Cabelo da Calma",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "30 galeões",
+  "regra": "Uma vez por cena, quando ficaria Amedrontado, role <span class=\"dado\">d6</span>: com 4 ou mais, não fica."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Relógio de Bolso Teimoso",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "200 galeões",
+  "regra": "Uma vez por dia, o dono chega dez minutos antes de onde ia: nunca se atrasa para a aula, e numa emboscada chega antes dela começar."
+ },
+ {
+  "grupo": "Roupas e acessórios",
+  "nome": "Medalhão de Retrato",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "3 galeões",
+  "regra": "Retratinho de alguém querido que fala. Uma vez por dia, conversar com ele recupera 1 de DET."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Pena Autoabastecida",
+  "extra": "",
+  "cat": "I",
+  "preco": "5 sicles",
+  "regra": "Nunca falta tinta. Escreve até debaixo d'água."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Pena Ditadora",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "15 galeões",
+  "regra": "Fica na carteira e copia a aula inteira. Quem perdeu a aula estuda pelo caderno como se tivesse ido. Proibida nas provas."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Pergaminhos Gêmeos",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "10 galeões",
+  "regra": "O par. O que se escreve num aparece no outro, a qualquer distância. Cada folha guarda uma página; a nova apaga a velha."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Ampulheta de Prova",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "3 galeões",
+  "regra": "Num exame, uma vez, +1 passo no último teste: você sabe exatamente quanto tempo falta."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Livro de Bolso Encolhido",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Um livro do tamanho de um selo, que volta ao normal quando aberto. Não ocupa Carga."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Marcador de Página Falante",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Lembra onde você parou e resume numa frase. Um estudo interrompido não perde o progresso."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Tinteiro que Não Derrama",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 sicles",
+  "regra": "Pode cair, virar e rolar: a tinta fica dentro."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Caldeirão de Bolso",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "12 galeões",
+  "regra": "Ferve uma poção de DT até 7 em qualquer lugar, sem fogo. DT 9 ou mais não cabe nele."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Faca de Prata de Ingredientes",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "20 galeões",
+  "regra": "Uma vez por poção, um passo de cortar ou esmagar ganha +1 passo. Não vale num passo ★."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Telescópio de Bolso",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "+1 passo em Percepção à noite, de longe, uma vez por cena."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Mapa de Constelações Vivo",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "15 galeões",
+  "regra": "Mostra o céu de qualquer data e lugar. Astronomia e Adivinhação pelos astros podem ser estudadas de dia ou com o céu fechado."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Tinta de Leitura Única",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "4 sicles",
+  "regra": "Some depois de lida uma vez. Aparecium não traz de volta."
+ },
+ {
+  "grupo": "Estudo e escola",
+  "nome": "Agenda que Grita",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Grita o compromisso cinco minutos antes. Nunca se perde uma aula por esquecer, e todo mundo ouve."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Vela que Não Apaga",
+  "extra": "",
+  "cat": "I",
+  "preco": "5 sicles",
+  "regra": "Ilumina 3 m por uma noite, contra vento e chuva. Uso único."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Vela de Sono Fundo",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Acesa no quarto, quem dorme ali recupera 1 de DET a mais no descanso. Uso único."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Pote de Fogo Frio",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 sicles",
+  "regra": "Um fogo azul num pote: esquenta e ilumina e não queima pano. Uso único, uma noite."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Giz de Marcar Caminho",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "1 sicle",
+  "regra": "A marca brilha só para quem riscou. Voltar por um caminho marcado não pede teste. Um giz marca um caminho."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Sal de Pegadas",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "3 sicles",
+  "regra": "Espalhado na porta, guarda as pegadas de quem passar até o amanhecer: você sabe quantos e de que tamanho. Uso único."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Bolha de Ar Engarrafada",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "8 galeões",
+  "regra": "Respirar debaixo d'água por 10 minutos. Uso único."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Corda que Amarra Sozinha",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "15 galeões",
+  "regra": "Arremessada (Corpo + Reflexos contra a Defesa): o alvo fica Preso; sair pede Corpo + Atletismo DT 11. Uma vez por cena, e ela volta enrolada."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Bombinha de Fumaça Colorida",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "5 sicles",
+  "regra": "Fumaça de 6 m por duas rodadas: quem está dentro não pode ser alvo de feitiço que precisa ver. Uso único."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Pastilha de Voz",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "1 sicle",
+  "regra": "Encerra Silenciado feito por Silencio ou por um logro. Contra maldição, nada. Uso único."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Doce do Último Fôlego",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "60 galeões",
+  "regra": "Reação ao cair a 0 PV: fica com 1 PV e de pé. Na noite seguinte dorme sem acordar, e não recupera DET. Uso único, um por pessoa por dia."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Envelope Autoentregador",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "3 sicles",
+  "regra": "Voa até o destinatário a até 1 km e chega em minutos. Pegar no ar: Corpo + Reflexos DT 9. Uso único."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Biscoito de Coragem",
+  "extra": "",
+  "cat": "I",
+  "preco": "4 sicles",
+  "regra": "+1 passo no próximo teste contra medo nesta cena. Uso único."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Pó de Pegada Falsa",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Por uma hora, suas pegadas viram as de um bicho. Rastrear você: Percepção DT 11. Uso único."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Frasco de Eco",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Guarda um som de até uma rodada; abrir solta o som: passos, um grito, a voz do professor. Uso único."
+ },
+ {
+  "grupo": "Consumíveis encantados",
+  "nome": "Lacre Delator",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Quem abre uma carta que não é sua fica com os dedos vermelhos por um dia. Uso único."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Coldre de Varinha",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Sacar a varinha não gasta o movimento, e Accio não tira a varinha guardada nele."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Bracelete de Retorno",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "40 galeões",
+  "regra": "Uma vez por cena, quando você é desarmado, a varinha volta à sua mão no fim daquele turno, se caiu a até 9 m."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Luvas de Duelista",
+  "extra": "",
+  "cat": "II",
+  "preco": "25 galeões",
+  "regra": "+1 passo em Reflexos num Protego, uma vez por cena."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Amuleto de Espinho",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "30 galeões",
+  "regra": "Quem agarra você leva RB de dano, uma vez por cena."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Espelho de Bolso Refletor",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "250 galeões",
+  "regra": "Reação, uma vez por sessão: um feitiço de ataque de Círculo 1 que acertaria você volta para quem lançou. Um Desastre seu racha o espelho."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Medalha de Socorro",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "50 galeões",
+  "regra": "Quando você cai a 0 PV, ela grita: quem está a 30 m sabe onde, e quem vier socorrer ganha +1 passo em Medibruxaria, uma vez por cena."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Colete de Couro de Dragão",
+  "extra": "",
+  "cat": "II",
+  "preco": "60 galeões",
+  "regra": "+1 de Defesa contra garras, mordidas e quedas. Contra feitiço, nada."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Talismã de Rachar",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "300 galeões",
+  "regra": "Uma vez por sessão, uma maldição de Círculo 2 ou menos que pegaria você pega o talismã, e ele racha. Na terceira rachadura, quebra."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Pulseira da Fúria Contida",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "20 galeões",
+  "regra": "Quando um aliado a até 9 m cai, você ganha 1 Ímpeto, uma vez por cena."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Vela-Escudo",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "15 galeões",
+  "regra": "Acesa no chão, faz um círculo de 2 m: criatura de Perigo até 3 precisa de Vontade DT 9 para entrar. Uma noite, uso único."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Faixa do Foco",
+  "extra": "",
+  "cat": "II",
+  "preco": "30 galeões",
+  "regra": "+1 passo para manter um feitiço sob dano, uma vez por cena."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Lenço de Rendição",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Agitado num duelo formal, ninguém lança na próxima rodada. Quem ataca mesmo assim perde 1 de relação com todos que viram. Uma vez por duelo."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Escudo de Bolso",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "180 galeões",
+  "regra": "Um disco de bronze que abre em escudo: reação, +2 de Defesa contra um ataque físico, uma vez por cena."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Botas Antiderrapantes",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "3 galeões",
+  "regra": "Você não fica Caído por chão molhado, gelo ou Glisseo."
+ },
+ {
+  "grupo": "Duelo e proteção",
+  "nome": "Varinha reserva de segunda mão",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 galeões",
+  "regra": "Funciona como varinha alheia (Resistente). Pior que a sua, melhor que nenhuma."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Lanterna de Fogo-Fátuo",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "15 galeões",
+  "regra": "Ilumina 6 m, e as feras não veem a luz: andar com ela não estraga a Furtividade contra criaturas."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Apito de Fada",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Só criaturas ouvem. Uma fera de Perigo até 2 testa Vontade DT 7 ou vem ver, curiosa, sem atacar na primeira rodada. Uma vez por cena."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Escova de Pelo Encantada",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "+1 passo em Trato para acalmar uma criatura, uma vez por cena."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Petisco Universal",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "3 sicles",
+  "regra": "Uma criatura que possa e queira comer (não enfurecida, não sob ordem de alguém, não carnívora de gente) não ataca você na rodada seguinte. Uso único."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Gaiola Dobrável",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "20 galeões",
+  "regra": "Do tamanho de uma caixa de sapato, abre até o de um cão. Guarda uma criatura pequena Atordoada ou Presa sem machucar."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Bússola de Volta",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Aponta sempre para onde o dono dormiu na última noite. Voltar da Floresta não pede teste de se perder."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Corda de Escalada Pegajosa",
+  "extra": "",
+  "cat": "I",
+  "preco": "3 galeões",
+  "regra": "+1 passo em Atletismo para escalar, uma vez por cena."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Tenda de Uma Pessoa",
+  "extra": "",
+  "cat": "I",
+  "preco": "4 galeões",
+  "regra": "A barraca bruxa em pequeno: descanso de verdade para um."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Cantil sem Fundo",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "30 galeões",
+  "regra": "Enche de água limpa a cada amanhecer: um dia de água para quatro. Comida não se conjura."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Lupa de Rastro",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "25 galeões",
+  "regra": "Mostra há quanto tempo uma pegada foi feita, até um dia. Uma vez por cena."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Rede de Fio de Fada",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "35 galeões",
+  "regra": "Arremessada (Corpo + Reflexos contra a Defesa): uma criatura voadora de Perigo até 4 fica Presa e cai. Uma vez por cena."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Sino de Gnomos",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Tocado no jardim, os gnomos saem e somem por um dia. Desgnomizar não pede teste."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Luvas de Manejo Grossas",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Ignora o dano de picada de bicho pequeno: fada mordente, diabrete, doxy."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Frasco de Cheiro de Dragão",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "15 galeões",
+  "regra": "Aberto, feras de Perigo até 5 que não sejam dragões fogem da área por uma cena. Um dragão vem ver. Uso único."
+ },
+ {
+  "grupo": "Exploração e criaturas",
+  "nome": "Mapa que se Desenha",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "150 galeões",
+  "regra": "Desenha o caminho que o dono fez nesta cena. Uma vez por sessão, mostra uma passagem secreta a até 30 m, se houver."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Porta-Retrato Espião",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "40 galeões",
+  "regra": "O retratinho visita outro quadro do mesmo pintor e volta contando o que viu. Uma vez por dia."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Caixinha de Música Abafadora",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "20 galeões",
+  "regra": "Aberta, ninguém de fora ouve a conversa a até 3 m dela, por uma cena."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Fechadura Ciumenta",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "25 galeões",
+  "regra": "Só abre para quem o dono apresentou. Alohomora: Feitiços DT 13, e quem falha leva RB de dano."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Capacho Delator",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "3 galeões",
+  "regra": "Grita o nome de quem pisa, se o conhece. Polissuco engana: grita o nome errado."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Memorando Voador",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "5 sicles",
+  "regra": "O recado vira avião de papel, voa até 100 m e se abre só na mão certa. Uso único."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Gramofone de Vozes",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "30 galeões",
+  "regra": "Grava a conversa de uma cena e toca depois. Abafiato e Fidelius impedem a gravação."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Chaleira Vigia",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "1 galeão",
+  "regra": "Apita quando alguém chega perto da casa à noite. Não diz quem."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Espanador Autônomo",
+  "extra": "",
+  "cat": "I",
+  "preco": "2 galeões",
+  "regra": "Limpa um cômodo por dia, sozinho."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Caixa de Correio Coruja",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "15 galeões",
+  "regra": "A coruja deixa a carta e espera: quem mandou sabe quando ela foi lida."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Dedal de Costura Rápida",
+  "extra": "",
+  "cat": "I",
+  "preco": "1 sicle",
+  "regra": "Conserta roupa rasgada em um minuto."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Cortina Falsa",
+  "extra": " ✦",
+  "cat": "II",
+  "preco": "20 galeões",
+  "regra": "Quem olha de fora vê o cômodo vazio e calmo. Homenum Revelio ainda acha quem está dentro."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Diário de Voz",
+  "extra": " ✦",
+  "cat": "I",
+  "preco": "3 galeões",
+  "regra": "Só abre com a voz do dono. Forçado, a pena de dentro escreve o nome de quem forçou, se souber."
+ },
+ {
+  "grupo": "Casa, recado e espionagem",
+  "nome": "Tinteiro Espião",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "120 galeões",
+  "regra": "Tudo o que se escreve com esta tinta aparece no pergaminho do dono. Perceber: Feitiços DT 11. Um vidro funciona por um mês."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Ampulheta de Areia Negra",
+  "extra": " ✦",
+  "cat": "IV",
+  "preco": "800 galeões",
+  "regra": "Uma vez por sessão, depois de um Desastre seu, vire-a e role de novo. Preço: 1d4 de DET."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Moeda de Duas Caras",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "200 galeões",
+  "regra": "Uma vez por sessão, antes de rolar, jogue: cara, +1 passo; coroa, –1 passo. O Mestre também pode jogar a moeda por você, uma vez por sessão."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Anel do Ancestral",
+  "extra": " ✦",
+  "cat": "IV",
+  "preco": "não se vende",
+  "regra": "Uma vez por sessão, um dado extra num teste de Conhecimento ou Feitiços: um antepassado sussurra. Preço: ele pede algo, e recusar custa 1 de DET por dia até cumprir."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Pena de Fênix Encapsulada",
+  "extra": " ✦",
+  "cat": "IV",
+  "preco": "1.000 galeões",
+  "regra": "Quebrada sobre um aliado a 0 PV, ele volta com metade dos PV. Não cura maldição e não traz morto. Uso único. Preço: quem a vende quer saber de onde veio a pena."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Espelho Mentiroso",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "150 galeões",
+  "regra": "Mostra a quem se olha o que o dono quer: +1 passo em Enganação contra essa pessoa, uma vez por cena."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Gaiola de Pássaro Vazia",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "300 galeões",
+  "regra": "Prende um feitiço de Círculo 2 ou menos lançado contra ela. Aberta, o feitiço sai contra quem o dono apontar. Uma carga."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Colar de Dentes de Lobisomem",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "120 galeões",
+  "regra": "+1 passo para intimidar, uma vez por cena. Feras lupinas atacam primeiro quem o usa. Na lua cheia, pesadelos: –1 de DET."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Máscara Sem Rosto",
+  "extra": " ✦",
+  "cat": "IV",
+  "preco": "600 galeões, ilegal",
+  "regra": "Uma vez por sessão: quem viu você nesta cena esquece o seu rosto quando ela acaba. Preço: 1 de Corrupção por uso."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Livro que Lê Você",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "250 galeões",
+  "regra": "Uma vez por sessão, responde uma pergunta sobre um feitiço, poção ou criatura. O Mestre diz a verdade, em enigma."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Cálice da Verdade Dividida",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "200 galeões",
+  "regra": "Quem bebe dele junto não consegue mentir um ao outro por uma cena; resistir, Vontade DT 11. Uma vez por sessão."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Varinha de Vidro Velha",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "400 galeões",
+  "regra": "Uma vez por sessão, com uma ação, relança o último feitiço de Círculo 1 ou 2 que você lançou com ela, com o mesmo resultado."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Botas de Légua",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "300 galeões",
+  "regra": "Uma vez por dia, uma caminhada de um dia leva uma hora. Fora de combate."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Coração de Vidro",
+  "extra": " ✦",
+  "cat": "IV",
+  "preco": "não se vende",
+  "regra": "Guarda uma emoção do dono. Uma vez por sessão, ignora Amedrontado ou Desesperado por uma cena. Preço: se o vidro quebrar, a emoção volta toda de uma vez, e você fica Desesperado."
+ },
+ {
+  "grupo": "Objetos de poder",
+  "nome": "Trevo Encantado de Quatro Folhas",
+  "extra": " ✦",
+  "cat": "III",
+  "preco": "150 galeões",
+  "regra": "Uma vez por sessão, um Desastre seu vira falha simples, e o trevo perde uma folha. Sem folhas, murcha."
+ },
+ {
+  "grupo": "Objetos raros e perigosos",
+  "nome": "Vira-Tempo",
+  "extra": "",
+  "cat": "IV",
+  "preco": "do Ministério",
+  "regra": "Volta até 5 horas. Ninguém pode te ver, nem você mesmo: se acontecer, Desastre. Os experimentais voltam anos, e cada volta muda o presente."
+ },
+ {
+  "grupo": "Objetos raros e perigosos",
+  "nome": "Penseira",
+  "extra": "",
+  "cat": "IV",
+  "preco": "500 galeões",
+  "regra": "Bacia de pedra rúnica: revive uma memória como cena jogável. Uma memória alterada aparece borrada."
+ },
+ {
+  "grupo": "Objetos raros e perigosos",
+  "nome": "Desiluminador",
+  "extra": "",
+  "cat": "III",
+  "preco": "fabricar",
+  "regra": "Apaga e devolve as luzes de um lugar. Com o tempo, guia o dono até quem ele ama."
+ },
+ {
+  "grupo": "Objetos raros e perigosos",
+  "nome": "Arma de prata de duende",
+  "extra": "",
+  "cat": "III",
+  "preco": "1.000 galeões, e o duende acha que é dele",
+  "regra": "Não enferruja nem lasca. Fica com o que a fortalece: banhada em veneno de basilisco, destrói Horcrux. O duende que fez quer de volta quando o dono morrer."
+ },
+ {
+  "grupo": "Objetos raros e perigosos",
+  "nome": "Diadema ou joia de sabedoria",
+  "extra": "",
+  "cat": "III",
+  "preco": "300 galeões",
+  "regra": "+1 passo em Conhecimento enquanto usado. Ocupa um dos três objetos ativos."
+ },
+ {
+  "grupo": "Objetos raros e perigosos",
+  "nome": "Livro de poções anotado",
+  "extra": "",
+  "cat": "II",
+  "preco": "não se compra; acha-se",
+  "regra": "+1 passo em Poções nas receitas anotadas e a resposta de um ◆ por poção. As margens às vezes ensinam um feitiço, sem dizer o que faz."
+ },
+ {
+  "grupo": "Objetos raros e perigosos",
+  "nome": "Colar de opalas amaldiçoado",
+  "extra": "",
+  "cat": "III",
+  "preco": "1.500 galeões, na Borgin & Burkes",
+  "regra": "Tocar sem luva: Fortitude DT 13 ou vai a 0 PV e fica Inconsciente até o St. Mungus."
+ },
+ {
+  "grupo": "Objetos raros e perigosos",
+  "nome": "Pacto de sangue",
+  "extra": " <span class=\"dado\">F</span>",
+  "cat": "IV",
+  "preco": "ritual",
+  "regra": "Frasco com o sangue de duas pessoas: elas não podem lutar uma contra a outra. Só quebra se o frasco quebrar, e isso pede um ritual ou uma criatura pura."
+ },
+ {
+  "grupo": "Objetos raros e perigosos",
+  "nome": "Crânio de vidência",
+  "extra": " <span class=\"dado\">F</span>",
+  "cat": "IV",
+  "preco": "Travessa do Tranco",
+  "regra": "A fumaça mostra pedaços do futuro a quem o dono deixar ver. Uma visão por cena; o Mestre escolhe o que ela esconde."
+ },
+ {
+  "grupo": "Objetos raros e perigosos",
+  "nome": "Horcrux",
+  "extra": "",
+  "cat": "IV",
+  "preco": "—",
+  "regra": "Um objeto com um pedaço de alma. Quem o carrega perde 1 de DET por dia e briga com os amigos; um diário ou objeto que se usa pode possuir o dono (Vontade DT 11 por semana). Só se destrói com veneno de basilisco, Fogomaldito ou arma de duende que o absorveu."
+ },
+ {
+  "grupo": "Artefatos únicos",
+  "nome": "Varinha das Varinhas",
+  "extra": "",
+  "cat": "Único",
+  "preco": "—",
+  "regra": "Relíquia da Morte, de sabugueiro com pelo de testrálio. +1 passo em todo feitiço de ataque e duelo. Obedece a quem venceu o dono anterior, e atrai quem quer vencer você. Um Reparo lançado com ela conserta uma varinha quebrada: é a única forma."
+ },
+ {
+  "grupo": "Artefatos únicos",
+  "nome": "Pedra da Ressurreição",
+  "extra": "",
+  "cat": "Único",
+  "preco": "—",
+  "regra": "Relíquia da Morte. Gire três vezes: as sombras de quem você amou vêm conversar, não voltam. Quem não larga a pedra fica Desesperado."
+ },
+ {
+  "grupo": "Artefatos únicos",
+  "nome": "Capa da Invisibilidade das Relíquias",
+  "extra": "",
+  "cat": "Único",
+  "preco": "—",
+  "regra": "Invisível de verdade, para sempre: não gasta, Accio não traz, Homenum Revelio não garante, nem olho mágico vê."
+ },
+ {
+  "grupo": "Artefatos únicos",
+  "nome": "Pedra Filosofal",
+  "extra": "",
+  "cat": "Único",
+  "preco": "—",
+  "regra": "Faz ouro de qualquer metal e o Elixir da Vida. Quem a guarda vive séculos e é caçado por isso."
+ },
+ {
+  "grupo": "Artefatos únicos",
+  "nome": "Espelho de Ojesed",
+  "extra": "",
+  "cat": "Único",
+  "preco": "—",
+  "regra": "Mostra o maior desejo. Afastar-se: Vontade DT 11. Quem é feliz só vê a si mesmo."
+ },
+ {
+  "grupo": "Artefatos únicos",
+  "nome": "Mapa do Maroto",
+  "extra": "",
+  "cat": "Único",
+  "preco": "—",
+  "regra": "Mostra todas as pessoas no castelo, com nome. Não é enganado por Polissuco, capa ou animagia. Abre e fecha com as frases certas."
+ },
+ {
+  "grupo": "Artefatos únicos",
+  "nome": "Orbe de profecia",
+  "extra": "",
+  "cat": "Único",
+  "preco": "—",
+  "regra": "Guardado no Departamento de Mistérios. Só quem a profecia cita pode tirar da prateleira; quebrado, toca uma vez e some."
+ },
+ {
+  "grupo": "Artefatos únicos",
+  "nome": "Repositório de Magia Antiga",
+  "extra": " <span class=\"dado\">J</span>",
+  "cat": "Único",
+  "preco": "—",
+  "regra": "Bacia de luz sob a terra. Só quem nasceu vendo a magia antiga (Vis Antiqua) a enxerga, e os duendes querem o que ela guarda."
+ }
+]

@@ -9,6 +9,9 @@ números fora do lugar, não para provar equilíbrio.
 import pathlib, random, re, sys
 from collections import Counter
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+import dados as banco  # o banco: dados/*.json
+
 HTML = (pathlib.Path(__file__).resolve().parent.parent / "index.html").read_text(encoding="utf-8")
 rnd = random.Random(1504)
 DADOS = (4, 6, 8, 10, 12)
@@ -174,9 +177,8 @@ def sim_quadribol(n=N, mano=0, vel=0, quieto=False):
 
 
 # ---------------------------------------------------------------- combate
-TABUA = {1: (6, 6, (6, 4), 1), 2: (12, 7, (6, 6), 2), 3: (20, 7, (8, 6), 3), 4: (30, 8, (8, 8), 4), 5: (42, 9, (10, 8), 5),
-         6: (56, 9, (10, 10), 6), 7: (72, 10, (12, 10), 7), 8: (90, 11, (12, 12), 8), 9: (110, 12, (12, 12, 8), 9),
-         10: (135, 13, (12, 12, 10), 11), 11: (165, 14, (12, 12, 12), 13)}
+# a Tábua de Perigo vem do banco (dados/tabua.json): (PV, Defesa, dados de Ataque, Dano)
+TABUA = {p: (l["pv"], l["defesa"], tuple(int(x) for x in l["ataque"].replace("d", "").split("+")), l["dano"]) for p, l in banco.tabua().items()}
 # aluno típico ao longo do ano (Mente, Feitiços, Corpo, Reflexos); ataque: (Círculo, mod de dano)
 ALUNO = {1: (8, 6, 6, 6, (1, 0)), 2: (8, 6, 6, 6, (2, 2)), 3: (8, 8, 6, 8, (2, 2)), 4: (8, 8, 8, 8, (2, 2)),
          5: (10, 10, 8, 8, (2, 2)), 6: (10, 10, 8, 10, (3, 3)), 7: (10, 12, 10, 10, (3, 3))}
@@ -264,12 +266,9 @@ def sim_combate(n=1500):
 
 # ---------------------------------------------------------------- bruxos (Forja de Bruxos)
 def fichas_bruxos():
-    out = []
-    for attrs, nome in re.findall(r'<div class="cartao bruxo"([^>]*)>\s*<h5>(.*?) <em>', HTML):
-        A = dict(re.findall(r'data-([a-z]+)="([^"]*)"', attrs))
-        dados = tuple(int(x) for x in A["atq"].replace("d", "").split("+"))
-        out.append((nome, int(A["nivel"]), A["papel"], int(A["pv"]), int(A["def"]), dados, int(A["dano"]), int(A["ameaca"]), A.get("poderes", "").split("|")))
-    return out
+    """As dez fichas prontas, derivadas do banco (dados/bruxos.json + Tábua + Papel), as mesmas do livro."""
+    return [(b["nome"], b["grau"], b["papel"], b["pv"], b["defesa"], tuple(int(x) for x in b["ataque"].replace("d", "").split("+")),
+             b["dano"], b["ameaca"], b["poderes"]) for b in banco.bruxos()]
 
 
 def luta_bruxo(ano, bruxo, aliado=None, n_alunos=4, chefe=False):

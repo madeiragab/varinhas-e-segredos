@@ -4,6 +4,10 @@ R = pathlib.Path(__file__).parent
 T = R / "template"
 VERSAO = "1.0 RC"
 caps = "\n".join(p.read_text(encoding="utf-8") for p in sorted((T / "capitulos").glob("*.html")))
+import sys
+sys.path.insert(0, str(R))
+import dados  # o banco: tabelas e cartões marcados com <!--dados:...--> saem de dados/*.json
+caps = dados.renderiza(caps)
 html = (T / "livro.html").read_text(encoding="utf-8")
 html = (html.replace("{{CSS}}", (T / "livro.css").read_text(encoding="utf-8"))
             .replace("{{CAPITULOS}}", caps)
@@ -13,7 +17,7 @@ import hashlib
 ASSINATURA = hashlib.sha256(html.encode("utf-8")).hexdigest()[:12]  # tests/publicacao.py compara com o site no ar
 (R / "index.html").write_text("<!doctype html>\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"build\" content=\"" + ASSINATURA + "\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n" + html + "\n</html>\n", encoding="utf-8")
 # checagens: nada de placeholder sobrando, versão no HTML, toda âncora interna existe
-erros = [p for p in ("{{CSS}}", "{{CAPITULOS}}", "{{VERSAO}}", "{{DATA}}") if p in html]
+erros = [p for p in ("{{CSS}}", "{{CAPITULOS}}", "{{VERSAO}}", "{{DATA}}", "<!--dados:") if p in html]
 if "versão " + VERSAO not in html:
     erros.append("versão " + VERSAO + " não aparece no HTML")
 import re

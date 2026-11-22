@@ -15,21 +15,7 @@
     <li><b>Fraqueza.</b> Obrigatória: como vencê-la sem força bruta.</li>
   </ol>
   <h3>A Tábua de Perigo</h3>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th class="num">Perigo</th><th>Ministério</th><th class="num">PV</th><th class="num">Defesa</th><th>Ataque</th><th>Dano</th><th class="num">DT</th><th class="num">Traços</th><th class="num">Poderes</th><th class="num">Fases</th></tr></thead>
-  <tbody>
-  <tr><td class="num">1</td><td>X</td><td class="num">6</td><td class="num">6</td><td>d6+d4</td><td>RA+1</td><td class="num">6</td><td class="num">1</td><td class="num">0</td><td class="num">—</td></tr>
-  <tr><td class="num">2</td><td>X</td><td class="num">12</td><td class="num">7</td><td>d6+d6</td><td>RA+2</td><td class="num">7</td><td class="num">1</td><td class="num">1</td><td class="num">2</td></tr>
-  <tr><td class="num">3</td><td>XX</td><td class="num">20</td><td class="num">7</td><td>d8+d6</td><td>RA+3</td><td class="num">8</td><td class="num">2</td><td class="num">1</td><td class="num">3</td></tr>
-  <tr><td class="num">4</td><td>XX</td><td class="num">30</td><td class="num">8</td><td>d8+d8</td><td>RA+4</td><td class="num">8</td><td class="num">2</td><td class="num">1</td><td class="num">3</td></tr>
-  <tr><td class="num">5</td><td>XXX</td><td class="num">42</td><td class="num">9</td><td>d10+d8</td><td>RA+5</td><td class="num">9</td><td class="num">2</td><td class="num">2</td><td class="num">3</td></tr>
-  <tr><td class="num">6</td><td>XXX</td><td class="num">56</td><td class="num">9</td><td>d10+d10</td><td>RA+6</td><td class="num">10</td><td class="num">3</td><td class="num">2</td><td class="num">3</td></tr>
-  <tr><td class="num">7</td><td>XXXX</td><td class="num">72</td><td class="num">10</td><td>d12+d10</td><td>RA+7</td><td class="num">10</td><td class="num">3</td><td class="num">2</td><td class="num">3</td></tr>
-  <tr><td class="num">8</td><td>XXXX</td><td class="num">90</td><td class="num">11</td><td>d12+d12</td><td>RA+8</td><td class="num">11</td><td class="num">3</td><td class="num">3</td><td class="num">4</td></tr>
-  <tr><td class="num">9</td><td>XXXXX</td><td class="num">110</td><td class="num">12</td><td>d12+d12+d8</td><td>RA+9</td><td class="num">12</td><td class="num">4</td><td class="num">3</td><td class="num">4</td></tr>
-  <tr><td class="num">10</td><td>XXXXX</td><td class="num">135</td><td class="num">13</td><td>d12+d12+d10</td><td>RA+11</td><td class="num">13</td><td class="num">4</td><td class="num">3</td><td class="num">4</td></tr>
-  <tr><td class="num">11</td><td>XXXXX</td><td class="num">165</td><td class="num">14</td><td>d12+d12+d12</td><td>RA+13</td><td class="num">14</td><td class="num">5</td><td class="num">4</td><td class="num">4</td></tr>
-  </tbody></table></div>
+  <!--dados:tabua-->
   <p><strong>DT</strong> é a dificuldade para resistir aos Poderes dela. <strong>Fases</strong> só valem para o chefe: o PV se divide em blocos iguais, e o golpe que quebra uma Fase para no piso dela. Ao quebrar uma Fase, a criatura se livra das condições e muda — um Poder novo, o teto que desaba, uma forma nova. Cura nunca devolve Fase.</p>
   <p><strong>Chefe sozinho</strong> contra três ou mais personagens: PV × 1,5 (arredondado para cima) e age <strong>duas vezes por rodada</strong>, um ataque ou Poder em cada; a segunda é a ação extra dele. Chefe com capangas não ganha esse ajuste: o orçamento de Ameaça já conta os outros. Na simulação do livro (tests/simulacoes.py: quatro alunos típicos, sem poderes, poções nem Ímpeto), sem esse ajuste o chefe caía em 2 ou 3 rodadas e quase nunca derrubava alguém. Com ele, dura de 2 rodadas (1º ao 3º ano) a 5 (7º ano) e derruba alguém em 5% a 55% das lutas, mais nos anos altos. Um encontro difícil (chefe com dois capangas) dura de 2 a 6 rodadas, com 2% a 36% de chance de alguém cair. Uma ameaça quatro Perigos acima derruba o grupo inteiro em quase todas as lutas: por isso a saída esperada é outra. Poderes e Fases que mudam a luta alongam esses números; nos primeiros anos, use os Poderes para chegar à meta abaixo.</p>
   <h3>Montar o encontro: o orçamento</h3>
@@ -105,18 +91,7 @@
   <p>Toda criatura tem um <strong>objetivo</strong> (comer, proteger, fugir, cumprir uma ordem). Quando o objetivo é atendido ou fica impossível, ela para de lutar.</p>
 
   <h3>Arquétipos</h3>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>d8</th><th>Arquétipo</th><th>Ajuste</th><th>Exemplos</th></tr></thead>
-  <tbody>
-  <tr><td class="d">1</td><td><strong>Padrão</strong></td><td>Nenhum.</td><td>Hipogrifo, Kappa</td></tr>
-  <tr><td class="d">2</td><td><strong>Bruto</strong></td><td>PV +30%, Defesa –1, ataque –1 passo.</td><td>Trasgo, Erumpente</td></tr>
-  <tr><td class="d">3</td><td><strong>Ágil</strong></td><td>PV –20%, Defesa +2.</td><td>Diabrete, Fada mordente</td></tr>
-  <tr><td class="d">4</td><td><strong>Predador</strong></td><td>PV –10%, ataque +1 passo, dano +2.</td><td>Acromântula, Lobisomem</td></tr>
-  <tr><td class="d">5</td><td><strong>Conjurador</strong></td><td>PV –20%, +1 Poder.</td><td>Esfinge, bruxo das trevas</td></tr>
-  <tr><td class="d">6</td><td><strong>Enxame</strong></td><td>Ataca todos num raio de 3 m; feitiços de alvo único causam metade.</td><td>Doxys, Billywigs</td></tr>
-  <tr><td class="d">7</td><td><strong>Espectral</strong></td><td>PV –30%; imune a dano físico.</td><td>Dementador, Lethifold</td></tr>
-  <tr><td class="d">8</td><td><strong>Guardião</strong></td><td>PV +20%, Defesa +1; reação: recebe o ataque no lugar do que protege.</td><td>Fofo, armaduras</td></tr>
-  </tbody></table></div>
+  <!--dados:arquetipos-->
   <h3>Traços (passivos)</h3>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>d20</th><th>Traço</th><th>Efeito</th></tr></thead>
@@ -199,940 +174,118 @@
 <section class="capitulo" id="cap9">
   <div class="abertura"><span class="alg">Capítulo Nove</span><h2>Bestiário</h2><p>Fichas prontas, montadas com a Forja</p></div>
   <p class="abre">Cada ficha sai da <a href="#cap8">Forja</a>: a linha da Tábua de Perigo, o ajuste do arquétipo e Traços e Poderes até a quantidade da Tábua. A Ameaça já vem somada para o orçamento do encontro, e a fraqueza se descobre com pistas (<a href="#cap8">Descobrir a fraqueza</a>). O Ministério é a classificação da Tábua. Fases só valem quando a criatura é o chefe da sessão.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Criatura</th><th class="num">Perigo</th><th>Arquétipo</th><th class="num">PV</th><th class="num">Def</th><th class="num">Ameaça</th></tr></thead>
-  <tbody>
-  <tr><td><a href="#cr-agoureiro">Agoureiro</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-amasso">Amasso</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-bezerro-da-lua">Bezerro-da-lua</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-chizpurfle">Chizpurfle</a></td><td class="num">1</td><td>Enxame</td><td class="num">6</td><td class="num">6</td><td class="num">3</td></tr>
-  <tr><td><a href="#cr-crup">Crup</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-fada">Fada</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-gnomo-de-jardim">Gnomo de jardim</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-jackalope">Jackalope</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-jarvey">Jarvey</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-knarl">Knarl</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-leprechaun">Leprechaun</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-murtisco">Murtisco</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-pelucio">Pelúcio</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-plimpy">Plimpy</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-pufoso">Pufoso</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-snidget-dourado">Snidget dourado</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-tronquilho">Tronquilho</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-verme-cego">Verme-cego</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
-  <tr><td><a href="#cr-ashwinder">Ashwinder</a></td><td class="num">2</td><td>Padrão</td><td class="num">12</td><td class="num">7</td><td class="num">2</td></tr>
-  <tr><td><a href="#cr-barrete-vermelho">Barrete Vermelho</a></td><td class="num">2</td><td>Predador</td><td class="num">11</td><td class="num">7</td><td class="num">2</td></tr>
-  <tr><td><a href="#cr-bicho-papao">Bicho-Papão</a></td><td class="num">2</td><td>Conjurador</td><td class="num">10</td><td class="num">7</td><td class="num">2</td></tr>
-  <tr><td><a href="#cr-diabrete-da-cornualha">Diabrete da Cornualha</a></td><td class="num">2</td><td>Enxame</td><td class="num">12</td><td class="num">7</td><td class="num">3</td></tr>
-  <tr><td><a href="#cr-fantasma">Fantasma</a></td><td class="num">2</td><td>Espectral</td><td class="num">8</td><td class="num">7</td><td class="num">2</td></tr>
-  <tr><td><a href="#cr-fwooper">Fwooper</a></td><td class="num">2</td><td>Padrão</td><td class="num">12</td><td class="num">7</td><td class="num">3</td></tr>
-  <tr><td><a href="#cr-grindylow">Grindylow</a></td><td class="num">2</td><td>Padrão</td><td class="num">12</td><td class="num">7</td><td class="num">3</td></tr>
-  <tr><td><a href="#cr-hinkypunk">Hinkypunk</a></td><td class="num">2</td><td>Ágil</td><td class="num">10</td><td class="num">9</td><td class="num">2</td></tr>
-  <tr><td><a href="#cr-ramora">Ramora</a></td><td class="num">2</td><td>Padrão</td><td class="num">12</td><td class="num">7</td><td class="num">2</td></tr>
-  <tr><td><a href="#cr-salamandra">Salamandra</a></td><td class="num">2</td><td>Padrão</td><td class="num">12</td><td class="num">7</td><td class="num">2</td></tr>
-  <tr><td><a href="#cr-seminviso">Seminviso</a></td><td class="num">2</td><td>Ágil</td><td class="num">10</td><td class="num">9</td><td class="num">3</td></tr>
-  <tr><td><a href="#cr-billywig">Billywig</a></td><td class="num">3</td><td>Ágil</td><td class="num">16</td><td class="num">9</td><td class="num">3</td></tr>
-  <tr><td><a href="#cr-caranguejo-de-fogo">Caranguejo de fogo</a></td><td class="num">3</td><td>Bruto</td><td class="num">26</td><td class="num">6</td><td class="num">4</td></tr>
-  <tr><td><a href="#cr-dragao-filhote">Dragão filhote</a></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td class="num">4</td></tr>
-  <tr><td><a href="#cr-elfo-domestico">Elfo doméstico</a></td><td class="num">3</td><td>Conjurador</td><td class="num">16</td><td class="num">7</td><td class="num">4</td></tr>
-  <tr><td><a href="#cr-fada-mordente">Fada mordente</a></td><td class="num">3</td><td>Enxame</td><td class="num">20</td><td class="num">7</td><td class="num">4</td></tr>
-  <tr><td><a href="#cr-hipogrifo">Hipogrifo</a></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td class="num">4</td></tr>
-  <tr><td><a href="#cr-inferius">Inferius</a></td><td class="num">3</td><td>Bruto</td><td class="num">26</td><td class="num">6</td><td class="num">3</td></tr>
-  <tr><td><a href="#cr-kappa">Kappa</a></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td class="num">3</td></tr>
-  <tr><td><a href="#cr-poltergeist">Poltergeist</a></td><td class="num">3</td><td>Ágil</td><td class="num">16</td><td class="num">9</td><td class="num">4</td></tr>
-  <tr><td><a href="#cr-qilin">Qilin</a></td><td class="num">3</td><td>Ágil</td><td class="num">16</td><td class="num">9</td><td class="num">3</td></tr>
-  <tr><td><a href="#cr-tentacula-venenosa">Tentácula Venenosa</a></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td class="num">4</td></tr>
-  <tr><td><a href="#cr-testralio">Testrálio</a></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td class="num">3</td></tr>
-  <tr><td><a href="#cr-visgo-do-diabo">Visgo-do-diabo</a></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td class="num">4</td></tr>
-  <tr><td><a href="#cr-acromantula">Acromântula</a></td><td class="num">4</td><td>Predador</td><td class="num">27</td><td class="num">8</td><td class="num">5</td></tr>
-  <tr><td><a href="#cr-duende">Duende</a></td><td class="num">4</td><td>Padrão</td><td class="num">30</td><td class="num">8</td><td class="num">5</td></tr>
-  <tr><td><a href="#cr-kelpie">Kelpie</a></td><td class="num">4</td><td>Bruto</td><td class="num">39</td><td class="num">7</td><td class="num">4</td></tr>
-  <tr><td><a href="#cr-matagot">Matagot</a></td><td class="num">4</td><td>Guardião</td><td class="num">36</td><td class="num">9</td><td class="num">4</td></tr>
-  <tr><td><a href="#cr-pukwudgie">Pukwudgie</a></td><td class="num">4</td><td>Ágil</td><td class="num">24</td><td class="num">10</td><td class="num">5</td></tr>
-  <tr><td><a href="#cr-swooping-evil">Swooping Evil</a></td><td class="num">4</td><td>Predador</td><td class="num">27</td><td class="num">8</td><td class="num">5</td></tr>
-  <tr><td><a href="#cr-trasgo-da-floresta">Trasgo da Floresta</a></td><td class="num">4</td><td>Bruto</td><td class="num">39</td><td class="num">7</td><td class="num">4</td></tr>
-  <tr><td><a href="#cr-unicornio">Unicórnio</a></td><td class="num">4</td><td>Ágil</td><td class="num">24</td><td class="num">10</td><td class="num">4</td></tr>
-  <tr><td><a href="#cr-lobisomem">Lobisomem</a></td><td class="num">5</td><td>Predador</td><td class="num">38</td><td class="num">9</td><td class="num">6</td></tr>
-  <tr><td><a href="#cr-occami">Occami</a></td><td class="num">5</td><td>Padrão</td><td class="num">42</td><td class="num">9</td><td class="num">6</td></tr>
-  <tr><td><a href="#cr-rougarou">Rougarou</a></td><td class="num">5</td><td>Predador</td><td class="num">38</td><td class="num">9</td><td class="num">5</td></tr>
-  <tr><td><a href="#cr-sereiano">Sereiano</a></td><td class="num">5</td><td>Padrão</td><td class="num">42</td><td class="num">9</td><td class="num">6</td></tr>
-  <tr><td><a href="#cr-trasgo-da-montanha">Trasgo da Montanha</a></td><td class="num">5</td><td>Bruto</td><td class="num">55</td><td class="num">8</td><td class="num">6</td></tr>
-  <tr><td><a href="#cr-veela">Veela</a></td><td class="num">5</td><td>Conjurador</td><td class="num">34</td><td class="num">9</td><td class="num">5</td></tr>
-  <tr><td><a href="#cr-centauro">Centauro</a></td><td class="num">6</td><td>Padrão</td><td class="num">56</td><td class="num">9</td><td class="num">6</td></tr>
-  <tr><td><a href="#cr-dementador">Dementador</a></td><td class="num">6</td><td>Espectral</td><td class="num">39</td><td class="num">9</td><td class="num">7</td></tr>
-  <tr><td><a href="#cr-fenix">Fênix</a></td><td class="num">6</td><td>Padrão</td><td class="num">56</td><td class="num">9</td><td class="num">8</td></tr>
-  <tr><td><a href="#cr-graphorn">Graphorn</a></td><td class="num">6</td><td>Bruto</td><td class="num">73</td><td class="num">8</td><td class="num">7</td></tr>
-  <tr><td><a href="#cr-grifo">Grifo</a></td><td class="num">6</td><td>Padrão</td><td class="num">56</td><td class="num">9</td><td class="num">7</td></tr>
-  <tr><td><a href="#cr-lula-gigante">Lula gigante</a></td><td class="num">6</td><td>Bruto</td><td class="num">73</td><td class="num">8</td><td class="num">7</td></tr>
-  <tr><td><a href="#cr-salgueiro-lutador">Salgueiro Lutador</a></td><td class="num">6</td><td>Guardião</td><td class="num">67</td><td class="num">10</td><td class="num">8</td></tr>
-  <tr><td><a href="#cr-snallygaster">Snallygaster</a></td><td class="num">6</td><td>Predador</td><td class="num">50</td><td class="num">9</td><td class="num">7</td></tr>
-  <tr><td><a href="#cr-vampiro">Vampiro</a></td><td class="num">6</td><td>Predador</td><td class="num">50</td><td class="num">9</td><td class="num">8</td></tr>
-  <tr><td><a href="#cr-yeti">Yeti</a></td><td class="num">6</td><td>Bruto</td><td class="num">73</td><td class="num">8</td><td class="num">6</td></tr>
-  <tr><td><a href="#cr-dente-de-vibora-peruano">Dente-de-Víbora Peruano</a></td><td class="num">7</td><td>Ágil</td><td class="num">58</td><td class="num">12</td><td class="num">8</td></tr>
-  <tr><td><a href="#cr-erumpente">Erumpente</a></td><td class="num">7</td><td>Bruto</td><td class="num">94</td><td class="num">9</td><td class="num">8</td></tr>
-  <tr><td><a href="#cr-esfinge">Esfinge</a></td><td class="num">7</td><td>Conjurador</td><td class="num">58</td><td class="num">10</td><td class="num">9</td></tr>
-  <tr><td><a href="#cr-fofo">Fofo</a></td><td class="num">7</td><td>Guardião</td><td class="num">86</td><td class="num">11</td><td class="num">8</td></tr>
-  <tr><td><a href="#cr-monstro-do-rio-branco">Monstro do Rio Branco</a></td><td class="num">7</td><td>Bruto</td><td class="num">94</td><td class="num">9</td><td class="num">7</td></tr>
-  <tr><td><a href="#cr-olho-de-opala-antipoda">Olho-de-Opala Antípoda</a></td><td class="num">7</td><td>Padrão</td><td class="num">72</td><td class="num">10</td><td class="num">8</td></tr>
-  <tr><td><a href="#cr-wampus">Wampus</a></td><td class="num">7</td><td>Predador</td><td class="num">65</td><td class="num">10</td><td class="num">8</td></tr>
-  <tr><td><a href="#cr-bola-de-fogo-chines">Bola-de-Fogo Chinês</a></td><td class="num">8</td><td>Ágil</td><td class="num">72</td><td class="num">13</td><td class="num">9</td></tr>
-  <tr><td><a href="#cr-dorso-cristado-noruegues">Dorso-Cristado Norueguês</a></td><td class="num">8</td><td>Predador</td><td class="num">81</td><td class="num">11</td><td class="num">9</td></tr>
-  <tr><td><a href="#cr-focinho-curto-sueco">Focinho-Curto Sueco</a></td><td class="num">8</td><td>Padrão</td><td class="num">90</td><td class="num">11</td><td class="num">9</td></tr>
-  <tr><td><a href="#cr-lethifold">Lethifold</a></td><td class="num">8</td><td>Espectral</td><td class="num">63</td><td class="num">11</td><td class="num">10</td></tr>
-  <tr><td><a href="#cr-passaro-trovao">Pássaro-trovão</a></td><td class="num">8</td><td>Padrão</td><td class="num">90</td><td class="num">11</td><td class="num">8</td></tr>
-  <tr><td><a href="#cr-romeno-de-chifre-longo">Romeno de Chifre-Longo</a></td><td class="num">8</td><td>Bruto</td><td class="num">117</td><td class="num">10</td><td class="num">9</td></tr>
-  <tr><td><a href="#cr-serpente-chifruda">Serpente-chifruda</a></td><td class="num">8</td><td>Conjurador</td><td class="num">72</td><td class="num">11</td><td class="num">9</td></tr>
-  <tr><td><a href="#cr-verde-gales-comum">Verde-Galês Comum</a></td><td class="num">8</td><td>Padrão</td><td class="num">90</td><td class="num">11</td><td class="num">9</td></tr>
-  <tr><td><a href="#cr-gigante">Gigante</a></td><td class="num">9</td><td>Bruto</td><td class="num">143</td><td class="num">11</td><td class="num">10</td></tr>
-  <tr><td><a href="#cr-manticora">Mantícora</a></td><td class="num">9</td><td>Predador</td><td class="num">99</td><td class="num">12</td><td class="num">10</td></tr>
-  <tr><td><a href="#cr-negro-das-hebridas">Negro das Hébridas</a></td><td class="num">9</td><td>Predador</td><td class="num">99</td><td class="num">12</td><td class="num">10</td></tr>
-  <tr><td><a href="#cr-obscurus">Obscurus</a></td><td class="num">9</td><td>Espectral</td><td class="num">77</td><td class="num">12</td><td class="num">9</td></tr>
-  <tr><td><a href="#cr-rabo-corneo-hungaro">Rabo-Córneo Húngaro</a></td><td class="num">9</td><td>Bruto</td><td class="num">143</td><td class="num">11</td><td class="num">11</td></tr>
-  <tr><td><a href="#cr-zouwu">Zouwu</a></td><td class="num">9</td><td>Ágil</td><td class="num">88</td><td class="num">14</td><td class="num">9</td></tr>
-  <tr><td><a href="#cr-barriga-de-ferro-ucraniano">Barriga-de-Ferro Ucraniano</a></td><td class="num">10</td><td>Bruto</td><td class="num">176</td><td class="num">12</td><td class="num">12</td></tr>
-  <tr><td><a href="#cr-nundu">Nundu</a></td><td class="num">10</td><td>Predador</td><td class="num">122</td><td class="num">13</td><td class="num">11</td></tr>
-  <tr><td><a href="#cr-quimera">Quimera</a></td><td class="num">10</td><td>Bruto</td><td class="num">176</td><td class="num">12</td><td class="num">12</td></tr>
-  <tr><td><a href="#cr-basilisco">Basilisco</a></td><td class="num">11</td><td>Predador</td><td class="num">149</td><td class="num">14</td><td class="num">12</td></tr>
-  </tbody></table></div>
+  <!--dados:bestiario-->
   <h3>Animais mágicos</h3>
   <div class="grade">
-  <div class="cartao ficha" id="cr-agoureiro" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Agoureiro <em>(augurey)</em></h5>
-    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Voo.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Chuva: quando chove, se esconde.</p>
-    <p><b>Quer:</b> Cantar antes da chuva. Não ataca.</p>
-  </div>
-  <div class="cartao ficha" id="cr-amasso" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Amasso <em>(kneazle)</em></h5>
-    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Sentidos Agudos.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Dono: obedece a quem confia.</p>
-    <p><b>Quer:</b> Levar o dono para casa; desconfia de quem mente.</p>
-  </div>
-  <div class="cartao ficha" id="cr-bezerro-da-lua" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Bezerro-da-lua <em>(mooncalf)</em></h5>
-    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Furtiva.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Lua cheia: dança e não foge.</p>
-    <p><b>Quer:</b> Dançar ao luar. Não ataca.</p>
-  </div>
-  <div class="cartao ficha" id="cr-chizpurfle" data-perigo="1" data-arq="Enxame" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="1" data-inc="1" data-ameaca="3">
-    <h5>Chizpurfle</h5>
-    <p class="etiqueta">Perigo 1 · Enxame · Ministério X · Ameaça 3</p>
-    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Come Magia. Enxame: ataca todos num raio de 3 m; feitiço de alvo único causa metade.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Poção antiparasita (Medibruxaria DT 6) limpa a varinha ou o caldeirão.</p>
-    <p><b>Quer:</b> Comer a magia de varinhas e caldeirões.</p>
-  </div>
-  <div class="cartao ficha" id="cr-crup" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Crup</h5>
-    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Sentidos Agudos.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Dono: só obedece a bruxos.</p>
-    <p><b>Quer:</b> Proteger o dono; ataca trouxas.</p>
-  </div>
-  <div class="cartao ficha" id="cr-fada" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Fada</h5>
-    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Voo.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Vaidade: elogiada, fica e posa.</p>
-    <p><b>Quer:</b> Enfeitar-se. Não ataca.</p>
-  </div>
-  <div class="cartao ficha" id="cr-gnomo-de-jardim" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Gnomo de jardim</h5>
-    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Escava.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Girado e jogado longe, demora a voltar.</p>
-    <p><b>Quer:</b> Morder quem mexe no jardim.</p>
-  </div>
-  <div class="cartao ficha" id="cr-jackalope" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Jackalope</h5>
-    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Sentidos Agudos.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Chifre preso num galho: fica preso.</p>
-    <p><b>Quer:</b> Fugir.</p>
-  </div>
-  <div class="cartao ficha" id="cr-jarvey" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Jarvey</h5>
-    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Escava.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Insulto de volta: para para responder.</p>
-    <p><b>Quer:</b> Xingar e caçar gnomos. Fala, mas só grosserias.</p>
-  </div>
-  <div class="cartao ficha" id="cr-knarl" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Knarl</h5>
-    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Sentidos Agudos.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Ignorado, vai embora. Comida oferecida o ofende, e ele destrói o jardim.</p>
-    <p><b>Quer:</b> Não ser enganado. Parece um ouriço; o Amasso sabe a diferença.</p>
-  </div>
-  <div class="cartao ficha" id="cr-leprechaun" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Leprechaun</h5>
-    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Voo.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Brilho.</p>
-    <p><b>Quer:</b> Enganar com ouro falso. O ouro dele some em poucas horas.</p>
-  </div>
-  <div class="cartao ficha" id="cr-murtisco" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Murtisco <em>(murtlap)</em></h5>
-    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Anfíbia.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Deixado em paz, volta para a água.</p>
-    <p><b>Quer:</b> Comer crustáceos. O tentáculo em conserva dá resistência a azarações (<a href="#cap16">Capítulo XVI</a>).</p>
-  </div>
-  <div class="cartao ficha" id="cr-pelucio" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Pelúcio <em>(niffler)</em></h5>
-    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Escava.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Brilho: ouro ou joias o distraem a cena inteira.</p>
-    <p><b>Quer:</b> Pegar tudo o que brilha. A bolsa da barriga guarda muito mais do que parece.</p>
-  </div>
-  <div class="cartao ficha" id="cr-plimpy" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Plimpy</h5>
-    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Anfíbia.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Pernas amarradas: fica boiando até se soltar.</p>
-    <p><b>Quer:</b> Comer caramujos.</p>
-  </div>
-  <div class="cartao ficha" id="cr-pufoso" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Pufoso <em>(puffskein)</em></h5>
-    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Sentidos Agudos.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Comida: qualquer resto o acalma.</p>
-    <p><b>Quer:</b> Comer. Não ataca; ronrona.</p>
-  </div>
-  <div class="cartao ficha" id="cr-snidget-dourado" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Snidget dourado</h5>
-    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Voo.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Espécie protegida: pegar é crime, e ela se cansa se perseguida por uma cena.</p>
-    <p><b>Quer:</b> Fugir. Não ataca.</p>
-  </div>
-  <div class="cartao ficha" id="cr-tronquilho" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Tronquilho <em>(bowtruckle)</em></h5>
-    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Furtiva.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Bichos-de-conta: oferecidos, deixam tirar a madeira.</p>
-    <p><b>Quer:</b> Proteger a árvore. Mira nos olhos.</p>
-  </div>
-  <div class="cartao ficha" id="cr-verme-cego" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
-    <h5>Verme-cego <em>(flobberworm)</em></h5>
-    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
-    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
-    <p><b>Traços:</b> Partes Valiosas (o muco).</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Alface: com ela por perto, não sai do lugar.</p>
-    <p><b>Quer:</b> Comer alface. Não ataca.</p>
-  </div>
-  <div class="cartao ficha" id="cr-ashwinder" data-perigo="2" data-arq="Padrão" data-pv="12" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="2">
-    <h5>Ashwinder</h5>
-    <p class="etiqueta">Perigo 2 · Padrão · Ministério X · Ameaça 2</p>
-    <p><b>PV</b> 12 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
-    <p><b>Traços:</b> Resistência (fogo).</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Glacius congela os ovos antes de pegarem fogo.</p>
-    <p><b>Quer:</b> Pôr ovos num lugar quente. Nasce de fogo mágico esquecido e vive uma hora.</p>
-  </div>
-  <div class="cartao ficha" id="cr-diabrete-da-cornualha" data-perigo="2" data-arq="Enxame" data-pv="12" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="1" data-pes="0" data-inc="1" data-ameaca="3">
-    <h5>Diabrete da Cornualha <em>(pixie)</em></h5>
-    <p class="etiqueta">Perigo 2 · Enxame · Ministério X · Ameaça 3</p>
-    <p><b>PV</b> 12 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
-    <p><b>Traços:</b> Voo. Enxame: ataca todos num raio de 3 m; feitiço de alvo único causa metade.</p>
-    <p><b>Poderes:</b> Ilusão (bagunça).</p>
-    <p><b>Fraqueza:</b> Immobulus.</p>
-    <p><b>Quer:</b> Bagunçar e levar coisas para o alto.</p>
-  </div>
-  <div class="cartao ficha" id="cr-fwooper" data-perigo="2" data-arq="Padrão" data-pv="12" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="1" data-pes="0" data-inc="1" data-ameaca="3">
-    <h5>Fwooper</h5>
-    <p class="etiqueta">Perigo 2 · Padrão · Ministério X · Ameaça 3</p>
-    <p><b>PV</b> 12 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
-    <p><b>Traços:</b> Voo.</p>
-    <p><b>Poderes:</b> Grito (o canto, que enlouquece).</p>
-    <p><b>Fraqueza:</b> Silencio: calado, é só uma ave bonita.</p>
-    <p><b>Quer:</b> Cantar. Vende-se com um feitiço silenciador renovado todo mês.</p>
-  </div>
-  <div class="cartao ficha" id="cr-hinkypunk" data-perigo="2" data-arq="Ágil" data-pv="10" data-def="9" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="1" data-pes="0" data-inc="0" data-ameaca="2">
-    <h5>Hinkypunk</h5>
-    <p class="etiqueta">Perigo 2 · Ágil · Ministério X · Ameaça 2</p>
-    <p><b>PV</b> 10 · <b>Defesa</b> 9 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
-    <p><b>Traços:</b> Furtiva.</p>
-    <p><b>Poderes:</b> Ilusão (a lanterna).</p>
-    <p><b>Fraqueza:</b> Quem não segue a luz não se perde.</p>
-    <p><b>Quer:</b> Levar viajantes para o pântano.</p>
-  </div>
-  <div class="cartao ficha" id="cr-ramora" data-perigo="2" data-arq="Padrão" data-pv="12" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="2">
-    <h5>Ramora</h5>
-    <p class="etiqueta">Perigo 2 · Padrão · Ministério X · Ameaça 2</p>
-    <p><b>PV</b> 12 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
-    <p><b>Traços:</b> Anfíbia.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Respeito: não ataca quem não a caça.</p>
-    <p><b>Quer:</b> Guardar navios.</p>
-  </div>
-  <div class="cartao ficha" id="cr-salamandra" data-perigo="2" data-arq="Padrão" data-pv="12" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="2">
-    <h5>Salamandra</h5>
-    <p class="etiqueta">Perigo 2 · Padrão · Ministério X · Ameaça 2</p>
-    <p><b>PV</b> 12 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
-    <p><b>Traços:</b> Resistência (fogo).</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Fora do fogo, morre em seis horas; pimenta a mantém viva.</p>
-    <p><b>Quer:</b> Ficar no fogo.</p>
-  </div>
-  <div class="cartao ficha" id="cr-seminviso" data-perigo="2" data-arq="Ágil" data-pv="10" data-def="9" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="0" data-pes="1" data-inc="0" data-ameaca="3">
-    <h5>Seminviso <em>(demiguise)</em></h5>
-    <p class="etiqueta">Perigo 2 · Ágil · Ministério X · Ameaça 3</p>
-    <p><b>PV</b> 10 · <b>Defesa</b> 9 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
-    <p><b>Traços:</b> Invisível.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Ele prevê o caminho mais provável: um plano maluco o pega de surpresa.</p>
-    <p><b>Quer:</b> Fugir. O pelo tece capas de invisibilidade.</p>
-  </div>
-  <div class="cartao ficha" id="cr-billywig" data-perigo="3" data-arq="Ágil" data-pv="16" data-def="9" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="0" data-inc="0" data-ameaca="3">
-    <h5>Billywig</h5>
-    <p class="etiqueta">Perigo 3 · Ágil · Ministério XX · Ameaça 3</p>
-    <p><b>PV</b> 16 · <b>Defesa</b> 9 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Veneno (tontura: quem é picado flutua).</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Impedimenta: lento, é fácil de ver e pegar.</p>
-    <p><b>Quer:</b> Caçar.</p>
-  </div>
-  <div class="cartao ficha" id="cr-caranguejo-de-fogo" data-perigo="3" data-arq="Bruto" data-pv="26" data-def="6" data-atq="d6+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="1" data-pes="1" data-inc="0" data-ameaca="4">
-    <h5>Caranguejo de fogo <em>(fire crab)</em></h5>
-    <p class="etiqueta">Perigo 3 · Bruto · Ministério XX · Ameaça 4</p>
-    <p><b>PV</b> 26 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Resistência (fogo), Couro Mágico.</p>
-    <p><b>Poderes:</b> Sopro (chamas pela traseira).</p>
-    <p><b>Fraqueza:</b> De barriga para cima, não se vira sozinho.</p>
-    <p><b>Quer:</b> Defender-se. O casco cravejado vale como Partes Valiosas, sem o traço.</p>
-  </div>
-  <div class="cartao ficha" id="cr-fada-mordente" data-perigo="3" data-arq="Enxame" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="0" data-inc="1" data-ameaca="4">
-    <h5>Fada mordente <em>(doxy)</em></h5>
-    <p class="etiqueta">Perigo 3 · Enxame · Ministério XX · Ameaça 4</p>
-    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Veneno. Enxame: ataca todos num raio de 3 m; feitiço de alvo único causa metade.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Doxicida em spray: Atordoada uma rodada.</p>
-    <p><b>Quer:</b> Defender o ninho.</p>
-  </div>
+  <!--dados:criatura:cr-agoureiro-->
+  <!--dados:criatura:cr-amasso-->
+  <!--dados:criatura:cr-bezerro-da-lua-->
+  <!--dados:criatura:cr-chizpurfle-->
+  <!--dados:criatura:cr-crup-->
+  <!--dados:criatura:cr-fada-->
+  <!--dados:criatura:cr-gnomo-de-jardim-->
+  <!--dados:criatura:cr-jackalope-->
+  <!--dados:criatura:cr-jarvey-->
+  <!--dados:criatura:cr-knarl-->
+  <!--dados:criatura:cr-leprechaun-->
+  <!--dados:criatura:cr-murtisco-->
+  <!--dados:criatura:cr-pelucio-->
+  <!--dados:criatura:cr-plimpy-->
+  <!--dados:criatura:cr-pufoso-->
+  <!--dados:criatura:cr-snidget-dourado-->
+  <!--dados:criatura:cr-tronquilho-->
+  <!--dados:criatura:cr-verme-cego-->
+  <!--dados:criatura:cr-ashwinder-->
+  <!--dados:criatura:cr-diabrete-da-cornualha-->
+  <!--dados:criatura:cr-fwooper-->
+  <!--dados:criatura:cr-hinkypunk-->
+  <!--dados:criatura:cr-ramora-->
+  <!--dados:criatura:cr-salamandra-->
+  <!--dados:criatura:cr-seminviso-->
+  <!--dados:criatura:cr-billywig-->
+  <!--dados:criatura:cr-caranguejo-de-fogo-->
+  <!--dados:criatura:cr-fada-mordente-->
   </div>
   <h3>Feras</h3>
   <div class="grade">
-  <div class="cartao ficha" id="cr-barrete-vermelho" data-perigo="2" data-arq="Predador" data-pv="11" data-def="7" data-atq="d8+d6" data-dano="4" data-dt="7" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="2">
-    <h5>Barrete Vermelho <em>(red cap)</em></h5>
-    <p class="etiqueta">Perigo 2 · Predador · Ministério X · Ameaça 2</p>
-    <p><b>PV</b> 11 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+4 · <b>DT</b> 7 · Fases como chefe: 2</p>
-    <p><b>Traços:</b> Furtiva.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Luz do dia, ou qualquer feitiço que o assuste.</p>
-    <p><b>Quer:</b> Bater em quem se perde onde houve sangue.</p>
-  </div>
-  <div class="cartao ficha" id="cr-grindylow" data-perigo="2" data-arq="Padrão" data-pv="12" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="1" data-pes="0" data-inc="1" data-ameaca="3">
-    <h5>Grindylow</h5>
-    <p class="etiqueta">Perigo 2 · Padrão · Ministério X · Ameaça 3</p>
-    <p><b>PV</b> 12 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
-    <p><b>Traços:</b> Anfíbia.</p>
-    <p><b>Poderes:</b> Teia ou Tentáculos (os dedos compridos).</p>
-    <p><b>Fraqueza:</b> Dedos frágeis: um crítico os quebra.</p>
-    <p><b>Quer:</b> Puxar para o fundo.</p>
-  </div>
-  <div class="cartao ficha" id="cr-hipogrifo" data-perigo="3" data-arq="Padrão" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="4">
-    <h5>Hipogrifo</h5>
-    <p class="etiqueta">Perigo 3 · Padrão · Ministério XX · Ameaça 4</p>
-    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Ataque Duplo.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Respeito: curvar-se e esperar a mesura de volta.</p>
-    <p><b>Quer:</b> Ser respeitado.</p>
-  </div>
-  <div class="cartao ficha" id="cr-kappa" data-perigo="3" data-arq="Padrão" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="0" data-inc="0" data-ameaca="3">
-    <h5>Kappa</h5>
-    <p class="etiqueta">Perigo 3 · Padrão · Ministério XX · Ameaça 3</p>
-    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Anfíbia, Agarrar.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Água derramada: quem se curva o faz se curvar de volta, a água da cabeça cai, e ele fica fraco.</p>
-    <p><b>Quer:</b> Afogar quem entra no lago.</p>
-  </div>
-  <div class="cartao ficha" id="cr-qilin" data-perigo="3" data-arq="Ágil" data-pv="16" data-def="9" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="0" data-inc="0" data-ameaca="3">
-    <h5>Qilin</h5>
-    <p class="etiqueta">Perigo 3 · Ágil · Ministério XX · Ameaça 3</p>
-    <p><b>PV</b> 16 · <b>Defesa</b> 9 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Sentidos Agudos, Furtiva.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Respeito: curva-se a quem tem o coração puro.</p>
-    <p><b>Quer:</b> Fugir de quem quer usá-lo. Curva-se diante de quem merece governar.</p>
-  </div>
-  <div class="cartao ficha" id="cr-testralio" data-perigo="3" data-arq="Padrão" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="0" data-inc="0" data-ameaca="3">
-    <h5>Testrálio <em>(thestral)</em></h5>
-    <p class="etiqueta">Perigo 3 · Padrão · Ministério XX · Ameaça 3</p>
-    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Só Vista por Poucos (quem já viu a morte).</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Cheiro de sangue o distrai.</p>
-    <p><b>Quer:</b> Comer carne. Leva quem monta a qualquer lugar que ele conheça.</p>
-  </div>
-  <div class="cartao ficha" id="cr-acromantula" data-perigo="4" data-arq="Predador" data-pv="27" data-def="8" data-atq="d10+d8" data-dano="6" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="5">
-    <h5>Acromântula</h5>
-    <p class="etiqueta">Perigo 4 · Predador · Ministério XX · Ameaça 5</p>
-    <p><b>PV</b> 27 · <b>Defesa</b> 8 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+6 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Veneno, Escaladora.</p>
-    <p><b>Poderes:</b> Teia ou Tentáculos (teia).</p>
-    <p><b>Fraqueza:</b> Fogo.</p>
-    <p><b>Quer:</b> Comer; proteger a colônia. Fala. Foge do Basilisco.</p>
-  </div>
-  <div class="cartao ficha" id="cr-kelpie" data-perigo="4" data-arq="Bruto" data-pv="39" data-def="7" data-atq="d8+d6" data-dano="4" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="4">
-    <h5>Kelpie</h5>
-    <p class="etiqueta">Perigo 4 · Bruto · Ministério XX · Ameaça 4</p>
-    <p><b>PV</b> 39 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+4 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Anfíbia, Agarrar.</p>
-    <p><b>Poderes:</b> Mudar de Forma.</p>
-    <p><b>Fraqueza:</b> Rédea com Feitiço de Fixação na cabeça: fica manso.</p>
-    <p><b>Quer:</b> Afogar e comer quem monta.</p>
-  </div>
-  <div class="cartao ficha" id="cr-matagot" data-perigo="4" data-arq="Guardião" data-pv="36" data-def="9" data-atq="d8+d8" data-dano="4" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="4">
-    <h5>Matagot</h5>
-    <p class="etiqueta">Perigo 4 · Guardião · Ministério XX · Ameaça 4</p>
-    <p><b>PV</b> 36 · <b>Defesa</b> 9 · <b>Ataque</b> d8+d8 · <b>Dano</b> RA+4 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Furtiva, Sentidos Agudos. Guardião: reação, recebe o ataque no lugar do que protege.</p>
-    <p><b>Poderes:</b> Chamar o Bando (cada ataque contra ele faz surgir outro).</p>
-    <p><b>Fraqueza:</b> Não atacar: sem ataque, não se multiplica.</p>
-    <p><b>Quer:</b> Guardar o Ministério francês.</p>
-  </div>
-  <div class="cartao ficha" id="cr-swooping-evil" data-perigo="4" data-arq="Predador" data-pv="27" data-def="8" data-atq="d10+d8" data-dano="6" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="5">
-    <h5>Swooping Evil</h5>
-    <p class="etiqueta">Perigo 4 · Predador · Ministério XX · Ameaça 5</p>
-    <p><b>PV</b> 27 · <b>Defesa</b> 8 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+6 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Muda de Tamanho (vira casulo).</p>
-    <p><b>Poderes:</b> Drenar (suga o cérebro).</p>
-    <p><b>Fraqueza:</b> Dono: quem o criou o manda voltar ao casulo.</p>
-    <p><b>Quer:</b> Comer.</p>
-  </div>
-  <div class="cartao ficha" id="cr-trasgo-da-floresta" data-perigo="4" data-arq="Bruto" data-pv="39" data-def="7" data-atq="d8+d6" data-dano="4" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="4">
-    <h5>Trasgo da Floresta</h5>
-    <p class="etiqueta">Perigo 4 · Bruto · Ministério XX · Ameaça 4</p>
-    <p><b>PV</b> 39 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+4 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Resistência, Sentidos Agudos.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Burrice: um Confundo nele dura o dobro.</p>
-    <p><b>Quer:</b> Comer; quebrar o que incomoda. Fede: quem chega perto sente.</p>
-  </div>
-  <div class="cartao ficha" id="cr-unicornio" data-perigo="4" data-arq="Ágil" data-pv="24" data-def="10" data-atq="d8+d8" data-dano="4" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="4">
-    <h5>Unicórnio</h5>
-    <p class="etiqueta">Perigo 4 · Ágil · Ministério XX · Ameaça 4</p>
-    <p><b>PV</b> 24 · <b>Defesa</b> 10 · <b>Ataque</b> d8+d8 · <b>Dano</b> RA+4 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Sentidos Agudos, Partes Valiosas.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Respeito: deixa mulheres e crianças chegarem perto.</p>
-    <p><b>Quer:</b> Fugir; defender o potro. Matar é crime e maldição: o sangue dá meia-vida amaldiçoada.</p>
-  </div>
-  <div class="cartao ficha" id="cr-lobisomem" data-perigo="5" data-arq="Predador" data-pv="38" data-def="9" data-atq="d12+d8" data-dano="7" data-dt="9" data-ntr="2" data-npo="1" data-pes="1" data-inc="0" data-ameaca="6">
-    <h5>Lobisomem</h5>
-    <p class="etiqueta">Perigo 5 · Predador · Ministério XXX · Ameaça 6</p>
-    <p><b>PV</b> 38 · <b>Defesa</b> 9 · <b>Ataque</b> d12+d8 · <b>Dano</b> RA+7 · <b>DT</b> 9 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Regeneração, Sentidos Agudos.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Prata; só existe na lua cheia.</p>
-    <p><b>Quer:</b> Caçar gente. A mordida passa a licantropia.</p>
-  </div>
-  <div class="cartao ficha" id="cr-occami" data-perigo="5" data-arq="Padrão" data-pv="42" data-def="9" data-atq="d10+d8" data-dano="5" data-dt="9" data-ntr="2" data-npo="2" data-pes="0" data-inc="1" data-ameaca="6">
-    <h5>Occami <em>(occamy)</em></h5>
-    <p class="etiqueta">Perigo 5 · Padrão · Ministério XXX · Ameaça 6</p>
-    <p><b>PV</b> 42 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+5 · <b>DT</b> 9 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Muda de Tamanho.</p>
-    <p><b>Poderes:</b> Investida, Teia ou Tentáculos (o corpo que enrola).</p>
-    <p><b>Fraqueza:</b> Muda para caber no espaço: um bule o prende.</p>
-    <p><b>Quer:</b> Proteger os ovos. Os ovos são de prata pura.</p>
-  </div>
-  <div class="cartao ficha" id="cr-rougarou" data-perigo="5" data-arq="Predador" data-pv="38" data-def="9" data-atq="d12+d8" data-dano="7" data-dt="9" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="5">
-    <h5>Rougarou</h5>
-    <p class="etiqueta">Perigo 5 · Predador · Ministério XXX · Ameaça 5</p>
-    <p><b>PV</b> 38 · <b>Defesa</b> 9 · <b>Ataque</b> d12+d8 · <b>Dano</b> RA+7 · <b>DT</b> 9 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Sentidos Agudos, Furtiva.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Prata.</p>
-    <p><b>Quer:</b> Caçar nos pântanos. Cabeça de cão, corpo de homem.</p>
-  </div>
-  <div class="cartao ficha" id="cr-trasgo-da-montanha" data-perigo="5" data-arq="Bruto" data-pv="55" data-def="8" data-atq="d8+d8" data-dano="5" data-dt="9" data-ntr="2" data-npo="1" data-pes="1" data-inc="0" data-ameaca="6">
-    <h5>Trasgo da Montanha</h5>
-    <p class="etiqueta">Perigo 5 · Bruto · Ministério XXX · Ameaça 6</p>
-    <p><b>PV</b> 55 · <b>Defesa</b> 8 · <b>Ataque</b> d8+d8 · <b>Dano</b> RA+5 · <b>DT</b> 9 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Couro Mágico, Resistência.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> A própria clava: Wingardium Leviosa nela.</p>
-    <p><b>Quer:</b> Comer; quebrar o que incomoda.</p>
-  </div>
-  <div class="cartao ficha" id="cr-fenix" data-perigo="6" data-arq="Padrão" data-pv="56" data-def="9" data-atq="d10+d10" data-dano="6" data-dt="10" data-ntr="3" data-npo="2" data-pes="1" data-inc="1" data-ameaca="8">
-    <h5>Fênix</h5>
-    <p class="etiqueta">Perigo 6 · Padrão · Ministério XXX · Ameaça 8</p>
-    <p><b>PV</b> 56 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Regeneração (renasce das cinzas), Partes Valiosas.</p>
-    <p><b>Poderes:</b> Sumir (some num clarão), Grito (o canto: medo nos inimigos).</p>
-    <p><b>Fraqueza:</b> Dono: só luta por quem é leal a quem ela serve.</p>
-    <p><b>Quer:</b> Servir a quem escolheu. Lágrimas curam até veneno de Basilisco; carrega quem segura a cauda.</p>
-  </div>
-  <div class="cartao ficha" id="cr-graphorn" data-perigo="6" data-arq="Bruto" data-pv="73" data-def="8" data-atq="d10+d8" data-dano="6" data-dt="10" data-ntr="3" data-npo="1" data-pes="1" data-inc="0" data-ameaca="7">
-    <h5>Graphorn</h5>
-    <p class="etiqueta">Perigo 6 · Bruto · Ministério XXX · Ameaça 7</p>
-    <p><b>PV</b> 73 · <b>Defesa</b> 8 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Couro Mágico, Resistência, Partes Valiosas.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Dono: os trasgos das montanhas os montam e mandam neles.</p>
-    <p><b>Quer:</b> Defender a manada.</p>
-  </div>
-  <div class="cartao ficha" id="cr-grifo" data-perigo="6" data-arq="Padrão" data-pv="56" data-def="9" data-atq="d10+d10" data-dano="6" data-dt="10" data-ntr="3" data-npo="1" data-pes="0" data-inc="1" data-ameaca="7">
-    <h5>Grifo</h5>
-    <p class="etiqueta">Perigo 6 · Padrão · Ministério XXX · Ameaça 7</p>
-    <p><b>PV</b> 56 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Ataque Duplo, Sentidos Agudos.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Brilho: guarda tesouros e se distrai com eles.</p>
-    <p><b>Quer:</b> Guardar o tesouro.</p>
-  </div>
-  <div class="cartao ficha" id="cr-lula-gigante" data-perigo="6" data-arq="Bruto" data-pv="73" data-def="8" data-atq="d10+d8" data-dano="6" data-dt="10" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="7">
-    <h5>Lula gigante</h5>
-    <p class="etiqueta">Perigo 6 · Bruto · Ministério XXX · Ameaça 7</p>
-    <p><b>PV</b> 73 · <b>Defesa</b> 8 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Anfíbia, Agarrar.</p>
-    <p><b>Poderes:</b> Teia ou Tentáculos.</p>
-    <p><b>Fraqueza:</b> Comida: torradas a fazem amiga.</p>
-    <p><b>Quer:</b> Ficar no lago. Em Hogwarts, salva alunos que caem na água.</p>
-  </div>
-  <div class="cartao ficha" id="cr-snallygaster" data-perigo="6" data-arq="Predador" data-pv="50" data-def="9" data-atq="d12+d10" data-dano="8" data-dt="10" data-ntr="2" data-npo="1" data-pes="1" data-inc="0" data-ameaca="7">
-    <h5>Snallygaster</h5>
-    <p class="etiqueta">Perigo 6 · Predador · Ministério XXX · Ameaça 7</p>
-    <p><b>PV</b> 50 · <b>Defesa</b> 9 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+8 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Couro Mágico (bala não entra).</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Curiosa: segue o que se mexe e brilha.</p>
-    <p><b>Quer:</b> Caçar.</p>
-  </div>
-  <div class="cartao ficha" id="cr-yeti" data-perigo="6" data-arq="Bruto" data-pv="73" data-def="8" data-atq="d10+d8" data-dano="6" data-dt="10" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="6">
-    <h5>Yeti</h5>
-    <p class="etiqueta">Perigo 6 · Bruto · Ministério XXX · Ameaça 6</p>
-    <p><b>PV</b> 73 · <b>Defesa</b> 8 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Resistência (frio), Aterrorizante.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Fogo: foge dele.</p>
-    <p><b>Quer:</b> Comer o que passa.</p>
-  </div>
-  <div class="cartao ficha" id="cr-erumpente" data-perigo="7" data-arq="Bruto" data-pv="94" data-def="9" data-atq="d10+d10" data-dano="7" data-dt="10" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="8">
-    <h5>Erumpente <em>(explosivim)</em></h5>
-    <p class="etiqueta">Perigo 7 · Bruto · Ministério XXXX · Ameaça 8</p>
-    <p><b>PV</b> 94 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+7 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Couro Mágico, Resistência, Partes Valiosas.</p>
-    <p><b>Poderes:</b> Investida, Explosão (o chifre).</p>
-    <p><b>Fraqueza:</b> Cio: segue o cheiro de almíscar de um frasco aberto.</p>
-    <p><b>Quer:</b> Acasalar.</p>
-  </div>
-  <div class="cartao ficha" id="cr-fofo" data-perigo="7" data-arq="Guardião" data-pv="86" data-def="11" data-atq="d12+d10" data-dano="7" data-dt="10" data-ntr="3" data-npo="1" data-pes="0" data-inc="1" data-ameaca="8">
-    <h5>Fofo <em>(cão de três cabeças)</em></h5>
-    <p class="etiqueta">Perigo 7 · Guardião · Ministério XXXX · Ameaça 8</p>
-    <p><b>PV</b> 86 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+7 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Ataque Duplo, Sentidos Agudos, Resistência. Guardião: reação, recebe o ataque no lugar do que protege.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Música: dorme enquanto ela dura.</p>
-    <p><b>Quer:</b> Guardar o alçapão.</p>
-  </div>
-  <div class="cartao ficha" id="cr-monstro-do-rio-branco" data-perigo="7" data-arq="Bruto" data-pv="94" data-def="9" data-atq="d10+d10" data-dano="7" data-dt="10" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="7">
-    <h5>Monstro do Rio Branco</h5>
-    <p class="etiqueta">Perigo 7 · Bruto · Ministério XXXX · Ameaça 7</p>
-    <p><b>PV</b> 94 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+7 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Anfíbia, Resistência.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Respeito: deixa passar quem não mexe no rio.</p>
-    <p><b>Quer:</b> Guardar o rio.</p>
-  </div>
-  <div class="cartao ficha" id="cr-wampus" data-perigo="7" data-arq="Predador" data-pv="65" data-def="10" data-atq="d12+d12" data-dano="9" data-dt="10" data-ntr="3" data-npo="1" data-pes="0" data-inc="1" data-ameaca="8">
-    <h5>Wampus</h5>
-    <p class="etiqueta">Perigo 7 · Predador · Ministério XXXX · Ameaça 8</p>
-    <p><b>PV</b> 65 · <b>Defesa</b> 10 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+9 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Escaladora, Sentidos Agudos, Ataque Duplo.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Respeito: nunca ataca quem não foge.</p>
-    <p><b>Quer:</b> Caçar.</p>
-  </div>
-  <div class="cartao ficha" id="cr-passaro-trovao" data-perigo="8" data-arq="Padrão" data-pv="90" data-def="11" data-atq="d12+d12" data-dano="8" data-dt="11" data-ntr="3" data-npo="2" data-pes="0" data-inc="0" data-ameaca="8">
-    <h5>Pássaro-trovão <em>(thunderbird)</em></h5>
-    <p class="etiqueta">Perigo 8 · Padrão · Ministério XXXX · Ameaça 8</p>
-    <p><b>PV</b> 90 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+8 · <b>DT</b> 11 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Voo, Sentidos Agudos, Partes Valiosas.</p>
-    <p><b>Poderes:</b> Explosão (a tempestade), Investida.</p>
-    <p><b>Fraqueza:</b> Respeito: acalma com quem fala com ele sem medo.</p>
-    <p><b>Quer:</b> Fugir do perigo que sente chegar. Uma pena dele, molhada, faz chover.</p>
-  </div>
-  <div class="cartao ficha" id="cr-serpente-chifruda" data-perigo="8" data-arq="Conjurador" data-pv="72" data-def="11" data-atq="d12+d12" data-dano="8" data-dt="11" data-ntr="3" data-npo="3" data-pes="0" data-inc="1" data-ameaca="9">
-    <h5>Serpente-chifruda</h5>
-    <p class="etiqueta">Perigo 8 · Conjurador · Ministério XXXX · Ameaça 9</p>
-    <p><b>PV</b> 72 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+8 · <b>DT</b> 11 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Anfíbia, Inteligente, Partes Valiosas.</p>
-    <p><b>Poderes:</b> Sumir (a joia da testa), Investida, Feitiço.</p>
-    <p><b>Fraqueza:</b> Respeito ao lago e à joia.</p>
-    <p><b>Quer:</b> Guardar o lago.</p>
-  </div>
-  <div class="cartao ficha" id="cr-zouwu" data-perigo="9" data-arq="Ágil" data-pv="88" data-def="14" data-atq="d12+d12+d8" data-dano="9" data-dt="12" data-ntr="3" data-npo="2" data-pes="0" data-inc="0" data-ameaca="9">
-    <h5>Zouwu</h5>
-    <p class="etiqueta">Perigo 9 · Ágil · Ministério XXXXX · Ameaça 9</p>
-    <p><b>PV</b> 88 · <b>Defesa</b> 14 · <b>Ataque</b> d12+d12+d8 · <b>Dano</b> RA+9 · <b>DT</b> 12 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Sentidos Agudos, Furtiva, Muda de Tamanho.</p>
-    <p><b>Poderes:</b> Investida, Sumir (corre mil milhas num dia).</p>
-    <p><b>Fraqueza:</b> Brinquedo: um guizo de pena a acalma.</p>
-    <p><b>Quer:</b> Fugir de quem a prendeu.</p>
-  </div>
+  <!--dados:criatura:cr-barrete-vermelho-->
+  <!--dados:criatura:cr-grindylow-->
+  <!--dados:criatura:cr-hipogrifo-->
+  <!--dados:criatura:cr-kappa-->
+  <!--dados:criatura:cr-qilin-->
+  <!--dados:criatura:cr-testralio-->
+  <!--dados:criatura:cr-acromantula-->
+  <!--dados:criatura:cr-kelpie-->
+  <!--dados:criatura:cr-matagot-->
+  <!--dados:criatura:cr-swooping-evil-->
+  <!--dados:criatura:cr-trasgo-da-floresta-->
+  <!--dados:criatura:cr-unicornio-->
+  <!--dados:criatura:cr-lobisomem-->
+  <!--dados:criatura:cr-occami-->
+  <!--dados:criatura:cr-rougarou-->
+  <!--dados:criatura:cr-trasgo-da-montanha-->
+  <!--dados:criatura:cr-fenix-->
+  <!--dados:criatura:cr-graphorn-->
+  <!--dados:criatura:cr-grifo-->
+  <!--dados:criatura:cr-lula-gigante-->
+  <!--dados:criatura:cr-snallygaster-->
+  <!--dados:criatura:cr-yeti-->
+  <!--dados:criatura:cr-erumpente-->
+  <!--dados:criatura:cr-fofo-->
+  <!--dados:criatura:cr-monstro-do-rio-branco-->
+  <!--dados:criatura:cr-wampus-->
+  <!--dados:criatura:cr-passaro-trovao-->
+  <!--dados:criatura:cr-serpente-chifruda-->
+  <!--dados:criatura:cr-zouwu-->
   </div>
   <h3>Dragões</h3>
   <div class="grade">
-  <div class="cartao ficha" id="cr-dragao-filhote" data-perigo="3" data-arq="Padrão" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="1" data-pes="1" data-inc="0" data-ameaca="4">
-    <h5>Dragão filhote</h5>
-    <p class="etiqueta">Perigo 3 · Padrão · Ministério XX · Ameaça 4</p>
-    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Resistência (fogo), Couro Mágico.</p>
-    <p><b>Poderes:</b> Sopro.</p>
-    <p><b>Fraqueza:</b> Dono: obedece a quem chama de mãe.</p>
-    <p><b>Quer:</b> Comer, a toda hora. Cresce o tamanho de uma casa em semanas. Norberto, de Hagrid.</p>
-  </div>
-  <div class="cartao ficha" id="cr-dente-de-vibora-peruano" data-perigo="7" data-arq="Ágil" data-pv="58" data-def="12" data-atq="d12+d10" data-dano="7" data-dt="10" data-ntr="3" data-npo="1" data-pes="1" data-inc="0" data-ameaca="8">
-    <h5>Dente-de-Víbora Peruano</h5>
-    <p class="etiqueta">Perigo 7 · Ágil · Ministério XXXX · Ameaça 8</p>
-    <p><b>PV</b> 58 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+7 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Veneno, Couro Mágico.</p>
-    <p><b>Poderes:</b> Sopro.</p>
-    <p><b>Fraqueza:</b> Os olhos: Lippitudo cega.</p>
-    <p><b>Quer:</b> Comer gente e gado. O menor e o mais rápido dos dragões.</p>
-  </div>
-  <div class="cartao ficha" id="cr-olho-de-opala-antipoda" data-perigo="7" data-arq="Padrão" data-pv="72" data-def="10" data-atq="d12+d10" data-dano="7" data-dt="10" data-ntr="3" data-npo="1" data-pes="1" data-inc="0" data-ameaca="8">
-    <h5>Olho-de-Opala Antípoda</h5>
-    <p class="etiqueta">Perigo 7 · Padrão · Ministério XXXX · Ameaça 8</p>
-    <p><b>PV</b> 72 · <b>Defesa</b> 10 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+7 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo).</p>
-    <p><b>Poderes:</b> Sopro.</p>
-    <p><b>Fraqueza:</b> Comida: só caça ovelhas; um rebanho o distrai.</p>
-    <p><b>Quer:</b> Comer. Raramente mata.</p>
-  </div>
-  <div class="cartao ficha" id="cr-bola-de-fogo-chines" data-perigo="8" data-arq="Ágil" data-pv="72" data-def="13" data-atq="d12+d12" data-dano="8" data-dt="11" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="9">
-    <h5>Bola-de-Fogo Chinês</h5>
-    <p class="etiqueta">Perigo 8 · Ágil · Ministério XXXX · Ameaça 9</p>
-    <p><b>PV</b> 72 · <b>Defesa</b> 13 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+8 · <b>DT</b> 11 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo).</p>
-    <p><b>Poderes:</b> Sopro, Investida.</p>
-    <p><b>Fraqueza:</b> Comida: um porco jogado longe a distrai.</p>
-    <p><b>Quer:</b> Comer. Tolera outros dragões.</p>
-  </div>
-  <div class="cartao ficha" id="cr-dorso-cristado-noruegues" data-perigo="8" data-arq="Predador" data-pv="81" data-def="11" data-atq="d12+d12+d4" data-dano="10" data-dt="11" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="9">
-    <h5>Dorso-Cristado Norueguês</h5>
-    <p class="etiqueta">Perigo 8 · Predador · Ministério XXXX · Ameaça 9</p>
-    <p><b>PV</b> 81 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12+d4 · <b>Dano</b> RA+10 · <b>DT</b> 11 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Voo, Couro Mágico, Veneno (as presas).</p>
-    <p><b>Poderes:</b> Sopro, Investida.</p>
-    <p><b>Fraqueza:</b> Os olhos: Lippitudo cega.</p>
-    <p><b>Quer:</b> Comer e brigar.</p>
-  </div>
-  <div class="cartao ficha" id="cr-focinho-curto-sueco" data-perigo="8" data-arq="Padrão" data-pv="90" data-def="11" data-atq="d12+d12" data-dano="8" data-dt="11" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="9">
-    <h5>Focinho-Curto Sueco</h5>
-    <p class="etiqueta">Perigo 8 · Padrão · Ministério XXXX · Ameaça 9</p>
-    <p><b>PV</b> 90 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+8 · <b>DT</b> 11 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo).</p>
-    <p><b>Poderes:</b> Sopro (chama azul), Investida.</p>
-    <p><b>Fraqueza:</b> Isca: transfigurar uma pedra num bicho faz o dragão persegui-lo (Cedrico).</p>
-    <p><b>Quer:</b> Ficar longe de gente.</p>
-  </div>
-  <div class="cartao ficha" id="cr-romeno-de-chifre-longo" data-perigo="8" data-arq="Bruto" data-pv="117" data-def="10" data-atq="d12+d10" data-dano="8" data-dt="11" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="9">
-    <h5>Romeno de Chifre-Longo</h5>
-    <p class="etiqueta">Perigo 8 · Bruto · Ministério XXXX · Ameaça 9</p>
-    <p><b>PV</b> 117 · <b>Defesa</b> 10 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+8 · <b>DT</b> 11 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Voo, Couro Mágico, Resistência.</p>
-    <p><b>Poderes:</b> Sopro, Investida.</p>
-    <p><b>Fraqueza:</b> Os olhos: Lippitudo cega.</p>
-    <p><b>Quer:</b> Defender o território.</p>
-  </div>
-  <div class="cartao ficha" id="cr-verde-gales-comum" data-perigo="8" data-arq="Padrão" data-pv="90" data-def="11" data-atq="d12+d12" data-dano="8" data-dt="11" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="9">
-    <h5>Verde-Galês Comum</h5>
-    <p class="etiqueta">Perigo 8 · Padrão · Ministério XXXX · Ameaça 9</p>
-    <p><b>PV</b> 90 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+8 · <b>DT</b> 11 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo).</p>
-    <p><b>Poderes:</b> Sopro, Investida.</p>
-    <p><b>Fraqueza:</b> Comida: prefere ovelhas e foge de gente.</p>
-    <p><b>Quer:</b> Ficar longe de gente.</p>
-  </div>
-  <div class="cartao ficha" id="cr-negro-das-hebridas" data-perigo="9" data-arq="Predador" data-pv="99" data-def="12" data-atq="d12+d12+d10" data-dano="11" data-dt="12" data-ntr="4" data-npo="2" data-pes="1" data-inc="0" data-ameaca="10">
-    <h5>Negro das Hébridas</h5>
-    <p class="etiqueta">Perigo 9 · Predador · Ministério XXXXX · Ameaça 10</p>
-    <p><b>PV</b> 99 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d12+d10 · <b>Dano</b> RA+11 · <b>DT</b> 12 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo), Sentidos Agudos.</p>
-    <p><b>Poderes:</b> Sopro, Investida.</p>
-    <p><b>Fraqueza:</b> Os olhos: Lippitudo cega.</p>
-    <p><b>Quer:</b> Caçar cervos, e às vezes mais.</p>
-  </div>
-  <div class="cartao ficha" id="cr-rabo-corneo-hungaro" data-perigo="9" data-arq="Bruto" data-pv="143" data-def="11" data-atq="d12+d12" data-dano="9" data-dt="12" data-ntr="4" data-npo="2" data-pes="1" data-inc="1" data-ameaca="11">
-    <h5>Rabo-Córneo Húngaro</h5>
-    <p class="etiqueta">Perigo 9 · Bruto · Ministério XXXXX · Ameaça 11</p>
-    <p><b>PV</b> 143 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+9 · <b>DT</b> 12 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo), Ataque Duplo.</p>
-    <p><b>Poderes:</b> Sopro, Investida.</p>
-    <p><b>Fraqueza:</b> Os olhos: Lippitudo cega.</p>
-    <p><b>Quer:</b> Proteger os ovos. A cauda tem espinhos de bronze.</p>
-  </div>
-  <div class="cartao ficha" id="cr-barriga-de-ferro-ucraniano" data-perigo="10" data-arq="Bruto" data-pv="176" data-def="12" data-atq="d12+d12" data-dano="11" data-dt="13" data-ntr="4" data-npo="2" data-pes="1" data-inc="1" data-ameaca="12">
-    <h5>Barriga-de-Ferro Ucraniano</h5>
-    <p class="etiqueta">Perigo 10 · Bruto · Ministério XXXXX · Ameaça 12</p>
-    <p><b>PV</b> 176 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+11 · <b>DT</b> 13 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo), Ataque Duplo.</p>
-    <p><b>Poderes:</b> Sopro, Investida.</p>
-    <p><b>Fraqueza:</b> Pesado demais: voa mal e não faz curva.</p>
-    <p><b>Quer:</b> Defender a reserva. O maior dos dragões.</p>
-  </div>
+  <!--dados:criatura:cr-dragao-filhote-->
+  <!--dados:criatura:cr-dente-de-vibora-peruano-->
+  <!--dados:criatura:cr-olho-de-opala-antipoda-->
+  <!--dados:criatura:cr-bola-de-fogo-chines-->
+  <!--dados:criatura:cr-dorso-cristado-noruegues-->
+  <!--dados:criatura:cr-focinho-curto-sueco-->
+  <!--dados:criatura:cr-romeno-de-chifre-longo-->
+  <!--dados:criatura:cr-verde-gales-comum-->
+  <!--dados:criatura:cr-negro-das-hebridas-->
+  <!--dados:criatura:cr-rabo-corneo-hungaro-->
+  <!--dados:criatura:cr-barriga-de-ferro-ucraniano-->
   </div>
   <h3>Seres inteligentes</h3>
   <div class="grade">
-  <div class="cartao ficha" id="cr-elfo-domestico" data-perigo="3" data-arq="Conjurador" data-pv="16" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="2" data-pes="0" data-inc="1" data-ameaca="4">
-    <h5>Elfo doméstico</h5>
-    <p class="etiqueta">Perigo 3 · Conjurador · Ministério XX · Ameaça 4</p>
-    <p><b>PV</b> 16 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Inteligente, Sentidos Agudos.</p>
-    <p><b>Poderes:</b> Sumir (aparata onde bruxo não aparata), Feitiço (magia sem varinha).</p>
-    <p><b>Fraqueza:</b> Dono: obedece. Uma roupa dada pelo dono o liberta.</p>
-    <p><b>Quer:</b> Servir a família. Veja Magia dos elfos, no <a href="#cap5">Grimório</a>.</p>
-  </div>
-  <div class="cartao ficha" id="cr-duende" data-perigo="4" data-arq="Padrão" data-pv="30" data-def="8" data-atq="d8+d8" data-dano="4" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="5">
-    <h5>Duende <em>(goblin)</em></h5>
-    <p class="etiqueta">Perigo 4 · Padrão · Ministério XX · Ameaça 5</p>
-    <p><b>PV</b> 30 · <b>Defesa</b> 8 · <b>Ataque</b> d8+d8 · <b>Dano</b> RA+4 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Inteligente, Mente Fechada.</p>
-    <p><b>Poderes:</b> Feitiço (magia sem varinha).</p>
-    <p><b>Fraqueza:</b> Acordo: devolver o que um duende fez acaba a briga.</p>
-    <p><b>Quer:</b> Guardar o ouro e o que é deles. Veja Magia dos duendes, no <a href="#cap5">Grimório</a>.</p>
-  </div>
-  <div class="cartao ficha" id="cr-pukwudgie" data-perigo="4" data-arq="Ágil" data-pv="24" data-def="10" data-atq="d8+d8" data-dano="4" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="5">
-    <h5>Pukwudgie</h5>
-    <p class="etiqueta">Perigo 4 · Ágil · Ministério XX · Ameaça 5</p>
-    <p><b>PV</b> 24 · <b>Defesa</b> 10 · <b>Ataque</b> d8+d8 · <b>Dano</b> RA+4 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Inteligente, Veneno (as flechas).</p>
-    <p><b>Poderes:</b> Feitiço.</p>
-    <p><b>Fraqueza:</b> Respeito: honra quem honra o pacto de Ilvermorny.</p>
-    <p><b>Quer:</b> Ser deixado em paz.</p>
-  </div>
-  <div class="cartao ficha" id="cr-sereiano" data-perigo="5" data-arq="Padrão" data-pv="42" data-def="9" data-atq="d10+d8" data-dano="5" data-dt="9" data-ntr="2" data-npo="2" data-pes="0" data-inc="1" data-ameaca="6">
-    <h5>Sereiano</h5>
-    <p class="etiqueta">Perigo 5 · Padrão · Ministério XXX · Ameaça 6</p>
-    <p><b>PV</b> 42 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+5 · <b>DT</b> 9 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Anfíbia, Inteligente.</p>
-    <p><b>Poderes:</b> Chamar o Bando, Grito (o canto, fora d'água).</p>
-    <p><b>Fraqueza:</b> Respeito: quem cumpre o combinado passa.</p>
-    <p><b>Quer:</b> Guardar o lago.</p>
-  </div>
-  <div class="cartao ficha" id="cr-veela" data-perigo="5" data-arq="Conjurador" data-pv="34" data-def="9" data-atq="d10+d8" data-dano="5" data-dt="9" data-ntr="2" data-npo="3" data-pes="0" data-inc="0" data-ameaca="5">
-    <h5>Veela</h5>
-    <p class="etiqueta">Perigo 5 · Conjurador · Ministério XXX · Ameaça 5</p>
-    <p><b>PV</b> 34 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+5 · <b>DT</b> 9 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Inteligente, Voo (na forma de ave).</p>
-    <p><b>Poderes:</b> Ilusão (o fascínio), Mudar de Forma (ave de fogo), Explosão (bolas de fogo).</p>
-    <p><b>Fraqueza:</b> Oclumência resiste ao fascínio; acalmada, volta a ser gente.</p>
-    <p><b>Quer:</b> Ser respeitada.</p>
-  </div>
-  <div class="cartao ficha" id="cr-centauro" data-perigo="6" data-arq="Padrão" data-pv="56" data-def="9" data-atq="d10+d10" data-dano="6" data-dt="10" data-ntr="2" data-npo="2" data-pes="0" data-inc="0" data-ameaca="6">
-    <h5>Centauro</h5>
-    <p class="etiqueta">Perigo 6 · Padrão · Ministério XXX · Ameaça 6</p>
-    <p><b>PV</b> 56 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Inteligente, Sentidos Agudos.</p>
-    <p><b>Poderes:</b> Investida, Chamar o Bando.</p>
-    <p><b>Fraqueza:</b> Respeito à floresta.</p>
-    <p><b>Quer:</b> Ler os céus e ser deixado em paz. Ataca com arco.</p>
-  </div>
-  <div class="cartao ficha" id="cr-vampiro" data-perigo="6" data-arq="Predador" data-pv="50" data-def="9" data-atq="d12+d10" data-dano="8" data-dt="10" data-ntr="3" data-npo="1" data-pes="1" data-inc="1" data-ameaca="8">
-    <h5>Vampiro</h5>
-    <p class="etiqueta">Perigo 6 · Predador · Ministério XXX · Ameaça 8</p>
-    <p><b>PV</b> 50 · <b>Defesa</b> 9 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+8 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Inteligente, Regeneração, Sentidos Agudos.</p>
-    <p><b>Poderes:</b> Drenar (o sangue cansa a alma).</p>
-    <p><b>Fraqueza:</b> Luz do sol.</p>
-    <p><b>Quer:</b> Beber sangue sem ser descoberto.</p>
-  </div>
-  <div class="cartao ficha" id="cr-esfinge" data-perigo="7" data-arq="Conjurador" data-pv="58" data-def="10" data-atq="d12+d10" data-dano="7" data-dt="10" data-ntr="2" data-npo="2" data-pes="0" data-inc="2" data-ameaca="9">
-    <h5>Esfinge</h5>
-    <p class="etiqueta">Perigo 7 · Conjurador · Ministério XXXX · Ameaça 9</p>
-    <p><b>PV</b> 58 · <b>Defesa</b> 10 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+7 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Inteligente, Mente Fechada.</p>
-    <p><b>Poderes:</b> Feitiço, Grito.</p>
-    <p><b>Fraqueza:</b> Enigma.</p>
-    <p><b>Quer:</b> Guardar a passagem. Quem erra o enigma é atacado; quem não responde pode ir embora.</p>
-  </div>
-  <div class="cartao ficha" id="cr-gigante" data-perigo="9" data-arq="Bruto" data-pv="143" data-def="11" data-atq="d12+d12" data-dano="9" data-dt="12" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="10">
-    <h5>Gigante</h5>
-    <p class="etiqueta">Perigo 9 · Bruto · Ministério XXXXX · Ameaça 10</p>
-    <p><b>PV</b> 143 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+9 · <b>DT</b> 12 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Resistência, Couro Mágico, Inteligente.</p>
-    <p><b>Poderes:</b> Investida, Explosão (pedra arremessada).</p>
-    <p><b>Fraqueza:</b> Dono: o Gurg manda; presentes compram a paz.</p>
-    <p><b>Quer:</b> Seguir o Gurg.</p>
-  </div>
+  <!--dados:criatura:cr-elfo-domestico-->
+  <!--dados:criatura:cr-duende-->
+  <!--dados:criatura:cr-pukwudgie-->
+  <!--dados:criatura:cr-sereiano-->
+  <!--dados:criatura:cr-veela-->
+  <!--dados:criatura:cr-centauro-->
+  <!--dados:criatura:cr-vampiro-->
+  <!--dados:criatura:cr-esfinge-->
+  <!--dados:criatura:cr-gigante-->
   </div>
   <h3>Entidades e mortos</h3>
   <div class="grade">
-  <div class="cartao ficha" id="cr-bicho-papao" data-perigo="2" data-arq="Conjurador" data-pv="10" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="1" data-pes="0" data-inc="0" data-ameaca="2">
-    <h5>Bicho-Papão <em>(boggart)</em></h5>
-    <p class="etiqueta">Perigo 2 · Conjurador · Ministério X · Ameaça 2</p>
-    <p><b>PV</b> 10 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
-    <p><b>Traços:</b> Aterrorizante.</p>
-    <p><b>Poderes:</b> Mudar de Forma (o maior medo de quem está à frente).</p>
-    <p><b>Fraqueza:</b> Riso: Riddikulus.</p>
-    <p><b>Quer:</b> Assustar. Com várias pessoas na frente, fica confuso e vira uma mistura.</p>
-  </div>
-  <div class="cartao ficha" id="cr-fantasma" data-perigo="2" data-arq="Espectral" data-pv="8" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="2">
-    <h5>Fantasma</h5>
-    <p class="etiqueta">Perigo 2 · Espectral · Ministério X · Ameaça 2</p>
-    <p><b>PV</b> 8 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 de DET · <b>DT</b> 7 · Fases como chefe: 2</p>
-    <p><b>Traços:</b> Voo. Espectral: imune a dano físico.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Conversa: quase todo fantasma quer ser ouvido.</p>
-    <p><b>Quer:</b> Repetir a vida que teve. Atravessar alguém causa o dano em DET, um frio de morte. Não ataca de propósito.</p>
-  </div>
-  <div class="cartao ficha" id="cr-inferius" data-perigo="3" data-arq="Bruto" data-pv="26" data-def="6" data-atq="d6+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="0" data-inc="0" data-ameaca="3">
-    <h5>Inferius</h5>
-    <p class="etiqueta">Perigo 3 · Bruto · Ministério XX · Ameaça 3</p>
-    <p><b>PV</b> 26 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Mente Fechada, Agarrar.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Fogo.</p>
-    <p><b>Quer:</b> Cumprir a ordem de quem o fez. Não sente dor; Stupefy não o para.</p>
-  </div>
-  <div class="cartao ficha" id="cr-poltergeist" data-perigo="3" data-arq="Ágil" data-pv="16" data-def="9" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="1" data-inc="0" data-ameaca="4">
-    <h5>Poltergeist</h5>
-    <p class="etiqueta">Perigo 3 · Ágil · Ministério XX · Ameaça 4</p>
-    <p><b>PV</b> 16 · <b>Defesa</b> 9 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Invisível.</p>
-    <p><b>Poderes:</b> nenhum.</p>
-    <p><b>Fraqueza:</b> Dono: quem ele teme (o Barão Sangrento) manda nele.</p>
-    <p><b>Quer:</b> Bagunçar. Joga objetos, mas não pode ser ferido por eles.</p>
-  </div>
-  <div class="cartao ficha" id="cr-dementador" data-perigo="6" data-arq="Espectral" data-pv="39" data-def="9" data-atq="d10+d10" data-dano="6" data-dt="10" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="7">
-    <h5>Dementador</h5>
-    <p class="etiqueta">Perigo 6 · Espectral · Ministério XXX · Ameaça 7</p>
-    <p><b>PV</b> 39 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+6 de DET · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Voo, Aterrorizante. Espectral: imune a dano físico.</p>
-    <p><b>Poderes:</b> Drenar.</p>
-    <p><b>Fraqueza:</b> Patrono.</p>
-    <p><b>Quer:</b> Sugar felicidade. Beijo: veja as notas abaixo.</p>
-  </div>
-  <div class="cartao ficha" id="cr-lethifold" data-perigo="8" data-arq="Espectral" data-pv="63" data-def="11" data-atq="d12+d12" data-dano="8" data-dt="11" data-ntr="3" data-npo="2" data-pes="0" data-inc="2" data-ameaca="10">
-    <h5>Lethifold</h5>
-    <p class="etiqueta">Perigo 8 · Espectral · Ministério XXXX · Ameaça 10</p>
-    <p><b>PV</b> 63 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+8 de DET · <b>DT</b> 11 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Furtiva, Agarrar, Sentidos Agudos. Espectral: imune a dano físico.</p>
-    <p><b>Poderes:</b> Teia ou Tentáculos (o manto), Drenar.</p>
-    <p><b>Fraqueza:</b> Patrono.</p>
-    <p><b>Quer:</b> Comer quem dorme. Não deixa nem o corpo.</p>
-  </div>
-  <div class="cartao ficha" id="cr-obscurus" data-perigo="9" data-arq="Espectral" data-pv="77" data-def="12" data-atq="d12+d12+d8" data-dano="9" data-dt="12" data-ntr="3" data-npo="2" data-pes="0" data-inc="0" data-ameaca="9">
-    <h5>Obscurus</h5>
-    <p class="etiqueta">Perigo 9 · Espectral · Ministério XXXXX · Ameaça 9</p>
-    <p><b>PV</b> 77 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d12+d8 · <b>Dano</b> RA+9 · <b>DT</b> 12 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Voo, Aterrorizante, Muda de Tamanho. Espectral: imune a dano físico.</p>
-    <p><b>Poderes:</b> Explosão, Investida.</p>
-    <p><b>Fraqueza:</b> Nome: chamar a pessoa lá dentro pelo nome faz ela recolhê-lo.</p>
-    <p><b>Quer:</b> Destruir o que machucou o hospedeiro. Ferir o Obscurus fere o hospedeiro.</p>
-  </div>
+  <!--dados:criatura:cr-bicho-papao-->
+  <!--dados:criatura:cr-fantasma-->
+  <!--dados:criatura:cr-inferius-->
+  <!--dados:criatura:cr-poltergeist-->
+  <!--dados:criatura:cr-dementador-->
+  <!--dados:criatura:cr-lethifold-->
+  <!--dados:criatura:cr-obscurus-->
   </div>
   <h3>Plantas que atacam</h3>
   <div class="grade">
-  <div class="cartao ficha" id="cr-tentacula-venenosa" data-perigo="3" data-arq="Padrão" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="4">
-    <h5>Tentácula Venenosa</h5>
-    <p class="etiqueta">Perigo 3 · Padrão · Ministério XX · Ameaça 4</p>
-    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Veneno, Agarrar.</p>
-    <p><b>Poderes:</b> Teia ou Tentáculos.</p>
-    <p><b>Fraqueza:</b> Fogo.</p>
-    <p><b>Quer:</b> Pegar e morder.</p>
-  </div>
-  <div class="cartao ficha" id="cr-visgo-do-diabo" data-perigo="3" data-arq="Padrão" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="4">
-    <h5>Visgo-do-diabo</h5>
-    <p class="etiqueta">Perigo 3 · Padrão · Ministério XX · Ameaça 4</p>
-    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Agarrar, Sentidos Agudos.</p>
-    <p><b>Poderes:</b> Teia ou Tentáculos (as gavinhas).</p>
-    <p><b>Fraqueza:</b> Luz ou fogo: solta na hora. Quem relaxa escorrega.</p>
-    <p><b>Quer:</b> Apertar o que se mexe.</p>
-  </div>
-  <div class="cartao ficha" id="cr-salgueiro-lutador" data-perigo="6" data-arq="Guardião" data-pv="67" data-def="10" data-atq="d10+d10" data-dano="6" data-dt="10" data-ntr="3" data-npo="1" data-pes="0" data-inc="2" data-ameaca="8">
-    <h5>Salgueiro Lutador</h5>
-    <p class="etiqueta">Perigo 6 · Guardião · Ministério XXX · Ameaça 8</p>
-    <p><b>PV</b> 67 · <b>Defesa</b> 10 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
-    <p><b>Traços:</b> Resistência, Agarrar, Ataque Duplo. Guardião: reação, recebe o ataque no lugar do que protege.</p>
-    <p><b>Poderes:</b> Teia ou Tentáculos (os galhos).</p>
-    <p><b>Fraqueza:</b> O nó da raiz: tocado, o salgueiro para.</p>
-    <p><b>Quer:</b> Bater em quem chega perto.</p>
-  </div>
+  <!--dados:criatura:cr-tentacula-venenosa-->
+  <!--dados:criatura:cr-visgo-do-diabo-->
+  <!--dados:criatura:cr-salgueiro-lutador-->
   </div>
   <h3>Ameaças extraordinárias</h3>
   <div class="grade">
-  <div class="cartao ficha" id="cr-manticora" data-perigo="9" data-arq="Predador" data-pv="99" data-def="12" data-atq="d12+d12+d10" data-dano="11" data-dt="12" data-ntr="4" data-npo="1" data-pes="1" data-inc="0" data-ameaca="10">
-    <h5>Mantícora</h5>
-    <p class="etiqueta">Perigo 9 · Predador · Ministério XXXXX · Ameaça 10</p>
-    <p><b>PV</b> 99 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d12+d10 · <b>Dano</b> RA+11 · <b>DT</b> 12 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Veneno (o ferrão paralisa), Couro Mágico, Inteligente, Aterrorizante.</p>
-    <p><b>Poderes:</b> Investida.</p>
-    <p><b>Fraqueza:</b> Comida: farta, cantarola e deixa passar.</p>
-    <p><b>Quer:</b> Comer gente.</p>
-  </div>
-  <div class="cartao ficha" id="cr-nundu" data-perigo="10" data-arq="Predador" data-pv="122" data-def="13" data-atq="d12+d12+d12" data-dano="13" data-dt="13" data-ntr="4" data-npo="2" data-pes="1" data-inc="0" data-ameaca="11">
-    <h5>Nundu</h5>
-    <p class="etiqueta">Perigo 10 · Predador · Ministério XXXXX · Ameaça 11</p>
-    <p><b>PV</b> 122 · <b>Defesa</b> 13 · <b>Ataque</b> d12+d12+d12 · <b>Dano</b> RA+13 · <b>DT</b> 13 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Furtiva, Couro Mágico, Aterrorizante, Sentidos Agudos.</p>
-    <p><b>Poderes:</b> Sopro (o hálito que adoece), Investida.</p>
-    <p><b>Fraqueza:</b> Silêncio: quem passa sem ser visto passa. Para vencê-lo, cem bruxos.</p>
-    <p><b>Quer:</b> Caçar.</p>
-  </div>
-  <div class="cartao ficha" id="cr-quimera" data-perigo="10" data-arq="Bruto" data-pv="176" data-def="12" data-atq="d12+d12" data-dano="11" data-dt="13" data-ntr="4" data-npo="2" data-pes="1" data-inc="1" data-ameaca="12">
-    <h5>Quimera</h5>
-    <p class="etiqueta">Perigo 10 · Bruto · Ministério XXXXX · Ameaça 12</p>
-    <p><b>PV</b> 176 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+11 · <b>DT</b> 13 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Couro Mágico, Resistência (fogo), Ataque Duplo, Aterrorizante.</p>
-    <p><b>Poderes:</b> Sopro, Investida.</p>
-    <p><b>Fraqueza:</b> Três cabeças que discordam: uma Ilusão bem feita a faz perder a rodada.</p>
-    <p><b>Quer:</b> Matar o que entra no território.</p>
-  </div>
-  <div class="cartao ficha" id="cr-basilisco" data-perigo="11" data-arq="Predador" data-pv="149" data-def="14" data-atq="d12+d12+d12" data-dano="15" data-dt="14" data-ntr="4" data-npo="1" data-pes="0" data-inc="1" data-ameaca="12">
-    <h5>Basilisco</h5>
-    <p class="etiqueta">Perigo 11 · Predador · Ministério XXXXX · Ameaça 12</p>
-    <p><b>PV</b> 149 · <b>Defesa</b> 14 · <b>Ataque</b> d12+d12+d12 · <b>Dano</b> RA+15 · <b>DT</b> 14 · Fases como chefe: 4</p>
-    <p><b>Traços:</b> Veneno, Aterrorizante, Escava, Mente Fechada.</p>
-    <p><b>Poderes:</b> Olhar (morte; refletido, petrifica).</p>
-    <p><b>Fraqueza:</b> Canto do galo.</p>
-    <p><b>Quer:</b> Obedecer ao herdeiro de Slytherin. Veja as notas abaixo.</p>
-  </div>
+  <!--dados:criatura:cr-manticora-->
+  <!--dados:criatura:cr-nundu-->
+  <!--dados:criatura:cr-quimera-->
+  <!--dados:criatura:cr-basilisco-->
   </div>
   <h3>Notas das fichas</h3>
   <ul>
@@ -1166,21 +319,7 @@
     <li><b>Varinha.</b> Role madeira e núcleo no Capítulo XI. Quem o desarma num confronto fica com ela, Tolerante.</li>
   </ol>
   <h4>O que um bruxo sabe</h4>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th class="num">Grau</th><th>Equivale a</th><th class="num">Círculo</th><th class="num">Feitiços</th><th class="num">DET</th><th>Protego</th></tr></thead>
-  <tbody>
-  <tr><td class="num">1</td><td>1º ano</td><td class="num">1</td><td class="num">2</td><td class="num">4</td><td>— (só Desviar)</td></tr>
-  <tr><td class="num">2</td><td>2º ou 3º ano</td><td class="num">1</td><td class="num">3</td><td class="num">5</td><td>— (só Desviar)</td></tr>
-  <tr><td class="num">3</td><td>4º ano</td><td class="num">2</td><td class="num">3</td><td class="num">6</td><td>1 por cena</td></tr>
-  <tr><td class="num">4</td><td>5º ano, N.O.M.</td><td class="num">2</td><td class="num">4</td><td class="num">7</td><td>1 por cena</td></tr>
-  <tr><td class="num">5</td><td>6º ou 7º ano, N.I.E.M.</td><td class="num">3</td><td class="num">4</td><td class="num">8</td><td>1 por rodada</td></tr>
-  <tr><td class="num">6</td><td>adulto formado, auror novato</td><td class="num">3</td><td class="num">5</td><td class="num">9</td><td>1 por rodada</td></tr>
-  <tr><td class="num">7</td><td>auror, Comensal</td><td class="num">3</td><td class="num">5</td><td class="num">10</td><td>1 por rodada</td></tr>
-  <tr><td class="num">8</td><td>veterano de guerra</td><td class="num">4</td><td class="num">6</td><td class="num">11</td><td>1 por rodada</td></tr>
-  <tr><td class="num">9</td><td>elite: os mais temidos do seu tempo</td><td class="num">4</td><td class="num">6</td><td class="num">12</td><td>1 por rodada</td></tr>
-  <tr><td class="num">10</td><td>mestre: poucos por geração</td><td class="num">4</td><td class="num">7</td><td class="num">13</td><td>1 por rodada</td></tr>
-  <tr><td class="num">11</td><td>lendário: um por século</td><td class="num">4</td><td class="num">8</td><td class="num">14</td><td>1 por rodada</td></tr>
-  </tbody></table></div>
+  <!--dados:graus-->
   <p>Protego é Círculo 2: abaixo do Grau 3, o bruxo só Desvia. Crucio e Imperio são Círculo 4: de Grau 8 em diante, qualquer bruxo pode sabê-los dentro do limite. Proibidos (Avada Kedavra, Fogomaldito) só entram pelo Trevoso.</p>
   <h4>O que ele faz no turno</h4>
   <div class="rolagem"><table class="compacta">
@@ -1203,22 +342,7 @@
     <li><strong>Chefe humano</strong> não precisa de Fases: um duelista experiente é difícil pela técnica, não por ter quatro barras de vida. Se usar, duas bastam; sozinho contra três, vale a regra do chefe sozinho.</li>
   </ul>
   <h3>Papéis</h3>
-  <div class="rolagem"><table class="compacta papeis">
-  <thead><tr><th>d12</th><th>Papel</th><th>Ajuste</th><th>Habilidade</th></tr></thead>
-  <tbody>
-  <tr><td class="d">1</td><td><strong>Duelista</strong></td><td>Ataque +1 passo</td><td>A reação Protego dele vale uma vez por rodada a partir do Grau 3, mesmo onde a tabela dá menos. Continua sendo a única reação dele na rodada.</td></tr>
-  <tr><td class="d">2</td><td><strong>Curandeiro</strong></td><td>Dano –3</td><td>Ação: rola o Ataque da Tábua contra DT 7; sucesso cura RA + Grau de um aliado. Entra no limite de três curas mágicas por dia (Capítulo VII).</td></tr>
-  <tr><td class="d">3</td><td><strong>Erudito</strong></td><td>PV –20%</td><td>Sabe o que é a criatura, a poção ou a maldição na hora.</td></tr>
-  <tr><td class="d">4</td><td><strong>Batedor</strong></td><td>Defesa +2</td><td>Na primeira rodada, +1 passo na primeira reação (Desviar ou Protego); Furtividade <span class="dado">d10</span>.</td></tr>
-  <tr><td class="d">5</td><td><strong>Protetor</strong></td><td>PV +30%, ataque –1 passo</td><td>Reação: recebe o ataque no lugar de um aliado ao lado. É a reação dele na rodada.</td></tr>
-  <tr><td class="d">6</td><td><strong>Trapaceiro</strong></td><td>Defesa +1</td><td>Azarações humilhantes; Enganação <span class="dado">d10</span>.</td></tr>
-  <tr><td class="d">7</td><td><strong>Domador</strong></td><td>Dano –2</td><td>Só Grau 3+. Tem uma criatura de Perigo = Grau – 2, que entra no orçamento de Ameaça com o Perigo dela.</td></tr>
-  <tr><td class="d">8</td><td><strong>Comandante</strong></td><td>—</td><td>Ação: um aliado ataca de novo ou rola um dado extra. É a ação extra daquele aliado na rodada: ninguém faz mais de uma (Capítulo VII).</td></tr>
-  <tr><td class="d">9</td><td><strong>Trevoso</strong></td><td>PV –10%, dano +2</td><td>Sabe um Proibido ou uma Imperdoável fora do limite de Círculo; cada um além desse custa +1 Ameaça e um motivo na história. Lançar segue a regra da maldição: intenção, DET e Corrupção. Quem o vê lutar testa Vontade DT 7 ou fica Amedrontado, uma vez por cena.</td></tr>
-  <tr><td class="d">10</td><td><strong>Caçador</strong></td><td>PV +10%, Defesa +1</td><td>+1 passo para achar e seguir quem foge; prefere prender a matar.</td></tr>
-  <tr><td class="d">11</td><td><strong>Brutamontes</strong></td><td>PV +20%, Defesa –1, dano +1</td><td>Empurra: um ataque que acerta também deixa o alvo Caído, uma vez por rodada.</td></tr>
-  <tr><td class="d">12</td><td><strong>Mentor</strong></td><td>Dano –2</td><td>Fora da luta, ensina: +1 passo para Estudar um feitiço que ele sabe, e conta como ajuda de amigo em Aprender sozinho.</td></tr>
-  </tbody></table></div>
+  <!--dados:papeis-->
   <h4>Traços de bruxo</h4>
   <p>★ é pesado: no máximo um abaixo do Grau 6, dois a partir dele.</p>
   <div class="rolagem"><table class="compacta">
@@ -1352,116 +476,16 @@
   </ul>
   <h3 id="fichas-bruxos">Fichas prontas</h3>
   <p>Dez bruxos, todos pela Forja. Copie, troque o nome e a frase, e estão prontos.</p>
-  <div class="cartao bruxo" id="bx-valentao-da-sonserina" data-nivel="2" data-papel="Trapaceiro" data-pv="12" data-def="8" data-atq="d6+d6" data-dano="2" data-dt="7" data-det="5" data-circ="1" data-ntr="1" data-npo="1" data-pes="0" data-inc="1" data-duplo="0" data-ameaca="3" data-feiticos="Expelliarmus|Rictusempra|Tarantallegra" data-poderes="Desarmar">
-    <h5>Valentão da Sonserina <em>(rival do mesmo ano)</em></h5>
-    <p class="etiqueta">Grau 2 · Trapaceiro · Rival · Ameaça 3</p>
-    <p><b>PV</b> 12 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · <b>DET</b> 5 · <b>Protego</b> — (só Desviar)</p>
-    <p><b>Feitiços:</b> Expelliarmus, Rictusempra, Tarantallegra.</p>
-    <p><b>Traços:</b> Varinha alheia.</p>
-    <p><b>Poderes:</b> Desarmar.</p>
-    <p><b>Moral:</b> Foge com metade do PV, ou assim que um professor aparece.</p>
-    <p><b>Varinha:</b> Espinheiro, dragão. <b>Quer:</b> Humilhar alguém na frente da Casa toda.</p>
-    <p><b>Ao vencer:</b> Perde pontos se for pego; a varinha, se você o desarmar.</p>
-  </div>
-  <div class="cartao bruxo" id="bx-duelista-do-clube" data-nivel="3" data-papel="Duelista" data-pv="20" data-def="7" data-atq="d10+d6" data-dano="3" data-dt="8" data-det="6" data-circ="2" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-duplo="0" data-ameaca="4" data-feiticos="Expelliarmus|Stupefy|Protego" data-poderes="Desarmar">
-    <h5>Duelista do Clube <em>(quarto-anista que leva o duelo a sério)</em></h5>
-    <p class="etiqueta">Grau 3 · Duelista · Rival · Ameaça 4</p>
-    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d10+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · <b>DET</b> 6 · <b>Protego</b> 1 por rodada <em>(Papel Duelista)</em></p>
-    <p><b>Feitiços:</b> Expelliarmus, Stupefy, Protego.</p>
-    <p><b>Traços:</b> Duelista de clube; Nervos de aço.</p>
-    <p><b>Poderes:</b> Desarmar.</p>
-    <p><b>Moral:</b> Rende-se quando cai abaixo de metade: é duelo, não guerra.</p>
-    <p><b>Varinha:</b> Álamo-tremedor, fênix. <b>Quer:</b> Vencer o campeonato do clube.</p>
-    <p><b>Ao vencer:</b> Respeito +1, e às vezes um parceiro de treino.</p>
-  </div>
-  <div class="cartao bruxo" id="bx-monitor-da-casa" data-nivel="3" data-papel="Protetor" data-pv="26" data-def="7" data-atq="d6+d6" data-dano="3" data-dt="8" data-det="6" data-circ="2" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-duplo="0" data-ameaca="3" data-feiticos="Protego|Expelliarmus|Episkey" data-poderes="Escudo de grupo">
-    <h5>Monitor da Casa <em>(aliado que segura as pontas)</em></h5>
-    <p class="etiqueta">Grau 3 · Protetor · Aliado · Ameaça 3</p>
-    <p><b>PV</b> 26 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · <b>DET</b> 6 · <b>Protego</b> 1 por cena</p>
-    <p><b>Feitiços:</b> Protego, Expelliarmus, Episkey.</p>
-    <p><b>Traços:</b> Nervos de aço; Oclumente.</p>
-    <p><b>Poderes:</b> Escudo de grupo.</p>
-    <p><b>Moral:</b> Não abandona aluno mais novo, mas leva todo mundo para a diretoria depois.</p>
-    <p><b>Varinha:</b> Sorveira, unicórnio. <b>Quer:</b> Que ninguém da Casa se machuque, e que ninguém perca pontos.</p>
-    <p><b>Ao vencer:</b> —</p>
-  </div>
-  <div class="cartao bruxo" id="bx-sequestrador" data-nivel="4" data-papel="Brutamontes" data-pv="36" data-def="7" data-atq="d8+d8" data-dano="5" data-dt="8" data-det="7" data-circ="2" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-duplo="0" data-ameaca="5" data-feiticos="Stupefy|Incarcerous|Expelliarmus|Diffindo" data-poderes="Prender">
-    <h5>Sequestrador <em>(caçador de recompensa em tempo de guerra)</em></h5>
-    <p class="etiqueta">Grau 4 · Brutamontes · Inimigo · Ameaça 5</p>
-    <p><b>PV</b> 36 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d8 · <b>Dano</b> RA+5 · <b>DT</b> 8 · <b>DET</b> 7 · <b>Protego</b> 1 por cena</p>
-    <p><b>Feitiços:</b> Stupefy, Incarcerous, Expelliarmus, Diffindo.</p>
-    <p><b>Traços:</b> Mão pesada; Aparatador.</p>
-    <p><b>Poderes:</b> Prender.</p>
-    <p><b>Moral:</b> Foge quando o chefe do bando cai.</p>
-    <p><b>Varinha:</b> Carvalho-vermelho, dragão. <b>Quer:</b> O prêmio pela cabeça de alguém.</p>
-    <p><b>Ao vencer:</b> A lista de procurados que ele leva no bolso.</p>
-  </div>
-  <div class="cartao bruxo" id="bx-contrabandista-da-travessa" data-nivel="4" data-papel="Trapaceiro" data-pv="30" data-def="9" data-atq="d8+d8" data-dano="4" data-dt="8" data-det="7" data-circ="2" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-duplo="0" data-ameaca="5" data-feiticos="Confundo|Expelliarmus|Colloportus|Accio" data-poderes="Confundir">
-    <h5>Contrabandista da Travessa <em>(vende o que não devia)</em></h5>
-    <p class="etiqueta">Grau 4 · Trapaceiro · Neutro · Ameaça 5</p>
-    <p><b>PV</b> 30 · <b>Defesa</b> 9 · <b>Ataque</b> d8+d8 · <b>Dano</b> RA+4 · <b>DT</b> 8 · <b>DET</b> 7 · <b>Protego</b> 1 por cena</p>
-    <p><b>Feitiços:</b> Confundo, Expelliarmus, Colloportus, Accio.</p>
-    <p><b>Traços:</b> Aparatador; Metamorfomago.</p>
-    <p><b>Poderes:</b> Confundir.</p>
-    <p><b>Moral:</b> Negocia: troca o que sabe pela liberdade, sempre.</p>
-    <p><b>Varinha:</b> Corniso, kelpie. <b>Quer:</b> Sair da cidade antes que o Ministério bata na porta.</p>
-    <p><b>Ao vencer:</b> Um ingrediente proibido, ou o nome do comprador.</p>
-  </div>
-  <div class="cartao bruxo" id="bx-curandeira-do-st-mungus" data-nivel="5" data-papel="Curandeiro" data-pv="42" data-def="9" data-atq="d10+d8" data-dano="2" data-dt="9" data-det="8" data-circ="3" data-ntr="2" data-npo="2" data-pes="0" data-inc="0" data-duplo="0" data-ameaca="5" data-feiticos="Episkey|Ferula|Revigoro|Protego" data-poderes="Poção no cinto|Escudo de grupo">
-    <h5>Curandeira do St. Mungus <em>(aliada de jaleco verde-limão)</em></h5>
-    <p class="etiqueta">Grau 5 · Curandeiro · Aliado · Ameaça 5</p>
-    <p><b>PV</b> 42 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+2 · <b>DT</b> 9 · <b>DET</b> 8 · <b>Protego</b> 1 por rodada</p>
-    <p><b>Feitiços:</b> Episkey, Ferula, Revigoro, Protego.</p>
-    <p><b>Traços:</b> Nervos de aço; Oclumente.</p>
-    <p><b>Poderes:</b> Poção no cinto; Escudo de grupo.</p>
-    <p><b>Moral:</b> Nunca deixa um ferido para trás, nem um inimigo.</p>
-    <p><b>Varinha:</b> Salgueiro, unicórnio. <b>Quer:</b> Que ninguém morra no plantão dela.</p>
-    <p><b>Ao vencer:</b> —</p>
-  </div>
-  <div class="cartao bruxo" id="bx-auror" data-nivel="6" data-papel="Caçador" data-pv="62" data-def="10" data-atq="d10+d10" data-dano="6" data-dt="10" data-det="9" data-circ="3" data-ntr="3" data-npo="2" data-pes="0" data-inc="1" data-duplo="0" data-ameaca="7" data-feiticos="Stupefy|Incarcerous|Expelliarmus|Homenum Revelio|Expecto Patronum" data-poderes="Prender|Chamar reforço">
-    <h5>Auror <em>(do Quartel-General, de licença ou de serviço)</em></h5>
-    <p class="etiqueta">Grau 6 · Caçador · Aliado ou inimigo · Ameaça 7</p>
-    <p><b>PV</b> 62 · <b>Defesa</b> 10 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+6 · <b>DT</b> 10 · <b>DET</b> 9 · <b>Protego</b> 1 por rodada</p>
-    <p><b>Feitiços:</b> Stupefy, Incarcerous, Expelliarmus, Homenum Revelio, Expecto Patronum.</p>
-    <p><b>Traços:</b> Oclumente; Aparatador; Nervos de aço.</p>
-    <p><b>Poderes:</b> Prender; Chamar reforço.</p>
-    <p><b>Moral:</b> Prende, não mata. Recua para chamar reforço se estiver sozinho contra três.</p>
-    <p><b>Varinha:</b> Freixo, dragão. <b>Quer:</b> Fechar o caso, e às vezes só bater o ponto.</p>
-    <p><b>Ao vencer:</b> Contra você: Azkaban espera. A favor: um contato no Ministério.</p>
-  </div>
-  <div class="cartao bruxo" id="bx-comensal-da-morte" data-nivel="6" data-papel="Trevoso" data-pv="50" data-def="9" data-atq="d10+d10" data-dano="8" data-dt="10" data-det="9" data-circ="3" data-ntr="3" data-npo="2" data-pes="0" data-inc="1" data-duplo="0" data-ameaca="7" data-feiticos="Confringo|Stupefy|Expelliarmus|Morsmordre|Crucio" data-poderes="Crucio|Fogo">
-    <h5>Comensal da Morte <em>(mascarado, de capuz, da Marca no braço)</em></h5>
-    <p class="etiqueta">Grau 6 · Trevoso · Inimigo · Ameaça 7</p>
-    <p><b>PV</b> 50 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+8 · <b>DT</b> 10 · <b>DET</b> 9 · <b>Protego</b> 1 por rodada</p>
-    <p><b>Feitiços:</b> Confringo, Stupefy, Expelliarmus, Morsmordre, Crucio.</p>
-    <p><b>Traços:</b> Aparatador; Mente rachada; Calejado.</p>
-    <p><b>Poderes:</b> Crucio; Fogo.</p>
-    <p><b>Moral:</b> Aparata com metade do PV, a não ser que o mestre esteja olhando.</p>
-    <p><b>Varinha:</b> Teixo, dragão. <b>Quer:</b> Ser notado pelo mestre.</p>
-    <p><b>Ao vencer:</b> A máscara, a varinha e um nome: os outros vão saber.</p>
-  </div>
-  <div class="cartao bruxo" id="bx-mestre-de-pocoes" data-nivel="8" data-papel="Mentor" data-pv="90" data-def="11" data-atq="d12+d12" data-dano="6" data-dt="11" data-det="11" data-circ="4" data-ntr="3" data-npo="3" data-pes="0" data-inc="1" data-duplo="0" data-ameaca="9" data-feiticos="Expelliarmus|Protego|Vulnera Sanentur|Obliviate|Sectumsempra|Expecto Patronum" data-assinatura="Vapor Acerbus" data-poderes="Desarmar|Poção no cinto|Feitiço assinatura">
-    <h5>Mestre de Poções <em>(mentor difícil de gostar)</em></h5>
-    <p class="etiqueta">Grau 8 · Mentor · Aliado · Ameaça 9</p>
-    <p><b>PV</b> 90 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+6 · <b>DT</b> 11 · <b>DET</b> 11 · <b>Protego</b> 1 por rodada</p>
-    <p><b>Feitiços:</b> Expelliarmus, Protego, Vulnera Sanentur, Obliviate, Sectumsempra, Expecto Patronum.</p>
-    <p><b>Traços:</b> Oclumente; Nervos de aço; Duelista de clube.</p>
-    <p><b>Poderes:</b> Desarmar; Poção no cinto; Feitiço assinatura: <strong>Vapor Acerbus</strong> <em>(encantamento deste jogo, inventado por ele)</em>, Efeito de Círculo 2 (condição Breve + área), Mente + Feitiços como todo feitiço criado, 9 m, Fortitude contra a DT: uma nuvem de vapor de caldeirão de 3 m; quem falha tosse e lacrimeja, –1 passo em ataques e feitiços por duas rodadas. Ele rola com +1 passo, e ninguém conhece o contrafeitiço. Inventá-lo pediu Poções no último dado: a fórmula é de caldeirão, não de livro.</p>
-    <p><b>Moral:</b> Não foge. Se perde, some e cobra depois.</p>
-    <p><b>Varinha:</b> Ébano, dragão. <b>Quer:</b> Que ninguém saiba de quem ele gosta.</p>
-    <p><b>Ao vencer:</b> Ensina: +1 passo para Estudar com ele, se ele quiser.</p>
-  </div>
-  <div class="cartao bruxo" id="bx-bruxo-das-trevas" data-nivel="9" data-papel="Trevoso" data-pv="99" data-def="12" data-atq="d12+d12+d8" data-dano="11" data-dt="12" data-det="12" data-circ="4" data-ntr="4" data-npo="3" data-pes="1" data-inc="2" data-duplo="1" data-ameaca="13" data-feiticos="Avada Kedavra|Crucio|Imperio|Confringo|Protego Maxima|Expulso" data-poderes="Crucio|Imperio|Ataque duplo">
-    <h5>Bruxo das Trevas <em>(chefe de campanha)</em></h5>
-    <p class="etiqueta">Grau 9 · Trevoso · Inimigo · Ameaça 13</p>
-    <p><b>PV</b> 99 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d12+d8 · <b>Dano</b> RA+11 · <b>DT</b> 12 · <b>DET</b> 12 · <b>Protego</b> 1 por rodada</p>
-    <p><b>Feitiços:</b> Avada Kedavra, Crucio, Imperio, Confringo, Protego Maxima, Expulso.</p>
-    <p><b>Traços:</b> Oclumente; Aparatador; Protegido; Calejado.</p>
-    <p><b>Poderes:</b> Crucio; Imperio; Ataque duplo.</p>
-    <p><b>Moral:</b> Fanático: com um quarto do PV ou menos, usa o feitiço mais perigoso que sabe, mesmo contra os seus.</p>
-    <p><b>Varinha:</b> Teixo, testrálio. <b>Quer:</b> O que a campanha esconder.</p>
-    <p><b>Ao vencer:</b> A varinha dele, que agora é sua, e todo mundo que a queria.</p>
-  </div>
+  <!--dados:bruxo:bx-valentao-da-sonserina-->
+  <!--dados:bruxo:bx-duelista-do-clube-->
+  <!--dados:bruxo:bx-monitor-da-casa-->
+  <!--dados:bruxo:bx-sequestrador-->
+  <!--dados:bruxo:bx-contrabandista-da-travessa-->
+  <!--dados:bruxo:bx-curandeira-do-st-mungus-->
+  <!--dados:bruxo:bx-auror-->
+  <!--dados:bruxo:bx-comensal-da-morte-->
+  <!--dados:bruxo:bx-mestre-de-pocoes-->
+  <!--dados:bruxo:bx-bruxo-das-trevas-->
 </section>
 
 <!-- ==================== XI ==================== -->
@@ -1648,298 +672,49 @@
   <p class="indice"><a href="#itens-logros">Logros e brincadeiras</a> · <a href="#itens-doces">Doces e bebidas</a> · <a href="#itens-escola">Escola, casa e dia a dia</a> · <a href="#itens-deteccao">Detecção, segredo e defesa</a> · <a href="#itens-viagem">Viagem</a> · <a href="#vassouras">Vassouras</a> · <a href="#itens-plantas">Plantas de combate</a> · <a href="#itens-roupas">Roupas e acessórios</a> · <a href="#itens-estudo">Estudo e escola</a> · <a href="#itens-consumiveis">Consumíveis encantados</a> · <a href="#itens-duelo">Duelo e proteção</a> · <a href="#itens-exploracao">Exploração e criaturas</a> · <a href="#itens-casa">Casa, recado e espionagem</a> · <a href="#itens-poder">Objetos de poder</a> · <a href="#itens-raros">Objetos raros e perigosos</a> · <a href="#itens-unicos">Artefatos únicos</a></p>
   <h4 id="itens-logros">Logros e brincadeiras</h4>
   <p>Zonko's, em Hogsmeade, e Gemialidades Weasley, no Beco Diagonal 93. Filch proíbe quase tudo: pego com um, role <span class="dado">d6</span>; com 1–2, confisca e dá detenção.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Bomba de Bosta</strong></td><td>I</td><td>3 sicles</td><td>Arremessada, enche uma sala de fedor por uma cena. Quem fica faz Percepção com –1 passo e quer sair; aula ou conversa ali acabam.</td></tr>
-  <tr><td><strong>Fogos Filibusteiro</strong></td><td>I</td><td>5 sicles</td><td>Acendem molhados, sem fogo. Uma distração garantida: todo mundo olha por uma rodada.</td></tr>
-  <tr><td><strong>Fogos Estalo e Fogo</strong></td><td>I</td><td>5 a 20 galeões</td><td>Dragões de faísca, rodas e foguetes por uma cena inteira. Estuporar multiplica; Evanesco multiplica por dez. Ninguém dá aula nem faz silêncio ali.</td></tr>
-  <tr><td><strong>Detonador-Chamariz</strong></td><td>I</td><td>2 galeões</td><td>Corre para longe e explode com estrondo a até 18 m. Quem está perto testa Percepção DT 9 ou se vira para ele.</td></tr>
-  <tr><td><strong>Pó Escurecedor Instantâneo do Peru</strong></td><td>I</td><td>1 galeão</td><td>Escuridão total num raio de 9 m por 1 minuto. Lumos não atravessa; a Mão da Glória atravessa.</td></tr>
-  <tr><td><strong>Orelhas Extensíveis</strong></td><td>I</td><td>1 galeão</td><td>Um fio cor de pele passa por baixo da porta e ouve do outro lado. Feitiço Imperturbável bloqueia; gato come.</td></tr>
-  <tr><td><strong>Pântano Portátil</strong></td><td>II</td><td>5 galeões</td><td>Um corredor vira pântano fedido. Atravessar: Corpo + Atletismo DT 9 e a rodada inteira. Finite não seca: só quem o fez, ou um professor com tempo.</td></tr>
-  <tr><td><strong>Pastilhas Vomitórias</strong></td><td>I</td><td>6 sicles</td><td>Kit Mata-Aula. A metade laranja faz vomitar até comer a roxa: sai da aula sem suspeita (Enganação +1 passo).</td></tr>
-  <tr><td><strong>Nugá Sangra-Nariz</strong></td><td>I</td><td>6 sicles</td><td>Kit Mata-Aula. O nariz sangra até comer a outra metade; sem a outra, sangra por horas.</td></tr>
-  <tr><td><strong>Bombom Febril</strong></td><td>I</td><td>6 sicles</td><td>Kit Mata-Aula. Febre alta e furúnculos, sem perigo. O furúnculo ainda não tem cura no kit.</td></tr>
-  <tr><td><strong>Delícia Desmaiante</strong></td><td>I</td><td>6 sicles</td><td>Kit Mata-Aula. Desmaia na hora (Inconsciente) e acorda com a outra metade, que alguém tem que pôr na boca.</td></tr>
-  <tr><td><strong>Caramelo Incha-Língua</strong></td><td>I</td><td>2 sicles</td><td>A língua cresce mais de um metro: Silenciado por uma cena, ou até um Finite.</td></tr>
-  <tr><td><strong>Creme de Canário</strong></td><td>I</td><td>7 sicles</td><td>Quem come vira um canário enorme por um minuto, e as penas caem depois. Sem dano.</td></tr>
-  <tr><td><strong>Varinha de Logro</strong></td><td>I</td><td>2 galeões</td><td>Vira galinha de borracha, peixe de lata ou calça de vovó quando agitada. Quem a usa por engano perde a ação.</td></tr>
-  <tr><td><strong>Chapéu Sem-Cabeça</strong></td><td>I</td><td>2 galeões</td><td>Some com a cabeça e o chapéu. +1 passo para assustar ou pregar uma peça.</td></tr>
-  <tr><td><strong>Chapéu, capa e luvas Escudo</strong></td><td>II</td><td>3 a 10 galeões</td><td>Uma vez por cena, param uma azaração de Círculo 1 ou 2 como um Protego. Ocupam um dos três objetos ativos.</td></tr>
-  <tr><td><strong>Feitiço de Devaneio Patenteado</strong></td><td>I</td><td>1 galeão</td><td>Meia hora de sonho acordado: a pessoa fica alheia (Percepção –2 passos) e baba. Proibido em aula.</td></tr>
-  <tr><td><strong>Poção do Amor Bruxa Maravilha</strong></td><td>II</td><td>2 galeões</td><td>Paixão boba por algumas horas: Vontade DT 9. É ilegal vender para menores, e vendem.</td></tr>
-  <tr><td><strong>Eliminador de Espinhas em Dez Segundos</strong></td><td>I</td><td>3 sicles</td><td>Da linha Bruxa Maravilha. Some com uma espinha; o resto da linha faz cílios, cabelo e unhas.</td></tr>
-  <tr><td><strong>Pena de Resposta Esperta</strong></td><td>I</td><td>1 galeão</td><td>Responde sozinha, com ironia. +1 passo em Artes para a redação, –1 passo com o professor.</td></tr>
-  <tr><td><strong>Pena Autocorretora</strong></td><td>I</td><td>1 galeão</td><td>Corrige a ortografia. Gasta: depois de um mês, corrige errado.</td></tr>
-  <tr><td><strong>Mini-Pufoso</strong></td><td>I</td><td>7 galeões</td><td>Bola de pelo rosa ou roxa que cantarola. Só companhia; come aranhas e restos.</td></tr>
-  <tr><td><strong>Telescópio Soco</strong></td><td>I</td><td>5 sicles</td><td>Quem olha leva um soco: 1d4 de dano e olho roxo, que só sai com Essência de Murtisco.</td></tr>
-  <tr><td><strong>Xícara Morde-Nariz</strong></td><td>I</td><td>3 sicles</td><td>Morde o nariz de quem bebe. Proibida por Filch.</td></tr>
-  <tr><td><strong>Frisbee Dentado</strong></td><td>I</td><td>4 sicles</td><td>Voa mordendo. Pegar: Corpo + Reflexos DT 7 ou RB de dano. Proibido em Hogwarts.</td></tr>
-  <tr><td><strong>Sabão de Ovas de Sapo, Pó do Arroto, Doce do Soluço</strong></td><td>I</td><td>1 a 2 sicles</td><td>Peças pequenas: espuma de sapo, arroto alto, soluço por uma cena. Quem sofre perde 1 de DET de raiva, uma vez.</td></tr>
-  <tr><td><strong>Pílula Prende-Tudo</strong></td><td>I</td><td>2 sicles</td><td><em>(é a U-No-Poo)</em> Prende o intestino por um dia. Vendida como piada contra quem manda, dá problema com o Ministério.</td></tr>
-  <tr><td><strong>Mágicas Trouxas</strong></td><td>I</td><td>1 sicle</td><td>Truques sem magia, para quem tem pai fascinado por trouxas. Não fazem nada, e é essa a graça.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Logros e brincadeiras-->
   <h4 id="itens-doces">Doces e bebidas</h4>
   <p>Dedosdemel, o carrinho do Expresso de Hogwarts e o Três Vassouras.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Feijõezinhos de Todos os Sabores Bertie Bott</strong></td><td>I</td><td>1 sicle</td><td>Role <span class="dado">d6</span> por feijão: com 1, é nojento (cera de ouvido, vômito, meleca) e Fortitude DT 5 ou perde a ação engasgando.</td></tr>
-  <tr><td><strong>Sapo de Chocolate</strong></td><td>I</td><td>7 nuques</td><td>Pula uma vez, e quem não pega perde. Vem com a figurinha de um bruxo famoso, que pode virar pista.</td></tr>
-  <tr><td><strong>Barra de chocolate</strong></td><td>I</td><td>2 sicles</td><td>Depois de um dementador, recupera 1d4 de DET, uma vez por cena.</td></tr>
-  <tr><td><strong>Delícia Gasosa</strong></td><td>I</td><td>5 nuques</td><td>Quem chupa flutua alguns centímetros por um minuto. Não serve para Voo.</td></tr>
-  <tr><td><strong>Chiclete Baba e Bola do Drooble</strong></td><td>I</td><td>3 nuques</td><td>Bolhas azuis que não estouram por dias. Grudam em fechadura: Alohomora com –1 passo.</td></tr>
-  <tr><td><strong>Diabinho de Pimenta</strong></td><td>I</td><td>3 nuques</td><td>Solta fumaça pela boca. Uma cena sem sentir frio.</td></tr>
-  <tr><td><strong>Pena de Açúcar</strong></td><td>I</td><td>4 nuques</td><td>Chupa na aula como se pensasse. Ninguém nota.</td></tr>
-  <tr><td><strong>Camundongo de Gelo</strong></td><td>I</td><td>4 nuques</td><td>Faz os dentes baterem e chiar.</td></tr>
-  <tr><td><strong>Sapo de Menta</strong></td><td>I</td><td>4 nuques</td><td>Pula de verdade no estômago.</td></tr>
-  <tr><td><strong>Ácido Saltitante</strong></td><td>I</td><td>5 nuques</td><td>Fura a língua: 1 PV e Silenciado por uma rodada.</td></tr>
-  <tr><td><strong>Aglomerado de Baratas</strong></td><td>I</td><td>6 nuques</td><td>Baratas de verdade, crocantes.</td></tr>
-  <tr><td><strong>Pirulito Sabor Sangue</strong></td><td>I</td><td>6 nuques</td><td>Para vampiros. Quem não é, cospe.</td></tr>
-  <tr><td><strong>Varinha de alcaçuz, bolo de caldeirão, torta de abóbora</strong></td><td>I</td><td>3 a 6 nuques</td><td>Comida de trem: comer junto com alguém dá +1 na relação, uma vez por viagem.</td></tr>
-  <tr><td><strong>Cerveja amanteigada</strong></td><td>I</td><td>2 sicles</td><td>Esquenta e quase não embriaga. Elfos domésticos ficam bêbados com ela.</td></tr>
-  <tr><td><strong>Uísque de Fogo Ogden</strong></td><td>I</td><td>2 galeões</td><td>Proibido para menores. Uma dose: +1 passo em Vontade contra medo e –1 passo em tudo o que pede Mente, por uma cena.</td></tr>
-  <tr><td><strong>Hidromel envelhecido em carvalho</strong></td><td>I</td><td>3 galeões</td><td>Bom presente, e bom lugar para esconder veneno: o gosto forte dá –1 passo para notar.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Doces e bebidas-->
   <h4 id="itens-escola">Escola, casa e dia a dia</h4>
   <p>Floreios e Borrões, Olivaras, Caldeirões de Potage, Penas e Pergaminhos Scribbulus e o Empório das Corujas.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Caldeirão de estanho, latão ou prata</strong></td><td>I</td><td>2, 4 e 10 galeões</td><td>Estanho é o da lista. Latão e prata esquentam mais rápido: uma etapa por poção conta como Cuidadosa sem o –1 passo.</td></tr>
-  <tr><td><strong>Caldeirão dobrável ou que mexe sozinho</strong></td><td>II</td><td>6 e 15 galeões</td><td>O dobrável cabe na mochila. O que mexe sozinho faz uma etapa de mexer sem você, com o seu teste e sem a sua abordagem.</td></tr>
-  <tr><td><strong>Balança, frascos e kit de ingredientes</strong></td><td>I</td><td>1 galeão</td><td>O mínimo para Poções. Sem frasco de cristal, poção de DT 11+ estraga em um dia.</td></tr>
-  <tr><td><strong>Luvas de couro de dragão e protetores de orelha</strong></td><td>I</td><td>2 e 1 galeão</td><td>As luvas dão +1 passo para colher planta que morde ou queima. Os protetores deixam surdo ao grito da mandrágora.</td></tr>
-  <tr><td><strong>Pena, tinta e pergaminho</strong></td><td>I</td><td>1 sicle</td><td>Tinta que muda de cor custa o dobro. Tinta invisível se lê com Aparecium.</td></tr>
-  <tr><td><strong>Lembrol</strong></td><td>I</td><td>3 galeões</td><td>Fica vermelho quando o dono esqueceu algo. Não diz o quê.</td></tr>
-  <tr><td><strong>Pena de Repetição Rápida</strong></td><td>II</td><td>10 galeões</td><td>Escreve sozinha o que se diz, do jeito que quem a usa gostaria: +1 passo em Enganação por escrito, e é mentira.</td></tr>
-  <tr><td><strong>Berrador</strong></td><td>I</td><td>1 sicle a mais no correio</td><td>A carta grita na voz de quem mandou e se queima. Não abrir: explode do mesmo jeito. Quem recebe em público perde 1 de DET.</td></tr>
-  <tr><td><strong>Espelhos de duas faces</strong></td><td>II</td><td>20 galeões o par</td><td>Diz o nome de quem tem o outro e conversa de longe. Um caco ainda mostra pedaços.</td></tr>
-  <tr><td><strong>Livro Monstruoso dos Monstros</strong></td><td>I</td><td>2 galeões</td><td>Morde quem abre: Corpo + Reflexos DT 7 ou 1d4. Acalma com um carinho na lombada.</td></tr>
-  <tr><td><strong>Fotos e quadros que se mexem</strong></td><td>I</td><td>5 sicles a foto</td><td>Fotos repetem o momento. Retratos pintados falam, saem do quadro e visitam outros: ótimos espiões.</td></tr>
-  <tr><td><strong>Rádio bruxo</strong></td><td>I</td><td>5 galeões</td><td>Rede Radiofônica Bruxa. Rádio pirata só sintoniza com a senha, que muda a cada programa.</td></tr>
-  <tr><td><strong>Oniócolos</strong></td><td>I</td><td>10 galeões</td><td>Binóculos de bronze: repetem a jogada, em câmera lenta, com o nome de cada lance. +1 passo em Percepção de longe.</td></tr>
-  <tr><td><strong>Relógio de família</strong></td><td>III</td><td>feito em casa</td><td>Um ponteiro por pessoa: casa, trabalho, escola, viagem, prisão, perigo mortal. Não diz onde, só como.</td></tr>
-  <tr><td><strong>Agulhas, vassouras e louça encantadas</strong></td><td>I</td><td>1 a 5 galeões</td><td>Tricotam, varrem e lavam sozinhas enquanto alguém olha. Sozinhas a noite toda, fazem bagunça.</td></tr>
-  <tr><td><strong>Barraca bruxa</strong></td><td>II</td><td>20 galeões</td><td>Por fora, uma barraca; por dentro, uma casa com cozinha. Descanso de verdade no acampamento.</td></tr>
-  <tr><td><strong>Bolsinha de pele de moke</strong></td><td>II</td><td>10 galeões</td><td>Só o dono tira o que está dentro. Ladrão de bolso não consegue.</td></tr>
-  <tr><td><strong>Bolsa com Feitiço Indetectável de Extensão</strong></td><td>III</td><td>ilegal sem registro</td><td>Cabe uma barraca, uma biblioteca, um quadro. O que é pesado tomba lá dentro, e procurar algo leva a rodada.</td></tr>
-  <tr><td><strong>Óculos Espectrais</strong></td><td>I</td><td>de brinde no Pasquim</td><td>Mostram zonzóbulos, dizem. Na mesa, +1 passo para notar um feitiço de confusão, uma vez por sessão; ou nada, se o Mestre preferir.</td></tr>
-  <tr><td><strong>Pomo de Ouro</strong></td><td>I</td><td>5 galeões</td><td>Tem memória de carne: lembra a mão que o tocou primeiro. Bom esconderijo: só abre para essa mão.</td></tr>
-  <tr><td><strong>Snap Explosivo, Xadrez de Bruxo, Bexigas</strong></td><td>I</td><td>1 a 5 galeões</td><td>Jogos de sala comunal. Perder no Snap Explosivo tira as sobrancelhas; o xadrez discute com quem joga mal.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Escola, casa e dia a dia-->
   <h4 id="itens-deteccao">Detecção, segredo e defesa</h4>
   <p>Para Aurores, gente desconfiada e o Ministério. Muitos estão à venda, e um Auror paranoico tem todos.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Bisbilhoscópio</strong></td><td>I</td><td>1 galeão</td><td>Pião que gira e apita perto de quem engana ou trama. Erra: role <span class="dado">d6</span>, com 1–2 apita à toa.</td></tr>
-  <tr><td><strong>Sensor de Segredos</strong></td><td>II</td><td>30 galeões</td><td>Antena que vibra com mentira e ocultação. Num castelo cheio de magia, vibra o tempo todo.</td></tr>
-  <tr><td><strong>Espelho-de-inimigos</strong></td><td>III</td><td>50 galeões</td><td>Mostra os inimigos do dono, borrados; quando ficam nítidos, chegaram. O Mestre usa como relógio da cena.</td></tr>
-  <tr><td><strong>Sonda de Probidade</strong></td><td>II</td><td>do Ministério e de Gringotes</td><td>Encostada, revela feitiço de ocultação e objeto escondido. Polissuco passa, a não ser pela Cascata do Ladrão.</td></tr>
-  <tr><td><strong>Olho mágico</strong></td><td>III</td><td>200 galeões, sob encomenda</td><td>Prótese para quem perdeu um olho. Vê através de paredes, de capas comuns e da própria cabeça; gira sozinho e assusta (–1 passo em Persuasão).</td></tr>
-  <tr><td><strong>Baú de sete fechaduras</strong></td><td>III</td><td>100 galeões</td><td>Cada fechadura abre um compartimento: livros, roupas, um poço onde se prende uma pessoa. Alohomora abre uma por vez.</td></tr>
-  <tr><td><strong>Mão da Glória</strong></td><td>III</td><td>15 galeões, na Borgin & Burkes</td><td>Mão de morto com uma vela: só quem a segura vê a luz. Atravessa o Pó Escurecedor. Ladrões gostam.</td></tr>
-  <tr><td><strong>Moedas-irmãs</strong></td><td>III</td><td>fabricar</td><td>Feitiço Proteu num punhado de galeões falsos: a borda de todas mostra a data e a hora que o dono escrever na sua. Esquentam para avisar.</td></tr>
-  <tr><td><strong>Detector das Trevas</strong> <span class="dado">J</span></td><td>II</td><td>20 galeões</td><td>Do Ministério na Calamidade. Fica quente perto de objeto amaldiçoado ou Confuso a até 30 m; não diz onde.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Detecção, segredo e defesa-->
   <h4 id="itens-viagem">Viagem</h4>
   <p>Todo meio de viajar sem varinha nem licença de aparatação.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Pó de Flu</strong></td><td>I</td><td>2 sicles o punhado</td><td>Viaja pela lareira da Rede de Flu. Falar errado ou engasgar: role <span class="dado">d6</span>, com 1 cai na lareira errada (a Borgin & Burkes, por exemplo).</td></tr>
-  <tr><td><strong>Chave de Portal</strong></td><td>II</td><td>do Ministério</td><td>Leva quem toca a um lugar fixo, numa hora marcada. Fazer uma sem licença é crime.</td></tr>
-  <tr><td><strong>Nôitibus Andante</strong></td><td>I</td><td>11 sicles; 13 com chocolate</td><td>Ônibus de três andares para bruxo perdido: estenda a varinha na rua. Chega a qualquer lugar da Grã-Bretanha, aos solavancos.</td></tr>
-  <tr><td><strong>Armário Sumidouro</strong></td><td>III</td><td>—</td><td>Um par: o que entra num sai no outro. Quebrado, some com quem entra; consertar é um projeto de Feitiços DT 13.</td></tr>
-  <tr><td><strong>Tapete voador</strong></td><td>II</td><td>100 galeões, fora da Grã-Bretanha</td><td>Leva até seis: Voo normal. Na Grã-Bretanha conta como artefato trouxa e é proibido.</td></tr>
-  <tr><td><strong>Carro enfeitiçado</strong></td><td>III</td><td>fabricar; é crime</td><td>Carro trouxa que voa e fica invisível, e cabe mais gente do que devia. O encanto de invisibilidade falha: role <span class="dado">d6</span> a cada uso, com 1 desliga. Uso Indevido de Artefatos Trouxas.</td></tr>
-  <tr><td><strong>Moto enfeitiçada</strong></td><td>III</td><td>fabricar; é crime</td><td>Voa com dois. Cada truque é um efeito à parte (fabricar): rede, parede de tijolos ou fogo pelo escapamento, uma vez por cena.</td></tr>
-  <tr><td><strong>Mala de viveiro</strong> <span class="dado">F</span></td><td>IV</td><td>fabricar</td><td>Por fora, uma mala; por dentro, um galpão com habitats. O fecho tem um modo trouxa, que às vezes abre sozinho. Guardar criatura pede licença.</td></tr>
-  <tr><td><strong>Saco de Captura</strong> <span class="dado">J</span></td><td>II</td><td>10 galeões</td><td>Guarda uma fera Atordoada ou Presa de Perigo até 4, sem machucar. Para levar ao viveiro, não para vender.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Viagem-->
   <h4 id="itens-plantas">Plantas de combate <span class="dado">J</span></h4>
   <p>Hogwarts Legacy põe planta no bolso para lutar. Na mesa, são ação de pôr no chão a até 3 m e duram três rodadas.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Repolho Chinês Mordedor</strong></td><td>I</td><td>3 galeões</td><td>Morde o inimigo mais perto a cada rodada: RB de dano. Distrai: o alvo ataca o repolho em vez de você.</td></tr>
-  <tr><td><strong>Mandrágora em vaso</strong></td><td>II</td><td>5 galeões</td><td>Um grito, uma vez: quem está a 9 m sem protetor de orelha testa Fortitude DT 9 ou fica Atordoado. É a muda; a madura mata.</td></tr>
-  <tr><td><strong>Tentácula Venenosa</strong></td><td>II</td><td>6 galeões</td><td>Agarra e cospe ácido em quem chega a 3 m: RA de dano. Ilegal fora de estufa, e as sementes são classe C.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Plantas de combate J-->
   <h4 id="itens-roupas">Roupas e acessórios</h4>
   <p>Ocupam um dos três objetos ativos enquanto vestidos, como qualquer objeto encantado.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Cachecol Aquecedor</strong></td><td>I</td><td>2 galeões</td><td>Ignora o –1 passo do frio, sempre. Não esquenta contra fogo nem gelo mágico.</td></tr>
-  <tr><td><strong>Botas de Passo Leve</strong></td><td>II</td><td>30 galeões</td><td>+1 passo em Furtividade andando, uma vez por cena.</td></tr>
-  <tr><td><strong>Luvas de Pegada</strong></td><td>I</td><td>3 galeões</td><td>+1 passo para não largar a varinha nem cair da vassoura, uma vez por cena.</td></tr>
-  <tr><td><strong>Capa Reversível</strong> ✦</td><td>II</td><td>25 galeões</td><td>Com o movimento, vira do avesso e muda cor e corte. Quem viu você antes precisa de Percepção DT 9 para reconhecer. Uma vez por cena.</td></tr>
-  <tr><td><strong>Chapéu Ouvinte</strong> ✦</td><td>II</td><td>20 galeões</td><td>Guarda a última frase dita a até 3 m dele e a repete quando tirado. Uma frase por vez; a nova apaga a velha.</td></tr>
-  <tr><td><strong>Anel de Pulso Quente</strong> ✦</td><td>II</td><td>40 galeões</td><td>Esquenta antes do perigo: uma vez por sessão, você não conta como alvo surpreso.</td></tr>
-  <tr><td><strong>Broche de Casa Falsa</strong> ✦</td><td>I</td><td>4 galeões</td><td>Muda as cores do uniforme para as de outra Casa por uma hora. Um monitor atento nota a costura: Percepção DT 9.</td></tr>
-  <tr><td><strong>Óculos de Leitura Rápida</strong> ✦</td><td>II</td><td>35 galeões</td><td>Uma vez por semana, um período de estudo de Conhecimento rende como dois. Não passa do limite de marcas de Aprender sozinho.</td></tr>
-  <tr><td><strong>Brincos Tilintantes</strong> ✦</td><td>I</td><td>1 galeão</td><td>Tilintam quando alguém invisível passa a até 3 m. Você sabe que tem alguém, não onde.</td></tr>
-  <tr><td><strong>Cinto de Frascos Acolchoado</strong> ✦</td><td>I</td><td>2 galeões</td><td>Cinco poções saem com o movimento, em vez de três. O Desastre Perda nunca quebra os frascos do cinto.</td></tr>
-  <tr><td><strong>Manto Pesa-Nada</strong> ✦</td><td>II</td><td>50 galeões</td><td>+2 espaços de Carga. O peso some; o volume, não: não cabe numa passagem estreita.</td></tr>
-  <tr><td><strong>Gorro Abafador</strong></td><td>I</td><td>1 galeão</td><td>+1 passo em Fortitude contra grito e som mágico, uma vez por cena.</td></tr>
-  <tr><td><strong>Fita de Cabelo da Calma</strong> ✦</td><td>II</td><td>30 galeões</td><td>Uma vez por cena, quando ficaria Amedrontado, role <span class="dado">d6</span>: com 4 ou mais, não fica.</td></tr>
-  <tr><td><strong>Relógio de Bolso Teimoso</strong> ✦</td><td>III</td><td>200 galeões</td><td>Uma vez por dia, o dono chega dez minutos antes de onde ia: nunca se atrasa para a aula, e numa emboscada chega antes dela começar.</td></tr>
-  <tr><td><strong>Medalhão de Retrato</strong> ✦</td><td>I</td><td>3 galeões</td><td>Retratinho de alguém querido que fala. Uma vez por dia, conversar com ele recupera 1 de DET.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Roupas e acessórios-->
   <h4 id="itens-estudo">Estudo e escola</h4>
   <p>O que um aluno compra no Beco Diagonal para tirar nota melhor, ou para não precisar ir à aula.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Pena Autoabastecida</strong></td><td>I</td><td>5 sicles</td><td>Nunca falta tinta. Escreve até debaixo d'água.</td></tr>
-  <tr><td><strong>Pena Ditadora</strong> ✦</td><td>II</td><td>15 galeões</td><td>Fica na carteira e copia a aula inteira. Quem perdeu a aula estuda pelo caderno como se tivesse ido. Proibida nas provas.</td></tr>
-  <tr><td><strong>Pergaminhos Gêmeos</strong> ✦</td><td>II</td><td>10 galeões</td><td>O par. O que se escreve num aparece no outro, a qualquer distância. Cada folha guarda uma página; a nova apaga a velha.</td></tr>
-  <tr><td><strong>Ampulheta de Prova</strong> ✦</td><td>I</td><td>3 galeões</td><td>Num exame, uma vez, +1 passo no último teste: você sabe exatamente quanto tempo falta.</td></tr>
-  <tr><td><strong>Livro de Bolso Encolhido</strong> ✦</td><td>I</td><td>1 galeão</td><td>Um livro do tamanho de um selo, que volta ao normal quando aberto. Não ocupa Carga.</td></tr>
-  <tr><td><strong>Marcador de Página Falante</strong> ✦</td><td>I</td><td>2 galeões</td><td>Lembra onde você parou e resume numa frase. Um estudo interrompido não perde o progresso.</td></tr>
-  <tr><td><strong>Tinteiro que Não Derrama</strong></td><td>I</td><td>3 sicles</td><td>Pode cair, virar e rolar: a tinta fica dentro.</td></tr>
-  <tr><td><strong>Caldeirão de Bolso</strong> ✦</td><td>II</td><td>12 galeões</td><td>Ferve uma poção de DT até 7 em qualquer lugar, sem fogo. DT 9 ou mais não cabe nele.</td></tr>
-  <tr><td><strong>Faca de Prata de Ingredientes</strong> ✦</td><td>II</td><td>20 galeões</td><td>Uma vez por poção, um passo de cortar ou esmagar ganha +1 passo. Não vale num passo ★.</td></tr>
-  <tr><td><strong>Telescópio de Bolso</strong></td><td>I</td><td>2 galeões</td><td>+1 passo em Percepção à noite, de longe, uma vez por cena.</td></tr>
-  <tr><td><strong>Mapa de Constelações Vivo</strong> ✦</td><td>II</td><td>15 galeões</td><td>Mostra o céu de qualquer data e lugar. Astronomia e Adivinhação pelos astros podem ser estudadas de dia ou com o céu fechado.</td></tr>
-  <tr><td><strong>Tinta de Leitura Única</strong> ✦</td><td>I</td><td>4 sicles</td><td>Some depois de lida uma vez. Aparecium não traz de volta.</td></tr>
-  <tr><td><strong>Agenda que Grita</strong></td><td>I</td><td>2 galeões</td><td>Grita o compromisso cinco minutos antes. Nunca se perde uma aula por esquecer, e todo mundo ouve.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Estudo e escola-->
   <h4 id="itens-consumiveis">Consumíveis encantados</h4>
   <p>Uso único, a não ser que diga outra coisa. Vendem-se em qualquer loja de bruxo.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Vela que Não Apaga</strong></td><td>I</td><td>5 sicles</td><td>Ilumina 3 m por uma noite, contra vento e chuva. Uso único.</td></tr>
-  <tr><td><strong>Vela de Sono Fundo</strong> ✦</td><td>I</td><td>1 galeão</td><td>Acesa no quarto, quem dorme ali recupera 1 de DET a mais no descanso. Uso único.</td></tr>
-  <tr><td><strong>Pote de Fogo Frio</strong></td><td>I</td><td>2 sicles</td><td>Um fogo azul num pote: esquenta e ilumina e não queima pano. Uso único, uma noite.</td></tr>
-  <tr><td><strong>Giz de Marcar Caminho</strong> ✦</td><td>I</td><td>1 sicle</td><td>A marca brilha só para quem riscou. Voltar por um caminho marcado não pede teste. Um giz marca um caminho.</td></tr>
-  <tr><td><strong>Sal de Pegadas</strong> ✦</td><td>I</td><td>3 sicles</td><td>Espalhado na porta, guarda as pegadas de quem passar até o amanhecer: você sabe quantos e de que tamanho. Uso único.</td></tr>
-  <tr><td><strong>Bolha de Ar Engarrafada</strong> ✦</td><td>II</td><td>8 galeões</td><td>Respirar debaixo d'água por 10 minutos. Uso único.</td></tr>
-  <tr><td><strong>Corda que Amarra Sozinha</strong> ✦</td><td>II</td><td>15 galeões</td><td>Arremessada (Corpo + Reflexos contra a Defesa): o alvo fica Preso; sair pede Corpo + Atletismo DT 11. Uma vez por cena, e ela volta enrolada.</td></tr>
-  <tr><td><strong>Bombinha de Fumaça Colorida</strong> ✦</td><td>I</td><td>5 sicles</td><td>Fumaça de 6 m por duas rodadas: quem está dentro não pode ser alvo de feitiço que precisa ver. Uso único.</td></tr>
-  <tr><td><strong>Pastilha de Voz</strong> ✦</td><td>I</td><td>1 sicle</td><td>Encerra Silenciado feito por Silencio ou por um logro. Contra maldição, nada. Uso único.</td></tr>
-  <tr><td><strong>Doce do Último Fôlego</strong> ✦</td><td>II</td><td>60 galeões</td><td>Reação ao cair a 0 PV: fica com 1 PV e de pé. Na noite seguinte dorme sem acordar, e não recupera DET. Uso único, um por pessoa por dia.</td></tr>
-  <tr><td><strong>Envelope Autoentregador</strong> ✦</td><td>I</td><td>3 sicles</td><td>Voa até o destinatário a até 1 km e chega em minutos. Pegar no ar: Corpo + Reflexos DT 9. Uso único.</td></tr>
-  <tr><td><strong>Biscoito de Coragem</strong></td><td>I</td><td>4 sicles</td><td>+1 passo no próximo teste contra medo nesta cena. Uso único.</td></tr>
-  <tr><td><strong>Pó de Pegada Falsa</strong> ✦</td><td>I</td><td>1 galeão</td><td>Por uma hora, suas pegadas viram as de um bicho. Rastrear você: Percepção DT 11. Uso único.</td></tr>
-  <tr><td><strong>Frasco de Eco</strong> ✦</td><td>I</td><td>2 galeões</td><td>Guarda um som de até uma rodada; abrir solta o som: passos, um grito, a voz do professor. Uso único.</td></tr>
-  <tr><td><strong>Lacre Delator</strong> ✦</td><td>I</td><td>1 galeão</td><td>Quem abre uma carta que não é sua fica com os dedos vermelhos por um dia. Uso único.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Consumíveis encantados-->
   <h4 id="itens-duelo">Duelo e proteção</h4>
   <p>Nada aqui para Avada Kedavra. Nenhum escudo de objeto soma com outro escudo de objeto no mesmo ataque.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Coldre de Varinha</strong> ✦</td><td>I</td><td>2 galeões</td><td>Sacar a varinha não gasta o movimento, e Accio não tira a varinha guardada nele.</td></tr>
-  <tr><td><strong>Bracelete de Retorno</strong> ✦</td><td>II</td><td>40 galeões</td><td>Uma vez por cena, quando você é desarmado, a varinha volta à sua mão no fim daquele turno, se caiu a até 9 m.</td></tr>
-  <tr><td><strong>Luvas de Duelista</strong></td><td>II</td><td>25 galeões</td><td>+1 passo em Reflexos num Protego, uma vez por cena.</td></tr>
-  <tr><td><strong>Amuleto de Espinho</strong> ✦</td><td>II</td><td>30 galeões</td><td>Quem agarra você leva RB de dano, uma vez por cena.</td></tr>
-  <tr><td><strong>Espelho de Bolso Refletor</strong> ✦</td><td>III</td><td>250 galeões</td><td>Reação, uma vez por sessão: um feitiço de ataque de Círculo 1 que acertaria você volta para quem lançou. Um Desastre seu racha o espelho.</td></tr>
-  <tr><td><strong>Medalha de Socorro</strong> ✦</td><td>II</td><td>50 galeões</td><td>Quando você cai a 0 PV, ela grita: quem está a 30 m sabe onde, e quem vier socorrer ganha +1 passo em Medibruxaria, uma vez por cena.</td></tr>
-  <tr><td><strong>Colete de Couro de Dragão</strong></td><td>II</td><td>60 galeões</td><td>+1 de Defesa contra garras, mordidas e quedas. Contra feitiço, nada.</td></tr>
-  <tr><td><strong>Talismã de Rachar</strong> ✦</td><td>III</td><td>300 galeões</td><td>Uma vez por sessão, uma maldição de Círculo 2 ou menos que pegaria você pega o talismã, e ele racha. Na terceira rachadura, quebra.</td></tr>
-  <tr><td><strong>Pulseira da Fúria Contida</strong> ✦</td><td>II</td><td>20 galeões</td><td>Quando um aliado a até 9 m cai, você ganha 1 Ímpeto, uma vez por cena.</td></tr>
-  <tr><td><strong>Vela-Escudo</strong> ✦</td><td>II</td><td>15 galeões</td><td>Acesa no chão, faz um círculo de 2 m: criatura de Perigo até 3 precisa de Vontade DT 9 para entrar. Uma noite, uso único.</td></tr>
-  <tr><td><strong>Faixa do Foco</strong></td><td>II</td><td>30 galeões</td><td>+1 passo para manter um feitiço sob dano, uma vez por cena.</td></tr>
-  <tr><td><strong>Lenço de Rendição</strong> ✦</td><td>I</td><td>1 galeão</td><td>Agitado num duelo formal, ninguém lança na próxima rodada. Quem ataca mesmo assim perde 1 de relação com todos que viram. Uma vez por duelo.</td></tr>
-  <tr><td><strong>Escudo de Bolso</strong> ✦</td><td>III</td><td>180 galeões</td><td>Um disco de bronze que abre em escudo: reação, +2 de Defesa contra um ataque físico, uma vez por cena.</td></tr>
-  <tr><td><strong>Botas Antiderrapantes</strong> ✦</td><td>I</td><td>3 galeões</td><td>Você não fica Caído por chão molhado, gelo ou Glisseo.</td></tr>
-  <tr><td><strong>Varinha reserva de segunda mão</strong></td><td>I</td><td>3 galeões</td><td>Funciona como varinha alheia (Resistente). Pior que a sua, melhor que nenhuma.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Duelo e proteção-->
   <h4 id="itens-exploracao">Exploração e criaturas</h4>
   <p>Para a Floresta Proibida, a trilha do habitat e o trabalho de magizoologia.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Lanterna de Fogo-Fátuo</strong> ✦</td><td>II</td><td>15 galeões</td><td>Ilumina 6 m, e as feras não veem a luz: andar com ela não estraga a Furtividade contra criaturas.</td></tr>
-  <tr><td><strong>Apito de Fada</strong> ✦</td><td>I</td><td>2 galeões</td><td>Só criaturas ouvem. Uma fera de Perigo até 2 testa Vontade DT 7 ou vem ver, curiosa, sem atacar na primeira rodada. Uma vez por cena.</td></tr>
-  <tr><td><strong>Escova de Pelo Encantada</strong></td><td>I</td><td>1 galeão</td><td>+1 passo em Trato para acalmar uma criatura, uma vez por cena.</td></tr>
-  <tr><td><strong>Petisco Universal</strong> ✦</td><td>I</td><td>3 sicles</td><td>Uma criatura que possa e queira comer (não enfurecida, não sob ordem de alguém, não carnívora de gente) não ataca você na rodada seguinte. Uso único.</td></tr>
-  <tr><td><strong>Gaiola Dobrável</strong> ✦</td><td>II</td><td>20 galeões</td><td>Do tamanho de uma caixa de sapato, abre até o de um cão. Guarda uma criatura pequena Atordoada ou Presa sem machucar.</td></tr>
-  <tr><td><strong>Bússola de Volta</strong> ✦</td><td>I</td><td>2 galeões</td><td>Aponta sempre para onde o dono dormiu na última noite. Voltar da Floresta não pede teste de se perder.</td></tr>
-  <tr><td><strong>Corda de Escalada Pegajosa</strong></td><td>I</td><td>3 galeões</td><td>+1 passo em Atletismo para escalar, uma vez por cena.</td></tr>
-  <tr><td><strong>Tenda de Uma Pessoa</strong></td><td>I</td><td>4 galeões</td><td>A barraca bruxa em pequeno: descanso de verdade para um.</td></tr>
-  <tr><td><strong>Cantil sem Fundo</strong> ✦</td><td>II</td><td>30 galeões</td><td>Enche de água limpa a cada amanhecer: um dia de água para quatro. Comida não se conjura.</td></tr>
-  <tr><td><strong>Lupa de Rastro</strong> ✦</td><td>II</td><td>25 galeões</td><td>Mostra há quanto tempo uma pegada foi feita, até um dia. Uma vez por cena.</td></tr>
-  <tr><td><strong>Rede de Fio de Fada</strong> ✦</td><td>II</td><td>35 galeões</td><td>Arremessada (Corpo + Reflexos contra a Defesa): uma criatura voadora de Perigo até 4 fica Presa e cai. Uma vez por cena.</td></tr>
-  <tr><td><strong>Sino de Gnomos</strong> ✦</td><td>I</td><td>1 galeão</td><td>Tocado no jardim, os gnomos saem e somem por um dia. Desgnomizar não pede teste.</td></tr>
-  <tr><td><strong>Luvas de Manejo Grossas</strong></td><td>I</td><td>2 galeões</td><td>Ignora o dano de picada de bicho pequeno: fada mordente, diabrete, doxy.</td></tr>
-  <tr><td><strong>Frasco de Cheiro de Dragão</strong> ✦</td><td>II</td><td>15 galeões</td><td>Aberto, feras de Perigo até 5 que não sejam dragões fogem da área por uma cena. Um dragão vem ver. Uso único.</td></tr>
-  <tr><td><strong>Mapa que se Desenha</strong> ✦</td><td>III</td><td>150 galeões</td><td>Desenha o caminho que o dono fez nesta cena. Uma vez por sessão, mostra uma passagem secreta a até 30 m, se houver.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Exploração e criaturas-->
   <h4 id="itens-casa">Casa, recado e espionagem</h4>
   <p>Para guardar segredo, achar o dos outros e mandar notícia.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Porta-Retrato Espião</strong> ✦</td><td>II</td><td>40 galeões</td><td>O retratinho visita outro quadro do mesmo pintor e volta contando o que viu. Uma vez por dia.</td></tr>
-  <tr><td><strong>Caixinha de Música Abafadora</strong> ✦</td><td>II</td><td>20 galeões</td><td>Aberta, ninguém de fora ouve a conversa a até 3 m dela, por uma cena.</td></tr>
-  <tr><td><strong>Fechadura Ciumenta</strong> ✦</td><td>II</td><td>25 galeões</td><td>Só abre para quem o dono apresentou. Alohomora: Feitiços DT 13, e quem falha leva RB de dano.</td></tr>
-  <tr><td><strong>Capacho Delator</strong> ✦</td><td>I</td><td>3 galeões</td><td>Grita o nome de quem pisa, se o conhece. Polissuco engana: grita o nome errado.</td></tr>
-  <tr><td><strong>Memorando Voador</strong> ✦</td><td>I</td><td>5 sicles</td><td>O recado vira avião de papel, voa até 100 m e se abre só na mão certa. Uso único.</td></tr>
-  <tr><td><strong>Gramofone de Vozes</strong> ✦</td><td>II</td><td>30 galeões</td><td>Grava a conversa de uma cena e toca depois. Abafiato e Fidelius impedem a gravação.</td></tr>
-  <tr><td><strong>Chaleira Vigia</strong> ✦</td><td>I</td><td>1 galeão</td><td>Apita quando alguém chega perto da casa à noite. Não diz quem.</td></tr>
-  <tr><td><strong>Espanador Autônomo</strong></td><td>I</td><td>2 galeões</td><td>Limpa um cômodo por dia, sozinho.</td></tr>
-  <tr><td><strong>Caixa de Correio Coruja</strong> ✦</td><td>II</td><td>15 galeões</td><td>A coruja deixa a carta e espera: quem mandou sabe quando ela foi lida.</td></tr>
-  <tr><td><strong>Dedal de Costura Rápida</strong></td><td>I</td><td>1 sicle</td><td>Conserta roupa rasgada em um minuto.</td></tr>
-  <tr><td><strong>Cortina Falsa</strong> ✦</td><td>II</td><td>20 galeões</td><td>Quem olha de fora vê o cômodo vazio e calmo. Homenum Revelio ainda acha quem está dentro.</td></tr>
-  <tr><td><strong>Diário de Voz</strong> ✦</td><td>I</td><td>3 galeões</td><td>Só abre com a voz do dono. Forçado, a pena de dentro escreve o nome de quem forçou, se souber.</td></tr>
-  <tr><td><strong>Tinteiro Espião</strong> ✦</td><td>III</td><td>120 galeões</td><td>Tudo o que se escreve com esta tinta aparece no pergaminho do dono. Perceber: Feitiços DT 11. Um vidro funciona por um mês.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Casa, recado e espionagem-->
   <h4 id="itens-poder">Objetos de poder</h4>
   <p>Raros e caros, e os de categoria IV cobram um preço. Ninguém usa mais de um destes por cena.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Ampulheta de Areia Negra</strong> ✦</td><td>IV</td><td>800 galeões</td><td>Uma vez por sessão, depois de um Desastre seu, vire-a e role de novo. Preço: 1d4 de DET.</td></tr>
-  <tr><td><strong>Moeda de Duas Caras</strong> ✦</td><td>III</td><td>200 galeões</td><td>Uma vez por sessão, antes de rolar, jogue: cara, +1 passo; coroa, –1 passo. O Mestre também pode jogar a moeda por você, uma vez por sessão.</td></tr>
-  <tr><td><strong>Anel do Ancestral</strong> ✦</td><td>IV</td><td>não se vende</td><td>Uma vez por sessão, um dado extra num teste de Conhecimento ou Feitiços: um antepassado sussurra. Preço: ele pede algo, e recusar custa 1 de DET por dia até cumprir.</td></tr>
-  <tr><td><strong>Pena de Fênix Encapsulada</strong> ✦</td><td>IV</td><td>1.000 galeões</td><td>Quebrada sobre um aliado a 0 PV, ele volta com metade dos PV. Não cura maldição e não traz morto. Uso único. Preço: quem a vende quer saber de onde veio a pena.</td></tr>
-  <tr><td><strong>Espelho Mentiroso</strong> ✦</td><td>III</td><td>150 galeões</td><td>Mostra a quem se olha o que o dono quer: +1 passo em Enganação contra essa pessoa, uma vez por cena.</td></tr>
-  <tr><td><strong>Gaiola de Pássaro Vazia</strong> ✦</td><td>III</td><td>300 galeões</td><td>Prende um feitiço de Círculo 2 ou menos lançado contra ela. Aberta, o feitiço sai contra quem o dono apontar. Uma carga.</td></tr>
-  <tr><td><strong>Colar de Dentes de Lobisomem</strong> ✦</td><td>III</td><td>120 galeões</td><td>+1 passo para intimidar, uma vez por cena. Feras lupinas atacam primeiro quem o usa. Na lua cheia, pesadelos: –1 de DET.</td></tr>
-  <tr><td><strong>Máscara Sem Rosto</strong> ✦</td><td>IV</td><td>600 galeões, ilegal</td><td>Uma vez por sessão: quem viu você nesta cena esquece o seu rosto quando ela acaba. Preço: 1 de Corrupção por uso.</td></tr>
-  <tr><td><strong>Livro que Lê Você</strong> ✦</td><td>III</td><td>250 galeões</td><td>Uma vez por sessão, responde uma pergunta sobre um feitiço, poção ou criatura. O Mestre diz a verdade, em enigma.</td></tr>
-  <tr><td><strong>Cálice da Verdade Dividida</strong> ✦</td><td>III</td><td>200 galeões</td><td>Quem bebe dele junto não consegue mentir um ao outro por uma cena; resistir, Vontade DT 11. Uma vez por sessão.</td></tr>
-  <tr><td><strong>Varinha de Vidro Velha</strong> ✦</td><td>III</td><td>400 galeões</td><td>Uma vez por sessão, com uma ação, relança o último feitiço de Círculo 1 ou 2 que você lançou com ela, com o mesmo resultado.</td></tr>
-  <tr><td><strong>Botas de Légua</strong> ✦</td><td>III</td><td>300 galeões</td><td>Uma vez por dia, uma caminhada de um dia leva uma hora. Fora de combate.</td></tr>
-  <tr><td><strong>Coração de Vidro</strong> ✦</td><td>IV</td><td>não se vende</td><td>Guarda uma emoção do dono. Uma vez por sessão, ignora Amedrontado ou Desesperado por uma cena. Preço: se o vidro quebrar, a emoção volta toda de uma vez, e você fica Desesperado.</td></tr>
-  <tr><td><strong>Trevo Encantado de Quatro Folhas</strong> ✦</td><td>III</td><td>150 galeões</td><td>Uma vez por sessão, um Desastre seu vira falha simples, e o trevo perde uma folha. Sem folhas, murcha.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Objetos de poder-->
   <h4 id="itens-raros">Objetos raros e perigosos</h4>
   <p>Existem vários no mundo, e conseguir um é uma aventura: o Ministério, a Travessa do Tranco ou um cofre antigo.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Vira-Tempo</strong></td><td>IV</td><td>do Ministério</td><td>Volta até 5 horas. Ninguém pode te ver, nem você mesmo: se acontecer, Desastre. Os experimentais voltam anos, e cada volta muda o presente.</td></tr>
-  <tr><td><strong>Penseira</strong></td><td>IV</td><td>500 galeões</td><td>Bacia de pedra rúnica: revive uma memória como cena jogável. Uma memória alterada aparece borrada.</td></tr>
-  <tr><td><strong>Desiluminador</strong></td><td>III</td><td>fabricar</td><td>Apaga e devolve as luzes de um lugar. Com o tempo, guia o dono até quem ele ama.</td></tr>
-  <tr><td><strong>Arma de prata de duende</strong></td><td>III</td><td>1.000 galeões, e o duende acha que é dele</td><td>Não enferruja nem lasca. Fica com o que a fortalece: banhada em veneno de basilisco, destrói Horcrux. O duende que fez quer de volta quando o dono morrer.</td></tr>
-  <tr><td><strong>Diadema ou joia de sabedoria</strong></td><td>III</td><td>300 galeões</td><td>+1 passo em Conhecimento enquanto usado. Ocupa um dos três objetos ativos.</td></tr>
-  <tr><td><strong>Livro de poções anotado</strong></td><td>II</td><td>não se compra; acha-se</td><td>+1 passo em Poções nas receitas anotadas e a resposta de um ◆ por poção. As margens às vezes ensinam um feitiço, sem dizer o que faz.</td></tr>
-  <tr><td><strong>Colar de opalas amaldiçoado</strong></td><td>III</td><td>1.500 galeões, na Borgin & Burkes</td><td>Tocar sem luva: Fortitude DT 13 ou vai a 0 PV e fica Inconsciente até o St. Mungus.</td></tr>
-  <tr><td><strong>Pacto de sangue</strong> <span class="dado">F</span></td><td>IV</td><td>ritual</td><td>Frasco com o sangue de duas pessoas: elas não podem lutar uma contra a outra. Só quebra se o frasco quebrar, e isso pede um ritual ou uma criatura pura.</td></tr>
-  <tr><td><strong>Crânio de vidência</strong> <span class="dado">F</span></td><td>IV</td><td>Travessa do Tranco</td><td>A fumaça mostra pedaços do futuro a quem o dono deixar ver. Uma visão por cena; o Mestre escolhe o que ela esconde.</td></tr>
-  <tr><td><strong>Horcrux</strong></td><td>IV</td><td>—</td><td>Um objeto com um pedaço de alma. Quem o carrega perde 1 de DET por dia e briga com os amigos; um diário ou objeto que se usa pode possuir o dono (Vontade DT 11 por semana). Só se destrói com veneno de basilisco, Fogomaldito ou arma de duende que o absorveu.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Objetos raros e perigosos-->
   <h4 id="itens-unicos">Artefatos únicos</h4>
   <p>Cada um existe uma vez no mundo. Não estão à venda nem na mão de personagens: são objetivo de campanha, e o preço é quem vem atrás.</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Varinha das Varinhas</strong></td><td>Único</td><td>—</td><td>Relíquia da Morte, de sabugueiro com pelo de testrálio. +1 passo em todo feitiço de ataque e duelo. Obedece a quem venceu o dono anterior, e atrai quem quer vencer você. Um Reparo lançado com ela conserta uma varinha quebrada: é a única forma.</td></tr>
-  <tr><td><strong>Pedra da Ressurreição</strong></td><td>Único</td><td>—</td><td>Relíquia da Morte. Gire três vezes: as sombras de quem você amou vêm conversar, não voltam. Quem não larga a pedra fica Desesperado.</td></tr>
-  <tr><td><strong>Capa da Invisibilidade das Relíquias</strong></td><td>Único</td><td>—</td><td>Invisível de verdade, para sempre: não gasta, Accio não traz, Homenum Revelio não garante, nem olho mágico vê.</td></tr>
-  <tr><td><strong>Pedra Filosofal</strong></td><td>Único</td><td>—</td><td>Faz ouro de qualquer metal e o Elixir da Vida. Quem a guarda vive séculos e é caçado por isso.</td></tr>
-  <tr><td><strong>Espelho de Ojesed</strong></td><td>Único</td><td>—</td><td>Mostra o maior desejo. Afastar-se: Vontade DT 11. Quem é feliz só vê a si mesmo.</td></tr>
-  <tr><td><strong>Mapa do Maroto</strong></td><td>Único</td><td>—</td><td>Mostra todas as pessoas no castelo, com nome. Não é enganado por Polissuco, capa ou animagia. Abre e fecha com as frases certas.</td></tr>
-  <tr><td><strong>Orbe de profecia</strong></td><td>Único</td><td>—</td><td>Guardado no Departamento de Mistérios. Só quem a profecia cita pode tirar da prateleira; quebrado, toca uma vez e some.</td></tr>
-  <tr><td><strong>Repositório de Magia Antiga</strong> <span class="dado">J</span></td><td>Único</td><td>—</td><td>Bacia de luz sob a terra. Só quem nasceu vendo a magia antiga (Vis Antiqua) a enxerga, e os duendes querem o que ela guarda.</td></tr>
-  </tbody></table></div>
+  <!--dados:itens:Artefatos únicos-->
 
   <h3>Preços</h3>
   <p>1 galeão = 17 sicles; 1 sicle = 29 nuques.</p>
@@ -2014,45 +789,7 @@
   <tr><td><strong>Desconfortável</strong></td><td>Depois de uma hora de voo, –1 passo em Corpo até descansar.</td></tr>
   </tbody></table></div>
   <h4 id="modelos-vassoura">Os modelos</h4>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Vassoura</th><th>Preço</th><th class="num">Vel.</th><th class="num">Man.</th><th class="num">Firm.</th><th>Vantagens</th><th>Desvantagens</th><th>Nota</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Vassoura de varrer encantada</strong> <b>A</b></td><td>2 galeões</td><td class="num">0</td><td class="num">–1</td><td class="num">–1</td><td>—</td><td>Frágil, Desconfortável</td><td>Feita para o chão da cozinha. Voa, por pouco tempo e mal.</td></tr>
-  <tr><td><strong>Oakshaft 79</strong> <b>C</b></td><td>20 galeões</td><td class="num">1</td><td class="num">–1</td><td class="num">+1</td><td>Longa distância, Robusta</td><td>Lenta para acelerar</td><td>De 1879, de carvalho. Atravessou o Atlântico, e ainda atravessa.</td></tr>
-  <tr><td><strong>Moontrimmer</strong> <b>C</b></td><td>30 galeões</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td>Altitude</td><td>Frágil</td><td>De 1901. A primeira que subiu tão alto.</td></tr>
-  <tr><td><strong>Flecha de Prata</strong> <b>C</b></td><td>400 galeões</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td>Acelera rápido</td><td>Chama atenção</td><td>A primeira de corrida, de cabo de prata. Hoje, de colecionador.</td></tr>
-  <tr><td><strong>Cleansweep One</strong> <b>C</b></td><td>15 galeões</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td>—</td><td>Velha</td><td>De 1926, a primeira feita para esporte, em fábrica.</td></tr>
-  <tr><td><strong>Cleansweep Five</strong> <b>C</b></td><td>25 galeões</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td>Robusta</td><td>—</td><td>Barata, aguenta tudo, não impressiona ninguém.</td></tr>
-  <tr><td><strong>Cleansweep Seven</strong> <b>C</b></td><td>30 galeões</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td>Robusta</td><td>—</td><td>A vassoura de família que joga Quadribol.</td></tr>
-  <tr><td><strong>Cleansweep Eleven</strong> <b>C</b></td><td>90 galeões</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td>Robusta, Acelera rápido</td><td>—</td><td>De 1995. O presente de quem virou monitor.</td></tr>
-  <tr><td><strong>Comet 140</strong> <b>C</b></td><td>20 galeões</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td>Freio de precisão</td><td>—</td><td>De 1929. A Comet inventou o feitiço de freio.</td></tr>
-  <tr><td><strong>Comet 180</strong> <b>C</b></td><td>30 galeões</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td>Freio de precisão</td><td>—</td><td>A Comet que todo time de escola teve.</td></tr>
-  <tr><td><strong>Comet 260</strong> <b>C</b></td><td>40 galeões</td><td class="num">2</td><td class="num">+1</td><td class="num">–1</td><td>Freio de precisão</td><td>—</td><td>Boa de curva, nervosa no vento.</td></tr>
-  <tr><td><strong>Comet 290</strong> <b>C</b></td><td>80 galeões</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td>Freio de precisão, Acelera rápido</td><td>—</td><td>A Comet que tentou alcançar as Nimbus.</td></tr>
-  <tr><td><strong>Tinderblast</strong> <b>C</b></td><td>20 galeões</td><td class="num">1</td><td class="num">0</td><td class="num">+1</td><td>Robusta</td><td>Lenta para acelerar</td><td>De 1940. Resistente, e só isso.</td></tr>
-  <tr><td><strong>Swiftstick</strong> <b>C</b></td><td>25 galeões</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td>—</td><td>Perde força na subida</td><td>De 1952. Mais rápida que a Tinderblast, até a primeira subida.</td></tr>
-  <tr><td><strong>Estrela Cadente</strong> <b>C</b></td><td>15 galeões</td><td class="num">1</td><td class="num">0</td><td class="num">–1</td><td>—</td><td>Velha, Puxa para um lado</td><td>De 1955. A mais barata, e a que mais envelhece. Muitas viraram vassoura de escola.</td></tr>
-  <tr><td><strong>Garrafa Azul</strong> <b>C</b></td><td>25 galeões</td><td class="num">0</td><td class="num">0</td><td class="num">+1</td><td>Dois lugares, Alarme antirroubo</td><td>Lenta para acelerar</td><td>A vassoura da família, para passear com as crianças.</td></tr>
-  <tr><td><strong>Nimbus 1000</strong> <b>C</b></td><td>60 galeões</td><td class="num">2</td><td class="num">+1</td><td class="num">0</td><td>Freio de precisão</td><td>—</td><td>De 1967. Pairava parada no ar como nenhuma antes.</td></tr>
-  <tr><td><strong>Nimbus 1500</strong> <b>C</b></td><td>80 galeões</td><td class="num">2</td><td class="num">+1</td><td class="num">0</td><td>Freio de precisão</td><td>—</td><td>A Nimbus dos times da liga nos anos 70.</td></tr>
-  <tr><td><strong>Nimbus 1700</strong> <b>C</b></td><td>120 galeões</td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td>Freio de precisão</td><td>—</td><td>Rápida, mas a 1500 fazia curva melhor.</td></tr>
-  <tr><td><strong>Nimbus 2000</strong> <b>C</b></td><td>200 galeões</td><td class="num">3</td><td class="num">+1</td><td class="num">0</td><td>Freio de precisão, Mergulho</td><td>—</td><td>De 1991. A vassoura que todo apanhador quis.</td></tr>
-  <tr><td><strong>Nimbus 2001</strong> <b>C</b></td><td>300 galeões</td><td class="num">4</td><td class="num">+1</td><td class="num">0</td><td>Freio de precisão, Mergulho</td><td>—</td><td>De 1992. Comprada aos lotes por pais que queriam o time do filho.</td></tr>
-  <tr><td><strong>Twigger 90</strong> <b>C</b></td><td>150 galeões</td><td class="num">3</td><td class="num">0</td><td class="num">–1</td><td>Alarme antirroubo, Autoajuste de cerdas</td><td>Treme em alta velocidade</td><td>De 1990, cheia de truque. Para quem tem mais galeão que juízo.</td></tr>
-  <tr><td><strong>Firebolt</strong> <b>C</b></td><td>500 galeões</td><td class="num">4</td><td class="num">+1</td><td class="num">+1</td><td>Freio de precisão, Mergulho, Acelera rápido, Antiazaração</td><td>Chama atenção</td><td>De 1993. Cabo de freixo, cerdas numeradas à mão. A melhor do mundo por anos.</td></tr>
-  <tr><td><strong>Firebolt Supreme</strong> <b>C</b></td><td>1.500 galeões</td><td class="num">5</td><td class="num">+1</td><td class="num">+1</td><td>Freio de precisão, Mergulho, Acelera rápido, Antiazaração</td><td>Chama atenção</td><td>A Firebolt dos times profissionais. Quase não se vende a particular.</td></tr>
-  <tr><td><strong>Thunderbolt VII</strong> <b>C</b></td><td>900 galeões</td><td class="num">5</td><td class="num">0</td><td class="num">–1</td><td>Acelera rápido, Mergulho</td><td>Arisca, Treme em alta velocidade</td><td>Passou a Firebolt na reta, e a liga reclamou da segurança.</td></tr>
-  <tr><td><strong>Vassoura de treino</strong> <b>A</b></td><td>35 galeões</td><td class="num">1</td><td class="num">+1</td><td class="num">+1</td><td>Freio de precisão, Amortecida</td><td>—</td><td>Para quem está aprendendo. Lenta e impossível de cair feio.</td></tr>
-  <tr><td><strong>Vassoura de entrega</strong> <b>A</b></td><td>40 galeões</td><td class="num">1</td><td class="num">–1</td><td class="num">+1</td><td>Carga, Longa distância</td><td>Lenta para acelerar</td><td>A do correio e do boticário que entrega em casa.</td></tr>
-  <tr><td><strong>Vassoura de dois lugares</strong> <b>A</b></td><td>50 galeões</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td>Dois lugares, Longa distância</td><td>Lenta para acelerar</td><td>Banco comprido e estribo duplo, para casal ou para levar um ferido.</td></tr>
-  <tr><td><strong>Vendaval</strong> <b>A</b></td><td>70 galeões</td><td class="num">2</td><td class="num">0</td><td class="num">+1</td><td>Todo tempo, Altitude</td><td>Lenta para acelerar</td><td>Feita para as montanhas da Escócia, onde sempre venta.</td></tr>
-  <tr><td><strong>Andorinha</strong> <b>A</b></td><td>150 galeões</td><td class="num">3</td><td class="num">–1</td><td class="num">0</td><td>Longa distância, Todo tempo</td><td>Lenta para acelerar</td><td>De corrida de longa distância, as de país a país.</td></tr>
-  <tr><td><strong>Corvo-Noturno</strong> <b>A</b></td><td>350 galeões; ilegal sem licença</td><td class="num">3</td><td class="num">+1</td><td class="num">0</td><td>Silenciosa, Antiazaração</td><td>Frágil</td><td>Preta, sem marca. Auror usa; contrabandista também.</td></tr>
-  <tr><td><strong>Fura-Nuvem</strong> <b>A</b></td><td>120 galeões, na Travessa do Tranco</td><td class="num">4</td><td class="num">0</td><td class="num">–1</td><td>Acelera rápido</td><td>Arisca, Frágil, Chama atenção</td><td>Vassoura de corrida clandestina, envenenada com feitiço barato. Rápida como uma Nimbus 2001 e perigosa como nenhuma.</td></tr>
-  <tr><td><strong>Vassoura herdada</strong> <b>A</b></td><td>herdada</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td>Chamado</td><td>Velha</td><td>A do avô, que conhece a família. Vem quando chamada.</td></tr>
-  <tr><td><strong>Vassoura de corrida antiga</strong> <b>A</b></td><td>200 galeões</td><td class="num">2</td><td class="num">+1</td><td class="num">–1</td><td>Mergulho</td><td>Frágil, Chama atenção</td><td>Modelo de corrida de antes das Nimbus, restaurado. Bonita e delicada.</td></tr>
-  <tr><td><strong>Vassoura de Auror do Ministério</strong> <b>A</b></td><td>do Ministério</td><td class="num">3</td><td class="num">0</td><td class="num">+1</td><td>Antiazaração, Todo tempo, Robusta</td><td>—</td><td>Sem graça e sem defeito. Não se compra: se recebe com o distintivo.</td></tr>
-  </tbody></table></div>
+  <!--dados:vassouras-->
 
   <h3>Fabricar um objeto encantado</h3>
   <ol class="passos">

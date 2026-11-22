@@ -1,0 +1,98 @@
+[
+ {
+  "d": 1,
+  "nome": "Padrão",
+  "extra": "",
+  "ajuste": "Nenhum.",
+  "exemplos": "Hipogrifo, Kappa",
+  "pv": "1",
+  "defesa": 0,
+  "ataque": 0,
+  "dano": 0,
+  "poderes_extra": 0
+ },
+ {
+  "d": 2,
+  "nome": "Bruto",
+  "extra": "",
+  "ajuste": "PV +30%, Defesa –1, ataque –1 passo.",
+  "exemplos": "Trasgo, Erumpente",
+  "pv": "13/10",
+  "defesa": -1,
+  "ataque": -1,
+  "dano": 0,
+  "poderes_extra": 0
+ },
+ {
+  "d": 3,
+  "nome": "Ágil",
+  "extra": "",
+  "ajuste": "PV –20%, Defesa +2.",
+  "exemplos": "Diabrete, Fada mordente",
+  "pv": "4/5",
+  "defesa": 2,
+  "ataque": 0,
+  "dano": 0,
+  "poderes_extra": 0
+ },
+ {
+  "d": 4,
+  "nome": "Predador",
+  "extra": "",
+  "ajuste": "PV –10%, ataque +1 passo, dano +2.",
+  "exemplos": "Acromântula, Lobisomem",
+  "pv": "9/10",
+  "defesa": 0,
+  "ataque": 1,
+  "dano": 2,
+  "poderes_extra": 0
+ },
+ {
+  "d": 5,
+  "nome": "Conjurador",
+  "extra": "",
+  "ajuste": "PV –20%, +1 Poder.",
+  "exemplos": "Esfinge, bruxo das trevas",
+  "pv": "4/5",
+  "defesa": 0,
+  "ataque": 0,
+  "dano": 0,
+  "poderes_extra": 1
+ },
+ {
+  "d": 6,
+  "nome": "Enxame",
+  "extra": "",
+  "ajuste": "Ataca todos num raio de 3 m; feitiços de alvo único causam metade.",
+  "exemplos": "Doxys, Billywigs",
+  "pv": "1",
+  "defesa": 0,
+  "ataque": 0,
+  "dano": 0,
+  "poderes_extra": 0
+ },
+ {
+  "d": 7,
+  "nome": "Espectral",
+  "extra": "",
+  "ajuste": "PV –30%; imune a dano físico.",
+  "exemplos": "Dementador, Lethifold",
+  "pv": "7/10",
+  "defesa": 0,
+  "ataque": 0,
+  "dano": 0,
+  "poderes_extra": 0
+ },
+ {
+  "d": 8,
+  "nome": "Guardião",
+  "extra": "",
+  "ajuste": "PV +20%, Defesa +1; reação: recebe o ataque no lugar do que protege.",
+  "exemplos": "Fofo, armaduras",
+  "pv": "6/5",
+  "defesa": 1,
+  "ataque": 0,
+  "dano": 0,
+  "poderes_extra": 0
+ }
+]

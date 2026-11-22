@@ -1,0 +1,453 @@
+[
+ {
+  "id": "bx-valentao-da-sonserina",
+  "nome": "Valentão da Sonserina",
+  "nota": " <em>(rival do mesmo ano)</em>",
+  "grau": 2,
+  "papel": "Trapaceiro",
+  "lado": "Rival",
+  "feiticos": [
+   "Expelliarmus",
+   "Rictusempra",
+   "Tarantallegra"
+  ],
+  "poderes": [
+   "Desarmar"
+  ],
+  "ntr": 1,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "duplo": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Varinha alheia."
+   ],
+   [
+    "Poderes",
+    "Desarmar."
+   ],
+   [
+    "Moral",
+    "Foge com metade do PV, ou assim que um professor aparece."
+   ],
+   [
+    "Varinha",
+    "Espinheiro, dragão. <b>Quer:</b> Humilhar alguém na frente da Casa toda."
+   ],
+   [
+    "Ao vencer",
+    "Perde pontos se for pego; a varinha, se você o desarmar."
+   ]
+  ]
+ },
+ {
+  "id": "bx-duelista-do-clube",
+  "nome": "Duelista do Clube",
+  "nota": " <em>(quarto-anista que leva o duelo a sério)</em>",
+  "grau": 3,
+  "papel": "Duelista",
+  "lado": "Rival",
+  "feiticos": [
+   "Expelliarmus",
+   "Stupefy",
+   "Protego"
+  ],
+  "poderes": [
+   "Desarmar"
+  ],
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "duplo": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Duelista de clube; Nervos de aço."
+   ],
+   [
+    "Poderes",
+    "Desarmar."
+   ],
+   [
+    "Moral",
+    "Rende-se quando cai abaixo de metade: é duelo, não guerra."
+   ],
+   [
+    "Varinha",
+    "Álamo-tremedor, fênix. <b>Quer:</b> Vencer o campeonato do clube."
+   ],
+   [
+    "Ao vencer",
+    "Respeito +1, e às vezes um parceiro de treino."
+   ]
+  ]
+ },
+ {
+  "id": "bx-monitor-da-casa",
+  "nome": "Monitor da Casa",
+  "nota": " <em>(aliado que segura as pontas)</em>",
+  "grau": 3,
+  "papel": "Protetor",
+  "lado": "Aliado",
+  "feiticos": [
+   "Protego",
+   "Expelliarmus",
+   "Episkey"
+  ],
+  "poderes": [
+   "Escudo de grupo"
+  ],
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 0,
+  "duplo": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Nervos de aço; Oclumente."
+   ],
+   [
+    "Poderes",
+    "Escudo de grupo."
+   ],
+   [
+    "Moral",
+    "Não abandona aluno mais novo, mas leva todo mundo para a diretoria depois."
+   ],
+   [
+    "Varinha",
+    "Sorveira, unicórnio. <b>Quer:</b> Que ninguém da Casa se machuque, e que ninguém perca pontos."
+   ],
+   [
+    "Ao vencer",
+    "—"
+   ]
+  ]
+ },
+ {
+  "id": "bx-sequestrador",
+  "nome": "Sequestrador",
+  "nota": " <em>(caçador de recompensa em tempo de guerra)</em>",
+  "grau": 4,
+  "papel": "Brutamontes",
+  "lado": "Inimigo",
+  "feiticos": [
+   "Stupefy",
+   "Incarcerous",
+   "Expelliarmus",
+   "Diffindo"
+  ],
+  "poderes": [
+   "Prender"
+  ],
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "duplo": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Mão pesada; Aparatador."
+   ],
+   [
+    "Poderes",
+    "Prender."
+   ],
+   [
+    "Moral",
+    "Foge quando o chefe do bando cai."
+   ],
+   [
+    "Varinha",
+    "Carvalho-vermelho, dragão. <b>Quer:</b> O prêmio pela cabeça de alguém."
+   ],
+   [
+    "Ao vencer",
+    "A lista de procurados que ele leva no bolso."
+   ]
+  ]
+ },
+ {
+  "id": "bx-contrabandista-da-travessa",
+  "nome": "Contrabandista da Travessa",
+  "nota": " <em>(vende o que não devia)</em>",
+  "grau": 4,
+  "papel": "Trapaceiro",
+  "lado": "Neutro",
+  "feiticos": [
+   "Confundo",
+   "Expelliarmus",
+   "Colloportus",
+   "Accio"
+  ],
+  "poderes": [
+   "Confundir"
+  ],
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "duplo": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Aparatador; Metamorfomago."
+   ],
+   [
+    "Poderes",
+    "Confundir."
+   ],
+   [
+    "Moral",
+    "Negocia: troca o que sabe pela liberdade, sempre."
+   ],
+   [
+    "Varinha",
+    "Corniso, kelpie. <b>Quer:</b> Sair da cidade antes que o Ministério bata na porta."
+   ],
+   [
+    "Ao vencer",
+    "Um ingrediente proibido, ou o nome do comprador."
+   ]
+  ]
+ },
+ {
+  "id": "bx-curandeira-do-st-mungus",
+  "nome": "Curandeira do St. Mungus",
+  "nota": " <em>(aliada de jaleco verde-limão)</em>",
+  "grau": 5,
+  "papel": "Curandeiro",
+  "lado": "Aliado",
+  "feiticos": [
+   "Episkey",
+   "Ferula",
+   "Revigoro",
+   "Protego"
+  ],
+  "poderes": [
+   "Poção no cinto",
+   "Escudo de grupo"
+  ],
+  "ntr": 2,
+  "npo": 2,
+  "pes": 0,
+  "inc": 0,
+  "duplo": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Nervos de aço; Oclumente."
+   ],
+   [
+    "Poderes",
+    "Poção no cinto; Escudo de grupo."
+   ],
+   [
+    "Moral",
+    "Nunca deixa um ferido para trás, nem um inimigo."
+   ],
+   [
+    "Varinha",
+    "Salgueiro, unicórnio. <b>Quer:</b> Que ninguém morra no plantão dela."
+   ],
+   [
+    "Ao vencer",
+    "—"
+   ]
+  ]
+ },
+ {
+  "id": "bx-auror",
+  "nome": "Auror",
+  "nota": " <em>(do Quartel-General, de licença ou de serviço)</em>",
+  "grau": 6,
+  "papel": "Caçador",
+  "lado": "Aliado ou inimigo",
+  "feiticos": [
+   "Stupefy",
+   "Incarcerous",
+   "Expelliarmus",
+   "Homenum Revelio",
+   "Expecto Patronum"
+  ],
+  "poderes": [
+   "Prender",
+   "Chamar reforço"
+  ],
+  "ntr": 3,
+  "npo": 2,
+  "pes": 0,
+  "inc": 1,
+  "duplo": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Oclumente; Aparatador; Nervos de aço."
+   ],
+   [
+    "Poderes",
+    "Prender; Chamar reforço."
+   ],
+   [
+    "Moral",
+    "Prende, não mata. Recua para chamar reforço se estiver sozinho contra três."
+   ],
+   [
+    "Varinha",
+    "Freixo, dragão. <b>Quer:</b> Fechar o caso, e às vezes só bater o ponto."
+   ],
+   [
+    "Ao vencer",
+    "Contra você: Azkaban espera. A favor: um contato no Ministério."
+   ]
+  ]
+ },
+ {
+  "id": "bx-comensal-da-morte",
+  "nome": "Comensal da Morte",
+  "nota": " <em>(mascarado, de capuz, da Marca no braço)</em>",
+  "grau": 6,
+  "papel": "Trevoso",
+  "lado": "Inimigo",
+  "feiticos": [
+   "Confringo",
+   "Stupefy",
+   "Expelliarmus",
+   "Morsmordre",
+   "Crucio"
+  ],
+  "poderes": [
+   "Crucio",
+   "Fogo"
+  ],
+  "ntr": 3,
+  "npo": 2,
+  "pes": 0,
+  "inc": 1,
+  "duplo": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Aparatador; Mente rachada; Calejado."
+   ],
+   [
+    "Poderes",
+    "Crucio; Fogo."
+   ],
+   [
+    "Moral",
+    "Aparata com metade do PV, a não ser que o mestre esteja olhando."
+   ],
+   [
+    "Varinha",
+    "Teixo, dragão. <b>Quer:</b> Ser notado pelo mestre."
+   ],
+   [
+    "Ao vencer",
+    "A máscara, a varinha e um nome: os outros vão saber."
+   ]
+  ]
+ },
+ {
+  "id": "bx-mestre-de-pocoes",
+  "nome": "Mestre de Poções",
+  "nota": " <em>(mentor difícil de gostar)</em>",
+  "grau": 8,
+  "papel": "Mentor",
+  "lado": "Aliado",
+  "feiticos": [
+   "Expelliarmus",
+   "Protego",
+   "Vulnera Sanentur",
+   "Obliviate",
+   "Sectumsempra",
+   "Expecto Patronum"
+  ],
+  "assinatura": "Vapor Acerbus",
+  "poderes": [
+   "Desarmar",
+   "Poção no cinto",
+   "Feitiço assinatura"
+  ],
+  "ntr": 3,
+  "npo": 3,
+  "pes": 0,
+  "inc": 1,
+  "duplo": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Oclumente; Nervos de aço; Duelista de clube."
+   ],
+   [
+    "Poderes",
+    "Desarmar; Poção no cinto; Feitiço assinatura: <strong>Vapor Acerbus</strong> <em>(encantamento deste jogo, inventado por ele)</em>, Efeito de Círculo 2 (condição Breve + área), Mente + Feitiços como todo feitiço criado, 9 m, Fortitude contra a DT: uma nuvem de vapor de caldeirão de 3 m; quem falha tosse e lacrimeja, –1 passo em ataques e feitiços por duas rodadas. Ele rola com +1 passo, e ninguém conhece o contrafeitiço. Inventá-lo pediu Poções no último dado: a fórmula é de caldeirão, não de livro."
+   ],
+   [
+    "Moral",
+    "Não foge. Se perde, some e cobra depois."
+   ],
+   [
+    "Varinha",
+    "Ébano, dragão. <b>Quer:</b> Que ninguém saiba de quem ele gosta."
+   ],
+   [
+    "Ao vencer",
+    "Ensina: +1 passo para Estudar com ele, se ele quiser."
+   ]
+  ]
+ },
+ {
+  "id": "bx-bruxo-das-trevas",
+  "nome": "Bruxo das Trevas",
+  "nota": " <em>(chefe de campanha)</em>",
+  "grau": 9,
+  "papel": "Trevoso",
+  "lado": "Inimigo",
+  "feiticos": [
+   "Avada Kedavra",
+   "Crucio",
+   "Imperio",
+   "Confringo",
+   "Protego Maxima",
+   "Expulso"
+  ],
+  "poderes": [
+   "Crucio",
+   "Imperio",
+   "Ataque duplo"
+  ],
+  "ntr": 4,
+  "npo": 3,
+  "pes": 1,
+  "inc": 2,
+  "duplo": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Oclumente; Aparatador; Protegido; Calejado."
+   ],
+   [
+    "Poderes",
+    "Crucio; Imperio; Ataque duplo."
+   ],
+   [
+    "Moral",
+    "Fanático: com um quarto do PV ou menos, usa o feitiço mais perigoso que sabe, mesmo contra os seus."
+   ],
+   [
+    "Varinha",
+    "Teixo, testrálio. <b>Quer:</b> O que a campanha esconder."
+   ],
+   [
+    "Ao vencer",
+    "A varinha dele, que agora é sua, e todo mundo que a queria."
+   ]
+  ]
+ }
+]

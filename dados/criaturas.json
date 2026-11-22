@@ -1,0 +1,2826 @@
+[
+ {
+  "id": "cr-agoureiro",
+  "nome": "Agoureiro",
+  "nota": " <em>(augurey)</em>",
+  "indice": "Agoureiro",
+  "ordem_indice": 0,
+  "perigo": 1,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Chuva: quando chove, se esconde."
+   ],
+   [
+    "Quer",
+    "Cantar antes da chuva. Não ataca."
+   ]
+  ]
+ },
+ {
+  "id": "cr-amasso",
+  "nome": "Amasso",
+  "nota": " <em>(kneazle)</em>",
+  "indice": "Amasso",
+  "ordem_indice": 1,
+  "perigo": 1,
+  "arq": "Ágil",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Dono: obedece a quem confia."
+   ],
+   [
+    "Quer",
+    "Levar o dono para casa; desconfia de quem mente."
+   ]
+  ]
+ },
+ {
+  "id": "cr-bezerro-da-lua",
+  "nome": "Bezerro-da-lua",
+  "nota": " <em>(mooncalf)</em>",
+  "indice": "Bezerro-da-lua",
+  "ordem_indice": 2,
+  "perigo": 1,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Furtiva."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Lua cheia: dança e não foge."
+   ],
+   [
+    "Quer",
+    "Dançar ao luar. Não ataca."
+   ]
+  ]
+ },
+ {
+  "id": "cr-chizpurfle",
+  "nome": "Chizpurfle",
+  "nota": "",
+  "indice": "Chizpurfle",
+  "ordem_indice": 3,
+  "perigo": 1,
+  "arq": "Enxame",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 1,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Come Magia. Enxame: ataca todos num raio de 3 m; feitiço de alvo único causa metade."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Poção antiparasita (Medibruxaria DT 6) limpa a varinha ou o caldeirão."
+   ],
+   [
+    "Quer",
+    "Comer a magia de varinhas e caldeirões."
+   ]
+  ]
+ },
+ {
+  "id": "cr-crup",
+  "nome": "Crup",
+  "nota": "",
+  "indice": "Crup",
+  "ordem_indice": 4,
+  "perigo": 1,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Dono: só obedece a bruxos."
+   ],
+   [
+    "Quer",
+    "Proteger o dono; ataca trouxas."
+   ]
+  ]
+ },
+ {
+  "id": "cr-fada",
+  "nome": "Fada",
+  "nota": "",
+  "indice": "Fada",
+  "ordem_indice": 5,
+  "perigo": 1,
+  "arq": "Ágil",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Vaidade: elogiada, fica e posa."
+   ],
+   [
+    "Quer",
+    "Enfeitar-se. Não ataca."
+   ]
+  ]
+ },
+ {
+  "id": "cr-gnomo-de-jardim",
+  "nome": "Gnomo de jardim",
+  "nota": "",
+  "indice": "Gnomo de jardim",
+  "ordem_indice": 6,
+  "perigo": 1,
+  "arq": "Ágil",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Escava."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Girado e jogado longe, demora a voltar."
+   ],
+   [
+    "Quer",
+    "Morder quem mexe no jardim."
+   ]
+  ]
+ },
+ {
+  "id": "cr-jackalope",
+  "nome": "Jackalope",
+  "nota": "",
+  "indice": "Jackalope",
+  "ordem_indice": 7,
+  "perigo": 1,
+  "arq": "Ágil",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Chifre preso num galho: fica preso."
+   ],
+   [
+    "Quer",
+    "Fugir."
+   ]
+  ]
+ },
+ {
+  "id": "cr-jarvey",
+  "nome": "Jarvey",
+  "nota": "",
+  "indice": "Jarvey",
+  "ordem_indice": 8,
+  "perigo": 1,
+  "arq": "Ágil",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Escava."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Insulto de volta: para para responder."
+   ],
+   [
+    "Quer",
+    "Xingar e caçar gnomos. Fala, mas só grosserias."
+   ]
+  ]
+ },
+ {
+  "id": "cr-knarl",
+  "nome": "Knarl",
+  "nota": "",
+  "indice": "Knarl",
+  "ordem_indice": 9,
+  "perigo": 1,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Ignorado, vai embora. Comida oferecida o ofende, e ele destrói o jardim."
+   ],
+   [
+    "Quer",
+    "Não ser enganado. Parece um ouriço; o Amasso sabe a diferença."
+   ]
+  ]
+ },
+ {
+  "id": "cr-leprechaun",
+  "nome": "Leprechaun",
+  "nota": "",
+  "indice": "Leprechaun",
+  "ordem_indice": 10,
+  "perigo": 1,
+  "arq": "Ágil",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Brilho."
+   ],
+   [
+    "Quer",
+    "Enganar com ouro falso. O ouro dele some em poucas horas."
+   ]
+  ]
+ },
+ {
+  "id": "cr-murtisco",
+  "nome": "Murtisco",
+  "nota": " <em>(murtlap)</em>",
+  "indice": "Murtisco",
+  "ordem_indice": 11,
+  "perigo": 1,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Anfíbia."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Deixado em paz, volta para a água."
+   ],
+   [
+    "Quer",
+    "Comer crustáceos. O tentáculo em conserva dá resistência a azarações (<a href=\"#cap16\">Capítulo XVI</a>)."
+   ]
+  ]
+ },
+ {
+  "id": "cr-pelucio",
+  "nome": "Pelúcio",
+  "nota": " <em>(niffler)</em>",
+  "indice": "Pelúcio",
+  "ordem_indice": 12,
+  "perigo": 1,
+  "arq": "Ágil",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Escava."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Brilho: ouro ou joias o distraem a cena inteira."
+   ],
+   [
+    "Quer",
+    "Pegar tudo o que brilha. A bolsa da barriga guarda muito mais do que parece."
+   ]
+  ]
+ },
+ {
+  "id": "cr-plimpy",
+  "nome": "Plimpy",
+  "nota": "",
+  "indice": "Plimpy",
+  "ordem_indice": 13,
+  "perigo": 1,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Anfíbia."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Pernas amarradas: fica boiando até se soltar."
+   ],
+   [
+    "Quer",
+    "Comer caramujos."
+   ]
+  ]
+ },
+ {
+  "id": "cr-pufoso",
+  "nome": "Pufoso",
+  "nota": " <em>(puffskein)</em>",
+  "indice": "Pufoso",
+  "ordem_indice": 14,
+  "perigo": 1,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Comida: qualquer resto o acalma."
+   ],
+   [
+    "Quer",
+    "Comer. Não ataca; ronrona."
+   ]
+  ]
+ },
+ {
+  "id": "cr-snidget-dourado",
+  "nome": "Snidget dourado",
+  "nota": "",
+  "indice": "Snidget dourado",
+  "ordem_indice": 15,
+  "perigo": 1,
+  "arq": "Ágil",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Espécie protegida: pegar é crime, e ela se cansa se perseguida por uma cena."
+   ],
+   [
+    "Quer",
+    "Fugir. Não ataca."
+   ]
+  ]
+ },
+ {
+  "id": "cr-tronquilho",
+  "nome": "Tronquilho",
+  "nota": " <em>(bowtruckle)</em>",
+  "indice": "Tronquilho",
+  "ordem_indice": 16,
+  "perigo": 1,
+  "arq": "Ágil",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Furtiva."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Bichos-de-conta: oferecidos, deixam tirar a madeira."
+   ],
+   [
+    "Quer",
+    "Proteger a árvore. Mira nos olhos."
+   ]
+  ]
+ },
+ {
+  "id": "cr-verme-cego",
+  "nome": "Verme-cego",
+  "nota": " <em>(flobberworm)</em>",
+  "indice": "Verme-cego",
+  "ordem_indice": 17,
+  "perigo": 1,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Partes Valiosas (o muco)."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Alface: com ela por perto, não sai do lugar."
+   ],
+   [
+    "Quer",
+    "Comer alface. Não ataca."
+   ]
+  ]
+ },
+ {
+  "id": "cr-ashwinder",
+  "nome": "Ashwinder",
+  "nota": "",
+  "indice": "Ashwinder",
+  "ordem_indice": 18,
+  "perigo": 2,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Resistência (fogo)."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Glacius congela os ovos antes de pegarem fogo."
+   ],
+   [
+    "Quer",
+    "Pôr ovos num lugar quente. Nasce de fogo mágico esquecido e vive uma hora."
+   ]
+  ]
+ },
+ {
+  "id": "cr-diabrete-da-cornualha",
+  "nome": "Diabrete da Cornualha",
+  "nota": " <em>(pixie)</em>",
+  "indice": "Diabrete da Cornualha",
+  "ordem_indice": 21,
+  "perigo": 2,
+  "arq": "Enxame",
+  "ntr": 1,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Voo. Enxame: ataca todos num raio de 3 m; feitiço de alvo único causa metade."
+   ],
+   [
+    "Poderes",
+    "Ilusão (bagunça)."
+   ],
+   [
+    "Fraqueza",
+    "Immobulus."
+   ],
+   [
+    "Quer",
+    "Bagunçar e levar coisas para o alto."
+   ]
+  ]
+ },
+ {
+  "id": "cr-fwooper",
+  "nome": "Fwooper",
+  "nota": "",
+  "indice": "Fwooper",
+  "ordem_indice": 23,
+  "perigo": 2,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Voo."
+   ],
+   [
+    "Poderes",
+    "Grito (o canto, que enlouquece)."
+   ],
+   [
+    "Fraqueza",
+    "Silencio: calado, é só uma ave bonita."
+   ],
+   [
+    "Quer",
+    "Cantar. Vende-se com um feitiço silenciador renovado todo mês."
+   ]
+  ]
+ },
+ {
+  "id": "cr-hinkypunk",
+  "nome": "Hinkypunk",
+  "nota": "",
+  "indice": "Hinkypunk",
+  "ordem_indice": 25,
+  "perigo": 2,
+  "arq": "Ágil",
+  "ntr": 1,
+  "npo": 1,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Furtiva."
+   ],
+   [
+    "Poderes",
+    "Ilusão (a lanterna)."
+   ],
+   [
+    "Fraqueza",
+    "Quem não segue a luz não se perde."
+   ],
+   [
+    "Quer",
+    "Levar viajantes para o pântano."
+   ]
+  ]
+ },
+ {
+  "id": "cr-ramora",
+  "nome": "Ramora",
+  "nota": "",
+  "indice": "Ramora",
+  "ordem_indice": 26,
+  "perigo": 2,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Anfíbia."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Respeito: não ataca quem não a caça."
+   ],
+   [
+    "Quer",
+    "Guardar navios."
+   ]
+  ]
+ },
+ {
+  "id": "cr-salamandra",
+  "nome": "Salamandra",
+  "nota": "",
+  "indice": "Salamandra",
+  "ordem_indice": 27,
+  "perigo": 2,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Resistência (fogo)."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Fora do fogo, morre em seis horas; pimenta a mantém viva."
+   ],
+   [
+    "Quer",
+    "Ficar no fogo."
+   ]
+  ]
+ },
+ {
+  "id": "cr-seminviso",
+  "nome": "Seminviso",
+  "nota": " <em>(demiguise)</em>",
+  "indice": "Seminviso",
+  "ordem_indice": 28,
+  "perigo": 2,
+  "arq": "Ágil",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Invisível."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Ele prevê o caminho mais provável: um plano maluco o pega de surpresa."
+   ],
+   [
+    "Quer",
+    "Fugir. O pelo tece capas de invisibilidade."
+   ]
+  ]
+ },
+ {
+  "id": "cr-billywig",
+  "nome": "Billywig",
+  "nota": "",
+  "indice": "Billywig",
+  "ordem_indice": 29,
+  "perigo": 3,
+  "arq": "Ágil",
+  "ntr": 2,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Veneno (tontura: quem é picado flutua)."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Impedimenta: lento, é fácil de ver e pegar."
+   ],
+   [
+    "Quer",
+    "Caçar."
+   ]
+  ]
+ },
+ {
+  "id": "cr-caranguejo-de-fogo",
+  "nome": "Caranguejo de fogo",
+  "nota": " <em>(fire crab)</em>",
+  "indice": "Caranguejo de fogo",
+  "ordem_indice": 30,
+  "perigo": 3,
+  "arq": "Bruto",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Resistência (fogo), Couro Mágico."
+   ],
+   [
+    "Poderes",
+    "Sopro (chamas pela traseira)."
+   ],
+   [
+    "Fraqueza",
+    "De barriga para cima, não se vira sozinho."
+   ],
+   [
+    "Quer",
+    "Defender-se. O casco cravejado vale como Partes Valiosas, sem o traço."
+   ]
+  ]
+ },
+ {
+  "id": "cr-fada-mordente",
+  "nome": "Fada mordente",
+  "nota": " <em>(doxy)</em>",
+  "indice": "Fada mordente",
+  "ordem_indice": 33,
+  "perigo": 3,
+  "arq": "Enxame",
+  "ntr": 2,
+  "npo": 0,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Veneno. Enxame: ataca todos num raio de 3 m; feitiço de alvo único causa metade."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Doxicida em spray: Atordoada uma rodada."
+   ],
+   [
+    "Quer",
+    "Defender o ninho."
+   ]
+  ]
+ },
+ {
+  "id": "cr-barrete-vermelho",
+  "nome": "Barrete Vermelho",
+  "nota": " <em>(red cap)</em>",
+  "indice": "Barrete Vermelho",
+  "ordem_indice": 19,
+  "perigo": 2,
+  "arq": "Predador",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Furtiva."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Luz do dia, ou qualquer feitiço que o assuste."
+   ],
+   [
+    "Quer",
+    "Bater em quem se perde onde houve sangue."
+   ]
+  ]
+ },
+ {
+  "id": "cr-grindylow",
+  "nome": "Grindylow",
+  "nota": "",
+  "indice": "Grindylow",
+  "ordem_indice": 24,
+  "perigo": 2,
+  "arq": "Padrão",
+  "ntr": 1,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Anfíbia."
+   ],
+   [
+    "Poderes",
+    "Teia ou Tentáculos (os dedos compridos)."
+   ],
+   [
+    "Fraqueza",
+    "Dedos frágeis: um crítico os quebra."
+   ],
+   [
+    "Quer",
+    "Puxar para o fundo."
+   ]
+  ]
+ },
+ {
+  "id": "cr-hipogrifo",
+  "nome": "Hipogrifo",
+  "nota": "",
+  "indice": "Hipogrifo",
+  "ordem_indice": 34,
+  "perigo": 3,
+  "arq": "Padrão",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Ataque Duplo."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Respeito: curvar-se e esperar a mesura de volta."
+   ],
+   [
+    "Quer",
+    "Ser respeitado."
+   ]
+  ]
+ },
+ {
+  "id": "cr-kappa",
+  "nome": "Kappa",
+  "nota": "",
+  "indice": "Kappa",
+  "ordem_indice": 36,
+  "perigo": 3,
+  "arq": "Padrão",
+  "ntr": 2,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Anfíbia, Agarrar."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Água derramada: quem se curva o faz se curvar de volta, a água da cabeça cai, e ele fica fraco."
+   ],
+   [
+    "Quer",
+    "Afogar quem entra no lago."
+   ]
+  ]
+ },
+ {
+  "id": "cr-qilin",
+  "nome": "Qilin",
+  "nota": "",
+  "indice": "Qilin",
+  "ordem_indice": 38,
+  "perigo": 3,
+  "arq": "Ágil",
+  "ntr": 2,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Sentidos Agudos, Furtiva."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Respeito: curva-se a quem tem o coração puro."
+   ],
+   [
+    "Quer",
+    "Fugir de quem quer usá-lo. Curva-se diante de quem merece governar."
+   ]
+  ]
+ },
+ {
+  "id": "cr-testralio",
+  "nome": "Testrálio",
+  "nota": " <em>(thestral)</em>",
+  "indice": "Testrálio",
+  "ordem_indice": 40,
+  "perigo": 3,
+  "arq": "Padrão",
+  "ntr": 2,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Só Vista por Poucos (quem já viu a morte)."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Cheiro de sangue o distrai."
+   ],
+   [
+    "Quer",
+    "Comer carne. Leva quem monta a qualquer lugar que ele conheça."
+   ]
+  ]
+ },
+ {
+  "id": "cr-acromantula",
+  "nome": "Acromântula",
+  "nota": "",
+  "indice": "Acromântula",
+  "ordem_indice": 42,
+  "perigo": 4,
+  "arq": "Predador",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Veneno, Escaladora."
+   ],
+   [
+    "Poderes",
+    "Teia ou Tentáculos (teia)."
+   ],
+   [
+    "Fraqueza",
+    "Fogo."
+   ],
+   [
+    "Quer",
+    "Comer; proteger a colônia. Fala. Foge do Basilisco."
+   ]
+  ]
+ },
+ {
+  "id": "cr-kelpie",
+  "nome": "Kelpie",
+  "nota": "",
+  "indice": "Kelpie",
+  "ordem_indice": 44,
+  "perigo": 4,
+  "arq": "Bruto",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Anfíbia, Agarrar."
+   ],
+   [
+    "Poderes",
+    "Mudar de Forma."
+   ],
+   [
+    "Fraqueza",
+    "Rédea com Feitiço de Fixação na cabeça: fica manso."
+   ],
+   [
+    "Quer",
+    "Afogar e comer quem monta."
+   ]
+  ]
+ },
+ {
+  "id": "cr-matagot",
+  "nome": "Matagot",
+  "nota": "",
+  "indice": "Matagot",
+  "ordem_indice": 45,
+  "perigo": 4,
+  "arq": "Guardião",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Furtiva, Sentidos Agudos. Guardião: reação, recebe o ataque no lugar do que protege."
+   ],
+   [
+    "Poderes",
+    "Chamar o Bando (cada ataque contra ele faz surgir outro)."
+   ],
+   [
+    "Fraqueza",
+    "Não atacar: sem ataque, não se multiplica."
+   ],
+   [
+    "Quer",
+    "Guardar o Ministério francês."
+   ]
+  ]
+ },
+ {
+  "id": "cr-swooping-evil",
+  "nome": "Swooping Evil",
+  "nota": "",
+  "indice": "Swooping Evil",
+  "ordem_indice": 47,
+  "perigo": 4,
+  "arq": "Predador",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Muda de Tamanho (vira casulo)."
+   ],
+   [
+    "Poderes",
+    "Drenar (suga o cérebro)."
+   ],
+   [
+    "Fraqueza",
+    "Dono: quem o criou o manda voltar ao casulo."
+   ],
+   [
+    "Quer",
+    "Comer."
+   ]
+  ]
+ },
+ {
+  "id": "cr-trasgo-da-floresta",
+  "nome": "Trasgo da Floresta",
+  "nota": "",
+  "indice": "Trasgo da Floresta",
+  "ordem_indice": 48,
+  "perigo": 4,
+  "arq": "Bruto",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Resistência, Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Burrice: um Confundo nele dura o dobro."
+   ],
+   [
+    "Quer",
+    "Comer; quebrar o que incomoda. Fede: quem chega perto sente."
+   ]
+  ]
+ },
+ {
+  "id": "cr-unicornio",
+  "nome": "Unicórnio",
+  "nota": "",
+  "indice": "Unicórnio",
+  "ordem_indice": 49,
+  "perigo": 4,
+  "arq": "Ágil",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Sentidos Agudos, Partes Valiosas."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Respeito: deixa mulheres e crianças chegarem perto."
+   ],
+   [
+    "Quer",
+    "Fugir; defender o potro. Matar é crime e maldição: o sangue dá meia-vida amaldiçoada."
+   ]
+  ]
+ },
+ {
+  "id": "cr-lobisomem",
+  "nome": "Lobisomem",
+  "nota": "",
+  "indice": "Lobisomem",
+  "ordem_indice": 50,
+  "perigo": 5,
+  "arq": "Predador",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Regeneração, Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Prata; só existe na lua cheia."
+   ],
+   [
+    "Quer",
+    "Caçar gente. A mordida passa a licantropia."
+   ]
+  ]
+ },
+ {
+  "id": "cr-occami",
+  "nome": "Occami",
+  "nota": " <em>(occamy)</em>",
+  "indice": "Occami",
+  "ordem_indice": 51,
+  "perigo": 5,
+  "arq": "Padrão",
+  "ntr": 2,
+  "npo": 2,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Muda de Tamanho."
+   ],
+   [
+    "Poderes",
+    "Investida, Teia ou Tentáculos (o corpo que enrola)."
+   ],
+   [
+    "Fraqueza",
+    "Muda para caber no espaço: um bule o prende."
+   ],
+   [
+    "Quer",
+    "Proteger os ovos. Os ovos são de prata pura."
+   ]
+  ]
+ },
+ {
+  "id": "cr-rougarou",
+  "nome": "Rougarou",
+  "nota": "",
+  "indice": "Rougarou",
+  "ordem_indice": 52,
+  "perigo": 5,
+  "arq": "Predador",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Sentidos Agudos, Furtiva."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Prata."
+   ],
+   [
+    "Quer",
+    "Caçar nos pântanos. Cabeça de cão, corpo de homem."
+   ]
+  ]
+ },
+ {
+  "id": "cr-trasgo-da-montanha",
+  "nome": "Trasgo da Montanha",
+  "nota": "",
+  "indice": "Trasgo da Montanha",
+  "ordem_indice": 54,
+  "perigo": 5,
+  "arq": "Bruto",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Couro Mágico, Resistência."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "A própria clava: Wingardium Leviosa nela."
+   ],
+   [
+    "Quer",
+    "Comer; quebrar o que incomoda."
+   ]
+  ]
+ },
+ {
+  "id": "cr-fenix",
+  "nome": "Fênix",
+  "nota": "",
+  "indice": "Fênix",
+  "ordem_indice": 58,
+  "perigo": 6,
+  "arq": "Padrão",
+  "ntr": 3,
+  "npo": 2,
+  "pes": 1,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Regeneração (renasce das cinzas), Partes Valiosas."
+   ],
+   [
+    "Poderes",
+    "Sumir (some num clarão), Grito (o canto: medo nos inimigos)."
+   ],
+   [
+    "Fraqueza",
+    "Dono: só luta por quem é leal a quem ela serve."
+   ],
+   [
+    "Quer",
+    "Servir a quem escolheu. Lágrimas curam até veneno de Basilisco; carrega quem segura a cauda."
+   ]
+  ]
+ },
+ {
+  "id": "cr-graphorn",
+  "nome": "Graphorn",
+  "nota": "",
+  "indice": "Graphorn",
+  "ordem_indice": 59,
+  "perigo": 6,
+  "arq": "Bruto",
+  "ntr": 3,
+  "npo": 1,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Couro Mágico, Resistência, Partes Valiosas."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Dono: os trasgos das montanhas os montam e mandam neles."
+   ],
+   [
+    "Quer",
+    "Defender a manada."
+   ]
+  ]
+ },
+ {
+  "id": "cr-grifo",
+  "nome": "Grifo",
+  "nota": "",
+  "indice": "Grifo",
+  "ordem_indice": 60,
+  "perigo": 6,
+  "arq": "Padrão",
+  "ntr": 3,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Ataque Duplo, Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Brilho: guarda tesouros e se distrai com eles."
+   ],
+   [
+    "Quer",
+    "Guardar o tesouro."
+   ]
+  ]
+ },
+ {
+  "id": "cr-lula-gigante",
+  "nome": "Lula gigante",
+  "nota": "",
+  "indice": "Lula gigante",
+  "ordem_indice": 61,
+  "perigo": 6,
+  "arq": "Bruto",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Anfíbia, Agarrar."
+   ],
+   [
+    "Poderes",
+    "Teia ou Tentáculos."
+   ],
+   [
+    "Fraqueza",
+    "Comida: torradas a fazem amiga."
+   ],
+   [
+    "Quer",
+    "Ficar no lago. Em Hogwarts, salva alunos que caem na água."
+   ]
+  ]
+ },
+ {
+  "id": "cr-snallygaster",
+  "nome": "Snallygaster",
+  "nota": "",
+  "indice": "Snallygaster",
+  "ordem_indice": 63,
+  "perigo": 6,
+  "arq": "Predador",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Couro Mágico (bala não entra)."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Curiosa: segue o que se mexe e brilha."
+   ],
+   [
+    "Quer",
+    "Caçar."
+   ]
+  ]
+ },
+ {
+  "id": "cr-yeti",
+  "nome": "Yeti",
+  "nota": "",
+  "indice": "Yeti",
+  "ordem_indice": 65,
+  "perigo": 6,
+  "arq": "Bruto",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Resistência (frio), Aterrorizante."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Fogo: foge dele."
+   ],
+   [
+    "Quer",
+    "Comer o que passa."
+   ]
+  ]
+ },
+ {
+  "id": "cr-erumpente",
+  "nome": "Erumpente",
+  "nota": " <em>(explosivim)</em>",
+  "indice": "Erumpente",
+  "ordem_indice": 67,
+  "perigo": 7,
+  "arq": "Bruto",
+  "ntr": 3,
+  "npo": 2,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Couro Mágico, Resistência, Partes Valiosas."
+   ],
+   [
+    "Poderes",
+    "Investida, Explosão (o chifre)."
+   ],
+   [
+    "Fraqueza",
+    "Cio: segue o cheiro de almíscar de um frasco aberto."
+   ],
+   [
+    "Quer",
+    "Acasalar."
+   ]
+  ]
+ },
+ {
+  "id": "cr-fofo",
+  "nome": "Fofo",
+  "nota": " <em>(cão de três cabeças)</em>",
+  "indice": "Fofo",
+  "ordem_indice": 69,
+  "perigo": 7,
+  "arq": "Guardião",
+  "ntr": 3,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Ataque Duplo, Sentidos Agudos, Resistência. Guardião: reação, recebe o ataque no lugar do que protege."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Música: dorme enquanto ela dura."
+   ],
+   [
+    "Quer",
+    "Guardar o alçapão."
+   ]
+  ]
+ },
+ {
+  "id": "cr-monstro-do-rio-branco",
+  "nome": "Monstro do Rio Branco",
+  "nota": "",
+  "indice": "Monstro do Rio Branco",
+  "ordem_indice": 70,
+  "perigo": 7,
+  "arq": "Bruto",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Anfíbia, Resistência."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Respeito: deixa passar quem não mexe no rio."
+   ],
+   [
+    "Quer",
+    "Guardar o rio."
+   ]
+  ]
+ },
+ {
+  "id": "cr-wampus",
+  "nome": "Wampus",
+  "nota": "",
+  "indice": "Wampus",
+  "ordem_indice": 72,
+  "perigo": 7,
+  "arq": "Predador",
+  "ntr": 3,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Escaladora, Sentidos Agudos, Ataque Duplo."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Respeito: nunca ataca quem não foge."
+   ],
+   [
+    "Quer",
+    "Caçar."
+   ]
+  ]
+ },
+ {
+  "id": "cr-passaro-trovao",
+  "nome": "Pássaro-trovão",
+  "nota": " <em>(thunderbird)</em>",
+  "indice": "Pássaro-trovão",
+  "ordem_indice": 77,
+  "perigo": 8,
+  "arq": "Padrão",
+  "ntr": 3,
+  "npo": 2,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Sentidos Agudos, Partes Valiosas."
+   ],
+   [
+    "Poderes",
+    "Explosão (a tempestade), Investida."
+   ],
+   [
+    "Fraqueza",
+    "Respeito: acalma com quem fala com ele sem medo."
+   ],
+   [
+    "Quer",
+    "Fugir do perigo que sente chegar. Uma pena dele, molhada, faz chover."
+   ]
+  ]
+ },
+ {
+  "id": "cr-serpente-chifruda",
+  "nome": "Serpente-chifruda",
+  "nota": "",
+  "indice": "Serpente-chifruda",
+  "ordem_indice": 79,
+  "perigo": 8,
+  "arq": "Conjurador",
+  "ntr": 3,
+  "npo": 3,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Anfíbia, Inteligente, Partes Valiosas."
+   ],
+   [
+    "Poderes",
+    "Sumir (a joia da testa), Investida, Feitiço."
+   ],
+   [
+    "Fraqueza",
+    "Respeito ao lago e à joia."
+   ],
+   [
+    "Quer",
+    "Guardar o lago."
+   ]
+  ]
+ },
+ {
+  "id": "cr-zouwu",
+  "nome": "Zouwu",
+  "nota": "",
+  "indice": "Zouwu",
+  "ordem_indice": 86,
+  "perigo": 9,
+  "arq": "Ágil",
+  "ntr": 3,
+  "npo": 2,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Sentidos Agudos, Furtiva, Muda de Tamanho."
+   ],
+   [
+    "Poderes",
+    "Investida, Sumir (corre mil milhas num dia)."
+   ],
+   [
+    "Fraqueza",
+    "Brinquedo: um guizo de pena a acalma."
+   ],
+   [
+    "Quer",
+    "Fugir de quem a prendeu."
+   ]
+  ]
+ },
+ {
+  "id": "cr-dragao-filhote",
+  "nome": "Dragão filhote",
+  "nota": "",
+  "indice": "Dragão filhote",
+  "ordem_indice": 31,
+  "perigo": 3,
+  "arq": "Padrão",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Resistência (fogo), Couro Mágico."
+   ],
+   [
+    "Poderes",
+    "Sopro."
+   ],
+   [
+    "Fraqueza",
+    "Dono: obedece a quem chama de mãe."
+   ],
+   [
+    "Quer",
+    "Comer, a toda hora. Cresce o tamanho de uma casa em semanas. Norberto, de Hagrid."
+   ]
+  ]
+ },
+ {
+  "id": "cr-dente-de-vibora-peruano",
+  "nome": "Dente-de-Víbora Peruano",
+  "nota": "",
+  "indice": "Dente-de-Víbora Peruano",
+  "ordem_indice": 66,
+  "perigo": 7,
+  "arq": "Ágil",
+  "ntr": 3,
+  "npo": 1,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Veneno, Couro Mágico."
+   ],
+   [
+    "Poderes",
+    "Sopro."
+   ],
+   [
+    "Fraqueza",
+    "Os olhos: Lippitudo cega."
+   ],
+   [
+    "Quer",
+    "Comer gente e gado. O menor e o mais rápido dos dragões."
+   ]
+  ]
+ },
+ {
+  "id": "cr-olho-de-opala-antipoda",
+  "nome": "Olho-de-Opala Antípoda",
+  "nota": "",
+  "indice": "Olho-de-Opala Antípoda",
+  "ordem_indice": 71,
+  "perigo": 7,
+  "arq": "Padrão",
+  "ntr": 3,
+  "npo": 1,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Couro Mágico, Resistência (fogo)."
+   ],
+   [
+    "Poderes",
+    "Sopro."
+   ],
+   [
+    "Fraqueza",
+    "Comida: só caça ovelhas; um rebanho o distrai."
+   ],
+   [
+    "Quer",
+    "Comer. Raramente mata."
+   ]
+  ]
+ },
+ {
+  "id": "cr-bola-de-fogo-chines",
+  "nome": "Bola-de-Fogo Chinês",
+  "nota": "",
+  "indice": "Bola-de-Fogo Chinês",
+  "ordem_indice": 73,
+  "perigo": 8,
+  "arq": "Ágil",
+  "ntr": 3,
+  "npo": 2,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Couro Mágico, Resistência (fogo)."
+   ],
+   [
+    "Poderes",
+    "Sopro, Investida."
+   ],
+   [
+    "Fraqueza",
+    "Comida: um porco jogado longe a distrai."
+   ],
+   [
+    "Quer",
+    "Comer. Tolera outros dragões."
+   ]
+  ]
+ },
+ {
+  "id": "cr-dorso-cristado-noruegues",
+  "nome": "Dorso-Cristado Norueguês",
+  "nota": "",
+  "indice": "Dorso-Cristado Norueguês",
+  "ordem_indice": 74,
+  "perigo": 8,
+  "arq": "Predador",
+  "ntr": 3,
+  "npo": 2,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Couro Mágico, Veneno (as presas)."
+   ],
+   [
+    "Poderes",
+    "Sopro, Investida."
+   ],
+   [
+    "Fraqueza",
+    "Os olhos: Lippitudo cega."
+   ],
+   [
+    "Quer",
+    "Comer e brigar."
+   ]
+  ]
+ },
+ {
+  "id": "cr-focinho-curto-sueco",
+  "nome": "Focinho-Curto Sueco",
+  "nota": "",
+  "indice": "Focinho-Curto Sueco",
+  "ordem_indice": 75,
+  "perigo": 8,
+  "arq": "Padrão",
+  "ntr": 3,
+  "npo": 2,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Couro Mágico, Resistência (fogo)."
+   ],
+   [
+    "Poderes",
+    "Sopro (chama azul), Investida."
+   ],
+   [
+    "Fraqueza",
+    "Isca: transfigurar uma pedra num bicho faz o dragão persegui-lo (Cedrico)."
+   ],
+   [
+    "Quer",
+    "Ficar longe de gente."
+   ]
+  ]
+ },
+ {
+  "id": "cr-romeno-de-chifre-longo",
+  "nome": "Romeno de Chifre-Longo",
+  "nota": "",
+  "indice": "Romeno de Chifre-Longo",
+  "ordem_indice": 78,
+  "perigo": 8,
+  "arq": "Bruto",
+  "ntr": 3,
+  "npo": 2,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Couro Mágico, Resistência."
+   ],
+   [
+    "Poderes",
+    "Sopro, Investida."
+   ],
+   [
+    "Fraqueza",
+    "Os olhos: Lippitudo cega."
+   ],
+   [
+    "Quer",
+    "Defender o território."
+   ]
+  ]
+ },
+ {
+  "id": "cr-verde-gales-comum",
+  "nome": "Verde-Galês Comum",
+  "nota": "",
+  "indice": "Verde-Galês Comum",
+  "ordem_indice": 80,
+  "perigo": 8,
+  "arq": "Padrão",
+  "ntr": 3,
+  "npo": 2,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Couro Mágico, Resistência (fogo)."
+   ],
+   [
+    "Poderes",
+    "Sopro, Investida."
+   ],
+   [
+    "Fraqueza",
+    "Comida: prefere ovelhas e foge de gente."
+   ],
+   [
+    "Quer",
+    "Ficar longe de gente."
+   ]
+  ]
+ },
+ {
+  "id": "cr-negro-das-hebridas",
+  "nome": "Negro das Hébridas",
+  "nota": "",
+  "indice": "Negro das Hébridas",
+  "ordem_indice": 83,
+  "perigo": 9,
+  "arq": "Predador",
+  "ntr": 4,
+  "npo": 2,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Couro Mágico, Resistência (fogo), Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "Sopro, Investida."
+   ],
+   [
+    "Fraqueza",
+    "Os olhos: Lippitudo cega."
+   ],
+   [
+    "Quer",
+    "Caçar cervos, e às vezes mais."
+   ]
+  ]
+ },
+ {
+  "id": "cr-rabo-corneo-hungaro",
+  "nome": "Rabo-Córneo Húngaro",
+  "nota": "",
+  "indice": "Rabo-Córneo Húngaro",
+  "ordem_indice": 85,
+  "perigo": 9,
+  "arq": "Bruto",
+  "ntr": 4,
+  "npo": 2,
+  "pes": 1,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Couro Mágico, Resistência (fogo), Ataque Duplo."
+   ],
+   [
+    "Poderes",
+    "Sopro, Investida."
+   ],
+   [
+    "Fraqueza",
+    "Os olhos: Lippitudo cega."
+   ],
+   [
+    "Quer",
+    "Proteger os ovos. A cauda tem espinhos de bronze."
+   ]
+  ]
+ },
+ {
+  "id": "cr-barriga-de-ferro-ucraniano",
+  "nome": "Barriga-de-Ferro Ucraniano",
+  "nota": "",
+  "indice": "Barriga-de-Ferro Ucraniano",
+  "ordem_indice": 87,
+  "perigo": 10,
+  "arq": "Bruto",
+  "ntr": 4,
+  "npo": 2,
+  "pes": 1,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Couro Mágico, Resistência (fogo), Ataque Duplo."
+   ],
+   [
+    "Poderes",
+    "Sopro, Investida."
+   ],
+   [
+    "Fraqueza",
+    "Pesado demais: voa mal e não faz curva."
+   ],
+   [
+    "Quer",
+    "Defender a reserva. O maior dos dragões."
+   ]
+  ]
+ },
+ {
+  "id": "cr-elfo-domestico",
+  "nome": "Elfo doméstico",
+  "nota": "",
+  "indice": "Elfo doméstico",
+  "ordem_indice": 32,
+  "perigo": 3,
+  "arq": "Conjurador",
+  "ntr": 2,
+  "npo": 2,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Inteligente, Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "Sumir (aparata onde bruxo não aparata), Feitiço (magia sem varinha)."
+   ],
+   [
+    "Fraqueza",
+    "Dono: obedece. Uma roupa dada pelo dono o liberta."
+   ],
+   [
+    "Quer",
+    "Servir a família. Veja Magia dos elfos, no <a href=\"#cap5\">Grimório</a>."
+   ]
+  ]
+ },
+ {
+  "id": "cr-duende",
+  "nome": "Duende",
+  "nota": " <em>(goblin)</em>",
+  "indice": "Duende",
+  "ordem_indice": 43,
+  "perigo": 4,
+  "arq": "Padrão",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Inteligente, Mente Fechada."
+   ],
+   [
+    "Poderes",
+    "Feitiço (magia sem varinha)."
+   ],
+   [
+    "Fraqueza",
+    "Acordo: devolver o que um duende fez acaba a briga."
+   ],
+   [
+    "Quer",
+    "Guardar o ouro e o que é deles. Veja Magia dos duendes, no <a href=\"#cap5\">Grimório</a>."
+   ]
+  ]
+ },
+ {
+  "id": "cr-pukwudgie",
+  "nome": "Pukwudgie",
+  "nota": "",
+  "indice": "Pukwudgie",
+  "ordem_indice": 46,
+  "perigo": 4,
+  "arq": "Ágil",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Inteligente, Veneno (as flechas)."
+   ],
+   [
+    "Poderes",
+    "Feitiço."
+   ],
+   [
+    "Fraqueza",
+    "Respeito: honra quem honra o pacto de Ilvermorny."
+   ],
+   [
+    "Quer",
+    "Ser deixado em paz."
+   ]
+  ]
+ },
+ {
+  "id": "cr-sereiano",
+  "nome": "Sereiano",
+  "nota": "",
+  "indice": "Sereiano",
+  "ordem_indice": 53,
+  "perigo": 5,
+  "arq": "Padrão",
+  "ntr": 2,
+  "npo": 2,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Anfíbia, Inteligente."
+   ],
+   [
+    "Poderes",
+    "Chamar o Bando, Grito (o canto, fora d'água)."
+   ],
+   [
+    "Fraqueza",
+    "Respeito: quem cumpre o combinado passa."
+   ],
+   [
+    "Quer",
+    "Guardar o lago."
+   ]
+  ]
+ },
+ {
+  "id": "cr-veela",
+  "nome": "Veela",
+  "nota": "",
+  "indice": "Veela",
+  "ordem_indice": 55,
+  "perigo": 5,
+  "arq": "Conjurador",
+  "ntr": 2,
+  "npo": 3,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Inteligente, Voo (na forma de ave)."
+   ],
+   [
+    "Poderes",
+    "Ilusão (o fascínio), Mudar de Forma (ave de fogo), Explosão (bolas de fogo)."
+   ],
+   [
+    "Fraqueza",
+    "Oclumência resiste ao fascínio; acalmada, volta a ser gente."
+   ],
+   [
+    "Quer",
+    "Ser respeitada."
+   ]
+  ]
+ },
+ {
+  "id": "cr-centauro",
+  "nome": "Centauro",
+  "nota": "",
+  "indice": "Centauro",
+  "ordem_indice": 56,
+  "perigo": 6,
+  "arq": "Padrão",
+  "ntr": 2,
+  "npo": 2,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Inteligente, Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "Investida, Chamar o Bando."
+   ],
+   [
+    "Fraqueza",
+    "Respeito à floresta."
+   ],
+   [
+    "Quer",
+    "Ler os céus e ser deixado em paz. Ataca com arco."
+   ]
+  ]
+ },
+ {
+  "id": "cr-vampiro",
+  "nome": "Vampiro",
+  "nota": "",
+  "indice": "Vampiro",
+  "ordem_indice": 64,
+  "perigo": 6,
+  "arq": "Predador",
+  "ntr": 3,
+  "npo": 1,
+  "pes": 1,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Inteligente, Regeneração, Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "Drenar (o sangue cansa a alma)."
+   ],
+   [
+    "Fraqueza",
+    "Luz do sol."
+   ],
+   [
+    "Quer",
+    "Beber sangue sem ser descoberto."
+   ]
+  ]
+ },
+ {
+  "id": "cr-esfinge",
+  "nome": "Esfinge",
+  "nota": "",
+  "indice": "Esfinge",
+  "ordem_indice": 68,
+  "perigo": 7,
+  "arq": "Conjurador",
+  "ntr": 2,
+  "npo": 2,
+  "pes": 0,
+  "inc": 2,
+  "linhas": [
+   [
+    "Traços",
+    "Inteligente, Mente Fechada."
+   ],
+   [
+    "Poderes",
+    "Feitiço, Grito."
+   ],
+   [
+    "Fraqueza",
+    "Enigma."
+   ],
+   [
+    "Quer",
+    "Guardar a passagem. Quem erra o enigma é atacado; quem não responde pode ir embora."
+   ]
+  ]
+ },
+ {
+  "id": "cr-gigante",
+  "nome": "Gigante",
+  "nota": "",
+  "indice": "Gigante",
+  "ordem_indice": 81,
+  "perigo": 9,
+  "arq": "Bruto",
+  "ntr": 3,
+  "npo": 2,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Resistência, Couro Mágico, Inteligente."
+   ],
+   [
+    "Poderes",
+    "Investida, Explosão (pedra arremessada)."
+   ],
+   [
+    "Fraqueza",
+    "Dono: o Gurg manda; presentes compram a paz."
+   ],
+   [
+    "Quer",
+    "Seguir o Gurg."
+   ]
+  ]
+ },
+ {
+  "id": "cr-bicho-papao",
+  "nome": "Bicho-Papão",
+  "nota": " <em>(boggart)</em>",
+  "indice": "Bicho-Papão",
+  "ordem_indice": 20,
+  "perigo": 2,
+  "arq": "Conjurador",
+  "ntr": 1,
+  "npo": 1,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Aterrorizante."
+   ],
+   [
+    "Poderes",
+    "Mudar de Forma (o maior medo de quem está à frente)."
+   ],
+   [
+    "Fraqueza",
+    "Riso: Riddikulus."
+   ],
+   [
+    "Quer",
+    "Assustar. Com várias pessoas na frente, fica confuso e vira uma mistura."
+   ]
+  ]
+ },
+ {
+  "id": "cr-fantasma",
+  "nome": "Fantasma",
+  "nota": "",
+  "indice": "Fantasma",
+  "ordem_indice": 22,
+  "perigo": 2,
+  "arq": "Espectral",
+  "ntr": 1,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo. Espectral: imune a dano físico."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Conversa: quase todo fantasma quer ser ouvido."
+   ],
+   [
+    "Quer",
+    "Repetir a vida que teve. Atravessar alguém causa o dano em DET, um frio de morte. Não ataca de propósito."
+   ]
+  ],
+  "dano_em": "DET"
+ },
+ {
+  "id": "cr-inferius",
+  "nome": "Inferius",
+  "nota": "",
+  "indice": "Inferius",
+  "ordem_indice": 35,
+  "perigo": 3,
+  "arq": "Bruto",
+  "ntr": 2,
+  "npo": 0,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Mente Fechada, Agarrar."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Fogo."
+   ],
+   [
+    "Quer",
+    "Cumprir a ordem de quem o fez. Não sente dor; Stupefy não o para."
+   ]
+  ]
+ },
+ {
+  "id": "cr-poltergeist",
+  "nome": "Poltergeist",
+  "nota": "",
+  "indice": "Poltergeist",
+  "ordem_indice": 37,
+  "perigo": 3,
+  "arq": "Ágil",
+  "ntr": 2,
+  "npo": 0,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Invisível."
+   ],
+   [
+    "Poderes",
+    "nenhum."
+   ],
+   [
+    "Fraqueza",
+    "Dono: quem ele teme (o Barão Sangrento) manda nele."
+   ],
+   [
+    "Quer",
+    "Bagunçar. Joga objetos, mas não pode ser ferido por eles."
+   ]
+  ]
+ },
+ {
+  "id": "cr-dementador",
+  "nome": "Dementador",
+  "nota": "",
+  "indice": "Dementador",
+  "ordem_indice": 57,
+  "perigo": 6,
+  "arq": "Espectral",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Aterrorizante. Espectral: imune a dano físico."
+   ],
+   [
+    "Poderes",
+    "Drenar."
+   ],
+   [
+    "Fraqueza",
+    "Patrono."
+   ],
+   [
+    "Quer",
+    "Sugar felicidade. Beijo: veja as notas abaixo."
+   ]
+  ],
+  "dano_em": "DET"
+ },
+ {
+  "id": "cr-lethifold",
+  "nome": "Lethifold",
+  "nota": "",
+  "indice": "Lethifold",
+  "ordem_indice": 76,
+  "perigo": 8,
+  "arq": "Espectral",
+  "ntr": 3,
+  "npo": 2,
+  "pes": 0,
+  "inc": 2,
+  "linhas": [
+   [
+    "Traços",
+    "Furtiva, Agarrar, Sentidos Agudos. Espectral: imune a dano físico."
+   ],
+   [
+    "Poderes",
+    "Teia ou Tentáculos (o manto), Drenar."
+   ],
+   [
+    "Fraqueza",
+    "Patrono."
+   ],
+   [
+    "Quer",
+    "Comer quem dorme. Não deixa nem o corpo."
+   ]
+  ],
+  "dano_em": "DET"
+ },
+ {
+  "id": "cr-obscurus",
+  "nome": "Obscurus",
+  "nota": "",
+  "indice": "Obscurus",
+  "ordem_indice": 84,
+  "perigo": 9,
+  "arq": "Espectral",
+  "ntr": 3,
+  "npo": 2,
+  "pes": 0,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Voo, Aterrorizante, Muda de Tamanho. Espectral: imune a dano físico."
+   ],
+   [
+    "Poderes",
+    "Explosão, Investida."
+   ],
+   [
+    "Fraqueza",
+    "Nome: chamar a pessoa lá dentro pelo nome faz ela recolhê-lo."
+   ],
+   [
+    "Quer",
+    "Destruir o que machucou o hospedeiro. Ferir o Obscurus fere o hospedeiro."
+   ]
+  ]
+ },
+ {
+  "id": "cr-tentacula-venenosa",
+  "nome": "Tentácula Venenosa",
+  "nota": "",
+  "indice": "Tentácula Venenosa",
+  "ordem_indice": 39,
+  "perigo": 3,
+  "arq": "Padrão",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Veneno, Agarrar."
+   ],
+   [
+    "Poderes",
+    "Teia ou Tentáculos."
+   ],
+   [
+    "Fraqueza",
+    "Fogo."
+   ],
+   [
+    "Quer",
+    "Pegar e morder."
+   ]
+  ]
+ },
+ {
+  "id": "cr-visgo-do-diabo",
+  "nome": "Visgo-do-diabo",
+  "nota": "",
+  "indice": "Visgo-do-diabo",
+  "ordem_indice": 41,
+  "perigo": 3,
+  "arq": "Padrão",
+  "ntr": 2,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Agarrar, Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "Teia ou Tentáculos (as gavinhas)."
+   ],
+   [
+    "Fraqueza",
+    "Luz ou fogo: solta na hora. Quem relaxa escorrega."
+   ],
+   [
+    "Quer",
+    "Apertar o que se mexe."
+   ]
+  ]
+ },
+ {
+  "id": "cr-salgueiro-lutador",
+  "nome": "Salgueiro Lutador",
+  "nota": "",
+  "indice": "Salgueiro Lutador",
+  "ordem_indice": 62,
+  "perigo": 6,
+  "arq": "Guardião",
+  "ntr": 3,
+  "npo": 1,
+  "pes": 0,
+  "inc": 2,
+  "linhas": [
+   [
+    "Traços",
+    "Resistência, Agarrar, Ataque Duplo. Guardião: reação, recebe o ataque no lugar do que protege."
+   ],
+   [
+    "Poderes",
+    "Teia ou Tentáculos (os galhos)."
+   ],
+   [
+    "Fraqueza",
+    "O nó da raiz: tocado, o salgueiro para."
+   ],
+   [
+    "Quer",
+    "Bater em quem chega perto."
+   ]
+  ]
+ },
+ {
+  "id": "cr-manticora",
+  "nome": "Mantícora",
+  "nota": "",
+  "indice": "Mantícora",
+  "ordem_indice": 82,
+  "perigo": 9,
+  "arq": "Predador",
+  "ntr": 4,
+  "npo": 1,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Veneno (o ferrão paralisa), Couro Mágico, Inteligente, Aterrorizante."
+   ],
+   [
+    "Poderes",
+    "Investida."
+   ],
+   [
+    "Fraqueza",
+    "Comida: farta, cantarola e deixa passar."
+   ],
+   [
+    "Quer",
+    "Comer gente."
+   ]
+  ]
+ },
+ {
+  "id": "cr-nundu",
+  "nome": "Nundu",
+  "nota": "",
+  "indice": "Nundu",
+  "ordem_indice": 88,
+  "perigo": 10,
+  "arq": "Predador",
+  "ntr": 4,
+  "npo": 2,
+  "pes": 1,
+  "inc": 0,
+  "linhas": [
+   [
+    "Traços",
+    "Furtiva, Couro Mágico, Aterrorizante, Sentidos Agudos."
+   ],
+   [
+    "Poderes",
+    "Sopro (o hálito que adoece), Investida."
+   ],
+   [
+    "Fraqueza",
+    "Silêncio: quem passa sem ser visto passa. Para vencê-lo, cem bruxos."
+   ],
+   [
+    "Quer",
+    "Caçar."
+   ]
+  ]
+ },
+ {
+  "id": "cr-quimera",
+  "nome": "Quimera",
+  "nota": "",
+  "indice": "Quimera",
+  "ordem_indice": 89,
+  "perigo": 10,
+  "arq": "Bruto",
+  "ntr": 4,
+  "npo": 2,
+  "pes": 1,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Couro Mágico, Resistência (fogo), Ataque Duplo, Aterrorizante."
+   ],
+   [
+    "Poderes",
+    "Sopro, Investida."
+   ],
+   [
+    "Fraqueza",
+    "Três cabeças que discordam: uma Ilusão bem feita a faz perder a rodada."
+   ],
+   [
+    "Quer",
+    "Matar o que entra no território."
+   ]
+  ]
+ },
+ {
+  "id": "cr-basilisco",
+  "nome": "Basilisco",
+  "nota": "",
+  "indice": "Basilisco",
+  "ordem_indice": 90,
+  "perigo": 11,
+  "arq": "Predador",
+  "ntr": 4,
+  "npo": 1,
+  "pes": 0,
+  "inc": 1,
+  "linhas": [
+   [
+    "Traços",
+    "Veneno, Aterrorizante, Escava, Mente Fechada."
+   ],
+   [
+    "Poderes",
+    "Olhar (morte; refletido, petrifica)."
+   ],
+   [
+    "Fraqueza",
+    "Canto do galo."
+   ],
+   [
+    "Quer",
+    "Obedecer ao herdeiro de Slytherin. Veja as notas abaixo."
+   ]
+  ]
+ }
+]

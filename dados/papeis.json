@@ -1,0 +1,134 @@
+[
+ {
+  "d": 1,
+  "nome": "Duelista",
+  "extra": "",
+  "ajuste": "Ataque +1 passo",
+  "habilidade": "A reação Protego dele vale uma vez por rodada a partir do Grau 3, mesmo onde a tabela dá menos. Continua sendo a única reação dele na rodada.",
+  "pv": "1",
+  "defesa": 0,
+  "ataque": 1,
+  "dano": 0
+ },
+ {
+  "d": 2,
+  "nome": "Curandeiro",
+  "extra": "",
+  "ajuste": "Dano –3",
+  "habilidade": "Ação: rola o Ataque da Tábua contra DT 7; sucesso cura RA + Grau de um aliado. Entra no limite de três curas mágicas por dia (Capítulo VII).",
+  "pv": "1",
+  "defesa": 0,
+  "ataque": 0,
+  "dano": -3
+ },
+ {
+  "d": 3,
+  "nome": "Erudito",
+  "extra": "",
+  "ajuste": "PV –20%",
+  "habilidade": "Sabe o que é a criatura, a poção ou a maldição na hora.",
+  "pv": "0.8",
+  "defesa": 0,
+  "ataque": 0,
+  "dano": 0
+ },
+ {
+  "d": 4,
+  "nome": "Batedor",
+  "extra": "",
+  "ajuste": "Defesa +2",
+  "habilidade": "Na primeira rodada, +1 passo na primeira reação (Desviar ou Protego); Furtividade <span class=\"dado\">d10</span>.",
+  "pv": "1",
+  "defesa": 2,
+  "ataque": 0,
+  "dano": 0
+ },
+ {
+  "d": 5,
+  "nome": "Protetor",
+  "extra": "",
+  "ajuste": "PV +30%, ataque –1 passo",
+  "habilidade": "Reação: recebe o ataque no lugar de um aliado ao lado. É a reação dele na rodada.",
+  "pv": "1.3",
+  "defesa": 0,
+  "ataque": -1,
+  "dano": 0
+ },
+ {
+  "d": 6,
+  "nome": "Trapaceiro",
+  "extra": "",
+  "ajuste": "Defesa +1",
+  "habilidade": "Azarações humilhantes; Enganação <span class=\"dado\">d10</span>.",
+  "pv": "1",
+  "defesa": 1,
+  "ataque": 0,
+  "dano": 0
+ },
+ {
+  "d": 7,
+  "nome": "Domador",
+  "extra": "",
+  "ajuste": "Dano –2",
+  "habilidade": "Só Grau 3+. Tem uma criatura de Perigo = Grau – 2, que entra no orçamento de Ameaça com o Perigo dela.",
+  "pv": "1",
+  "defesa": 0,
+  "ataque": 0,
+  "dano": -2
+ },
+ {
+  "d": 8,
+  "nome": "Comandante",
+  "extra": "",
+  "ajuste": "—",
+  "habilidade": "Ação: um aliado ataca de novo ou rola um dado extra. É a ação extra daquele aliado na rodada: ninguém faz mais de uma (Capítulo VII).",
+  "pv": "1",
+  "defesa": 0,
+  "ataque": 0,
+  "dano": 0
+ },
+ {
+  "d": 9,
+  "nome": "Trevoso",
+  "extra": "",
+  "ajuste": "PV –10%, dano +2",
+  "habilidade": "Sabe um Proibido ou uma Imperdoável fora do limite de Círculo; cada um além desse custa +1 Ameaça e um motivo na história. Lançar segue a regra da maldição: intenção, DET e Corrupção. Quem o vê lutar testa Vontade DT 7 ou fica Amedrontado, uma vez por cena.",
+  "pv": "0.9",
+  "defesa": 0,
+  "ataque": 0,
+  "dano": 2
+ },
+ {
+  "d": 10,
+  "nome": "Caçador",
+  "extra": "",
+  "ajuste": "PV +10%, Defesa +1",
+  "habilidade": "+1 passo para achar e seguir quem foge; prefere prender a matar.",
+  "pv": "1.1",
+  "defesa": 1,
+  "ataque": 0,
+  "dano": 0
+ },
+ {
+  "d": 11,
+  "nome": "Brutamontes",
+  "extra": "",
+  "ajuste": "PV +20%, Defesa –1, dano +1",
+  "habilidade": "Empurra: um ataque que acerta também deixa o alvo Caído, uma vez por rodada.",
+  "pv": "1.2",
+  "defesa": -1,
+  "ataque": 0,
+  "dano": 1
+ },
+ {
+  "d": 12,
+  "nome": "Mentor",
+  "extra": "",
+  "ajuste": "Dano –2",
+  "habilidade": "Fora da luta, ensina: +1 passo para Estudar um feitiço que ele sabe, e conta como ajuda de amigo em Aprender sozinho.",
+  "pv": "1",
+  "defesa": 0,
+  "ataque": 0,
+  "dano": -2
+ }
+]

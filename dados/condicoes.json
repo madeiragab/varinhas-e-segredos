@@ -1,0 +1,164 @@
+[
+ {
+  "nome": "Atordoado",
+  "extra": "",
+  "efeito": "Perde a próxima ação; Defesa –2.",
+  "duracao": "Breve.",
+  "rapida": {
+   "ordem": 0,
+   "extra": "",
+   "age": "Não (perde a ação)",
+   "move": "Sim",
+   "conjura": "Não",
+   "reage": "Sim, com Defesa –2",
+   "sustenta": "Sim"
+  }
+ },
+ {
+  "nome": "Cansado",
+  "extra": "",
+  "efeito": "–1 passo em Corpo e Mente; não recupera Ímpeto.",
+  "duracao": "Até tratar: uma semana com dois períodos de Descansar, ou uma noite inteira de sono e Poção Revigorante."
+ },
+ {
+  "nome": "Caído",
+  "extra": "",
+  "efeito": "–1 passo em Corpo; não pode Desviar.",
+  "duracao": "Levantar gasta o movimento.",
+  "rapida": {
+   "ordem": 1,
+   "extra": "",
+   "age": "Sim",
+   "move": "Levantar gasta",
+   "conjura": "Sim",
+   "reage": "Protego, não Desviar",
+   "sustenta": "Sim"
+  }
+ },
+ {
+  "nome": "Cego",
+  "extra": "",
+  "efeito": "–2 passos em ataques e Percepção; Defesa –2.",
+  "duracao": "Fixa ou Breve, conforme a fonte.",
+  "rapida": {
+   "ordem": 3,
+   "extra": "",
+   "age": "Sim",
+   "move": "Sim, devagar",
+   "conjura": "Sim, –2 passos em ataques",
+   "reage": "Sim, –2 passos",
+   "sustenta": "Sim"
+  }
+ },
+ {
+  "nome": "Confuso",
+  "extra": "",
+  "efeito": "No início do turno, <span class=\"dado\">d6</span>: 1–2 age normal, 3–4 fica parado, 5–6 ataca o mais próximo.",
+  "duracao": "Resistível (Vontade)."
+ },
+ {
+  "nome": "Desarmado",
+  "extra": "",
+  "efeito": "Sem varinha.",
+  "duracao": "Pegar a varinha: movimento.",
+  "rapida": {
+   "ordem": 5,
+   "extra": "",
+   "age": "Sim",
+   "move": "Sim",
+   "conjura": "Não (sem varinha)",
+   "reage": "Só Desviar",
+   "sustenta": "Não"
+  }
+ },
+ {
+  "nome": "Indefeso",
+  "extra": "",
+  "efeito": "Defesa 3; ataques contra você ganham +1 passo.",
+  "duracao": "Segue a condição que o causou."
+ },
+ {
+  "nome": "Com pavor",
+  "extra": "",
+  "efeito": "Rola o dado de pavor em todo teste; ele anula os dados menores.",
+  "duracao": "Veja <a href=\"#pavor\">Pavor</a>."
+ },
+ {
+  "nome": "Amedrontado",
+  "extra": "",
+  "efeito": "–1 passo; não se aproxima do que assusta.",
+  "duracao": "Resistível (Vontade)."
+ },
+ {
+  "nome": "Desesperado",
+  "extra": "",
+  "efeito": "–1 passo em tudo; sem feitiços de Círculo 3+.",
+  "duracao": "Até ter 1 DET de novo."
+ },
+ {
+  "nome": "Petrificado",
+  "extra": "",
+  "efeito": "Não age, Indefeso.",
+  "duracao": "Resistível (Fortitude). Por Basilisco: Até tratar (Restauradora de Mandrágoras).",
+  "rapida": {
+   "ordem": 7,
+   "extra": " · agonia · inconsciente",
+   "age": "Não",
+   "move": "Não",
+   "conjura": "Não",
+   "reage": "Não",
+   "sustenta": "Não"
+  }
+ },
+ {
+  "nome": "Preso",
+  "extra": "",
+  "efeito": "Não se desloca; –1 passo em ataques; não pode Desviar.",
+  "duracao": "Resistível (Atletismo, ou Reflexos para pernas presas); ou um aliado corta/solta com uma ação.",
+  "rapida": {
+   "ordem": 2,
+   "extra": "",
+   "age": "Sim",
+   "move": "Não",
+   "conjura": "Sim, se a mão da varinha está livre",
+   "reage": "Protego, não Desviar",
+   "sustenta": "Sim"
+  }
+ },
+ {
+  "nome": "Sangrando",
+  "extra": "",
+  "efeito": "Perde <span class=\"dado\">1d4</span> PV no início do turno; <em>grave</em>, <span class=\"dado\">1d8</span>.",
+  "duracao": "Até tratar: Medibruxaria DT 7 (grave DT 11), Episkey (só o comum), Ditamno ou Vulnera Sanentur (qualquer um)."
+ },
+ {
+  "nome": "Controlado",
+  "extra": "",
+  "efeito": "Age como o conjurador quer.",
+  "duracao": "Resistível (Vontade).",
+  "rapida": {
+   "ordem": 6,
+   "extra": "",
+   "age": "Como o conjurador quer",
+   "move": "Idem",
+   "conjura": "Idem",
+   "reage": "Idem",
+   "sustenta": "Idem"
+  }
+ },
+ {
+  "nome": "Mudo",
+  "extra": "",
+  "efeito": "Só lança feitiços Silenciosos.",
+  "duracao": "Fixa.",
+  "rapida": {
+   "ordem": 4,
+   "extra": "",
+   "age": "Sim",
+   "move": "Sim",
+   "conjura": "Só Silenciosos",
+   "reage": "Desviar; Protego só Silencioso",
+   "sustenta": "Sim"
+  }
+ }
+]

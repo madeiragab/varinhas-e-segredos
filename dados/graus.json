@@ -1,0 +1,90 @@
+[
+ {
+  "grau": 1,
+  "equivale": "1º ano",
+  "circulo": 1,
+  "feiticos": 2,
+  "det": 4,
+  "protego": "— (só Desviar)"
+ },
+ {
+  "grau": 2,
+  "equivale": "2º ou 3º ano",
+  "circulo": 1,
+  "feiticos": 3,
+  "det": 5,
+  "protego": "— (só Desviar)"
+ },
+ {
+  "grau": 3,
+  "equivale": "4º ano",
+  "circulo": 2,
+  "feiticos": 3,
+  "det": 6,
+  "protego": "1 por cena"
+ },
+ {
+  "grau": 4,
+  "equivale": "5º ano, N.O.M.",
+  "circulo": 2,
+  "feiticos": 4,
+  "det": 7,
+  "protego": "1 por cena"
+ },
+ {
+  "grau": 5,
+  "equivale": "6º ou 7º ano, N.I.E.M.",
+  "circulo": 3,
+  "feiticos": 4,
+  "det": 8,
+  "protego": "1 por rodada"
+ },
+ {
+  "grau": 6,
+  "equivale": "adulto formado, auror novato",
+  "circulo": 3,
+  "feiticos": 5,
+  "det": 9,
+  "protego": "1 por rodada"
+ },
+ {
+  "grau": 7,
+  "equivale": "auror, Comensal",
+  "circulo": 3,
+  "feiticos": 5,
+  "det": 10,
+  "protego": "1 por rodada"
+ },
+ {
+  "grau": 8,
+  "equivale": "veterano de guerra",
+  "circulo": 4,
+  "feiticos": 6,
+  "det": 11,
+  "protego": "1 por rodada"
+ },
+ {
+  "grau": 9,
+  "equivale": "elite: os mais temidos do seu tempo",
+  "circulo": 4,
+  "feiticos": 6,
+  "det": 12,
+  "protego": "1 por rodada"
+ },
+ {
+  "grau": 10,
+  "equivale": "mestre: poucos por geração",
+  "circulo": 4,
+  "feiticos": 7,
+  "det": 13,
+  "protego": "1 por rodada"
+ },
+ {
+  "grau": 11,
+  "equivale": "lendário: um por século",
+  "circulo": 4,
+  "feiticos": 8,
+  "det": 14,
+  "protego": "1 por rodada"
+ }
+]

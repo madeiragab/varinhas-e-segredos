@@ -84,10 +84,24 @@ Image e tratados para a página:
 
 ## Arquitetura
 
-O site é estático e não tem framework nem dependência de execução. O livro é escrito
-em pedaços e montado num HTML único por um script de 20 linhas.
+O site é estático e não tem framework nem dependência de execução. O texto do livro é
+escrito em pedaços. As regras que aparecem em mais de um lugar ficam num banco de dados
+em JSON. Um script curto monta tudo num HTML único.
 
 ```
+dados/                    o banco: a fonte das regras repetidas
+├── tabua.json            Tábua de Perigo (Perigo e Grau 1 a 11)
+├── arquetipos.json       ajustes das criaturas (PV, Defesa, Ataque, Dano)
+├── graus.json            o que um bruxo sabe em cada Grau (Círculo, feitiços, DET, Protego)
+├── papeis.json           os 12 Papéis da Forja e os ajustes deles
+├── feiticos.json         276 feitiços: Círculo, perícia, alcance, resistência, Tipo, Função, efeito
+├── criaturas.json        91 criaturas (só as escolhas: Perigo, arquétipo, traços, poderes)
+├── bruxos.json           10 bruxos prontos (Grau, Papel, feitiços, assinatura, poderes)
+├── itens.json            204 itens por grupo, categoria, preço e regra
+├── condicoes.json        15 condições e a referência rápida
+└── vassouras.json        35 vassouras
+dados.py                  deriva o resto (PV, Defesa, Ataque, Dano, Protego, Ameaça, Ministério)
+                          e desenha tabelas e cartões
 template/
 ├── livro.html            esqueleto: capa, sumário, navegação e busca (JS próprio)
 ├── livro.css             tema claro/escuro, tabelas, cartões, impressão
@@ -106,22 +120,48 @@ index.html   ← gerado, ~780 KB, com CSS embutido (é o que o GitHub Pages serv
 ficha.html   ← folha de personagem, página separada
 assets/      ← capas e aberturas de parte (webp), fontes woff2, ícones da ficha
 tests/
-├── auditoria.py          confere o livro gerado contra as regras
-└── simulacoes.py         Monte Carlo do equilíbrio
+├── auditoria.py          confere o banco e o livro gerado contra as regras
+├── simulacoes.py         Monte Carlo do equilíbrio (lê o mesmo banco)
+└── publicacao.py         o site no ar é este build?
 docs/img/                 capturas deste README
 ```
 
-`build.py` faz quatro coisas:
+`build.py` faz cinco coisas:
 
 1. Junta os capítulos em ordem alfabética, por isso os prefixos numéricos.
-2. Substitui `{{CSS}}`, `{{CAPITULOS}}`, `{{VERSAO}}` e `{{DATA}}`.
-3. Escreve `index.html`.
-4. **Para com erro** se sobrar algum placeholder ou se algum `href="#…"` apontar para um
-   `id` que não existe. Um link interno quebrado não chega ao site.
+2. Troca cada marcador `<!--dados:...-->` dos capítulos pela tabela ou pelo cartão que o
+   `dados.py` desenha a partir de `dados/`.
+3. Substitui `{{CSS}}`, `{{CAPITULOS}}`, `{{VERSAO}}` e `{{DATA}}`.
+4. Escreve `index.html` com uma assinatura do build (`<meta name="build">`).
+5. **Para com erro** se sobrar algum placeholder ou marcador, ou se algum `href="#…"`
+   apontar para um `id` que não existe. Um link interno quebrado não chega ao site.
+
+### O banco de dados
+
+Uma regra repetida em cinco lugares acaba errada em um deles. O Protego de um Duelista,
+por exemplo, aparecia na tabela do Grau, na habilidade do Papel, no texto da ficha pronta e
+nos atributos que o simulador lia. Agora cada coisa tem um dono só:
+
+- **O que é escolha fica no JSON:** o Grau e o Papel de um bruxo, os feitiços que ele
+  sabe, o arquétipo de uma criatura, o preço de um item.
+- **O que é conta sai do `dados.py`:** PV, Defesa, Ataque, Dano, DT, DET, Protego e Ameaça
+  de cada criatura e de cada bruxo saem da Tábua com o ajuste do arquétipo ou do Papel. O
+  Ministério de cada criatura sai da Tábua. A tabela "Por função" do Grimório sai do campo
+  `funcao` de cada feitiço.
+- **O livro, a auditoria e o simulador leem as mesmas funções.** Mudar o PV da Tábua muda
+  o livro, os 101 cartões, o índice do Bestiário e as simulações de uma vez.
+
+Cada feitiço tem um **Tipo** (Utilidade, Ataque ou Efeito), que é como ele se resolve, e
+uma **Função** (Ofensiva, Controle, Defesa, Exploração e ofício, Cura, Fenômeno e lenda),
+que é para que ele serve. O Tipo segue a regra do Capítulo IV, e a auditoria só aceita
+uma exceção quando ela vem com o motivo escrito no campo `tipo_motivo`.
+
+A migração foi conferida byte a byte: o livro gerado a partir do banco saiu idêntico ao
+anterior, com a mesma assinatura, antes de a coluna Tipo e a tabela de funções entrarem.
 
 ```bash
 python build.py                                  # gera index.html
-PYTHONIOENCODING=utf-8 python tests/auditoria.py # 112 conferências, deve dar 0 falhas
+PYTHONIOENCODING=utf-8 python tests/auditoria.py # 119 conferências, deve dar 0 falhas
 python tests/simulacoes.py                       # tudo; ou: poções | quadribol | combate | bruxos | evolução
 python tests/publicacao.py                       # depois do push: o site no ar é este build?
 python -m http.server 8765                       # abre em http://localhost:8765

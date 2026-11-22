@@ -411,5 +411,40 @@ checa("Forja de Bruxos: Protego só do Grau 3, reforço Grau 4+, Domador Grau 3+
       "— (só Desviar)" in S and "Grau 4+. Patrono" in S and "Só Grau 3+. Tem uma criatura" in S and "(mínimo 1)" in S and "Nível" not in re.sub(r"Nível dos personagens|o Nível \(1|um aluno de Nível 6", "", S))
 checa(f"Forja de Bruxos: {bx} fichas batem com Tábua + Papel, feitiços no Círculo {ruins if ruins else ''}", bx >= 10 and not ruins)
 
+# 18. Banco de dados: dados/*.json é a fonte; o livro gerado tem de estar em dia com ele
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+import dados as banco
+TB, GR, PA, AR = banco.tabua(), banco.graus(), banco.papeis(), banco.arquetipos()
+FE = banco.feiticos(); NOMES_FE = {x["nome"]: x for x in FE}
+ruins = [x["nome"] for x in FE if x["tipo"] not in ("Utilidade", "Ataque", "Efeito") or x["funcao"] not in banco.FUNCOES
+         or x["circulo"] not in banco.CIRCULOS or (x["tipo"] != banco.tipo_pela_regra(x) and not x.get("tipo_motivo"))]
+rep = sorted({x["nome"] for x in FE if [y["nome"] for y in FE].count(x["nome"]) > 1})
+checa(f"Banco: {len(FE)} feitiços com Tipo e Função válidos; o tipo só foge da regra com motivo escrito {ruins + rep if ruins or rep else ''}", not ruins and not rep)
+lin = [x for x in FE if '<td>%s</td><td>%s</td>' % (x["tipo"], x["efeito"]) not in HTML]
+checa(f"Banco: Grimório do livro em dia com dados/feiticos.json {[x['nome'] for x in lin][:5] if lin else ''}", not lin)
+CR = banco.criaturas()
+ruins = [c["id"] for c in CR if c["perigo"] not in TB or c["arq"] not in AR or c["ntr"] > TB[c["perigo"]]["tracos"]
+         or c["npo"] > TB[c["perigo"]]["poderes"] + AR[c["arq"]]["poderes_extra"] or c["pes"] > (1 if c["perigo"] < 6 else 2)
+         or 'id="%s" data-perigo="%d" data-arq="%s" data-pv="%d" data-def="%d"' % (c["id"], c["perigo"], c["arq"], c["pv"], c["defesa"]) not in HTML]
+checa(f"Banco: {len(CR)} criaturas pela Tábua e pelo arquétipo, e o livro em dia {ruins if ruins else ''}", len(CR) >= 90 and not ruins)
+BX = banco.bruxos(); ruins = []
+for b in BX:
+    fora = [x for x in b["feiticos"] if x not in NOMES_FE]
+    acima = [x for x in b["feiticos"] if x in NOMES_FE and NOMES_FE[x]["circulo"] > GR[b["grau"]]["circulo"]]
+    ok = (not fora and len(acima) <= (1 if b["papel"] == "Trevoso" else 0) and b["papel"] in PA
+          and b.get("assinatura", "") not in NOMES_FE and b.get("assinatura", "") not in b["feiticos"]
+          and ("Feitiço assinatura" in b["poderes"]) == bool(b.get("assinatura"))
+          and 'id="%s" data-nivel="%d" data-papel="%s" data-pv="%d"' % (b["id"], b["grau"], b["papel"], b["pv"]) in HTML)
+    if not ok: ruins.append(b["id"] + str(fora + acima))
+checa(f"Banco: {len(BX)} bruxos com feitiços do Grimório no Círculo do Grau, assinatura fora da lista, livro em dia {ruins if ruins else ''}", len(BX) >= 10 and not ruins)
+IT = banco.carrega("itens")
+ruins = [i["nome"] for i in IT if i["cat"] not in ("I", "II", "III", "IV", "V", "Único") or not i["regra"]
+         or (i["preco"] in ("", "—") and i["cat"] not in ("IV", "Único")) or (i["cat"] == "Único" and i["preco"] != "—")]
+checa(f"Banco: {len(IT)} itens com categoria e regra; sem preço só Artefato (IV) e Único {ruins[:5] if ruins else ''}", len(IT) >= 200 and not ruins)
+CO = banco.carrega("condicoes")
+checa(f"Banco: {len(CO)} condições, {sum('rapida' in c for c in CO)} na referência rápida, todas com efeito e saída",
+      all(c["efeito"] and c["duracao"] for c in CO) and sum("rapida" in c for c in CO) >= 8)
+checa("Banco: nenhum marcador <!--dados:...--> sobrando no livro", "<!--dados:" not in HTML)
+
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

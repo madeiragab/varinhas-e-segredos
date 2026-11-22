@@ -211,7 +211,7 @@ for l in re.findall(r"<tr>(.*?)</tr>", HTML[i:k], re.S):
 checa(f"Poções: {len(prep)} com modo de preparo, passos = etapas, minigame onde a DT pede {ruins if ruins else ''}", len(prep) > rec and not ruins)
 
 # 11. Itens mágicos: todo item tem categoria válida, preço e regra na mesa
-k = HTML.index('id="itens"'); m = HTML.index("<h3>Preços</h3>", k)
+k = HTML.index('class="indice"', HTML.index('id="itens"')); m = HTML.index("<h3>Preços</h3>", k)
 itens, ruins = 0, []
 for l in re.findall(r"<tr>(.*?)</tr>", HTML[k:m], re.S):
     c = [re.sub(r"<[^>]+>", "", x).strip() for x in re.findall(r"<td[^>]*>(.*?)</td>", l, re.S)]
@@ -219,6 +219,30 @@ for l in re.findall(r"<tr>(.*?)</tr>", HTML[k:m], re.S):
     itens += 1
     if len(c) != 4 or c[1] not in ("I", "II", "III", "IV", "Único") or not c[2] or len(c[3]) < 15: ruins.append(c[0])
 checa(f"Itens: {itens} com categoria, preço e regra {ruins if ruins else ''}", itens >= 100 and not ruins)
+
+# 12. Itens deste jogo: preço dentro da categoria, limite de uso, nada de ação extra nem +2 passos
+NOVOS = ("roupas", "estudo", "consumiveis", "duelo", "exploracao", "casa", "poder")
+FAIXA = {"I": (0, 5), "II": (5, 100), "III": (100, 500), "IV": (500, 10**6)}
+LIMITE = re.compile(r"por cena|por sessão|por dia|por semana|por (um )?mês|por poção|por duelo|uso único|uma carga|uma vez", re.I)
+def galeoes(p):
+    m = re.search(r"([\d.]+)\s*(galeões|galeão|sicles|sicle|nuques|nuque)", p)
+    if not m: return None
+    return float(m.group(1).replace(".", "")) / {"galeõ": 1, "galeã": 1, "sicle": 17, "nuque": 493}[m.group(2)[:5]]
+nov, uni, ruins = 0, 0, []
+for g in NOVOS:
+    a = HTML.index(f'id="itens-{g}"'); b = HTML.index("</table>", a)
+    for l in re.findall(r"<tr>(.*?)</tr>", HTML[a:b], re.S):
+        c = [re.sub(r"<[^>]+>", "", x).strip() for x in re.findall(r"<td[^>]*>(.*?)</td>", l, re.S)]
+        if not c: continue
+        nov += 1; uni += "✦" in c[0]
+        cat, preco, ef = c[1], c[2], c[3]
+        v = galeoes(preco); lo, hi = FAIXA[cat]
+        ok = (v is None and cat == "IV" and "não se vende" in preco) or (v is not None and lo <= v <= hi)
+        mexe = re.search(r"PV|DET|Preso|Atordoad|Amedrontad|Desesperad|Silenciad", ef)
+        if ("+1 passo" in ef or cat in ("III", "IV") or (mexe and cat == "I")) and not LIMITE.search(ef): ok = False
+        if "+2 passos" in ef or "ação extra" in ef or ("dado extra" in ef and cat != "IV") or (cat == "IV" and "Preço:" not in ef): ok = False
+        if not ok: ruins.append(c[0])
+checa(f"Itens deste jogo: {nov} pela Tábua de valor, {uni} com mecânica própria {ruins if ruins else ''}", nov == 100 and uni >= 60 and not ruins)
 
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

@@ -4445,12 +4445,15 @@ td strong { color: var(--texto); }
   <tr><td class="num">6</td><td><strong>Assinatura:</strong> escolha um feitiço Dominado; ele ganha +1 passo com essa varinha.</td></tr>
   <tr><td class="num">10</td><td><strong>Lenda:</strong> quem a tomar sem conquistá-la num confronto é Rejeitado; o efeito do núcleo dobra.</td></tr>
   </tbody></table></div>
-  <p>Trocar de varinha zera o Vínculo. Uma varinha quebrada e consertada perde metade.</p>
+  <p>Trocar de varinha zera o Vínculo, e a varinha quebrada leva o Vínculo junto.</p>
 
-  <h3 id="cuidar-varinha">Quebrar, consertar e comprar</h3>
+  <h3 id="cuidar-varinha">Quebrar, trocar e comprar</h3>
   <ul>
-    <li><strong>Varinha rachada</strong> (um Desastre Perda em luta, uma queda feia, sentar em cima dela no bolso de trás): fica Rejeita até ser consertada, e o Desastre com ela é sempre Magia Descontrolada contra você. Fita adesiva não ajuda.</li>
-    <li><strong>Consertar:</strong> com o núcleo inteiro, um varinheiro conserta em uma semana por 10 galeões, ou você tenta: Feitiços DT 13, e falhar é perder a varinha. Núcleo partido não tem conserto, nem com Reparo. O Vínculo cai pela metade.</li>
+    <li><strong>Quando quebra:</strong> alguém a parte com as mãos (uma ação, com ela na mão dele); um feitiço que explode perto dela, como um Confringo que ricocheteia; uma queda feia de vassoura; sentar em cima dela no bolso de trás. Num Desastre Perda em luta, role <span class="dado">d6</span>: com 1, ela quebra em vez de cair.</li>
+    <li><strong>Quebrou, já era.</strong> Reparo não conserta, varinheiro não conserta, nenhum feitiço conserta. A única forma é um Reparo lançado com a <a href="#itens-unicos">Varinha das Varinhas</a>, e quem a tem não empresta.</li>
+    <li><strong>Remendada com fita</strong>, ela ainda faz alguma coisa: é Rejeita (–2 passos, Desastre com todos os dados em 1 ou 2), e todo Desastre com ela é Magia Descontrolada contra você. Um Lesmas Vomitosas que volta na sua boca é o resultado mais comum. Serve até você arrumar outra.</li>
+    <li><strong>Arrumar outra:</strong> comprar ou tomar. Comprada no varinheiro, ela escolhe você e começa Leal, sem Vínculo. Tomada de um bruxo num confronto, Tolerante; roubada sem confronto ou pega do chão, Resistente; emprestada por quem confia em você, Tolerante.</li>
+    <li><strong>Sem varinha nenhuma</strong>, não há magia para quem aprendeu dependendo dela: só poções, Herbologia e o que não pede varinha.</li>
     <li><strong>Prior Incantato:</strong> outra varinha encostada na sua mostra os últimos feitiços que ela lançou, um por um, do mais novo ao mais velho. É assim que o Ministério descobre quem lançou o quê.</li>
     <li><strong>Varinhas-irmãs:</strong> duas varinhas com núcleo do mesmo animal não lutam direito uma contra a outra. Quando se cruzam num duelo, os feitiços se prendem: teste oposto de Coração + Vontade, e quem vence força a outra a soltar os ecos dos últimos feitiços dela.</li>
     <li><strong>Varinha de quem morreu:</strong> Tolerante para a família, Resistente para os outros. Muitas famílias a enterram com o dono.</li>
@@ -4789,7 +4792,7 @@ td strong { color: var(--texto); }
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Item</th><th>Cat.</th><th>Preço</th><th>Na mesa</th></tr></thead>
   <tbody>
-  <tr><td><strong>Varinha das Varinhas</strong></td><td>Único</td><td>—</td><td>Relíquia da Morte, de sabugueiro com pelo de testrálio. +1 passo em todo feitiço de ataque e duelo. Obedece a quem venceu o dono anterior, e atrai quem quer vencer você.</td></tr>
+  <tr><td><strong>Varinha das Varinhas</strong></td><td>Único</td><td>—</td><td>Relíquia da Morte, de sabugueiro com pelo de testrálio. +1 passo em todo feitiço de ataque e duelo. Obedece a quem venceu o dono anterior, e atrai quem quer vencer você. Um Reparo lançado com ela conserta uma varinha quebrada: é a única forma.</td></tr>
   <tr><td><strong>Pedra da Ressurreição</strong></td><td>Único</td><td>—</td><td>Relíquia da Morte. Gire três vezes: as sombras de quem você amou vêm conversar, não voltam. Quem não larga a pedra fica Desesperado.</td></tr>
   <tr><td><strong>Capa da Invisibilidade das Relíquias</strong></td><td>Único</td><td>—</td><td>Invisível de verdade, para sempre: não gasta, Accio não traz, Homenum Revelio não garante, nem olho mágico vê.</td></tr>
   <tr><td><strong>Pedra Filosofal</strong></td><td>Único</td><td>—</td><td>Faz ouro de qualquer metal e o Elixir da Vida. Quem a guarda vive séculos e é caçado por isso.</td></tr>
@@ -5166,7 +5169,7 @@ td strong { color: var(--texto); }
   <tr><td><strong>Quebrador de Maldições</strong></td><td>Runas Antigas, Aritmancia, Defesa Contra as Artes das Trevas</td><td>+1 passo para desfazer maldições, armadilhas mágicas e proteções.</td></tr>
   <tr><td><strong>Magizoologista</strong></td><td>Trato das Criaturas Mágicas, Herbologia</td><td>Criaturas de Perigo até 4 (até 6 com O em Trato) não atacam você se não forem provocadas.</td></tr>
   <tr><td><strong>Professor</strong></td><td>O na matéria que vai ensinar</td><td>Ensina um feitiço: o aluno ganha 2 marcas de treino por aula; ajudar dá +2 passos.</td></tr>
-  <tr><td><strong>Fabricante de Varinhas</strong></td><td>Feitiços, Herbologia, Trato das Criaturas Mágicas</td><td>Lê madeira e núcleo de qualquer varinha; conserta varinhas quebradas.</td></tr>
+  <tr><td><strong>Fabricante de Varinhas</strong></td><td>Feitiços, Herbologia, Trato das Criaturas Mágicas</td><td>Lê madeira e núcleo de qualquer varinha e faz varinhas novas. Quebrada, nem ele conserta.</td></tr>
   <tr><td><strong>Funcionário do Ministério</strong></td><td>Dois quaisquer, mais História da Magia</td><td>Uma vez por sessão, um documento, um acesso ou um favor oficial.</td></tr>
   <tr><td><strong>Jogador de Quadribol</strong></td><td>Nenhum — passar numa seleção profissional</td><td>+1 passo em Voo; a fama abre portas.</td></tr>
   <tr><td><strong>Pesquisador</strong></td><td>O em uma matéria</td><td>Testes longos de pesquisa, feitiço ou poção somam +2 por etapa.</td></tr>
@@ -5594,7 +5597,7 @@ td strong { color: var(--texto); }
   <tr><td><strong>Objeto encantado</strong></td><td class="num">4 / 5 / 6 / 8</td><td>O teste longo do Capítulo XI (cada parte é uma etapa; Círculo 1 a 4)</td><td>O material de estabilizar</td><td>O objeto (Capítulo XI).</td></tr>
   <tr><td><strong>Criar uma planta rara</strong></td><td class="num">6</td><td>Mente + Herbologia, DT da planta; a estação muda a DT</td><td>Um canteiro na estufa e a muda</td><td>Ingredientes Bons; crítico na última parte, Excelentes.</td></tr>
   <tr><td><strong>Criar uma criatura</strong></td><td class="num">8</td><td>Coração + Trato de Criaturas, DT 7 + Perigo</td><td>Abrigo e alimento (abaixo)</td><td>A criatura confia em você: Confiança 3 permanente.</td></tr>
-  <tr><td><strong>Restaurar algo quebrado</strong> (varinha, artefato, livro)</td><td class="num">6</td><td>Mente + Feitiços ou Runas Antigas, DT do objeto</td><td>Todas as partes do objeto</td><td>O objeto volta a funcionar; uma varinha restaurada começa Hesitante.</td></tr>
+  <tr><td><strong>Restaurar algo quebrado</strong> (artefato, livro)</td><td class="num">6</td><td>Mente + Feitiços ou Runas Antigas, DT do objeto</td><td>Todas as partes do objeto</td><td>O objeto volta a funcionar. Varinha quebrada não entra aqui: não tem conserto.</td></tr>
   <tr><td><strong>Treinar para algo</strong> (seleção, torneio, prova)</td><td class="num">4</td><td>A perícia, DT 9</td><td>Um parceiro de treino ou um professor</td><td>+1 passo no teste que importa.</td></tr>
   </tbody></table></div>
   <p><strong>Complicação.</strong> Um desastre num período do projeto não apaga partes: role <span class="dado">d6</span>. 1 alguém descobre o projeto (um professor, um rival); 2 o recurso some ou estraga; 3 um acidente (o objeto ou a criatura causa um problema na escola); 4 o projeto atrai a pessoa errada; 5 você perde 1 parte; 6 uma descoberta inesperada: o projeto muda de rumo, e o Mestre diz para onde.</p>

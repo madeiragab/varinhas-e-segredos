@@ -261,7 +261,7 @@ def fichas_bruxos():
     for attrs, nome in re.findall(r'<div class="cartao bruxo"([^>]*)>\s*<h5>(.*?) <em>', HTML):
         A = dict(re.findall(r'data-([a-z]+)="([^"]*)"', attrs))
         dados = tuple(int(x) for x in A["atq"].replace("d", "").split("+"))
-        out.append((nome, int(A["nivel"]), A["papel"], int(A["pv"]), int(A["def"]), dados, int(A["dano"]), int(A["ameaca"])))
+        out.append((nome, int(A["nivel"]), A["papel"], int(A["pv"]), int(A["def"]), dados, int(A["dano"]), int(A["ameaca"]), A.get("poderes", "").split("|")))
     return out
 
 
@@ -271,7 +271,7 @@ def luta_bruxo(ano, bruxo, aliado=None, n_alunos=4):
     pv_max = 8 + c + 3 * (ano - 1); defesa = 5 + r // 2
     reacao = (m, f) if ano >= 5 else (c, r)
     alunos = [pv_max] * n_alunos
-    _, grau, _, pv, dfx, dados, dmod, _ = bruxo
+    _, grau, _, pv, dfx, dados, dmod, _, _ = bruxo
     pv = int(pv * 1.5) if n_alunos >= 3 else pv  # sozinho contra três ou mais
     for rodada in range(1, 31):
         for i in range(n_alunos):
@@ -314,6 +314,81 @@ def sim_bruxos(n=1500):
             print(f"  {b[0][:26]:26} G{b[1]} vs {ano}º ano{' + Monitor' if com else '          '}: {rods[n//2]:2} rodadas | {caiu*100:3.0f}% | {tpk*100:3.0f}%")
     return res
 
+
+
+def luta_grupo(ano, inimigos, n=1500):
+    """4 alunos contra um grupo da Forja. Papel 'cura': cura o mais ferido (Ataque da Tábua vs DT 7, RA + Grau),
+    no máximo 3 curas por alvo; 'comanda': dá ataque extra ao mais forte, se ele ainda não tem ação extra.
+    Ataque duplo = ação extra própria. Ninguém faz mais de uma ação extra por rodada."""
+    m, f, c, r, (circ, mod) = ALUNO[ano]
+    pv_max = 8 + c + 3 * (ano - 1); defesa = 5 + r // 2
+    reacao = (m, f) if ano >= 5 else (c, r)
+    out = []; extras_max = 0
+    for _ in range(n):
+        alunos = [pv_max] * 4
+        ini = [dict(f=b, pv=b[3], max=b[3], papel=b[2], duplo=('Ataque duplo' in b[8]), curas=0) for b in inimigos]
+        fim = None
+        for rodada in range(1, 31):
+            for i in range(4):
+                vivos = [x for x in ini if x['pv'] > 0]
+                if alunos[i] > 0 and vivos:
+                    alvo = min(vivos, key=lambda x: x['pv'])
+                    total, ok, crit, _, top = rola((m, f), max(3 + 2 * circ, alvo['f'][4]))
+                    if ok: alvo['pv'] -= (sum(top[:2]) if crit else top[0]) + mod
+            if all(x['pv'] <= 0 for x in ini): fim = (rodada, sum(a <= 0 for a in alunos)); break
+            extra = {id(x): (1 if x['duplo'] else 0) for x in ini}
+            for x in ini:
+                if x['pv'] <= 0: continue
+                if x['papel'] == 'Curandeiro':
+                    feridos = [y for y in ini if 0 < y['pv'] < y['max'] / 2 and y['curas'] < 3]
+                    if feridos:
+                        y = min(feridos, key=lambda y: y['pv'])
+                        total, ok, crit, _, top = rola(x['f'][5], 7)
+                        if ok: y['pv'] = min(y['max'], y['pv'] + top[0] + x['f'][1]); y['curas'] += 1
+                        continue
+                if x['papel'] == 'Comandante':
+                    cand = [y for y in ini if y is not x and y['pv'] > 0 and extra[id(y)] == 0]
+                    if cand:
+                        extra[id(max(cand, key=lambda y: y['f'][6]))] = 1
+                        continue
+            for x in ini:
+                if x['pv'] <= 0 or (x['papel'] in ('Curandeiro', 'Comandante')): continue
+                for _ in range(1 + extra[id(x)]):
+                    de_pe = [i for i in range(4) if alunos[i] > 0]
+                    if not de_pe: break
+                    i = rnd.choice(de_pe)
+                    total, ok, crit, _, top = rola(x['f'][5], defesa)
+                    if not ok: continue
+                    dano = (sum(top[:2]) if crit else top[0]) + x['f'][6]
+                    rt = rola(reacao, 0)[0]
+                    alunos[i] -= 0 if rt >= total else dano // 2 if rt >= total - 2 else dano
+            extras_max = max(extras_max, max(extra.values()))
+            if all(a <= 0 for a in alunos): fim = (rodada, 4); break
+        out.append(fim or (30, sum(a <= 0 for a in alunos)))
+    rods = sorted(x[0] for x in out)
+    return rods[n // 2], sum(x[1] > 0 for x in out) / n, sum(x[1] == 4 for x in out) / n, extras_max
+
+
+def sim_combinacoes():
+    print("FORJA — combinações (rodadas medianas | % alguém caído | % grupo caído | ação extra máx. por inimigo)")
+    F = {b[0]: b for b in fichas_bruxos()}
+    cmd = lambda b: b[:2] + ("Comandante",) + b[3:]
+    cur = F["Curandeira do St. Mungus"]
+    casos = [
+        ("5º: Comensal sozinho em grupo", 5, [F["Comensal da Morte"]]),
+        ("5º: Comensal + Comandante (Grau 4)", 5, [F["Comensal da Morte"], cmd(F["Sequestrador"])]),
+        ("5º: Comensal + 2 Curandeiras", 5, [F["Comensal da Morte"], cur, cur]),
+        ("7º: Bruxo das Trevas + Comensal", 7, [F["Bruxo das Trevas"], F["Comensal da Morte"]]),
+        ("7º: Bruxo das Trevas + Comandante", 7, [F["Bruxo das Trevas"], cmd(F["Comensal da Morte"])]),
+        ("7º: Bruxo das Trevas + Curandeira", 7, [F["Bruxo das Trevas"], cur]),
+    ]
+    res = {}
+    for nome, ano, ini in casos:
+        r_ = luta_grupo(ano, ini)
+        res[nome] = r_
+        print(f"  {nome:38}: {r_[0]:2} rodadas | {r_[1]*100:3.0f}% | {r_[2]*100:3.0f}% | {r_[3]}")
+    return res
+
 # ---------------------------------------------------------------- evolução
 def sim_evolucao():
     print("EVOLUÇÃO — 30 PE por ano, todos gastos; nível = 1 + PE gastos ÷ 12")
@@ -332,5 +407,5 @@ if __name__ == "__main__":
     if qual in ("tudo", "evolução"): sim_evolucao(); print()
     if qual in ("tudo", "quadribol"): sim_quadribol(); print()
     if qual in ("tudo", "combate"): sim_combate(); print()
-    if qual in ("tudo", "bruxos"): sim_bruxos(); print()
+    if qual in ("tudo", "bruxos"): sim_bruxos(); print(); sim_combinacoes(); print()
     if qual in ("tudo", "poções"): sim_pocoes()

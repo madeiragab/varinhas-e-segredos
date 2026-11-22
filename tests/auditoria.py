@@ -132,6 +132,9 @@ FRASES = {
     "apêndice: crítico rende duas marcas": "duas marcas de prática em Flipendo",
     "apêndice: Estudar usa DT do Círculo": "DT 5 do Círculo 1",
     "introdução cita o XVI": "Os capítulos <strong>XIII a XVI</strong>",
+    "Mestre de Poções: feitiço assinatura escrito": "Feitiço assinatura: <strong>Vapor Acerbus</strong>",
+    "Fanático: um quarto do PV, não Fase": "Fanático: com um quarto do PV ou menos",
+    "material Excelente dura como a Boa": "Tudo o que a Boa tem, inclusive durar o dobro do prazo",
 
     "Tempestade de fogo não é fogo das trevas": "Não é fogo das trevas",
     "Fulgur Caeli: nome do jogo, só Mestre": "Só um bruxo Mestre",
@@ -363,6 +366,7 @@ for attrs in re.findall(r'<div class="cartao bruxo"([^>]*)>', HTML):
     ok = ok and all(x in fe for x in po if x in ("Crucio", "Imperio"))
     ok = ok and ("Chamar reforço" not in po or n >= 4) and (A["papel"] != "Domador" or n >= 3)
     ok = ok and ("Ataque duplo" not in po or n >= 8)
+    ok = ok and ("Vulnera Sanentur" not in fe or A["papel"] in ("Mentor", "Erudito"))  # inventado por Snape: só quem teve a fonte
     if not ok: ruins.append(A["papel"] + str(n))
 a = HTML.index('id="forja-bruxos"'); b = HTML.index('id="aliados"', a); S = HTML[a:b]
 checa("Forja de Bruxos: Protego só do Grau 3, reforço Grau 4+, Domador Grau 3+, nada abaixo de 1",

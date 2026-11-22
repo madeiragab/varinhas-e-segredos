@@ -19,21 +19,49 @@
   <p>O crítico cresce com o dado: com <span class="dado">d4</span> só os pares 4+4 servem, e com dados grandes passar a DT por 6 fica fácil. Por isso o primeiranista quase nunca tem um crítico, e o bruxo formado tem um a cada dois ou três testes fáceis. Contra uma DT que os dados não alcançam, não há crítico: ele nunca faz o impossível. Dados extras aumentam ao mesmo tempo o total e a chance de crítico, mas só os dados somados contam para os pares.</p>
 
   <h3>Exemplo de ficha</h3>
-  <p><strong>Ana Ferraz</strong>, 2º ano, Grifinória, criada por trouxas. Corpo <span class="dado">d8</span>, Mente <span class="dado">d6</span>, Coração <span class="dado">d6</span>. Feitiços <span class="dado">d8</span>; Reflexos, Voo, Vontade e Intuição <span class="dado">d6</span>; o resto <span class="dado">d4</span>. PV 19, DET 11, Defesa 9, Ímpeto 1, PE 0 guardados. Varinha de cerejeira, corda de dragão, 11 polegadas, flexível, Leal (Vínculo 1). Nível 3, Iniciante, trilha Duelista (+1 Defesa: Defesa 9). Peculiaridade: Impulsiva. Medo: afogar-se. Prontidão: Flipendo, Incendio, Lumos, Wingardium Leviosa (Expelliarmus é Dominado e não ocupa espaço).</p>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Estado</th><th>Feitiços</th></tr></thead>
-  <tbody>
-  <tr><td><strong>Dominado</strong></td><td>Expelliarmus</td></tr>
-  <tr><td><strong>Aprendido</strong></td><td>Lumos, Alohomora, Flipendo, Incendio, Wingardium Leviosa (3 marcas de prática)</td></tr>
-  <tr><td><strong>Em aprendizado</strong></td><td>Rictusempra (2 marcas de treino)</td></tr>
-  <tr><td><strong>Observado</strong></td><td>Protego (viu um monitor usar)</td></tr>
-  </tbody></table></div>
-  <p>Notas do último trimestre: Feitiços 5, Transfiguração 3, DCAT 4, Poções 2, Herbologia 3. Técnica de matéria: Precisão (Feitiços). Ana precisa estudar Poções — mas é do time de Quadribol, e o treino come um período por semana.</p>
+  <div class="ficha-exemplo">
+    <header class="fx-topo">
+      <div><h4>Ana Ferraz</h4><p>2º ano · Grifinória · criada por trouxas</p></div>
+      <p class="fx-nivel"><b>Nível 3</b><span>Iniciante · trilha Duelista</span></p>
+    </header>
+    <div class="fx-atrs"><div class="fx-atr"><img src="assets/ficha/corpo.webp" alt="" width="44" height="44" loading="lazy"><span>Corpo</span><span class="dado">d8</span></div><div class="fx-atr"><img src="assets/ficha/mente.webp" alt="" width="44" height="44" loading="lazy"><span>Mente</span><span class="dado">d6</span></div><div class="fx-atr"><img src="assets/ficha/coracao.webp" alt="" width="44" height="44" loading="lazy"><span>Coração</span><span class="dado">d6</span></div></div>
+    <div class="fx-recs"><div class="fx-rec"><img src="assets/ficha/vida.webp" alt="" width="28" height="28" loading="lazy"><b>19</b><span>PV</span><small>8 + 8 + 3</small></div><div class="fx-rec"><img src="assets/ficha/chama.webp" alt="" width="28" height="28" loading="lazy"><b>11</b><span>DET</span><small>4 + 6 + 1</small></div><div class="fx-rec"><img src="assets/ficha/escudo.webp" alt="" width="28" height="28" loading="lazy"><b>9</b><span>Defesa</span><small>5 + 3, +1 da trilha</small></div><div class="fx-rec"><img src="assets/ficha/raio.webp" alt="" width="28" height="28" loading="lazy"><b>1</b><span>Ímpeto</span><small>começa a sessão</small></div><div class="fx-rec"><img src="assets/ficha/estrela.webp" alt="" width="28" height="28" loading="lazy"><b>0</b><span>PE</span><small>guardados</small></div></div>
+    <div class="fx-bloco">
+      <h5><img src="assets/ficha/estrela.webp" alt="" width="22" height="22" loading="lazy">Perícias</h5>
+      <p class="fx-pericias"><span>Feitiços <span class="dado">d8</span></span><span>Reflexos <span class="dado">d6</span></span><span>Voo <span class="dado">d6</span></span><span>Vontade <span class="dado">d6</span></span><span>Intuição <span class="dado">d6</span></span><span class="fx-resto">o resto <span class="dado">d4</span></span></p>
+    </div>
+    <div class="fx-duas">
+      <div class="fx-bloco">
+        <h5><img src="assets/ficha/varinha.webp" alt="" width="22" height="22" loading="lazy">Varinha</h5>
+        <p>Cerejeira, corda de dragão, 11 polegadas, flexível. <strong>Leal</strong>, Vínculo 1.</p>
+      </div>
+      <div class="fx-bloco">
+        <h5><img src="assets/ficha/pena.webp" alt="" width="22" height="22" loading="lazy">Quem é</h5>
+        <p><strong>Peculiaridade:</strong> Impulsiva. <strong>Medo:</strong> afogar-se.</p>
+      </div>
+    </div>
+    <div class="fx-bloco">
+      <h5><img src="assets/ficha/livro.webp" alt="" width="22" height="22" loading="lazy">Feitiços</h5>
+      <dl class="fx-feiticos">
+        <dt>Dominado</dt><dd>Expelliarmus <em>(não ocupa Prontidão)</em></dd>
+        <dt>Aprendido</dt><dd>Lumos, Alohomora, Flipendo, Incendio, Wingardium Leviosa <em>(3 marcas de prática)</em></dd>
+        <dt>Em aprendizado</dt><dd>Rictusempra <em>(2 marcas de treino)</em></dd>
+        <dt>Observado</dt><dd>Protego <em>(viu um monitor usar)</em></dd>
+        <dt>Prontidão</dt><dd>Flipendo, Incendio, Lumos, Wingardium Leviosa</dd>
+      </dl>
+    </div>
+    <div class="fx-bloco">
+      <h5><img src="assets/ficha/pena.webp" alt="" width="22" height="22" loading="lazy">Notas do último trimestre</h5>
+      <p class="fx-notas"><span>Feitiços <b>5</b></span><span>Transfiguração <b>3</b></span><span>DCAT <b>4</b></span><span>Poções <b>2</b></span><span>Herbologia <b>3</b></span></p>
+      <p>Técnica de matéria: Precisão (Feitiços). Ana precisa estudar Poções, mas é do time de Quadribol, e o treino come um período por semana.</p>
+    </div>
+  </div>
+  <p class="fx-legenda">Ficha em branco para imprimir: <a href="ficha.html">três folhas A4 em pergaminho</a>.</p>
 
   <h3>Exemplo de combate</h3>
   <p>Ana enfrenta um Grindylow (Perigo 2, Defesa 7, PV 12) na margem do lago. <strong>Fases:</strong> Ana lança feitiços, então age na fase de feitiços; o Grindylow morde e agarra, então age na fase corpo a corpo, depois dela.</p>
   <p><strong>Rodada 1.</strong> Ana lança Flipendo. A DT é a maior entre a DT do Círculo (5) e a Defesa do Grindylow (7): 7. Mente <span class="dado">d6</span> + Feitiços <span class="dado">d8</span> = 4 + 5 = 9, acerta. Dano RA + 0 = 5; o Grindylow fica com 7 PV e é empurrado 3 m. Na fase corpo a corpo, ele volta e ataca: 4 + 5 = 9 contra Defesa 9, acerta. Ana ainda não sabe Protego, então reage com <strong>Desviar</strong> (tem espaço na margem): Corpo <span class="dado">d8</span> + Reflexos <span class="dado">d6</span> = 7 + 3 = 10, maior que o ataque — escapa sem dano.</p>
-  <p><strong>Rodada 2.</strong> Ana lança Flipendo de novo e tira 6 e 6. Os dois dados somados são iguais e maiores que 4, e a soma máxima (14) alcança a DT: crítico. Dano: os dois maiores resultados, 6 + 6 = 12. O Grindylow some na água. Ana ganha 1 Ímpeto e, na próxima semana, uma marca de prática em Flipendo.</p>
+  <p><strong>Rodada 2.</strong> Ana lança Flipendo de novo e tira 6 e 6. Os dois dados somados são iguais e maiores que 4, e a soma máxima (14) alcança a DT: crítico. Dano: os dois maiores resultados, 6 + 6 = 12. O Grindylow some na água. Ana ganha 1 Ímpeto e duas marcas de prática em Flipendo: crítico numa cena de risco vale duas.</p>
 
   <h3>Exemplo de poção</h3>
   <p>Lia, 2º ano, Mente <span class="dado">d8</span> e Poções <span class="dado">d6</span>, prepara Essência de Ditamno: DT 7, Preparo 12, 4 etapas, todos os ingredientes.</p>
@@ -46,7 +74,7 @@
   <p>A simulação do livro (tests/simulacoes.py) não acha abordagem que vença sempre. Com um dado bom para a receita, Cuidadosa e Normal empatam e quase nunca explodem. Em receita difícil e volátil, a Normal explode muito e a Cuidadosa costuma render mais. A Arriscada só compensa com dado fraco e etapas acabando. O melhor, quase sempre, é trocar conforme a Instabilidade: arriscar cedo, ser cuidadoso quando ela chega a 2 ou 3.</p>
 
   <h3>Exemplo de semana</h3>
-  <p>Tomás, 1º ano, Grifinória, tem 3 períodos livres. Segunda, faz o dever de Poções (+1 de aproveitamento). Quarta, estuda o Wingardium Leviosa (Mente + Feitiços DT 7: 6 e 4, sucesso, 1 marca de treino; agora tem 2 de 3). Sexta, deveria estudar para a prova de História, mas a amiga dele, Ana, foi pega fora da cama e ele vai com ela à detenção: perde o período, mas ganha um laço de Afeto com ela. Na prova da semana seguinte, sem ter estudado, rola sem o +1 passo.</p>
+  <p>Tomás, 1º ano, Grifinória, tem 3 períodos livres. Segunda, faz o dever de Poções (+1 de aproveitamento). Quarta, estuda o Wingardium Leviosa (Estudar: Mente + Conhecimento Mágico, DT 5 do Círculo 1: 6 e 4, sucesso, 1 marca de treino; agora tem 2 de 3). Sexta, deveria estudar para a prova de História, mas a amiga dele, Ana, foi pega fora da cama e ele vai com ela à detenção: perde o período, mas ganha um laço de Afeto com ela. Na prova da semana seguinte, sem ter estudado, rola sem o +1 passo.</p>
 
   <h3>Glossário</h3>
   <div class="rolagem"><table class="compacta">
@@ -55,7 +83,7 @@
   <tr><td><strong>Ação / movimento / reação</strong></td><td>O que você faz no turno; a reação é uma por rodada, fora do turno.</td></tr>
   <tr><td><strong>Animagia</strong></td><td>Ritual de meses que dá uma forma animal permanente. O animal não é escolhido; a poção é pessoal.</td></tr>
   <tr><td><strong>Aproveitamento</strong></td><td>Marcas de aula e dever numa matéria durante o trimestre; somadas à prova, viram a Nota.</td></tr>
-  <tr><td><strong>Ameaça</strong></td><td>O orçamento de um encontro: a soma dos Perigos que ele comporta.</td></tr>
+  <tr><td><strong>Ameaça</strong></td><td>O peso de um inimigo no encontro: Perigo (ou Grau) + Traços pesados + Poderes que incapacitam + 1 por ação extra. O orçamento do encontro diz quanta Ameaça cabe nele (Capítulo IX).</td></tr>
   <tr><td><strong>Círculo</strong></td><td>Dificuldade de um feitiço, de 1 a 4, mais os Proibidos.</td></tr>
   <tr><td><strong>Carga</strong></td><td>Os espaços que você carrega: 5 + metade do valor do Corpo.</td></tr>
   <tr><td><strong>Conjuração Improvisada</strong></td><td>Tentar um feitiço só Observado: 1 Ímpeto, –1 passo, DT +4.</td></tr>

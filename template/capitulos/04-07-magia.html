@@ -49,7 +49,7 @@
   </tbody></table></div>
   <ul>
     <li><strong>Marca de treino</strong> (para Aprender): sai das aulas práticas, do estudo no tempo livre e de um mentor (<a href="#cap14">Capítulo XIV</a>). Só serve para feitiços Em aprendizado.</li>
-    <li><strong>Marca de prática</strong> (para Dominar): ganha quando você lança o feitiço Aprendido com sucesso numa situação de risco real — combate, prova, uma cena em que algo está em jogo — ou numa sessão de treino no tempo livre (no máximo uma marca de treino por feitiço por semana). Um crítico com o feitiço numa cena de risco vale duas marcas.</li>
+    <li><strong>Marca de prática</strong> (para Dominar): ganha quando você lança o feitiço Aprendido com sucesso numa situação de risco real — combate, prova, uma cena em que algo está em jogo — ou numa sessão de treino no tempo livre (no máximo uma marca de treino por feitiço por semana). Um crítico com o feitiço numa cena de risco vale duas marcas. No máximo uma chance por feitiço por cena, e só quando o feitiço muda a situação: lançar de novo contra o mesmo perigo controlado não rende marca.</li>
   </ul>
   <p>Um estudante pode ter quinze feitiços Aprendidos e só dois Dominados. É isso que faz o Expelliarmus do Harry ser o feitiço dele.</p>
 
@@ -152,7 +152,7 @@
   <ul>
     <li><strong>Aprender:</strong> o feitiço base Dominado e 3 marcas de treino da forma Maxima (a ação Treinar, Capítulo XIV), sem PE — é o mesmo feitiço levado ao limite. O Protego Maxima é a exceção: é feitiço próprio do Grimório, pago com PE.</li>
     <li><strong>Lançar:</strong> DT do Círculo seguinte (+2) e gasta a ação e o movimento. Calado, só com o feitiço Refinado (<a href="#nao-verbal">Magia não verbal</a>); sem varinha, é Indisponível até o Domínio excepcional.</li>
-    <li><strong>Falha:</strong> sai o feitiço comum, não o Maxima. <strong>Desastre:</strong> o efeito ampliado sai contra você — a luz cega quem lançou, a explosão o pega no raio, o jato o derruba.</li>
+    <li><strong>Resultado:</strong> alcançou a DT da forma Maxima, sai a Maxima; alcançou só a DT do feitiço comum, sai o comum; abaixo das duas, falha e não sai nada (Lumos DT 5, Lumos Maxima DT 7: um 3 não acende nem a varinha). <strong>Desastre:</strong> o efeito ampliado sai contra você — a luz cega quem lançou, a explosão o pega no raio, o jato o derruba.</li>
   </ul>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Forma</th><th>Efeito</th></tr></thead>
@@ -239,8 +239,8 @@
   <tbody>
   <tr><td>1</td><td>Os fundamentos.</td></tr>
   <tr><td>2</td><td>Dois feitiços de Círculo 1 em Domínio excepcional sem varinha.</td></tr>
-  <tr><td>3</td><td>Dois de Círculo 2 em Domínio excepcional e uma formação avançada (mestre, escola ou anos de estudo).</td></tr>
-  <tr><td>4</td><td>Um treinamento extraordinário com um mestre ou uma fonte raríssima.</td></tr>
+  <tr><td>3</td><td>Tudo o que o Círculo 2 pediu, dois de Círculo 2 em Domínio excepcional e uma formação avançada (mestre, escola ou anos de estudo).</td></tr>
+  <tr><td>4</td><td>Tudo o que o Círculo 3 pediu, dois de Círculo 3 em Domínio excepcional e um treinamento extraordinário com um mestre ou uma fonte raríssima.</td></tr>
   <tr><td>Imperdoáveis, Proibidos, efeitos permanentes, de transporte, sobre a mente ou sobre a vida</td><td>Nunca abaixo do Domínio excepcional, e só se o Mestre decidir que existe um jeito. Nada disso sai "pela metade".</td></tr>
   </tbody></table></div>
   <p>Condições especiais do feitiço continuam valendo sem varinha (a lembrança feliz do Patrono, o alvo à vista).</p>
@@ -730,6 +730,15 @@
 
   <h3 id="imperdoaveis">As Maldições Imperdoáveis</h3>
   <p>As três não se balanceiam diminuindo o efeito. Uma Avada Kedavra que acerta mata o bruxo mais forte do mundo. Elas se balanceiam pela dificuldade de aprender (só fonte Proibida, Círculo 4 ou Proibido, dado mínimo <span class="dado">d10</span> em Artes das Trevas), pela <strong>intenção</strong> que exigem, pelas defesas que existem <em>antes</em> do impacto e pelo preço de usá-las.</p>
+  <h4 id="imperdoaveis-ficha">As três numa tabela</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Maldição</th><th>Classe</th><th>Teste</th><th class="num">PE</th><th>Exige</th><th>Ao lançar</th><th>Corrupção</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Crucio</strong></td><td>Círculo 4, só de fonte proibida</td><td>Ataque contra a maior entre DT 11 e a Defesa</td><td class="num">4</td><td>Artes das Trevas <span class="dado">d10</span>, intenção</td><td>A ação, toda rodada que sustenta</td><td class="num">2</td></tr>
+  <tr><td><strong>Imperio</strong></td><td>Círculo 4, só de fonte proibida</td><td>DT 11 (não a Defesa); o alvo resiste depois</td><td class="num">4</td><td>Artes das Trevas <span class="dado">d10</span>, intenção</td><td>—</td><td class="num">2</td></tr>
+  <tr><td><strong>Avada Kedavra</strong></td><td>Proibido</td><td>Ataque contra a maior entre DT 13 e a Defesa</td><td class="num">6</td><td>Artes das Trevas <span class="dado">d10</span>, intenção</td><td><span class="dado">1d4</span> DET</td><td class="num">3 se mata</td></tr>
+  </tbody></table></div>
+  <p>As DTs especiais desta seção valem acima da DT geral do Círculo. NPCs seguem a mesma tabela (Capítulo X).</p>
   <h4>Intenção verdadeira</h4>
   <p>A intenção é um pré-requisito, não uma perícia. O jogador declara o que o personagem quer; o Mestre verifica se isso é coerente com quem ele é e com o momento. Só então vem o teste. Sem a intenção certa, a maldição falha, por melhor que seja a rolagem.</p>
   <div class="rolagem"><table class="compacta">
@@ -1014,7 +1023,7 @@
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Instabilidade final</th><th>Qualidade</th><th>Efeito</th></tr></thead>
   <tbody>
-  <tr><td>0</td><td><strong>Excelente</strong></td><td>Duração dobrada, ou +2 no que a poção cura.</td></tr>
+  <tr><td>0</td><td><strong>Excelente</strong></td><td>Duração dobrada, ou +2 no que a poção cura. Conserva pelo menos tanto quanto a Boa.</td></tr>
   <tr><td>1–2</td><td><strong>Boa</strong></td><td>Como na receita.</td></tr>
   <tr><td>3–4</td><td><strong>Instável</strong></td><td>Metade do efeito; quem bebe rola <span class="dado">d6</span>: com 1, um efeito colateral à escolha do Mestre.</td></tr>
   </tbody></table></div>
@@ -1213,7 +1222,8 @@
     <li><strong>Etapa</strong> é trabalho ativo: uma hora; poções de DT 13 ou mais, um dia.</li>
     <li><strong>Repouso.</strong> Receitas longas (Polissuco, Restauradora, Mata-Cão, Felix Felicis) espalham as etapas pelo tempo total da receita — a Felix tem oito dias de trabalho ao longo de seis meses; entre eles, a poção descansa. Perder uma etapa na data certa soma 2 de Instabilidade.</li>
     <li><strong>Lugar:</strong> caldeirão e fogo. Sem bancada (no campo, num quarto), –1 passo.</li>
-    <li><strong>Ingredientes</strong> custam, por poção, a DT em sicles (DT 9: 9 sicles). DT 13+: a DT em galeões, e o Ministério pode perguntar por quê.</li>
+    <li><strong>Ingredientes</strong> custam, por poção, a DT em sicles (DT 9: 9 sicles). DT 13+: a DT em galeões, e o Ministério pode perguntar por quê. Esse é o preço do <em>kit comum</em> da receita, que não se desmonta: ninguém tira o pelo de unicórnio do kit para vender. Ingrediente R3 a R5 (Capítulo XVI) não vem no kit e se compra à parte, pelo catálogo. O que a escola dá na aula fica na aula.</li>
+    <li><strong>RA da poção.</strong> Quando o efeito diz RA (Wiggenweld, Ditamno, Poção da Paz), quem bebe rola <span class="dado">d8</span> na hora: esse é o RA. Vale para poção feita, comprada ou achada; a Excelente soma +2, como na qualidade.</li>
     <li><strong>Poção pronta</strong> custa o dobro dos ingredientes, se alguém vender.</li>
     <li><strong>Carregar:</strong> no máximo três frascos no cinto; o resto vai na mochila e leva uma ação para pegar.</li>
     <li><strong>Acúmulo:</strong> duas doses da mesma poção não somam; a segunda só renova a duração. Poções diferentes acumulam, dentro do limite de +2 passos. Curas por poção entram no limite de curas do dia (Capítulo VII).</li>
@@ -1510,6 +1520,7 @@
 
   <h3>Condições</h3>
   <p>Toda condição tem uma de cinco durações. A tabela é a regra única: se um feitiço disser outra coisa, vale o feitiço só no número de rodadas.</p>
+  <p><strong>A mesma condição não acumula consigo mesma:</strong> pegar de novo só renova a duração, a mais longa vence. Atordoado duas vezes continua Atordoado; Preso por corda e por gelo continua Preso, e cada fonte se solta à parte. Condições diferentes convivem, com as penalidades somadas, salvo quando o feitiço diz outra coisa.</p>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Duração</th><th>Como acaba</th></tr></thead>
   <tbody>

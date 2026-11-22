@@ -114,7 +114,25 @@ FRASES = {
     "sem varinha: efeito sem número": "Efeito sem número",
     "Voto Perpétuo: cláusulas por escrito": "palavra por palavra",
     "Maxima: não serve para tudo": "Não é um sufixo que serve para tudo",
-    "Maxima: falha sai o feitiço comum": "sai o feitiço comum, não o Maxima",
+    "Maxima: abaixo das duas DTs não sai nada": "alcançou só a DT do feitiço comum, sai o comum; abaixo das duas, falha",
+    "sem varinha: Círculo 4 pede o 3": "Tudo o que o Círculo 3 pediu, dois de Círculo 3 em Domínio excepcional",
+    "marcas: uma chance por feitiço por cena": "No máximo uma chance por feitiço por cena",
+    "condições: a mesma não acumula": "A mesma condição não acumula consigo mesma",
+    "poções: kit não se desmonta": "que não se desmonta",
+    "poções: RA da poção no d8": "quem bebe rola <span class=\"dado\">d8</span> na hora",
+    "poções: Excelente conserva como a Boa": "Conserva pelo menos tanto quanto a Boa",
+    "fraqueza: DT arredonda para cima": "arredondada para cima (Perigo 3: DT 7)",
+    "objeto Excelente não falha": "o de Acabamento excelente não falha",
+    "Petisco: só quem quer comer": "Uma criatura que possa e queira comer",
+    "hora extra: só com emprego": "Só com emprego, uma vez por semana",
+    "clube: PE dentro do teto": "dentro do teto de 4 PE da sessão e de 30 PE do ano",
+    "aliados morrem como personagens": "Ninguém tem imunidade de roteiro",
+    "NPC: Grau não é Nível": "Grau não é o Nível dos personagens",
+    "Imperdoáveis numa tabela": 'id="imperdoaveis-ficha"',
+    "apêndice: crítico rende duas marcas": "duas marcas de prática em Flipendo",
+    "apêndice: Estudar usa DT do Círculo": "DT 5 do Círculo 1",
+    "introdução cita o XVI": "Os capítulos <strong>XIII a XVI</strong>",
+
     "Tempestade de fogo não é fogo das trevas": "Não é fogo das trevas",
     "Fulgur Caeli: nome do jogo, só Mestre": "Só um bruxo Mestre",
     "materiais: achar não dá direito de ferir": "Achar uma criatura não dá direito de machucá-la",
@@ -338,7 +356,17 @@ for attrs in re.findall(r'<div class="cartao bruxo"([^>]*)>', HTML):
           and int(A["ameaca"]) == n + int(A["pes"]) + int(A["inc"]) + int(A["duplo"])
           and all(x in CIRC for x in fe) and len(fora) <= (1 if A["papel"] == "Trevoso" else 0)
           and all(CIRC[x] == 5 or x in ("Crucio", "Imperio") for x in fora))
+    po = A.get("poderes", "").split("|")
+    # regressão: Protego só do Grau 3; Imperdoável de Poder só Grau 8+ ou Trevoso 6+; reforço Grau 4+; Domador Grau 3+
+    ok = ok and ("Protego" not in fe or n >= 3)
+    ok = ok and all(n >= 8 or (A["papel"] == "Trevoso" and n >= 6) for x in po if x in ("Crucio", "Imperio"))
+    ok = ok and all(x in fe for x in po if x in ("Crucio", "Imperio"))
+    ok = ok and ("Chamar reforço" not in po or n >= 4) and (A["papel"] != "Domador" or n >= 3)
+    ok = ok and ("Ataque duplo" not in po or n >= 8)
     if not ok: ruins.append(A["papel"] + str(n))
+a = HTML.index('id="forja-bruxos"'); b = HTML.index('id="aliados"', a); S = HTML[a:b]
+checa("Forja de Bruxos: Protego só do Grau 3, reforço Grau 4+, Domador Grau 3+, nada abaixo de 1",
+      "— (só Desviar)" in S and "Grau 4+. Patrono" in S and "Só Grau 3+. Tem uma criatura" in S and "(mínimo 1)" in S and "Nível" not in re.sub(r"Nível dos personagens|o Nível \(1|um aluno de Nível 6", "", S))
 checa(f"Forja de Bruxos: {bx} fichas batem com Tábua + Papel, feitiços no Círculo {ruins if ruins else ''}", bx >= 10 and not ruins)
 
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")

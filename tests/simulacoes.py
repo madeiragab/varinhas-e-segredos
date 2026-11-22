@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Simulações de Varinhas e Segredos (Monte Carlo com semente fixa, sem dependências).
 
-Execute: python build.py && python tests/simulacoes.py [poções|quadribol|combate|evolução]
+Execute: python build.py && python tests/simulacoes.py [poções|quadribol|combate|bruxos|evolução]
 Confere poções (três abordagens), duração do Quadribol, duração e risco dos combates e os sete anos de PE.
 Os modelos simplificam o que só a mesa decide (táticas, poderes, cenário): servem para achar
 números fora do lugar, não para provar equilíbrio.
@@ -254,6 +254,66 @@ def sim_combate(n=1500):
     return res
 
 
+
+# ---------------------------------------------------------------- bruxos (Forja de Bruxos)
+def fichas_bruxos():
+    out = []
+    for attrs, nome in re.findall(r'<div class="cartao bruxo"([^>]*)>\s*<h5>(.*?) <em>', HTML):
+        A = dict(re.findall(r'data-([a-z]+)="([^"]*)"', attrs))
+        dados = tuple(int(x) for x in A["atq"].replace("d", "").split("+"))
+        out.append((nome, int(A["nivel"]), A["papel"], int(A["pv"]), int(A["def"]), dados, int(A["dano"]), int(A["ameaca"])))
+    return out
+
+
+def luta_bruxo(ano, bruxo, aliado=None, n_alunos=4):
+    """4 alunos contra um bruxo da Forja; aliado opcional ataca uma vez por rodada com a Tábua dele."""
+    m, f, c, r, (circ, mod) = ALUNO[ano]
+    pv_max = 8 + c + 3 * (ano - 1); defesa = 5 + r // 2
+    reacao = (m, f) if ano >= 5 else (c, r)
+    alunos = [pv_max] * n_alunos
+    _, grau, _, pv, dfx, dados, dmod, _ = bruxo
+    pv = int(pv * 1.5) if n_alunos >= 3 else pv  # sozinho contra três ou mais
+    for rodada in range(1, 31):
+        for i in range(n_alunos):
+            if alunos[i] > 0 and pv > 0:
+                total, ok, crit, _, top = rola((m, f), max(3 + 2 * circ, dfx))
+                if ok: pv -= (sum(top[:2]) if crit else top[0]) + mod
+        if aliado and pv > 0:
+            total, ok, crit, _, top = rola(aliado[5], dfx)
+            if ok: pv -= (sum(top[:2]) if crit else top[0]) + aliado[6]
+        if pv <= 0:
+            return rodada, sum(a <= 0 for a in alunos)
+        for _ in range(2):  # chefe sozinho: duas ações, a segunda é a ação extra
+            de_pe = [i for i in range(n_alunos) if alunos[i] > 0]
+            if not de_pe: break
+            i = rnd.choice(de_pe)
+            total, ok, crit, _, top = rola(dados, defesa)
+            if not ok: continue
+            dano = (sum(top[:2]) if crit else top[0]) + dmod
+            rt = rola(reacao, 0)[0]
+            dano = 0 if rt >= total else dano // 2 if rt >= total - 2 else dano
+            alunos[i] -= dano
+        if all(a <= 0 for a in alunos):
+            return rodada, n_alunos
+    return 30, sum(a <= 0 for a in alunos)
+
+
+def sim_bruxos(n=1500):
+    print("BRUXOS — cada ficha pronta sozinha contra 4 alunos do ano em que ela é 'Justa' (Grau = ano + 1), com e sem aliado")
+    print("  (rodadas medianas | % com alguém caído | % grupo inteiro caído)")
+    fichas = fichas_bruxos()
+    aliado = next(x for x in fichas if x[0].startswith("Monitor"))
+    res = {}
+    for b in fichas:
+        ano = max(1, min(7, b[1] - 1))
+        for com in (None, aliado):
+            if com is b: continue
+            rs = [luta_bruxo(ano, b, com) for _ in range(n)]
+            rods = sorted(x[0] for x in rs); caiu = sum(x[1] > 0 for x in rs) / n; tpk = sum(x[1] == 4 for x in rs) / n
+            res[(b[0], com is not None)] = (rods[n // 2], caiu, tpk)
+            print(f"  {b[0][:26]:26} G{b[1]} vs {ano}º ano{' + Monitor' if com else '          '}: {rods[n//2]:2} rodadas | {caiu*100:3.0f}% | {tpk*100:3.0f}%")
+    return res
+
 # ---------------------------------------------------------------- evolução
 def sim_evolucao():
     print("EVOLUÇÃO — 30 PE por ano, todos gastos; nível = 1 + PE gastos ÷ 12")
@@ -272,4 +332,5 @@ if __name__ == "__main__":
     if qual in ("tudo", "evolução"): sim_evolucao(); print()
     if qual in ("tudo", "quadribol"): sim_quadribol(); print()
     if qual in ("tudo", "combate"): sim_combate(); print()
+    if qual in ("tudo", "bruxos"): sim_bruxos(); print()
     if qual in ("tudo", "poções"): sim_pocoes()

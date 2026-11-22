@@ -1151,3 +1151,29 @@ td strong { color: var(--texto); }
   .parte + .capitulo { break-before: auto; page-break-before: auto; }
   .rolagem { border: 1px solid var(--borda); }
 }
+
+/* ============================================================
+   NAVEGAÇÃO — busca, ficha, sumário e topo, fixos no canto
+   ============================================================ */
+.navega { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+  opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity .2s, transform .2s; }
+.navega.visivel, .navega.aberta, .navega:focus-within { opacity: 1; pointer-events: auto; transform: none; }
+.navega > a, .navega > button { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; padding: 0;
+  background: var(--papel); border: 1px solid var(--borda-forte); color: var(--ouro); box-shadow: 0 4px 14px var(--sombra); }
+.navega > a:hover, .navega > button:hover { border-color: var(--ouro); color: var(--acento); }
+.navega svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.busca-caixa { width: min(24rem, calc(100vw - 32px)); background: var(--papel); border: 1px solid var(--borda-forte); border-radius: 10px;
+  box-shadow: 0 10px 30px var(--sombra); padding: 10px; }
+.busca-caixa[hidden] { display: none; }
+.busca-caixa input { width: 100%; box-sizing: border-box; font: inherit; font-size: 1rem; padding: 9px 12px; border-radius: 6px; border: 1px solid var(--borda); background: var(--fundo); color: var(--texto); }
+.busca-caixa input:focus { outline: 2px solid var(--acento); outline-offset: 0; }
+.busca-caixa ol { list-style: none; margin: 6px 0 0; padding: 0; max-height: 50vh; overflow-y: auto; }
+.busca-caixa li { margin: 0; padding: 0; }
+.busca-caixa li::before { content: none; }
+.busca-caixa li button { width: 100%; text-align: left; background: none; border: 0; border-radius: 5px; padding: 7px 8px; cursor: pointer; color: var(--texto); font: inherit; display: flex; flex-direction: column; gap: 1px; }
+.busca-caixa li button:hover, .busca-caixa li button:focus { background: var(--acento-fraco); outline: none; }
+.busca-caixa li small { font-family: var(--sans); font-size: .72rem; color: var(--texto-suave); }
+.busca-caixa li.vazio { padding: 7px 8px; color: var(--texto-suave); font-style: italic; }
+@keyframes achado { from { background: var(--acento-fraco); box-shadow: 0 0 0 6px var(--acento-fraco); } to { background: transparent; box-shadow: none; } }
+.achado { animation: achado 2.4s ease-out; }
+@media print { .navega { display: none !important; } }

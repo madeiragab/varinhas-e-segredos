@@ -302,5 +302,44 @@ for l in re.findall(r"<tr><td>(.*?)</tr>", s, re.S):
 cor = S.count("<tr><td><strong>") - ani - 3
 checa(f"Animais: {ani} e {cor} corujas, habilidade com limite e Laço 2 {ruins if ruins else ''}", ani >= 15 and cor >= 5 and {"Gato", "Sapo"} <= perm and not ruins)
 
+# 17. Forja de Bruxos: toda ficha sai da Tábua + Papel; feitiços existem e cabem no Círculo do Nível
+a = HTML.index("<h3>A Tábua de Perigo</h3>"); b = HTML.index("</table>", a)
+TABUA = {}
+for l in re.findall(r"<tr>(.*?)</tr>", HTML[a:b], re.S)[1:]:
+    c = re.findall(r"<td[^>]*>(.*?)</td>", l)
+    TABUA[int(c[0])] = dict(pv=int(c[2]), df=int(c[3]), atq=c[4], dano=int(c[5][3:]), dt=int(c[6]), ntr=int(c[7]), npo=int(c[8]))
+CIRC = {}
+for k, (ini, fim) in enumerate([("Círculo 1 ·", "Círculo 2 ·"), ("Círculo 2 ·", "Círculo 3 ·"), ("Círculo 3 ·", "Círculo 4 ·"), ("Círculo 4 ·", "<h3>Proibidos</h3>"), ("<h3>Proibidos</h3>", "</section>")], 1):
+    a = HTML.index(ini); b = HTML.index(fim, a + 1)
+    for n in re.findall(r"<tr><td><strong>(.*?)</strong>", HTML[a:b]): CIRC.setdefault(n, k)
+CMAX = {1: 1, 2: 1, 3: 2, 4: 2, 5: 3, 6: 3, 7: 3, 8: 4, 9: 4, 10: 4, 11: 4}
+DETN = {n: 3 + n for n in range(1, 12)}
+PAP = {"Duelista": (1, 0, 1, 0), "Curandeiro": (1, 0, 0, -3), "Erudito": (.8, 0, 0, 0), "Batedor": (1, 2, 0, 0), "Protetor": (1.3, 0, -1, 0),
+       "Trapaceiro": (1, 1, 0, 0), "Domador": (1, 0, 0, -2), "Comandante": (1, 0, 0, 0), "Trevoso": (.9, 0, 0, 2), "Caçador": (1.1, 1, 0, 0),
+       "Brutamontes": (1.2, -1, 0, 1), "Mentor": (1, 0, 0, -2)}
+def passo_atq(dados, n):
+    d = [int(x) for x in dados.replace("d", "").split("+")]; P = [4, 6, 8, 10, 12]
+    if n > 0:
+        if len(d) == 3: d[2] = P[min(4, P.index(d[2]) + 1)]
+        elif d[0] < 12: d[0] = P[P.index(d[0]) + 1]
+        elif d[1] < 12: d[1] = P[P.index(d[1]) + 1]
+        else: d.append(4)
+    elif n < 0:
+        if len(d) == 3: d = d[:2]
+        else: d[0] = P[max(0, P.index(d[0]) - 1)]
+    return "+".join("d%d" % x for x in sorted(d[:2], reverse=True) + d[2:])
+bx, ruins = 0, []
+for attrs in re.findall(r'<div class="cartao bruxo"([^>]*)>', HTML):
+    bx += 1; A = dict(re.findall(r'data-([a-z]+)="([^"]*)"', attrs)); n = int(A["nivel"]); T = TABUA[n]; m, ddf, dat, ddn = PAP[A["papel"]]
+    fe = A["feiticos"].split("|"); fora = [x for x in fe if CIRC.get(x, 99) > CMAX[n]]
+    ok = (int(A["pv"]) == int(T["pv"] * m + .5) and int(A["def"]) == T["df"] + ddf and A["atq"] == passo_atq(T["atq"], dat)
+          and int(A["dano"]) == T["dano"] + ddn and int(A["dt"]) == T["dt"] and int(A["det"]) == DETN[n]
+          and int(A["ntr"]) <= T["ntr"] and int(A["npo"]) <= T["npo"] and int(A["pes"]) <= (1 if n < 6 else 2)
+          and int(A["ameaca"]) == n + int(A["pes"]) + int(A["inc"]) + int(A["duplo"])
+          and all(x in CIRC for x in fe) and len(fora) <= (1 if A["papel"] == "Trevoso" else 0)
+          and all(CIRC[x] == 5 or x in ("Crucio", "Imperio") for x in fora))
+    if not ok: ruins.append(A["papel"] + str(n))
+checa(f"Forja de Bruxos: {bx} fichas batem com Tábua + Papel, feitiços no Círculo {ruins if ruins else ''}", bx >= 10 and not ruins)
+
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

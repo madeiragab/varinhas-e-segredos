@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ficha de Personagem — Varinhas e Segredos</title>
+<style>
+@font-face { font-family: "Cinzel"; src: url("assets/fontes/cinzel.woff2") format("woff2"); font-weight: 400 900; font-display: swap; }
+@font-face { font-family: "EB Garamond"; src: url("assets/fontes/garamond.woff2") format("woff2"); font-weight: 400 800; font-display: swap; }
+@font-face { font-family: "EB Garamond"; src: url("assets/fontes/garamond-italico.woff2") format("woff2"); font-weight: 400 800; font-style: italic; font-display: swap; }
+:root {
+  --tinta: #2a2030; --suave: #75664f; --roxo: #4f2f80; --ouro: #9a7426; --ouro-claro: rgba(154,116,38,.45);
+  --linha: rgba(90,62,40,.38); --fio: rgba(90,62,40,.2); --veu: rgba(255,250,236,.5);
+  --tit: "Cinzel", "Palatino Linotype", Georgia, serif; --txt: "EB Garamond", "Palatino Linotype", Georgia, serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; color: var(--tinta); }
+body { font: 10.5pt/1.25 var(--txt); padding: 16px 8px; }
+.barra { max-width: 210mm; margin: 0 auto 14px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font: 14px/1.4 system-ui, sans-serif; color: #555; }
+.barra button { font: 600 14px system-ui, sans-serif; padding: 9px 18px; border: 0; background: var(--roxo); color: #fff; border-radius: 6px; cursor: pointer; }
+.barra a { color: var(--roxo); }
+.palco { overflow-x: auto; }
+.folha { width: 210mm; height: 297mm; margin: 0 auto 18px; padding: 16mm 17mm 25mm; position: relative;
+  background: #f4e9cf url("assets/ficha/pergaminho.webp") center / 100% 100% no-repeat;
+  box-shadow: 0 6px 28px rgba(40,25,10,.22); display: flex; flex-direction: column; gap: 2.6mm; overflow: hidden; }
+@page { size: A4 portrait; margin: 0; }
+@media print {
+  html, body { background: none; } body { padding: 0; } .barra { display: none; }
+  .folha { box-shadow: none; margin: 0; break-after: page; page-break-after: always; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+img.i { width: 6.2mm; height: 6.2mm; object-fit: contain; flex: none; }
+img.mini { width: 4mm; height: 4mm; object-fit: contain; margin-right: .8mm; vertical-align: -1mm; }
+img.grande { width: 11mm; height: 11mm; object-fit: contain; }
+
+header.topo { display: flex; flex-direction: column; align-items: center; text-align: center; gap: .6mm; }
+header.topo h1 { font: 700 18pt/1 var(--tit); letter-spacing: .04em; color: var(--roxo); }
+header.topo p { display: flex; align-items: center; gap: 2.4mm; font: 600 6.8pt/1 var(--tit); letter-spacing: .3em; text-transform: uppercase; color: var(--ouro); }
+header.topo p img { width: 7mm; height: 7mm; object-fit: contain; }
+.topo-t h1 { font: 700 17pt/1 var(--tit); letter-spacing: .03em; color: var(--roxo); white-space: nowrap; }
+.topo-t p { font: 600 7pt/1.6 var(--tit); letter-spacing: .32em; color: var(--ouro); text-transform: uppercase; margin-top: 1.2mm; }
+.topo .fio { display: flex; align-items: center; gap: 2mm; align-self: center; }
+.topo .fio span { width: 9mm; height: 1px; background: var(--ouro); }
+.topo .fio img { width: 9mm; height: 9mm; object-fit: contain; }
+.topo .pag { text-align: right; font: 600 7.4pt var(--tit); letter-spacing: .2em; color: var(--suave); text-transform: uppercase; padding-bottom: 1mm; }
+header.topo::after { content: ""; width: 100%; height: 3px; border-top: 1px solid var(--ouro); border-bottom: 1px solid var(--ouro-claro); margin-top: .6mm; }
+
+.caixa { border: 1px solid var(--linha); border-radius: 2mm; padding: 2mm 3mm 2.6mm; background: var(--veu);
+  box-shadow: inset 0 0 0 2px rgba(255,250,236,.55), inset 0 0 0 2.6px var(--ouro-claro); }
+.caixa > h2 { display: flex; align-items: center; gap: 1.6mm; margin-bottom: 1.4mm; font: 700 8.6pt/1 var(--tit); letter-spacing: .14em; text-transform: uppercase; color: var(--roxo); }
+.caixa > h2 span { white-space: nowrap; }
+.caixa > h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--ouro-claro), transparent); order: 2; }
+.caixa > h2 small { order: 3; font: italic 400 8.2pt var(--txt); letter-spacing: 0; text-transform: none; color: var(--suave); white-space: nowrap; }
+.grade { display: grid; gap: 2.4mm; }
+.g2 { grid-template-columns: 1fr 1fr; } .g3 { grid-template-columns: repeat(3, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); } .g5 { grid-template-columns: repeat(5, 1fr); }
+.g-lado { grid-template-columns: 1.8fr 1fr; }
+.cresce { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.grade.cresce { display: grid; }
+.coluna { display: flex; flex-direction: column; gap: 2.4mm; min-height: 0; }
+.campo { display: flex; flex-direction: column; gap: .4mm; min-width: 0; }
+.campo label { font: 600 6.3pt var(--tit); letter-spacing: .14em; text-transform: uppercase; color: var(--suave); }
+.campo .ln { border-bottom: 1px solid var(--linha); height: 5.6mm; }
+.ck { width: 3.1mm; height: 3.1mm; border: 1px solid var(--tinta); border-radius: .6mm; display: inline-block; flex: none; background: rgba(255,255,255,.35); }
+.bola { width: 3.8mm; height: 3.8mm; border: 1px solid var(--tinta); border-radius: 50%; display: inline-block; background: rgba(255,255,255,.35); box-shadow: inset 0 0 0 1px rgba(255,255,255,.6); }
+.bolas { display: flex; gap: 1.6mm; align-items: center; padding: 1.2mm 0 .6mm; }
+.bolas.corr small { font: 600 6.3pt var(--tit); letter-spacing: .14em; text-transform: uppercase; color: var(--suave); margin-right: 1mm; }
+.dados { display: inline-flex; gap: .7mm; }
+.dados b { font: 600 6.6pt/1 var(--tit); border: 1px solid var(--linha); border-radius: 50%; width: 5mm; height: 5mm; display: grid; place-items: center; color: var(--tinta); background: rgba(255,255,255,.3); }
+
+.atrs { gap: 3mm; }
+.atr { display: grid; grid-template-columns: auto 1fr auto; grid-template-rows: auto auto; align-items: center; column-gap: 2.4mm; row-gap: .6mm;
+  border: 1px solid var(--linha); border-radius: 2mm; padding: 2mm 3mm; background: var(--veu); box-shadow: inset 0 0 0 2px rgba(255,250,236,.55), inset 0 0 0 2.6px var(--ouro-claro); }
+.atr img { grid-row: 1 / 3; }
+.atr h3 { font: 700 11pt/1 var(--tit); letter-spacing: .08em; color: var(--roxo); }
+.atr p { grid-column: 2; font: italic 8.2pt/1.1 var(--txt); color: var(--suave); }
+.atr .val { grid-column: 3; grid-row: 1 / 3; width: 13mm; height: 13mm; border-radius: 50%; border: 1.4px solid var(--ouro); background: rgba(255,255,255,.45);
+  box-shadow: 0 0 0 1.2mm rgba(255,250,236,.5), 0 0 0 calc(1.2mm + 1px) var(--ouro-claro); }
+.atr .dados { grid-column: 1 / -1; grid-row: 3; justify-content: center; margin-top: 1.4mm; }
+
+.pers { gap: 0 5mm; flex: 1; }
+.per { align-content: space-evenly; }
+.per .dados { gap: .5mm; } .per .dados b { width: 4.6mm; height: 4.6mm; font-size: 6.2pt; }
+.per:last-child i { font-size: 9.6pt; letter-spacing: -.01em; }
+.per { display: grid; grid-template-columns: 1fr auto; row-gap: 1mm; align-items: center; font-size: 10pt; }
+.per i { font-style: normal; white-space: nowrap; overflow: hidden; border-bottom: 1px dotted var(--fio); padding-bottom: .4mm; }
+.leg { font: italic 7.8pt var(--txt); color: var(--suave); margin-top: 1.4mm; }
+
+.recursos { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; }
+.rec { border: 1px solid var(--linha); border-radius: 2mm; padding: 1.4mm 2.2mm 1.6mm; background: var(--veu); display: flex; flex-direction: column; gap: .4mm;
+  box-shadow: inset 0 0 0 2px rgba(255,250,236,.55), inset 0 0 0 2.6px var(--ouro-claro); }
+.rec h4 { font: 700 8pt/1 var(--tit); letter-spacing: .12em; text-transform: uppercase; color: var(--roxo); display: flex; align-items: center; gap: 1.4mm; }
+.rec h4 img { width: 5.4mm; height: 5.4mm; }
+.rec .par { display: flex; gap: 2mm; }
+.rec .par div { flex: 1; } .rec .par small { font: 600 5.8pt var(--tit); letter-spacing: .1em; color: var(--suave); text-transform: uppercase; }
+.rec .par .ln { border-bottom: 1px solid var(--linha); height: 5mm; }
+.rec p { font: italic 7.2pt/1.1 var(--txt); color: var(--suave); }
+.cond { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1mm 1.6mm; font-size: 8.8pt; }
+.cond.l4 { grid-template-columns: repeat(4, auto); justify-content: start; gap: 1mm 3mm; padding-top: 1mm; }
+.cond span { display: flex; align-items: center; gap: 1.1mm; white-space: nowrap; }
+.linhas { display: flex; flex-direction: column; }
+.linhas div { border-bottom: 1px solid var(--fio); height: 5.6mm; flex: none; }
+.caixa.cresce .linhas { flex: 1; background: repeating-linear-gradient(transparent 0 calc(5.6mm - 1px), var(--fio) calc(5.6mm - 1px) 5.6mm); }
+.caixa.cresce .linhas div { display: none; }
+.tab { width: 100%; border-collapse: collapse; font-size: 8.8pt; }
+.tab th { font: 600 6.3pt var(--tit); letter-spacing: .1em; text-transform: uppercase; color: var(--suave); text-align: left; padding: 0 1mm .8mm; border-bottom: 1px solid var(--linha); }
+.tab td { border-bottom: 1px solid var(--fio); height: 5.6mm; padding: 0 1mm; }
+.tab .c { text-align: center; width: 10mm; }
+.feit td:nth-child(5), .feit th:nth-child(5) { border-right: 1px solid var(--fio); }
+.notas td { font-size: 8.6pt; } .notas .c { width: 7mm; }
+.moedas { margin-top: 1.6mm; }
+footer { display: none; justify-content: center; gap: 4mm; font: 600 6.4pt var(--tit); letter-spacing: .22em; text-transform: uppercase; color: var(--suave); }
+footer span:nth-child(2) { color: var(--ouro); }
+@media screen and (max-width: 225mm) { .palco { padding-bottom: 8px; } .folha { margin-left: 0; } }
+</style>
+</head>
+<body>
+<div class="barra">
+  <button onclick="window.print()">Imprimir ficha</button>
+  <span>Duas folhas A4. Na impressão, marque “Gráficos de fundo” para sair o pergaminho.</span>
+  <a href="index.html#cap3">Voltar ao livro</a>
+</div>
+<div class="palco">
+<section class="folha">
+  <header class="topo">
+    <h1>Varinhas e Segredos</h1>
+    <p><span>Ficha de Personagem</span><img src="assets/ficha/varinha.webp" alt=""><span>Folha I · Quem você é</span></p>
+  </header>
+  <div class="caixa "><h2><img class="i" src="assets/ficha/pena.webp" alt=""><span>Identidade</span></h2><div class="grade g4"><div class="campo" style="grid-column: span 2"><label>Nome</label><div class="ln"></div></div><div class="campo"><label>Jogador</label><div class="ln"></div></div><div class="campo"><label>Ano · Idade</label><div class="ln"></div></div><div class="campo"><label>Casa</label><div class="ln"></div></div><div class="campo"><label>Sangue · Família</label><div class="ln"></div></div><div class="campo"><label>Nível · Patente</label><div class="ln"></div></div><div class="campo"><label>Trilha</label><div class="ln"></div></div><div class="campo" style="grid-column: span 2"><label>Peculiaridade</label><div class="ln"></div></div><div class="campo" style="grid-column: span 2"><label>Medo</label><div class="ln"></div></div></div></div>
+  <div class="grade g3 atrs"><div class="atr"><img class="grande" src="assets/ficha/corpo.webp" alt=""><h3>Corpo</h3><div class="val"></div><span class="dados"><b>d4</b><b>d6</b><b>d8</b><b>d10</b><b>d12</b></span><p>Força, fôlego, reflexo, voo</p></div><div class="atr"><img class="grande" src="assets/ficha/mente.webp" alt=""><h3>Mente</h3><div class="val"></div><span class="dados"><b>d4</b><b>d6</b><b>d8</b><b>d10</b><b>d12</b></span><p>Estudo, feitiço, poção, pista</p></div><div class="atr"><img class="grande" src="assets/ficha/coracao.webp" alt=""><h3>Coração</h3><div class="val"></div><span class="dados"><b>d4</b><b>d6</b><b>d8</b><b>d10</b><b>d12</b></span><p>Coragem, conversa, intuição</p></div></div>
+  <div class="grade g-lado cresce">
+    <div class="caixa cresce"><h2><img class="i" src="assets/ficha/estrela.webp" alt=""><span>Perícias</span><small>circule o dado; d4 sem treino</small></h2><div class="grade g2 pers"><div class="per"><i><img class="mini" src="assets/ficha/corpo.webp" alt="">Atletismo</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Fortitude</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Reflexos</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Furtividade</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Voo</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Luta</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i><img class="mini" src="assets/ficha/coracao.webp" alt="">Percepção</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Vontade</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Oclumência</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Persuasão</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Enganação</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span></div><div class="per"><i><img class="mini" src="assets/ficha/mente.webp" alt="">Feitiços</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Transfiguração</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Poções</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Herbologia</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Conh. Mágico</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Investigação</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Medibruxaria</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Artes das Trevas</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i><img class="mini" src="assets/ficha/coracao.webp" alt="">Intuição</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Trato de Criaturas</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span><i>Adivinhação</i><span class="dados"><b>4</b><b>6</b><b>8</b><b>10</b><b>12</b></span></div></div><p class="leg">Atributo + perícia contra a DT. No máximo +2 passos por teste.</p></div>
+    <div class="coluna">
+      <div class="recursos"><div class="rec"><h4><img class="i" src="assets/ficha/vida.webp" alt="">PV</h4><div class="par"><div><small>Atual</small><div class="ln"></div></div><div><small>Máx.</small><div class="ln"></div></div></div><p>8 + Corpo; +3 por ano</p></div><div class="rec"><h4><img class="i" src="assets/ficha/chama.webp" alt="">DET</h4><div class="par"><div><small>Atual</small><div class="ln"></div></div><div><small>Máx.</small><div class="ln"></div></div></div><p>4 + Coração; +1 por ano</p></div><div class="rec"><h4><img class="i" src="assets/ficha/escudo.webp" alt="">Defesa</h4><div class="par"><div><small>&nbsp;</small><div class="ln"></div></div></div><p>5 + metade de Reflexos</p></div><div class="rec"><h4><img class="i" src="assets/ficha/raio.webp" alt="">Ímpeto</h4><div class="bolas"><span class="bola"></span><span class="bola"></span><span class="bola"></span><span class="bola"></span><span class="bola"></span></div><p>Começa a sessão com 1</p></div><div class="rec"><h4><img class="i" src="assets/ficha/mochila.webp" alt="">Carga</h4><div class="par"><div><small>Usada</small><div class="ln"></div></div><div><small>Máx.</small><div class="ln"></div></div></div><p>5 + metade do Corpo</p></div><div class="rec"><h4><img class="i" src="assets/ficha/estrela.webp" alt="">PE</h4><div class="par"><div><small>Guardados</small><div class="ln"></div></div><div><small>Total</small><div class="ln"></div></div></div><p>Gaste no Capítulo XIII</p></div></div>
+      <div class="caixa "><h2><img class="i" src="assets/ficha/vida.webp" alt=""><span>Condições</span></h2><div class="cond"><span><i class="ck"></i>Preso</span><span><i class="ck"></i>Caído</span><span><i class="ck"></i>Atordoado</span><span><i class="ck"></i>Desesperado</span><span><i class="ck"></i>Petrificado</span><span><i class="ck"></i>Cego</span><span><i class="ck"></i>Amedrontado</span><span><i class="ck"></i>Silenciado</span><span><i class="ck"></i>Confuso</span></div></div>
+      <div class="caixa "><h2><img class="i" src="assets/ficha/chama.webp" alt=""><span>Lesões e Corrupção</span></h2><div class="linhas"><div></div><div></div></div><div class="bolas corr"><small>Corrupção</small><i class="ck"></i><i class="ck"></i><i class="ck"></i><i class="ck"></i><i class="ck"></i><i class="ck"></i></div></div>
+      <div class="caixa cresce"><h2><img class="i" src="assets/ficha/varinha.webp" alt=""><span>Talentos e técnicas</span></h2><div class="linhas"><div></div><div></div><div></div></div></div>
+    </div>
+  </div>
+  <footer><span>Varinhas e Segredos</span><span>✦</span><span>Criação: Capítulo III</span></footer>
+</section>
+<section class="folha">
+  <header class="topo">
+    <h1>Grimório e Mochila</h1>
+    <p><span>Ficha de Personagem</span><img src="assets/ficha/varinha.webp" alt=""><span>Folha II · O que você leva</span></p>
+  </header>
+  <div class="caixa "><h2><img class="i" src="assets/ficha/varinha.webp" alt=""><span>Varinha</span></h2><div class="grade g4"><div class="campo"><label>Madeira</label><div class="ln"></div></div><div class="campo"><label>Núcleo</label><div class="ln"></div></div><div class="campo"><label>Comprimento · Flexib.</label><div class="ln"></div></div><div class="campo"><label>Vínculo</label><div class="bolas"><span class="bola"></span><span class="bola"></span><span class="bola"></span></div></div><div class="campo" style="grid-column: span 2"><label>Afinidade e tendência</label><div class="ln"></div></div><div class="campo" style="grid-column: span 2"><label>Lealdade</label><div class="cond l4"><span><i class="ck"></i>Leal</span><span><i class="ck"></i>Tolerante</span><span><i class="ck"></i>Resistente</span><span><i class="ck"></i>Rejeita</span></div></div></div></div>
+  <div class="caixa "><h2><img class="i" src="assets/ficha/livro.webp" alt=""><span>Feitiços</span><small>Ob Observado · Ea Em aprendizado · Ap Aprendido · Do Dominado</small></h2><table class="tab feit"><thead><tr><th>Feitiço</th><th class="c">Círc.</th><th class="c">Estado</th><th class="c">Marcas</th><th class="c">Pront.</th><th>Feitiço</th><th class="c">Círc.</th><th class="c">Estado</th><th class="c">Marcas</th><th class="c">Pront.</th></tr></thead><tbody><tr><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td></tr><tr><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td></tr><tr><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td></tr><tr><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td></tr><tr><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td></tr><tr><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td></tr><tr><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"><i class="ck"></i></td></tr></tbody></table></div>
+  <div class="grade g2">
+    <div class="caixa "><h2><img class="i" src="assets/ficha/mochila.webp" alt=""><span>Mochila e cinto</span><small>3 poções no cinto</small></h2><table class="tab"><thead><tr><th>Objeto</th><th class="c">Esp.</th></tr></thead><tbody><tr><td></td><td class="c"></td></tr><tr><td></td><td class="c"></td></tr><tr><td></td><td class="c"></td></tr><tr><td></td><td class="c"></td></tr><tr><td></td><td class="c"></td></tr></tbody></table><div class="grade g3 moedas"><div class="campo"><label>Galeões</label><div class="ln"></div></div><div class="campo"><label>Sicles</label><div class="ln"></div></div><div class="campo"><label>Nuques</label><div class="ln"></div></div></div></div>
+    <div class="coluna">
+      <div class="caixa "><h2><img class="i" src="assets/ficha/caldeirao.webp" alt=""><span>Poções e ingredientes</span></h2><div class="linhas"><div></div></div></div>
+      <div class="caixa "><h2><img class="i" src="assets/ficha/coruja.webp" alt=""><span>Animal</span></h2><div class="grade g3"><div class="campo" style="grid-column: span 2"><label>Nome · Espécie</label><div class="ln"></div></div><div class="campo"><label>Laço</label><div class="bolas"><span class="bola"></span><span class="bola"></span><span class="bola"></span></div></div><div class="campo" style="grid-column: span 2"><label>Habilidade</label><div class="ln"></div></div><div class="campo"><label>PV</label><div class="ln"></div></div></div></div>
+      <div class="caixa "><h2><img class="i" src="assets/ficha/vassoura.webp" alt=""><span>Vassoura</span></h2><div class="grade g5"><div class="campo" style="grid-column: span 2"><label>Modelo</label><div class="ln"></div></div><div class="campo"><label>Vel.</label><div class="ln"></div></div><div class="campo"><label>Man.</label><div class="ln"></div></div><div class="campo"><label>Firm.</label><div class="ln"></div></div></div></div>
+    </div>
+  </div>
+  <div class="caixa "><h2><img class="i" src="assets/ficha/gente.webp" alt=""><span>Relações</span><small>de –3 a +3</small></h2><table class="tab"><thead><tr><th style="width:34%">Pessoa</th><th class="c">Afin.</th><th class="c">Conf.</th><th class="c">Resp.</th><th>Dívida · Memória</th></tr></thead><tbody><tr><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td></td></tr><tr><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td></td></tr><tr><td></td><td class="c"></td><td class="c"></td><td class="c"></td><td></td></tr></tbody></table></div>
+  <div class="grade g2 cresce">
+    <div class="caixa "><h2><img class="i" src="assets/ficha/pena.webp" alt=""><span>Notas do trimestre</span></h2><table class="tab notas"><tbody><tr><td>Feitiços</td><td class="c"></td><td>Transfig.</td><td class="c"></td><td>Poções</td><td class="c"></td></tr><tr><td>Herbologia</td><td class="c"></td><td>DCAT</td><td class="c"></td><td></td><td class="c"></td></tr></tbody></table></div>
+    <div class="caixa cresce"><h2><img class="i" src="assets/ficha/coruja.webp" alt=""><span>Segredos e anotações</span></h2><div class="linhas"><div></div><div></div><div></div></div></div>
+  </div>
+  <footer><span>Varinhas e Segredos</span><span>✦</span><span>Feitiços: Cap. V · Varinha: Cap. XI</span></footer>
+</section>
+</div>
+</body>
+</html>

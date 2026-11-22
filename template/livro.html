@@ -89,6 +89,17 @@
 </footer>
 </div><!-- /livro -->
 
+<div class="navega" id="navega">
+  <div class="busca-caixa" id="busca-caixa" hidden>
+    <input id="busca" type="search" placeholder="Buscar feitiço, poção, criatura, regra…" autocomplete="off" aria-label="Buscar no livro">
+    <ol id="busca-res" aria-live="polite"></ol>
+  </div>
+  <button type="button" id="bt-busca" aria-label="Buscar" title="Buscar (tecla /)"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></button>
+  <a href="ficha.html" aria-label="Ficha para imprimir" title="Ficha para imprimir"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6Z"/><path d="M15 3v4h4M9 12h7M9 16h7"/></svg></a>
+  <a href="#sumario" aria-label="Voltar ao sumário" title="Sumário"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></a>
+  <button type="button" id="bt-topo" aria-label="Voltar ao topo" title="Topo"><svg viewBox="0 0 24 24"><path d="m6 14 6-6 6 6"/></svg></button>
+</div>
+
 <script>
 const PASSOS = [4, 6, 8, 10, 12];
 const d = n => 1 + Math.floor(Math.random() * n);
@@ -113,4 +124,52 @@ function rolarTeste() {
     '<br>RA <b>' + vals[0] + '</b> · RB <b>' + usados[usados.length - 1] + '</b> · ' +
     (desastre ? '<b>Desastre!</b> Role na tabela de Desastres.' : crit ? '<b>Crítico!</b> Sucesso automático.' : ok ? 'Sucesso contra DT ' + dt + '.' : 'Falha contra DT ' + dt + '.');
 }
+(() => {
+  const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  let idx = null;
+  const capDe = el => { const c = el.closest('section'); const h = c && c.querySelector('h2'); return h ? h.textContent.trim() : ''; };
+  const monta = () => {
+    idx = [];
+    document.querySelectorAll('.livro h2, .livro h3, .livro h4, .livro h5, .livro td:first-child > strong').forEach(el => {
+      const txt = el.textContent.replace(/\s+/g, ' ').trim();
+      if (txt.length < 2 || txt.length > 90) return;
+      const alvo = el.tagName === 'STRONG' ? (el.closest('tr') || el) : el;
+      idx.push({ txt, n: norm(txt), el: alvo, cap: capDe(el), titulo: el.tagName !== 'STRONG' });
+    });
+  };
+  const caixa = document.getElementById('busca-caixa'), inp = document.getElementById('busca'), res = document.getElementById('busca-res');
+  const nav = document.getElementById('navega');
+  const abre = () => { if (!idx) monta(); caixa.hidden = false; nav.classList.add('aberta'); inp.focus(); inp.select(); };
+  const fecha = () => { caixa.hidden = true; nav.classList.remove('aberta'); };
+  document.getElementById('bt-busca').onclick = () => caixa.hidden ? abre() : fecha();
+  document.getElementById('bt-topo').onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const vai = it => {
+    fecha(); it.el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    it.el.classList.remove('achado'); void it.el.offsetWidth; it.el.classList.add('achado');
+  };
+  let atuais = [];
+  inp.oninput = () => {
+    const q = norm(inp.value.trim()); res.innerHTML = '';
+    if (q.length < 2) { atuais = []; return; }
+    atuais = idx.filter(x => x.n.includes(q))
+      .sort((a, b) => (b.n.startsWith(q) - a.n.startsWith(q)) || (b.titulo - a.titulo))
+      .slice(0, 30);
+    if (!atuais.length) { res.innerHTML = '<li class="vazio">Nada com esse nome.</li>'; return; }
+    atuais.forEach(it => {
+      const li = document.createElement('li'), b = document.createElement('button');
+      b.type = 'button'; b.innerHTML = '<span></span><small></small>';
+      b.firstChild.textContent = it.txt; b.lastChild.textContent = it.cap;
+      b.onclick = () => vai(it); li.appendChild(b); res.appendChild(li);
+    });
+  };
+  inp.onkeydown = e => {
+    if (e.key === 'Enter' && atuais[0]) vai(atuais[0]);
+    if (e.key === 'Escape') fecha();
+  };
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { e.preventDefault(); abre(); }
+  });
+  const mostra = () => nav.classList.toggle('visivel', window.scrollY > 900);
+  window.addEventListener('scroll', mostra, { passive: true }); mostra();
+})();
 </script>

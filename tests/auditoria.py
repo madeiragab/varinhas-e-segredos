@@ -101,5 +101,44 @@ for linha in tabela_depois("<th class=\"num\">O com destaque nos três</th>"):
 checa("currículo: 84 bruto, 82 efetivo, 128 de sobra", all(s in HTML for s in ("84 PE", "82 PE efetivos", "128 de sobra")))
 checa("teto anual de 30 PE", "Teto do ano: 30 PE" in HTML)
 
+# 5. regras de magia (regressão: frases que fixam a regra)
+FRASES = {
+    "Fogomaldito: controle perdido não volta": "Não se recupera o controle",
+    "Fogomaldito: contenção 3 sucessos antes de 2 falhas": "3 sucessos antes de 2 falhas",
+    "Protego Diabolica: Ruptura ignora lealdade": "A lealdade não conta mais",
+    "Protego Diabolica: anel, centro não queima": "O centro não queima",
+    "Sectumsempra: Lesão antes do ferimento": "role a Lesão primeiro",
+    "Gemino: Saturação para em 6": "A Saturação para em 6",
+    "RA fixo em efeito persistente": "RA fixo:",
+    "sem varinha: metade dos números": "Metade dos números",
+    "sem varinha: efeito sem número": "Efeito sem número",
+    "Voto Perpétuo: cláusulas por escrito": "palavra por palavra",
+    "Maxima: não serve para tudo": "Não é um sufixo que serve para tudo",
+    "Maxima: falha sai o feitiço comum": "sai o feitiço comum, não o Maxima",
+    "Tempestade de fogo não é fogo das trevas": "Não é fogo das trevas",
+    "Fulgur Caeli: nome do jogo, só Mestre": "Só um bruxo Mestre",
+    "materiais: achar não dá direito de ferir": "Achar uma criatura não dá direito de machucá-la",
+    "materiais: fonte esgotada não rende": "Fonte esgotada não rende de novo",
+    "materiais: preparados não se somam": "três doses não dão +3 passos",
+    "objetos: três ativos": "no máximo três objetos encantados",
+}
+for nome, frase in FRASES.items():
+    checa(nome, frase in HTML)
+texto = re.sub(r"<[^>]+>", "", HTML)
+for a, b, p1, p3 in ((10, 10, "39%", "6%"), (12, 12, "56%", "18%")):
+    s = dist((a, b), 13)[0]
+    checa(f"Fogomaldito d{a}+d{b} DT 13: livro {p1} e {p3} em três, conta {pct(s)} e {pct(s ** 3)}",
+          mesmo(p1, s) and mesmo(p3, s ** 3) and p1 in texto and p3 in texto)
+
+# 6. fabricação: DT = Círculo + 2, Preparo 8 × Círculo, estabilizar 10 × Círculo, Preparo alcançável
+i = HTML.index('id="tabela-fabricacao"')
+corpo = HTML[i:HTML.index("</table>", i)]
+linhas = [l for l in (re.findall(r"<td[^>]*>([^<]*)</td>", x) for x in re.findall(r"<tr>(.*?)</tr>", corpo)) if l]
+checa("fabricação: quatro Círculos", len(linhas) == 4)
+for c, dt, prep, et, _, est in linhas:
+    c, dt, prep, et, est = int(c), int(dt), int(prep), int(et), int(est)
+    checa(f"fabricação Círculo {c}: DT {dt}, Preparo {prep}, {et} etapas, {est} G",
+          dt == 3 + 2 * c + 2 and prep == 8 * c and est == 10 * c and prep <= et * 12)
+
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

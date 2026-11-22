@@ -271,5 +271,23 @@ for tit in ("<th>d6</th><th>Núcleo</th>", "<th>Outro núcleo</th>"):
 nuc -= 1  # a linha "Outro núcleo" do d6 só manda para a tabela
 checa(f"Núcleos: {nuc}, todos com efeito e lealdade {ruins if ruins else ''}", nuc >= 20 and not ruins and cobre("<th>d6</th><th>Núcleo</th>"))
 
+# 15. Vassouras: ficha válida e todo traço definido
+a = HTML.index('id="vassouras"'); b = HTML.index("<h3>Fabricar um objeto encantado</h3>", a)
+S = HTML[a:b]
+def nomes(tit):
+    s = S[S.index(tit):]; s = s[:s.index("</table>")]
+    return set(re.findall(r"<tr><td><strong>([^<]+)</strong>", s))
+tracos = nomes("<th>Vantagem</th>") | nomes("<th>Desvantagem</th>")
+s = S[S.index('id="modelos-vassoura"'):]; s = s[:s.index("</table>")]
+vas, ruins = 0, []
+for l in re.findall(r"<tr><td>(.*?)</tr>", s, re.S):
+    c = [re.sub(r"<[^>]+>", "", x).strip() for x in re.findall(r"<td[^>]*>(.*?)</td>", "<td>" + l, re.S)]
+    vas += 1
+    ok = len(c) == 8 and c[2].isdigit() and 0 <= int(c[2]) <= 5 and c[3] in ("–1", "0", "+1") and c[4] in ("–1", "0", "+1")
+    for tr in (c[5].split(", ") + c[6].split(", ")) if ok else []:
+        if tr != "—" and tr not in tracos: ok = False
+    if not ok: ruins.append(c[0])
+checa(f"Vassouras: {vas} modelos, ficha válida e traços definidos {ruins if ruins else ''}", vas >= 30 and not ruins)
+
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

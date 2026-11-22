@@ -244,5 +244,20 @@ for g in NOVOS:
         if not ok: ruins.append(c[0])
 checa(f"Itens deste jogo: {nov} pela Tábua de valor, {uni} com mecânica própria {ruins if ruins else ''}", nov == 100 and uni >= 60 and not ruins)
 
+# 13. Varinhas: toda madeira com afinidade; comprimento e flexibilidade cobrem o d6
+a = HTML.index('id="a-varinha"'); b = HTML.index('id="cuidar-varinha"')
+V = HTML[a:b]
+def cobre(tit):
+    s = V[V.index(tit):]; s = s[:s.index("</table>")]
+    n = set()
+    for d in re.findall(r'<td class="d">([\d–]+)</td>', s):
+        x = d.split("–"); n |= set(range(int(x[0]), int(x[-1]) + 1))
+    return n == set(range(1, 7))
+s = V[V.index('id="madeiras"'):]; s = s[:s.index("</table>")]
+rows = [re.findall(r"<td[^>]*>(.*?)</td>", l, re.S) for l in re.findall(r"<tr>(.*?)</tr>", s, re.S)]
+rows = [c for c in rows if len(c) == 3 and re.sub(r"<[^>]+>", "", c[1]).strip()]
+d12 = len(re.findall(r'<td class="d">\d+</td><td>[^<]+</td><td>', V[:V.index("Núcleo")]))
+checa(f"Varinhas: {d12 + len(rows)} madeiras com afinidade, comprimento e flexibilidade cobrem o d6", d12 == 12 and len(rows) == 29 and cobre("<th>Comprimento</th>") and cobre("<th>Flexibilidade</th>"))
+
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

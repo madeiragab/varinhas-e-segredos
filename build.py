@@ -9,7 +9,9 @@ html = (html.replace("{{CSS}}", (T / "livro.css").read_text(encoding="utf-8"))
             .replace("{{CAPITULOS}}", caps)
             .replace("{{VERSAO}}", VERSAO)
             .replace("{{DATA}}", datetime.date.today().strftime("%d/%m/%Y")))
-(R / "index.html").write_text("<!doctype html>\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n" + html + "\n</html>\n", encoding="utf-8")
+import hashlib
+ASSINATURA = hashlib.sha256(html.encode("utf-8")).hexdigest()[:12]  # tests/publicacao.py compara com o site no ar
+(R / "index.html").write_text("<!doctype html>\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"build\" content=\"" + ASSINATURA + "\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n" + html + "\n</html>\n", encoding="utf-8")
 # checagens: nada de placeholder sobrando, versão no HTML, toda âncora interna existe
 erros = [p for p in ("{{CSS}}", "{{CAPITULOS}}", "{{VERSAO}}", "{{DATA}}") if p in html]
 if "versão " + VERSAO not in html:
@@ -19,4 +21,4 @@ ids = set(re.findall(r'id="([^"]+)"', html))
 erros += ["link para #" + a + " sem destino" for a in sorted(set(re.findall(r'href="#([^"]+)"', html)) - ids)]
 if erros:
     raise SystemExit("ERRO no build:" + "".join("\n  " + e for e in erros))
-print("index.html gerado,", len(html) // 1024, "KB")
+print("index.html gerado,", len(html) // 1024, "KB, assinatura", ASSINATURA)

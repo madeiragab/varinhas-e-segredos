@@ -113,12 +113,16 @@ def sim_pocoes():
 
 
 # ---------------------------------------------------------------- quadribol
-def sim_quadribol(n=N):
+def sim_quadribol(n=N, mano=0, vel=0, quieto=False):
+    """mano: passo de Manobra da vassoura do apanhador 0 (todo teste de Voo dele);
+    vel: +1 passo no pomo disputado se a Velocidade dele é 2+ maior. Tudo no limite de +2."""
     dur = []
     pomo_decide = 0
+    vitorias = 0
     for _ in range(n):
         pistas = [0, 0]
-        apanhador = [(8, 8), (8, 6)]  # jogador Corpo/Mente d8 + perícia d8; time do Mestre Médio
+        apanhador = [(8, passo(8, min(2, mano))[0]), (8, 6)]  # jogador Corpo/Mente d8 + perícia d8 (± vassoura); time do Mestre Médio
+        disputa0 = (8, passo(8, min(2, mano + vel))[0])
         placar = [0, 0]
         lance = 0
         while True:
@@ -135,7 +139,7 @@ def sim_quadribol(n=N):
             if mergulho:
                 i = mergulho[0]; o = 1 - i
                 if pistas[o] >= 2:
-                    pi = rola(apanhador[i], 9)[0]
+                    pi = rola(disputa0 if i == 0 else apanhador[i], 9)[0]
                     d, _ = passo(apanhador[o][1], -1 if pistas[o] < pistas[i] else 0)
                     po = rola((apanhador[o][0], d), 9)[0]
                     if pi == po:
@@ -156,11 +160,14 @@ def sim_quadribol(n=N):
                 break
         dur.append(lance)
         venc = 0 if placar[0] > placar[1] else 1
+        vitorias += venc == 0
         sem_pomo = [placar[k] - (150 if placar[k] >= 150 else 0) for k in (0, 1)]
         if (sem_pomo[0] > sem_pomo[1]) != (venc == 0) and sem_pomo[0] != sem_pomo[1]:
             pomo_decide += 1
     dur.sort()
     faixa = sum(6 <= x <= 15 for x in dur) / n
+    if quieto:
+        return vitorias / n
     print(f"QUADRIBOL — lances por partida: mediana {dur[n//2]}, 10% {dur[n//10]}, 90% {dur[9*n//10]}; "
           f"entre 6 e 15 lances: {faixa*100:.0f}%; o pomo vira o resultado em {pomo_decide/n*100:.0f}% das partidas")
     return dur[n // 2], faixa
@@ -265,14 +272,18 @@ def fichas_bruxos():
     return out
 
 
-def luta_bruxo(ano, bruxo, aliado=None, n_alunos=4):
-    """4 alunos contra um bruxo da Forja; aliado opcional ataca uma vez por rodada com a Tábua dele."""
+def luta_bruxo(ano, bruxo, aliado=None, n_alunos=4, chefe=False):
+    """4 alunos contra um bruxo da Forja; aliado opcional ataca uma vez por rodada com a Tábua dele.
+    O ajuste de chefe sozinho (PV × 1,5 e duas ações) só vale com chefe=True, sem aliado e contra 3 ou mais."""
     m, f, c, r, (circ, mod) = ALUNO[ano]
     pv_max = 8 + c + 3 * (ano - 1); defesa = 5 + r // 2
     reacao = (m, f) if ano >= 5 else (c, r)
     alunos = [pv_max] * n_alunos
     _, grau, _, pv, dfx, dados, dmod, _, _ = bruxo
-    pv = int(pv * 1.5) if n_alunos >= 3 else pv  # sozinho contra três ou mais
+    chefe_sozinho = chefe and aliado is None and n_alunos >= 3
+    if chefe_sozinho:
+        pv = (pv * 3 + 1) // 2  # 1,5 ×, para cima
+    acoes = 2 if chefe_sozinho else 1
     for rodada in range(1, 31):
         for i in range(n_alunos):
             if alunos[i] > 0 and pv > 0:
@@ -283,7 +294,7 @@ def luta_bruxo(ano, bruxo, aliado=None, n_alunos=4):
             if ok: pv -= (sum(top[:2]) if crit else top[0]) + aliado[6]
         if pv <= 0:
             return rodada, sum(a <= 0 for a in alunos)
-        for _ in range(2):  # chefe sozinho: duas ações, a segunda é a ação extra
+        for _ in range(acoes):  # chefe sozinho: a segunda é a ação extra
             de_pe = [i for i in range(n_alunos) if alunos[i] > 0]
             if not de_pe: break
             i = rnd.choice(de_pe)
@@ -308,10 +319,18 @@ def sim_bruxos(n=1500):
         ano = max(1, min(7, b[1] - 1))
         for com in (None, aliado):
             if com is b: continue
-            rs = [luta_bruxo(ano, b, com) for _ in range(n)]
+            rs = [luta_bruxo(ano, b, com) for _ in range(n)]  # encontro comum: sem ajuste de chefe
             rods = sorted(x[0] for x in rs); caiu = sum(x[1] > 0 for x in rs) / n; tpk = sum(x[1] == 4 for x in rs) / n
             res[(b[0], com is not None)] = (rods[n // 2], caiu, tpk)
             print(f"  {b[0][:26]:26} G{b[1]} vs {ano}º ano{' + Monitor' if com else '          '}: {rods[n//2]:2} rodadas | {caiu*100:3.0f}% | {tpk*100:3.0f}%")
+    print("  chefe sozinho (PV × 1,5, duas ações), só as fichas de Grau 6+ que o livro usa como chefe:")
+    for b in fichas:
+        if b[1] < 6: continue
+        ano = max(1, min(7, b[1] - 1))
+        rs = [luta_bruxo(ano, b, chefe=True) for _ in range(n)]
+        rods = sorted(x[0] for x in rs); caiu = sum(x[1] > 0 for x in rs) / n; tpk = sum(x[1] == 4 for x in rs) / n
+        res[(b[0], "chefe")] = (rods[n // 2], caiu, tpk)
+        print(f"  {b[0][:26]:26} G{b[1]} vs {ano}º ano (chefe)  : {rods[n//2]:2} rodadas | {caiu*100:3.0f}% | {tpk*100:3.0f}%")
     return res
 
 
@@ -389,6 +408,17 @@ def sim_combinacoes():
         print(f"  {nome:38}: {r_[0]:2} rodadas | {r_[1]*100:3.0f}% | {r_[2]*100:3.0f}% | {r_[3]}")
     return res
 
+def sim_vassouras(n=4000):
+    """Vassoura melhor ajuda o apanhador sem garantir a vitória (partida igual nos dois times)."""
+    print("VASSOURAS NO QUADRIBOL — % de vitórias do apanhador do jogador (Voo d8) contra o do time Médio (d6), só mudando a vassoura dele")
+    res = {}
+    for nome, mano, vel in (("vassoura igual", 0, 0), ("Manobra −1", -1, 0), ("Manobra +1", 1, 0), ("Manobra +1 e Velocidade 2+ maior", 1, 1)):
+        v = sim_quadribol(n, mano, vel, quieto=True)
+        res[nome] = v
+        print(f"  {nome:34}: {v*100:3.0f}%")
+    return res
+
+
 # ---------------------------------------------------------------- evolução
 def sim_evolucao():
     print("EVOLUÇÃO — 30 PE por ano, todos gastos; nível = 1 + PE gastos ÷ 12")
@@ -405,7 +435,7 @@ def sim_evolucao():
 if __name__ == "__main__":
     qual = sys.argv[1] if len(sys.argv) > 1 else "tudo"
     if qual in ("tudo", "evolução"): sim_evolucao(); print()
-    if qual in ("tudo", "quadribol"): sim_quadribol(); print()
+    if qual in ("tudo", "quadribol"): sim_quadribol(); print(); sim_vassouras(); print()
     if qual in ("tudo", "combate"): sim_combate(); print()
     if qual in ("tudo", "bruxos"): sim_bruxos(); print(); sim_combinacoes(); print()
     if qual in ("tudo", "poções"): sim_pocoes()

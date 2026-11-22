@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<meta name="build" content="b6522ad5b7a6">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Varinhas e Segredos — RPG de mesa</title>
 <link rel="preload" href="assets/fontes/garamond.woff2" as="font" type="font/woff2" crossorigin>
@@ -1633,7 +1634,7 @@ td strong { color: var(--texto); }
   </tbody></table></div>
   <ul>
     <li><strong>Marca de treino</strong> (para Aprender): sai das aulas práticas, do estudo no tempo livre e de um mentor (<a href="#cap14">Capítulo XIV</a>). Só serve para feitiços Em aprendizado.</li>
-    <li><strong>Marca de prática</strong> (para Dominar): ganha quando você lança o feitiço Aprendido com sucesso numa situação de risco real — combate, prova, uma cena em que algo está em jogo — ou numa sessão de treino no tempo livre (no máximo uma marca de treino por feitiço por semana). Um crítico com o feitiço numa cena de risco vale duas marcas. No máximo uma chance por feitiço por cena, e só quando o feitiço muda a situação: lançar de novo contra o mesmo perigo controlado não rende marca.</li>
+    <li><strong>Marca de prática</strong> (para Dominar): ganha quando você lança o feitiço Aprendido com sucesso numa situação de risco real — combate, prova, uma cena em que algo está em jogo — ou numa sessão de treino no tempo livre (no máximo uma marca de treino por feitiço por semana). Um crítico com o feitiço numa cena de risco vale duas marcas. No máximo uma chance por feitiço por cena, e só quando o feitiço muda a situação: lançar de novo contra o mesmo perigo controlado não rende marca. Um mesmo desafio (a mesma luta, a mesma prova) rende no máximo duas marcas de prática por personagem, somando todos os feitiços.</li>
   </ul>
   <p>Um estudante pode ter quinze feitiços Aprendidos e só dois Dominados. É isso que faz o Expelliarmus do Harry ser o feitiço dele.</p>
 
@@ -1722,9 +1723,10 @@ td strong { color: var(--texto); }
   <p>Todo feitiço é de um destes três tipos, e cada tipo se resolve de um jeito só.</p>
   <ol class="passos">
     <li><b>Utilidade</b> (Lumos, Alohomora, Reparo). Um teste contra a <strong>DT do Círculo</strong>. Passou, funcionou.</li>
-    <li><b>Ataque</b> (tem “Ataque” no efeito). Um teste contra a <strong>maior</strong> entre a DT do Círculo e a Defesa do alvo. Um Expulso (DT 11) contra alguém de Defesa 7 ainda pede 11; um Flipendo (DT 5) contra Defesa 9 pede 9. Acertou, causa o dano; se o feitiço tem resistência, ela vale só para o efeito extra, nunca para o dano.</li>
+    <li><b>Ataque</b> (o efeito causa dano: tem RA, como Flipendo, Stupefy, Confringo e Bombarda). Um teste contra a <strong>maior</strong> entre a DT do Círculo e a Defesa do alvo. Um Expulso (DT 11) contra alguém de Defesa 7 ainda pede 11; um Flipendo (DT 5) contra Defesa 9 pede 9. Acertou, causa o dano; se o feitiço tem resistência, ela vale só para o efeito extra, nunca para o dano.</li>
     <li><b>Efeito</b> (paralisar, prender, confundir, controlar). Teste contra a <strong>DT do Círculo</strong>. Falhou: nada acontece e o alvo não rola. Passou: o alvo rola a resistência contra a <strong>DT do feitiço</strong>. Crítico no lançamento: o alvo resiste com –1 passo.</li>
   </ol>
+  <p><strong>Como saber o tipo.</strong> Não depende de uma palavra na descrição. Se o efeito tem RA (dano), é <strong>Ataque</strong>, mesmo que tenha resistência para um efeito extra. Sem dano e com resistência, é <strong>Efeito</strong>. Sem dano nem resistência, é <strong>Utilidade</strong>. Vale para o Grimório, para o feitiço inventado e para o improvisado. A função de cada feitiço (Ofensiva, Controle, Defesa, Cura, Exploração e ofício: a tabela "Por função", no Capítulo V) diz para que ele serve, não como ele se resolve. As Imperdoáveis seguem a regra delas. Feitiço de área se resolve pelo procedimento de áreas do <a href="#cap7">Capítulo VII</a>.</p>
   <div class="destaque">
     <span class="rotulo">DT do feitiço</span>
     <p class="formula">5 + Círculo + passo da sua perícia</p>
@@ -1845,6 +1847,7 @@ td strong { color: var(--texto); }
   <tr><td><strong>Incompleto</strong></td><td>Sai pela metade do jeito que o Mestre diz: revela que existe, não o quê; abre só o mais simples.</td><td>Revelio mostra que há algo escondido, não o que é; Alohomora só abre tranca Simples; Accio puxa, mas o objeto cai no meio do caminho.</td></tr>
   <tr><td><strong>Indisponível</strong></td><td>Não sai até o Domínio excepcional: ou funciona inteiro, ou não funciona.</td><td>Aparatação, Patrono corpóreo, Fidelius, Obliviate, transfiguração de seres vivos.</td></tr>
   </tbody></table></div>
+  <p><strong>Incompleto ou Indisponível?</strong> Pergunte se meio efeito existe. O que ou acontece ou não acontece (transportar, apagar uma memória, transformar um ser vivo, um juramento, uma proteção de lugar) é Indisponível. O Mestre decide uma vez, anota, e a decisão vale para a campanha inteira.</p>
   <p><strong>Calado e sem varinha:</strong> as duas coisas juntas não dão bônus. Use o estágio de cada uma: um feitiço Silencioso (–1 passo) e Funcional sem varinha (–1 passo) sai com –2 passos.</p>
   <h4>Magia acidental</h4>
   <p>Crianças bruxas fazem magia sem varinha antes de Hogwarts — o vidro que some, o cabelo que cresce de novo numa noite. Isso não é conjuração: é involuntário, vem de emoção forte e não se controla. Na criação ou num flashback, o Mestre pode contar um episódio; em jogo, um surto só acontece quando o Mestre decide, sem teste e sem o jogador escolher o efeito. Nunca conta como marca.</p>
@@ -1995,13 +1998,14 @@ td strong { color: var(--texto); }
   <tr><td>Proibido</td><td>RA + 8 ou mais</td><td>Qualquer, sem resistência comum</td><td>Qualquer</td><td>Permanente</td></tr>
   </tbody></table></div>
   <h4>Por função</h4>
+  <p>A função diz para que o feitiço serve e não muda como ele se resolve: Confringo é Ofensiva e se resolve como Ataque; Petrificus é Controle e se resolve como Efeito (Capítulo IV, "Como saber o tipo").</p>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Função</th><th>Feitiços</th></tr></thead>
   <tbody>
-  <tr><td><strong>Ataque</strong></td><td>Ictus, Tabesco, Nodus Glacialis, Pila Furens, Purpura Interna, Maledictio Tactus, Flagellum Fulguris, Vitrum Turbo, Contorqueo, Effervo, Fulmen Pugnae, Procella, Piperis Halitus, Sagitta, Pustula, Vermillious, Verdimillious, Urtico, Arania Exumai, Everte Statum, Draconifors, Flipendo Duo e Tria, Glacius Duo e Tria, Deprimo, Ignis Laqueus, Flipendo, Incendio, Incendio Duo, Incendio Tria, Stupefy, Diffindo, Glacius, Depulso, Oppugno, Furnunculus, Reducto, Confringo, Bombarda, Expulso, Sectumsempra, Fulgur Caeli, Fogomaldito, Crucio, Avada Kedavra</td></tr>
+  <tr><td><strong>Ofensiva</strong></td><td>Ictus, Tabesco, Nodus Glacialis, Pila Furens, Purpura Interna, Maledictio Tactus, Flagellum Fulguris, Vitrum Turbo, Contorqueo, Effervo, Fulmen Pugnae, Procella, Piperis Halitus, Sagitta, Pustula, Vermillious, Verdimillious, Urtico, Arania Exumai, Everte Statum, Draconifors, Flipendo Duo e Tria, Glacius Duo e Tria, Deprimo, Ignis Laqueus, Flipendo, Incendio, Incendio Duo, Incendio Tria, Stupefy, Diffindo, Glacius, Depulso, Oppugno, Furnunculus, Reducto, Confringo, Bombarda, Expulso, Sectumsempra, Fulgur Caeli, Fogomaldito, Crucio, Avada Kedavra</td></tr>
   <tr><td><strong>Controle</strong></td><td>Debilito, Turbatio, Capillus Densus, Digiti Gelati, Ungues Crescere, Commutatio, Nebula Invertens, Pulvis Custos, Maledictio Lenta, Maledictio Cathedrae, Cauda Porcina, Palus Portabilis, Vox in Mente, Fumus Visionis, Possessio, Pilae Nivis, Mustelifors, Reversis, Inflatus, Haereo, Porrum Auris, Calvorio, Herbifors, Fulgari, Meteolojinx, Cantis, Orbis, Tentaclifors, Dormio Profundus, Transformo, Relashio, Waddiwasi, Titubo, Impedimenta, Duro, Glisseo, Langlock, Locomotor Wibbly, Genu Inverto, Vespertilio, Mucus ad Nauseam, Lippitudo, Melofors, Engorgio Skullus, Ebublio, Levioso, Ventus, Immobulus, Garrulo, Lingua Vinculum, Slugulus Eructo, Memoria Muto, Aqua Carcer, Brachiabindo, Anteoculatia, Scoparebello, Morsmordre, Expelliarmus, Rictusempra, Tarantallegra, Silencio, Petrificus Totalus, Incarcerous, Locomotor Mortis, Levicorpus, Confundo, Obscuro, Descendo, Arresto Momentum, Obliviate, Imperio</td></tr>
   <tr><td><strong>Defesa</strong></td><td>Munio, Fortis Animus, Protego Reverso, Emancipare, Redactum Skullus, Imperturbatus, Infrangibilis, Fraudis Nota, Caminus Clausus, Paries Pervius, Arena Verto, Charta Custos, Murus Aperio, Porta Sanguinis, Ignis Frigidus, Praestigiae, Repello Muggletum, Fianto Duri, Argentum Clipeus, Inlocabilis, Cataracta Furum, Nomen Tabu, Vipera Evanesca, Protego, Finite Incantatem, Impervius, Riddikulus, Expecto Patronum, Protego Totalum, Salvio Hexia, Protego Maxima, Feitiço Fidelius, Protego Diabolica, Protego Horribilis, Ignis Circumdo, Linea Aetatis, Apparitio Nulla, Repello Inimicum</td></tr>
-  <tr><td><strong>Utilidade</strong></td><td>Reverto Locus, Intentio, Inanimatus Conjurus, Ignis Caeruleus, Nomen Ustum, Memoria Carnis, Speculum Geminum, Ignis Perpetuus, Vestigium Minoris, Manus Argentea, Vehiculum Volans, Imago Vivens, Ritus Resurrectionis, Cor Abditum, Labor Domesticus, Palma Ignis, Memoria Extraho, Reparo Omnia, Fumivolo, Mutatio Sui, Caelum Simulatum, Liber Porta, Harmonia Nectere Passus, Corpus Larva, Nebulus, Apparatio Comes, Saltus, Colovaria, Multicorfors, Alterio, Conjuro, Locomotor, Pack, Erecto, Dissendium, Oculus Reparo, Deletrius, Skurge, Spongify, Mollio, Illegibilus, Epoximise, Calefio, Pluma Levis, Defodio, Mobiliarbus, Mobilicorpus, Meteolojinx Recanto, Revelio, Appare Vestigium, Avenseguim, Fera Verto, Avifors e família, Herbivicus, Reparifarge, Fumos, Sensus Acuo, Exsicco, Proteus, Adhaereo Perpetuo, Volatus, Aqua Eructo, Ascendio, Alarte Ascendare, Carpe Retractum, Cistem Aperio, Fraudifuga, Prior Incantato, Bulla Capitis, Caelimuto, Partis Temporus, Ululatus Felis, Capacious Extremis, Lumos, Lumos Solem, Lumos Duo, Lacarnum Inflamari, Flagrate, Wingardium Leviosa, Alohomora, Colloportus, Reparo, Muto, Accio, Aguamenti, Scourgify, Sonorus, Orchideous, Point Me, Periculum, Reducio/Engorgio, Homenum Revelio, Aparecium, Muffliato, Desillusio, Legilimens, Piertotum Locomotor, Geminio, Evanesco, Apparatio, Portus</td></tr>
+  <tr><td><strong>Exploração e ofício</strong></td><td>Reverto Locus, Intentio, Inanimatus Conjurus, Ignis Caeruleus, Nomen Ustum, Memoria Carnis, Speculum Geminum, Ignis Perpetuus, Vestigium Minoris, Manus Argentea, Vehiculum Volans, Imago Vivens, Ritus Resurrectionis, Cor Abditum, Labor Domesticus, Palma Ignis, Memoria Extraho, Reparo Omnia, Fumivolo, Mutatio Sui, Caelum Simulatum, Liber Porta, Harmonia Nectere Passus, Corpus Larva, Nebulus, Apparatio Comes, Saltus, Colovaria, Multicorfors, Alterio, Conjuro, Locomotor, Pack, Erecto, Dissendium, Oculus Reparo, Deletrius, Skurge, Spongify, Mollio, Illegibilus, Epoximise, Calefio, Pluma Levis, Defodio, Mobiliarbus, Mobilicorpus, Meteolojinx Recanto, Revelio, Appare Vestigium, Avenseguim, Fera Verto, Avifors e família, Herbivicus, Reparifarge, Fumos, Sensus Acuo, Exsicco, Proteus, Adhaereo Perpetuo, Volatus, Aqua Eructo, Ascendio, Alarte Ascendare, Carpe Retractum, Cistem Aperio, Fraudifuga, Prior Incantato, Bulla Capitis, Caelimuto, Partis Temporus, Ululatus Felis, Capacious Extremis, Lumos, Lumos Solem, Lumos Duo, Lacarnum Inflamari, Flagrate, Wingardium Leviosa, Alohomora, Colloportus, Reparo, Muto, Accio, Aguamenti, Scourgify, Sonorus, Orchideous, Point Me, Periculum, Reducio/Engorgio, Homenum Revelio, Aparecium, Muffliato, Desillusio, Legilimens, Piertotum Locomotor, Geminio, Evanesco, Apparatio, Portus</td></tr>
   <tr><td><strong>Cura</strong></td><td>Revigoro, Affectus Extraho, Brackium Emendo, Hilaritas, Anapneo, Ilcorporis, Episkey, Ferula, Rennervate, Vulnera Sanentur</td></tr>
   </tbody></table></div>
   <p>Ajustes desta versão: <strong>Protego</strong> é Círculo 2 (ele bloqueia qualquer feitiço, e chega no 5º ano); <strong>Petrificus Totalus</strong> se encerra com qualquer dano, para não virar uma execução; <strong>Expelliarmus</strong> joga a varinha a 3 m, e pegá-la de volta é o movimento de quem chegar primeiro.</p>
@@ -2165,7 +2169,7 @@ td strong { color: var(--texto); }
   <tr><td><strong>Obscuro</strong></td><td>Transfig.</td><td>9 m</td><td>Reflexos</td><td>Venda nos olhos: Cego por <span class="dado">1d4</span> rodadas.</td></tr>
   <tr><td><strong>Glacius</strong> <span class="dado">J</span></td><td>Feitiços</td><td>9 m</td><td>Fortitude</td><td>Ataque. RA + 1 de frio e deslocamento pela metade. Fora de combate, apaga fogo comum de até 3 m ou ergue uma placa de gelo que segura uma porta por uma cena. Não apaga Fogomaldito nem Protego Diabolica.</td></tr>
   <tr><td><strong>Depulso</strong> <span class="dado">J</span></td><td>Feitiços</td><td>9 m</td><td>Fortitude</td><td>Ataque. RA + 1 e arremessa 6 m.</td></tr>
-  <tr><td><strong>Descendo</strong></td><td>Feitiços</td><td>9 m</td><td>Reflexos</td><td>Derruba quem voa ou está no alto; RA de queda.</td></tr>
+  <tr><td><strong>Descendo</strong></td><td>Feitiços</td><td>9 m</td><td>Reflexos</td><td>Derruba quem voa ou está no alto; dano de queda (Capítulo VII).</td></tr>
   <tr><td><strong>Reducio / Engorgio</strong></td><td>Transfig.</td><td>9 m</td><td>Fortitude</td><td>Encolhe ou aumenta um tamanho até o fim da cena. Forçar mais: Veja <a href="#perigosas">Magias perigosas</a>.</td></tr>
   <tr><td><strong>Ferula</strong></td><td>Medibrux.</td><td>Toque</td><td>—</td><td>Tala e bandagem: estabiliza e cura RA + 2.</td></tr>
   <tr><td><strong>Rennervate / Enervate</strong></td><td>Medibrux.</td><td>9 m</td><td>—</td><td>Acorda inconsciente ou atordoado; desfaz o Stupefy.</td></tr>
@@ -2883,6 +2887,7 @@ td strong { color: var(--texto); }
   </ol>
   <p>O Mestre pergunta, fase por fase, quem age. Quem gastou a ação numa fase não age nas seguintes; quem não agiu em nenhuma perdeu a ação. O <strong>movimento</strong> cabe em qualquer fase, antes ou depois da ação, e as <strong>reações</strong> (Protego, Desviar, Interpor) valem a qualquer momento.</p>
   <p><strong>Dentro de uma fase, tudo acontece ao mesmo tempo.</strong> Os jogadores resolvem na ordem que combinarem e os NPCs por último, mas o resultado vale para todos: se você e o bruxo das trevas trocam Estupefaça na fase de feitiços, os dois feitiços saem, mesmo que o seu derrube ele. Entre fases, não: um Petrificus na fase de feitiços impede o trasgo de bater na fase corpo a corpo. Quem luta de perto precisa sobreviver aos feitiços primeiro; quem lança feitiço quer acabar com a briga antes que ela chegue perto.</p>
+  <p><strong>Quando o resultado vale.</strong> Dano e condições de uma fase valem no fim dela, para todos ao mesmo tempo: quem cai a 0 PV ou fica Atordoado na fase de feitiços ainda solta o feitiço daquela fase e só deixa de agir a partir da fase seguinte. As reações acontecem na hora do ataque, como sempre.</p>
   <p>Criaturas seguem a mesma regra. O Mestre diz em que fase cada uma age pelo tipo de ataque: a acromântula que cospe teia age nos feitiços, o lobisomem no corpo a corpo. Um NPC que faz as duas coisas escolhe uma por rodada, como você.</p>
 
   <p><strong>Uma ação extra por rodada, no máximo.</strong> Laço de Devoção, Réplica e Encadear do Duelista, um poder de criatura: venha de onde vier, ninguém faz mais de uma ação a mais na mesma rodada. Réplica e Encadear, que lançam com o movimento, contam como essa ação extra. Uma ação extra nunca gera outra, mesmo que derrube alguém ou ative outro poder. Duas reações numa rodada (Defender-se, Mestre de duelo) nunca são duas chances contra o mesmo ataque.</p>
@@ -2910,8 +2915,13 @@ td strong { color: var(--texto); }
     <p class="formula">Mente + perícia ≥ maior entre DT do Círculo e Defesa → dano = RA + modificador</p>
   </div>
   <p>Ataque sem varinha usa Corpo + Luta contra a Defesa e causa RA + 0 (soco) a RA + 3 (espada).</p>
-  <p><strong>Áreas</strong> atingem todos dentro, aliados também. O conjurador pode poupar quem quiser aceitando –1 passo. Cada alvo rola a resistência indicada; se o feitiço não tem resistência, pode Desviar.</p>
-  <p><strong>Dano não letal.</strong> Antes de rolar, o atacante pode declarar que não quer matar. Quem chega a 0 PV assim fica inconsciente e Estável, sem rolar morte.</p>
+  <p><strong>Áreas</strong> atingem todos dentro, aliados também. O conjurador pode poupar quem quiser aceitando –1 passo. Todo feitiço de área se resolve assim, do mesmo jeito:</p>
+  <ol class="passos">
+    <li><b>Lançar.</b> Um teste só, contra a DT do Círculo. A Defesa de ninguém entra: a explosão acha todo mundo. Falhou, nada acontece.</li>
+    <li><b>Cada alvo se defende uma vez.</b> Ou rola a resistência indicada contra a DT do feitiço (Reflexos (metade): passou, leva metade), ou usa a reação contra o total do lançamento: Protego protege por inteiro quem o ergueu, e Desviar escapa mas deixa Caído. Nunca as duas coisas. Sem resistência indicada, só a reação salva.</li>
+    <li><b>Dano.</b> Um RA só, rolado uma vez, para todos. Crítico no lançamento: todos resistem com –1 passo.</li>
+  </ol>
+  <p><strong>Dano não letal.</strong> Antes de rolar, o atacante pode declarar que não quer matar. Quem chega a 0 PV assim fica inconsciente e Estável, sem rolar morte. Só vale para o que dá para segurar: soco, arma sem gume e feitiço de um alvo só (Flipendo, Stupefy, Depulso). Explosão e área (Confringo, Bombarda), fogo, Sectumsempra, queda e as Imperdoáveis nunca são não letais.</p>
 
   <h3>Protego e Desviar</h3>
   <p>As duas são <strong>reações</strong>: uma por rodada. Declare depois de ver o total do ataque e antes do dano. Você não precisa saber qual feitiço vem. O resultado é graduado:</p>
@@ -3010,11 +3020,11 @@ td strong { color: var(--texto); }
     <li><strong>Ferida.</strong> Quem ficou Morrendo numa cena sai dela com uma Ferida: –1 passo em Corpo até uma semana de descanso ou uma noite em St. Mungus/Ala Hospitalar. Também perde <span class="dado">1d4</span> DET.</li>
     <li><strong>Cicatriz.</strong> Quem chega a duas falhas no Morrendo, ou sofre magia negra grave (Sectumsempra, mordida de lobisomem, Crucio de 3 rodadas), ganha uma cicatriz para sempre e +1 PE. Role <span class="dado">1d6</span>: 1 tremor (–1 passo em Feitiços em cenas de medo); 2 rigidez (–1 passo em Atletismo); 3 sensibilidade (sente magia negra perto, +1 passo para percebê-la, –1 DET quando ela aparece); 4 marca visível (todos reconhecem você); 5 pesadelos (o descanso recupera 1 DET a menos); 6 ponto fraco (críticos contra você também acontecem com dois dados iguais de 3).</li>
     <li><strong>Limite de curas.</strong> Cada pessoa recebe no máximo <strong>três curas mágicas por dia</strong> (feitiço ou poção). A quarta não faz efeito. Repouso e a Ala Hospitalar não contam.</li>
-    <li><strong>Queda:</strong> RA de <span class="dado">d6</span>+<span class="dado">d6</span> a cada 3 m, até 6 dados. Acidente de aula (caldeirão, vassoura, feitiço errado) é quase sempre não letal: o Mestre decide.</li>
+    <li><strong>Queda:</strong> <span class="dado">d6</span> a cada 3 m, <strong>somados</strong> (não é RA), até <span class="dado">6d6</span> aos 18 m. Média: 3 m, 3,5; 9 m, 10,5; 18 m, 21. Um primeiranista aguenta uma queda de 9 m na maioria das vezes; de 18 m, só um aluno dos últimos anos fica de pé. Acidente de aula (caldeirão, vassoura, feitiço errado) é quase sempre não letal: o Mestre decide.</li>
   </ul>
 
   <h3>Lesões</h3>
-  <p>Cair a 0 PV quase nunca é só cair. Role <span class="dado">1d12</span> na tabela quando você chega a 0 PV por um <strong>crítico</strong>, por um golpe que tira <strong>metade do seu PV máximo</strong> de uma vez, ou por uma queda de 9 m ou mais. Some +1 por patente acima de Iniciante. Com dano não letal, não se rola. Se tirar uma lesão que já tem, role de novo.</p>
+  <p>Cair a 0 PV quase nunca é só cair. Role <span class="dado">1d12</span> na tabela quando você chega a 0 PV por um <strong>crítico</strong>, por um golpe que tira <strong>metade do seu PV máximo</strong> de uma vez, ou por uma queda de 9 m ou mais. Some +1 por patente acima de Iniciante. Com dano não letal, não se rola. Se tirar uma lesão que já tem, role de novo. Se não sobrar nenhuma que ele ainda não tenha, a pior que ele já tem piora: o tempo de cura dobra.</p>
   <p><strong>Luta de verdade.</strong> Quando quem bateu queria matar — um Comensal, um lobisomem, um dragão, uma acromântula, Sectumsempra, a queda da torre —, o bônus de patente não vale e o 1 e o 2 da tabela matam. Em acidente de aula, treino, duelo de clube ou Quadribol, a morte só vem pelo Morrendo. O Mestre avisa antes quando uma luta é de verdade, ou deixa claro na ficha do inimigo.</p>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th class="num">d12</th><th>Lesão</th><th>Efeito</th><th>Como sai</th></tr></thead>
@@ -3040,7 +3050,7 @@ td strong { color: var(--texto); }
   mais até recuperar ao menos 1 DET.</p>
 
   <h3>Traumas</h3>
-  <p>Enquanto você tiver ao menos 1 DET, o medo assusta mas não quebra. Quando algo de fora leva você a 0 DET — ou tira DET de quem já está a 0 —, faça um <strong>teste de trauma</strong>: Coração + Vontade, DT 7, +3 a cada teste de trauma que você já fez na cena (o segundo é DT 10, o terceiro DT 13). Passou: só o Desesperado. Falhou: role <span class="dado">1d12</span>, +1 por patente acima de Iniciante. Se tirar um trauma que já tem, role de novo.</p>
+  <p>Enquanto você tiver ao menos 1 DET, o medo assusta mas não quebra. Quando algo de fora leva você a 0 DET — ou tira DET de quem já está a 0 —, faça um <strong>teste de trauma</strong>: Coração + Vontade, DT 7, +3 a cada teste de trauma que você já fez na cena (o segundo é DT 10, o terceiro DT 13). Passou: só o Desesperado. Falhou: role <span class="dado">1d12</span>, +1 por patente acima de Iniciante. Se tirar um trauma que já tem, role de novo. Se não sobrar nenhum que ele ainda não tenha, o mais grave que ele já tem passa a sair só com tratamento longo.</p>
   <p>Ver morrer a pessoa de um laço seu, ou ser traído por ela, pede um teste de trauma mesmo com DET sobrando.</p>
   <div class="rolagem"><table class="compacta">
   <thead><tr><th class="num">d12</th><th>Trauma</th><th>Efeito</th><th>Duração</th></tr></thead>
@@ -4345,7 +4355,8 @@ td strong { color: var(--texto); }
   <tbody>
   <tr><td><strong>Ataque mágico genérico</strong></td><td>O Ataque da Tábua contra a Defesa; acerto causa o Dano da Tábua.</td></tr>
   <tr><td><strong>Feitiço de Ataque do Grimório</strong></td><td>O Ataque da Tábua no lugar de atributo + perícia; o efeito é o da linha do feitiço, com o Dano da Tábua no lugar do dano dele.</td></tr>
-  <tr><td><strong>Feitiço de efeito</strong> (Expelliarmus, Petrificus, Confundo)</td><td>O alvo resiste contra a DT da Tábua; o efeito é exatamente o do Grimório, sem dano.</td></tr>
+  <tr><td><strong>Feitiço de efeito</strong> (Expelliarmus, Petrificus, Confundo)</td><td>Duas etapas, como para os personagens: o Ataque da Tábua contra a DT do Círculo (falhou, nada acontece; crítico, o alvo resiste com –1 passo); passou, o alvo resiste contra a DT da Tábua. O efeito é exatamente o do Grimório, sem dano.</td></tr>
+  <tr><td><strong>Feitiço de área</strong> (Confringo, Bombarda)</td><td>O procedimento de áreas do Capítulo VII, com o Ataque da Tábua contra a DT do Círculo e o Dano da Tábua para todos.</td></tr>
   <tr><td><strong>Imperdoável ou Proibido</strong></td><td>A regra completa do Capítulo V: intenção, DT, custo em DET, Corrupção e defesas.</td></tr>
   <tr><td><strong>Poder</strong></td><td>O que está escrito no Poder. Um de ataque e um Poder no mesmo turno, nunca.</td></tr>
   </tbody></table></div>
@@ -4354,7 +4365,7 @@ td strong { color: var(--texto); }
     <li><strong>Ação extra:</strong> Ataque duplo, Comandante ou chefe sozinho, no máximo uma por rodada, como todo mundo.</li>
     <li><strong>DET</strong> conta como a dos personagens: dementador, Crucio e medo descem; com 0, ele fica Desesperado, e a Moral manda.</li>
     <li><strong>0 PV:</strong> Morrendo, como um personagem (Capítulo VII). Figurante e capanga o Mestre resolve de uma vez no fim da luta: numa luta de verdade, <span class="dado">d6</span>, com 1 morre; nos outros casos, sai ferido.</li>
-    <li><strong>Desarmado,</strong> ele não lança. Foge, se rende, procura outra varinha ou luta com as mãos (só com Mão pesada).</li>
+    <li><strong>Desarmado,</strong> ele não lança. Foge, se rende, procura outra varinha ou luta com as mãos (só com Mão pesada). Exceção: quem a ficha diz que tem feitiços sem varinha, ou que vem de uma tradição sem varinha (Capítulo IV), continua lançando só esses, com metade do dano, a não ser que a ficha diga Domínio excepcional.</li>
     <li><strong>Ameaça</strong> como a das criaturas: Grau + Traços ★ + Poderes ◆ + 1 com Ataque duplo + 1 por Proibido além do primeiro do Trevoso. Criatura do Domador e capangas do reforço somam a Ameaça deles.</li>
     <li><strong>Chefe humano</strong> não precisa de Fases: um duelista experiente é difícil pela técnica, não por ter quatro barras de vida. Se usar, duas bastam; sozinho contra três, vale a regra do chefe sozinho.</li>
   </ul>
@@ -4409,7 +4420,7 @@ td strong { color: var(--texto); }
   <tr><td class="d">9</td><td><strong>Chamar reforço</strong></td><td>Grau 4+. Patrono ou Marca no céu: chegam dois capangas de Grau – 3 (mínimo 1) em duas rodadas. Eles entram no orçamento de Ameaça.</td></tr>
   <tr><td class="d">10</td><td><strong>Poção no cinto</strong></td><td>Uma vez por luta, bebe ou dá uma poção de cura: d8 + Grau de PV (Capítulo VI). Entra no limite de curas do dia.</td></tr>
   <tr><td class="d">11</td><td><strong>Ataque duplo</strong></td><td>Só Grau 8+. Lança dois feitiços de ataque por turno: é a ação extra dele. Conta +1 na Ameaça.</td></tr>
-  <tr><td class="d">12</td><td><strong>Feitiço assinatura</strong></td><td>Um feitiço que ele inventou (Capítulo V), escrito por inteiro na ficha dele, fora da contagem de feitiços da tabela. +1 passo nele, e ninguém conhece o contrafeitiço.</td></tr>
+  <tr><td class="d">12</td><td><strong>Feitiço assinatura</strong></td><td>Um feitiço que ele inventou (Capítulo V), escrito por inteiro na ficha dele, fora da contagem de feitiços da tabela. Lança com Feitiços ou Transfiguração e se resolve pelo tipo (Ataque, Efeito ou Utilidade), como todo feitiço criado. +1 passo nele, e ninguém conhece o contrafeitiço.</td></tr>
   </tbody></table></div>
   <h4>Moral</h4>
   <div class="rolagem"><table class="compacta">
@@ -4522,7 +4533,7 @@ td strong { color: var(--texto); }
   <div class="cartao bruxo" id="bx-duelista-do-clube" data-nivel="3" data-papel="Duelista" data-pv="20" data-def="7" data-atq="d10+d6" data-dano="3" data-dt="8" data-det="6" data-circ="2" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-duplo="0" data-ameaca="4" data-feiticos="Expelliarmus|Stupefy|Protego" data-poderes="Desarmar">
     <h5>Duelista do Clube <em>(quarto-anista que leva o duelo a sério)</em></h5>
     <p class="etiqueta">Grau 3 · Duelista · Rival · Ameaça 4</p>
-    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d10+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · <b>DET</b> 6 · <b>Protego</b> 1 por cena</p>
+    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d10+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · <b>DET</b> 6 · <b>Protego</b> 1 por rodada <em>(Papel Duelista)</em></p>
     <p><b>Feitiços:</b> Expelliarmus, Stupefy, Protego.</p>
     <p><b>Traços:</b> Duelista de clube; Nervos de aço.</p>
     <p><b>Poderes:</b> Desarmar.</p>
@@ -4596,13 +4607,13 @@ td strong { color: var(--texto); }
     <p><b>Varinha:</b> Teixo, dragão. <b>Quer:</b> Ser notado pelo mestre.</p>
     <p><b>Ao vencer:</b> A máscara, a varinha e um nome: os outros vão saber.</p>
   </div>
-  <div class="cartao bruxo" id="bx-mestre-de-pocoes" data-nivel="8" data-papel="Mentor" data-pv="90" data-def="11" data-atq="d12+d12" data-dano="6" data-dt="11" data-det="11" data-circ="4" data-ntr="3" data-npo="3" data-pes="0" data-inc="1" data-duplo="0" data-ameaca="9" data-feiticos="Expelliarmus|Protego|Vulnera Sanentur|Obliviate|Sectumsempra|Expecto Patronum" data-poderes="Desarmar|Poção no cinto|Feitiço assinatura">
+  <div class="cartao bruxo" id="bx-mestre-de-pocoes" data-nivel="8" data-papel="Mentor" data-pv="90" data-def="11" data-atq="d12+d12" data-dano="6" data-dt="11" data-det="11" data-circ="4" data-ntr="3" data-npo="3" data-pes="0" data-inc="1" data-duplo="0" data-ameaca="9" data-feiticos="Expelliarmus|Protego|Vulnera Sanentur|Obliviate|Sectumsempra|Expecto Patronum" data-assinatura="Vapor Acerbus" data-poderes="Desarmar|Poção no cinto|Feitiço assinatura">
     <h5>Mestre de Poções <em>(mentor difícil de gostar)</em></h5>
     <p class="etiqueta">Grau 8 · Mentor · Aliado · Ameaça 9</p>
     <p><b>PV</b> 90 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+6 · <b>DT</b> 11 · <b>DET</b> 11 · <b>Protego</b> 1 por rodada</p>
     <p><b>Feitiços:</b> Expelliarmus, Protego, Vulnera Sanentur, Obliviate, Sectumsempra, Expecto Patronum.</p>
     <p><b>Traços:</b> Oclumente; Nervos de aço; Duelista de clube.</p>
-    <p><b>Poderes:</b> Desarmar; Poção no cinto; Feitiço assinatura: <strong>Vapor Acerbus</strong> <em>(encantamento deste jogo, inventado por ele)</em>, Círculo 2, Poções, 9 m, Fortitude contra a DT: uma nuvem de vapor de caldeirão de 3 m; quem falha tosse e lacrimeja, –1 passo em ataques e feitiços por duas rodadas. Ele rola com +1 passo, e ninguém conhece o contrafeitiço.</p>
+    <p><b>Poderes:</b> Desarmar; Poção no cinto; Feitiço assinatura: <strong>Vapor Acerbus</strong> <em>(encantamento deste jogo, inventado por ele)</em>, Efeito de Círculo 2 (condição Breve + área), Mente + Feitiços como todo feitiço criado, 9 m, Fortitude contra a DT: uma nuvem de vapor de caldeirão de 3 m; quem falha tosse e lacrimeja, –1 passo em ataques e feitiços por duas rodadas. Ele rola com +1 passo, e ninguém conhece o contrafeitiço. Inventá-lo pediu Poções no último dado: a fórmula é de caldeirão, não de livro.</p>
     <p><b>Moral:</b> Não foge. Se perde, some e cobra depois.</p>
     <p><b>Varinha:</b> Ébano, dragão. <b>Quer:</b> Que ninguém saiba de quem ele gosta.</p>
     <p><b>Ao vencer:</b> Ensina: +1 passo para Estudar com ele, se ele quiser.</p>
@@ -5131,7 +5142,7 @@ td strong { color: var(--texto); }
     <li><strong>Limite:</strong> Manobra e Firmeza são uma fonte cada e entram no limite de +2 passos. A Velocidade não é passo: é distância, e não tem limite.</li>
     <li><strong>Quem persegue também voa:</strong> no fim de cada rodada, o corte sobe o número da rodada vezes a Velocidade da vassoura dele. Uma Firebolt atrás de uma Cleansweep Seven ganha 2 por rodada; atrás de outra Firebolt, nada. Criatura que voa tem Velocidade igual à metade do Perigo, para baixo, no máximo 5.</li>
     <li><strong>Corrida:</strong> como a perseguição, sem cortes: cinco rodadas, e quem tiver mais distância no fim ganha.</li>
-    <li><strong>Quadribol:</strong> num teste oposto de Corpo + Voo (a posse, o pomo disputado), quem tem 2 ou mais de Velocidade a mais ganha +1 passo, que entra no limite.</li>
+    <li><strong>Quadribol:</strong> num teste oposto de Corpo + Voo (a posse, o pomo disputado), quem tem 2 ou mais de Velocidade a mais ganha +1 passo, que entra no limite. Na simulação do livro, um apanhador que vence 67% das partidas passa a 77% com Manobra +1 e a 81% com ela e a Velocidade bem maior; com Manobra –1, cai a 49%. A vassoura ajuda, não ganha o jogo.</li>
     <li><strong>Vassoura quebrada:</strong> uma barata, Reparo conserta. Uma de 100 galeões ou mais pede Feitiços DT 11; falhou, ela ganha Puxa para um lado. Despedaçada (o Salgueiro Lutador, um dragão), já era.</li>
     <li><strong>Encantar a sua:</strong> tirar uma desvantagem ou pôr uma vantagem é um projeto de Fabricar de Círculo 2, um por vassoura. Velocidade nunca sobe com feitiço caseiro, e Antiazaração, Mergulho e Acelera rápido são de fábrica.</li>
   </ul>
@@ -5363,12 +5374,12 @@ td strong { color: var(--texto); }
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Origem</th><th class="num">Teto no ano</th><th>Como entra</th></tr></thead>
   <tbody>
-  <tr><td><strong>Sessões jogadas</strong></td><td class="num">18</td><td>2 PE por sessão jogada. Mesa que joga menos de nove sessões por ano: 3 por sessão. O teto não muda.</td></tr>
+  <tr><td><strong>Sessões jogadas</strong></td><td class="num">18</td><td>2 PE por sessão jogada. Mesa que joga menos de nove sessões por ano: 3 por sessão e, no fim do ano, a diferença até 18 como <em>ano vivido</em> (o tempo passou mesmo sem mesa). Assim toda mesa chega aos 18.</td></tr>
   <tr><td><strong>Marcos e riscos</strong></td><td class="num">6</td><td>+1 por resolver um mistério, vencer um desafio importante ou sobreviver a algo de verdade; +1 por agir de acordo com quem o personagem é, mesmo pagando caro; +1 quando a peculiaridade causa um problema de verdade; +2 pela Taça das Casas ou de Quadribol. Projetos, clubes, segredos, o verão e qualquer outra fonte de PE do livro entram aqui.</td></tr>
   <tr><td><strong>Desempenho acadêmico</strong></td><td class="num">6</td><td>+1 por trimestre com Nota média A (3) ou mais; +3 por passar de ano.</td></tr>
   <tr><td><strong>Total</strong></td><td class="num">30</td><td>A referência de todo o livro.</td></tr>
   </tbody></table></div>
-  <p><strong>Teto por sessão:</strong> 4 PE, somando sessão, marcos, riscos e peculiaridade; só os acadêmicos ficam fora. <strong>Teto do ano: 30 PE</strong>, venha quantas sessões vierem — com mais sessões, cada uma rende menos perto do fim do ano; com menos, os marcos pesam mais. O que passar do teto vira recompensa de história: prestígio, material, um contato, um livro, acesso a uma sala ou a um professor. PE não gastos ficam para o ano seguinte.</p>
+  <p><strong>Teto por sessão:</strong> 4 PE, somando sessão, marcos, riscos e peculiaridade; só os acadêmicos ficam fora. <strong>Teto do ano: 30 PE</strong>, venha quantas sessões vierem — com mais sessões, cada uma rende menos perto do fim do ano; com menos, os marcos pesam mais. 30 é o <em>máximo</em>, não a garantia: sessões chegam a 18 em qualquer mesa e o desempenho acadêmico depende das notas, mas os 6 de marcos dependem do que acontece no jogo. As contas deste capítulo supõem o teto cheio; um personagem que nunca fecha um marco chega ao 7º ano uns três níveis abaixo delas, e isso é esperado. O que passar do teto vira recompensa de história: prestígio, material, um contato, um livro, acesso a uma sala ou a um professor. PE não gastos ficam para o ano seguinte.</p>
 
   <h3>Gastar Pontos de Evolução</h3>
   <div class="rolagem"><table class="compacta">
@@ -5445,7 +5456,7 @@ td strong { color: var(--texto); }
   <tr><td><strong>Generalista</strong> (um pouco de tudo)</td><td>Corpo e Mente <span class="dado">d10</span>, Coração <span class="dado">d8</span></td><td>Seis perícias em <span class="dado">d10</span></td><td>~35 do currículo</td><td>1 estilo, 4 técnicas, 3 receitas de cor</td></tr>
   </tbody></table></div>
   <p>O duelista tende a vencer o estudioso num duelo, mas perde para ele em qualquer prova, pesquisa ou maldição a desfazer. O generalista nunca é o melhor em nada e quase nunca fica sem resposta.</p>
-  <p>Mais ou menos sessões por ano não mudam a conta: o teto de 30 PE do ano (acima) vale para todas as mesas.</p>
+  <p>Mais ou menos sessões por ano não mudam a conta: o ajuste do <em>ano vivido</em> completa os 18 das sessões em qualquer mesa. O que muda a conta são os marcos e as notas (acima).</p>
 
   <h3>Técnicas de matéria</h3>
   <p>Ser bom numa matéria não é só ter um dado maior. Cada matéria ensina duas técnicas que só quem a estudou tem. A <strong>básica</strong> pede Nota A (3) ou mais naquela matéria no último trimestre ou no último ano; a <strong>avançada</strong> pede E (4) ou mais e o 5º ano.</p>
@@ -5730,6 +5741,15 @@ td strong { color: var(--texto); }
   <h3>O palpite do Mestre</h3>
   <p>Vários minigames usam uma escolha <strong>secreta</strong> que o Mestre tenta adivinhar. O jogador marca a escolha sem mostrar: vira um <span class="dado">d6</span> na face escolhida e cobre com a mão, ou escreve num papel. O Mestre dá o palpite em voz alta, e só então o jogador revela. Assim o resultado não depende só dos dados, mas de ler o outro lado da mesa: o jogador tenta ser imprevisível, o Mestre tenta pensar como o personagem. O Mestre também pode esconder uma escolha para os jogadores adivinharem — a hora da vigília, o trecho onde o monitor espera, a mão onde está o objeto. No esconder-se, o palpite é dos próprios dados: quem procura precisa tirar o número exato do seu esconderijo.</p>
 
+  <div class="destaque"><span class="rotulo">Regras comuns dos minigames</span>
+  <p>Ronda, esconder-se, perseguição, vigília, investigação, exploração, duelo de clube, Quadribol e o resto deste capítulo usam os dados do Capítulo II do mesmo jeito:</p>
+  <ul>
+    <li><strong>Crítico</strong> conta como dois sucessos (duas partes, duas Pistas, dois trechos), nunca mais, a não ser que o minigame diga outra coisa.</li>
+    <li><strong>Ímpeto</strong> se gasta como em qualquer teste: +1 passo ou rerrolar um dado, uma vez por teste, antes do resultado ser narrado.</li>
+    <li><strong>Passos e dados extras</strong> somam no limite de +2 por teste: ajuda, vassoura, item, técnica e Ímpeto, tudo junto.</li>
+    <li><strong>Desastre</strong> é o que o minigame diz; se não diz nada, é uma complicação na história, nunca dano a mais.</li>
+  </ul></div>
+
   <h3>Ronda noturna</h3>
   <p>Andar pelo castelo depois do toque de recolher. A ronda tem <strong>Alerta</strong> (0 a 4) e um número de <strong>trechos</strong>. Antes de sair, escolha a <strong>rota</strong>:</p>
   <div class="rolagem"><table class="compacta">
@@ -5985,6 +6005,7 @@ td strong { color: var(--texto); }
     <li>Cada projeto precisa de um <strong>recurso</strong> que o Mestre escolhe: um livro, um ingrediente raro, um lugar escondido, a ajuda de um professor. Sem o recurso, o relógio para na metade.</li>
     <li><strong>Completo:</strong> o projeto dá o que prometia — um feitiço novo (Capítulo V), um objeto encantado (Capítulo XI), uma criatura que confia em você, uma descoberta — e +2 PE, se o projeto mudou alguma coisa na campanha (dentro do teto de marcos do ano, Capítulo XIII; sem espaço no teto, o projeto rende prestígio, material, um contato ou acesso no lugar). Repetir o mesmo projeto pequeno (a mesma poção, o mesmo objeto) dá o resultado, não PE.</li>
     <li>Dois personagens no mesmo projeto: cada um rola no seu período; os dois relógios são um só.</li>
+    <li><strong>Férias e ausência:</strong> o relógio do projeto para, a não ser que o recurso vá com você (um caderno, uma muda, a criatura). O verão Estudando pode dar 1 parte em vez das 2 marcas de treino. Os relógios dos NPCs seguem a regra deles (Capítulo X).</li>
   </ul>
 
   <h4>Tipos de projeto</h4>

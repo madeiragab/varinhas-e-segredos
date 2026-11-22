@@ -142,6 +142,26 @@ FRASES = {
     "materiais: fonte esgotada não rende": "Fonte esgotada não rende de novo",
     "materiais: preparados não se somam": "três doses não dão +3 passos",
     "objetos: três ativos": "no máximo três objetos encantados",
+    # auditoria consolidada
+    "tipo do feitiço sai do efeito, não de uma palavra": "Não depende de uma palavra na descrição",
+    "função separada da resolução": "A função diz para que o feitiço serve e não muda como ele se resolve",
+    "área: um lançamento contra a DT, uma defesa por alvo": "Nunca as duas coisas. Sem resistência indicada, só a reação salva.",
+    "fase: dano e condições valem no fim dela": "Dano e condições de uma fase valem no fim dela",
+    "não letal só no que dá para segurar": "nunca são não letais",
+    "queda soma os dados": "<strong>somados</strong> (não é RA)",
+    "lesão sem resultado novo piora a pior": "o tempo de cura dobra",
+    "trauma sem resultado novo vira longo": "passa a sair só com tratamento longo",
+    "marcas: no máximo duas por desafio": "no máximo duas marcas de prática por personagem",
+    "sem varinha: Incompleto ou Indisponível": "Pergunte se meio efeito existe",
+    "NPC: efeito em duas etapas": "Duas etapas, como para os personagens",
+    "NPC desarmado: exceção sem varinha": "continua lançando só esses",
+    "assinatura lança com Feitiços": "Lança com Feitiços ou Transfiguração e se resolve pelo tipo",
+    "Vapor Acerbus com Mente + Feitiços": "Mente + Feitiços como todo feitiço criado",
+    "PE: ano vivido completa as sessões": "a diferença até 18 como <em>ano vivido</em>",
+    "PE: 30 é teto, não garantia": "30 é o <em>máximo</em>, não a garantia",
+    "projetos param nas férias": "o relógio do projeto para",
+    "minigames: regras comuns": "Regras comuns dos minigames",
+    "vassoura ajuda, não ganha (simulação)": "A vassoura ajuda, não ganha o jogo",
 }
 for nome, frase in FRASES.items():
     checa(nome, frase in HTML)
@@ -368,6 +388,24 @@ for attrs in re.findall(r'<div class="cartao bruxo"([^>]*)>', HTML):
     ok = ok and ("Ataque duplo" not in po or n >= 8)
     ok = ok and ("Vulnera Sanentur" not in fe or A["papel"] in ("Mentor", "Erudito"))  # inventado por Snape: só quem teve a fonte
     if not ok: ruins.append(A["papel"] + str(n))
+# fichas por inteiro: Protego do texto bate com o Grau e o Papel; feitiço assinatura nos dados e fora da contagem
+prot, assin = [], 0
+for attrs, corpo in re.findall(r'<div class="cartao bruxo"([^>]*)>(.*?)\n  </div>', HTML, re.S):
+    A = dict(re.findall(r'data-([a-z]+)="([^"]*)"', attrs)); n = int(A["nivel"]); fe = A["feiticos"].split("|")
+    if "Protego" in fe:
+        quer = "1 por rodada" if n >= 5 or (A["papel"] == "Duelista" and n >= 3) else "1 por cena"
+        if "<b>Protego</b> " + quer not in corpo: prot.append(A["papel"] + str(n))
+    if "Feitiço assinatura" in A.get("poderes", ""):
+        nome = A.get("assinatura", "")
+        if not nome or nome in fe or "<strong>" + nome + "</strong>" not in corpo: prot.append("assinatura " + A["papel"])
+        else: assin += 1
+checa(f"Forja de Bruxos: Protego da ficha = Grau + Papel; {assin} feitiço(s) assinatura em data-assinatura {prot if prot else ''}", not prot and assin >= 1)
+
+# queda: 1d6 a cada 3 m, somados (médias do livro)
+from itertools import product
+med = lambda k: sum(sum(r) for r in product(range(1, 7), repeat=k)) / 6 ** k
+checa("queda: médias 3,5 / 10,5 / 21 (1, 3 e 6 dados somados)", (med(1), med(3), med(6)) == (3.5, 10.5, 21.0) and "3 m, 3,5; 9 m, 10,5; 18 m, 21" in HTML)
+
 a = HTML.index('id="forja-bruxos"'); b = HTML.index('id="aliados"', a); S = HTML[a:b]
 checa("Forja de Bruxos: Protego só do Grau 3, reforço Grau 4+, Domador Grau 3+, nada abaixo de 1",
       "— (só Desviar)" in S and "Grau 4+. Patrono" in S and "Só Grau 3+. Tem uma criatura" in S and "(mínimo 1)" in S and "Nível" not in re.sub(r"Nível dos personagens|o Nível \(1|um aluno de Nível 6", "", S))

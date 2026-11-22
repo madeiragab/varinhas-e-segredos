@@ -121,8 +121,9 @@ docs/img/                 capturas deste README
 
 ```bash
 python build.py                                  # gera index.html
-PYTHONIOENCODING=utf-8 python tests/auditoria.py # 91 conferências, deve dar 0 falhas
-python tests/simulacoes.py                       # tudo; ou: pocoes | quadribol | combate | bruxos | evolucao
+PYTHONIOENCODING=utf-8 python tests/auditoria.py # 112 conferências, deve dar 0 falhas
+python tests/simulacoes.py                       # tudo; ou: poções | quadribol | combate | bruxos | evolução
+python tests/publicacao.py                       # depois do push: o site no ar é este build?
 python -m http.server 8765                       # abre em http://localhost:8765
 ```
 

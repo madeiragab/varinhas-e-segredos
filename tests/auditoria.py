@@ -140,5 +140,11 @@ for c, dt, prep, et, _, est in linhas:
     checa(f"fabricação Círculo {c}: DT {dt}, Preparo {prep}, {et} etapas, {est} G",
           dt == 3 + 2 * c + 2 and prep == 8 * c and est == 10 * c and prep <= et * 12)
 
+# 7. Grimório: nenhum feitiço repetido entre os Círculos
+i = HTML.index("Círculo 1 · "); j = HTML.index("<h3", HTML.index("Círculo 4 · ") + 5)
+nomes = re.findall(r"<tr><td><strong>([^<]+)</strong>", HTML[i:j])
+rep = sorted({n for n in nomes if nomes.count(n) > 1})
+checa(f"Grimório: {len(nomes)} feitiços, nenhum repetido {rep if rep else ''}", not rep)
+
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

@@ -181,5 +181,34 @@ for fid, attrs in fichas:
     if not ok: erradas.append(fid)
 checa(f"Bestiário: {len(fichas)} fichas, todas pela Tábua e pelo arquétipo {erradas if erradas else ''}", fichas and not erradas)
 
+# 9. Poções: toda receita cabe numa linha do "Criar uma poção"
+FAIXAS = [(5, 7, 8, 10, 3, 3), (7, 9, 12, 14, 4, 4), (11, 11, 16, 20, 5, 6), (13, 15, 24, 32, 6, 8)]
+i = HTML.index("<h3>Receitas</h3>"); j = HTML.index("<h3>Tempo, preço e limites</h3>")
+rec, fora = 0, []
+for l in re.findall(r"<tr>(.*?)</tr>", HTML[i:j], re.S):
+    c = [re.sub(r"<[^>]+>", "", x).strip() for x in re.findall(r"<td[^>]*>(.*?)</td>", l, re.S)]
+    if len(c) < 4 or not (c[1].isdigit() and c[2].isdigit() and c[3].isdigit()): continue
+    dt, p, e = int(c[1]), int(c[2]), int(c[3]); rec += 1
+    if not (any(a <= dt <= b and lo <= p <= hi and f <= e <= g for a, b, lo, hi, f, g in FAIXAS) and p <= e * 12): fora.append(c[0])
+checa(f"Poções: {rec} receitas, todas dentro do Criar uma poção {fora if fora else ''}", rec and not fora)
+
+# 10. Toda poção tem ingredientes e um passo de preparo por etapa; DT 9 tem ★, DT 11 tem ◆, DT 13+ tem os dois
+k = HTML.index('id="modo-de-preparo"'); m = HTML.index("</table>", HTML.index("<th>Modo de preparo</th>", k))
+prep = {}
+for l in re.findall(r"<tr>(.*?)</tr>", HTML[k:m], re.S):
+    c = re.findall(r"<td[^>]*>(.*?)</td>", l, re.S)
+    if len(c) == 2: prep[re.sub(r"<[^>]+>", "", c[0]).strip()] = c[1].split("<br>")
+ruins = []
+for l in re.findall(r"<tr>(.*?)</tr>", HTML[i:k], re.S):
+    c = [re.sub(r"<[^>]+>", "", x).strip() for x in re.findall(r"<td[^>]*>(.*?)</td>", l, re.S)]
+    if len(c) != 6: continue
+    ps = prep.get(re.search(r"<strong>(.*?)</strong>", l).group(1))
+    if not ps or len(c[4]) < 8: ruins.append(c[0]); continue
+    if not c[1].isdigit(): continue
+    dt, st, lo = int(c[1]), sum("★" in p for p in ps), sum("◆" in p for p in ps)
+    ok = len(ps) == int(c[3]) and ((dt <= 7 and not st and not lo) or (dt == 9 and st == 1 and not lo) or (dt == 11 and lo) or (dt >= 13 and lo and st))
+    if not ok: ruins.append(c[0])
+checa(f"Poções: {len(prep)} com modo de preparo, passos = etapas, minigame onde a DT pede {ruins if ruins else ''}", len(prep) > rec and not ruins)
+
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

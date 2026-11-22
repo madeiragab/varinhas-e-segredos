@@ -259,5 +259,17 @@ rows = [c for c in rows if len(c) == 3 and re.sub(r"<[^>]+>", "", c[1]).strip()]
 d12 = len(re.findall(r'<td class="d">\d+</td><td>[^<]+</td><td>', V[:V.index("Núcleo")]))
 checa(f"Varinhas: {d12 + len(rows)} madeiras com afinidade, comprimento e flexibilidade cobrem o d6", d12 == 12 and len(rows) == 29 and cobre("<th>Comprimento</th>") and cobre("<th>Flexibilidade</th>"))
 
+# 14. Núcleos: todo núcleo tem efeito e lealdade; o d6 cobre 1 a 6
+nuc, ruins = 0, []
+for tit in ("<th>d6</th><th>Núcleo</th>", "<th>Outro núcleo</th>"):
+    s = V[V.index(tit):]; s = s[:s.index("</table>")]
+    for l in re.findall(r"<tr>(.*?)</tr>", s, re.S):
+        c = [re.sub(r"<[^>]+>", "", x).strip() for x in re.findall(r"<td[^>]*>(.*?)</td>", l, re.S)]
+        if not c: continue
+        nuc += 1
+        if len(c) != 4 or not c[2] or not c[3]: ruins.append(c[1] if len(c) > 1 else c[0])
+nuc -= 1  # a linha "Outro núcleo" do d6 só manda para a tabela
+checa(f"Núcleos: {nuc}, todos com efeito e lealdade {ruins if ruins else ''}", nuc >= 20 and not ruins and cobre("<th>d6</th><th>Núcleo</th>"))
+
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

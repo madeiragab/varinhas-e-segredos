@@ -322,7 +322,7 @@ def sim_bruxos(n=1500):
             rods = sorted(x[0] for x in rs); caiu = sum(x[1] > 0 for x in rs) / n; tpk = sum(x[1] == 4 for x in rs) / n
             res[(b[0], com is not None)] = (rods[n // 2], caiu, tpk)
             print(f"  {b[0][:26]:26} G{b[1]} vs {ano}º ano{' + Monitor' if com else '          '}: {rods[n//2]:2} rodadas | {caiu*100:3.0f}% | {tpk*100:3.0f}%")
-    print("  chefe sozinho (PV × 1,5, duas ações), só as fichas de Grau 6+ que o livro usa como chefe:")
+    print("  cenário de chefe sozinho (PV × 1,5, duas ações): cada ficha de Grau 6+ testada como se fosse o chefe do encontro (o livro não diz que todas são):")
     for b in fichas:
         if b[1] < 6: continue
         ano = max(1, min(7, b[1] - 1))

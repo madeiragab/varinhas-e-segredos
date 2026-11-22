@@ -1208,7 +1208,7 @@ td strong { color: var(--texto); }
     <li><a href="#cap6"><span class="alg">VI</span><span><span class="tit">Poções e Herbologia</span><span class="sub">O caldeirão, as plantas e as receitas</span></span></a></li>
     <li><a href="#cap7"><span class="alg">VII</span><span><span class="tit">Combate e duelos</span><span class="sub">Varinha erguida, turno a turno</span></span></a></li>
     <li><a href="#cap8"><span class="alg">VIII</span><span><span class="tit">Forja de Criaturas</span><span class="sub">Para o Mestre: as tabelas para montar qualquer fera</span></span></a></li>
-    <li><a href="#cap9"><span class="alg">IX</span><span><span class="tit">Bestiário</span><span class="sub">Fichas prontas, do Gnomo ao Basilisco</span></span></a></li>
+    <li><a href="#cap9"><span class="alg">IX</span><span><span class="tit">Bestiário</span><span class="sub">91 fichas, do Verme-cego ao Basilisco</span></span></a></li>
     <li><a href="#cap10"><span class="alg">X</span><span><span class="tit">Aliados e NPCs</span><span class="sub">Para o Mestre: tabelas de gente, papéis e vínculos</span></span></a></li>
     <li><a href="#cap11"><span class="alg">XI</span><span><span class="tit">Varinhas, itens e artefatos</span><span class="sub">Tabelas de madeira, núcleo e objetos encantados</span></span></a></li>
     <li><a href="#cap12"><span class="alg">XII</span><span><span class="tit">O mundo e as aventuras</span><span class="sub">Para o Mestre: ganchos, lugares e complicações</span></span></a></li>
@@ -3118,25 +3118,942 @@ td strong { color: var(--texto); }
 <!-- ==================== IX ==================== -->
 <section class="capitulo" id="cap9">
   <div class="abertura"><span class="alg">Capítulo Nove</span><h2>Bestiário</h2><p>Fichas prontas, montadas com a Forja</p></div>
+  <p class="abre">Cada ficha sai da <a href="#cap8">Forja</a>: a linha da Tábua de Perigo, o ajuste do arquétipo e Traços e Poderes até a quantidade da Tábua. A Ameaça já vem somada para o orçamento do encontro, e a fraqueza se descobre com pistas (<a href="#cap8">Descobrir a fraqueza</a>). O Ministério é a classificação da Tábua. Fases só valem quando a criatura é o chefe da sessão.</p>
   <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Criatura</th><th class="num">Perigo</th><th>Arquétipo</th><th class="num">PV</th><th class="num">Def</th><th>Ataque</th><th>Traços e Poderes</th><th>Fraqueza</th></tr></thead>
+  <thead><tr><th>Criatura</th><th class="num">Perigo</th><th>Arquétipo</th><th class="num">PV</th><th class="num">Def</th><th class="num">Ameaça</th></tr></thead>
   <tbody>
-  <tr><td><strong>Gnomo de jardim</strong></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td>d6+d4, RA+1</td><td>Escava</td><td>Girado e jogado longe, demora a voltar</td></tr>
-  <tr><td><strong>Diabrete da Cornualha</strong></td><td class="num">2</td><td>Enxame</td><td class="num">12</td><td class="num">7</td><td>d6+d6, RA+2</td><td>Voo · Ilusão (bagunça)</td><td>Immobulus</td></tr>
-  <tr><td><strong>Bicho-Papão</strong></td><td class="num">2</td><td>Conjurador</td><td class="num">10</td><td class="num">7</td><td>d6+d6, RA+2</td><td>Aterrorizante · Mudar de Forma</td><td>Riso</td></tr>
-  <tr><td><strong>Grindylow</strong></td><td class="num">2</td><td>Padrão</td><td class="num">12</td><td class="num">7</td><td>d6+d6, RA+2</td><td>Anfíbio · Agarrar</td><td>Dedos frágeis: crítico os quebra</td></tr>
-  <tr><td><strong>Hipogrifo</strong></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td>d8+d6, RA+3</td><td>Voo · Ataque Duplo · Investida</td><td>Respeito</td></tr>
-  <tr><td><strong>Inferius</strong></td><td class="num">3</td><td>Bruto</td><td class="num">26</td><td class="num">6</td><td>d6+d6, RA+3</td><td>Mente Fechada · Agarrar</td><td>Fogo</td></tr>
-  <tr><td><strong>Testrálio</strong></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td>d8+d6, RA+3</td><td>Voo · Só Vista por Poucos</td><td>Cheiro de sangue o distrai</td></tr>
-  <tr><td><strong>Acromântula</strong></td><td class="num">4</td><td>Predador</td><td class="num">27</td><td class="num">8</td><td>d10+d8, RA+6</td><td>Veneno · Escaladora · Teia</td><td>Fogo</td></tr>
-  <tr><td><strong>Trasgo da Montanha</strong></td><td class="num">5</td><td>Bruto</td><td class="num">55</td><td class="num">8</td><td>d8+d8, RA+5</td><td>Couro Mágico · Resistência · Investida</td><td>A própria clava (Wingardium Leviosa)</td></tr>
-  <tr><td><strong>Lobisomem</strong></td><td class="num">5</td><td>Predador</td><td class="num">38</td><td class="num">9</td><td>d12+d8, RA+7</td><td>Regeneração · Sentidos Agudos · Investida</td><td>Prata; só na lua cheia</td></tr>
-  <tr><td><strong>Dementador</strong></td><td class="num">6</td><td>Espectral</td><td class="num">39</td><td class="num">9</td><td>d10+d10, RA+6 de DET</td><td>Voo · Aterrorizante · Drenar · Beijo (0 DET: perde a alma)</td><td>Patrono</td></tr>
-  <tr><td><strong>Centauro</strong></td><td class="num">6</td><td>Padrão</td><td class="num">56</td><td class="num">9</td><td>d10+d10, RA+6 (arco)</td><td>Inteligente · Sentidos Agudos · Investida · Chamar o Bando</td><td>Respeito à floresta</td></tr>
-  <tr><td><strong>Esfinge</strong></td><td class="num">7</td><td>Conjurador</td><td class="num">58</td><td class="num">10</td><td>d12+d10, RA+7</td><td>Inteligente · Mente Fechada · Feitiço · Grito</td><td>Enigma</td></tr>
-  <tr><td><strong>Rabo-Córneo Húngaro</strong></td><td class="num">9</td><td>Bruto</td><td class="num">143</td><td class="num">11</td><td>d12+d12, RA+9</td><td>Voo · Couro Mágico · Resistência (fogo) · Sopro · Investida · Ataque Duplo</td><td>Os olhos: Conjunctivitis o cega</td></tr>
-  <tr><td><strong>Basilisco</strong></td><td class="num">11</td><td>Predador</td><td class="num">149</td><td class="num">14</td><td>d12+d12+d12, RA+15</td><td>Veneno · Aterrorizante · Escava · Mente Fechada · Olhar (morte; refletido, petrifica)</td><td>Canto do galo</td></tr>
+  <tr><td><a href="#cr-agoureiro">Agoureiro</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-amasso">Amasso</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-bezerro-da-lua">Bezerro-da-lua</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-chizpurfle">Chizpurfle</a></td><td class="num">1</td><td>Enxame</td><td class="num">6</td><td class="num">6</td><td class="num">3</td></tr>
+  <tr><td><a href="#cr-crup">Crup</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-fada">Fada</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-gnomo-de-jardim">Gnomo de jardim</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-jackalope">Jackalope</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-jarvey">Jarvey</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-knarl">Knarl</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-leprechaun">Leprechaun</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-murtisco">Murtisco</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-pelucio">Pelúcio</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-plimpy">Plimpy</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-pufoso">Pufoso</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-snidget-dourado">Snidget dourado</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-tronquilho">Tronquilho</a></td><td class="num">1</td><td>Ágil</td><td class="num">5</td><td class="num">8</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-verme-cego">Verme-cego</a></td><td class="num">1</td><td>Padrão</td><td class="num">6</td><td class="num">6</td><td class="num">1</td></tr>
+  <tr><td><a href="#cr-ashwinder">Ashwinder</a></td><td class="num">2</td><td>Padrão</td><td class="num">12</td><td class="num">7</td><td class="num">2</td></tr>
+  <tr><td><a href="#cr-barrete-vermelho">Barrete Vermelho</a></td><td class="num">2</td><td>Predador</td><td class="num">11</td><td class="num">7</td><td class="num">2</td></tr>
+  <tr><td><a href="#cr-bicho-papao">Bicho-Papão</a></td><td class="num">2</td><td>Conjurador</td><td class="num">10</td><td class="num">7</td><td class="num">2</td></tr>
+  <tr><td><a href="#cr-diabrete-da-cornualha">Diabrete da Cornualha</a></td><td class="num">2</td><td>Enxame</td><td class="num">12</td><td class="num">7</td><td class="num">3</td></tr>
+  <tr><td><a href="#cr-fantasma">Fantasma</a></td><td class="num">2</td><td>Espectral</td><td class="num">8</td><td class="num">7</td><td class="num">2</td></tr>
+  <tr><td><a href="#cr-fwooper">Fwooper</a></td><td class="num">2</td><td>Padrão</td><td class="num">12</td><td class="num">7</td><td class="num">3</td></tr>
+  <tr><td><a href="#cr-grindylow">Grindylow</a></td><td class="num">2</td><td>Padrão</td><td class="num">12</td><td class="num">7</td><td class="num">3</td></tr>
+  <tr><td><a href="#cr-hinkypunk">Hinkypunk</a></td><td class="num">2</td><td>Ágil</td><td class="num">10</td><td class="num">9</td><td class="num">2</td></tr>
+  <tr><td><a href="#cr-ramora">Ramora</a></td><td class="num">2</td><td>Padrão</td><td class="num">12</td><td class="num">7</td><td class="num">2</td></tr>
+  <tr><td><a href="#cr-salamandra">Salamandra</a></td><td class="num">2</td><td>Padrão</td><td class="num">12</td><td class="num">7</td><td class="num">2</td></tr>
+  <tr><td><a href="#cr-seminviso">Seminviso</a></td><td class="num">2</td><td>Ágil</td><td class="num">10</td><td class="num">9</td><td class="num">3</td></tr>
+  <tr><td><a href="#cr-billywig">Billywig</a></td><td class="num">3</td><td>Ágil</td><td class="num">16</td><td class="num">9</td><td class="num">3</td></tr>
+  <tr><td><a href="#cr-caranguejo-de-fogo">Caranguejo de fogo</a></td><td class="num">3</td><td>Bruto</td><td class="num">26</td><td class="num">6</td><td class="num">4</td></tr>
+  <tr><td><a href="#cr-dragao-filhote">Dragão filhote</a></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td class="num">4</td></tr>
+  <tr><td><a href="#cr-elfo-domestico">Elfo doméstico</a></td><td class="num">3</td><td>Conjurador</td><td class="num">16</td><td class="num">7</td><td class="num">4</td></tr>
+  <tr><td><a href="#cr-fada-mordente">Fada mordente</a></td><td class="num">3</td><td>Enxame</td><td class="num">20</td><td class="num">7</td><td class="num">4</td></tr>
+  <tr><td><a href="#cr-hipogrifo">Hipogrifo</a></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td class="num">4</td></tr>
+  <tr><td><a href="#cr-inferius">Inferius</a></td><td class="num">3</td><td>Bruto</td><td class="num">26</td><td class="num">6</td><td class="num">3</td></tr>
+  <tr><td><a href="#cr-kappa">Kappa</a></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td class="num">3</td></tr>
+  <tr><td><a href="#cr-poltergeist">Poltergeist</a></td><td class="num">3</td><td>Ágil</td><td class="num">16</td><td class="num">9</td><td class="num">4</td></tr>
+  <tr><td><a href="#cr-qilin">Qilin</a></td><td class="num">3</td><td>Ágil</td><td class="num">16</td><td class="num">9</td><td class="num">3</td></tr>
+  <tr><td><a href="#cr-tentacula-venenosa">Tentácula Venenosa</a></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td class="num">4</td></tr>
+  <tr><td><a href="#cr-testralio">Testrálio</a></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td class="num">3</td></tr>
+  <tr><td><a href="#cr-visgo-do-diabo">Visgo-do-diabo</a></td><td class="num">3</td><td>Padrão</td><td class="num">20</td><td class="num">7</td><td class="num">4</td></tr>
+  <tr><td><a href="#cr-acromantula">Acromântula</a></td><td class="num">4</td><td>Predador</td><td class="num">27</td><td class="num">8</td><td class="num">5</td></tr>
+  <tr><td><a href="#cr-duende">Duende</a></td><td class="num">4</td><td>Padrão</td><td class="num">30</td><td class="num">8</td><td class="num">5</td></tr>
+  <tr><td><a href="#cr-kelpie">Kelpie</a></td><td class="num">4</td><td>Bruto</td><td class="num">39</td><td class="num">7</td><td class="num">4</td></tr>
+  <tr><td><a href="#cr-matagot">Matagot</a></td><td class="num">4</td><td>Guardião</td><td class="num">36</td><td class="num">9</td><td class="num">4</td></tr>
+  <tr><td><a href="#cr-pukwudgie">Pukwudgie</a></td><td class="num">4</td><td>Ágil</td><td class="num">24</td><td class="num">10</td><td class="num">5</td></tr>
+  <tr><td><a href="#cr-swooping-evil">Swooping Evil</a></td><td class="num">4</td><td>Predador</td><td class="num">27</td><td class="num">8</td><td class="num">5</td></tr>
+  <tr><td><a href="#cr-trasgo-da-floresta">Trasgo da Floresta</a></td><td class="num">4</td><td>Bruto</td><td class="num">39</td><td class="num">7</td><td class="num">4</td></tr>
+  <tr><td><a href="#cr-unicornio">Unicórnio</a></td><td class="num">4</td><td>Ágil</td><td class="num">24</td><td class="num">10</td><td class="num">4</td></tr>
+  <tr><td><a href="#cr-lobisomem">Lobisomem</a></td><td class="num">5</td><td>Predador</td><td class="num">38</td><td class="num">9</td><td class="num">6</td></tr>
+  <tr><td><a href="#cr-occami">Occami</a></td><td class="num">5</td><td>Padrão</td><td class="num">42</td><td class="num">9</td><td class="num">6</td></tr>
+  <tr><td><a href="#cr-rougarou">Rougarou</a></td><td class="num">5</td><td>Predador</td><td class="num">38</td><td class="num">9</td><td class="num">5</td></tr>
+  <tr><td><a href="#cr-sereiano">Sereiano</a></td><td class="num">5</td><td>Padrão</td><td class="num">42</td><td class="num">9</td><td class="num">6</td></tr>
+  <tr><td><a href="#cr-trasgo-da-montanha">Trasgo da Montanha</a></td><td class="num">5</td><td>Bruto</td><td class="num">55</td><td class="num">8</td><td class="num">6</td></tr>
+  <tr><td><a href="#cr-veela">Veela</a></td><td class="num">5</td><td>Conjurador</td><td class="num">34</td><td class="num">9</td><td class="num">5</td></tr>
+  <tr><td><a href="#cr-centauro">Centauro</a></td><td class="num">6</td><td>Padrão</td><td class="num">56</td><td class="num">9</td><td class="num">6</td></tr>
+  <tr><td><a href="#cr-dementador">Dementador</a></td><td class="num">6</td><td>Espectral</td><td class="num">39</td><td class="num">9</td><td class="num">7</td></tr>
+  <tr><td><a href="#cr-fenix">Fênix</a></td><td class="num">6</td><td>Padrão</td><td class="num">56</td><td class="num">9</td><td class="num">8</td></tr>
+  <tr><td><a href="#cr-graphorn">Graphorn</a></td><td class="num">6</td><td>Bruto</td><td class="num">73</td><td class="num">8</td><td class="num">7</td></tr>
+  <tr><td><a href="#cr-grifo">Grifo</a></td><td class="num">6</td><td>Padrão</td><td class="num">56</td><td class="num">9</td><td class="num">7</td></tr>
+  <tr><td><a href="#cr-lula-gigante">Lula gigante</a></td><td class="num">6</td><td>Bruto</td><td class="num">73</td><td class="num">8</td><td class="num">7</td></tr>
+  <tr><td><a href="#cr-salgueiro-lutador">Salgueiro Lutador</a></td><td class="num">6</td><td>Guardião</td><td class="num">67</td><td class="num">10</td><td class="num">8</td></tr>
+  <tr><td><a href="#cr-snallygaster">Snallygaster</a></td><td class="num">6</td><td>Predador</td><td class="num">50</td><td class="num">9</td><td class="num">7</td></tr>
+  <tr><td><a href="#cr-vampiro">Vampiro</a></td><td class="num">6</td><td>Predador</td><td class="num">50</td><td class="num">9</td><td class="num">8</td></tr>
+  <tr><td><a href="#cr-yeti">Yeti</a></td><td class="num">6</td><td>Bruto</td><td class="num">73</td><td class="num">8</td><td class="num">6</td></tr>
+  <tr><td><a href="#cr-dente-de-vibora-peruano">Dente-de-Víbora Peruano</a></td><td class="num">7</td><td>Ágil</td><td class="num">58</td><td class="num">12</td><td class="num">8</td></tr>
+  <tr><td><a href="#cr-erumpente">Erumpente</a></td><td class="num">7</td><td>Bruto</td><td class="num">94</td><td class="num">9</td><td class="num">8</td></tr>
+  <tr><td><a href="#cr-esfinge">Esfinge</a></td><td class="num">7</td><td>Conjurador</td><td class="num">58</td><td class="num">10</td><td class="num">9</td></tr>
+  <tr><td><a href="#cr-fofo">Fofo</a></td><td class="num">7</td><td>Guardião</td><td class="num">86</td><td class="num">11</td><td class="num">8</td></tr>
+  <tr><td><a href="#cr-monstro-do-rio-branco">Monstro do Rio Branco</a></td><td class="num">7</td><td>Bruto</td><td class="num">94</td><td class="num">9</td><td class="num">7</td></tr>
+  <tr><td><a href="#cr-olho-de-opala-antipoda">Olho-de-Opala Antípoda</a></td><td class="num">7</td><td>Padrão</td><td class="num">72</td><td class="num">10</td><td class="num">8</td></tr>
+  <tr><td><a href="#cr-wampus">Wampus</a></td><td class="num">7</td><td>Predador</td><td class="num">65</td><td class="num">10</td><td class="num">8</td></tr>
+  <tr><td><a href="#cr-bola-de-fogo-chines">Bola-de-Fogo Chinês</a></td><td class="num">8</td><td>Ágil</td><td class="num">72</td><td class="num">13</td><td class="num">9</td></tr>
+  <tr><td><a href="#cr-dorso-cristado-noruegues">Dorso-Cristado Norueguês</a></td><td class="num">8</td><td>Predador</td><td class="num">81</td><td class="num">11</td><td class="num">9</td></tr>
+  <tr><td><a href="#cr-focinho-curto-sueco">Focinho-Curto Sueco</a></td><td class="num">8</td><td>Padrão</td><td class="num">90</td><td class="num">11</td><td class="num">9</td></tr>
+  <tr><td><a href="#cr-lethifold">Lethifold</a></td><td class="num">8</td><td>Espectral</td><td class="num">63</td><td class="num">11</td><td class="num">10</td></tr>
+  <tr><td><a href="#cr-passaro-trovao">Pássaro-trovão</a></td><td class="num">8</td><td>Padrão</td><td class="num">90</td><td class="num">11</td><td class="num">8</td></tr>
+  <tr><td><a href="#cr-romeno-de-chifre-longo">Romeno de Chifre-Longo</a></td><td class="num">8</td><td>Bruto</td><td class="num">117</td><td class="num">10</td><td class="num">9</td></tr>
+  <tr><td><a href="#cr-serpente-chifruda">Serpente-chifruda</a></td><td class="num">8</td><td>Conjurador</td><td class="num">72</td><td class="num">11</td><td class="num">9</td></tr>
+  <tr><td><a href="#cr-verde-gales-comum">Verde-Galês Comum</a></td><td class="num">8</td><td>Padrão</td><td class="num">90</td><td class="num">11</td><td class="num">9</td></tr>
+  <tr><td><a href="#cr-gigante">Gigante</a></td><td class="num">9</td><td>Bruto</td><td class="num">143</td><td class="num">11</td><td class="num">10</td></tr>
+  <tr><td><a href="#cr-manticora">Mantícora</a></td><td class="num">9</td><td>Predador</td><td class="num">99</td><td class="num">12</td><td class="num">10</td></tr>
+  <tr><td><a href="#cr-negro-das-hebridas">Negro das Hébridas</a></td><td class="num">9</td><td>Predador</td><td class="num">99</td><td class="num">12</td><td class="num">10</td></tr>
+  <tr><td><a href="#cr-obscurus">Obscurus</a></td><td class="num">9</td><td>Espectral</td><td class="num">77</td><td class="num">12</td><td class="num">9</td></tr>
+  <tr><td><a href="#cr-rabo-corneo-hungaro">Rabo-Córneo Húngaro</a></td><td class="num">9</td><td>Bruto</td><td class="num">143</td><td class="num">11</td><td class="num">11</td></tr>
+  <tr><td><a href="#cr-zouwu">Zouwu</a></td><td class="num">9</td><td>Ágil</td><td class="num">88</td><td class="num">14</td><td class="num">9</td></tr>
+  <tr><td><a href="#cr-barriga-de-ferro-ucraniano">Barriga-de-Ferro Ucraniano</a></td><td class="num">10</td><td>Bruto</td><td class="num">176</td><td class="num">12</td><td class="num">12</td></tr>
+  <tr><td><a href="#cr-nundu">Nundu</a></td><td class="num">10</td><td>Predador</td><td class="num">122</td><td class="num">13</td><td class="num">11</td></tr>
+  <tr><td><a href="#cr-quimera">Quimera</a></td><td class="num">10</td><td>Bruto</td><td class="num">176</td><td class="num">12</td><td class="num">12</td></tr>
+  <tr><td><a href="#cr-basilisco">Basilisco</a></td><td class="num">11</td><td>Predador</td><td class="num">149</td><td class="num">14</td><td class="num">12</td></tr>
   </tbody></table></div>
+  <h3>Animais mágicos</h3>
+  <div class="grade">
+  <div class="cartao ficha" id="cr-agoureiro" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Agoureiro <em>(augurey)</em></h5>
+    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Voo.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Chuva: quando chove, se esconde.</p>
+    <p><b>Quer:</b> Cantar antes da chuva. Não ataca.</p>
+  </div>
+  <div class="cartao ficha" id="cr-amasso" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Amasso <em>(kneazle)</em></h5>
+    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Sentidos Agudos.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Dono: obedece a quem confia.</p>
+    <p><b>Quer:</b> Levar o dono para casa; desconfia de quem mente.</p>
+  </div>
+  <div class="cartao ficha" id="cr-bezerro-da-lua" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Bezerro-da-lua <em>(mooncalf)</em></h5>
+    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Furtiva.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Lua cheia: dança e não foge.</p>
+    <p><b>Quer:</b> Dançar ao luar. Não ataca.</p>
+  </div>
+  <div class="cartao ficha" id="cr-chizpurfle" data-perigo="1" data-arq="Enxame" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="1" data-inc="1" data-ameaca="3">
+    <h5>Chizpurfle</h5>
+    <p class="etiqueta">Perigo 1 · Enxame · Ministério X · Ameaça 3</p>
+    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Come Magia. Enxame: ataca todos num raio de 3 m; feitiço de alvo único causa metade.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Poção antiparasita (Medibruxaria DT 6) limpa a varinha ou o caldeirão.</p>
+    <p><b>Quer:</b> Comer a magia de varinhas e caldeirões.</p>
+  </div>
+  <div class="cartao ficha" id="cr-crup" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Crup</h5>
+    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Sentidos Agudos.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Dono: só obedece a bruxos.</p>
+    <p><b>Quer:</b> Proteger o dono; ataca trouxas.</p>
+  </div>
+  <div class="cartao ficha" id="cr-fada" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Fada</h5>
+    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Voo.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Vaidade: elogiada, fica e posa.</p>
+    <p><b>Quer:</b> Enfeitar-se. Não ataca.</p>
+  </div>
+  <div class="cartao ficha" id="cr-gnomo-de-jardim" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Gnomo de jardim</h5>
+    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Escava.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Girado e jogado longe, demora a voltar.</p>
+    <p><b>Quer:</b> Morder quem mexe no jardim.</p>
+  </div>
+  <div class="cartao ficha" id="cr-jackalope" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Jackalope</h5>
+    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Sentidos Agudos.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Chifre preso num galho: fica preso.</p>
+    <p><b>Quer:</b> Fugir.</p>
+  </div>
+  <div class="cartao ficha" id="cr-jarvey" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Jarvey</h5>
+    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Escava.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Insulto de volta: para para responder.</p>
+    <p><b>Quer:</b> Xingar e caçar gnomos. Fala, mas só grosserias.</p>
+  </div>
+  <div class="cartao ficha" id="cr-knarl" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Knarl</h5>
+    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Sentidos Agudos.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Ignorado, vai embora. Comida oferecida o ofende, e ele destrói o jardim.</p>
+    <p><b>Quer:</b> Não ser enganado. Parece um ouriço; o Amasso sabe a diferença.</p>
+  </div>
+  <div class="cartao ficha" id="cr-leprechaun" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Leprechaun</h5>
+    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Voo.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Brilho.</p>
+    <p><b>Quer:</b> Enganar com ouro falso. O ouro dele some em poucas horas.</p>
+  </div>
+  <div class="cartao ficha" id="cr-murtisco" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Murtisco <em>(murtlap)</em></h5>
+    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Anfíbia.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Deixado em paz, volta para a água.</p>
+    <p><b>Quer:</b> Comer crustáceos. O tentáculo em conserva dá resistência a azarações (<a href="#cap16">Capítulo XVI</a>).</p>
+  </div>
+  <div class="cartao ficha" id="cr-pelucio" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Pelúcio <em>(niffler)</em></h5>
+    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Escava.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Brilho: ouro ou joias o distraem a cena inteira.</p>
+    <p><b>Quer:</b> Pegar tudo o que brilha. A bolsa da barriga guarda muito mais do que parece.</p>
+  </div>
+  <div class="cartao ficha" id="cr-plimpy" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Plimpy</h5>
+    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Anfíbia.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Pernas amarradas: fica boiando até se soltar.</p>
+    <p><b>Quer:</b> Comer caramujos.</p>
+  </div>
+  <div class="cartao ficha" id="cr-pufoso" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Pufoso <em>(puffskein)</em></h5>
+    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Sentidos Agudos.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Comida: qualquer resto o acalma.</p>
+    <p><b>Quer:</b> Comer. Não ataca; ronrona.</p>
+  </div>
+  <div class="cartao ficha" id="cr-snidget-dourado" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Snidget dourado</h5>
+    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Voo.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Espécie protegida: pegar é crime, e ela se cansa se perseguida por uma cena.</p>
+    <p><b>Quer:</b> Fugir. Não ataca.</p>
+  </div>
+  <div class="cartao ficha" id="cr-tronquilho" data-perigo="1" data-arq="Ágil" data-pv="5" data-def="8" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Tronquilho <em>(bowtruckle)</em></h5>
+    <p class="etiqueta">Perigo 1 · Ágil · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 5 · <b>Defesa</b> 8 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Furtiva.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Bichos-de-conta: oferecidos, deixam tirar a madeira.</p>
+    <p><b>Quer:</b> Proteger a árvore. Mira nos olhos.</p>
+  </div>
+  <div class="cartao ficha" id="cr-verme-cego" data-perigo="1" data-arq="Padrão" data-pv="6" data-def="6" data-atq="d6+d4" data-dano="1" data-dt="6" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="1">
+    <h5>Verme-cego <em>(flobberworm)</em></h5>
+    <p class="etiqueta">Perigo 1 · Padrão · Ministério X · Ameaça 1</p>
+    <p><b>PV</b> 6 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d4 · <b>Dano</b> RA+1 · <b>DT</b> 6</p>
+    <p><b>Traços:</b> Partes Valiosas (o muco).</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Alface: com ela por perto, não sai do lugar.</p>
+    <p><b>Quer:</b> Comer alface. Não ataca.</p>
+  </div>
+  <div class="cartao ficha" id="cr-ashwinder" data-perigo="2" data-arq="Padrão" data-pv="12" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="2">
+    <h5>Ashwinder</h5>
+    <p class="etiqueta">Perigo 2 · Padrão · Ministério X · Ameaça 2</p>
+    <p><b>PV</b> 12 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
+    <p><b>Traços:</b> Resistência (fogo).</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Glacius congela os ovos antes de pegarem fogo.</p>
+    <p><b>Quer:</b> Pôr ovos num lugar quente. Nasce de fogo mágico esquecido e vive uma hora.</p>
+  </div>
+  <div class="cartao ficha" id="cr-diabrete-da-cornualha" data-perigo="2" data-arq="Enxame" data-pv="12" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="1" data-pes="0" data-inc="1" data-ameaca="3">
+    <h5>Diabrete da Cornualha <em>(pixie)</em></h5>
+    <p class="etiqueta">Perigo 2 · Enxame · Ministério X · Ameaça 3</p>
+    <p><b>PV</b> 12 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
+    <p><b>Traços:</b> Voo. Enxame: ataca todos num raio de 3 m; feitiço de alvo único causa metade.</p>
+    <p><b>Poderes:</b> Ilusão (bagunça).</p>
+    <p><b>Fraqueza:</b> Immobulus.</p>
+    <p><b>Quer:</b> Bagunçar e levar coisas para o alto.</p>
+  </div>
+  <div class="cartao ficha" id="cr-fwooper" data-perigo="2" data-arq="Padrão" data-pv="12" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="1" data-pes="0" data-inc="1" data-ameaca="3">
+    <h5>Fwooper</h5>
+    <p class="etiqueta">Perigo 2 · Padrão · Ministério X · Ameaça 3</p>
+    <p><b>PV</b> 12 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
+    <p><b>Traços:</b> Voo.</p>
+    <p><b>Poderes:</b> Grito (o canto, que enlouquece).</p>
+    <p><b>Fraqueza:</b> Silencio: calado, é só uma ave bonita.</p>
+    <p><b>Quer:</b> Cantar. Vende-se com um feitiço silenciador renovado todo mês.</p>
+  </div>
+  <div class="cartao ficha" id="cr-hinkypunk" data-perigo="2" data-arq="Ágil" data-pv="10" data-def="9" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="1" data-pes="0" data-inc="0" data-ameaca="2">
+    <h5>Hinkypunk</h5>
+    <p class="etiqueta">Perigo 2 · Ágil · Ministério X · Ameaça 2</p>
+    <p><b>PV</b> 10 · <b>Defesa</b> 9 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
+    <p><b>Traços:</b> Furtiva.</p>
+    <p><b>Poderes:</b> Ilusão (a lanterna).</p>
+    <p><b>Fraqueza:</b> Quem não segue a luz não se perde.</p>
+    <p><b>Quer:</b> Levar viajantes para o pântano.</p>
+  </div>
+  <div class="cartao ficha" id="cr-ramora" data-perigo="2" data-arq="Padrão" data-pv="12" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="2">
+    <h5>Ramora</h5>
+    <p class="etiqueta">Perigo 2 · Padrão · Ministério X · Ameaça 2</p>
+    <p><b>PV</b> 12 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
+    <p><b>Traços:</b> Anfíbia.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Respeito: não ataca quem não a caça.</p>
+    <p><b>Quer:</b> Guardar navios.</p>
+  </div>
+  <div class="cartao ficha" id="cr-salamandra" data-perigo="2" data-arq="Padrão" data-pv="12" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="2">
+    <h5>Salamandra</h5>
+    <p class="etiqueta">Perigo 2 · Padrão · Ministério X · Ameaça 2</p>
+    <p><b>PV</b> 12 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
+    <p><b>Traços:</b> Resistência (fogo).</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Fora do fogo, morre em seis horas; pimenta a mantém viva.</p>
+    <p><b>Quer:</b> Ficar no fogo.</p>
+  </div>
+  <div class="cartao ficha" id="cr-seminviso" data-perigo="2" data-arq="Ágil" data-pv="10" data-def="9" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="0" data-pes="1" data-inc="0" data-ameaca="3">
+    <h5>Seminviso <em>(demiguise)</em></h5>
+    <p class="etiqueta">Perigo 2 · Ágil · Ministério X · Ameaça 3</p>
+    <p><b>PV</b> 10 · <b>Defesa</b> 9 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
+    <p><b>Traços:</b> Invisível.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Ele prevê o caminho mais provável: um plano maluco o pega de surpresa.</p>
+    <p><b>Quer:</b> Fugir. O pelo tece capas de invisibilidade.</p>
+  </div>
+  <div class="cartao ficha" id="cr-billywig" data-perigo="3" data-arq="Ágil" data-pv="16" data-def="9" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="0" data-inc="0" data-ameaca="3">
+    <h5>Billywig</h5>
+    <p class="etiqueta">Perigo 3 · Ágil · Ministério XX · Ameaça 3</p>
+    <p><b>PV</b> 16 · <b>Defesa</b> 9 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Veneno (tontura: quem é picado flutua).</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Impedimenta: lento, é fácil de ver e pegar.</p>
+    <p><b>Quer:</b> Caçar.</p>
+  </div>
+  <div class="cartao ficha" id="cr-caranguejo-de-fogo" data-perigo="3" data-arq="Bruto" data-pv="26" data-def="6" data-atq="d6+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="1" data-pes="1" data-inc="0" data-ameaca="4">
+    <h5>Caranguejo de fogo <em>(fire crab)</em></h5>
+    <p class="etiqueta">Perigo 3 · Bruto · Ministério XX · Ameaça 4</p>
+    <p><b>PV</b> 26 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Resistência (fogo), Couro Mágico.</p>
+    <p><b>Poderes:</b> Sopro (chamas pela traseira).</p>
+    <p><b>Fraqueza:</b> De barriga para cima, não se vira sozinho.</p>
+    <p><b>Quer:</b> Defender-se. O casco cravejado vale como Partes Valiosas, sem o traço.</p>
+  </div>
+  <div class="cartao ficha" id="cr-fada-mordente" data-perigo="3" data-arq="Enxame" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="0" data-inc="1" data-ameaca="4">
+    <h5>Fada mordente <em>(doxy)</em></h5>
+    <p class="etiqueta">Perigo 3 · Enxame · Ministério XX · Ameaça 4</p>
+    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Veneno. Enxame: ataca todos num raio de 3 m; feitiço de alvo único causa metade.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Doxicida em spray: Atordoada uma rodada.</p>
+    <p><b>Quer:</b> Defender o ninho.</p>
+  </div>
+  </div>
+  <h3>Feras</h3>
+  <div class="grade">
+  <div class="cartao ficha" id="cr-barrete-vermelho" data-perigo="2" data-arq="Predador" data-pv="11" data-def="7" data-atq="d8+d6" data-dano="4" data-dt="7" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="2">
+    <h5>Barrete Vermelho <em>(red cap)</em></h5>
+    <p class="etiqueta">Perigo 2 · Predador · Ministério X · Ameaça 2</p>
+    <p><b>PV</b> 11 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+4 · <b>DT</b> 7 · Fases como chefe: 2</p>
+    <p><b>Traços:</b> Furtiva.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Luz do dia, ou qualquer feitiço que o assuste.</p>
+    <p><b>Quer:</b> Bater em quem se perde onde houve sangue.</p>
+  </div>
+  <div class="cartao ficha" id="cr-grindylow" data-perigo="2" data-arq="Padrão" data-pv="12" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="1" data-pes="0" data-inc="1" data-ameaca="3">
+    <h5>Grindylow</h5>
+    <p class="etiqueta">Perigo 2 · Padrão · Ministério X · Ameaça 3</p>
+    <p><b>PV</b> 12 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
+    <p><b>Traços:</b> Anfíbia.</p>
+    <p><b>Poderes:</b> Teia ou Tentáculos (os dedos compridos).</p>
+    <p><b>Fraqueza:</b> Dedos frágeis: um crítico os quebra.</p>
+    <p><b>Quer:</b> Puxar para o fundo.</p>
+  </div>
+  <div class="cartao ficha" id="cr-hipogrifo" data-perigo="3" data-arq="Padrão" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="4">
+    <h5>Hipogrifo</h5>
+    <p class="etiqueta">Perigo 3 · Padrão · Ministério XX · Ameaça 4</p>
+    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Ataque Duplo.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Respeito: curvar-se e esperar a mesura de volta.</p>
+    <p><b>Quer:</b> Ser respeitado.</p>
+  </div>
+  <div class="cartao ficha" id="cr-kappa" data-perigo="3" data-arq="Padrão" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="0" data-inc="0" data-ameaca="3">
+    <h5>Kappa</h5>
+    <p class="etiqueta">Perigo 3 · Padrão · Ministério XX · Ameaça 3</p>
+    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Anfíbia, Agarrar.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Água derramada: quem se curva o faz se curvar de volta, a água da cabeça cai, e ele fica fraco.</p>
+    <p><b>Quer:</b> Afogar quem entra no lago.</p>
+  </div>
+  <div class="cartao ficha" id="cr-qilin" data-perigo="3" data-arq="Ágil" data-pv="16" data-def="9" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="0" data-inc="0" data-ameaca="3">
+    <h5>Qilin</h5>
+    <p class="etiqueta">Perigo 3 · Ágil · Ministério XX · Ameaça 3</p>
+    <p><b>PV</b> 16 · <b>Defesa</b> 9 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Sentidos Agudos, Furtiva.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Respeito: curva-se a quem tem o coração puro.</p>
+    <p><b>Quer:</b> Fugir de quem quer usá-lo. Curva-se diante de quem merece governar.</p>
+  </div>
+  <div class="cartao ficha" id="cr-testralio" data-perigo="3" data-arq="Padrão" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="0" data-inc="0" data-ameaca="3">
+    <h5>Testrálio <em>(thestral)</em></h5>
+    <p class="etiqueta">Perigo 3 · Padrão · Ministério XX · Ameaça 3</p>
+    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Só Vista por Poucos (quem já viu a morte).</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Cheiro de sangue o distrai.</p>
+    <p><b>Quer:</b> Comer carne. Leva quem monta a qualquer lugar que ele conheça.</p>
+  </div>
+  <div class="cartao ficha" id="cr-acromantula" data-perigo="4" data-arq="Predador" data-pv="27" data-def="8" data-atq="d10+d8" data-dano="6" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="5">
+    <h5>Acromântula</h5>
+    <p class="etiqueta">Perigo 4 · Predador · Ministério XX · Ameaça 5</p>
+    <p><b>PV</b> 27 · <b>Defesa</b> 8 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+6 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Veneno, Escaladora.</p>
+    <p><b>Poderes:</b> Teia ou Tentáculos (teia).</p>
+    <p><b>Fraqueza:</b> Fogo.</p>
+    <p><b>Quer:</b> Comer; proteger a colônia. Fala. Foge do Basilisco.</p>
+  </div>
+  <div class="cartao ficha" id="cr-kelpie" data-perigo="4" data-arq="Bruto" data-pv="39" data-def="7" data-atq="d8+d6" data-dano="4" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="4">
+    <h5>Kelpie</h5>
+    <p class="etiqueta">Perigo 4 · Bruto · Ministério XX · Ameaça 4</p>
+    <p><b>PV</b> 39 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+4 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Anfíbia, Agarrar.</p>
+    <p><b>Poderes:</b> Mudar de Forma.</p>
+    <p><b>Fraqueza:</b> Rédea com Feitiço de Fixação na cabeça: fica manso.</p>
+    <p><b>Quer:</b> Afogar e comer quem monta.</p>
+  </div>
+  <div class="cartao ficha" id="cr-matagot" data-perigo="4" data-arq="Guardião" data-pv="36" data-def="9" data-atq="d8+d8" data-dano="4" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="4">
+    <h5>Matagot</h5>
+    <p class="etiqueta">Perigo 4 · Guardião · Ministério XX · Ameaça 4</p>
+    <p><b>PV</b> 36 · <b>Defesa</b> 9 · <b>Ataque</b> d8+d8 · <b>Dano</b> RA+4 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Furtiva, Sentidos Agudos. Guardião: reação, recebe o ataque no lugar do que protege.</p>
+    <p><b>Poderes:</b> Chamar o Bando (cada ataque contra ele faz surgir outro).</p>
+    <p><b>Fraqueza:</b> Não atacar: sem ataque, não se multiplica.</p>
+    <p><b>Quer:</b> Guardar o Ministério francês.</p>
+  </div>
+  <div class="cartao ficha" id="cr-swooping-evil" data-perigo="4" data-arq="Predador" data-pv="27" data-def="8" data-atq="d10+d8" data-dano="6" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="5">
+    <h5>Swooping Evil</h5>
+    <p class="etiqueta">Perigo 4 · Predador · Ministério XX · Ameaça 5</p>
+    <p><b>PV</b> 27 · <b>Defesa</b> 8 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+6 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Muda de Tamanho (vira casulo).</p>
+    <p><b>Poderes:</b> Drenar (suga o cérebro).</p>
+    <p><b>Fraqueza:</b> Dono: quem o criou o manda voltar ao casulo.</p>
+    <p><b>Quer:</b> Comer.</p>
+  </div>
+  <div class="cartao ficha" id="cr-trasgo-da-floresta" data-perigo="4" data-arq="Bruto" data-pv="39" data-def="7" data-atq="d8+d6" data-dano="4" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="4">
+    <h5>Trasgo da Floresta</h5>
+    <p class="etiqueta">Perigo 4 · Bruto · Ministério XX · Ameaça 4</p>
+    <p><b>PV</b> 39 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+4 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Resistência, Sentidos Agudos.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Burrice: um Confundo nele dura o dobro.</p>
+    <p><b>Quer:</b> Comer; quebrar o que incomoda. Fede: quem chega perto sente.</p>
+  </div>
+  <div class="cartao ficha" id="cr-unicornio" data-perigo="4" data-arq="Ágil" data-pv="24" data-def="10" data-atq="d8+d8" data-dano="4" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="4">
+    <h5>Unicórnio</h5>
+    <p class="etiqueta">Perigo 4 · Ágil · Ministério XX · Ameaça 4</p>
+    <p><b>PV</b> 24 · <b>Defesa</b> 10 · <b>Ataque</b> d8+d8 · <b>Dano</b> RA+4 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Sentidos Agudos, Partes Valiosas.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Respeito: deixa mulheres e crianças chegarem perto.</p>
+    <p><b>Quer:</b> Fugir; defender o potro. Matar é crime e maldição: o sangue dá meia-vida amaldiçoada.</p>
+  </div>
+  <div class="cartao ficha" id="cr-lobisomem" data-perigo="5" data-arq="Predador" data-pv="38" data-def="9" data-atq="d12+d8" data-dano="7" data-dt="9" data-ntr="2" data-npo="1" data-pes="1" data-inc="0" data-ameaca="6">
+    <h5>Lobisomem</h5>
+    <p class="etiqueta">Perigo 5 · Predador · Ministério XXX · Ameaça 6</p>
+    <p><b>PV</b> 38 · <b>Defesa</b> 9 · <b>Ataque</b> d12+d8 · <b>Dano</b> RA+7 · <b>DT</b> 9 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Regeneração, Sentidos Agudos.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Prata; só existe na lua cheia.</p>
+    <p><b>Quer:</b> Caçar gente. A mordida passa a licantropia.</p>
+  </div>
+  <div class="cartao ficha" id="cr-occami" data-perigo="5" data-arq="Padrão" data-pv="42" data-def="9" data-atq="d10+d8" data-dano="5" data-dt="9" data-ntr="2" data-npo="2" data-pes="0" data-inc="1" data-ameaca="6">
+    <h5>Occami <em>(occamy)</em></h5>
+    <p class="etiqueta">Perigo 5 · Padrão · Ministério XXX · Ameaça 6</p>
+    <p><b>PV</b> 42 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+5 · <b>DT</b> 9 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Muda de Tamanho.</p>
+    <p><b>Poderes:</b> Investida, Teia ou Tentáculos (o corpo que enrola).</p>
+    <p><b>Fraqueza:</b> Muda para caber no espaço: um bule o prende.</p>
+    <p><b>Quer:</b> Proteger os ovos. Os ovos são de prata pura.</p>
+  </div>
+  <div class="cartao ficha" id="cr-rougarou" data-perigo="5" data-arq="Predador" data-pv="38" data-def="9" data-atq="d12+d8" data-dano="7" data-dt="9" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="5">
+    <h5>Rougarou</h5>
+    <p class="etiqueta">Perigo 5 · Predador · Ministério XXX · Ameaça 5</p>
+    <p><b>PV</b> 38 · <b>Defesa</b> 9 · <b>Ataque</b> d12+d8 · <b>Dano</b> RA+7 · <b>DT</b> 9 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Sentidos Agudos, Furtiva.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Prata.</p>
+    <p><b>Quer:</b> Caçar nos pântanos. Cabeça de cão, corpo de homem.</p>
+  </div>
+  <div class="cartao ficha" id="cr-trasgo-da-montanha" data-perigo="5" data-arq="Bruto" data-pv="55" data-def="8" data-atq="d8+d8" data-dano="5" data-dt="9" data-ntr="2" data-npo="1" data-pes="1" data-inc="0" data-ameaca="6">
+    <h5>Trasgo da Montanha</h5>
+    <p class="etiqueta">Perigo 5 · Bruto · Ministério XXX · Ameaça 6</p>
+    <p><b>PV</b> 55 · <b>Defesa</b> 8 · <b>Ataque</b> d8+d8 · <b>Dano</b> RA+5 · <b>DT</b> 9 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Couro Mágico, Resistência.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> A própria clava: Wingardium Leviosa nela.</p>
+    <p><b>Quer:</b> Comer; quebrar o que incomoda.</p>
+  </div>
+  <div class="cartao ficha" id="cr-fenix" data-perigo="6" data-arq="Padrão" data-pv="56" data-def="9" data-atq="d10+d10" data-dano="6" data-dt="10" data-ntr="3" data-npo="2" data-pes="1" data-inc="1" data-ameaca="8">
+    <h5>Fênix</h5>
+    <p class="etiqueta">Perigo 6 · Padrão · Ministério XXX · Ameaça 8</p>
+    <p><b>PV</b> 56 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Regeneração (renasce das cinzas), Partes Valiosas.</p>
+    <p><b>Poderes:</b> Sumir (some num clarão), Grito (o canto: medo nos inimigos).</p>
+    <p><b>Fraqueza:</b> Dono: só luta por quem é leal a quem ela serve.</p>
+    <p><b>Quer:</b> Servir a quem escolheu. Lágrimas curam até veneno de Basilisco; carrega quem segura a cauda.</p>
+  </div>
+  <div class="cartao ficha" id="cr-graphorn" data-perigo="6" data-arq="Bruto" data-pv="73" data-def="8" data-atq="d10+d8" data-dano="6" data-dt="10" data-ntr="3" data-npo="1" data-pes="1" data-inc="0" data-ameaca="7">
+    <h5>Graphorn</h5>
+    <p class="etiqueta">Perigo 6 · Bruto · Ministério XXX · Ameaça 7</p>
+    <p><b>PV</b> 73 · <b>Defesa</b> 8 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Couro Mágico, Resistência, Partes Valiosas.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Dono: os trasgos das montanhas os montam e mandam neles.</p>
+    <p><b>Quer:</b> Defender a manada.</p>
+  </div>
+  <div class="cartao ficha" id="cr-grifo" data-perigo="6" data-arq="Padrão" data-pv="56" data-def="9" data-atq="d10+d10" data-dano="6" data-dt="10" data-ntr="3" data-npo="1" data-pes="0" data-inc="1" data-ameaca="7">
+    <h5>Grifo</h5>
+    <p class="etiqueta">Perigo 6 · Padrão · Ministério XXX · Ameaça 7</p>
+    <p><b>PV</b> 56 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Ataque Duplo, Sentidos Agudos.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Brilho: guarda tesouros e se distrai com eles.</p>
+    <p><b>Quer:</b> Guardar o tesouro.</p>
+  </div>
+  <div class="cartao ficha" id="cr-lula-gigante" data-perigo="6" data-arq="Bruto" data-pv="73" data-def="8" data-atq="d10+d8" data-dano="6" data-dt="10" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="7">
+    <h5>Lula gigante</h5>
+    <p class="etiqueta">Perigo 6 · Bruto · Ministério XXX · Ameaça 7</p>
+    <p><b>PV</b> 73 · <b>Defesa</b> 8 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Anfíbia, Agarrar.</p>
+    <p><b>Poderes:</b> Teia ou Tentáculos.</p>
+    <p><b>Fraqueza:</b> Comida: torradas a fazem amiga.</p>
+    <p><b>Quer:</b> Ficar no lago. Em Hogwarts, salva alunos que caem na água.</p>
+  </div>
+  <div class="cartao ficha" id="cr-snallygaster" data-perigo="6" data-arq="Predador" data-pv="50" data-def="9" data-atq="d12+d10" data-dano="8" data-dt="10" data-ntr="2" data-npo="1" data-pes="1" data-inc="0" data-ameaca="7">
+    <h5>Snallygaster</h5>
+    <p class="etiqueta">Perigo 6 · Predador · Ministério XXX · Ameaça 7</p>
+    <p><b>PV</b> 50 · <b>Defesa</b> 9 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+8 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Couro Mágico (bala não entra).</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Curiosa: segue o que se mexe e brilha.</p>
+    <p><b>Quer:</b> Caçar.</p>
+  </div>
+  <div class="cartao ficha" id="cr-yeti" data-perigo="6" data-arq="Bruto" data-pv="73" data-def="8" data-atq="d10+d8" data-dano="6" data-dt="10" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="6">
+    <h5>Yeti</h5>
+    <p class="etiqueta">Perigo 6 · Bruto · Ministério XXX · Ameaça 6</p>
+    <p><b>PV</b> 73 · <b>Defesa</b> 8 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Resistência (frio), Aterrorizante.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Fogo: foge dele.</p>
+    <p><b>Quer:</b> Comer o que passa.</p>
+  </div>
+  <div class="cartao ficha" id="cr-erumpente" data-perigo="7" data-arq="Bruto" data-pv="94" data-def="9" data-atq="d10+d10" data-dano="7" data-dt="10" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="8">
+    <h5>Erumpente <em>(explosivim)</em></h5>
+    <p class="etiqueta">Perigo 7 · Bruto · Ministério XXXX · Ameaça 8</p>
+    <p><b>PV</b> 94 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+7 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Couro Mágico, Resistência, Partes Valiosas.</p>
+    <p><b>Poderes:</b> Investida, Explosão (o chifre).</p>
+    <p><b>Fraqueza:</b> Cio: segue o cheiro de almíscar de um frasco aberto.</p>
+    <p><b>Quer:</b> Acasalar.</p>
+  </div>
+  <div class="cartao ficha" id="cr-fofo" data-perigo="7" data-arq="Guardião" data-pv="86" data-def="11" data-atq="d12+d10" data-dano="7" data-dt="10" data-ntr="3" data-npo="1" data-pes="0" data-inc="1" data-ameaca="8">
+    <h5>Fofo <em>(cão de três cabeças)</em></h5>
+    <p class="etiqueta">Perigo 7 · Guardião · Ministério XXXX · Ameaça 8</p>
+    <p><b>PV</b> 86 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+7 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Ataque Duplo, Sentidos Agudos, Resistência. Guardião: reação, recebe o ataque no lugar do que protege.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Música: dorme enquanto ela dura.</p>
+    <p><b>Quer:</b> Guardar o alçapão.</p>
+  </div>
+  <div class="cartao ficha" id="cr-monstro-do-rio-branco" data-perigo="7" data-arq="Bruto" data-pv="94" data-def="9" data-atq="d10+d10" data-dano="7" data-dt="10" data-ntr="2" data-npo="1" data-pes="0" data-inc="0" data-ameaca="7">
+    <h5>Monstro do Rio Branco</h5>
+    <p class="etiqueta">Perigo 7 · Bruto · Ministério XXXX · Ameaça 7</p>
+    <p><b>PV</b> 94 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+7 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Anfíbia, Resistência.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Respeito: deixa passar quem não mexe no rio.</p>
+    <p><b>Quer:</b> Guardar o rio.</p>
+  </div>
+  <div class="cartao ficha" id="cr-wampus" data-perigo="7" data-arq="Predador" data-pv="65" data-def="10" data-atq="d12+d12" data-dano="9" data-dt="10" data-ntr="3" data-npo="1" data-pes="0" data-inc="1" data-ameaca="8">
+    <h5>Wampus</h5>
+    <p class="etiqueta">Perigo 7 · Predador · Ministério XXXX · Ameaça 8</p>
+    <p><b>PV</b> 65 · <b>Defesa</b> 10 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+9 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Escaladora, Sentidos Agudos, Ataque Duplo.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Respeito: nunca ataca quem não foge.</p>
+    <p><b>Quer:</b> Caçar.</p>
+  </div>
+  <div class="cartao ficha" id="cr-passaro-trovao" data-perigo="8" data-arq="Padrão" data-pv="90" data-def="11" data-atq="d12+d12" data-dano="8" data-dt="11" data-ntr="3" data-npo="2" data-pes="0" data-inc="0" data-ameaca="8">
+    <h5>Pássaro-trovão <em>(thunderbird)</em></h5>
+    <p class="etiqueta">Perigo 8 · Padrão · Ministério XXXX · Ameaça 8</p>
+    <p><b>PV</b> 90 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+8 · <b>DT</b> 11 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Voo, Sentidos Agudos, Partes Valiosas.</p>
+    <p><b>Poderes:</b> Explosão (a tempestade), Investida.</p>
+    <p><b>Fraqueza:</b> Respeito: acalma com quem fala com ele sem medo.</p>
+    <p><b>Quer:</b> Fugir do perigo que sente chegar. Uma pena dele, molhada, faz chover.</p>
+  </div>
+  <div class="cartao ficha" id="cr-serpente-chifruda" data-perigo="8" data-arq="Conjurador" data-pv="72" data-def="11" data-atq="d12+d12" data-dano="8" data-dt="11" data-ntr="3" data-npo="3" data-pes="0" data-inc="1" data-ameaca="9">
+    <h5>Serpente-chifruda</h5>
+    <p class="etiqueta">Perigo 8 · Conjurador · Ministério XXXX · Ameaça 9</p>
+    <p><b>PV</b> 72 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+8 · <b>DT</b> 11 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Anfíbia, Inteligente, Partes Valiosas.</p>
+    <p><b>Poderes:</b> Sumir (a joia da testa), Investida, Feitiço.</p>
+    <p><b>Fraqueza:</b> Respeito ao lago e à joia.</p>
+    <p><b>Quer:</b> Guardar o lago.</p>
+  </div>
+  <div class="cartao ficha" id="cr-zouwu" data-perigo="9" data-arq="Ágil" data-pv="88" data-def="14" data-atq="d12+d12+d8" data-dano="9" data-dt="12" data-ntr="3" data-npo="2" data-pes="0" data-inc="0" data-ameaca="9">
+    <h5>Zouwu</h5>
+    <p class="etiqueta">Perigo 9 · Ágil · Ministério XXXXX · Ameaça 9</p>
+    <p><b>PV</b> 88 · <b>Defesa</b> 14 · <b>Ataque</b> d12+d12+d8 · <b>Dano</b> RA+9 · <b>DT</b> 12 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Sentidos Agudos, Furtiva, Muda de Tamanho.</p>
+    <p><b>Poderes:</b> Investida, Sumir (corre mil milhas num dia).</p>
+    <p><b>Fraqueza:</b> Brinquedo: um guizo de pena a acalma.</p>
+    <p><b>Quer:</b> Fugir de quem a prendeu.</p>
+  </div>
+  </div>
+  <h3>Dragões</h3>
+  <div class="grade">
+  <div class="cartao ficha" id="cr-dragao-filhote" data-perigo="3" data-arq="Padrão" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="1" data-pes="1" data-inc="0" data-ameaca="4">
+    <h5>Dragão filhote</h5>
+    <p class="etiqueta">Perigo 3 · Padrão · Ministério XX · Ameaça 4</p>
+    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Resistência (fogo), Couro Mágico.</p>
+    <p><b>Poderes:</b> Sopro.</p>
+    <p><b>Fraqueza:</b> Dono: obedece a quem chama de mãe.</p>
+    <p><b>Quer:</b> Comer, a toda hora. Cresce o tamanho de uma casa em semanas. Norberto, de Hagrid.</p>
+  </div>
+  <div class="cartao ficha" id="cr-dente-de-vibora-peruano" data-perigo="7" data-arq="Ágil" data-pv="58" data-def="12" data-atq="d12+d10" data-dano="7" data-dt="10" data-ntr="3" data-npo="1" data-pes="1" data-inc="0" data-ameaca="8">
+    <h5>Dente-de-Víbora Peruano</h5>
+    <p class="etiqueta">Perigo 7 · Ágil · Ministério XXXX · Ameaça 8</p>
+    <p><b>PV</b> 58 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+7 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Veneno, Couro Mágico.</p>
+    <p><b>Poderes:</b> Sopro.</p>
+    <p><b>Fraqueza:</b> Os olhos: Lippitudo cega.</p>
+    <p><b>Quer:</b> Comer gente e gado. O menor e o mais rápido dos dragões.</p>
+  </div>
+  <div class="cartao ficha" id="cr-olho-de-opala-antipoda" data-perigo="7" data-arq="Padrão" data-pv="72" data-def="10" data-atq="d12+d10" data-dano="7" data-dt="10" data-ntr="3" data-npo="1" data-pes="1" data-inc="0" data-ameaca="8">
+    <h5>Olho-de-Opala Antípoda</h5>
+    <p class="etiqueta">Perigo 7 · Padrão · Ministério XXXX · Ameaça 8</p>
+    <p><b>PV</b> 72 · <b>Defesa</b> 10 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+7 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo).</p>
+    <p><b>Poderes:</b> Sopro.</p>
+    <p><b>Fraqueza:</b> Comida: só caça ovelhas; um rebanho o distrai.</p>
+    <p><b>Quer:</b> Comer. Raramente mata.</p>
+  </div>
+  <div class="cartao ficha" id="cr-bola-de-fogo-chines" data-perigo="8" data-arq="Ágil" data-pv="72" data-def="13" data-atq="d12+d12" data-dano="8" data-dt="11" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="9">
+    <h5>Bola-de-Fogo Chinês</h5>
+    <p class="etiqueta">Perigo 8 · Ágil · Ministério XXXX · Ameaça 9</p>
+    <p><b>PV</b> 72 · <b>Defesa</b> 13 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+8 · <b>DT</b> 11 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo).</p>
+    <p><b>Poderes:</b> Sopro, Investida.</p>
+    <p><b>Fraqueza:</b> Comida: um porco jogado longe a distrai.</p>
+    <p><b>Quer:</b> Comer. Tolera outros dragões.</p>
+  </div>
+  <div class="cartao ficha" id="cr-dorso-cristado-noruegues" data-perigo="8" data-arq="Predador" data-pv="81" data-def="11" data-atq="d12+d12+d4" data-dano="10" data-dt="11" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="9">
+    <h5>Dorso-Cristado Norueguês</h5>
+    <p class="etiqueta">Perigo 8 · Predador · Ministério XXXX · Ameaça 9</p>
+    <p><b>PV</b> 81 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12+d4 · <b>Dano</b> RA+10 · <b>DT</b> 11 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Voo, Couro Mágico, Veneno (as presas).</p>
+    <p><b>Poderes:</b> Sopro, Investida.</p>
+    <p><b>Fraqueza:</b> Os olhos: Lippitudo cega.</p>
+    <p><b>Quer:</b> Comer e brigar.</p>
+  </div>
+  <div class="cartao ficha" id="cr-focinho-curto-sueco" data-perigo="8" data-arq="Padrão" data-pv="90" data-def="11" data-atq="d12+d12" data-dano="8" data-dt="11" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="9">
+    <h5>Focinho-Curto Sueco</h5>
+    <p class="etiqueta">Perigo 8 · Padrão · Ministério XXXX · Ameaça 9</p>
+    <p><b>PV</b> 90 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+8 · <b>DT</b> 11 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo).</p>
+    <p><b>Poderes:</b> Sopro (chama azul), Investida.</p>
+    <p><b>Fraqueza:</b> Isca: transfigurar uma pedra num bicho faz o dragão persegui-lo (Cedrico).</p>
+    <p><b>Quer:</b> Ficar longe de gente.</p>
+  </div>
+  <div class="cartao ficha" id="cr-romeno-de-chifre-longo" data-perigo="8" data-arq="Bruto" data-pv="117" data-def="10" data-atq="d12+d10" data-dano="8" data-dt="11" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="9">
+    <h5>Romeno de Chifre-Longo</h5>
+    <p class="etiqueta">Perigo 8 · Bruto · Ministério XXXX · Ameaça 9</p>
+    <p><b>PV</b> 117 · <b>Defesa</b> 10 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+8 · <b>DT</b> 11 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Voo, Couro Mágico, Resistência.</p>
+    <p><b>Poderes:</b> Sopro, Investida.</p>
+    <p><b>Fraqueza:</b> Os olhos: Lippitudo cega.</p>
+    <p><b>Quer:</b> Defender o território.</p>
+  </div>
+  <div class="cartao ficha" id="cr-verde-gales-comum" data-perigo="8" data-arq="Padrão" data-pv="90" data-def="11" data-atq="d12+d12" data-dano="8" data-dt="11" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="9">
+    <h5>Verde-Galês Comum</h5>
+    <p class="etiqueta">Perigo 8 · Padrão · Ministério XXXX · Ameaça 9</p>
+    <p><b>PV</b> 90 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+8 · <b>DT</b> 11 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo).</p>
+    <p><b>Poderes:</b> Sopro, Investida.</p>
+    <p><b>Fraqueza:</b> Comida: prefere ovelhas e foge de gente.</p>
+    <p><b>Quer:</b> Ficar longe de gente.</p>
+  </div>
+  <div class="cartao ficha" id="cr-negro-das-hebridas" data-perigo="9" data-arq="Predador" data-pv="99" data-def="12" data-atq="d12+d12+d10" data-dano="11" data-dt="12" data-ntr="4" data-npo="2" data-pes="1" data-inc="0" data-ameaca="10">
+    <h5>Negro das Hébridas</h5>
+    <p class="etiqueta">Perigo 9 · Predador · Ministério XXXXX · Ameaça 10</p>
+    <p><b>PV</b> 99 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d12+d10 · <b>Dano</b> RA+11 · <b>DT</b> 12 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo), Sentidos Agudos.</p>
+    <p><b>Poderes:</b> Sopro, Investida.</p>
+    <p><b>Fraqueza:</b> Os olhos: Lippitudo cega.</p>
+    <p><b>Quer:</b> Caçar cervos, e às vezes mais.</p>
+  </div>
+  <div class="cartao ficha" id="cr-rabo-corneo-hungaro" data-perigo="9" data-arq="Bruto" data-pv="143" data-def="11" data-atq="d12+d12" data-dano="9" data-dt="12" data-ntr="4" data-npo="2" data-pes="1" data-inc="1" data-ameaca="11">
+    <h5>Rabo-Córneo Húngaro</h5>
+    <p class="etiqueta">Perigo 9 · Bruto · Ministério XXXXX · Ameaça 11</p>
+    <p><b>PV</b> 143 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+9 · <b>DT</b> 12 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo), Ataque Duplo.</p>
+    <p><b>Poderes:</b> Sopro, Investida.</p>
+    <p><b>Fraqueza:</b> Os olhos: Lippitudo cega.</p>
+    <p><b>Quer:</b> Proteger os ovos. A cauda tem espinhos de bronze.</p>
+  </div>
+  <div class="cartao ficha" id="cr-barriga-de-ferro-ucraniano" data-perigo="10" data-arq="Bruto" data-pv="176" data-def="12" data-atq="d12+d12" data-dano="11" data-dt="13" data-ntr="4" data-npo="2" data-pes="1" data-inc="1" data-ameaca="12">
+    <h5>Barriga-de-Ferro Ucraniano</h5>
+    <p class="etiqueta">Perigo 10 · Bruto · Ministério XXXXX · Ameaça 12</p>
+    <p><b>PV</b> 176 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+11 · <b>DT</b> 13 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Voo, Couro Mágico, Resistência (fogo), Ataque Duplo.</p>
+    <p><b>Poderes:</b> Sopro, Investida.</p>
+    <p><b>Fraqueza:</b> Pesado demais: voa mal e não faz curva.</p>
+    <p><b>Quer:</b> Defender a reserva. O maior dos dragões.</p>
+  </div>
+  </div>
+  <h3>Seres inteligentes</h3>
+  <div class="grade">
+  <div class="cartao ficha" id="cr-elfo-domestico" data-perigo="3" data-arq="Conjurador" data-pv="16" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="2" data-pes="0" data-inc="1" data-ameaca="4">
+    <h5>Elfo doméstico</h5>
+    <p class="etiqueta">Perigo 3 · Conjurador · Ministério XX · Ameaça 4</p>
+    <p><b>PV</b> 16 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Inteligente, Sentidos Agudos.</p>
+    <p><b>Poderes:</b> Sumir (aparata onde bruxo não aparata), Feitiço (magia sem varinha).</p>
+    <p><b>Fraqueza:</b> Dono: obedece. Uma roupa dada pelo dono o liberta.</p>
+    <p><b>Quer:</b> Servir a família. Veja Magia dos elfos, no <a href="#cap5">Grimório</a>.</p>
+  </div>
+  <div class="cartao ficha" id="cr-duende" data-perigo="4" data-arq="Padrão" data-pv="30" data-def="8" data-atq="d8+d8" data-dano="4" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="5">
+    <h5>Duende <em>(goblin)</em></h5>
+    <p class="etiqueta">Perigo 4 · Padrão · Ministério XX · Ameaça 5</p>
+    <p><b>PV</b> 30 · <b>Defesa</b> 8 · <b>Ataque</b> d8+d8 · <b>Dano</b> RA+4 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Inteligente, Mente Fechada.</p>
+    <p><b>Poderes:</b> Feitiço (magia sem varinha).</p>
+    <p><b>Fraqueza:</b> Acordo: devolver o que um duende fez acaba a briga.</p>
+    <p><b>Quer:</b> Guardar o ouro e o que é deles. Veja Magia dos duendes, no <a href="#cap5">Grimório</a>.</p>
+  </div>
+  <div class="cartao ficha" id="cr-pukwudgie" data-perigo="4" data-arq="Ágil" data-pv="24" data-def="10" data-atq="d8+d8" data-dano="4" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="5">
+    <h5>Pukwudgie</h5>
+    <p class="etiqueta">Perigo 4 · Ágil · Ministério XX · Ameaça 5</p>
+    <p><b>PV</b> 24 · <b>Defesa</b> 10 · <b>Ataque</b> d8+d8 · <b>Dano</b> RA+4 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Inteligente, Veneno (as flechas).</p>
+    <p><b>Poderes:</b> Feitiço.</p>
+    <p><b>Fraqueza:</b> Respeito: honra quem honra o pacto de Ilvermorny.</p>
+    <p><b>Quer:</b> Ser deixado em paz.</p>
+  </div>
+  <div class="cartao ficha" id="cr-sereiano" data-perigo="5" data-arq="Padrão" data-pv="42" data-def="9" data-atq="d10+d8" data-dano="5" data-dt="9" data-ntr="2" data-npo="2" data-pes="0" data-inc="1" data-ameaca="6">
+    <h5>Sereiano</h5>
+    <p class="etiqueta">Perigo 5 · Padrão · Ministério XXX · Ameaça 6</p>
+    <p><b>PV</b> 42 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+5 · <b>DT</b> 9 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Anfíbia, Inteligente.</p>
+    <p><b>Poderes:</b> Chamar o Bando, Grito (o canto, fora d'água).</p>
+    <p><b>Fraqueza:</b> Respeito: quem cumpre o combinado passa.</p>
+    <p><b>Quer:</b> Guardar o lago.</p>
+  </div>
+  <div class="cartao ficha" id="cr-veela" data-perigo="5" data-arq="Conjurador" data-pv="34" data-def="9" data-atq="d10+d8" data-dano="5" data-dt="9" data-ntr="2" data-npo="3" data-pes="0" data-inc="0" data-ameaca="5">
+    <h5>Veela</h5>
+    <p class="etiqueta">Perigo 5 · Conjurador · Ministério XXX · Ameaça 5</p>
+    <p><b>PV</b> 34 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d8 · <b>Dano</b> RA+5 · <b>DT</b> 9 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Inteligente, Voo (na forma de ave).</p>
+    <p><b>Poderes:</b> Ilusão (o fascínio), Mudar de Forma (ave de fogo), Explosão (bolas de fogo).</p>
+    <p><b>Fraqueza:</b> Oclumência resiste ao fascínio; acalmada, volta a ser gente.</p>
+    <p><b>Quer:</b> Ser respeitada.</p>
+  </div>
+  <div class="cartao ficha" id="cr-centauro" data-perigo="6" data-arq="Padrão" data-pv="56" data-def="9" data-atq="d10+d10" data-dano="6" data-dt="10" data-ntr="2" data-npo="2" data-pes="0" data-inc="0" data-ameaca="6">
+    <h5>Centauro</h5>
+    <p class="etiqueta">Perigo 6 · Padrão · Ministério XXX · Ameaça 6</p>
+    <p><b>PV</b> 56 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Inteligente, Sentidos Agudos.</p>
+    <p><b>Poderes:</b> Investida, Chamar o Bando.</p>
+    <p><b>Fraqueza:</b> Respeito à floresta.</p>
+    <p><b>Quer:</b> Ler os céus e ser deixado em paz. Ataca com arco.</p>
+  </div>
+  <div class="cartao ficha" id="cr-vampiro" data-perigo="6" data-arq="Predador" data-pv="50" data-def="9" data-atq="d12+d10" data-dano="8" data-dt="10" data-ntr="3" data-npo="1" data-pes="1" data-inc="1" data-ameaca="8">
+    <h5>Vampiro</h5>
+    <p class="etiqueta">Perigo 6 · Predador · Ministério XXX · Ameaça 8</p>
+    <p><b>PV</b> 50 · <b>Defesa</b> 9 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+8 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Inteligente, Regeneração, Sentidos Agudos.</p>
+    <p><b>Poderes:</b> Drenar (o sangue cansa a alma).</p>
+    <p><b>Fraqueza:</b> Luz do sol.</p>
+    <p><b>Quer:</b> Beber sangue sem ser descoberto.</p>
+  </div>
+  <div class="cartao ficha" id="cr-esfinge" data-perigo="7" data-arq="Conjurador" data-pv="58" data-def="10" data-atq="d12+d10" data-dano="7" data-dt="10" data-ntr="2" data-npo="2" data-pes="0" data-inc="2" data-ameaca="9">
+    <h5>Esfinge</h5>
+    <p class="etiqueta">Perigo 7 · Conjurador · Ministério XXXX · Ameaça 9</p>
+    <p><b>PV</b> 58 · <b>Defesa</b> 10 · <b>Ataque</b> d12+d10 · <b>Dano</b> RA+7 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Inteligente, Mente Fechada.</p>
+    <p><b>Poderes:</b> Feitiço, Grito.</p>
+    <p><b>Fraqueza:</b> Enigma.</p>
+    <p><b>Quer:</b> Guardar a passagem. Quem erra o enigma é atacado; quem não responde pode ir embora.</p>
+  </div>
+  <div class="cartao ficha" id="cr-gigante" data-perigo="9" data-arq="Bruto" data-pv="143" data-def="11" data-atq="d12+d12" data-dano="9" data-dt="12" data-ntr="3" data-npo="2" data-pes="1" data-inc="0" data-ameaca="10">
+    <h5>Gigante</h5>
+    <p class="etiqueta">Perigo 9 · Bruto · Ministério XXXXX · Ameaça 10</p>
+    <p><b>PV</b> 143 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+9 · <b>DT</b> 12 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Resistência, Couro Mágico, Inteligente.</p>
+    <p><b>Poderes:</b> Investida, Explosão (pedra arremessada).</p>
+    <p><b>Fraqueza:</b> Dono: o Gurg manda; presentes compram a paz.</p>
+    <p><b>Quer:</b> Seguir o Gurg.</p>
+  </div>
+  </div>
+  <h3>Entidades e mortos</h3>
+  <div class="grade">
+  <div class="cartao ficha" id="cr-bicho-papao" data-perigo="2" data-arq="Conjurador" data-pv="10" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="1" data-pes="0" data-inc="0" data-ameaca="2">
+    <h5>Bicho-Papão <em>(boggart)</em></h5>
+    <p class="etiqueta">Perigo 2 · Conjurador · Ministério X · Ameaça 2</p>
+    <p><b>PV</b> 10 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 · <b>DT</b> 7 · Fases como chefe: 2</p>
+    <p><b>Traços:</b> Aterrorizante.</p>
+    <p><b>Poderes:</b> Mudar de Forma (o maior medo de quem está à frente).</p>
+    <p><b>Fraqueza:</b> Riso: Riddikulus.</p>
+    <p><b>Quer:</b> Assustar. Com várias pessoas na frente, fica confuso e vira uma mistura.</p>
+  </div>
+  <div class="cartao ficha" id="cr-fantasma" data-perigo="2" data-arq="Espectral" data-pv="8" data-def="7" data-atq="d6+d6" data-dano="2" data-dt="7" data-ntr="1" data-npo="0" data-pes="0" data-inc="0" data-ameaca="2">
+    <h5>Fantasma</h5>
+    <p class="etiqueta">Perigo 2 · Espectral · Ministério X · Ameaça 2</p>
+    <p><b>PV</b> 8 · <b>Defesa</b> 7 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+2 de DET · <b>DT</b> 7 · Fases como chefe: 2</p>
+    <p><b>Traços:</b> Voo. Espectral: imune a dano físico.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Conversa: quase todo fantasma quer ser ouvido.</p>
+    <p><b>Quer:</b> Repetir a vida que teve. Atravessar alguém causa o dano em DET, um frio de morte. Não ataca de propósito.</p>
+  </div>
+  <div class="cartao ficha" id="cr-inferius" data-perigo="3" data-arq="Bruto" data-pv="26" data-def="6" data-atq="d6+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="0" data-inc="0" data-ameaca="3">
+    <h5>Inferius</h5>
+    <p class="etiqueta">Perigo 3 · Bruto · Ministério XX · Ameaça 3</p>
+    <p><b>PV</b> 26 · <b>Defesa</b> 6 · <b>Ataque</b> d6+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Mente Fechada, Agarrar.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Fogo.</p>
+    <p><b>Quer:</b> Cumprir a ordem de quem o fez. Não sente dor; Stupefy não o para.</p>
+  </div>
+  <div class="cartao ficha" id="cr-poltergeist" data-perigo="3" data-arq="Ágil" data-pv="16" data-def="9" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="0" data-pes="1" data-inc="0" data-ameaca="4">
+    <h5>Poltergeist</h5>
+    <p class="etiqueta">Perigo 3 · Ágil · Ministério XX · Ameaça 4</p>
+    <p><b>PV</b> 16 · <b>Defesa</b> 9 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Invisível.</p>
+    <p><b>Poderes:</b> nenhum.</p>
+    <p><b>Fraqueza:</b> Dono: quem ele teme (o Barão Sangrento) manda nele.</p>
+    <p><b>Quer:</b> Bagunçar. Joga objetos, mas não pode ser ferido por eles.</p>
+  </div>
+  <div class="cartao ficha" id="cr-dementador" data-perigo="6" data-arq="Espectral" data-pv="39" data-def="9" data-atq="d10+d10" data-dano="6" data-dt="10" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="7">
+    <h5>Dementador</h5>
+    <p class="etiqueta">Perigo 6 · Espectral · Ministério XXX · Ameaça 7</p>
+    <p><b>PV</b> 39 · <b>Defesa</b> 9 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+6 de DET · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Voo, Aterrorizante. Espectral: imune a dano físico.</p>
+    <p><b>Poderes:</b> Drenar.</p>
+    <p><b>Fraqueza:</b> Patrono.</p>
+    <p><b>Quer:</b> Sugar felicidade. Beijo: veja as notas abaixo.</p>
+  </div>
+  <div class="cartao ficha" id="cr-lethifold" data-perigo="8" data-arq="Espectral" data-pv="63" data-def="11" data-atq="d12+d12" data-dano="8" data-dt="11" data-ntr="3" data-npo="2" data-pes="0" data-inc="2" data-ameaca="10">
+    <h5>Lethifold</h5>
+    <p class="etiqueta">Perigo 8 · Espectral · Ministério XXXX · Ameaça 10</p>
+    <p><b>PV</b> 63 · <b>Defesa</b> 11 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+8 de DET · <b>DT</b> 11 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Furtiva, Agarrar, Sentidos Agudos. Espectral: imune a dano físico.</p>
+    <p><b>Poderes:</b> Teia ou Tentáculos (o manto), Drenar.</p>
+    <p><b>Fraqueza:</b> Patrono.</p>
+    <p><b>Quer:</b> Comer quem dorme. Não deixa nem o corpo.</p>
+  </div>
+  <div class="cartao ficha" id="cr-obscurus" data-perigo="9" data-arq="Espectral" data-pv="77" data-def="12" data-atq="d12+d12+d8" data-dano="9" data-dt="12" data-ntr="3" data-npo="2" data-pes="0" data-inc="0" data-ameaca="9">
+    <h5>Obscurus</h5>
+    <p class="etiqueta">Perigo 9 · Espectral · Ministério XXXXX · Ameaça 9</p>
+    <p><b>PV</b> 77 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d12+d8 · <b>Dano</b> RA+9 · <b>DT</b> 12 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Voo, Aterrorizante, Muda de Tamanho. Espectral: imune a dano físico.</p>
+    <p><b>Poderes:</b> Explosão, Investida.</p>
+    <p><b>Fraqueza:</b> Nome: chamar a pessoa lá dentro pelo nome faz ela recolhê-lo.</p>
+    <p><b>Quer:</b> Destruir o que machucou o hospedeiro. Ferir o Obscurus fere o hospedeiro.</p>
+  </div>
+  </div>
+  <h3>Plantas que atacam</h3>
+  <div class="grade">
+  <div class="cartao ficha" id="cr-tentacula-venenosa" data-perigo="3" data-arq="Padrão" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="4">
+    <h5>Tentácula Venenosa</h5>
+    <p class="etiqueta">Perigo 3 · Padrão · Ministério XX · Ameaça 4</p>
+    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Veneno, Agarrar.</p>
+    <p><b>Poderes:</b> Teia ou Tentáculos.</p>
+    <p><b>Fraqueza:</b> Fogo.</p>
+    <p><b>Quer:</b> Pegar e morder.</p>
+  </div>
+  <div class="cartao ficha" id="cr-visgo-do-diabo" data-perigo="3" data-arq="Padrão" data-pv="20" data-def="7" data-atq="d8+d6" data-dano="3" data-dt="8" data-ntr="2" data-npo="1" data-pes="0" data-inc="1" data-ameaca="4">
+    <h5>Visgo-do-diabo</h5>
+    <p class="etiqueta">Perigo 3 · Padrão · Ministério XX · Ameaça 4</p>
+    <p><b>PV</b> 20 · <b>Defesa</b> 7 · <b>Ataque</b> d8+d6 · <b>Dano</b> RA+3 · <b>DT</b> 8 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Agarrar, Sentidos Agudos.</p>
+    <p><b>Poderes:</b> Teia ou Tentáculos (as gavinhas).</p>
+    <p><b>Fraqueza:</b> Luz ou fogo: solta na hora. Quem relaxa escorrega.</p>
+    <p><b>Quer:</b> Apertar o que se mexe.</p>
+  </div>
+  <div class="cartao ficha" id="cr-salgueiro-lutador" data-perigo="6" data-arq="Guardião" data-pv="67" data-def="10" data-atq="d10+d10" data-dano="6" data-dt="10" data-ntr="3" data-npo="1" data-pes="0" data-inc="2" data-ameaca="8">
+    <h5>Salgueiro Lutador</h5>
+    <p class="etiqueta">Perigo 6 · Guardião · Ministério XXX · Ameaça 8</p>
+    <p><b>PV</b> 67 · <b>Defesa</b> 10 · <b>Ataque</b> d10+d10 · <b>Dano</b> RA+6 · <b>DT</b> 10 · Fases como chefe: 3</p>
+    <p><b>Traços:</b> Resistência, Agarrar, Ataque Duplo. Guardião: reação, recebe o ataque no lugar do que protege.</p>
+    <p><b>Poderes:</b> Teia ou Tentáculos (os galhos).</p>
+    <p><b>Fraqueza:</b> O nó da raiz: tocado, o salgueiro para.</p>
+    <p><b>Quer:</b> Bater em quem chega perto.</p>
+  </div>
+  </div>
+  <h3>Ameaças extraordinárias</h3>
+  <div class="grade">
+  <div class="cartao ficha" id="cr-manticora" data-perigo="9" data-arq="Predador" data-pv="99" data-def="12" data-atq="d12+d12+d10" data-dano="11" data-dt="12" data-ntr="4" data-npo="1" data-pes="1" data-inc="0" data-ameaca="10">
+    <h5>Mantícora</h5>
+    <p class="etiqueta">Perigo 9 · Predador · Ministério XXXXX · Ameaça 10</p>
+    <p><b>PV</b> 99 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d12+d10 · <b>Dano</b> RA+11 · <b>DT</b> 12 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Veneno (o ferrão paralisa), Couro Mágico, Inteligente, Aterrorizante.</p>
+    <p><b>Poderes:</b> Investida.</p>
+    <p><b>Fraqueza:</b> Comida: farta, cantarola e deixa passar.</p>
+    <p><b>Quer:</b> Comer gente.</p>
+  </div>
+  <div class="cartao ficha" id="cr-nundu" data-perigo="10" data-arq="Predador" data-pv="122" data-def="13" data-atq="d12+d12+d12" data-dano="13" data-dt="13" data-ntr="4" data-npo="2" data-pes="1" data-inc="0" data-ameaca="11">
+    <h5>Nundu</h5>
+    <p class="etiqueta">Perigo 10 · Predador · Ministério XXXXX · Ameaça 11</p>
+    <p><b>PV</b> 122 · <b>Defesa</b> 13 · <b>Ataque</b> d12+d12+d12 · <b>Dano</b> RA+13 · <b>DT</b> 13 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Furtiva, Couro Mágico, Aterrorizante, Sentidos Agudos.</p>
+    <p><b>Poderes:</b> Sopro (o hálito que adoece), Investida.</p>
+    <p><b>Fraqueza:</b> Silêncio: quem passa sem ser visto passa. Para vencê-lo, cem bruxos.</p>
+    <p><b>Quer:</b> Caçar.</p>
+  </div>
+  <div class="cartao ficha" id="cr-quimera" data-perigo="10" data-arq="Bruto" data-pv="176" data-def="12" data-atq="d12+d12" data-dano="11" data-dt="13" data-ntr="4" data-npo="2" data-pes="1" data-inc="1" data-ameaca="12">
+    <h5>Quimera</h5>
+    <p class="etiqueta">Perigo 10 · Bruto · Ministério XXXXX · Ameaça 12</p>
+    <p><b>PV</b> 176 · <b>Defesa</b> 12 · <b>Ataque</b> d12+d12 · <b>Dano</b> RA+11 · <b>DT</b> 13 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Couro Mágico, Resistência (fogo), Ataque Duplo, Aterrorizante.</p>
+    <p><b>Poderes:</b> Sopro, Investida.</p>
+    <p><b>Fraqueza:</b> Três cabeças que discordam: uma Ilusão bem feita a faz perder a rodada.</p>
+    <p><b>Quer:</b> Matar o que entra no território.</p>
+  </div>
+  <div class="cartao ficha" id="cr-basilisco" data-perigo="11" data-arq="Predador" data-pv="149" data-def="14" data-atq="d12+d12+d12" data-dano="15" data-dt="14" data-ntr="4" data-npo="1" data-pes="0" data-inc="1" data-ameaca="12">
+    <h5>Basilisco</h5>
+    <p class="etiqueta">Perigo 11 · Predador · Ministério XXXXX · Ameaça 12</p>
+    <p><b>PV</b> 149 · <b>Defesa</b> 14 · <b>Ataque</b> d12+d12+d12 · <b>Dano</b> RA+15 · <b>DT</b> 14 · Fases como chefe: 4</p>
+    <p><b>Traços:</b> Veneno, Aterrorizante, Escava, Mente Fechada.</p>
+    <p><b>Poderes:</b> Olhar (morte; refletido, petrifica).</p>
+    <p><b>Fraqueza:</b> Canto do galo.</p>
+    <p><b>Quer:</b> Obedecer ao herdeiro de Slytherin. Veja as notas abaixo.</p>
+  </div>
+  </div>
   <h3>Notas das fichas</h3>
   <ul>
     <li><strong>Hipogrifo:</strong> Ataque Duplo é passivo — dois golpes de garra por rodada, cada um RA + 1. Investida é o Poder: no lugar dos dois golpes, move o dobro e dá um golpe só.</li>

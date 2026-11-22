@@ -146,5 +146,40 @@ nomes = re.findall(r"<tr><td><strong>([^<]+)</strong>", HTML[i:j])
 rep = sorted({n for n in nomes if nomes.count(n) > 1})
 checa(f"Grimório: {len(nomes)} feitiços, nenhum repetido {rep if rep else ''}", not rep)
 
+# 8. Bestiário: cada ficha sai da Tábua de Perigo e do arquétipo
+from fractions import Fraction
+i = HTML.index("<h3>A Tábua de Perigo</h3>"); j = HTML.index("</table>", i)
+TAB = {}
+for row in re.findall(r"<tr>(.*?)</tr>", HTML[i:j])[1:]:
+    c = re.findall(r"<td[^>]*>(.*?)</td>", row)
+    TAB[int(c[0])] = (int(c[2]), int(c[3]), c[4], int(c[5][3:]), int(c[6]), int(c[7]), int(c[8]))
+ARQ = {"Padrão": (Fraction(1), 0, 0, 0), "Bruto": (Fraction(13, 10), -1, -1, 0), "Ágil": (Fraction(8, 10), 2, 0, 0),
+       "Predador": (Fraction(9, 10), 0, 1, 2), "Conjurador": (Fraction(8, 10), 0, 0, 0), "Enxame": (Fraction(1), 0, 0, 0),
+       "Espectral": (Fraction(7, 10), 0, 0, 0), "Guardião": (Fraction(12, 10), 1, 0, 0)}
+PASSOS = [4, 6, 8, 10, 12]
+def passo(dados, n):
+    d = [int(x) for x in dados.replace("d", "").split("+")]
+    if n > 0:
+        if len(d) == 3: d[2] = PASSOS[min(4, PASSOS.index(d[2]) + 1)]
+        elif d[0] < 12: d[0] = PASSOS[PASSOS.index(d[0]) + 1]
+        elif d[1] < 12: d[1] = PASSOS[PASSOS.index(d[1]) + 1]
+        else: d.append(4)
+    elif n < 0:
+        if len(d) == 3: d = d[:2]
+        else: d[0] = PASSOS[max(0, PASSOS.index(d[0]) - 1)]
+    return "+".join("d%d" % x for x in sorted(d[:2], reverse=True) + d[2:])
+erradas = []
+fichas = re.findall(r'<div class="cartao ficha" id="([^"]+)" ([^>]+)>', HTML)
+for fid, attrs in fichas:
+    a = dict(re.findall(r'data-([a-z]+)="([^"]+)"', attrs))
+    p = int(a["perigo"]); pv, df, atq, dano, dt, ntr, npo = TAB[p]; mult, ddf, dat, ddn = ARQ[a["arq"]]
+    pes = int(a["pes"])
+    ok = (int(a["pv"]) == int(pv * mult + Fraction(1, 2)) and int(a["def"]) == df + ddf and a["atq"] == passo(atq, dat)
+          and int(a["dano"]) == dano + ddn and int(a["dt"]) == dt and int(a["ntr"]) <= ntr
+          and int(a["npo"]) <= npo + (a["arq"] == "Conjurador") and pes <= (1 if p < 6 else 2)
+          and int(a["ameaca"]) == p + pes + int(a["inc"]))
+    if not ok: erradas.append(fid)
+checa(f"Bestiário: {len(fichas)} fichas, todas pela Tábua e pelo arquétipo {erradas if erradas else ''}", fichas and not erradas)
+
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

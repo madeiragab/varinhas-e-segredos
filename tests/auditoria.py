@@ -210,5 +210,15 @@ for l in re.findall(r"<tr>(.*?)</tr>", HTML[i:k], re.S):
     if not ok: ruins.append(c[0])
 checa(f"Poções: {len(prep)} com modo de preparo, passos = etapas, minigame onde a DT pede {ruins if ruins else ''}", len(prep) > rec and not ruins)
 
+# 11. Itens mágicos: todo item tem categoria válida, preço e regra na mesa
+k = HTML.index('id="itens"'); m = HTML.index("<h3>Preços</h3>", k)
+itens, ruins = 0, []
+for l in re.findall(r"<tr>(.*?)</tr>", HTML[k:m], re.S):
+    c = [re.sub(r"<[^>]+>", "", x).strip() for x in re.findall(r"<td[^>]*>(.*?)</td>", l, re.S)]
+    if not c: continue
+    itens += 1
+    if len(c) != 4 or c[1] not in ("I", "II", "III", "IV", "Único") or not c[2] or len(c[3]) < 15: ruins.append(c[0])
+checa(f"Itens: {itens} com categoria, preço e regra {ruins if ruins else ''}", itens >= 100 and not ruins)
+
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

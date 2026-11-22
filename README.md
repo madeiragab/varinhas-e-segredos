@@ -146,7 +146,10 @@ O livro é grande demais para conferir no olho, então ele tem testes como códi
   - lutas de 4 alunos contra cada criatura e cada bruxo pronto, com e sem aliado;
   - combinações perigosas: Comandante com ação extra, curandeiras em fila, chefe
     acompanhado;
-  - a curva de evolução ao longo dos sete anos.
+  - a curva de evolução ao longo dos sete anos;
+  - quanto uma vassoura melhor muda o Quadribol.
+- **`publicacao.py`** compara a assinatura do build (`<meta name="build">`) do
+  `index.html` local com a do site no ar, para ninguém revisar uma versão velha.
 
 ---
 

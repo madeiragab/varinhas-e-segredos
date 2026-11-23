@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="1e905707e213">
+<meta name="build" content="bdc5554ea477">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Varinhas e Segredos — RPG de mesa</title>
 <link rel="preload" href="assets/fontes/garamond.woff2" as="font" type="font/woff2" crossorigin>
@@ -1612,7 +1612,7 @@ td strong { color: var(--texto); }
   escudos; <strong>Transfiguração</strong> para mudar, conjurar e sumir; <strong>Artes das
   Trevas</strong> para maldições. O Patrono usa <strong>Coração</strong> no lugar de Mente.</p>
 
-  <p>Sem o dado mínimo, você não consegue nem tentar. Não há limite de vezes por dia: o que segura a magia forte é a dificuldade, o Desastre e a Determinação.</p>
+  <p>Sem o dado mínimo, você não consegue nem tentar, a não ser com um mentor e muita teimosia (<a href="#alem">Além do seu alcance</a>). Não há limite de vezes por dia: o que segura a magia forte é a dificuldade, o Desastre e a Determinação.</p>
 
   <p>O Círculo mede só a <strong>complexidade</strong> do feitiço. Quando ele é ensinado, por quem e em que matéria é outra coisa, e está no Currículo abaixo. Um feitiço fácil pode aparecer só no quarto ano; um difícil pode estar num livro que você achou no primeiro.</p>
 
@@ -1677,6 +1677,39 @@ td strong { color: var(--texto); }
   <tr><td><strong>Livro errado</strong> (de quem mentiu sobre o que fez)</td><td>Parece completo. O Mestre sabe: as marcas não valem até alguém de fora corrigir, e o primeiro ensaio bem-sucedido sai trocado.</td></tr>
   <tr><td><strong>Livro proibido</strong></td><td>Ter já é crime, e ser pego com ele em Hogwarts é expulsão. Os feitiços dele seguem a linha de Círculo 4 ou Proibido acima.</td></tr>
   </tbody></table></div>
+
+  <h3 id="alem">Além do seu alcance</h3>
+  <p>Harry tinha treze anos e aprendeu o Patrono com Lupin, desmaiando na frente de um bicho-papão semana após semana. A Armada de Dumbledore aprendeu o mesmo feitiço numa sala escondida, meses antes de qualquer prova pedir. Dá para aprender um feitiço de Círculo acima do que o seu dado permite. É lento, cansa e machuca.</p>
+  <div class="destaque"><span class="rotulo">Quem pode tentar</span>
+  <ul>
+    <li><strong>Até 2 Círculos acima</strong> do que a sua perícia permite. Com Feitiços <span class="dado">d6</span>, você alcança o Círculo 2: dá para treinar um Círculo 3 (um acima) ou um Círculo 4 (dois acima). Proibidos, nunca.</li>
+    <li><strong>Só com mentor.</strong> Livro sozinho não basta: alguém que tem o feitiço Aprendido ensina (Lupin), ou um colega que o tem Dominado conduz o grupo (Harry na Armada). Um acima pede mentor com o feitiço Aprendido; dois acima, Dominado.</li>
+    <li>O feitiço fica <strong>Em aprendizado</strong> como qualquer outro, e o resto é treino.</li>
+  </ul></div>
+  <h4>O treino</h4>
+  <p>Uma sessão por semana, nunca mais que isso, num período livre (<a href="#cap14">Capítulo XIV</a>). O mentor gasta o mesmo período.</p>
+  <ol class="passos">
+    <li><b>Ensaie.</b> Mente + a perícia do feitiço (Coração, no Patrono) contra a DT do Círculo, com <strong>–1 passo por Círculo acima</strong>. O mentor não dá passo extra: ele já é a condição para tentar. Uma Sala Precisa, um bicho-papão no armário, um boneco que revida dá +1 passo, dentro do limite de +2 do Capítulo II.</li>
+    <li><b>Sucesso:</b> 1 marca de treino. <b>Crítico:</b> 1 marca e +1 Ímpeto. Aqui crítico não dá duas marcas: o corpo ainda não aguenta.</li>
+    <li><b>Falha:</b> nada além de faíscas, névoa que some e a varinha quente na mão. A cabeça dói: –1 passo em Mente até a próxima noite de sono.</li>
+    <li><b>Desastre:</b> vai direto à <a href="#descontrolada">Magia Descontrolada</a>, você perde <span class="dado">1d4</span> DET e fica <strong>Cansado</strong> (a condição, com a saída de sempre). É o Harry caído no chão da sala de Defesa com o dementador falso por cima.</li>
+  </ol>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Distância</th><th>No ensaio</th><th class="num">Marcas para Aprender</th><th class="num">PE</th><th>Na prática, mais ou menos</th></tr></thead>
+  <tbody>
+  <tr><td><strong>1 Círculo acima</strong></td><td>–1 passo</td><td class="num">5</td><td class="num">do Círculo + 1</td><td>Um bimestre de treino semanal</td></tr>
+  <tr><td><strong>2 Círculos acima</strong></td><td>–2 passos</td><td class="num">8</td><td class="num">do Círculo + 2</td><td>Um ano letivo inteiro, se der</td></tr>
+  </tbody></table></div>
+  <h4>Aprendeu. E agora?</h4>
+  <p>O feitiço é seu, mas ainda não cabe na sua mão. Enquanto a sua perícia não chega ao dado mínimo dele:</p>
+  <ul>
+    <li><strong>Lançar custa 1 Ímpeto</strong> toda vez (a regra do Ímpeto, abaixo). Dois Círculos acima, ainda vai com –1 passo.</li>
+    <li><strong>Todo Desastre</strong> com ele vai direto à Magia Descontrolada.</li>
+    <li><strong>Sai pela metade.</strong> Use a versão Incompleta do feitiço (<a href="#sem-varinha">Domínio</a>): o Patrono sai névoa prateada, que afasta e não expulsa; o escudo segura um feitiço e quebra.</li>
+    <li><strong>Não entra na Prontidão e não se Domina.</strong> As marcas de prática só começam a contar quando o dado alcança.</li>
+    <li><strong>Cansa.</strong> Lançar de novo na mesma cena deixa você <strong>Cansado</strong>, a condição.</li>
+  </ul>
+  <p>Quando a perícia sobe ao dado mínimo, tudo isso some de uma vez: o feitiço vira Aprendido comum, e a primeira vez que sair inteiro é a cena da sessão. Foi assim o cervo do Harry no lago.</p>
 
   <h3>O Currículo de Hogwarts</h3>
   <p>A grade diz o que as aulas apresentam em cada ano. Na primeira aula em que o professor apresenta um feitiço da grade, ele fica <strong>Em aprendizado</strong> para todos os alunos presentes, sem teste. A aula pode pôr um feitiço Em aprendizado antes de você ter a patente para Aprendê-lo: as marcas de treino ficam anotadas, e ele vira Aprendido assim que você chega à patente e paga os PE. Quem faltou fica só com Observado até recuperar a matéria (um período de estudo). É uma grade para a mesa, não uma lista oficial dos livros.</p>
@@ -5386,7 +5419,7 @@ td strong { color: var(--texto); }
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Compra</th><th>Custo</th><th>Requisito</th></tr></thead>
   <tbody>
-  <tr><td>Aprender um feitiço</td><td>1 / 2 / 3 / 4 por Círculo; Proibido 6</td><td>Em aprendizado com 3 marcas de treino (Capítulo IV).</td></tr>
+  <tr><td>Aprender um feitiço</td><td>1 / 2 / 3 / 4 por Círculo; Proibido 6</td><td>Em aprendizado com 3 marcas de treino (Capítulo IV). Além do seu alcance: 5 ou 8 marcas e +1 PE por Círculo acima.</td></tr>
   <tr><td>Perícia para <span class="dado">d6</span> / <span class="dado">d8</span> / <span class="dado">d10</span> / <span class="dado">d12</span></td><td>2 / 4 / 6 / 8</td><td>Ter usado a perícia em cena desde a última compra nela.</td></tr>
   <tr><td>Atributo para <span class="dado">d6</span> / <span class="dado">d8</span> / <span class="dado">d10</span> / <span class="dado">d12</span></td><td>4 / 8 / 12 / 16</td><td>No máximo um passo de atributo por ano.</td></tr>
   <tr><td>Técnica de matéria</td><td>3</td><td>A Nota exigida na matéria (tabela abaixo).</td></tr>
@@ -5653,6 +5686,7 @@ td strong { color: var(--texto); }
   <tbody>
   <tr><td><strong>Estudar um feitiço</strong></td><td>Mente + Conhecimento Mágico, DT do Círculo</td><td>Sucesso: 1 marca de treino num feitiço Em aprendizado. Crítico: 2. Sem aula nem mentor, no máximo 1 marca de leitura por feitiço (<a href="#sozinho">Aprender sozinho</a>).</td></tr>
   <tr><td><strong>Ensaiar sozinho</strong></td><td>Mente + a perícia do feitiço, DT do Círculo</td><td>Sucesso: 1 marca de treino; crítico: 2. Desastre: o acidente acontece (<a href="#sozinho">Aprender sozinho</a>).</td></tr>
+  <tr><td><strong>Treinar além do alcance</strong></td><td>Mente + a perícia do feitiço, DT do Círculo, –1 passo por Círculo acima</td><td>Só com mentor, uma vez por semana. Sucesso: 1 marca de treino (5 ou 8 para Aprender). Falha: –1 passo em Mente até dormir. Desastre: Magia Descontrolada, <span class="dado">1d4</span> DET e Cansado (<a href="#alem">Além do seu alcance</a>).</td></tr>
   <tr><td><strong>Praticar um feitiço</strong></td><td>Lançar o feitiço Aprendido, DT do Círculo</td><td>Sucesso: 1 marca de prática (5 marcas: Dominado). No máximo uma por feitiço por semana.</td></tr>
   <tr><td><strong>Fazer o dever</strong></td><td>Perícia da matéria, DT 7</td><td>Sucesso: +1 de aproveitamento na matéria (Capítulo XIII).</td></tr>
   <tr><td><strong>Biblioteca</strong></td><td>Minigame abaixo</td><td>Uma pista, um feitiço Observado ou uma receita.</td></tr>

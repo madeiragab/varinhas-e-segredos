@@ -178,6 +178,7 @@ FRASES = {
     "combinar feitiços: desastre por tipo": "Cada tipo dá errado do seu jeito",
     "combinar feitiços: simultânea não sai sozinho": "Simultânea não sai sozinho com dois feitiços",
     "combinar feitiços: item faz uma parte": "Itens que fazem uma parte",
+    "reação com feitiço: –1 passo e Ímpeto até virar truque da casa": "<strong>Até virar seu.</strong>",
     "ambiente: tabela de queda por massa e altura": "O que cai em cima: massa e altura",
     "variante: nível custa 5 + nível atual": "5 + o nível atual",
     "variante: teto de 4 PE por sessão continua": "Teto por sessão continua: 4 PE",

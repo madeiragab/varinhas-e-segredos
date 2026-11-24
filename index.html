@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="b8a5fd6e3657">
+<meta name="build" content="bc8751ad09ca">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Varinhas e Segredos — RPG de mesa</title>
 <link rel="preload" href="assets/fontes/garamond.woff2" as="font" type="font/woff2" crossorigin>
@@ -2992,13 +2992,14 @@ td strong { color: var(--texto); }
   <tbody>
   <tr><td><strong>Se tirar dali</strong></td><td>Depulso ou Flipendo no chão, Ascendio, Carpe Retractum</td><td>Como o Desviar, mas funciona Caído ou encurralado, e você vai até a distância do feitiço (Depulso 6 m, Flipendo 3 m). Contra área, não fica Caído se acertar a aterrissagem (Corpo + Reflexos contra a DT do feitiço).</td><td>Você aterrissa de pé e ganha +1 passo no próximo ataque, como a abertura do Desviar.</td></tr>
   <tr><td><strong>Desviar o golpe</strong></td><td>Ventus, Depulso ou Flipendo no projétil, Accio na arma que vem</td><td>Só contra coisa física: flecha, pedra, faca, o objeto arremessado, o golpe de uma arma. Passou, ele muda de rumo e cai longe.</td><td>O golpe vai para outro alvo a até 3 m do caminho, à sua escolha.</td></tr>
-  <tr><td><strong>Pôr algo na frente</strong></td><td>Wingardium, Accio, Duro, Engorgio no que já está perto</td><td>É o <em>Interpor</em> acima: o objeto leva o ataque inteiro e quase sempre quebra.</td><td>O objeto não quebra.</td></tr>
+  <tr><td><strong>Pôr algo na frente</strong></td><td>Wingardium, Accio, Duro, Engorgio no que já está perto</td><td>Levitar, puxar ou transfigurar algo grande na frente já é o <em>Interpor</em>, pela regra dele: sem –1 passo e sem Ímpeto. Esta linha é para o que o Interpor não cobre: Engorgio no que é pequeno demais, Duro na veste ou no livro para que pare o golpe. Passou: o objeto leva o ataque inteiro e quase sempre quebra.</td><td>O objeto não quebra.</td></tr>
   <tr><td><strong>Atrapalhar quem ataca</strong></td><td>Lumos Maxima nos olhos, Fumos, Aguamenti na cara</td><td>Nunca é defesa completa: o melhor que dá é a parcial, metade do dano e nenhuma condição.</td><td>Defesa completa, e o atacante fica Cego até o fim do próximo turno.</td></tr>
   <tr><td><strong>Desfazer no caminho</strong></td><td>Finite no feitiço que vem, Glacius no jato de fogo, Aguamenti no Incendio</td><td>Só contra feitiço que dá para desfazer ou apagar (não maldições). Passou: o efeito some no ar; contra dano, vale como o Protego.</td><td>O feitiço some e quem lançou fica sem reação até o fim da rodada.</td></tr>
   </tbody></table></div>
   <ul>
     <li><strong>Nunca contra maldições:</strong> Imperdoáveis e Proibidos passam por qualquer reação com feitiço. Contra elas, só o que as regras delas permitem.</li>
     <li><strong>Prontidão:</strong> o feitiço precisa estar na Prontidão, ou ser Dominado. Lembrar no meio do susto não dá.</li>
+    <li><strong>Quem já tem a reação por um poder</strong> (o estilo Técnico e a trilha Estudioso, com o Finite Incantatem) usa pela regra do poder: já é truque da casa desde o primeiro dia, sem o –1 passo e de graça, mesmo com o feitiço só Aprendido.</li>
     <li><strong>Desastre:</strong> a reação não sai, o ataque acerta inteiro, e o feitiço dá errado do jeito do uso criativo: acontece com o alvo errado, que quase sempre é você.</li>
   </ul>
   <p><strong>Até virar seu.</strong> Os custos acima valem até a reação virar <em>truque da casa</em>: depois de três sucessos com a mesma reação (o mesmo feitiço, do mesmo jeito), em cenas diferentes, ela entra na ficha. Daí em diante, sem o –1 passo, e mais barata: de graça com o feitiço Dominado, 1 Ímpeto com ele só Aprendido. É o Depulso no chão que vira o jeito de você sair de qualquer briga.</p>
@@ -3077,7 +3078,7 @@ td strong { color: var(--texto); }
   <tr><td><strong>Violento</strong></td><td>feitiço forte por trás (Duo, Ventus Duo, a onda de um Bombarda), caindo de 9 a 18 m, uma vassoura a toda</td><td>+2 dados</td></tr>
   <tr><td><strong>Brutal</strong></td><td>caindo de mais de 18 m, um trem, um Bombarda Maxima arrancando a coisa da parede</td><td>+3 dados</td></tr>
   </tbody></table></div>
-  <p>Os dados a mais são do mesmo tipo do dano base. Nada passa de <strong>8 dados</strong>.</p>
+  <p>Os dados a mais são do mesmo tipo do dano base. Nada passa de <strong>8 dados</strong> numa rolagem de dano: o teto conta tudo junto, massa, força, forma, material, defesa, crítico, Ímpeto e o dano do feitiço que somou. O que vem nos turnos seguintes (Em chamas, sangrando) é outra rolagem, fora da conta. Bônus fixos (+2 da Maxima, por exemplo) ficam fora do teto.</p>
 
   <h4>4 · Forma: como bate</h4>
   <div class="rolagem"><table class="compacta">
@@ -3099,7 +3100,7 @@ td strong { color: var(--texto); }
   <tr><td><strong>Água</strong></td><td>balde, Aguamenti, o lago, a chuva, uma pia que estoura</td><td><strong>Encharcado</strong>. Na cara: Cego até o fim do próximo turno (Fortitude DT 7). Água em quantidade (um barril, uma onda): Caído.</td></tr>
   <tr><td><strong>Frio, gelo</strong></td><td>Glacius, neve, água congelada, a janela da torre no inverno</td><td>Deslocamento pela metade até o fim do próximo turno. Em quem está Encharcado: <strong>Congelado</strong>. Chão molhado com frio: escorregadio como o óleo.</td></tr>
   <tr><td><strong>Fervendo</strong></td><td>caldeirão, chaleira, sopa do Salão, água da banheira dos monitores no máximo</td><td>+<span class="dado">1d6</span> de fogo, sem pegar fogo. Na cara: Cego até o fim do próximo turno (Fortitude DT 9).</td></tr>
-  <tr><td><strong>Vidro</strong></td><td>janela, espelho, frascos, estufa, o lustre</td><td>Conta como Cortante também. Frasco de poção que quebra no alvo: o efeito da poção pela metade (o que der para dividir), sem precisar beber.</td></tr>
+  <tr><td><strong>Vidro</strong></td><td>janela, espelho, frascos, estufa, o lustre</td><td>Conta como Cortante também. Frasco de poção que quebra no alvo: veja <a href="#pocao-jogada">poção jogada</a>.</td></tr>
   <tr><td><strong>Pó</strong></td><td>farinha, fuligem, areia, pó de Flu, giz, terra seca</td><td>Na cara: Cego até o fim do próximo turno (Fortitude DT 7). Uma nuvem de pó fino no ar e fogo dentro: <strong>explosão</strong> de 3 m, <span class="dado">3d6</span>, Reflexos DT 9 para metade, e tudo em volta Caído.</td></tr>
   <tr><td><strong>Corrosivo</strong></td><td>ácido de Poções, seiva de planta venenosa, um ingrediente errado</td><td><span class="dado">1d6</span> agora e de novo no começo dos próximos dois turnos. Estraga roupa, couro e papel. Água encerra.</td></tr>
   <tr><td><strong>Vivo e bravo</strong></td><td>uma gaiola de diabretes, um vaso de mandrágora, um ninho de fadas mordentes</td><td>O que a criatura ou a planta faz (Capítulo VIII ou IX), em cima de quem levou.</td></tr>
@@ -3113,7 +3114,8 @@ td strong { color: var(--texto); }
   <tr><td><strong>De frente, viu</strong> (você atira nele)</td><td>É um ataque: o seu teste contra a Defesa dele, e ele pode erguer Protego ou Desviar, como sempre.</td></tr>
   <tr><td><strong>De cima ou do lado, dá para notar</strong> (o lustre, a armadura que tomba, a onda de água)</td><td>Ele rola Corpo + Reflexos contra a DT do seu feitiço. Passou: metade do dano e nenhuma condição da forma. Protego segura; Desviar sai da frente e fica Caído.</td></tr>
   <tr><td><strong>Fora da vista</strong> (a espada que vem por trás, o caldeirão de cima do armário, no escuro)</td><td>Sem reação nenhuma e +1 dado. Perfurante trespassa.</td></tr>
-  <tr><td><strong>Sem como se mexer</strong> (Preso, Petrificado, Indefeso, dormindo, Congelado)</td><td>Sem reação e +1 dado. Se também não viu, +2.</td></tr>
+  <tr><td><strong>Sem como se mexer</strong> (Petrificado, Indefeso, dormindo, Congelado, amarrado com os braços junto)</td><td>Sem reação e +1 dado. Se também não viu, +2.</td></tr>
+  <tr><td><strong>Preso, mas com a varinha livre</strong> (pernas no gelo, embaixo da viga, na rede, no Visgo do Diabo)</td><td>Não Desvia nem se tira dali, e o golpe vem com +1 dado. Protego, Interpor e as outras reações com feitiço continuam valendo.</td></tr>
   <tr><td><strong>Atrás de algo</strong></td><td>A cobertura de sempre. Às vezes a cobertura é que leva o golpe, e vira estilhaço (Vidro, Cortante).</td></tr>
   </tbody></table></div>
   <p>Se o próprio feitiço é um Ataque e acerta (o Depulso que joga o inimigo na parede, o Diffindo que corta a corrente do lustre em cima dele), o dano do feitiço e o da física <strong>somam</strong>. Dano não letal só vale para Contundente sem fogo.</p>
@@ -3147,7 +3149,7 @@ td strong { color: var(--texto); }
     <li><strong>Crítico:</strong> mais um efeito de qualquer tabela que caiba, ou +1 dado. Ideia Ousada que sai em crítico rende 1 Ímpeto (ato corajoso).</li>
     <li><strong>Falha:</strong> não acontece, ou acontece pela metade num lugar que o Mestre escolher.</li>
     <li><strong>Desastre:</strong> acontece com o alvo errado: você, um aliado, o chão debaixo dos seus pés. Monte o resultado pelas mesmas tabelas.</li>
-    <li><strong>Truque da casa:</strong> depois de três sucessos com o mesmo uso, em cenas diferentes, ele sobe uma linha para você (Esticada vira Natural). Anote ao lado do feitiço.</li>
+    <li><strong>Truque da casa:</strong> depois de três sucessos com o mesmo uso, em cenas diferentes, ele sobe uma linha para você (Ousada vira Esticada, Esticada vira Natural). Mais três sucessos, sobe de novo. Natural é o mínimo, e Absurda nunca vira truque. Anote ao lado do feitiço.</li>
     <li><strong>A segunda vez:</strong> o mesmo truque contra o mesmo inimigo na mesma luta perde a surpresa: ele se defende com +1 passo e nunca está fora da vista.</li>
   </ul>
 
@@ -3172,7 +3174,7 @@ td strong { color: var(--texto); }
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Tipo</th><th>O que é</th><th>Exemplos</th><th>O que dá</th></tr></thead>
   <tbody>
-  <tr><td><strong>Preparar e disparar</strong></td><td>O primeiro muda o alvo ou o chão; o segundo aproveita.</td><td>Aguamenti e Glacius; óleo e Incendio; Wingardium e Depulso; Incarcerous e Stupefy.</td><td>O estado que o primeiro criou faz o efeito do segundo, pelas tabelas de estados e de defesa: Encharcado com frio, Congelado; preso, sem reação e +1 dado.</td></tr>
+  <tr><td><strong>Preparar e disparar</strong></td><td>O primeiro muda o alvo ou o chão; o segundo aproveita.</td><td>Aguamenti e Glacius; óleo e Incendio; Wingardium e Depulso; Incarcerous e Stupefy.</td><td>O estado que o primeiro criou faz o efeito do segundo, pelas tabelas de estados e de defesa: Encharcado com frio, Congelado; Incarcerous amarra os braços junto, sem reação e +1 dado.</td></tr>
   <tr><td><strong>Somar forças</strong></td><td>Dois feitiços que fazem a mesma coisa, no mesmo alvo.</td><td>Incendio e Confringo; Flipendo e Depulso; dois Ventus.</td><td>+1 dado de dano, ou a área cresce 3 m, ou o empurrão dobra a distância. Só uma das três.</td></tr>
   <tr><td><strong>Dar forma</strong></td><td>Um feitiço leva ou molda o que o outro criou.</td><td>Ventus no fogo, na fumaça, na névoa, no pó; Aguamenti guiado por Wingardium.</td><td>A área vira uma linha de 9 m, ou anda 6 m por rodada para onde quem conduz quiser. Fogo levado pelo vento acende o que for inflamável no caminho.</td></tr>
   <tr><td><strong>Mudar a coisa</strong></td><td>Um feitiço muda o objeto que o outro usa.</td><td>Engorgio na pedra antes do Depulso; Reducio no baú para o Accio; Duro na almofada antes de cair em alguém.</td><td>Engorgio sobe a massa um degrau; Reducio desce um. Duro deixa o objeto de pedra: o que ele aguenta dobra e ele bate contundente.</td></tr>
@@ -3200,7 +3202,7 @@ td strong { color: var(--texto); }
   <thead><tr><th>Modo</th><th>Serve para</th><th>Como</th></tr></thead>
   <tbody>
   <tr><td><strong>Sozinho, em duas rodadas</strong></td><td>Só em sequência</td><td>O primeiro feitiço fica no lugar até o fim da sua próxima rodada; o segundo aproveita. Cada um é o seu teste.</td></tr>
-  <tr><td><strong>Sozinho, num lance só</strong></td><td>Só em sequência</td><td>1 Ímpeto e uma ação: um teste só, com a DT do feitiço mais difícil + 2 e –1 passo. Os dois Aprendidos e pelo menos um Dominado. Falhou, nenhum sai. Não é ação extra e não junta dois ataques. Três ou mais, só a partir de Adepto: mais 1 Ímpeto e –1 passo por feitiço além do segundo.</td></tr>
+  <tr><td><strong>Sozinho, num lance só</strong></td><td>Só em sequência</td><td>1 Ímpeto e uma ação: um teste só, com a DT do feitiço mais difícil + 2 e –1 passo. Rola o atributo e a perícia desse feitiço; se os dois têm a mesma DT, o de perícia mais fraca. Os dois Aprendidos e pelo menos um Dominado. Falhou, nenhum sai. Não é ação extra e não junta dois ataques. Três ou mais, só a partir de Adepto: mais 1 Ímpeto e –1 passo por feitiço além do segundo.</td></tr>
   <tr><td><strong>Sozinho, com um item</strong></td><td>Qualquer uma, inclusive simultânea</td><td>O item faz uma das partes (tabela abaixo). Jogar, abrir ou acender o item que está na mão é o movimento; o feitiço é a ação. Jogar: Corpo + Reflexos DT 5 até 9 m, DT 9 até 18 m; errou, o item cai a seus pés, e a combinação acontece ali.</td></tr>
   <tr><td><strong>Em grupo</strong></td><td>Qualquer uma</td><td>Abaixo.</td></tr>
   <tr><td><strong>Fora de combate, sem pressão</strong></td><td>Em sequência e apoio</td><td>Sozinho, sem Ímpeto, um feitiço depois do outro, um minuto cada. Só se rola o que pode dar errado de um jeito que importa, e o Desastre continua valendo. Ponte, barricada, armadilha, muro de gelo: dá para fazer tudo com calma. Simultânea continua pedindo duas pessoas ou um item.</td></tr>
@@ -3215,10 +3217,18 @@ td strong { color: var(--texto); }
   <tr><td><strong>Bomba de Bosta, Bombinha de Fumaça Colorida</strong></td><td>Fumaça e fedor</td><td>Bomba de Bosta e Ventus: a fumaça vai inteira para a sala deles.</td></tr>
   <tr><td><strong>Pó Escurecedor Instantâneo do Peru</strong></td><td>Escuro total</td><td>Pó e Ventus: o escuro anda 6 m por rodada; Lumos não atravessa.</td></tr>
   <tr><td><strong>Fogos, Detonador-Chamariz</strong></td><td>Barulho, faísca, fogo pequeno</td><td>Detonador e Wingardium: ele explode bem em cima de quem você quer.</td></tr>
-  <tr><td><strong>Poção num frasco</strong></td><td>O efeito dela pela metade, sem beber</td><td>Frasco de Poção do Sono e Depulso: o frasco chega Rápido e estoura na cara.</td></tr>
+  <tr><td><strong>Poção num frasco</strong></td><td>O efeito dela, conforme <a href="#pocao-jogada">poção jogada</a></td><td>Frasco de Poção do Sono e Depulso: o frasco chega Rápido e estoura na cara; é de beber, então só faz efeito se ele engolir (crítico).</td></tr>
   <tr><td><strong>Corda, corrente, rede</strong></td><td>Prender, puxar</td><td>Rede jogada e Duro: a rede vira jaula de pedra.</td></tr>
   <tr><td><strong>Vassoura</strong></td><td>Velocidade e altura</td><td>Mergulho de vassoura e Depulso no fim: o empurrão chega Violento (+2 dados se for a massa).</td></tr>
   <tr><td><strong>Objeto encantado</strong></td><td>O que ele faz</td><td>Cada objeto faz a parte que a função dele permite. O Mestre decide pela Tábua de valor.</td></tr>
+  </tbody></table></div>
+  <p id="pocao-jogada"><strong>Poção jogada.</strong> O frasco que estoura em alguém faz o efeito conforme o jeito que a poção age:</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Como a poção age</th><th>Exemplos</th><th>Jogada</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Feita para jogar</strong></td><td>A que diz "jogada como frasco": Trovão, explosivas, de fumaça</td><td>O efeito inteiro, pela regra dela.</td></tr>
+  <tr><td><strong>Pela pele ou pelo ar</strong></td><td>Vapor, cheiro, ácido, cola, fogo, as que mudam a pele ou o cabelo</td><td>Metade do efeito (o que der para dividir), sem beber.</td></tr>
+  <tr><td><strong>Só bebendo</strong></td><td>Cura, transformação, mente, sorte, sono, amor, verdade</td><td>Só molha: Encharcado. No crítico, ele engole um gole e o efeito vem pela metade.</td></tr>
   </tbody></table></div>
   <p>O item conta pelo que ele é na física: massa, forma e material. Itens com regra própria (os logros e objetos da <a href="#itens">lista de itens</a>) somam a regra deles.</p>
   <h4>Em grupo</h4>
@@ -3241,7 +3251,7 @@ td strong { color: var(--texto); }
   <div class="rolagem"><table class="compacta">
   <thead><tr><th>Estrutura</th><th>Como</th><th>O que faz</th><th>Quanto dura</th></tr></thead>
   <tbody>
-  <tr><td><strong>Plataforma</strong></td><td>Wingardium segura uma porta, uma mesa ou um tampo; Duro firma.</td><td>Uma pessoa de pé, a até 3 m do chão. Aguenta 8.</td><td>Enquanto o Wingardium for sustentado; com Duro, a cena.</td></tr>
+  <tr><td><strong>Plataforma</strong></td><td>Wingardium segura uma porta, uma mesa ou um tampo; Duro firma.</td><td>Uma pessoa de pé, a até 3 m do chão. Aguenta 8.</td><td>Enquanto o Wingardium for sustentado. Duro deixa o tampo mais forte (aguenta 12), mas não o segura no ar: só fica a cena se estiver apoiado nas pontas ou em algo firme.</td></tr>
   <tr><td><strong>Ponte</strong></td><td>Wingardium ou Locomotor leva tábuas, porta ou estante; Reparo ou Duro prende.</td><td>Atravessa 6 m. Correr nela: Reflexos DT 9.</td><td>A cena.</td></tr>
   <tr><td><strong>Barricada</strong></td><td>Locomotor ou Wingardium juntam os móveis; Duro ou Engorgio firmam.</td><td>Cobertura boa ou total num corredor; abrir pede quebrar: aguenta 16 (com Duro, 30).</td><td>A cena.</td></tr>
   <tr><td><strong>Muro de gelo</strong></td><td>Aguamenti e Glacius, ou Glacius numa poça grande.</td><td>Cobertura total por 3 m de largura; aguenta 12; fogo tira 8 por rodada.</td><td>Até derreter, ou a cena.</td></tr>
@@ -6499,6 +6509,7 @@ td strong { color: var(--texto); }
   <ul>
     <li><strong>Nível pelo custo crescente.</strong> Subir de nível custa <strong>5 + o nível atual</strong> em PE gastos: 6 para o 2, 7 para o 3, e assim até o 20. O que passar vai para o próximo nível. Não se paga nada só para subir: aprender feitiços, perícias e técnicas é o que leva você para cima. As patentes seguem a tabela acima.</li>
     <li><strong>PE na hora.</strong> O Mestre dá PE durante a sessão, quando acontece: conquista importante, descoberta, desafio vencido, feito mágico excepcional, um passo na história do personagem, peculiaridade que trouxe risco de verdade. No fim da sessão, +2. Nunca duas vezes pela mesma coisa. Exemplo de uma noite: +1 por um Protego que salvou o grupo, +1 pelo Impulsivo que arrumou briga com a Sonserina, +2 do fim da sessão: 4 PE.</li>
+    <li><strong>Onde o livro fala em teto do ano</strong> (marcos, clubes, projetos, torneios, peculiaridade), na variante vale só o teto da sessão.</li>
     <li><strong>Teto por sessão continua: 4 PE</strong>, somando os PE na hora e os do fim da sessão; só os acadêmicos ficam fora, como na regra normal. Passou de 4, o resto se perde. O que sai é o <strong>teto do ano</strong>: o aluno talentoso pode passar à frente da turma, desde que a história mostre de onde veio (treino, mentor, aventura).</li>
     <li><strong>Aprender sem esperar.</strong> Sai o limite de uma sessão por semana, inclusive no <a href="#alem">Além do seu alcance</a>. Os testes, as marcas e os PE continuam iguais, e o crítico e o Estudioso aceleram como sempre. Dá para aprender vários feitiços numa semana boa.</li>
     <li><strong>Dominar continua devagar.</strong> No treino livre, ainda é uma marca de prática por feitiço por semana. Domínio vem da cena, não da pressa.</li>

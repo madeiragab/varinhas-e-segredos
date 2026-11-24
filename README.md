@@ -6,7 +6,7 @@
 
 [**Ler o livro**](https://madeiragab.github.io/varinhas-e-segredos/) ·
 [**Ficha para imprimir**](https://madeiragab.github.io/varinhas-e-segredos/ficha.html) ·
-versão 1.0 RC
+versão 1.1
 
 <img src="docs/img/capa.webp" alt="Capa do livro" width="820">
 
@@ -116,7 +116,7 @@ template/
     └── 99-apendice.html      apêndice
         │
         ▼  python build.py
-index.html   ← gerado, ~780 KB, com CSS embutido (é o que o GitHub Pages serve)
+index.html   ← gerado, ~900 KB, com CSS embutido (é o que o GitHub Pages serve)
 ficha.html   ← folha de personagem, página separada
 assets/      ← capas e aberturas de parte (webp), fontes woff2, ícones da ficha
 tests/
@@ -161,7 +161,7 @@ anterior, com a mesma assinatura, antes de a coluna Tipo e a tabela de funções
 
 ```bash
 python build.py                                  # gera index.html
-PYTHONIOENCODING=utf-8 python tests/auditoria.py # 119 conferências, deve dar 0 falhas
+PYTHONIOENCODING=utf-8 python tests/auditoria.py # 143 conferências, deve dar 0 falhas
 python tests/simulacoes.py                       # tudo; ou: poções | quadribol | combate | bruxos | evolução
 python tests/publicacao.py                       # depois do push: o site no ar é este build?
 python -m http.server 8765                       # abre em http://localhost:8765
@@ -252,8 +252,20 @@ evolução foi ajustado com o que as simulações mostraram, e não por intuiç�
 
 ## Estado
 
-**1.0 RC.** As regras estão completas e auditadas, e o equilíbrio foi simulado. Falta o
-teste de mesa com jogadores reais, que pode mexer em números antes da 1.0.
+**1.1.** As regras estão completas e auditadas, e o equilíbrio foi simulado. As partes novas
+ainda não passaram por teste de mesa com jogadores reais, que pode mexer nos números.
+
+O que entrou na 1.1:
+
+- **Xadrez de bruxo:** partida de verdade no chess.com, multiplayer ou contra o computador, versão nos dados e tabuleiro em tamanho real.
+- **Além do seu alcance:** aprender feitiço até dois Círculos acima do dado, só com mentor, devagar e com custo.
+- **Variante de progressão livre:** nível pelo custo crescente, PE na hora, sem teto de ano (o de 4 por sessão continua).
+- **Uso criativo e física aberta:** qualquer feitiço ou acidente resolvido por massa, força, forma, material e defesa, com estados (Em chamas, Encharcado, Congelado, Preso embaixo).
+- **Combinar feitiços:** sete tipos, em sequência ou simultâneas, sozinho, com item, com calma ou em grupo, coro, estruturas improvisadas e um d6 de desastre para cada tipo.
+- **Ambiente e Usando o ambiente:** quanto aguentam portas, muros, móveis e caixas, o que cai em alguém, chão e água, cobertura, armas improvisadas, manobras do lugar e armadilhas.
+- **Doenças, venenos e azarações que ficam:** PV máximo menor por um tempo, gravidade para qualquer caso, estágios e as doenças do mundo bruxo.
+- **Criar do zero:** criaturas (tamanho, ataque, poder e traço sob medida, ecologia, partes) e objetos (forma, função por categoria, ativação, defeitos, maldição, Preço).
+- **Bruxos sob medida:** feitiço assinatura com marca e truque, táticas, uso do lugar, recursos e variações.
 
 ---
 

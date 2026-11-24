@@ -163,6 +163,7 @@ FRASES = {
     "minigames: regras comuns": "Regras comuns dos minigames",
     "uso criativo: Natural, Esticada, Ousada": "Ousada</strong></td><td>Pede mira",
     "variante: nível custa 5 + nível atual": "5 + o nível atual",
+    "variante: teto de 4 PE por sessão continua": "Teto por sessão continua: 4 PE",
     "feitiço além do alcance: até 2 Círculos, com mentor": "Até 2 Círculos acima",
     "xadrez de bruxo: online, dicas no limite de +2": "duas dicas por partida, no máximo",
     "minigames: passos e dado extra com limites separados": "têm limites separados, os do Capítulo II",

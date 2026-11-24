@@ -164,6 +164,8 @@ FRASES = {
     "uso criativo: Natural, Esticada, Ousada": "Ousada</strong></td><td>Pede mira",
     "uso criativo: física aberta, até 8 dados": "Nada passa de <strong>8 dados</strong>",
     "uso criativo: perfurante fora da vista trespassa": "<strong>trespassa</strong>",
+    "ambiente: aguenta e rachado": "<strong>Rachado:</strong>",
+    "ambiente: tabela de queda por massa e altura": "O que cai em cima: massa e altura",
     "variante: nível custa 5 + nível atual": "5 + o nível atual",
     "variante: teto de 4 PE por sessão continua": "Teto por sessão continua: 4 PE",
     "feitiço além do alcance: até 2 Círculos, com mentor": "Até 2 Círculos acima",

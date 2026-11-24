@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="46561a5d4842">
+<meta name="build" content="06440b2c1cc0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Varinhas e Segredos — RPG de mesa</title>
 <link rel="preload" href="assets/fontes/garamond.woff2" as="font" type="font/woff2" crossorigin>
@@ -3114,15 +3114,7 @@ td strong { color: var(--texto); }
   </ul>
 
   <h4>9 · Coisas que quebram</h4>
-  <div class="rolagem"><table class="compacta">
-  <thead><tr><th>Coisa</th><th class="num">Aguenta</th><th>Exemplos</th></tr></thead>
-  <tbody>
-  <tr><td>Frágil</td><td class="num">1</td><td>vidro, frasco, vaso, cadeira velha, tapeçaria</td></tr>
-  <tr><td>Firme</td><td class="num">8</td><td>porta comum, mesa, baú, corrente fina, estante</td></tr>
-  <tr><td>Forte</td><td class="num">16</td><td>porta de carvalho, grade de ferro, corrente do lustre, armadura</td></tr>
-  <tr><td>Muralha</td><td class="num">30</td><td>parede de pedra, portão do castelo, coluna</td></tr>
-  </tbody></table></div>
-  <p>Um golpe que faz pelo menos o que a coisa aguenta a quebra; menos que isso não deixa marca. Reducto e Bombarda quebram qualquer coisa até Forte de uma vez. Corrente cortada, coluna quebrada, prateleira que cede: o que estava preso nela cai, e a conta volta para as tabelas 2 e 3.</p>
+  <p>Portas, portões, muros, caixas, móveis, chão e o que cada coisa faz quando cai em alguém estão no <a href="#ambiente">Ambiente</a>, logo abaixo.</p>
 
   <h4>Juntar, repetir, errar</h4>
   <ul>
@@ -3148,6 +3140,99 @@ td strong { color: var(--texto); }
   <tr><td>O inimigo te joga com Depulso contra a janela da torre</td><td>Voou 3 dos 6 m: <span class="dado">1d6</span> da parede; vidro: cortante; o Depulso dele soma</td><td>RA + 1 do feitiço + <span class="dado">1d6</span> + 1, Sangrando se fez 4, e você do lado de fora da janela, se ela quebrou.</td></tr>
   <tr><td>Aguamenti no colega e Glacius do outro aluno no inimigo molhado ao lado</td><td>Duas ações; o inimigo estava no jato: Encharcado; frio em encharcado</td><td>Congelado até o fim do próximo turno, e o próximo golpe contundente nele tem +1 dado (sem como se mexer).</td></tr>
   </tbody></table></div>
+
+  <h3 id="ambiente">Ambiente</h3>
+  <p>O castelo tem mil anos de portas trancadas, armaduras no corredor, estantes que vão até o teto e lustres por cima de todo mundo. Aqui está quanto cada coisa aguenta, o que acontece quando ela cai em alguém (você incluído) e como se passa por ela. As contas são as do <a href="#criativo">uso criativo</a>: a massa dá o dano, a altura e a força somam dados, a forma e o material dão o resto.</p>
+  <h4>Quebrar</h4>
+  <ul>
+    <li><strong>Aguenta</strong> é o dano de um golpe só que quebra a coisa. Menos que isso não quebra.</li>
+    <li><strong>Rachado:</strong> um golpe que passou da metade do que ela aguenta deixa a coisa rachada. Rachada, ela quebra com a metade.</li>
+    <li><strong>Ferramenta e tempo:</strong> com um machado, um pé de cabra ou o Diffindo repetido, cada rodada de trabalho tira 4 do que ela aguenta, sem rolar. Faz barulho.</li>
+    <li><strong>Fogo</strong> em madeira, pano ou papel tira 4 por rodada enquanto queimar. Pedra e ferro não queimam.</li>
+    <li><strong>Feitiços que destroem:</strong> Reducto quebra até 20 de uma vez; Bombarda, até 30; Confringo, até 20 e põe fogo; Bombarda Maxima, até 50. Abaixo disso, o dano deles conta normal.</li>
+    <li><strong>Encantado</strong> (porta trancada por feitiço, muro protegido): o dano não conta até alguém desfazer o encanto com Finite contra a DT de quem o fez. Uma coisa encantada para não quebrar não quebra.</li>
+    <li><strong>O que estava em cima ou preso cai.</strong> Corda cortada, coluna quebrada, prateleira que cede: monte o dano pela tabela de queda abaixo.</li>
+  </ul>
+  <h4>Portas, portões e passagens</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Coisa</th><th class="num">Aguenta</th><th>Se cair em alguém</th><th>Abrir, forçar, atravessar</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Porta de armário, de quarto</strong></td><td class="num">6</td><td>Médio, <span class="dado">2d6</span></td><td>Arrombar: Corpo + Atletismo DT 9. Alohomora.</td></tr>
+  <tr><td><strong>Porta de sala de aula</strong></td><td class="num">12</td><td>Grande, <span class="dado">3d6</span></td><td>Arrombar: DT 11. Alohomora; tranca de professor tem a DT do feitiço dele.</td></tr>
+  <tr><td><strong>Porta de carvalho reforçada</strong></td><td class="num">20</td><td>Enorme, <span class="dado">4d6</span></td><td>Escritório, salão comunal, sala de troféus. Arrombar: DT 13, e faz barulho de acordar o andar.</td></tr>
+  <tr><td><strong>Alçapão</strong></td><td class="num">8</td><td>Médio, <span class="dado">2d6</span></td><td>Arrombar por baixo: DT 11 (empurrar o que está em cima). Quem está em cima cai com ele.</td></tr>
+  <tr><td><strong>Grade, portão de ferro</strong></td><td class="num">24</td><td>Enorme, <span class="dado">4d6</span></td><td>Entortar a grade: Corpo + Atletismo DT 15. Passa um gato, um rato, uma coruja. Alohomora no cadeado.</td></tr>
+  <tr><td><strong>Portão do castelo</strong></td><td class="num">40</td><td>Colossal, <span class="dado">5d6</span></td><td>Não se arromba. Encantado: Finite DT 13 antes de qualquer dano contar.</td></tr>
+  <tr><td><strong>Porta de cofre</strong></td><td class="num">60</td><td>Colossal, <span class="dado">5d6</span></td><td>Só com a chave, o duende ou um ritual. Feitiço comum não deixa marca.</td></tr>
+  <tr><td><strong>Passagem secreta</strong></td><td class="num">a da parede</td><td>—</td><td>Achar: Mente + Investigação DT 11 (Percepção, se alguém acabou de passar). Abre com senha, toque ou o objeto certo.</td></tr>
+  </tbody></table></div>
+  <h4>Paredes, muros e janelas</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Coisa</th><th class="num">Aguenta</th><th>Se cair em alguém</th><th>Abrir, forçar, atravessar</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Biombo, tabique de madeira</strong></td><td class="num">8</td><td>Médio, <span class="dado">2d6</span></td><td>Dá para atravessar a socos (DT 9) ou com qualquer feitiço de dano.</td></tr>
+  <tr><td><strong>Parede de tijolo</strong></td><td class="num">20</td><td>Enorme, <span class="dado">4d6</span> (o pedaço)</td><td>Casa trouxa, galpão. Bombarda abre um buraco de passar uma pessoa.</td></tr>
+  <tr><td><strong>Muro de pedra</strong></td><td class="num">30</td><td>Colossal, <span class="dado">5d6</span></td><td>Muro do jardim, da estufa, do cemitério. Escalar: Corpo + Atletismo DT 9 (com hera, 7).</td></tr>
+  <tr><td><strong>Parede do castelo</strong></td><td class="num">50</td><td>Colossal, <span class="dado">5d6</span></td><td>Encantada há mil anos. Só Bombarda Maxima ou um gigante. Quem derruba parede de Hogwarts responde ao diretor.</td></tr>
+  <tr><td><strong>Janela comum</strong></td><td class="num">1</td><td>Vidro, <span class="dado">1d6</span> cortante</td><td>Quebrar é fácil; passar pelo buraco sem se cortar: Reflexos DT 7, ou Sangrando.</td></tr>
+  <tr><td><strong>Vitral</strong></td><td class="num">2</td><td>Vidro, <span class="dado">2d6</span> cortante</td><td>Igual à janela, e o professor que gostava dele vai saber quem foi.</td></tr>
+  <tr><td><strong>Janela com grade</strong></td><td class="num">16</td><td>Enorme, <span class="dado">4d6</span></td><td>A grade é que conta. Por dentro, Alohomora, se tiver cadeado.</td></tr>
+  <tr><td><strong>Telhado de telha</strong></td><td class="num">4 por telha</td><td>Leve, <span class="dado">1d4</span> (cada telha)</td><td>Andar: Corpo + Atletismo DT 9 a cada movimento, ou escorrega até a borda. Cair por ele: a queda.</td></tr>
+  </tbody></table></div>
+  <h4>Móveis, caixas e o que fica pelo castelo</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Coisa</th><th class="num">Aguenta</th><th>Se cair em alguém</th><th>O que mais faz</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Cadeira, banco</strong></td><td class="num">3</td><td>Médio, <span class="dado">2d6</span></td><td>Vira arma de mão (RA + 1) ou cobertura parcial tombada.</td></tr>
+  <tr><td><strong>Caixote de madeira</strong></td><td class="num">4</td><td>Médio, <span class="dado">2d6</span> cheio</td><td>O que tem dentro conta como material (garrafas: vidro; pó; frutas: nada).</td></tr>
+  <tr><td><strong>Barril</strong></td><td class="num">8</td><td>Grande, <span class="dado">3d6</span> cheio</td><td>Rolando escada abaixo é Rápido (+1 dado) e leva o que estiver no caminho. Água, óleo ou cerveja amanteigada: o chão inteiro muda.</td></tr>
+  <tr><td><strong>Baú com ferragens</strong></td><td class="num">12</td><td>Grande, <span class="dado">3d6</span></td><td>Tranca: Alohomora, ou Mente + a perícia da sua ferramenta DT 11. Baú encantado pode morder.</td></tr>
+  <tr><td><strong>Armário</strong></td><td class="num">10</td><td>Grande, <span class="dado">3d6</span></td><td>Esconde uma pessoa (Furtividade +1 passo). Tombado, prende a porta: quem abre faz Atletismo DT 11.</td></tr>
+  <tr><td><strong>Estante de biblioteca</strong></td><td class="num">10</td><td>Enorme, <span class="dado">4d6</span> cheia</td><td>Cai em dominó: cada estante seguinte da fileira cai também, e cada pessoa no corredor rola Reflexos DT 9. Livros da Seção Reservada caídos podem gritar.</td></tr>
+  <tr><td><strong>Mesa comprida do Salão</strong></td><td class="num">16</td><td>Enorme, <span class="dado">4d6</span></td><td>Tombada, é cobertura total para três pessoas. Erguer sozinho: Atletismo DT 13.</td></tr>
+  <tr><td><strong>Cama de dossel</strong></td><td class="num">12</td><td>Enorme, <span class="dado">4d6</span></td><td>O dossel cai antes: Pano, Mole, Cego até sair.</td></tr>
+  <tr><td><strong>Piano, cravo</strong></td><td class="num">14</td><td>Enorme, <span class="dado">4d6</span></td><td>Cai fazendo barulho de três andares.</td></tr>
+  <tr><td><strong>Caldeirão</strong></td><td class="num">8</td><td>Pequeno vazio <span class="dado">1d6</span>; Médio cheio <span class="dado">2d6</span></td><td>Cheio no fogo: Fervendo. O conteúdo é o que importa: poção errada derramada é o efeito dela.</td></tr>
+  <tr><td><strong>Quadro grande</strong></td><td class="num">2</td><td>Médio, <span class="dado">2d6</span></td><td>O retrato grita, foge para o quadro vizinho e conta para quem quiser ouvir.</td></tr>
+  <tr><td><strong>Armadura decorativa</strong></td><td class="num">16</td><td>Grande, <span class="dado">3d6</span></td><td>Lança, espada ou machado na mão: Perfurante ou Cortante. Piertotum Locomotor faz ela andar.</td></tr>
+  <tr><td><strong>Estátua</strong></td><td class="num">30</td><td>Enorme <span class="dado">4d6</span> ou Colossal <span class="dado">5d6</span></td><td>Base estreita: Depulso ou Flipendo Duo tomba. Algumas guardam passagens.</td></tr>
+  <tr><td><strong>Lustre</strong></td><td class="num">corda 8 · corrente 16</td><td>Enorme, <span class="dado">4d6</span> e vidro</td><td>Velas acesas: Fogo também. Diffindo corta corda; corrente pede Reducto.</td></tr>
+  <tr><td><strong>Pia de pedra</strong></td><td class="num">20</td><td>Grande, <span class="dado">3d6</span></td><td>Arrancada, o cano estoura: Água por todo o chão até alguém fechar.</td></tr>
+  <tr><td><strong>Lareira, braseiro</strong></td><td class="num">30 (a lareira)</td><td>Brasas: Leve, <span class="dado">1d4</span> e Fogo</td><td>Chutar o braseiro: Fogo numa área de 3 m. A lareira pode ser rede de Flu.</td></tr>
+  </tbody></table></div>
+  <h4>O que cai em cima: massa e altura</h4>
+  <p>A conta pronta das tabelas 2 e 3 do uso criativo. Arremessado por feitiço conta como a coluna de 3 a 9 m; vindo de cima, o alvo rola Reflexos para metade; fora da vista, +1 dado e sem reação. Depois some a forma (contundente derruba, perfurante sangra) e o material (vidro corta, fogo queima).</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Massa</th><th class="num">Até 3 m</th><th class="num">3 a 9 m</th><th class="num">9 a 18 m</th><th class="num">Mais de 18 m</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Leve</strong></td><td class="num"><span class="dado">1d4</span></td><td class="num"><span class="dado">2d4</span></td><td class="num"><span class="dado">3d4</span></td><td class="num"><span class="dado">4d4</span></td></tr>
+  <tr><td><strong>Pequeno</strong></td><td class="num"><span class="dado">1d6</span></td><td class="num"><span class="dado">2d6</span></td><td class="num"><span class="dado">3d6</span></td><td class="num"><span class="dado">4d6</span></td></tr>
+  <tr><td><strong>Médio</strong></td><td class="num"><span class="dado">2d6</span></td><td class="num"><span class="dado">3d6</span></td><td class="num"><span class="dado">4d6</span></td><td class="num"><span class="dado">5d6</span></td></tr>
+  <tr><td><strong>Grande</strong></td><td class="num"><span class="dado">3d6</span></td><td class="num"><span class="dado">4d6</span></td><td class="num"><span class="dado">5d6</span></td><td class="num"><span class="dado">6d6</span></td></tr>
+  <tr><td><strong>Enorme</strong></td><td class="num"><span class="dado">4d6</span></td><td class="num"><span class="dado">5d6</span></td><td class="num"><span class="dado">6d6</span></td><td class="num"><span class="dado">7d6</span></td></tr>
+  <tr><td><strong>Colossal</strong></td><td class="num"><span class="dado">5d6</span></td><td class="num"><span class="dado">6d6</span></td><td class="num"><span class="dado">7d6</span></td><td class="num"><span class="dado">8d6</span></td></tr>
+  </tbody></table></div>
+  <p>Vale para você igual: a armadura que você mesmo derrubou no Desastre cai com esses dados. Nada passa de 8 dados.</p>
+  <h4>Chão, água, escuro e altura</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Terreno</th><th>O que muda</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Pedra seca, madeira</strong></td><td>Normal.</td></tr>
+  <tr><td><strong>Molhado, gelo, óleo, cera</strong></td><td>Escorregadio: correr ou lutar pede Corpo + Reflexos DT 9 a cada movimento, ou Caído.</td></tr>
+  <tr><td><strong>Lama, neve funda, areia, entulho</strong></td><td>Terreno difícil: deslocamento pela metade.</td></tr>
+  <tr><td><strong>Pântano, Palus Portabilis</strong></td><td>Deslocamento pela metade, e Reflexos DT 9 ou Preso até o fim do próximo turno.</td></tr>
+  <tr><td><strong>Escada</strong></td><td>Cair dela é queda: <span class="dado">d6</span> a cada 3 m de escada, Caído lá embaixo. Lutar nela: quem está acima tem +1 passo contra quem está abaixo.</td></tr>
+  <tr><td><strong>Escada que muda</strong></td><td>No começo de cada rodada, <span class="dado">1d6</span>: com 1, ela gira e leva para outro andar. Pular para a outra: Atletismo DT 9.</td></tr>
+  <tr><td><strong>Degrau falso</strong></td><td>Reflexos DT 9 ao passar correndo, ou Preso pela perna até alguém puxar (Atletismo DT 7).</td></tr>
+  <tr><td><strong>Parapeito, viga, ponte estreita</strong></td><td>Reflexos DT 9 a cada movimento em combate. Empurrão (Flipendo, Depulso): Reflexos ou cai.</td></tr>
+  <tr><td><strong>Água pela cintura</strong></td><td>Terreno difícil; não dá para Desviar.</td></tr>
+  <tr><td><strong>Água funda</strong></td><td>Nadar: Corpo + Atletismo DT 7 por movimento (com capa ou mochila, DT 11). Embaixo da água, você aguenta tantas rodadas quanto o lado do seu dado de Corpo; depois, <span class="dado">1d6</span> por rodada. Feitiço falado embaixo da água só sai Silencioso.</td></tr>
+  <tr><td><strong>Escuro</strong></td><td>Quem não tem luz fica Cego. Penumbra: –1 passo em Percepção e em ataques a mais de 9 m. Lumos acende 9 m, e todo mundo vê você.</td></tr>
+  <tr><td><strong>Fumaça, névoa</strong></td><td>Como o Fumos ou o Nebulus: quem está dentro não está à vista. Fumaça de incêndio, além disso: Fortitude DT 9 por rodada, ou <span class="dado">1d4</span> e –1 passo.</td></tr>
+  <tr><td><strong>Altura</strong></td><td>Torre, sacada, arquibancada: a queda conta até 18 m (<span class="dado">6d6</span>). Acima disso, Arresto Momentum, uma vassoura ou um milagre.</td></tr>
+  </tbody></table></div>
+  <h4>Montando um lugar</h4>
+  <p>Para uma cena de luta ou de fuga, escolha três coisas do ambiente que alguém pode usar: uma que cai (estante, lustre, armadura), uma que muda o chão (barril, pia, lareira) e uma que esconde ou protege (mesa, armário, fumaça). Diga as três ao descrever o lugar. Quem prestou atenção usa primeiro.</p>
 
   <h3>Outras ações</h3>
   <div class="rolagem"><table class="compacta">

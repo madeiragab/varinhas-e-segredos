@@ -167,6 +167,8 @@ FRASES = {
     "ambiente: aguenta e rachado": "<strong>Rachado:</strong>",
     "doenças: PV máximo menor": "<h4>PV máximo menor</h4>",
     "doenças: estágios e teste": "abaixo do leve você sarou",
+    "criar criatura: poder sob medida conferido com a Forja": "Conferido com a Forja: o Sopro",
+    "criar objeto: função por categoria": "A função, em cada categoria",
     "ambiente: tabela de queda por massa e altura": "O que cai em cima: massa e altura",
     "variante: nível custa 5 + nível atual": "5 + o nível atual",
     "variante: teto de 4 PE por sessão continua": "Teto por sessão continua: 4 PE",
@@ -457,6 +459,7 @@ CO = banco.carrega("condicoes")
 checa(f"Banco: {len(CO)} condições, {sum('rapida' in c for c in CO)} na referência rápida, todas com efeito e saída",
       all(c["efeito"] and c["duracao"] for c in CO) and sum("rapida" in c for c in CO) >= 8)
 checa("Banco: nenhum marcador <!--dados:...--> sobrando no livro", "<!--dados:" not in HTML)
+checa("Nenhum pedaço de código do build vazou para o texto", "' + d(" not in HTML and "'''" not in HTML)
 
 print(f"\n{len(falhas)} falha(s). Isto confere contas, não substitui teste de mesa.")
 sys.exit(1 if falhas else 0)

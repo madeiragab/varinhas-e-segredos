@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="8da857e8403c">
+<meta name="build" content="1af724e35b33">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Varinhas e Segredos — RPG de mesa</title>
 <link rel="preload" href="assets/fontes/garamond.woff2" as="font" type="font/woff2" crossorigin>
@@ -3317,7 +3317,7 @@ td strong { color: var(--texto); }
   <ol class="passos">
     <li><b>Pegar.</b> Exposto (tocou, dividiu o quarto, levou o espirro), role Corpo + Fortitude contra a DT da doença. Passou, não pegou desta vez. A varinha de pinheiro e a Poção Revigorante antes dão +1 passo.</li>
     <li><b>Os estágios.</b> Toda doença tem três: leve, moderado e grave. Começa no leve.</li>
-    <li><b>Testar.</b> No ritmo da doença (por dia ou por semana), role Corpo + Fortitude contra a DT. Sucesso: desce um estágio, e abaixo do leve você sarou. Falha: sem tratamento, sobe um; tratado (na cama da Ala, com a poção certa), fica onde está. Crítico: desce dois. Desastre: sobe um mesmo tratado e perde ' + d('1d4') + ' DET.</li>
+    <li><b>Testar.</b> No ritmo da doença (por dia ou por semana), role Corpo + Fortitude contra a DT. Sucesso: desce um estágio, e abaixo do leve você sarou. Falha: sem tratamento, sobe um; tratado (na cama da Ala, com a poção certa), fica onde está. Crítico: desce dois. Desastre: sobe um mesmo tratado e perde <span class="dado">1d4</span> DET.</li>
     <li><b>Cuidar.</b> Quem cuida rola Mente + Medibruxaria contra a DT da doença; passou, o doente ganha +1 passo no próximo teste. Os efeitos de cada estágio não somam: vale o do estágio em que você está, e o moderado inclui o leve.</li>
   </ol>
   <h4>Doenças do mundo bruxo</h4>
@@ -3678,6 +3678,177 @@ td strong { color: var(--texto); }
   <tr><td class="d">11</td><td>Macaco</td><td>rosto quase humano</td><td>caçando uma pessoa específica</td><td>trem de Hogwarts</td></tr>
   <tr><td class="d">12</td><td>Sombra sem forma</td><td>cheiro de chuva</td><td>dormindo — por enquanto</td><td>Sala Precisa</td></tr>
   </tbody></table></div>
+  <h3 id="criar-criatura">Criar do zero</h3>
+  <p>A Forja acima dá os números. Esta parte dá o resto: o tamanho, o jeito de andar e de atacar, poderes e traços sob medida, o que ela quer, do que vive, que rastro deixa e o que rende. Nada aqui é do bestiário de ninguém; é para o Mestre fazer o bicho que a história pede.</p>
+  <ol class="passos">
+    <li><b>Uma frase.</b> O que é e por que está aqui: "um lagarto de vidro que come luz e se escondeu nas estufas porque o inverno chegou".</li>
+    <li><b>Os números.</b> Perigo, arquétipo, Traços e Poderes pela Forja.</li>
+    <li><b>O corpo.</b> Tamanho, movimento e como ataca, nas tabelas abaixo.</li>
+    <li><b>O que só ela faz.</b> Poder e Traço sob medida, se nenhum da lista serve.</li>
+    <li><b>A cabeça e a vida.</b> Mente, o que quer agora, do que come, o ciclo, o rastro.</li>
+    <li><b>A fraqueza e o que rende.</b> A fraqueza da Forja e as partes, se alguém quiser coletar.</li>
+  </ol>
+  <h4>Tamanho</h4>
+  <p>Para criaturas novas. As do bestiário já têm isso na conta.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Tamanho</th><th>Exemplos</th><th>Defesa</th><th>Alcance</th><th>Massa (se cair ou pisar)</th><th>Na mesa</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Minúsculo</strong></td><td>fada, diabrete, pomo, besouro</td><td>+2</td><td>toque</td><td>Leve</td><td>Accio e Wingardium pegam; cabe no bolso; +1 passo em Furtividade</td></tr>
+  <tr><td><strong>Pequeno</strong></td><td>gato, coruja, amasso, gnomo</td><td>+1</td><td>1,5 m</td><td>Pequeno</td><td>Wingardium e Levicorpus pegam; passa por baixo da porta</td></tr>
+  <tr><td><strong>Médio</strong></td><td>pessoa, lobo, centauro jovem</td><td>0</td><td>1,5 m</td><td>Grande</td><td>Levicorpus pega; ocupa um corredor de um</td></tr>
+  <tr><td><strong>Grande</strong></td><td>cavalo, hipogrifo, trasgo baixo</td><td>–1</td><td>3 m</td><td>Enorme</td><td>Nenhum feitiço de mover pega; derruba o que for Médio ou menor ao passar</td></tr>
+  <tr><td><strong>Enorme</strong></td><td>trasgo da montanha, acromântula adulta, quimera</td><td>–2</td><td>3 m</td><td>Enorme</td><td>Não passa por porta comum; pisotear: dano da massa em quem estiver no caminho</td></tr>
+  <tr><td><strong>Colossal</strong></td><td>dragão, gigante, lula do lago</td><td>–3</td><td>6 m</td><td>Colossal</td><td>Derruba parede de tijolo andando; o grupo inteiro cabe num golpe de cauda (área de 3 m)</td></tr>
+  </tbody></table></div>
+  <p>A massa é a da <a href="#criativo">tabela de massa</a> do Capítulo VII: um trasgo que cai do balcão em cima de alguém faz o dano dela, e a criatura que é arremessada contra a parede também. Pisotear (Enorme ou mais, como movimento): Reflexos contra a DT da Tábua, ou o dano da massa e Caído.</p>
+  <h4>Movimento</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d12</th><th>Como anda</th><th>Na mesa</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td><strong>Anda</strong></td><td>9 m, como todo mundo.</td></tr>
+  <tr><td class="d">2</td><td><strong>Corre</strong></td><td>18 m. Fugir dela a pé: perseguição com –1 passo.</td></tr>
+  <tr><td class="d">3</td><td><strong>Lenta</strong></td><td>4,5 m. Dá para fugir andando.</td></tr>
+  <tr><td class="d">4</td><td><strong>Voa</strong></td><td>Voo no deslocamento normal (o Traço Voo).</td></tr>
+  <tr><td class="d">5</td><td><strong>Paira</strong></td><td>Voa parada no ar; não cai se for Atordoada.</td></tr>
+  <tr><td class="d">6</td><td><strong>Nada</strong></td><td>Anfíbia, ou só nada no dobro do deslocamento.</td></tr>
+  <tr><td class="d">7</td><td><strong>Escava</strong></td><td>Some na terra; sai embaixo de alguém: ataque de surpresa.</td></tr>
+  <tr><td class="d">8</td><td><strong>Escala</strong></td><td>Paredes e tetos (Escaladora).</td></tr>
+  <tr><td class="d">9</td><td><strong>Salta</strong></td><td>Pula 9 m como movimento, por cima de quem estiver no meio.</td></tr>
+  <tr><td class="d">10</td><td><strong>Atravessa</strong></td><td>Passa por paredes e portas; não carrega nada.</td></tr>
+  <tr><td class="d">11</td><td><strong>Some</strong></td><td>Aparata ou se desfaz em fumaça 18 m (o Poder Sumir).</td></tr>
+  <tr><td class="d">12</td><td><strong>Desliza</strong></td><td>Sem som nem rastro: +1 passo em Furtividade; não deixa pista no chão.</td></tr>
+  </tbody></table></div>
+  <p>Escolha um ou dois. Três já é Traço.</p>
+  <h4>Como ataca</h4>
+  <p>O dano é sempre o da Tábua (RA + o dano do Perigo). A forma do ataque diz o que vem junto, como na física do Capítulo VII.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d12</th><th>Ataque</th><th>Forma</th><th>O que vem junto</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td><strong>Mordida</strong></td><td>Perfurante</td><td>Fez 4 ou mais: Sangrando. Grande ou mais: Preso entre os dentes até o fim do próximo turno.</td></tr>
+  <tr><td class="d">2</td><td><strong>Garra</strong></td><td>Cortante</td><td>+1 de dano; fez 4 ou mais: Sangrando.</td></tr>
+  <tr><td class="d">3</td><td><strong>Pancada, cauda, casco</strong></td><td>Contundente</td><td>Grande ou mais: Fortitude ou Caído. Colossal: área de 3 m.</td></tr>
+  <tr><td class="d">4</td><td><strong>Chifrada</strong></td><td>Perfurante</td><td>Depois de mover em linha reta: +1 dado do tamanho dela (a massa) e Caído.</td></tr>
+  <tr><td class="d">5</td><td><strong>Ferrão</strong></td><td>Perfurante e veneno</td><td>Veneno (o Traço) ou um veneno da tabela de doenças.</td></tr>
+  <tr><td class="d">6</td><td><strong>Constrição</strong></td><td>Esmagar</td><td>Preso, e o dano de novo no começo de cada turno até soltar (Atletismo contra a DT).</td></tr>
+  <tr><td class="d">7</td><td><strong>Toque ardente ou gelado</strong></td><td>Fogo ou frio</td><td>Fogo: Reflexos DT da Tábua ou Em chamas. Frio: deslocamento pela metade; Encharcado vira Congelado.</td></tr>
+  <tr><td class="d">8</td><td><strong>Toque da alma</strong></td><td>Alma</td><td>O dano vai na DET, não no PV (dementador, lethifold).</td></tr>
+  <tr><td class="d">9</td><td><strong>Grito, zumbido</strong></td><td>Som</td><td>Metade do dano, em todo mundo a 6 m; Vontade ou Atordoado.</td></tr>
+  <tr><td class="d">10</td><td><strong>Espinhos, pele que queima</strong></td><td>Defesa</td><td>Não ataca com eles: quem a acerta corpo a corpo leva RB.</td></tr>
+  <tr><td class="d">11</td><td><strong>Esguicho</strong></td><td>Corrosivo, pó ou tinta</td><td>Até 9 m. Corrosivo: o dano de novo nos dois turnos seguintes. Na cara: Cego (Fortitude).</td></tr>
+  <tr><td class="d">12</td><td><strong>Engolir</strong></td><td>Esmagar</td><td>Só Enorme ou mais, contra Médio ou menor que já está Preso: o alvo some dentro, leva o dano por turno e só ataca de dentro.</td></tr>
+  </tbody></table></div>
+  <h4>Poder sob medida</h4>
+  <p>Monte um Poder somando três coisas: o que faz, até onde vai e quantas vezes. A soma não passa de <strong>4</strong> até Perigo 5, <strong>5</strong> de Perigo 6 a 9, e <strong>6</strong> de Perigo 10 em diante. Quem é alvo resiste contra a DT da Tábua, com a perícia que fizer sentido (Reflexos para o que dá para desviar, Fortitude para o corpo, Vontade para a mente).</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>O que faz</th><th>Custa</th><th>Exemplos</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Dano da Tábua</strong></td><td>2</td><td></td></tr>
+  <tr><td><strong>Metade do dano e uma condição leve</strong></td><td>2</td><td></td></tr>
+  <tr><td><strong>Condição leve</strong></td><td>1</td><td>Caído, Desarmado, Cego até o fim do próximo turno</td></tr>
+  <tr><td><strong>Condição forte</strong></td><td>2</td><td>Preso, Atordoado, Confuso, Amedrontado, Com pavor</td></tr>
+  <tr><td><strong>Incapacitar</strong></td><td>3</td><td>Petrificado, dormir, Controlado. Conta +1 de Ameaça.</td></tr>
+  <tr><td><strong>Perder <span class="dado">1d6</span> DET</strong></td><td>1</td><td></td></tr>
+  <tr><td><strong>Perder <span class="dado">2d6</span> DET</strong></td><td>2</td><td></td></tr>
+  <tr><td><strong>Mover o alvo ou a si</strong></td><td>1</td><td>puxar, empurrar 6 m, trocar de lugar, sumir 18 m</td></tr>
+  <tr><td><strong>Mudar o lugar</strong></td><td>1</td><td>névoa, escuro, gelo no chão, teia, água subindo</td></tr>
+  <tr><td><strong>Curar-se</strong></td><td>2</td><td>Perigo × 2 em PV; nunca devolve Fase</td></tr>
+  <tr><td><strong>Chamar ajuda</strong></td><td>2</td><td><span class="dado">1d4</span> lacaios de Perigo –3</td></tr>
+  <tr><td><strong>Saber ou enganar</strong></td><td>1</td><td>ler um pensamento, ilusão, imitar uma voz</td></tr>
+  </tbody></table></div>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Até onde</th><th>Custa</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Toque</strong></td><td>0</td></tr>
+  <tr><td><strong>Um alvo a 9 m</strong></td><td>1</td></tr>
+  <tr><td><strong>Um alvo a 18 m, ou cone de 9 m</strong></td><td>1</td></tr>
+  <tr><td><strong>Raio de 3 m</strong></td><td>1</td></tr>
+  <tr><td><strong>Raio de 6 m, ou todos que a veem</strong></td><td>2</td></tr>
+  </tbody></table></div>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Quantas vezes</th><th>Custa</th></tr></thead>
+  <tbody>
+  <tr><td><strong>À vontade (toda rodada)</strong></td><td>+2</td></tr>
+  <tr><td><strong>Recarga 5–6 no <span class="dado">d6</span></strong></td><td>+1</td></tr>
+  <tr><td><strong>Recarga 6</strong></td><td>0</td></tr>
+  <tr><td><strong>Uma vez por cena</strong></td><td>–1</td></tr>
+  </tbody></table></div>
+  <p>Conferido com a Forja: o Sopro é dano (2) + cone (1) + recarga 5–6 (+1) = 4; o Olhar é incapacitar (3) + um alvo a 9 m (1) + recarga 6 (0) = 4; o Grito é condição forte (2) + 1d6 DET (1) + raio de 6 m (2) + uma vez por cena (–1) = 4. Dois efeitos no mesmo Poder somam os dois.</p>
+  <h4>Traço sob medida</h4>
+  <p>A regra de bolso: se o Traço muda o que funciona contra ela a luta inteira, é <strong>pesado</strong> e segue o limite da Forja (um abaixo de Perigo 6, dois a partir dele, +1 de Ameaça cada).</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Tipo</th><th>Peso</th><th>Exemplos</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Imunidade estreita</strong></td><td>Leve</td><td>A uma coisa só: fogo comum, frio, Stupefy, Confundo, veneno, armas de trouxa.</td></tr>
+  <tr><td><strong>Resistência</strong></td><td>Leve</td><td>Metade do dano de um tipo: fogo, frio, impacto, corte.</td></tr>
+  <tr><td><strong>Sentido</strong></td><td>Leve</td><td>Faro, eco, sente magia, sente medo, vê o invisível, vê no escuro.</td></tr>
+  <tr><td><strong>Ambiente</strong></td><td>Leve</td><td>Respira na água, não sente frio, vive no fogo, invisível no escuro total.</td></tr>
+  <tr><td><strong>Corpo estranho</strong></td><td>Leve</td><td>Duas cabeças (não é surpreendida), sem ossos (passa por grades), corpo de pedra (Defesa +1, não nada).</td></tr>
+  <tr><td><strong>Social</strong></td><td>Leve</td><td>Fala, imita vozes, obedece a quem tem um objeto, odeia uma Casa, é sagrada para um povo.</td></tr>
+  <tr><td><strong>Vínculo</strong></td><td>Leve</td><td>Ligada a um lugar, pessoa ou objeto: longe dele, –1 passo em tudo; perto, não foge.</td></tr>
+  <tr><td><strong>Regeneração, Invisível, Come Magia, Couro Mágico</strong></td><td>Pesado</td><td>Os pesados da Forja.</td></tr>
+  <tr><td><strong>Imunidade larga</strong></td><td>Pesado</td><td>A uma família inteira: todo feitiço de mente, todo dano de feitiço de Círculo 1, todo fogo.</td></tr>
+  <tr><td><strong>Volta</strong></td><td>Pesado</td><td>Quando cai, volta na próxima noite, a não ser que a fraqueza seja usada no corpo.</td></tr>
+  <tr><td><strong>Muitos</strong></td><td>Pesado</td><td>É um enxame: só dano de área tira mais que 1 PV de cada vez.</td></tr>
+  </tbody></table></div>
+  <h4>A cabeça</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Mente</th><th>Como age</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Animal</strong></td><td>Fome, medo, filhotes, território. Afastar, alimentar ou contornar funciona.</td></tr>
+  <tr><td><strong>Esperto</strong></td><td>Arma emboscadas, foge ferido, lembra de quem o machucou.</td></tr>
+  <tr><td><strong>Fala pouco</strong></td><td>Entende ordens e trocas simples; negocia comida, passagem, segurança.</td></tr>
+  <tr><td><strong>Fala bem</strong></td><td>Tem cultura, regras e orgulho. Mentir para ela tem consequência.</td></tr>
+  <tr><td><strong>Mais esperta que você</strong></td><td>Planeja há anos, joga com as pessoas, quer algo que ninguém percebeu.</td></tr>
+  </tbody></table></div>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d12</th><th>O que quer agora</th><th>Come</th><th>Ciclo de vida</th><th>Rastro que deixa</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>comer quem passar</td><td>carne</td><td>põe ovos que precisam de fogo</td><td>rastro de gosma</td></tr>
+  <tr><td class="d">2</td><td>proteger os ovos</td><td>magia (feitiços, varinhas, poções)</td><td>troca de pele uma vez por ano</td><td>cheiro de enxofre</td></tr>
+  <tr><td class="d">3</td><td>voltar para casa</td><td>medo e tristeza</td><td>hiberna no inverno</td><td>plantas murchas num círculo</td></tr>
+  <tr><td class="d">4</td><td>cumprir a ordem de um bruxo morto</td><td>luz</td><td>só aparece na lua cheia</td><td>ossos limpos demais</td></tr>
+  <tr><td class="d">5</td><td>ser deixada em paz</td><td>plantas mágicas</td><td>nasce de um feitiço que deu errado</td><td>velas que apagam sozinhas</td></tr>
+  <tr><td class="d">6</td><td>um objeto que um aluno pegou</td><td>ossos</td><td>vive mil anos e quase não se mexe</td><td>arranhões no alto da parede</td></tr>
+  <tr><td class="d">7</td><td>vingar o bando</td><td>lembranças</td><td>larva que vira outra coisa</td><td>penas, escamas ou pelos num ninho</td></tr>
+  <tr><td class="d">8</td><td>sair da escola antes do amanhecer</td><td>ouro e metal</td><td>nasce de uma pessoa, de uma dor ou de um segredo</td><td>animais do castelo fugindo</td></tr>
+  <tr><td class="d">9</td><td>brincar, sem saber que machuca</td><td>sonhos</td><td>brota da terra como planta</td><td>gelo no verão</td></tr>
+  <tr><td class="d">10</td><td>achar um parceiro</td><td>fogo</td><td>é sempre uma só: quando morre, nasce outra</td><td>um canto à noite</td></tr>
+  <tr><td class="d">11</td><td>fugir de algo pior</td><td>nada: não precisa comer</td><td>divide-se em duas quando ferida</td><td>objetos de metal sumindo</td></tr>
+  <tr><td class="d">12</td><td>o calor do castelo no inverno</td><td>uma coisa só, muito específica</td><td>cresce com o que come</td><td>alunos com o mesmo pesadelo</td></tr>
+  </tbody></table></div>
+  <p>O rastro é a primeira pista: com ele, a mesa descobre a fraqueza pelas regras de <a href="#cap8">Descobrir a fraqueza</a>, acima.</p>
+  <h4>Variações</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Variação</th><th>Muda</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Filhote</strong></td><td>Perigo –2, perde um Poder. Quase sempre a mãe está por perto.</td></tr>
+  <tr><td><strong>Jovem</strong></td><td>Perigo –1. Curioso, testa os limites, foge antes de morrer.</td></tr>
+  <tr><td><strong>Ancião</strong></td><td>Perigo +2, ganha Inteligente ou Sentido. Sabe coisas sobre o lugar.</td></tr>
+  <tr><td><strong>Alfa do bando</strong></td><td>Perigo +1 e Chamar o Bando. Se cair, o bando foge.</td></tr>
+  <tr><td><strong>Ferido</strong></td><td>Começa com metade do PV. Desesperado: ataca o mais perto, não foge.</td></tr>
+  <tr><td><strong>Trevoso</strong></td><td>Criado ou tocado por magia das trevas: +Aterrorizante, e a fraqueza vira Luz ou Patrono.</td></tr>
+  <tr><td><strong>Domesticado</strong></td><td>Fraqueza Dono. Obedece a um gesto; sem o dono, fica perdido.</td></tr>
+  <tr><td><strong>Mestiço</strong></td><td>De duas espécies: um Traço de cada, a fraqueza de uma delas.</td></tr>
+  <tr><td><strong>Mudado por feitiço</strong></td><td>Engorgio, poção, acidente de aula: Perigo +1 e um Traço que não faz sentido.</td></tr>
+  </tbody></table></div>
+  <h4>O que rende</h4>
+  <p>Cada parte vale cerca de Perigo × <span class="dado">1d6</span> galeões; com o Traço Partes Valiosas, Perigo × <span class="dado">2d6</span>. Coletar segue o <a href="#cap16">Capítulo XVI</a>; matar ou ferir criatura protegida, ou de classificação XXXX ou mais, é crime.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Parte</th><th>Serve para</th><th>Como tirar</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Escama, couro</strong></td><td>luvas, armadura, Poções de proteção</td><td>Trato de Criaturas contra a DT da Tábua, depois de morta ou na muda</td></tr>
+  <tr><td><strong>Sangue</strong></td><td>poções de força e cura; ritual</td><td>Medibruxaria, com ela viva e calma</td></tr>
+  <tr><td><strong>Veneno, ferrão</strong></td><td>venenos, antídotos, ingrediente controlado</td><td>Trato de Criaturas –1 passo; falhou, pegou o veneno</td></tr>
+  <tr><td><strong>Pelo, pena, crina</strong></td><td>núcleo de varinha (só das fortes), poções, amuletos</td><td>De graça, se ela deixar; à força, ela lembra</td></tr>
+  <tr><td><strong>Chifre, dente, garra</strong></td><td>antídotos, amuletos, cabo de faca de Poções</td><td>Depois de morta, ou o que ela perdeu</td></tr>
+  <tr><td><strong>Lágrima</strong></td><td>cura, contra veneno</td><td>Só ela chorando de verdade</td></tr>
+  <tr><td><strong>Ovo</strong></td><td>vender, criar (quase sempre ilegal)</td><td>Ninho: a mãe volta</td></tr>
+  <tr><td><strong>Olho, glândula</strong></td><td>Adivinhação, poções de ver</td><td>Depois de morta; ingrediente controlado</td></tr>
+  <tr><td><strong>Coração, fio do nervo</strong></td><td>núcleo de varinha, objeto de poder</td><td>Depois de morta; criatura XXXX ou mais: crime</td></tr>
+  <tr><td><strong>Excremento, muda, ninho</strong></td><td>adubo de Herbologia, isca, tinta</td><td>Achar: Investigação DT 7</td></tr>
+  </tbody></table></div>
+  <h4>Montando: o lagarto de vidro</h4>
+  <p><em>Um lagarto de vidro que come luz e se escondeu nas estufas porque o inverno chegou.</em> Perigo 3, arquétipo Ágil. Pequeno (Defesa +1, Wingardium pega). Escala e desliza. Mordida (perfurante). Traço: Invisível (pesado: o único). Poder sob medida, "Beber a luz": mudar o lugar (1, escuro total em raio de 3 m) + raio de 3 m (1) + recarga 5–6 (+1) = 3. Fraqueza: Luz (Lumos Maxima o deixa Atordoado). Mente: animal. Quer o calor do castelo. Come luz; rastro: as lâmpadas das estufas apagadas uma a uma, e plantas de sol murchando. Rende escamas de vidro, que viram lentes que enxergam no escuro.</p>
 </section>
 
 <!-- ==================== IX ==================== -->
@@ -5116,6 +5287,180 @@ td strong { color: var(--texto); }
   <tr><td class="d">11</td><td>Anel</td><td>fica quente perto de magia das trevas</td><td>não sai do dedo</td></tr>
   <tr><td class="d">12</td><td>Capa</td><td>+1 passo em Furtividade</td><td>alguém mais a está procurando</td></tr>
   </tbody></table></div>
+  <h3 id="criar-objeto">Criar um objeto do zero</h3>
+  <p>A tabela acima é para rolar rápido. Esta é para inventar com calma qualquer objeto encantado, da pena que corrige ortografia ao espelho que mostra quem você perdeu. Siga os passos, escolha ou role em cada tabela, e confira o efeito pela <a href="#tabua-itens">Tábua de valor</a>: ela manda no preço e no limite.</p>
+  <ol class="passos">
+    <li><b>A forma.</b> Que objeto é. A forma dá a pista do que ele faz.</li>
+    <li><b>A função e a categoria.</b> O que ele faz, e quanto: a tabela de funções dá um exemplo para cada categoria.</li>
+    <li><b>Como liga e quantas vezes.</b> Ativação e frequência.</li>
+    <li><b>O jeito dele.</b> Uma peculiaridade, e defeitos se quiser baratear.</li>
+    <li><b>O preço escondido.</b> Maldição (role o <span class="dado">d6</span> do item encantado: com 1, tem) e, na categoria IV, sempre um Preço.</li>
+    <li><b>De onde veio.</b> A origem, e quem mais sabe dele.</li>
+  </ol>
+  <h4>A forma</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d20</th><th>Objeto</th><th>Sugere</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>Anel, brinco, colar, broche</td><td>o que se usa junto ao corpo: proteção, aviso, vínculo</td></tr>
+  <tr><td class="d">2</td><td>Capa, cachecol, luvas, chapéu, botas</td><td>roupa: esconder, aquecer, mover, aguentar</td></tr>
+  <tr><td class="d">3</td><td>Pena, tinteiro, pergaminho, diário</td><td>escrita: mensagem, segredo, memória, mentira</td></tr>
+  <tr><td class="d">4</td><td>Livro, mapa, atlas</td><td>conhecimento e caminho</td></tr>
+  <tr><td class="d">5</td><td>Espelho, lente, óculos, luneta</td><td>ver o que não se vê</td></tr>
+  <tr><td class="d">6</td><td>Relógio, ampulheta, calendário</td><td>tempo e ordem</td></tr>
+  <tr><td class="d">7</td><td>Chave, cadeado, caixa, baú</td><td>abrir, fechar, guardar</td></tr>
+  <tr><td class="d">8</td><td>Vela, lamparina, lanterna, isqueiro</td><td>luz, fogo, revelar</td></tr>
+  <tr><td class="d">9</td><td>Frasco, cálice, taça, cantil</td><td>beber, curar, envenenar, misturar</td></tr>
+  <tr><td class="d">10</td><td>Moeda, dado, carta de baralho</td><td>sorte, acordo, ligação entre donos</td></tr>
+  <tr><td class="d">11</td><td>Instrumento, caixa de música, sino</td><td>som: chamar, acalmar, avisar</td></tr>
+  <tr><td class="d">12</td><td>Brinquedo, boneca, pião, bola</td><td>distrair, espionar, assustar</td></tr>
+  <tr><td class="d">13</td><td>Pente, escova, perfume, maquiagem</td><td>aparência e disfarce</td></tr>
+  <tr><td class="d">14</td><td>Faca, tesoura, agulha, ferramenta</td><td>cortar, consertar, prender</td></tr>
+  <tr><td class="d">15</td><td>Vassoura, tapete, cadeira</td><td>voar, carregar, levar</td></tr>
+  <tr><td class="d">16</td><td>Pedra, osso, pena de bicho, concha</td><td>natureza, criaturas, lugar de origem</td></tr>
+  <tr><td class="d">17</td><td>Quadro, fotografia, estátua pequena</td><td>gente: vigiar, falar, lembrar</td></tr>
+  <tr><td class="d">18</td><td>Mala, bolsa, bolso, saco</td><td>caber mais do que cabe</td></tr>
+  <tr><td class="d">19</td><td>Cobertor, travesseiro, cortina</td><td>sono, sonho, esconder um canto</td></tr>
+  <tr><td class="d">20</td><td>Objeto de trouxa encantado</td><td>o que ele fazia, mas bruxo: carro que voa, rádio que escuta, chaleira que avisa</td></tr>
+  </tbody></table></div>
+  <h4>A função, em cada categoria</h4>
+  <p>Escolha a função e leia a coluna da categoria. São exemplos: um efeito do mesmo tamanho serve igual. Se o efeito não cabe em nenhuma coluna, ele está na categoria errada.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d12</th><th>Função</th><th>I · Comum</th><th>II · Incomum</th><th>III · Raro</th><th>IV · Artefato</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>Proteção</td><td>Esquenta quando alguém quer te ferir.</td><td>+1 de Defesa contra um tipo de ataque; segura um feitiço de Círculo 1 por cena.</td><td>Devolve um feitiço de Círculo 1; transforma um Desastre seu em falha.</td><td>Você sobrevive a um golpe com 1 PV, uma vez. Preço.</td></tr>
+  <tr><td class="d">2</td><td>Detectar</td><td>Treme perto de magia das trevas, de ouro, de mentira.</td><td>+1 passo em Percepção numa situação comum; aponta o perigo mais perto.</td><td>Diz uma verdade: se alguém mente, onde está uma pessoa, o que tem atrás da porta.</td><td>Vê tudo o que acontece num lugar que o dono conhece, uma vez. Preço.</td></tr>
+  <tr><td class="d">3</td><td>Mover</td><td>Leva um recado ou um objeto pequeno até o dono.</td><td>+1 passo em Voo ou Atletismo; leva o dono até 18 m, uma vez.</td><td>Chave de Portal de uso único; atravessa uma parede.</td><td>Leva o dono a qualquer lugar que já viu. Preço.</td></tr>
+  <tr><td class="d">4</td><td>Comunicar</td><td>Duas peças: uma muda de cor quando a outra é tocada.</td><td>Mensagem curta entre duas peças, a qualquer distância.</td><td>Fala com quem está do outro lado; ouve o que se diz perto da peça-irmã.</td><td>Fala com um morto, uma vez. Preço.</td></tr>
+  <tr><td class="d">5</td><td>Esconder</td><td>Disfarça um cheiro, uma mancha, um som.</td><td>+1 passo em Furtividade ou Enganação; muda um detalhe do rosto.</td><td>Invisível por uma rodada; apaga você de um mapa ou de um feitiço de achar.</td><td>Ninguém lembra que você esteve ali. Preço.</td></tr>
+  <tr><td class="d">6</td><td>Lembrar e saber</td><td>Guarda uma lembrança para rever.</td><td>+1 passo em Conhecimento Mágico ou Investigação num assunto.</td><td>Responde uma pergunta, às vezes errado; mostra uma lembrança de outra pessoa.</td><td>Ensina um feitiço de uma vez: ele fica Em aprendizado com 3 marcas. Preço.</td></tr>
+  <tr><td class="d">7</td><td>Atacar</td><td>Faísca, estalo, choque: 1 de dano ou RB, uso único.</td><td>Impõe uma condição contra teste (Caído, Cego, Desarmado), uma vez por cena.</td><td>Lança um feitiço de Círculo 2 guardado, sem varinha.</td><td>Um dado extra no ataque, e o alvo sente o preço também. Preço.</td></tr>
+  <tr><td class="d">8</td><td>Prender e controlar</td><td>Uma corda que se amarra sozinha num objeto.</td><td>Preso contra teste, uma vez por cena; uma porta que só abre para você.</td><td>Guarda um feitiço de alguém e o devolve; prende uma criatura pequena dentro.</td><td>Manda numa criatura ou numa pessoa por uma cena. Preço e crime.</td></tr>
+  <tr><td class="d">9</td><td>Corpo e cura</td><td>Tira a dor de um corte; aquece em noite fria.</td><td>1 Ímpeto; Estável em quem está Morrendo, uso único.</td><td>Cura metade do PV, uma vez por sessão; tira uma condição Até tratar leve.</td><td>Levanta quem caiu a 0 PV na hora. Preço.</td></tr>
+  <tr><td class="d">10</td><td>Tempo e sorte</td><td>Acorda o dono na hora certa; avisa a ronda.</td><td>Rerrola um dado, uma vez por cena.</td><td>Rola um Desastre de novo; uma ação antes de todo mundo, uma vez por sessão.</td><td>Volta uma rodada inteira. Preço.</td></tr>
+  <tr><td class="d">11</td><td>Criaturas</td><td>Atrai ou espanta um tipo de bicho pequeno.</td><td>+1 passo em Trato de Criaturas com um tipo; acalma uma fera.</td><td>Chama uma criatura que o dono conhece; entende o que ela diz.</td><td>A criatura obedece. Preço.</td></tr>
+  <tr><td class="d">12</td><td>Casa e ofício</td><td>Limpa, cozinha, conserta, arruma sozinho.</td><td>+1 passo em Poções ou Herbologia; uma etapa a menos num teste longo.</td><td>Acabamento excelente garantido numa fabricação; um ingrediente que vale por outro.</td><td>Uma casa que se esconde, cresce ou anda. Preço.</td></tr>
+  </tbody></table></div>
+  <h4>Como liga</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d10</th><th>Ativação</th><th>Como funciona</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td><strong>Sempre ligado</strong></td><td>Vestido ou no bolso. Só para efeito de cena sem número ou passivo pequeno.</td></tr>
+  <tr><td class="d">2</td><td><strong>Palavra</strong></td><td>Uma palavra de comando. Silenciado não usa.</td></tr>
+  <tr><td class="d">3</td><td><strong>Toque</strong></td><td>Encostar no alvo ou no objeto.</td></tr>
+  <tr><td class="d">4</td><td><strong>Gesto</strong></td><td>Girar, apertar, abrir, soprar. Mãos presas não usam.</td></tr>
+  <tr><td class="d">5</td><td><strong>Quebrar</strong></td><td>Uso único: o efeito sai ao quebrar ou ao jogar.</td></tr>
+  <tr><td class="d">6</td><td><strong>Condição</strong></td><td>Liga sozinho: perto de magia das trevas, quando o dono mente, à meia-noite, na lua cheia, quando o dono está em perigo.</td></tr>
+  <tr><td class="d">7</td><td><strong>Sangue</strong></td><td>Uma gota do dono (1 PV). Só ele usa.</td></tr>
+  <tr><td class="d">8</td><td><strong>Emoção</strong></td><td>Só funciona com medo, com raiva, com saudade. O dono precisa sentir de verdade (Vontade DT 9 para chamar a emoção).</td></tr>
+  <tr><td class="d">9</td><td><strong>Par</strong></td><td>Tem uma peça-irmã. Funciona entre as duas.</td></tr>
+  <tr><td class="d">10</td><td><strong>Ritual</strong></td><td>Uma cena inteira de preparo: velas, palavras, lugar certo.</td></tr>
+  </tbody></table></div>
+  <h4>Quantas vezes</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Frequência</th><th>Quando usar</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Sempre</strong></td><td>Só efeito de cena sem número (categoria I) ou um passo numa situação estreita.</td></tr>
+  <tr><td><strong>Uma vez por cena</strong></td><td>O padrão das categorias I e II.</td></tr>
+  <tr><td><strong>Uma vez por sessão</strong></td><td>O padrão da III e da IV.</td></tr>
+  <tr><td><strong>Cargas</strong></td><td><span class="dado">1d4</span> + 1 cargas, cada uso gasta uma. Recarrega com: uma noite de luar, um dia ao sol, uma poção derramada nele, 1 DET do dono.</td></tr>
+  <tr><td><strong>Uso único</strong></td><td>Some, quebra ou apaga. Desce uma categoria no preço.</td></tr>
+  </tbody></table></div>
+  <h4>O jeito dele</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d20</th><th>Peculiaridade (não muda números)</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>fala, e tem opinião</td></tr>
+  <tr><td class="d">2</td><td>é quente ao toque</td></tr>
+  <tr><td class="d">3</td><td>cheira a chuva, a canela, a enxofre</td></tr>
+  <tr><td class="d">4</td><td>só funciona para canhotos</td></tr>
+  <tr><td class="d">5</td><td>canta baixinho quando é usado</td></tr>
+  <tr><td class="d">6</td><td>tem ciúme de outros objetos encantados</td></tr>
+  <tr><td class="d">7</td><td>some quando ninguém olha e volta depois</td></tr>
+  <tr><td class="d">8</td><td>muda de cor com o humor do dono</td></tr>
+  <tr><td class="d">9</td><td>pesa mais do que deveria</td></tr>
+  <tr><td class="d">10</td><td>atrai gatos</td></tr>
+  <tr><td class="d">11</td><td>tem um nome e só responde a ele</td></tr>
+  <tr><td class="d">12</td><td>mostra a hora de outro país</td></tr>
+  <tr><td class="d">13</td><td>molha tudo em volta</td></tr>
+  <tr><td class="d">14</td><td>faz o dono espirrar</td></tr>
+  <tr><td class="d">15</td><td>só funciona em Hogwarts</td></tr>
+  <tr><td class="d">16</td><td>tem a assinatura de quem fez, e a pessoa está viva</td></tr>
+  <tr><td class="d">17</td><td>os quadros do castelo reconhecem</td></tr>
+  <tr><td class="d">18</td><td>deixa um rastro de faíscas</td></tr>
+  <tr><td class="d">19</td><td>odeia uma Casa</td></tr>
+  <tr><td class="d">20</td><td>foi de alguém famoso, e todo mundo sabe</td></tr>
+  </tbody></table></div>
+  <p><strong>Defeitos</strong> deixam mais barato: cada defeito sério corta o preço pela metade, até um quarto. A categoria não muda, e com ela o limite de quem usa.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Defeito</th><th>Na mesa</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Lento</strong></td><td>Leva uma rodada inteira para funcionar.</td></tr>
+  <tr><td><strong>Barulhento</strong></td><td>Todo mundo a 18 m sabe que ele foi usado.</td></tr>
+  <tr><td><strong>Escolhe o dono</strong></td><td>Só funciona para um tipo de pessoa (uma Casa, um sangue, quem fez um juramento).</td></tr>
+  <tr><td><strong>Gasta o dono</strong></td><td>Cada uso custa 1 DET ou 1 PV.</td></tr>
+  <tr><td><strong>Instável</strong></td><td>Falha com 1 ou 2 no <span class="dado">d6</span> em todo uso, de um jeito interessante.</td></tr>
+  <tr><td><strong>Rastreável</strong></td><td>O Ministério, ou quem o fez, sabe onde ele está.</td></tr>
+  <tr><td><strong>Frágil</strong></td><td>Aguenta 1. Uma queda e acabou.</td></tr>
+  <tr><td><strong>Viciante</strong></td><td>Depois de usar três vezes, o dono quer usar sempre: Vontade DT 9 para largar numa cena.</td></tr>
+  </tbody></table></div>
+  <h4>Maldição</h4>
+  <p>A maldição usa as gravidades de <a href="#doencas">Doenças, venenos e azarações que ficam</a> (Capítulo VII). Ela não sai com Finite: precisa da contra-maldição, ou de largar o objeto (e às vezes nem assim).</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Gravidade</th><th>Exemplos</th><th>Números</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Leve</strong></td><td>sussurra à noite; aperta quando o dono mente; esfria as mãos; deixa um cheiro</td><td>A gravidade Leve das doenças.</td></tr>
+  <tr><td><strong>Moderada</strong></td><td>drena 1 DET por dia; atrai uma criatura; faz o dono mentir uma vez por sessão; não sai do dedo</td><td>Moderada: PV máx –2 a –4, ou uma condição que fica.</td></tr>
+  <tr><td><strong>Grave</strong></td><td>atrai dementadores; quem toca sem permissão queima; o dono esquece um laço; alguém mais está procurando</td><td>Grave: PV máx –4 a –8, Cansado, DET.</td></tr>
+  <tr><td><strong>Maldição de verdade</strong></td><td>o colar de opala, o anel de pedra preta: quem toca adoece até a metade</td><td>Maldição: PV máx –1 por semana até a contra-maldição.</td></tr>
+  </tbody></table></div>
+  <h4>O Preço do artefato</h4>
+  <p>Todo objeto de categoria IV cobra. O Preço é dito na primeira vez que alguém usa, ou descoberto do pior jeito.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d12</th><th>Preço</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>envelhece o dono um ano por uso</td></tr>
+  <tr><td class="d">2</td><td>apaga uma lembrança feliz</td></tr>
+  <tr><td class="d">3</td><td>alguém do outro lado também ganha o efeito</td></tr>
+  <tr><td class="d">4</td><td>o próximo Desastre do dono vai direto à Magia Descontrolada</td></tr>
+  <tr><td class="d">5</td><td>perde <span class="dado">1d6</span> DET</td></tr>
+  <tr><td class="d">6</td><td>PV máx –4 por uma semana</td></tr>
+  <tr><td class="d">7</td><td>uma promessa que precisa ser cumprida</td></tr>
+  <tr><td class="d">8</td><td>o objeto chama quem o fez</td></tr>
+  <tr><td class="d">9</td><td>uma criatura das trevas sente o uso</td></tr>
+  <tr><td class="d">10</td><td>o dono sonha com quem o usou antes</td></tr>
+  <tr><td class="d">11</td><td>um laço do dono desce um passo</td></tr>
+  <tr><td class="d">12</td><td>funciona, mas para outra pessoa da mesa, à escolha do Mestre</td></tr>
+  </tbody></table></div>
+  <h4>De onde veio</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d12</th><th>Origem</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>herança de família</td></tr>
+  <tr><td class="d">2</td><td>achado na Sala Precisa</td></tr>
+  <tr><td class="d">3</td><td>confiscado por Filch e esquecido</td></tr>
+  <tr><td class="d">4</td><td>comprado na Travessa do Tranco</td></tr>
+  <tr><td class="d">5</td><td>presente de alguém que morreu</td></tr>
+  <tr><td class="d">6</td><td>ganhado num jogo de cartas</td></tr>
+  <tr><td class="d">7</td><td>feito por um aluno há cem anos</td></tr>
+  <tr><td class="d">8</td><td>tirado do corpo de uma criatura</td></tr>
+  <tr><td class="d">9</td><td>caiu de um quadro</td></tr>
+  <tr><td class="d">10</td><td>veio pelo correio, sem remetente</td></tr>
+  <tr><td class="d">11</td><td>fabricado pelo próprio personagem</td></tr>
+  <tr><td class="d">12</td><td>roubado, e o dono quer de volta</td></tr>
+  </tbody></table></div>
+  <h4>Descobrir o que faz e quebrar</h4>
+  <p>Descobrir o que um objeto faz: Mente + Conhecimento Mágico contra a DT da categoria, uma hora de estudo. Specialis Revelio dá +1 passo. Sucesso: a função e a ativação; crítico: também a maldição e o Preço; falha: nada; Desastre: você acha que sabe, e está errado. Quebrar: o que ele aguenta, pelas regras do <a href="#ambiente">Ambiente</a>.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Categoria</th><th>DT para descobrir</th><th>Aguenta</th></tr></thead>
+  <tbody>
+  <tr><td><strong>I · Comum</strong></td><td>7</td><td>4</td></tr>
+  <tr><td><strong>II · Incomum</strong></td><td>9</td><td>8</td></tr>
+  <tr><td><strong>III · Raro</strong></td><td>11</td><td>16</td></tr>
+  <tr><td><strong>IV · Artefato</strong></td><td>13</td><td>encantado: não quebra sem desfazer o encanto</td></tr>
+  </tbody></table></div>
+  <h4>Montando: a lanterna da ronda</h4>
+  <p>Forma: lamparina (luz, revelar). Função: detectar, categoria II: "aponta o perigo mais perto". Ativação: condição (acende sozinha quando um monitor ou professor vira o corredor). Frequência: sempre, porque é efeito de cena sem número; apontar o perigo, uma vez por cena. Peculiaridade: cheira a canela. Defeito: barulhenta (chia ao acender), então o preço cai pela metade: uns 25 galeões. Maldição: o <span class="dado">d6</span> deu 4, não tem. Origem: confiscada por Filch e esquecida. Para fabricar, use o Capítulo XVI com o Círculo do efeito parecido (um Homenum Revelio pequeno: Círculo 2).</p>
+
   <h3 id="itens">Itens mágicos e artefatos</h3>
   <p>204 objetos: os dos livros, dos filmes e dos jogos, e 100 deste jogo, balanceados pela tábua abaixo. <span class="dado">F</span> vem dos filmes; <span class="dado">J</span>, dos jogos. <strong>Cat.</strong> é a categoria de <em>Quantos objetos você usa</em>, abaixo: um objeto acima da sua é Resistente com você, e <em>Único</em> conta como IV. Comida, logro de uso único e vassoura não contam entre os três ativos.</p>
   <p><strong>Usar um logro</strong> é uma ação. Arremessar: Corpo + Reflexos DT 5 até 9 m, DT 9 até 18 m; falhou, cai a seus pés. Contra quem viu você armar, o susto não pega: ele só testa se quiser fugir.</p>

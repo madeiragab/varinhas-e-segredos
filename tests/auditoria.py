@@ -161,6 +161,8 @@ FRASES = {
     "PE: 30 é teto, não garantia": "30 é o <em>máximo</em>, não a garantia",
     "projetos param nas férias": "o relógio do projeto para",
     "minigames: regras comuns": "Regras comuns dos minigames",
+    "uso criativo: Natural, Esticada, Ousada": "Ousada</strong></td><td>Pede mira",
+    "variante: nível custa 5 + nível atual": "5 + o nível atual",
     "feitiço além do alcance: até 2 Círculos, com mentor": "Até 2 Círculos acima",
     "xadrez de bruxo: online, dicas no limite de +2": "duas dicas por partida, no máximo",
     "minigames: passos e dado extra com limites separados": "têm limites separados, os do Capítulo II",

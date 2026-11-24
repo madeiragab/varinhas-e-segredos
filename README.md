@@ -265,6 +265,7 @@ O que entrou na 1.1:
 - **Ambiente e Usando o ambiente:** quanto aguentam portas, muros, móveis e caixas, o que cai em alguém, chão e água, cobertura, armas improvisadas, manobras do lugar e armadilhas.
 - **Doenças, venenos e azarações que ficam:** PV máximo menor por um tempo, gravidade para qualquer caso, estágios e as doenças do mundo bruxo.
 - **Criar do zero:** criaturas (tamanho, ataque, poder e traço sob medida, ecologia, partes) e objetos (forma, função por categoria, ativação, defeitos, maldição, Preço).
+- **Reação com feitiço:** qualquer feitiço como defesa, com –1 passo e Ímpeto até virar truque da casa.
 - **Bruxos sob medida:** feitiço assinatura com marca e truque, táticas, uso do lugar, recursos e variações.
 
 ---

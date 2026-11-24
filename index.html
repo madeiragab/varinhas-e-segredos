@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="06440b2c1cc0">
+<meta name="build" content="8da857e8403c">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Varinhas e Segredos — RPG de mesa</title>
 <link rel="preload" href="assets/fontes/garamond.woff2" as="font" type="font/woff2" crossorigin>
@@ -3298,6 +3298,69 @@ td strong { color: var(--texto); }
   <tr><td class="num">12+</td><td><strong>Adrenalina</strong></td><td>Você recupera 1 PV e acorda: pode agir na próxima rodada.</td><td>—</td></tr>
   </tbody></table></div>
   <p>Numa luta de verdade, a chance de morrer na tabela é de 1 em 6 cada vez que você cai assim — bem menos que numa guerra, mas o bastante para ninguém achar que um lobisomem é aula prática. Fora dela, ninguém morre na tabela. O que deixa marca para sempre é a Cicatriz, acima.</p>
+
+  <h3 id="doencas">Doenças, venenos e azarações que ficam</h3>
+  <p>Nem todo estrago acaba no fim da cena. A Ala Hospitalar existe porque alunos vomitam lesmas, acordam com dentes até o queixo, pegam sarapintose do colega de cama e voltam de uma luta com um tremor na mão. Aqui está o que fica, quanto pesa e como sai.</p>
+  <h4>PV máximo menor</h4>
+  <p>Algumas coisas tiram um pedaço do seu PV máximo por um tempo. O máximo cai, e se o seu PV atual passar do novo máximo, ele cai junto. Cura nenhuma passa do máximo de agora. Quando o efeito acaba, o máximo volta; o PV que faltava volta pelo descanso, como sempre. O máximo nunca cai abaixo da metade, a não ser por maldição.</p>
+  <h4>A gravidade: para qualquer doença ou azaração</h4>
+  <p>Para o que não está nas tabelas (uma azaração inventada, uma doença de outro país, uma maldição de objeto), escolha a linha e use os números dela.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Gravidade</th><th>Exemplos</th><th>Passos</th><th>PV máx</th><th>Outros</th><th>Quanto dura</th><th>Como sai</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Leve</strong></td><td>Azaração de corredor, resfriado</td><td>–1 passo num tipo de teste (feitiços falados, Persuasão, Furtividade)</td><td>—</td><td>Vexame; um detalhe que todo mundo vê</td><td>Uma cena, ou até Finite</td><td>Finite; a enfermeira em minutos</td></tr>
+  <tr><td><strong>Moderada</strong></td><td>Doença comum, azaração que ninguém tratou</td><td>–1 passo num atributo inteiro, ou –2 num tipo de teste</td><td>–2 a –4</td><td>Uma condição fica (Mudo, Cansado, deslocamento pela metade)</td><td>Dias</td><td>Ala Hospitalar uma noite, a poção certa, ou Medibruxaria DT 9 por dia</td></tr>
+  <tr><td><strong>Grave</strong></td><td>Varíola de dragão, Crucio, maldição de objeto</td><td>–2 passos num atributo, ou –1 em tudo</td><td>–4 a –8</td><td>Cansado; perde <span class="dado">1d4</span> DET quando piora</td><td>Semanas</td><td>St. Mungus, uma poção rara, Medibruxaria DT 11</td></tr>
+  <tr><td><strong>Maldição</strong></td><td>Ferida de magia negra, objeto amaldiçoado, Sectumsempra sem o contra-canto</td><td>–2 passos em tudo, ou uma parte do corpo que não serve</td><td>–1 por semana, até a metade</td><td>Perde <span class="dado">1d4</span> DET por semana</td><td>Até achar a cura</td><td>O contra-feitiço de quem fez, ou uma pesquisa (teste longo, Capítulo VI)</td></tr>
+  </tbody></table></div>
+  <h4>Pegar e sarar</h4>
+  <ol class="passos">
+    <li><b>Pegar.</b> Exposto (tocou, dividiu o quarto, levou o espirro), role Corpo + Fortitude contra a DT da doença. Passou, não pegou desta vez. A varinha de pinheiro e a Poção Revigorante antes dão +1 passo.</li>
+    <li><b>Os estágios.</b> Toda doença tem três: leve, moderado e grave. Começa no leve.</li>
+    <li><b>Testar.</b> No ritmo da doença (por dia ou por semana), role Corpo + Fortitude contra a DT. Sucesso: desce um estágio, e abaixo do leve você sarou. Falha: sem tratamento, sobe um; tratado (na cama da Ala, com a poção certa), fica onde está. Crítico: desce dois. Desastre: sobe um mesmo tratado e perde ' + d('1d4') + ' DET.</li>
+    <li><b>Cuidar.</b> Quem cuida rola Mente + Medibruxaria contra a DT da doença; passou, o doente ganha +1 passo no próximo teste. Os efeitos de cada estágio não somam: vale o do estágio em que você está, e o moderado inclui o leve.</li>
+  </ol>
+  <h4>Doenças do mundo bruxo</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Doença</th><th>Como pega</th><th>Leve</th><th>Moderada</th><th>Grave</th><th>Como sai</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Resfriado bruxo</strong></td><td>DT 7. Ar, inverno, chuva no Quadribol. Testa por dia.</td><td>Nariz entupido: –1 passo em feitiços falados.</td><td>+ –1 passo em Percepção; PV máx –2.</td><td>Febre: PV máx –4 e Cansado.</td><td>Poção Revigorante cura na hora, mas sai fumaça das orelhas por umas horas (–1 passo em Furtividade).</td></tr>
+  <tr><td><strong>Varíola de dragão</strong></td><td>DT 11. Contato, espirro, dividir o dormitório. Aparece em <span class="dado">1d4</span> dias. Testa por dia.</td><td>Bolhas verdes e roxas: –1 passo em Persuasão. Espirra faísca: acende papel e pano a 1 m.</td><td>Febre: –1 passo em Corpo e Mente; PV máx –4.</td><td>Na cama: PV máx –8, Cansado; não lança Círculo 3 ou mais. Velho, bebê ou quem já estava fraco: a cada dia grave, Fortitude DT 11 ou começa o Morrendo.</td><td>O remédio de Gunhilda (Poções DT 11) e St. Mungus: cai um estágio por dia. Quem chegou ao grave fica com marcas na pele para sempre.</td></tr>
+  <tr><td><strong>Sarapintose</strong></td><td>DT 9. Toque e respingo; muito contagiosa: o dormitório inteiro testa. Testa por dia.</td><td>Bolhas roxas: –1 passo em Persuasão; ninguém quer ficar perto.</td><td>A garganta incha: Mudo (só Silenciosos); PV máx –2.</td><td>PV máx –4, Cansado. Na forma cerebral, Confuso no começo de cada cena (Mente + Vontade DT 9 encerra) e os feitiços fora da Prontidão não vêm à cabeça.</td><td>Ala Hospitalar com quarentena: uma semana, ou Medibruxaria DT 9 por dia. Fingir que tem (para faltar, para se esconder): Enganação DT 11 contra a enfermeira.</td></tr>
+  <tr><td><strong>Doença do Sumiço</strong></td><td>DT 11. Contato longo com quem tem. Testa por dia.</td><td>Some um dedo: –1 passo em tudo que pede mão fina (Poções, fechaduras).</td><td>Some a mão ou o pé. Mão da varinha: –2 passos em feitiços. Pé: deslocamento pela metade.</td><td>Some um braço ou uma perna inteira; PV máx –8.</td><td>St. Mungus: a parte volta, uma por dia. Sem tratamento, a parte sumida não volta mais.</td></tr>
+  <tr><td><strong>Escrofungulose</strong></td><td>DT 9. Umidade, estufa abafada, masmorra, livro mofado. Testa por semana.</td><td>Manchas de fungo que coçam: –1 passo em Furtividade e em ficar parado.</td><td>Corpo –1 passo; PV máx –2.</td><td>O fungo chega ao peito: PV máx –6, Cansado; tosse esporos (quem estiver a 1 m testa DT 7).</td><td>Unguento de fungo (Herbologia ou Poções DT 9) e sol. Cada semana de tratamento cai um estágio.</td></tr>
+  <tr><td><strong>Licantropia</strong></td><td>Mordida ou arranhão fundo de lobisomem transformado. Sem teste: pegou.</td><td>A semana da lua cheia: –1 passo em Mente, irritado, fome de carne.</td><td>O dia antes e o dia depois: Cansado; PV máx –4.</td><td>A lua cheia: vira lobisomem e não se lembra de quem é. Morde quem achar.</td><td>Não tem cura. A Poção Mata-Cão bebida a semana toda antes mantém a mente humana na lua cheia. O resto é o segredo, e o que acontece quando ele vaza.</td></tr>
+  </tbody></table></div>
+  <h4>Venenos e picadas</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Veneno</th><th>Resiste</th><th>Efeito</th><th>Como sai</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Mordida de diabrete</strong></td><td>Fortitude DT 9.</td><td>Falhou: <span class="dado">1d4</span> agora e PV máx –2; a mão mordida incha (–1 passo em feitiços).</td><td>Antídoto Comum. Sem ele, passa em um dia.</td></tr>
+  <tr><td><strong>Tentácula Venenosa</strong></td><td>Fortitude DT 11.</td><td>Falhou: <span class="dado">1d6</span> por hora e Cansado; Grave depois de três horas.</td><td>Antídoto Comum; bezoar na hora.</td></tr>
+  <tr><td><strong>Pus de bubotúbera</strong></td><td>Reflexos DT 7, se espirrou.</td><td>Falhou: a pele queima e enche de furúnculos: <span class="dado">1d4</span> de fogo e –1 passo em Persuasão por dias.</td><td>Cura para Furúnculos, ou lavar logo com água.</td></tr>
+  <tr><td><strong>Veneno de acromântula</strong></td><td>Fortitude DT 11.</td><td>Falhou: <span class="dado">1d6</span> no começo de cada turno e Cansado; Grave se ninguém tratar até o fim da cena.</td><td>Antídoto Comum para o leve; bezoar ou St. Mungus para o resto.</td></tr>
+  <tr><td><strong>Poção errada, ingrediente estragado</strong></td><td>Fortitude contra a DT da poção.</td><td>Falhou: o contrário do que a poção devia fazer, ou Moderada pela tabela de gravidade.</td><td>Antídoto Comum; o professor de Poções sabe qual é.</td></tr>
+  </tbody></table></div>
+  <p>Para criaturas e plantas que não estão aqui, use a gravidade: picada de bicho pequeno é Leve, de bicho grande ou planta perigosa é Moderada, de criatura de Perigo 5 ou mais é Grave.</p>
+  <h4>Azarações que ficam</h4>
+  <p>O grimório diz o que a azaração faz na hora. Esta tabela diz o que sobra depois, se ninguém levar o alvo à enfermaria. Finite tira o que é de agora; o que fica é Até tratar.</p>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Feitiço</th><th>Na hora</th><th>Se ninguém tratar</th><th>Como sai</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Furnunculus / Densaugeo</strong></td><td>–1 passo em testes sociais e de lançar.</td><td>Os furúnculos (ou os dentes) ficam <span class="dado">1d4</span> dias: Moderada, PV máx –2 de tanto doer; os dentes grandes deixam –1 passo em feitiços falados.</td><td>Cura para Furúnculos; a enfermeira encolhe os dentes num minuto.</td></tr>
+  <tr><td><strong>Pustula</strong></td><td>RA + 2 e –1 passo na próxima ação.</td><td>O pus infecciona: –1 passo em Persuasão por dias, e quem tocar a ferida testa DT 7 ou pega o mesmo.</td><td>Cura para Furúnculos, ou Scourgify logo.</td></tr>
+  <tr><td><strong>Slugulus Eructo</strong></td><td>Vomita lesmas por uma cena: só lança Silenciosos.</td><td>Saiu da cena: Cansado e PV máx –2 até comer e dormir. Às vezes uma lesma atrasada no café.</td><td>Não tem cura rápida: um balde e esperar. Finite só se for de quem lançou.</td></tr>
+  <tr><td><strong>Mucus ad Nauseam</strong></td><td>–1 passo em feitiços falados por uma cena.</td><td>Vira resfriado bruxo no estágio leve, e dali segue a doença.</td><td>Poção Revigorante.</td></tr>
+  <tr><td><strong>Engorgio Skullus</strong></td><td>–1 passo em tudo por uma cena.</td><td>Dor de cabeça: –1 passo em Mente até dormir.</td><td>Redactum Skullus; depois, uma noite.</td></tr>
+  <tr><td><strong>Anteoculatia</strong></td><td>Galhada: –1 passo em Furtividade e Persuasão.</td><td>A galhada não cai sozinha. Bate em batente, prende em cortina: –1 passo em Reflexos em lugar estreito.</td><td>Finite ou a Ala Hospitalar.</td></tr>
+  <tr><td><strong>Ungues Crescere</strong></td><td>Deslocamento pela metade.</td><td>Andar com elas machuca: PV máx –2 até cortar.</td><td>Uma tesoura e um pouco de coragem.</td></tr>
+  <tr><td><strong>Genu Inverto</strong></td><td>Deslocamento pela metade.</td><td>Os joelhos ficam doloridos uma semana depois de voltarem: –1 passo em Atletismo.</td><td>Medibruxaria DT 7, e a semana.</td></tr>
+  <tr><td><strong>Calvorio</strong></td><td>Careca.</td><td>O cabelo cresce de volta em semanas; até lá, –1 passo em Persuasão com quem é vaidoso.</td><td>Finite, ou esperar.</td></tr>
+  <tr><td><strong>Tabesco</strong></td><td>2 PV por turno, três rodadas.</td><td>Definhou: PV máx –2 por um dia.</td><td>Episkey ou Finite encerram o dano; o resto passa dormindo.</td></tr>
+  <tr><td><strong>Crucio</strong></td><td>Agonia enquanto sustentado.</td><td>Grave: tremores, –1 passo em Feitiços por <span class="dado">1d4</span> dias; três rodadas ou mais, a cicatriz do tremor e PV máx –4 por uma semana.</td><td>Repouso, Poção da Paz, St. Mungus. Os Longbottom não voltaram.</td></tr>
+  <tr><td><strong>Sectumsempra</strong></td><td>RA + 4 e Sangrando grave.</td><td>Maldição: a ferida reabre. PV máx –4 até o contra-canto, e a cicatriz.</td><td>O contra-canto (Vulnera Sanentur) e ditamno logo depois. Sem eles, a ferida não fecha por mágica comum.</td></tr>
+  <tr><td><strong>Objeto amaldiçoado</strong></td><td>O que a maldição fizer (o colar de opala, o anel).</td><td>Maldição: PV máx –1 por semana até a metade; a mão escurece.</td><td>Contra-maldição da peça, achada por pesquisa. Às vezes só dá para conter, não curar.</td></tr>
+  </tbody></table></div>
 
   <h3>Determinação</h3>
   <p>Dementadores, maldições, horrores e perdas tiram Determinação. Com 0 DET você fica

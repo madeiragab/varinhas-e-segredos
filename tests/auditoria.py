@@ -165,6 +165,8 @@ FRASES = {
     "uso criativo: física aberta, até 8 dados": "Nada passa de <strong>8 dados</strong>",
     "uso criativo: perfurante fora da vista trespassa": "<strong>trespassa</strong>",
     "ambiente: aguenta e rachado": "<strong>Rachado:</strong>",
+    "doenças: PV máximo menor": "<h4>PV máximo menor</h4>",
+    "doenças: estágios e teste": "abaixo do leve você sarou",
     "ambiente: tabela de queda por massa e altura": "O que cai em cima: massa e altura",
     "variante: nível custa 5 + nível atual": "5 + o nível atual",
     "variante: teto de 4 PE por sessão continua": "Teto por sessão continua: 4 PE",

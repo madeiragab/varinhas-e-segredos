@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="a79e814f25c3">
+<meta name="build" content="8099fb7e581a">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Varinhas e Segredos — RPG de mesa</title>
 <link rel="preload" href="assets/fontes/garamond.woff2" as="font" type="font/woff2" crossorigin>
@@ -3118,7 +3118,7 @@ td strong { color: var(--texto); }
 
   <h4>Juntar, repetir, errar</h4>
   <ul>
-    <li><strong>Juntar feitiços:</strong> um por pessoa por rodada, então combinação boa pede um amigo ou duas rodadas. Aguamenti e depois Glacius: Congelado. Óleo e depois Incendio: Em chamas. Diffindo na corda e o lustre cai: tabelas 2 e 3.</li>
+    <li><strong>Juntar feitiços:</strong> sozinho ou com os amigos, em <a href="#combinar">Combinar feitiços</a>, logo abaixo.</li>
     <li><strong>Crítico:</strong> mais um efeito de qualquer tabela que caiba, ou +1 dado. Ideia Ousada que sai em crítico rende 1 Ímpeto (ato corajoso).</li>
     <li><strong>Falha:</strong> não acontece, ou acontece pela metade num lugar que o Mestre escolher.</li>
     <li><strong>Desastre:</strong> acontece com o alvo errado: você, um aliado, o chão debaixo dos seus pés. Monte o resultado pelas mesmas tabelas.</li>
@@ -3139,6 +3139,84 @@ td strong { color: var(--texto); }
   <tr><td>Você usa Depulso no chão para subir num muro de 5 m</td><td>Esticada. Sobe 6 m sem gastar o movimento</td><td>Aterrissa com Reflexos contra a DT 7; falhou, Caído e <span class="dado">2d6</span> de queda.</td></tr>
   <tr><td>O inimigo te joga com Depulso contra a janela da torre</td><td>Voou 3 dos 6 m: <span class="dado">1d6</span> da parede; vidro: cortante; o Depulso dele soma</td><td>RA + 1 do feitiço + <span class="dado">1d6</span> + 1, Sangrando se fez 4, e você do lado de fora da janela, se ela quebrou.</td></tr>
   <tr><td>Aguamenti no colega e Glacius do outro aluno no inimigo molhado ao lado</td><td>Duas ações; o inimigo estava no jato: Encharcado; frio em encharcado</td><td>Congelado até o fim do próximo turno, e o próximo golpe contundente nele tem +1 dado (sem como se mexer).</td></tr>
+  </tbody></table></div>
+
+  <h3 id="combinar">Combinar feitiços</h3>
+  <p>Aguamenti e depois Glacius, e o corredor vira uma pista de gelo. Wingardium segura a porta no ar, Duro a deixa de pedra, e a porta vira uma ponte. Ventus empurra o fogo do Incendio para dentro da sala certa. Nenhum desses feitiços faz isso sozinho; juntos, fazem. Dá para combinar sozinho, em duas rodadas ou num lance só, e em grupo.</p>
+  <h4>Que tipo de combinação é</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Tipo</th><th>O que é</th><th>Exemplos</th><th>O que dá</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Preparar e disparar</strong></td><td>O primeiro muda o alvo ou o chão; o segundo aproveita.</td><td>Aguamenti e Glacius; óleo e Incendio; Wingardium e Depulso; Incarcerous e Stupefy.</td><td>O estado que o primeiro criou faz o efeito do segundo, pelas tabelas de estados e de defesa: Encharcado com frio, Congelado; preso, sem reação e +1 dado.</td></tr>
+  <tr><td><strong>Somar forças</strong></td><td>Dois feitiços que fazem a mesma coisa, no mesmo alvo.</td><td>Incendio e Confringo; Flipendo e Depulso; dois Ventus.</td><td>+1 dado de dano, ou a área cresce 3 m, ou o empurrão dobra a distância. Só uma das três.</td></tr>
+  <tr><td><strong>Dar forma</strong></td><td>Um feitiço leva ou molda o que o outro criou.</td><td>Ventus no fogo, na fumaça, na névoa, no pó; Aguamenti guiado por Wingardium.</td><td>A área vira uma linha de 9 m, ou anda 6 m por rodada para onde quem conduz quiser. Fogo levado pelo vento acende o que for inflamável no caminho.</td></tr>
+  <tr><td><strong>Mudar a coisa</strong></td><td>Um feitiço muda o objeto que o outro usa.</td><td>Engorgio na pedra antes do Depulso; Reducio no baú para o Accio; Duro na almofada antes de cair em alguém.</td><td>Engorgio sobe a massa um degrau; Reducio desce um. Duro deixa o objeto de pedra: o que ele aguenta dobra e ele bate contundente.</td></tr>
+  <tr><td><strong>Construir</strong></td><td>Um feitiço segura, o outro firma.</td><td>Wingardium e Duro; Locomotor e Reparo; Engorgio e Duro.</td><td>Uma estrutura improvisada: a tabela abaixo.</td></tr>
+  <tr><td><strong>Proteger junto</strong></td><td>Escudos que se encostam.</td><td>Protego e Protego; Protego e Impervius; Protego e Aguamenti contra fogo.</td><td>Um escudo só para todos a até 3 m dos dois. Contra fogo ou água, o Impervius ou o Aguamenti fazem o escudo segurar também o que vem por trás.</td></tr>
+  <tr><td><strong>Em coro</strong></td><td>O mesmo feitiço, ao mesmo tempo, no mesmo alvo.</td><td>Três Stupefy no trasgo; quatro Finite na porta trancada; a turma toda de Protego.</td><td>Abaixo.</td></tr>
+  </tbody></table></div>
+  <p>A parte mágica de cada feitiço tem de existir, como no uso criativo: Ventus move o ar, então leva fumaça e fogo; não leva uma parede. O dano direto nunca passa do orçamento do maior Círculo da combinação + 1; o dano que vem da física (massa, queda, fogo que pega) segue as tabelas dela, até 8 dados.</p>
+
+  <h4>Sozinho</h4>
+  <ul>
+    <li><strong>Em duas rodadas.</strong> O jeito normal. O primeiro feitiço fica no lugar até o fim da sua próxima rodada (a água no chão, o objeto no ar sustentado, o óleo na roupa); o segundo aproveita. Cada um é o seu teste, com a ideia medida como no uso criativo.</li>
+    <li><strong>Num lance só.</strong> Gaste 1 Ímpeto e lance os dois com uma ação: um teste só, com a DT do feitiço mais difícil + 2 e –1 passo. Os dois precisam estar Aprendidos e pelo menos um Dominado. Falhou, nenhum sai. Não é ação extra: é uma ação que faz duas coisas, e não junta dois ataques num só.</li>
+    <li><strong>Três ou mais</strong> num lance só: só a partir de Adepto, mais 1 Ímpeto e –1 passo por feitiço além do segundo.</li>
+  </ul>
+  <h4>Em grupo</h4>
+  <ol class="passos">
+    <li><b>Combinem antes.</b> Quem vai conduzir, quem vai preparar, em que ordem. Em combate, quem prepara age na mesma fase ou antes de quem conduz; quem espera usa o <em>Preparar</em> (Outras ações) com o gatilho "quando ele lançar".</li>
+    <li><b>Cada um rola o seu.</b> Cada feitiço é um teste de quem o lança, com a ideia medida (Natural, Esticada, Ousada).</li>
+    <li><b>Quem conduz decide o resultado.</b> As partes que deram certo entram; a que falhou não. Sem a parte que prepara, quem conduz lança só o feitiço dele, normal.</li>
+    <li><b>Desastre de qualquer um</b> estraga a combinação inteira: role na tabela abaixo.</li>
+  </ol>
+  <h4>Em coro: o mesmo feitiço</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Coro de</th><th>Como funciona</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Ataque</strong></td><td>Um rola o ataque; cada um a mais que acerta o próprio teste soma +1 dado de dano (até +3). Para Stupefy e outros de condição: o alvo resiste com –1 passo por conjurador a mais (até –2).</td></tr>
+  <tr><td><strong>Efeito ou contra-feitiço</strong></td><td>Finite, Alohomora, Reparo em coro: quem conduz rola com a ajuda dos outros, +1 passo por ajudante que passou no próprio teste (até +2, a regra de Ajudar).</td></tr>
+  <tr><td><strong>Escudo</strong></td><td>Protego em coro cobre todos os que lançaram e quem estiver entre eles. Contra área, todos dentro ficam protegidos se o maior teste dos escudos vencer.</td></tr>
+  <tr><td><strong>Criatura grande</strong></td><td>Contra Couro Mágico, o coro anula o –1 passo. Contra chefe, três ou mais acertos na mesma rodada derrubam uma Fase de uma vez só se o dano somado passar dela; senão, o dano soma normal.</td></tr>
+  </tbody></table></div>
+  <h4>Estruturas improvisadas</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Estrutura</th><th>Como</th><th>O que faz</th><th>Quanto dura</th></tr></thead>
+  <tbody>
+  <tr><td><strong>Plataforma</strong></td><td>Wingardium segura uma porta, uma mesa ou um tampo; Duro firma.</td><td>Uma pessoa de pé, a até 3 m do chão. Aguenta 8.</td><td>Enquanto o Wingardium for sustentado; com Duro, a cena.</td></tr>
+  <tr><td><strong>Ponte</strong></td><td>Wingardium ou Locomotor leva tábuas, porta ou estante; Reparo ou Duro prende.</td><td>Atravessa 6 m. Correr nela: Reflexos DT 9.</td><td>A cena.</td></tr>
+  <tr><td><strong>Barricada</strong></td><td>Locomotor ou Wingardium juntam os móveis; Duro ou Engorgio firmam.</td><td>Cobertura boa ou total num corredor; abrir pede quebrar: aguenta 16 (com Duro, 30).</td><td>A cena.</td></tr>
+  <tr><td><strong>Muro de gelo</strong></td><td>Aguamenti e Glacius, ou Glacius numa poça grande.</td><td>Cobertura total por 3 m de largura; aguenta 12; fogo tira 8 por rodada.</td><td>Até derreter, ou a cena.</td></tr>
+  <tr><td><strong>Escada</strong></td><td>Wingardium em degraus soltos (livros, caixas); Duro em cada um.</td><td>Sobe até 6 m sem teste de escalar.</td><td>A cena.</td></tr>
+  <tr><td><strong>Rampa ou escorregador</strong></td><td>Glisseo na escada, ou Duro e Glacius numa tábua.</td><td>Desce o dobro do movimento; quem entra sem querer fica Caído no fim.</td><td>A cena.</td></tr>
+  <tr><td><strong>Chão macio</strong></td><td>Spongify no chão, ou Engorgio num colchão.</td><td>Queda em cima dele não machuca.</td><td>A cena.</td></tr>
+  <tr><td><strong>Teto que cai</strong></td><td>Diffindo ou Reducto nas vigas, Wingardium para segurar até a hora.</td><td>Massa Enorme, de cima, na área de 3 m que você escolher, quando você soltar.</td><td>Uma vez.</td></tr>
+  </tbody></table></div>
+  <h4>Quando a combinação dá errado</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th class="num">d6</th><th>Desastre na combinação</th></tr></thead>
+  <tbody>
+  <tr><td class="d">1</td><td>os dois feitiços se anulam num estouro: RB em todo mundo a até 3 m, você incluído</td></tr>
+  <tr><td class="d">2</td><td>o elemento volta: o fogo, o gelo ou a água pegam quem lançou</td></tr>
+  <tr><td class="d">3</td><td>o efeito pega um aliado, à escolha do Mestre</td></tr>
+  <tr><td class="d">4</td><td>a estrutura cai no pior momento, com quem estiver em cima</td></tr>
+  <tr><td class="d">5</td><td>o efeito sai grande demais: área dobrada, e não escolhe lado</td></tr>
+  <tr><td class="d">6</td><td>Magia Descontrolada, para os dois que lançaram</td></tr>
+  </tbody></table></div>
+  <h4>A combinação que vira sua</h4>
+  <p>Depois de três sucessos com a mesma combinação, em cenas diferentes, ela ganha nome e entra na ficha de quem a fez (sozinho) ou de todos (em grupo), como o truque da casa: a ideia sobe uma linha e, sozinho, o lance só passa a custar só o Ímpeto, sem o –1 passo. É assim que um grupo de amigos fica com um jeito de lutar que é só dele.</p>
+  <h4>Exemplos montados</h4>
+  <div class="rolagem"><table class="compacta">
+  <thead><tr><th>Combinação</th><th>Quem e como</th><th>Resultado</th></tr></thead>
+  <tbody>
+  <tr><td>Depulso no chão e Ventus nas costas</td><td>Sozinho, num lance só: 1 Ímpeto, DT 7 + 2, –1 passo</td><td>O salto vai 9 m em vez de 6, por cima do fosso. Aterrissar: Reflexos DT 9.</td></tr>
+  <tr><td>Accio na faca que ele atirou</td><td>Sozinho, com Preparar e o gatilho "quando ele atirar" (Accio não é reação)</td><td>A faca muda de rumo e vem para a sua mão: o ataque dele erra, e a faca é sua.</td></tr>
+  <tr><td>Aguamenti e Glacius no corredor</td><td>Dois alunos, na mesma fase</td><td>Chão de gelo em 3 m por uma cena e todo mundo dentro Encharcado: o próximo frio deixa Congelado.</td></tr>
+  <tr><td>Wingardium na porta arrancada e Duro</td><td>Dois alunos: o do Wingardium sustenta, o outro firma</td><td>Uma ponte de 6 m sobre o vão da escada que mudou.</td></tr>
+  <tr><td>Engorgio no pedregulho e Depulso</td><td>Sozinho, em duas rodadas</td><td>A pedra do tamanho de um baú (Grande) vira Enorme e sai Rápido: <span class="dado">5d6</span>, contundente, Caído e Preso embaixo; o alvo viu, então é contra a Defesa.</td></tr>
+  <tr><td>Ventus no Incendio</td><td>Um acende a palha, outro conduz o vento</td><td>O fogo anda 6 m por rodada para onde o do Ventus quiser e acende tudo no caminho: <span class="dado">1d6</span> de fogo e Em chamas para quem estiver nele.</td></tr>
+  <tr><td>Três Stupefy no trasgo</td><td>Em coro, mesma fase</td><td>Um rola o ataque; os outros dois acertaram os seus: +2 dados de dano, e ele resiste ao Atordoado com –2 passos.</td></tr>
+  <tr><td>Protego de quatro alunos</td><td>Em coro, como reação à mesma área</td><td>Um escudo cobre os quatro e quem estiver entre eles; vale o maior teste.</td></tr>
   </tbody></table></div>
 
   <h3 id="ambiente">Ambiente</h3>

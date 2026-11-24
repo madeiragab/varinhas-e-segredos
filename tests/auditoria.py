@@ -173,6 +173,8 @@ FRASES = {
     "bruxos usam o lugar": "Eles também usam o lugar",
     "usando o ambiente: cobertura leva o golpe": "A cobertura leva o golpe.",
     "usando o ambiente: armas improvisadas": "<h4>Armas improvisadas</h4>",
+    "combinar feitiços: num lance só com Ímpeto, não é ação extra": "Não é ação extra: é uma ação que faz duas coisas",
+    "combinar feitiços: em coro": "Em coro: o mesmo feitiço",
     "ambiente: tabela de queda por massa e altura": "O que cai em cima: massa e altura",
     "variante: nível custa 5 + nível atual": "5 + o nível atual",
     "variante: teto de 4 PE por sessão continua": "Teto por sessão continua: 4 PE",
